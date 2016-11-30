@@ -4,7 +4,7 @@
 
 ```bash
 mkdir -p workspace/python/orientation/bangazon && cd $_
-touch zoolandia.py
+touch bangazon.py
 ```
 
 ## Instructions
