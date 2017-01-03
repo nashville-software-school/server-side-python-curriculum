@@ -21,11 +21,14 @@ Department: Sales
    Andri Alexandrou
    Wayne Hutchinson
    Sephora Rodriguez
+   Matt Qualls
+   Jen Solima
 
 Department: Technology
    Caitlin Stein
    Ryan Tanay
    Jessawynn Parker
+   Damon Romano
 ```
 
 Once you've completed this basic output, modify it to display any other properties that might be applied to either the Department or Employee that you added from the previous exercises (e.g. handicap, employment status, etc.)

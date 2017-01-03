@@ -28,8 +28,8 @@ class Department(object):
 
 ```python
 
-class IT(object):
-  """IT department
+class Development(object):
+  """Software development department
 
   Methods: __init__, get_name, get_supervisor, meet
   """
