@@ -3,6 +3,7 @@
 We will be following the [Python Community's coding guidelines](https://www.python.org/dev/peps/pep-0008/). Here are the big tickets items. Please read the style guide for more information.
 
 1. Variable names are all lower case, with words seperated by underscores
+
     ```
     ThisIsBadPractice = False;
     this_is_good_practice = True;
