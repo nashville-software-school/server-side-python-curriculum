@@ -13,14 +13,6 @@ hotfixes and releases in bigger software projects. It is a commonly used branchi
 that it really is. It is vital the teams sharing code have a branching strategy. A branching strategy protects production code, and protects team
 members from damaging the code base. http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
 
-## Coding Standards
-
-The following is from this source https://msdn.microsoft.com/en-us/library/aa291591(v=vs.71).aspx. A comprehensive coding standard encompasses all aspects of code construction. While developers should prudently implement a standard, it should be adhered to whenever practical. Completed source code should reflect a harmonized style, as if a single developer wrote the code in one session. At the inception of a software project, establish a coding standard to ensure that all developers on the project are working in concert. When the software project incorporates existing source code, or when performing maintenance on an existing software system, the coding standard should state how to deal with the existing code base.
-
-The readability of source code has a direct impact on how well a developer comprehends a software system. Code maintainability refers to how easily that software system can be changed to add new features, modify existing features, fix bugs, or improve performance. Although readability and maintainability are the result of many factors, one particular facet of software development upon which all developers have an influence is coding technique. The easiest method to ensure a team of developers will yield quality code is to establish a coding standard, which is then enforced at routine code reviews.
-
-Using solid coding techniques and good programming practices to create high-quality code plays an important role in software quality and performance. In addition, if you consistently apply a well-defined coding standard, apply proper coding techniques, and subsequently hold routine code reviews, a software project is more likely to yield a software system that is easy to comprehend and maintain.
-
 ## Code Reviews
 Everyone at Bangazon will review code and have their code reviewed. It is important that coding standards are followed so code reviews can be most productive.Although the primary purpose for conducting code reviews throughout the development life cycle is to identify defects in the code, the reviews can also enforce coding standards in a uniform manner. Adherence to a coding standard is only feasible when followed throughout the software project from inception to completion. It is not practical, nor is it prudent, to impose a coding standard after the fact. 
 
@@ -29,13 +21,13 @@ Test driven development (TDD) is an software development approach in which a tes
 TDD ensures that the source code is thoroughly unit tested and leads to modularized, flexible and extensible code. It focuses on writing only the code necessary to pass tests, making the design simple and clear.
 
 ## Daily Standup
-Development teams at Bangazon Inc. will schedule daily standups where progress is discuss as well as road blocks. Team members will answer the following questions:
+Development teams at Bangazon LLC will schedule daily standups where progress is discuss as well as road blocks. Team members will answer the following questions:
  * What did I accomplish yesterday?
  * What will I do today?
  * What obstacles are impeding my progress?
  * Daily standups are usually limited to 15 minutes. If it discovered more discussion is needed, attendees make arrangements to discuss in more detail after the meeting.
 
-##Sprints
+## Sprints
 It is a short, consistent cycle no longer than four weeks. The goal is to have an iteration short enough to keep the team focused but long enough to deliver a meaningful increment of work.
 
 ## Sprint Reviews
@@ -94,11 +86,11 @@ A task aimed at answering a question or gathering information, rather than at pr
 
 ## MVC Pattern
 
-A common design pattern found in many modern programming languages. MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate an application's concerns. https://msdn.microsoft.com/en-us/library/dd381412(v=vs.108).aspx
+A common design pattern found in many modern programming languages. MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate an application's concerns.
 
 ## ORM (Object Relational Mapper)
 
-An object relational mapper returns the data in database tables as objects that can be queried, created, updated and deleted. Typically the orm uses sql to execute sql against a database. https://en.wikipedia.org/wiki/Object-relational_mapping
+An [object relational mapper](https://en.wikipedia.org/wiki/Object-relational_mapping) returns the data in database tables as objects that can be queried, created, updated and deleted. Typically the orm uses sql to execute sql against a database. 
 
 ## Refactor
 

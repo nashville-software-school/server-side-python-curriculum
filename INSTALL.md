@@ -1,6 +1,12 @@
-# Python
+# Initial Course Installs
 
-## Setup
+## SQL Browser
+
+The [DB browser for SQLite](http://sqlitebrowser.org/) will let you view, query and manage your databases during the course.
+
+## Python
+
+### Setup
 
 See if Python is installed.
 
