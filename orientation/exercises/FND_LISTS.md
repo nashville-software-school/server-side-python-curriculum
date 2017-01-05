@@ -4,8 +4,7 @@
 
 ```
 mkdir -p ~/workspace/python/exercises/lists && cd $_
-echo 'planet_list = ["Mercury", "Mars"]
-pla' >> planets.py
+echo 'planet_list = ["Mercury", "Mars"]' >> planets.py
 ```
 
 ## Reference
