@@ -1,18 +1,29 @@
-#Bangazon Inc Coding Standards
+# Bangazon LLC Coding Standards
 
-###Bangazon Inc Developement Teams will Establish Common Standards for the Following Reasons:
-Experienced developers follow numerous programming practices or rules of thumb, which typically derived from hard-learned lessons.
-The practices listed below are not all-inclusive, and should not be used without due consideration.
-Veteran programmers deviate from these practices on occasion, but not without careful consideration of the potential
-repercussions. There will be times when members of development teams will move to a different development team or will 
-need to work on code they are unfamilar with. 
+We will be following the [Python Community's coding guidelines](https://www.python.org/dev/peps/pep-0008/). Here are the big tickets items. Please read the style guide for more information.
 
-Coding standards also make code reviews run more smoothly due to the fact that common techniques are used. 
+1. Variable names are all lower case, with words seperated by underscores
+    ```
+    ThisIsBadPractice = False;
+    this_is_good_practice = True;
+    ```
+2. All classes and methods will be documented with docstrings.
+3. Four **spaces** for indentation.
+4. Surround top-level function and class definitions with two blank lines. Method definitions inside a class are surrounded by a single blank line.
+    ```
+    import random
 
-A good source for examples of coding practices can be found here:
 
-https://msdn.microsoft.com/en-us/library/aa291593(v=vs.71).aspx
+    def Bar():
+        """Top level function"""
 
-http://www.dofactory.com/reference/csharp-coding-standards
 
+    class Foo:
+        """Sample Foo class that does nothing"""
+
+        def __init__(self):
+            """Constructor function for Foo class"""
+            bar = False
+    ```
+5. Import statements on seperate lines.
 
