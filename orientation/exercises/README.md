@@ -1,6 +1,6 @@
 ## Order of Exercises
 
-This is a suggested order for completing the exercises in this milestone:
+This is a suggested order for completing the exercises in orientation:
 
 ### Basic syntax
 1. [Dictionaries](./FND_DICTIONARIES.md)
