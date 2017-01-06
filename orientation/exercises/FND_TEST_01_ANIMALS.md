@@ -9,7 +9,7 @@ mkdir -p ~/workspace/python/exercises/testing && cd $_
 touch animals.py
 ```
 
-1. Copy the contents of [animals.py](../resources/animal.py) into the file you just created.
+1. Copy the contents of [animals.py](./animal.py) into the file you just created.
 
 ## Overview
 
