@@ -56,7 +56,7 @@ $make install
 
 ## Downloading the Database Files
 
-Download the [musichistory.db](./musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data. 
+Download the [musichistory.db](./assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data. 
 
 ## Instructions
 
@@ -77,3 +77,9 @@ For each of the following exercises, provide the appropriate query. Yes, even th
     SELECT a.Title, s.Title FROM Album a LEFT JOIN Song s ON s.AlbumId = a.AlbumId;
     SELECT a.Title, s.Title FROM Song s LEFT JOIN Album a ON s.AlbumId = a.AlbumId;
     ```
+1. Write a `SELECT` statement to display how many songs exist for each album. You'll need to use the `COUNT()` function and the `GROUP BY` keyword sequence.
+1. Write a `SELECT` statement to display how many songs exist for each artist. You'll need to use the `COUNT()` function and the `GROUP BY` keyword sequence.
+1. Write a `SELECT` statement to display how many songs exist for each genre. You'll need to use the `COUNT()` function and the `GROUP BY` keyword sequence.
+1. Using `MAX()` function, write a select statement to find the album with the longest duration. The result should display the album title and the duration.
+1. Using `MAX()` function, write a select statement to find the song with the longest duration. The result should display the song title and the duration.
+1. Modify the previous query to also display the title of the album.

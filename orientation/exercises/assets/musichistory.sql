@@ -158,8 +158,8 @@ INSERT INTO Album
 		   g.GenreId
 	FROM Artist a, Genre g WHERE a.ArtistName = "Mayer Hawthorne" AND g.Label = "Soul";
 
-	
-	
+
+
 INSERT INTO Album VALUES (null, "Revolver", '08/05/1966', 2083, 'Parlophone', 6, 2);
 INSERT INTO Album VALUES (null, "Sgt. Pepper's Lonely Hearts Club Band", '06/01/1967', 2392, 'Stones Throw Records', 6, 2);
 INSERT INTO Album VALUES (null, "Magical Mystery Tour", '11/27/1967', 1148, 'Stones Throw Records', 6, 2);
@@ -439,18 +439,6 @@ INSERT INTO Song
 	WHERE a.ArtistName = "Jay Z" AND g.Label = "Rap" AND al.Title = "The Black Album";
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 SELECT s.Title 'Song', s.SongLength 'Duration',
 	   al.Title 'Album', 
@@ -464,8 +452,8 @@ INNER JOIN Genre g ON s.GenreId = g.GenreId;
 
 
 
-select * from artist
-select * from album
-select * from song
-select * from genre
+select * from artist;
+select * from album;
+select * from genre;
+select * from song;
 
