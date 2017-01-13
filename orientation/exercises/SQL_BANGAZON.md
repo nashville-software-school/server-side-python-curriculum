@@ -25,7 +25,6 @@ Build an ERD to define the properties of the following resources and the relatio
 * Track when a computer was decommissioned by the company
 * A computer can only be assigned to one employee at a time
 
-
 #### Training Programs
 * A training program must have a start date
 * A training program must have an end date
@@ -39,6 +38,7 @@ Build an ERD to define the properties of the following resources and the relatio
 * A product has a price
 * A product has a title
 * A product has a description
+* Products will be created by customers, so make sure that you have the appropriate column on the Product table
 
 #### Orders
 * A customer can only have one active order at a time
@@ -56,3 +56,6 @@ Build an ERD to define the properties of the following resources and the relatio
 ### Create tables and data
 
 Create a SQL script that is able to build the tables that you defined in your ERD. The script must also create a few rows in each table.
+
+> **Pro tip:** Remember to ask the two questions when dealing with data relationships. Can X have many Y? Can Y have many X?
+
