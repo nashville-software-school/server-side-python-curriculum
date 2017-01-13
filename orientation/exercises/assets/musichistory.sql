@@ -445,9 +445,23 @@ SELECT s.Title 'Song', s.SongLength 'Duration',
        a.ArtistName 'Artist', 
 	   g.Label 'Genre'
 FROM Song s
-INNER JOIN Album al ON s.AlbumId = al.AlbumId
-INNER JOIN Artist a ON al.ArtistId = a.ArtistId
-INNER JOIN Genre g ON s.GenreId = g.GenreId;
+JOIN Album al ON s.AlbumId = al.AlbumId
+JOIN Artist a ON al.ArtistId = a.ArtistId
+JOIN Genre g ON s.GenreId = g.GenreId;
+
+
+/* List all songs with album information */
+SELECT a.Title 'Album', s.Title 'Song'
+From Song s
+left join Album a on s.AlbumId = a.AlbumId
+
+
+/* Find Albums with no songs */
+SELECT a.Title 'Album', s.Title 'Song'
+From Album a
+left join Song s on s.AlbumId = a.AlbumId
+where s.Title is NULL
+
 
 
 
