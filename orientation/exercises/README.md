@@ -15,9 +15,11 @@ This is a suggested order for completing the exercises in orientation:
 1. [RandomSquared](./FND_RANDOMSQUARED.md)
 1. [Test Animals](./FND_TEST_01_ANIMALS.md)
 1. [Calculator](./FND_TEST_02_CALCULATOR.md)
+1. [Bag of Loot](./BAG_OF_LOOT.md)
 
 ## SQL exercises
 
+1. [Bangazon](./SQL_BANGAZON.md)
 1. [Chinook](./SQL_CHINOOK.md)
 
 ### Online SQL Tutorial
