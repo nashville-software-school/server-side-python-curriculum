@@ -3,24 +3,26 @@
 This is a suggested order for completing the exercises in orientation:
 
 ## Basic collections and classes
-1. [Dictionaries](./FND_DICTIONARIES.md)
-1. [Sets](./FND_SETS.md)
-1. [Lists](./FND_LISTS.md)
-1. [Tuples](./FND_TUPLES.md)
-1. [Classes](./FND_CLASSES.md)
+1. [Dictionaries](./01_DICTIONARIES.md)
+1. [Sets](./02_SETS.md)
+1. [Lists](./03_LISTS.md)
+1. [Tuples](./04_TUPLES.md)
+1. [Classes](./05_CLASSES.md)
 
 ## Intermediate exercises
-1. [Family Dictionary](./FND_FAMILY_DICTIONARY.md)
-1. [Kill Nickelback](./FND_KILL_NICKELBACK.md)
-1. [RandomSquared](./FND_RANDOMSQUARED.md)
-1. [Test Animals](./FND_TEST_01_ANIMALS.md)
-1. [Calculator](./FND_TEST_02_CALCULATOR.md)
-1. [Bag of Loot](./BAG_OF_LOOT.md)
+1. [Family Dictionary](./06_FAMILY_DICTIONARY.md)
+1. [Kill Nickelback](./07_KILL_NICKELBACK.md)
+1. [RandomSquared](./08_RANDOMSQUARED.md)
+1. [Test Animals](./09_TEST_ANIMALS.md)
+1. [Calculator](./10_TEST_CALCULATOR.md)
+
+## Advanced exercises
+1. Persist data with a [Bag of Loot](./11_BAG_OF_LOOT.md)
 
 ## SQL exercises
 
+1. We will work through the [introduction to data relationships](./INSTRUCT_MUSIC_HISTORY.md) as a team in class.
 1. [Bangazon](./SQL_BANGAZON.md)
-1. [Chinook](./SQL_CHINOOK.md)
 
 ### Online SQL Tutorial
 
