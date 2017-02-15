@@ -26,7 +26,7 @@ Once the download is complete, you can open Window Explorer or Mac Finder and ju
     mkdir ~/workspace/chinook
     ```
 
-2. Move the `chinook.db` file to that directory
+2. Move the `Chinook_Sqlite.sqlite` file to that directory
 
     ```
     cp *.* ~/workspace/chinook
