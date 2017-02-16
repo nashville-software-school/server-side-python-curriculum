@@ -1,35 +1,27 @@
 # Learning SQL with Chinook
 
-## Setup
-
-```
-mkdir -p ~/workspace/python/exercises/chinook-sql && cd $_
-touch chinook.sql
-```
 
 ## Downloading the Database Files
 
 Click the big download button from the [Chinook Database](http://chinookdatabase.codeplex.com/) site. Know which directory that it's being downloaded to.
 
-Once the download is complete, you can open Window Explorer or Mac Finder and just double click on the archive to extract it. Once extracted, open a terminal window and go to the directory where the files exist.
-
 ## Moving the SQLite Database to Your Workspace
 
-1. In your CLI, get to the directory where you extracted the archive.
+1. In your CLI, get to the directory where you extracted the archive. It should be something like the following.
     ```
-    cd ~/Downloads
+    cd ~/Downloads/ChinookDatabase1.4_CompleteVersion
     ```
 
 1. Create a directory for your work.
 
     ```
-    mkdir ~/workspace/chinook
+    mkdir -p ~/workspace/chinook
     ```
 
 2. Move the `Chinook_Sqlite.sqlite` file to that directory
 
     ```
-    cp *.* ~/workspace/chinook
+    cp Chinook_Sqlite.sqlite ~/workspace/chinook
     ```
 
 That file **is** the database. It contains all of the tables and data. You can now open up that file in the SQLite Browser application to see it.
