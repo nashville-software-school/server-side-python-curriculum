@@ -8,6 +8,12 @@ You are needed to make that happen.
 
 In order to become a profitable, and sustainable organization, we need you to build all of the technology and tooling for the company.
 
+# Learning Objectives
+
+While you are building out the Bangazon Platform, your leadership team will ensure that the following foundational skills are developed by each team, and by each individual on the team.
+
+![Learning objectives](./learning-objectives.png)
+
 ## Orientation
 
 Your first two weeks on the job will be you orientation to the technical languages, tools, and frameworks that you'll be using. You will also be introduced to the processes and procedures that you will need to follow to ensure high communication and high productivity for your team.
@@ -37,20 +43,42 @@ Once all teams have built the initial version of the API, you will receive your 
 
 Your management team will ensure that you have the proper training in the skills, concepts, and tools needed to complete the project, and then you will fulfill the requirements for the project until you are done, as defined in the [Bangazon Definition of Done](https://github.com/nashville-software-school/bangazon-llc/blob/master/EMPLOYEE_HANDBOOK.md#definition-of-done).
 
-# Learning Objectives
+# The Python Way
 
-While you are building out the Bangazon Platform, your leadership team will ensure that the following foundational skills are developed by each team, and by each individual on the team.
+Beautiful is better than ugly.
 
-![Learning objectives](./learning-objectives.png)
+Explicit is better than implicit.
 
+Simple is better than complex.
 
+Complex is better than complicated.
 
+Flat is better than nested.
 
+Sparse is better than dense.
 
+Readability counts.
 
+Special cases aren't special enough to break the rules.
 
+Although practicality beats purity.
 
+Errors should never pass silently.
 
+Unless explicitly silenced.
 
+In the face of ambiguity, refuse the temptation to guess.
 
+There should be one-- and preferably only one --obvious way to do it.
 
+Although that way may not be obvious at first unless you're Dutch.
+
+Now is better than never.
+
+Although never is often better than *right* now.
+
+If the implementation is hard to explain, it's a bad idea.
+
+If the implementation is easy to explain, it may be a good idea.
+
+Namespaces are one honking great idea -- let's do more of those!
