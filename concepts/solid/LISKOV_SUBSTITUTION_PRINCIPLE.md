@@ -17,7 +17,7 @@ This principle makes clear that in object-oriented design the _IsA_ relationship
 
 Let's say you're building an application that displays products for people to buy. In order to represent those products, as a responsible developer, you create a class definition which defines the properties and behaviors of a product.
 
-```
+```py
 class Product(object):
 
     def __init__(self):
@@ -68,7 +68,7 @@ class Product(object):
 
 As the system evolves, the feature of a bulk product is introduced. So another developer defines a class named `BulkProduct` that derives from `Product` because it makes sense that a `BulkProduct` _IsA_ `Product`, just a more specialized kind.
 
-```
+```py
 class BulkProduct(Product):
 
     def __init__(self):
@@ -88,7 +88,7 @@ class BulkProduct(Product):
 
 Elsewhere in the system, we have a function that allows for the creation of a product.
 
-```
+```py
 def create_product(request):
     data = request.POST
 
@@ -108,7 +108,7 @@ Therefore, the conclusion is that the relationship between a `Product` and a `Bu
 
 In this case, composition (a _PartOf_ relationship), would be more appropriate.
 
-```
+```py
 from product import Product
 
 class BulkProduct():
@@ -148,4 +148,21 @@ class BulkProduct():
             self.__product = product
         else:
             raise ValueError('You must provide a product instance')
+```
+
+#### Example implementation code
+
+```py
+from product import Product
+from bulkproduct import BulkProduct
+
+# Create a product instance
+marble = Product()
+marble.price = 0.08
+
+# Compose product into a bulk product instance
+bag_of_marbles = BulkProduct()
+bag_of_marbles.product = marble
+bag_of_marbles.quantity = 200
+print("Bulk price: " + str(bag_of_marbles.price))
 ```
