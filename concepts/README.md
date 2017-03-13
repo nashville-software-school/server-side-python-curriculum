@@ -16,11 +16,11 @@ These concepts are general and provide little guidance to making large, complex 
 
 The SOLID principle are more specific in nature and actually provide guidance to software developers on how to craft robust, flexible, extensible software applications that they can be proud of.
 
-1. [Single Responsibility](./solid/SRP.md) is about actors and high level architecture.
-1. [Open / Closed](./solid/OPENCLOSED.md) is about class design and feature extensions.
-1. [Liskov's Substitution](./solid/LISKOV.md) is about subtyping and inheritance.
-1. [Interface Segregation](./solid/INTERFACE_SEGREGATION.md) is about business logic to clients communication.
-1. [Dependency Inversion](./solid/DEPENDENCY_INVERSION.md) is about coding to interfaces, or abstractions.
+1. [Single Responsibility](./solid/SINGLE_RESPONSIBILITY_PRINCIPLE.md) is about actors and high level architecture.
+1. [Open / Closed](./solid/OPEN_CLOSED_PRINCIPLE.md) is about class design and feature extensions.
+1. [Liskov's Substitution](./solid/LISKOV_SUBSTITUTION_PRINCIPLE.md) is about subtyping and inheritance.
+1. [Interface Segregation](./solid/INTERFACE_SEGREGATION_PRINCIPLE.md) is about business logic to clients communication.
+1. [Dependency Inversion](./solid/DEPENDENCY_INVERSION_PRINCIPLE.md) is about coding to interfaces, or abstractions.
 
 # GoF Design patterns
 

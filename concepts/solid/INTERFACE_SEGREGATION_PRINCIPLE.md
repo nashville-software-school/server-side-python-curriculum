@@ -2,7 +2,7 @@
 
 > Clients should not be forced to depend upon interfaces that they do not use. When a client depends upon a class that contains interfaces that the client does not use, but that other clients do use, then that client will be affected by the changes that those other clients force upon the class.
 
-This principle is strongly related to the Single Responsiblity Principle, in that deals with ensuring that your system interfaces start small and deal with only one facet of the responsibilities of your system.
+This principle is strongly related to the [Single Responsiblity Principle](./SINGLE_RESPONSIBILITY_PRINCIPLE.md), in that deals with ensuring that your system interfaces start small and deal with only one facet of the responsibilities of your system.
 
 ## Interface-based Programming
 
