@@ -69,8 +69,9 @@ python --version
 
 #### Troubleshooting
 
-
 If it still returns a different version, you will need to edit your `~/.bash_profile` file - or `~/.zshrc` if you installed oh-my-zsh - and follow steps 2 and 3 from the instructions on the [Basic Github Checkout section](https://github.com/yyuu/pyenv#basic-github-checkout) of pyenv's docs.
+
+If the instructions to modify your `~/.zshenv` or `~/.bash_profile` do not work, check the complete path to the the bin folder... `~/.pyenv/versions/3.6.0/bin:` and add it to the `export 'PATH="$PYENV_ROOT/versions/3.6.0/bin:$PATH"'` command. If it still returns a different version and you are a `zsh` user, try to run the command but with your `~/.zshrc` instead.
 
 ---
 
