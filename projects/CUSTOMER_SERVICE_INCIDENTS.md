@@ -1,37 +1,5 @@
 # Customer Service Incident Portal
 
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-1. [What You Will Be Learning](#what-you-will-be-learning)
-1. [Requirements](#requirements)
-1. [Resources](#resources)
-    1. [Seed data](#seed-data)
-    1. [Unit testing](#unit-testing)
-
-## Prerequisites
-
-* [DB Browser for SQLite](http://sqlitebrowser.org/).
-* Completed the [Chinook SQL exercise](https://github.com/nashville-software-school/csharp-dotnet-milestones/blob/master/3-database-driven-applications/exercises/database/DBS_SQL_LEARNING-THRU-DOING.md) 
-* Introduction to unit testing
-* ERD development
-* Class based inheritance
-* Interfaces
-
-## What You Will Be Learning
-
-### Interacting with a Database with SQL
-
-You will be using raw SQL statements to read and write information to a SQLite database that powers a command line application.
-
-### User Input
-
-You will learn how to build a command line application that accepts user input to navigate a terminal-based user interface and then use input to update data in your database.
-
-### Test Driven Development (TDD)
-
-For this project, all core logic of the application must have a failing unit test written before any implementation logic is attempted. By following [TDD](https://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx) [principles](http://c2.com/cgi/wiki?TestDrivenDevelopment), you are ensuring that the program is more solidly designed before work begins.
-
 ## Requirements
 
 > **Unit Testing**: Management will not accept a project for which implmentation code was written before a unit test. If you have questions about this, you need to speak with your manager.
@@ -278,37 +246,6 @@ Server side code is all about constrained inputs and verifiable outputs. Perfect
 Read a [walkthrough of setting up unit tests](https://docs.python.org/3.5/library/unittest.html) in Python.
 
 Just like with Jasmine for your JavaScript, you should use your unit tests as part of your design stage. Write as many unit tests as you can for your initial classes and methods. Once you feel you have good coverage for the basic logic of your application, then you begin writing simple implementations of the code in order to make the tests pass.
-
-##### Example
-
-Python provides its own unit testing framework named, appropriately, `unittest`. Here's a sample class for running unit tests.
-
-① The test class must sub-class `unittest.TestCase`
-
-② Each function in the class must start with `test_`
-
-```python
-import unittest
-
-class TestStringMethods(unittest.TestCase):
-
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
-
-    def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse('Foo'.isupper())
-
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
-
-if __name__ == '__main__':
-    unittest.main()
-```
 
 #### Test Discovery
 

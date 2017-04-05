@@ -41,6 +41,8 @@ After it is installed, you must add `C:\Python36` to your system path. Here's ho
 
 ## Managing versions
 
+> **Prerequisite:** For pyenv to install correctly, you need the Xcode command line tools. Type this command into your terminal and wait. `xcode-select --install`
+
 ### OSX / pyenv
 
 OSX users, you should have Homebrew installed at this point. If you don't, do it now. Then run these commands in order.

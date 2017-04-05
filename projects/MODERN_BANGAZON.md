@@ -1,33 +1,69 @@
 # Modern Bangazon API Client Application
 
-## Table of Contents
+## Authentication
 
-1. [Prerequisites](#prerequisites)
-1. [What You Will Be Learning](#what-you-will-be-learning)
-1. [Requirements](#requirements)
-1. [Resources](#resources)
-
-## Prerequisites
-
-* Before starting this project, your team must have completed the [authenticated MVC application](./USER_AUTHENTICATION.md) project.
-* You must use Visual Studio to build this project.
-* [REST](https://docs.google.com/presentation/d/1YK3Yu6lyMwhprTnX865CRljz-w8yKFiEFuZidtc1FVw/edit?usp=sharing)
-* Consuming REST API with Angular client
-
-## What You Will Be Learning
-
-### Local DB
-
-Migrating from SQLite (if needed) to using SQL Server Local Db for storing data. 
-
-### Authentication
-
-You will learn how to use the built-in authentication and authorization Identity package in .NET Core to create users and handle authenticating requests.
+You will learn how to use the built-in authentication and authorization modules in Django and DRF to create users and handle authenticating requests. You will learn how to use the Token Authentication system rather than the Session Authentication.
 
 ## Requirements
 
-1. Enable Identity in the application.
-1. Require registration or login when user wants to purchase a product.
+We need to build a mobile-response, single page application for use on mobile devices. This project will eventually be used as the prototype for an Ionic application. You are not responsible for that migration.
 
-## Resources
+### Story
 
+**As a** Bangazon customer
+
+**In order** to sell, or buy, a product at any time
+
+**I want** to be able to access the Bangazon site on my phone
+
+### Scenarios
+
+**Given** a customer wants to buy or sell a product
+
+**When** the customer opens the Bangazon mobile app
+
+**Then** the customer should be shown the last 20 products added to the platform
+
+**And** have an affordance to perform a product search
+
+**And** have an affordance to authenticate
+
+---
+
+**Given** a customer is viewing a product list
+
+**When** the customer performs a gesture on a product link
+
+**Then** the customer should be presented with the product details
+
+**And** an affordance for adding the product to their shopping cart
+
+---
+
+**Given** a customer is on any view
+
+**When** the customer performs a gesture on the affordance to authenticate
+
+**Then** the customer should be presented with the log in view
+
+---
+
+**Given** a customer is authenticated
+
+**When** the customer performs a gesture on the affordance to add a product to the shopping cart
+
+**Then** the customer should see that the item was successfully added by an affordance in the navigation area which shows the number of items in their cart
+
+---
+
+**Given** a customer wants to view their shopping cart
+
+**When** the customer performs a gesture on the cart affordance in the navigation area
+
+**Then** the customer should be presented with a list of items in their cart
+
+**And** the total price of the items in their cart
+
+**And** an affordance to select a payment type
+
+**And** an affordance to complete the order
