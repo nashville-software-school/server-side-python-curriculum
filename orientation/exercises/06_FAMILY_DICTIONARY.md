@@ -3,7 +3,7 @@
 ## Setup
 
 ```
-mkdir -p ~/workspace/python/exercises/dictionaries && cd $_
+mkdir -p ~/workspace/python/exercises/family_dictionary && cd $_
 touch family_dict.py
 ```
 
