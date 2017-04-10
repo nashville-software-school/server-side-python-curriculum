@@ -4,6 +4,8 @@ Just like you did in JavaScript when you learned about Jasmine, you're going to 
 
 ##### Starter code for test class
 
+> **Note**: The [`setUpClass`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.setUpClass) method below must have the `@classmethod` decorator above it. 
+
 ```python
 import unittest
 import calculator
