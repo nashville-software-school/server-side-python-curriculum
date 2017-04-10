@@ -51,3 +51,14 @@ python -m unittest discover -s . -p "Test*.py" -v
 
 You can use the Python tool [coverage.py](https://coverage.readthedocs.io/en/latest/), to ensure that your test suite has [100% coverage](http://blog.liw.fi/posts/unittest-coverage/) of your application's logic.
 
+
+# Resources
+
+
+https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/
+
+http://www.diveintopython3.net/unit-testing.html
+
+https://youtu.be/Sb2tz9Hlbp8?t=1016
+
+https://www.pluralsight.com/courses/unit-testing-python  (you should be able to get a free trial for 10 days)
