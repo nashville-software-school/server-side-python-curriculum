@@ -13,8 +13,8 @@ This is a suggested order for completing the exercises in orientation:
 1. [Family Dictionary](./06_FAMILY_DICTIONARY.md)
 1. [Kill Nickelback](./07_KILL_NICKELBACK.md)
 1. [RandomSquared](./08_RANDOMSQUARED.md)
-1. [Test Animals](./09_TEST_CALCULATOR.md)
-1. [Calculator](./10_TEST_ANIMALS.md)
+1. [Calculator](./09_TEST_CALCULATOR.md)
+1. [Animals](./10_TEST_ANIMALS.md)
 
 ## Advanced exercises
 1. Persist data with a [Bag of Loot](./12_BAG_OF_LOOT.md)
