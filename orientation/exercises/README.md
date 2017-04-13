@@ -13,17 +13,17 @@ This is a suggested order for completing the exercises in orientation:
 1. [Family Dictionary](./06_FAMILY_DICTIONARY.md)
 1. [Kill Nickelback](./07_KILL_NICKELBACK.md)
 1. [RandomSquared](./08_RANDOMSQUARED.md)
-1. [Test Animals](./09_TEST_ANIMALS.md)
-1. [Calculator](./10_TEST_CALCULATOR.md)
+1. [Test Animals](./09_TEST_CALCULATOR.md)
+1. [Calculator](./10_TEST_ANIMALS.md)
 
 ## Advanced exercises
-1. Persist data with a [Bag of Loot](./11_BAG_OF_LOOT.md)
-1. Persist data with a [Mary Margaret](./12_SHARED_MEMORIES.md)
+1. Persist data with a [Bag of Loot](./12_BAG_OF_LOOT.md)
+1. Persist data with a [Mary Margaret](./13_SHARED_MEMORIES.md)
 
 ## SQL exercises
 
-1. We will work through the [introduction to data relationships](./INSTRUCT_MUSIC_HISTORY.md) as a team in class.
-1. [Bangazon](./13_SQL_BANGAZON.md)
+1. We will work through the [introduction to data relationships](./14_MUSIC_HISTORY.md) as a team in class.
+1. [Bangazon](./15_SQL_BANGAZON.md)
 
 ### Online SQL Tutorial
 
