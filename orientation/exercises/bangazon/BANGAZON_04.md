@@ -2,14 +2,16 @@
 
 ## Instructions
 
-Your job is to think about additional classes that can be inherited by certain groups of your other classes. For example, some employees may be part-time and others may be full-time. To avoid a long, brittle inheritance tree where you create a `PartTimeEmployee`, and a `FullTimeEmployee` that both inherit from `Employee`, and then having a `PartTimeHumanResourcesEmployee` and `FullTimeHumanResourcesEmployee` - ad naseum - break up the behaviors and properties that describe the two different types.
+Your job is to think about additional classes that can be inherited by certain groups of your other classes. For example, some employees may be part-time and others may be full-time. 
+
+To avoid a long, brittle inheritance tree where you create a `PartTimeEmployee`, and a `FullTimeEmployee` that both inherit from `Employee`, and then having a `PartTimeHumanResourcesEmployee` and `FullTimeHumanResourcesEmployee` - ad naseum - break up the behaviors and properties that describe the different types.
 
 ```python
 class FullTime():
   """Describes full-time employees"""
   
   def __init__(self):
-    this.hours_per_week = 40
+    self.hours_per_week = 40
 ```
 
 ```python
@@ -17,7 +19,7 @@ class PartTime():
   """Describes part-time employees"""
 
   def __init__(self):
-    this.hours_per_week = 24
+    self.hours_per_week = 24
 ```
 
 ```python
@@ -25,11 +27,8 @@ class HumanResources(Employee, FullTime):
   """Describes human resources employees"""
 
   def __init__(self, first_name, last_name):
-    # Note that we can't use super() any more because there is
-    # more than one class being inherited from. Because of that
-    # we have to call the constructor of each parent class individually
-    Employee.__init__(first_name, last_name)
-    FullTime.__init__()
+    super().__init__(first_name, last_name) # super is Employee
+    FullTime.__init__(self)
 ```
 
 By breaking up your code this way, we've separated the inherent properties of an Employee from the properties that describe their employment status. Assume that there is a `Shipping` class that derives from `Employee` and those people work part time. However, a year from now, the company decides to make shipping people full-time employees.

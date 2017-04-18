@@ -114,17 +114,17 @@ class Animal:
         self.speed = 0
         self.legs = 0
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
     def walk(self):
         print("Parent class walk method")
         self.speed = self.speed + (0.1 * self.legs)
 
-    def setSpecies(self, species):
+    def set_species(self, species):
         self.species = species
 
-    def getSpecies(self):
+    def get_species(self):
         return self.species
 
     # __str__ is a special function equivalent to toString() in JavaScript
@@ -134,7 +134,7 @@ class Animal:
 
 class Dog(Animal):
     def __init__(self, name):
-        Animal.__init__(self, name, "Dog")
+        Animal.__init__(name, "Dog")
 
     def walk(self):
         self.speed = self.speed + (0.2 * self.legs)
@@ -145,3 +145,4 @@ class Dog(Animal):
 # Additional Reading
 
 1. [An Introduction to Python Classes and Inheritance](http://www.jesshamrick.com/2011/05/18/an-introduction-to-classes-and-inheritance-in-python/)
+2. [Here is a very helpful video series on class inheritance](https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)

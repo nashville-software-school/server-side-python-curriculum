@@ -419,7 +419,7 @@ INSERT INTO Song
 INSERT INTO Song
 	SELECT null, 
 		   "Encore", 
-       SUBSTR(ABS(RANDOM())||'', 0, 4),
+           SUBSTR(ABS(RANDOM())||'', 0, 4),
 		   '12/03/1982', 
 		   g.GenreId,
 		   a.ArtistId,
@@ -457,10 +457,10 @@ left join Album a on s.AlbumId = a.AlbumId
 
 
 /* Find Albums with no songs */
-SELECT a.Title 'Album', s.Title 'Song'
-From Album a
+select a.Title 'Album', s.Title 'Song'
+from Album a
 left join Song s on s.AlbumId = a.AlbumId
-where s.Title is NULL
+where s.Title is null
 
 
 

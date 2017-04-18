@@ -16,25 +16,45 @@ touch bangazon.py
     ```python
 
     class Department(object):
-      """Parent class for all departments
+      """Parent class for all departments"""
 
-      Methods: __init__, get_name, get_supervisor
-      """
+      def __init__(self):
+          self.employees = set()
 
-      def __init__(self, name, supervisor, employee_count):
-          self.name = name
-          self.supervisor = supervisor
-          self.size = employee_count
+      @property
+      def name(self):
+        try:
+          return self.__name
+        except AttributeError:
+          return ""
 
-      def get_name(self):
-        """Returns the name of the department"""
+      @name.setter
+      def name(self, val):
+        if isinstance(val, str):
+          raise TypeError('Please provide a string value for the department name')
 
-        return self.name
+        if val is not "" and len(val) > 1:
+          self.__name = val
+        else:
+          raise ValueError("Please provide a department name")
 
-      def get_supervisor(self):
-        """Returns the name of the supervisor"""
+      @property
+      def supervisor(self):
 
-        return self.supervisor
+        try:
+          return self.__supervisor
+        except AttributeError:
+          return ""
+
+      @supervisor.setter
+      def supervisor(self, val):
+        if not isinstance(val, str):
+          raise TypeError('Please provide a string value for the supervisor name')
+
+        if val is not "" and len(val) > 5:
+          self.__supervisor = val
+        else:
+          raise ValueError("Please provide a supervisor name")
 
     ```
 
@@ -53,7 +73,7 @@ touch bangazon.py
 
       def __init__(self, name, supervisor, employee_count):
         super().__init__(name, supervisor, employee_count)
-        self.policies = {}
+        self.policies = set()
 
       def add_policy(self, policy_name, policy_text):
         """Adds a policy, as a tuple, to the set of policies

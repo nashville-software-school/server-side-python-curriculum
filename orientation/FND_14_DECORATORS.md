@@ -51,7 +51,7 @@ def message():
 Now when you execute the `message()` method, what's actually being invoked is the `final_function()` method that the `heading()` returns.
 
 ```
-Python 3.3.6 (default, Nov 16 2015, 10:56:55) 
+Python 3.6.0 (default, Nov 16 2015, 10:56:55) 
 [GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> message()
