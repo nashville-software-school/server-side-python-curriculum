@@ -14,6 +14,7 @@ large_flowers = ['a large ' + f for f in flowers]
 Just like JavaScript `map()` and `filter()`, this is a shorthand way of writing a `for` loop to accomplish the same thing.
 
 ```python
+large_flowers = list()
 for f in flowers:
     large_flowers.append('a large ' + f)
 ```
