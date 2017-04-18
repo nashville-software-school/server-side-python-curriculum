@@ -114,3 +114,9 @@ bow down to me
 ## Pip
 
 Pip is, by far, the most common way for [Python packages to be installed](https://packaging.python.org/en/latest/installing/#use-pip-for-installing). Take some time, by following the previous link, to review how to properly use pip to install packages.
+
+## Django Sublime Package
+
+You can install this sublime package for very quick and easy shorcuts for Django Templating.
+Package installation details are found at the following link: 
+[Djaneiro](https://github.com/squ1b3r/Djaneiro)
