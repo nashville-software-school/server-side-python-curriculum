@@ -111,6 +111,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 bow down to me
 ```
 
-## Pip
+# Optional, Handy Tooling
 
-Pip is, by far, the most common way for [Python packages to be installed](https://packaging.python.org/en/latest/installing/#use-pip-for-installing). Take some time, by following the previous link, to review how to properly use pip to install packages.
+[Anaconda](https://packagecontrol.io/packages/Anaconda)
