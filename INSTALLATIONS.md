@@ -114,3 +114,6 @@ bow down to me
 # Optional, Handy Tooling
 
 [Anaconda](https://packagecontrol.io/packages/Anaconda)
+
+[Djaneiro](https://github.com/squ1b3r/Djaneiro)
+
