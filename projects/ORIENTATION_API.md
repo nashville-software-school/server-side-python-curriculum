@@ -22,3 +22,11 @@ The initial version is for internal consumption only, so do not require permissi
 >    `from .customer import Customer`
 >
 > That will ensure that the class is detected when you run `python manage.py makemigrations your_app`
+
+## Resources
+
+As you progress through the project, your manager will discuss some of these topics with you.
+
+* Seeding your database with [fixtures](https://docs.djangoproject.com/en/1.11/howto/initial-data/)
+* Custom [management commands](https://docs.djangoproject.com/en/1.10/howto/custom-management-commands/), including [seeding your database](https://docs.djangoproject.com/en/1.11/ref/django-admin/).
+* Custom, [empty migrations](https://docs.djangoproject.com/en/1.11/topics/migrations/#data-migrations) to [execute fixtures](http://stackoverflow.com/questions/25960850/loading-initial-data-with-django-1-7-and-data-migrations#25981899).
