@@ -28,13 +28,20 @@ class Patient():
         self.__hospitals = set()
         self.__hospitalized = False
 
-    def get_name(self):
+    @property
+    def name(self):
         return "{} {}".format(self.__first_name, self.__last_name)
 
-    def get_location(self):
+    @property
+    def location(self):
         return self.__location
 
-    def get_ailments(self):
+    @location.setter
+    def location(self, val):
+        self.__location = val
+
+    @property
+    def ailments(self):
         return self.__ailments
 
     def add_ailment(self, ailment):

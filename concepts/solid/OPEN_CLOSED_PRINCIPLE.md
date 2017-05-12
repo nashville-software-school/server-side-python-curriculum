@@ -211,11 +211,46 @@ class MenuItem():
         self.action = action
 ```
 
-We could just use tuples, but I like the fact that when a menu item is defined, it's clear in the code that it
+We could just use tuples, but I like the fact that when a menu item is defined, it's clear in the code that it should have a prompt and an action defined.
 
+Now the code need to perform the action that was chosen from the main menu being displayed. Let's look at the final code of the `show()` method.
 
+```py
+def show(self):
+    # Clear the console
+    os.system('cls' if os.name == 'nt' else 'clear')
 
+    # Display each menu item
+    for index, menu_item in enumerate(self.__menu):
+        try:
+            print("{}. {}".format(index+1, menu_item.prompt))
+        except AttributeError:
+            raise AttributeError('Could not display the prompt for the current menu item {}'.format(str(menu_item)))
 
+    try:
+        choice = int(input(">> "))
+
+        # Invoke the class corresponding to the choice
+        for menu_item in self.__menu:
+            if choice == self.__menu.index(menu_item) + 1:
+                menu_item.action()
+
+    except KeyboardInterrupt:   # Handle ctrl+c
+        exit()
+
+    except ValueError:    # Handle any invalid choice
+        pass
+
+    self.show()    # Display the MenuItems
+```
+
+## It's Closed
+
+Now we have a module that is closed for modification, and can be used by any other program or library. It has a clear interface for building a command-line menu system, and is infinitely flexible because it prescribes no contraints on the actual functionality of a menu system. It simply displays prompts, and then invokes the appropriate action based on what the user selects.
+
+## It's Open
+
+It's also open, because we can add as many elements (menu items) as we want to it's internal collection, and it will still function without any issues.
 
 
 
