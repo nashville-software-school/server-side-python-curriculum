@@ -54,11 +54,7 @@ You can use the Python tool [coverage.py](https://coverage.readthedocs.io/en/lat
 
 # Resources
 
-
-https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/
-
-http://www.diveintopython3.net/unit-testing.html
-
-https://youtu.be/Sb2tz9Hlbp8?t=1016
-
-https://www.pluralsight.com/courses/unit-testing-python  (you should be able to get a free trial for 10 days)
+* [Unit Testing with Python](https://www.pluralsight.com/courses/unit-testing-python) on PluralSight (you should be able to get a free trial for 10 days)
+* [The Magic Tricks of Testing](https://www.youtube.com/watch?v=URSWYvyc42M) - Disregard that the example code is in Ruby. The concepts are the key takeaway.
+* [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/) 
+* [Dive Into Python 3: Unit Testing](http://www.diveintopython3.net/unit-testing.html)
