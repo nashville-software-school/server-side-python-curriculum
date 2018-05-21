@@ -52,7 +52,7 @@ brew install pyenv
 pyenv install 3.6.0
 mkdir ~/workspace/python && cd $_
 touch hello.py
-subl .
+code .
 ```
 
 After Pyenv is installed, you can make version 3.6.0 the new, globally accepted version by typing the following.
