@@ -13,7 +13,7 @@ touch animals.py
 
 ## Overview
 
-As a team, we'll be building unit test coverage for all the functionality of the code in the `animal` module. We'll discuss how writing tests often affect the implementation code, and how to think bout covering edge cases in your test suit.
+As a team, we'll be building unit test coverage for all the functionality of the code in the `animal` module. We'll discuss how writing tests often affect the implementation code, and how to think about covering edge cases in your test suite.
 
 ## Instructions
 
