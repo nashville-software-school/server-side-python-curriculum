@@ -6,7 +6,7 @@
 
 ```
 mkdir -p ~/workspace/python/exercises/testing && cd $_
-touch animals.py
+touch animal.py
 ```
 
 1. Copy the contents of [animals.py](./assets/animal.py) into the file you just created.
