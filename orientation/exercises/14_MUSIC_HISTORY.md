@@ -58,6 +58,13 @@ $make install
 
 Download the [musichistory.db](./assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data. 
 
+## References
+
+* [SQLBolt Learn SQL with simple, interactive exercises.](https://sqlbolt.com/)
+* [Introductory SQL tutorial](http://www.sqlcourse.com/)
+* [W3schools interactive SQL tutorial](https://www.w3schools.com/sql/sql_intro.asp)
+* [Online SQLite tutorial](http://www.sqlitetutorial.net/)
+
 ## Instructions
 
 1. Open up the database file in the *DB Browser for SQLite* application to see it.
