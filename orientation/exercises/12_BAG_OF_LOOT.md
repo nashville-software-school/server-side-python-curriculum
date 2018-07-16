@@ -65,7 +65,7 @@ def test_toys_for_child_can_be_added_to_bag ()
 1. Items can be removed from bag, per child. Removing `ball` from the bag should not be allowed. A child's name must be specified.
 1. Must be able to list all children who are getting a toy.
 1. Must be able to list all toys for a given child's name.
-1. Must be able to set the *delivered* property of a child, which defaults to `false` to `true`.
+1. Must be able to set the *delivered* property of a child's toys -- which defaults to `false`-- to `true`.
 
 ## Bonus Features
 
