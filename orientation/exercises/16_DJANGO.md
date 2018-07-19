@@ -34,7 +34,7 @@ Remember that every time you create a model, or update it, you need to [create a
 
 1. Create a SQL script at the root of your project, where the database file is located. 
 1. Open the database in your DB Browser
-1. Paste into DB Browser to execute SQL script
+1. Paste your SQL script into DB Browser's Execute SQL window and run it
 1. You can use insert statements kinda like this:
 `INSERT into Artist
 values (null, "The Kinks", 1964)` 
