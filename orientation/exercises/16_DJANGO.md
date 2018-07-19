@@ -30,6 +30,16 @@ You are going to build your own Django powered web application. It will be very 
 
 Remember that every time you create a model, or update it, you need to [create a migration](https://docs.djangoproject.com/en/2.0/intro/tutorial02/#activating-models), and run it.
 
+### Populate Database
+
+1. Create a SQL script at the root of your project, where the database file is located. 
+1. Open the database in your DB Browser
+1. Paste your SQL script into DB Browser's Execute SQL window and run it
+1. You can use insert statements kinda like this:
+`INSERT into Artist
+values (null, "The Kinks", 1964)` 
+to insert data into your `Artist` and `Song` tables 
+
 
 # Optional Stretch Goals
 
