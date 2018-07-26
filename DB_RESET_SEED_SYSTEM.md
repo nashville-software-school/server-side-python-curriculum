@@ -56,7 +56,7 @@ Now you can run it with two args:
 1. The name of the django app that contains the models you want to add to the db schema/update
 2. The name of the custom command file. If my app was called bangazon_api, then I would type
 
-    > `django_data.sh bangazon_api faker_factory.py`
+    > `django_data.sh bangazon_api faker_factory`
 
 
 *NOTE: This process will only work properly for data that doesn't contain foreign keys. You will need to create those table entries manually. But at least the base data will be there for you to access when you save new orders or assign employees to training classes.
