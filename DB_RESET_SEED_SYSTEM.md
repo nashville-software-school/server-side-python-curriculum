@@ -8,7 +8,7 @@ The following is an automated way of nuking your migrations and db, recreating y
 
 1. ## The custom manage.py command:
 
-In any Django app folder that contains migrations, create a `management` directory. Inside that directory create a `commands` directory. Then inside _that_ create a file called `faker_factory.py`. Paste this code into it:
+In any Django app folder that contains migrations, create a `management` directory. Inside that directory create an empty `__init__.py` file and a `commands` directory. Then inside `commands` create an empty `__init__.py` file and a file called `faker_factory.py`. Paste this code into it:
 
 ```python
 from django.core.management.base import BaseCommand
