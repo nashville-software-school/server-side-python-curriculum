@@ -2,7 +2,7 @@
 
 ## Inheritance
 
-Inheritance is for straightforward is-a relationship.
+Inheritance is for straightforward _is-a_ relationships.
 
 A baseball is a ball.
 
@@ -25,7 +25,7 @@ class SoccerBall(Ball):
 
 ## Composition
 
-Composition is for things that make up other things. If the container object is destroyed, so will all of its composing parts. Composition is the pattern for part-of relationships.
+Composition is for things that make up other things. If the container object is destroyed, so will all of its composing parts. Composition is the pattern for _part-of_ relationships.
 
 A pancreas is part of a body.
 
@@ -82,9 +82,4 @@ if __name__ == '__main__':
 
 ```
 
-In this last example, the Customer you created would not cease to exist should the Bank in which it had an account went bankrupt and closed.
-
-
-
-
-
+In this last example, the Customer you created would not cease to exist should the Bank in which it had an account go bankrupt and close.

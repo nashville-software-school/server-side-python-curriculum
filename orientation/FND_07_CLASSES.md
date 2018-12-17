@@ -1,6 +1,6 @@
 # Python Classes
 
-A class in Python is much like the new instances of functions that you created in JavaScript when you learned about prototypal inheritance.
+A class in Python is much like the classes you created in JavaScript when you learned about prototypal inheritance. ( Although there are some critical differences your instruction team will discuss in class )
 
 Instead of using the `new` keyword, or using the newer `Object.create()` function, you simply define a class and call it like you were calling a function. Below is a perfectly valid class (that does absolutely nothing) and then gets created and invoked afterwards.
 
@@ -13,7 +13,7 @@ class noop:
 noop()
 ```
 
-What exactly gets invoked in this case since the class has no actual logic in it. For any class, when you invoke it, it executes the `__init__` method. Since our simplistic example above didn't define any logic for the built-in `__init__` method, nothing happened.
+What exactly gets invoked in this case since the class has no actual logic in it? For any class, when you invoke it, it executes the `__init__` method. Since our simplistic example above didn't define any logic for the built-in `__init__` method, nothing happened.
 
 ## Simple Class
 
@@ -130,8 +130,11 @@ class Animal:
     # __str__ is a special function equivalent to toString() in JavaScript
     def __str__(self):
         return "%s is a %s" % (self.name, self.species)
+```
 
+Now we can use `Animal` as a base class for defining specific animal classes. In JS we used `extends`; here we simply pass in a reference to the parent class as an argument for the child class.
 
+```python
 class Dog(Animal):
     def __init__(self, name):
         Animal.__init__(name, "Dog")
@@ -139,8 +142,8 @@ class Dog(Animal):
     def walk(self):
         self.speed = self.speed + (0.2 * self.legs)
 ```
+Note that in the `__init__` method of `Dog` we call `Animal`'s `__init__` and pass the `name` variable and the species of "Dog" to it. You may have experimented with `super()` in JS classes. This is the same behavior here in Python, and soon we'll use `super` in our Python code. For now, `Animal` works, too, and it's easier to digest when learning the class syntax.
 
-    
 
 # Additional Reading
 

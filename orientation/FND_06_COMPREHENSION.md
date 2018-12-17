@@ -1,6 +1,6 @@
 # Comprehension
 
-Comprehension in Python is very much like the `map()` and `filter()` array functions in JavaScript. They are ways to iterate over a collection, perform some logic on each item, and build a new collection as the result.
+Comprehensions in Python are very much like the `map()` and `filter()` array functions in JavaScript. They are ways to iterate over a collection, perform some logic on each item, and build a new collection as the result.
 
 ## List Comprehension
 

@@ -7,7 +7,7 @@ Here's your very first Python code module. Go ahead and create a new directory f
 ```
 mkdir ~/workspace/python/intro && cd $_
 touch humansizes.py
-subl .
+code .
 ```
 
 Next, copy pasta the code in the [humansizes.py](exercises/assets/humansizes.py) into yours. The first thing you might notice is the lack of curly braces defining the beginning and ending of a block of logic. In Python, indentation is king. Whitespace matters, unlike in JavaScript.
