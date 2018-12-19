@@ -9,7 +9,7 @@ Everything is an object in Python.
 <class 'int'>
 >>> def test():
 ...   print("hello, world")
-... 
+...
 >>> type(test)
 <class 'function'>
 >>> type(humansizes)
@@ -34,7 +34,7 @@ A [Python list](https://docs.python.org/3.6/tutorial/datastructures.html) is lik
 
 ```python
 junk = list()
-junk = ['carrots', 'celery', 'kale', 2, ['peas', 'corn']] 
+junk = ['carrots', 'celery', 'kale', 2, ['peas', 'corn']]
 junk.insert(1, 'kidney beans')
 junk.extend([True, 'tornado'])
 junk.append('hurricane')
@@ -47,14 +47,14 @@ A dictionary is like a literal object in JavaScript. A collection of key/value p
 
 ```python
 junk = dict()
-junk = { 'name': 'Steve', 'age': 47, 'role': 'Head Coach' } 
+junk = { 'name': 'Steve', 'age': 47, 'role': 'Head Coach' }
 junk['kids'] = 2
 print(junk)
 ```
 
 ## Set
 
-A is sort of like a list, except that each item is enforced to be unique. If you try to add an item that already exists in the set, no operation occurs.
+A set is sort of like a list, except that each item is enforced to be unique. If you try to add an item that already exists in the set, no operation occurs.
 
 ```python
 junk = set()

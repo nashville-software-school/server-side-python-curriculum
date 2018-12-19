@@ -1,6 +1,6 @@
 # Unit Testing
-
-You got an introduction to unit testing during your front end course work. On the server side, unit testing becomes easier, and more straightfoward because you don't have user interfaces to worry about. No functional testing at all.
+<!-- TODO: Add unit testing blurb, since this is first mention of it now -->
+<!-- You got an introduction to unit testing during your front end course work. On the server side, unit testing becomes easier, and more straightfoward because you don't have user interfaces to worry about. No functional testing at all. -->
 
 Server side code is all about constrained inputs and verifiable outputs. Perfect for unit testing.
 
@@ -56,5 +56,5 @@ You can use the Python tool [coverage.py](https://coverage.readthedocs.io/en/lat
 
 * [Unit Testing with Python](https://www.pluralsight.com/courses/unit-testing-python) on PluralSight (you should be able to get a free trial for 10 days)
 * [The Magic Tricks of Testing](https://www.youtube.com/watch?v=URSWYvyc42M) - Disregard that the example code is in Ruby. The concepts are the key takeaway.
-* [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/) 
+* [Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)
 * [Dive Into Python 3: Unit Testing](http://www.diveintopython3.net/unit-testing.html)

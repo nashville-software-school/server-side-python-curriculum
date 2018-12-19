@@ -1,22 +1,23 @@
 # Importing Modules
 
-Importing other modules in Python is very similar to how to did it in Browserify or including dependencies in Angular. Instead of the `require()` function in JavaScript, you use `import`.
+Importing other modules in Python is very similar to how you did it in Browserify and React, using the `import` statement.
 
-```
-# In JavaScript
-let $ = require('jquery');
-
-
-# In Python
+```py
 import http
 ```
 
-Python will look in every directory that is defined in `sys.path` for a file, or executable, that matches the name in your import statement. If you ever want to see those locations, you can just run the python interpreter in the CLI and take a look.
+But compared to how you've written it before, the syntax looks a little inside-out when importing a specific part of a module
+
+```py
+from random import randint
+```
+
+Python will look in every directory that is defined in `sys.path` for a file, or executable, that matches the name in your import statement. If you ever want to see those locations, you can just run the python interpreter in the CLI and take a look. Type `python` then hit enter:
 
 ```
 python
 
-Python 3.4.3 (default, Feb 20 2016, 13:01:44) 
+Python 3.4.3 (default, Feb 20 2016, 13:01:44)
 [GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import sys
@@ -27,7 +28,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## Import Your Module
 
-Python will also look in the immediate directory for any files matching what you want to import. After it's imported, your can call any method in that module. Just precede it with the module name.
+Python will also look in the immediate directory for any files matching what you want to import. After it's imported, you can call any method in that module. Just precede it with the module name.
 
 ```python
 modulename.function_name(arguments)
@@ -38,7 +39,7 @@ Consider the [`humansizes.py`](humansizes.py) file you created. In the same dire
 ```
 python
 
-Python 3.4.3 (default, Feb 20 2016, 13:01:44) 
+Python 3.4.3 (default, Feb 20 2016, 13:01:44)
 [GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import humansizes
@@ -46,7 +47,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 77.1 MiB
 ```
 
-Remember the `__name__` property of a module that had a value of `__main__` when executed independently. Well, when you import that same module into another one, the `__name__` is the file name.
+Remember the `__name__` property of a module that had a value of `__main__` when executed independently? Well, when you import that same module into another one, the `__name__` is the file name.
 
 ```
 >>> print(humansizes.__name__)
@@ -68,7 +69,7 @@ Convert a file size to human-readable form.
 
     Returns: string
 
-    
+
 
 ```
 

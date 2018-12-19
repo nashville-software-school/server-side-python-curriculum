@@ -35,8 +35,9 @@ my_account.add_money('Gazillion dollars')
 ```
 
 This will raise a `TypeError` exception because the logic for the `add_money()` tries to perform a mathematical calculation on the value that is stored in the `amount` argument. We passed in a string, so Python will yell at us.
+There is no type coercion in Python. So, in JavaScript "2" + 2 will work, and give you "22", but not so in Python.
 
-So we need to think about these kids of issues when writing our code instead of assuming the the code that invokes this method will *always* do the correct thing. We need implement exception handling so that a useful exception is raised to the invoking code.
+So we need to think about these kinds of issues when writing our code instead of assuming the the code that invokes this method will *always* do the correct thing. We need implement exception handling so that a useful exception is raised to the invoking code.
 
 Let's look at how to do that with `try...except` blocks.
 
@@ -56,10 +57,3 @@ Let's look at how to do that with `try...except` blocks.
 ```
 
 Now, if an incorrect type of value is passed, a human-friendly message is output to the console and the exception is re-raised up to the calling code.
-
-
-
-
-
-
-
