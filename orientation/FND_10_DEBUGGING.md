@@ -26,3 +26,6 @@ When you are done inspecting your code, you can exit the debugger and restart th
 ```
 (Pdb) run
 ```
+
+## Debugging Tutorial
+Highly recommended [tutorial](https://realpython.com/python-debugging-pdb/) to practice debugging in Python.
