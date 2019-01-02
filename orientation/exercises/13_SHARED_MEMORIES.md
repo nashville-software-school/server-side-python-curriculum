@@ -1,6 +1,6 @@
 # Mary Margaret
 
-In this exercise, you're going to use object serialization to allow two distinct Python modules pass a dictionary back and forth, while they are running independently of each other.
+In this exercise, you're going to use object serialization to allow two distinct Python modules to pass a dictionary back and forth, while they are running independently of each other.
 
 You will execute each module seperately, and each one will augment a dictionary, and then serialize it to a file.
 
@@ -25,6 +25,7 @@ touch margaret.py
     1. `EOFError`
     1. `KeyError`
 
+TODO: We didn't use pickle/serialization in 25. Is this exercise something to consider dumping?
 > **Tip:** Make sure you import `sys` for the command line arguments, and `pickle` for serialization.
 
 
@@ -42,4 +43,3 @@ touch margaret.py
 ```bash
 python mary.py "Hi, I'm Mary"
 ```
-

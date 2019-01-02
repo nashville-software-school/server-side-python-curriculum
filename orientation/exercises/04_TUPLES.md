@@ -19,6 +19,7 @@ subl .
 
 1. Create a tuple named `zoo` that contains your favorite animals.
 1. Find one of your animals using the `.index(value)` method on the tuple.
+<!-- TODO: Confirm this is what we want to do here. Should this be `foo in tuple` instead of a for loop? -->
 1. Determine if an animal is in your tuple by using `for value in tuple`.
 1. Create a variable for each of the animals in your tuple with this cool feature of Python.
 
@@ -31,4 +32,3 @@ subl .
 1. Convert your tuple into a list.
 1. Use `extend()` to add three more animals to your zoo.
 1. Convert the list back into a tuple.
-
