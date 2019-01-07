@@ -48,9 +48,6 @@ You have an acquaintance whose job is to, once a year, delivery presents to the 
 
 ## Requirements
 
-<!-- TODO: Remove this? We're not TDDing anymore -->
-**Write a test before you write implementation code**
-
 ```python
 # This is only an example. If I find this code in your project
 #  I will make you go back and delete it and write your own test.

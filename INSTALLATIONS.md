@@ -55,13 +55,13 @@ touch hello.py
 code .
 ```
 
-After Pyenv is installed, you can make version 3.6.0 the new, globally accepted version by typing the following.
+After Pyenv is installed, you can make version 3.7.1 the new, globally accepted version by typing the following.
 
 ```
-pyenv global 3.6.0
+pyenv global 3.7.1
 ```
 
-Now, when you check the version of Python with the command below, it should return 3.6.0.
+Now, when you check the version of Python with the command below, it should return 3.7.1.
 
 ```
 python --version
@@ -113,7 +113,8 @@ bow down to me
 
 # Optional, Handy Tooling
 
+[iPython](https://ipython.readthedocs.io/en/stable/install/index.html) to get color-highlighted output and some other nifty features to enhance your terminal experience
+
 [Anaconda](https://packagecontrol.io/packages/Anaconda)
 
 [Djaneiro](https://github.com/squ1b3r/Djaneiro)
-
