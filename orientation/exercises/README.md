@@ -18,10 +18,8 @@ This is a suggested order for completing the exercises in orientation:
 
 ## Advanced exercises
 1. Persist data with a [Bag of Loot](./12_BAG_OF_LOOT.md)
-1. Persist data with a [Mary Margaret](./13_SHARED_MEMORIES.md)
 
 ## SQL exercises
-
 1. We will work through the [introduction to data relationships](./14_MUSIC_HISTORY.md) as a team in class.
 1. [Bangazon](./15_SQL_BANGAZON.md)
 

@@ -12,7 +12,7 @@ In order to become a profitable, and sustainable organization, we need you to bu
 
 While you are building out the Bangazon Platform, your leadership team will ensure that the following foundational skills are developed by each team, and by each individual on the team.
 
-![Learning objectives](./learning-objectives.png)
+TODO: Replace with new visualization or list of learning objectives
 
 ## Orientation
 
@@ -21,7 +21,7 @@ Your first two weeks on the job will be you orientation to the technical languag
 1. Installation of required tools.
 1. Introduction to the language.
 1. Concepts of sustainable, scalable, object-oriented software development.
-1. Test driven development
+1. Automated testing
 1. Overview of server-side development ecosystem
 1. How the Internet works
 1. Inheritance, composition, and aggregation
@@ -33,7 +33,7 @@ At the end of your orientation, your management team will determine which Develo
 
 ## Platform Development
 
-You will work on four different [Sprints](https://www.scruminc.com/sprint/) while you build the products that Bangazon Corporation needs in order to operate as a modern business. On each of these sprints, you will build features that your product owner has defined in the [Backlog](http://www.mountaingoatsoftware.com/agile/scrum/scrum-tools/product-backlog).
+You will work on three different [Sprints](https://www.scruminc.com/sprint/) while you build the products that Bangazon Corporation needs in order to operate as a modern business. On each of these sprints, you will build features that your product owner has defined in the [Backlog](http://www.mountaingoatsoftware.com/agile/scrum/scrum-tools/product-backlog).
 
 Your management team will ensure that you have the proper training in the skills, concepts, and tools needed to complete the projects, and then you will fulfill the requirements for the project until you are done, as defined in the [Bangazon Definition of Done](https://github.com/nashville-software-school/bangazon-llc/blob/master/EMPLOYEE_HANDBOOK.md#definition-of-done).
 
