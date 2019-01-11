@@ -35,7 +35,7 @@ class Product():
         except AttributeError:
             return 0
 
-    @quantity.setter
+    @price.setter
     # The setter (mutator)
     def price(self, new_price):
         if isinstance(new_price, float):
