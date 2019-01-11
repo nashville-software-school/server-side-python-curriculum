@@ -6,9 +6,9 @@
 
 1. Create a project folder and cd into it
 2. Create a virutal env and run it ( run pip install virtualenv if you don't have it installed yet )
-    1. > `virtualenv env` ('env' is the name. You can call it anything you like)
+    1. > `virtualenv env` ('env' is the virtual environment's name. You can call it anything you like)
     2. > `source env/bin/activate`
-    **Windows users: cd into the env directory and run ```. Scripts/activate```.**
+    **Non-Linux Windows users: cd into the env directory and run ```. Scripts/activate```.**
     3. > `pip install django djangorestframework`
 4. Create your new project:
     > `django-admin startproject foo`
