@@ -45,6 +45,13 @@ $make
 $make install
 ```
 
+#### For Linux
+
+```
+sudo apt-get update
+sudo apt-get install sqlite3
+```
+
 ## Setup for Music History Exercise
 
 ```sh
