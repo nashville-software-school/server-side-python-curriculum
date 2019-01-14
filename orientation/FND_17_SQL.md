@@ -63,7 +63,7 @@ touch queries.sql
 
 ## Downloading the Database Files
 
-Download the [musichistory.db](./assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data.
+Download the [musichistory.db](./exercises/assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data.
 
 ## Querying Data
 
