@@ -1,62 +1,17 @@
-# Introduction to SQL with Music History
+# Music History
 
-## Setup
-
-```
-mkdir -p ~/workspace/python/exercises/music-sql && cd $_
+## Setup for Music History Exercise
+If you haven't done this already:
+```sh
+mkdir -p ~/workspace/csharp/exercises/music-sql && cd $_
 touch queries.sql
 ```
 
 > **Note:** The `.sql` extension is common practice for files storing SQL queries
 
-### Installation of SQLite (if needed)
-
-To get started, type the following command to check if you already have SQLite installed.
-
-```bash
-$ sqlite3
-```
-
-And you should see:
-
-```
-SQLite version 3.7.15.2 2014-08-15 11:53:05
-Enter ".help" for instructions
-Enter SQL statements terminated with a ";"
-sqlite>
-```
-
-If you do not see above result, then it means you do not have SQLite installed on your machine. Follow the appropriate instructions below.
-
-#### For Windows
-
-Go to [SQLite Download page](http://www.sqlite.org/download.html) and download the precompiled binaries for your machine. You will need to download `sqlite-shell-win32-*.zip` and `sqlite-dll-win32-*.zip` zipped files.
-
-Create a folder `C:\sqlite` and unzip the files in this folder which will give you `sqlite3.def`, `sqlite3.dll` and `sqlite3.exe` files.
-
-Add `C:\sqlite` to your [PATH environment variable](http://dustindavis.me/update-windows-path-without-rebooting/) and finally go to the command prompt and issue `sqlite3` command.
-
-#### For Mac
-
-First, try to install via Homebrew:
-
-```
-brew install sqlite3
-```
-
-If not, download the package from above. After downloading the files, follow these steps:
-
-```
-$tar -xvzf sqlite-autoconf-3071502.tar.gz
-$cd sqlite-autoconf-3071502
-$./configure --prefix=/usr/local
-$make
-$make install
-```
-
 ## Downloading the Database Files
 
-Download the [musichistory.db](./assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data. 
+If you haven't already, download the [musichistory.db](./assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data. 
 
 ## References
 
