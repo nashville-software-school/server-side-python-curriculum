@@ -15,6 +15,7 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 * Chapter 7 - [Debugging Python in Visual Studio Code](./chapters/DEBUGGING_PYTHON.md)
 * Chapter 8 - [Python Functions](./chapters/FUNCTIONS_INTRO.md)
 * Chapter 8 - [Custom Types with Classes](./chapters/CLASSES_INTRO.md)
+* Chapter 8 - [Class Properties](./chapters/CLASS_PROPERTIES.md)
 * Chapter 9 - [Student Exercises - Part 1](./chapters/STUDENT_EXERCISES_TYPES.md)
 * Chapter 10 - [Exceptions and Try/Catch](./chapters/TRY_CATCH_INTRO.md)
 * Chapter 12 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
