@@ -26,7 +26,6 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 
 > #### Let's Talk About Python Assessment
 
-## SQL Orientation
 
 * Chapter 16 - [Introduction to TablePlus](./chapters/AZURE_DATA_STUDIO_INTRO.md)
 * Chapter 17 - [Introduction to SQL](./chapters/SQL_INTRO.md)
