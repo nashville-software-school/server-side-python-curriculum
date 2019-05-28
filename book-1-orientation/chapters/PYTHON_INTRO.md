@@ -4,7 +4,7 @@
 
 Here's your very first Python code module. Go ahead and create a new directory for storing your Python code and create a file named `humansizes.py`.
 
-```
+```sh
 mkdir ~/workspace/python/intro && cd $_
 touch humansizes.py
 code .
@@ -67,8 +67,81 @@ if __name__ == '__main__':
 
 ⑤ The `print()` method is Python's `console.log()`
 
-## The `__name__` of a Module
+## Python Modules
 
-Since everything in Python is an object, this entire module of code is an object when you execute it in the CLI. It automatically gets a `__name__` property, whose value is `__main__` because it was executed independently.
+Importing other modules in Python is very similar to how you did it in Browserify and React, using the `import` statement.
 
-When you learn about importing modules, you will learn how the `__name__` value will change in that situation.
+```py
+import http
+import sys
+import student
+import instructor
+```
+
+But compared to how you've written it before, the syntax looks a little inside-out when importing a specific part of a module. With JavaScript modules, you specified what you want to import and from where.
+
+```js
+// JavaScript importing
+import factory from "./foodFactory"
+```
+
+In Python, it's kinda backwards.
+
+```py
+# Python importing
+from food_factory import factory
+```
+
+Python will look in every directory that is defined in `sys.path` for a file, or executable, that matches the name in your import statement. If you ever want to see those locations, you can just run the python interpreter in the CLI and take a look. Type `python` then hit enter:
+
+```py
+> python
+
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> sys.path
+['', '/Users/student/.pyenv/versions/3.4.3/lib/python34.zip', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/lib-dynload', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/site-packages']
+
+```
+
+## Import Your Module
+
+Python will also look in the immediate directory for any files matching what you want to import. After it's imported, you can call any method in that module. Just precede it with the module name.
+
+```py
+import module
+
+module.function_name(arguments)
+```
+
+Consider the [`humansizes.py`](./assets/humansizes.py) file you created. In the same directory, open the interpreter and import the file as a module.
+
+```py
+> python
+
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import humansizes
+>>> print(humansizes.approximate_size(80808080, True))
+77.1 MiB
+```
+
+## Function Docstrings
+
+If you ever want to see the developer's documentation of a function, you can access the built-in `__doc__` property on the function.
+
+```
+>>> print(humansizes.approximate_size.__doc__)
+
+Convert a file size to human-readable form.
+
+    Keyword arguments:
+      size                     -- file size in bytes
+      a_kilobyte_is_1024_bytes -- if True (default), use multiples of 1024
+                                if False, use multiples of 1000
+
+    Returns: string
+```
+
+Because this is so incredibly helpful, you need to get into the practice of providing a docstring for every method you write.
