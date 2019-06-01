@@ -1,9 +1,5 @@
 # Installations
 
-## TablePlus
-
-[TablePlus](https://tableplus.io/) will let you view, query and manage your SQLite databases during the course. Visit their site and click the "Download for Mac" button.
-
 ## Python via Pyenv
 
 ### XCode Prerequisite
@@ -28,9 +24,7 @@ Now, when you check the version of Python with the command below, it should retu
 python --version
 ```
 
----
-
-#### Troubleshooting
+#### Troubleshooting pyenv
 
 
 If it still returns a different version, you will need to edit your `~/.zshrc` file. Add the following to the bottom of the file.
@@ -45,41 +39,21 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 ```
 
-## Hello, world
+## Python Linter
 
-We're going to do the traditional `Hello, world` program to start off. Put the following code in `~/workspace/python/hello.py`.
-
-```python
-print("Hello!")
-print("Is it me you're looking for?")
-```
-
-In the CLI, execute the following command in the `~/workspace/python` directory.
+Run the following command to install the linter we will all be using during Python development.
 
 ```sh
-python hello.py
+pip install -U pep8
 ```
 
-## Python interpreter
+## Visual Studio Code Extensions
 
-You can use the CLI interpreter to enter and run some code that you just want to test out without having to put it in a file and running it.
+* [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
+* [AREPL](https://marketplace.visualstudio.com/items?itemName=almenon.arepl)
+* [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
 
-```
-╰─$ python
-Python 3.6.0 (default, Jul 14 2015, 19:46:27)
-[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> i_am_awesome = True
->>> if i_am_awesome:
-...   print("bow down to me")
-...
-bow down to me
-```
+## TablePlus
 
-# Optional, Handy Tooling
-
-[iPython](https://ipython.readthedocs.io/en/stable/install/index.html) to get color-highlighted output and some other nifty features to enhance your terminal experience
-
-[Anaconda](https://packagecontrol.io/packages/Anaconda)
-
-[Djaneiro](https://github.com/squ1b3r/Djaneiro)
+[TablePlus](https://tableplus.io/) will let you view, query and manage your SQLite databases during the course. Visit their site and click the "Download for Mac" button.

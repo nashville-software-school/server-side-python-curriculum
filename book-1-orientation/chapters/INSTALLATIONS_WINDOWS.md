@@ -1,9 +1,5 @@
 # Installations
 
-## TablePlus
-
-[TablePlus](https://tableplus.io/windows) will let you view, query and manage your SQLite databases during the course.
-
 ## Python
 
 Windows does not come with Python installed. You need to visit the [Python downloads](https://www.python.org/downloads/) site and grab version 3.7 and install it. It will get installed to the `C:\Python37` directory.
@@ -19,42 +15,13 @@ After it is installed, you must add `C:\Python37` to your system path. Here's ho
 7. Next, click on the `PATH` variable and choose to edit it.
 8. Go to the end of the string, and enter a semi-colon, and the new path entry. `;C:\Python37`
 
+## Visual Studio Code Extensions
 
-## Hello, world
+* [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
+* [AREPL](https://marketplace.visualstudio.com/items?itemName=almenon.arepl)
+* [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
 
-We're going to do the traditional `Hello, world` program to start off. Put the following code in `~/workspace/python/hello.py`.
+## TablePlus
 
-```python
-print("Hello!")
-print("Is it me you're looking for?")
-```
-
-In the CLI, execute the following command in the `python` directory.
-
-```sh
-python hello.py
-```
-
-## Python interpreter
-
-You can use the CLI interpreter to enter and run some code that you just want to test out without having to put it in a file and running it.
-
-```
-╰─$ python
-Python 3.6.0 (default, Jul 14 2015, 19:46:27)
-[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> i_am_awesome = True
->>> if i_am_awesome:
-...   print("bow down to me")
-...
-bow down to me
-```
-
-# Optional, Handy Tooling
-
-[iPython](https://ipython.readthedocs.io/en/stable/install/index.html) to get color-highlighted output and some other nifty features to enhance your terminal experience
-
-[Anaconda](https://packagecontrol.io/packages/Anaconda)
-
-[Djaneiro](https://github.com/squ1b3r/Djaneiro)
+[TablePlus](https://tableplus.io/windows) will let you view, query and manage your SQLite databases during the course.
