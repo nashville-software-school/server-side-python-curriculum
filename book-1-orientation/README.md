@@ -18,11 +18,8 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 * Chapter 11 - [Student Exercises - Part 1](./chapters/STUDENT_EXERCISES_TYPES.md)
 * Chapter 12 - [Exceptions and Try/Catch](./chapters/TRY_CATCH_INTRO.md)
 * Chapter 13 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
-* Chapter 14 - [Student Exercises - Part 2](./chapters/STUDENT_EXERCISES_INHERITANCE.md)
 * Chapter 15 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
-* Chapter 16 - [Student Exercises - Part 3](./chapters/STUDENT_EXERCISES_INHERITANCE.md)
 * Chapter 17 - [Decorators](./chapters/DECORATORS_INTRO.md)
-* Chapter 18 - [Student Exercises - Part 4](./chapters/STUDENT_EXERCISES_DECORATORS.md)
 
 > ## __Group Project__ - Trestlebridge Farms
 
