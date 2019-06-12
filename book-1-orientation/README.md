@@ -15,11 +15,10 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 * Chapter 8 - [Python Functions](./chapters/FUNCTIONS_INTRO.md)
 * Chapter 9 - [Custom Types with Classes](./chapters/CLASSES_INTRO.md)
 * Chapter 10 - [Class Properties](./chapters/CLASS_PROPERTIES.md)
-* Chapter 11 - [Student Exercises - Part 1](./chapters/STUDENT_EXERCISES_TYPES.md)
-* Chapter 12 - [Exceptions and Try/Catch](./chapters/TRY_CATCH_INTRO.md)
-* Chapter 13 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
-* Chapter 15 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
-* Chapter 17 - [Decorators](./chapters/DECORATORS_INTRO.md)
+* Chapter 11 - [Exceptions and Try/Catch](./chapters/TRY_CATCH_INTRO.md)
+* Chapter 12 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
+* Chapter 13 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
+* Chapter 14 - [Decorators](./chapters/DECORATORS_INTRO.md)
 
 > ## __Group Project__ - Trestlebridge Farms
 
