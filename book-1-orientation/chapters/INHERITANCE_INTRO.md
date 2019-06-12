@@ -156,6 +156,6 @@ Now you can run the program again and the Tesla will make a different noise.
 1. Define a different value for each vehicle's properties.
 1. Create a `drive()` method in the **`Vehicle`** class.
 1. Override the `drive()` method in all the other vehicle classes. Include the vehicle's color in the message _(i.e. "The blue Ram drives past. RRrrrrrummbbble!")_.
-1. Create a `turn(self, direction)` mathod, and a `stop(self)` method on **`Vehicle`**. Define a basic implementation of each.
+1. Create a `turn(self, direction)` method, and a `stop(self)` method on **`Vehicle`**. Define a basic implementation of each.
 1. Override all three of those methods on some of the vehicles. For example, the `stop()` method for a plane would be to output the message _"The white Cessna rolls to a stop after rolling a mile down the runway."_
 1. Make your vehicle instances perform all three behaviors.

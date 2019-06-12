@@ -4,42 +4,100 @@
 
 In the first three months at NSS, you learned the JavaScript language. One of the features of the langugage that you used quite a bit _(even if you still don't really get it yet)_ is the concept of functions being **first-class objects**. You can pass functions as parameters to other functions just like strings or numbers.
 
-```js
-// Passing a string as a parameter
-const atkinsFamilyReport = firstName => {
-    console.log(`${firstName} Atkins is here!`)
-}
+Imagine that you want to build an application that tests the ability of a person to read text that is printed normally, but also if the text is printed backwards so that you can measure their reading comprehension skills.
 
-atkinsFamilyReport("Dani")
-atkinsFamilyReport("Howard")
-
-> Dani Atkins is here!
-> Howard Atkins is here!
-```
+First you would define several functions that return random sentences.
 
 ```js
-const present = (firstName) => console.log(`${firstName} Atkins is here!`)
+const letterPress = () => "Adaptogen tote bag drinking vinegar, letterpress pabst locavore migas hella"
 
-const absent = (firstName) => console.log(`${firstName} Atkins is missing. Two demerits.`)
+const taxidermy = () => "Taxidermy health goth locavore, pickled post-ironic pork belly kale chips tofu PBR&B bicycle rights"
 
-// Passing a function as a parameter
-const atkinsFamilyReport = (firstName, reportFunc) => {
-    reportFunc(firstName)
-}
+const mustache = () => "Umami hexagon stumptown enamel pin, mustache echo park readymade celiac"
 
-atkinsFamilyReport("Dani", present)
-atkinsFamilyReport("Howard", absent)
+const lumberSexual = () => "Jean shorts lumbersexual stumptown tumeric everyday carry readymade"
 
-> Dani Atkins is here!
-> Howard Atkins is missing. Two demerits.
+console.log(letterPress())
+console.log(taxidermy())
+console.log(mustache())
+console.log(lumberSexual())
 ```
 
-As you learn the Python language and the Django application framework, you will encounter decorators. Decorators are a specific syntax to do exactly what was done in the example above - send functions to other functions to extend their capabilities.
+You will ocaassionally switch which one of these functions will have the characters reversed. You certainly don't want to manually modify this code each time you want to change which ones are normal and which ones are reversed.
+
+You will create a function to reverse any string.
+
+```js
+const reversal = sentenceFunc => {
+    const originalSentence = sentenceFunc()
+    return originalSentence.split("").reverse().join("")
+}
+```
+
+Then you can change your console output by passing the sentence functions to reversal.
+
+```js
+console.log(reversal(letterPress))
+console.log(taxidermy())
+console.log(reversal(mustache))
+console.log(lumberSexual())
+```
+
+In this scenario, the `reversal()` function is considered a decorator because it consumes the output of the original method and then outputs something different.
+
+## Python Reveral Decorator
+
+As you learn the Python language and the Django application framework, you will encounter decorators. Decorators are a specific syntax to do exactly what was done in the example above - send functions to other functions to extend their capabilities. Here's how the above JavaScript code would be done in Python.
+
+```py
+def reversal(sentence_func):
+    def reversed_sentence(*args, **kwargs):
+        original_sentence = sentence_func(*args, **kwargs)
+        return f"Reversed: {''.join(reversed(original_sentence))}"
+    return reversed_sentence
+
+
+@reversal
+def letterPress():
+    return "Adaptogen tote bag drinking vinegar, letterpress pabst locavore migas hella"
+
+
+def taxidermy():
+    return "Taxidermy health goth locavore, pickled post-ironic pork belly kale chips tofu PBR&B bicycle rights"
+
+
+@reversal
+def mustache():
+    return "Umami hexagon stumptown enamel pin, mustache echo park readymade celiac"
+
+
+def lumberSexual():
+    return "Jean shorts lumbersexual stumptown tumeric everyday carry readymade"
+
+
+print(letterPress())
+print(taxidermy())
+print(mustache())
+print(lumberSexual())
+```
+
+##### Output
+
+```sh
+Reversed: alleh sagim erovacol tsbap sserprettel ,rageniv gniknird gab etot negotpadA
+Taxidermy health goth locavore, pickled post-ironic pork belly kale chips tofu PBR&B bicycle rights
+Reversed: cailec edamydaer krap ohce ehcatsum ,nip lemane nwotpmuts nogaxeh imamU
+Jean shorts lumbersexual stumptown tumeric everyday carry readymade
+```
 
 ## The Basics
 
 1. Read the "[A guide to Python's function decorators](https://www.thecodeship.com/patterns/guide-to-python-function-decorators/)" article and do all of the exercises in it to learn the basic vocabulary and syntax of what a decorator is.
 1. Read the "[Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)" article and do all of the exercises in it to explore decorator in greater depth.
+
+## Family Report with Decorators
+
+
 
 ## Basic Practice - Michael's Mortuary
 
