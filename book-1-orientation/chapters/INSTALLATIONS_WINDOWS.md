@@ -15,6 +15,23 @@ After it is installed, you must add `C:\Python37` to your system path. Here's ho
 7. Next, click on the `PATH` variable and choose to edit it.
 8. Go to the end of the string, and enter a semi-colon, and the new path entry. `;C:\Python37`
 
+## Python Linter
+
+Run the following command to install the linter we will all be using during Python development.
+
+```sh
+pip install -U pep8
+```
+
+## Django
+
+Django is the application framework you will be using for most of your server-side work.
+
+```sh
+pip install -U django
+```
+
+
 ## Visual Studio Code Extensions
 
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)

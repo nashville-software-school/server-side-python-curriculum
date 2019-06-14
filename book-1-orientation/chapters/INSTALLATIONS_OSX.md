@@ -47,6 +47,14 @@ Run the following command to install the linter we will all be using during Pyth
 pip install -U pep8
 ```
 
+## Django
+
+Django is the application framework you will be using for most of your server-side work.
+
+```sh
+pip install -U django
+```
+
 ## Visual Studio Code Extensions
 
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
