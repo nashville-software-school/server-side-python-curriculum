@@ -36,6 +36,7 @@ pip install -U django
 
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
+* [MagicPython](https://marketplace.visualstudio.com/items?itemName=magicstack.MagicPython)
 * [AREPL](https://marketplace.visualstudio.com/items?itemName=almenon.arepl)
 * [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
 
