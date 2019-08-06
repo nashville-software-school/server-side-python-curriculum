@@ -2,7 +2,7 @@
 
 ## Goals
 
-The purpose of this application is to do basic management of farms. We're going to define some different areas of each farm - called facilities - that will contain animals that we will purchase. Certain facilities will only be able to hold certain animals. You need to record when an animal was purchased, when the farm was established, and when a new facility is constructed on a farm.
+The purpose of this application is to do basic management of farms. We're going to define some different areas of each farm - called facilities - that will contain animals that we will purchase. Certain facilities will only be able to hold certain animals. You need to record when an animal was purchased, when the farm was established, who created the farm, and when a new facility is constructed on a farm.
 
 We will be purchasing the following animals.
 
@@ -27,7 +27,7 @@ Time to deconstruct this problem into what you need to build in our application.
 * Animals (id, date_purchased, facility_id)
 * Animal types (id, description)
 
-
+Now take some time to create an ERD of this database structure on [dbdiagram.io](https://dbdiagram.io).
 
 ## Virtual Environment Setup
 
@@ -103,3 +103,13 @@ Django has a namespace `django.contrib.auth.models` that you can use to utilize 
 1. Then define a `user` property that is a `ForeignKey` to the `User` class that you imported from Django.
 
 ![](./images/farm-model.gif)
+
+## Related Type Attribute
+
+When any model has a foreign key to another model, you can specify a `related_name` attribute on that property. For example, the **`Animal`** model has a foreign key to both the **`Facility`** and **`AnimalType`** model. This allows you to use the Django ORM to easily select sets of data.
+
+Change your **`Animal`** class foreign key properties to the following.
+
+```py
+
+```

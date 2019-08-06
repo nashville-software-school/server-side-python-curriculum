@@ -44,22 +44,6 @@ python manage.py migrate
 python manage.py startapp [name of application]
 ```
 
-## Environment Settings
-
-Change your directory back to the main project directory, and use the `pwd` command to get the absolute path to your current working directory. Copy the output. Then create a `.env` file in your workspace directory. Then you can launch Visual Studio Code.
-
-```sh
-cd ..
-touch .env
-code .
-```
-
-Open the `.env` file in Visual Studio Code and put in the following code.
-
-```sh
-PYTHONPATH={paste your path here}
-```
-
 ## Project Settings
 
 ### Generate Settings
@@ -70,10 +54,9 @@ While in Visual Studio Code, press `Cmd+,` or `Ctrl+,` to access the workspace s
 
 Open `.vscode/settings.json` and add the following code.
 
-```json
+```sh
 {
-    "python.pythonPath": "C:\python37",
-    "python.envFile": "${workspaceFolder}/.env"
+    "python.pythonPath": "C:\python37"
 }
 ```
 
@@ -83,8 +66,7 @@ Open `.vscode/settings.json` and add the following code. Replace `yourusername` 
 
 ```json
 {
-    "python.pythonPath": "env/bin/python",
-    "python.envFile": "${workspaceFolder}/.env"
+    "python.pythonPath": "/Users/{you}/path/to/project/env/bin/python"
 }
 ```
 
