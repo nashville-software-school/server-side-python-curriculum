@@ -4,14 +4,11 @@
 If you haven't done this already:
 ```sh
 mkdir -p ~/workspace/python/exercises/music-history && cd $_
-touch queries.sql
 ```
 
 > **Note:** The `.sql` extension is common practice for files storing SQL queries
 
-## Downloading the Database Files
-
-If you haven't already, download the [musichistory.db](./assets/musichistory.db) file, and then copy it to the folder that you created for this exercise. That file **is** the database. It contains all of the tables and data.
+Then download the [musichistory.db](./assets/musichistory.db) file into the directory you just created. That file **is** the database. It contains all of the tables and data.
 
 ## References
 
@@ -22,9 +19,11 @@ If you haven't already, download the [musichistory.db](./assets/musichistory.db)
 
 ## Instructions
 
-1. Open up the database file in the *DB Browser for SQLite* application to see it.
-1. Go ahead and click around a little bit to familarize yourself with the database.
-1. When you're ready to start the exercise, click the tab labeled "Execute SQL", type in your query and run it.
+Run the following command in the terminal to open the database file.
+
+```sh
+tableplus musichistory.db
+```
 
 For each of the following exercises, provide the appropriate query. Yes, even the ones that are expressed in the form of questions. Everything from class and the [Sqlite](http://www.sqlite.org/) documentation for SQL [keywords](https://www.sqlite.org/lang.html) and [functions](https://www.sqlite.org/lang_corefunc.html) is fair game.
 
