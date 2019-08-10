@@ -3,7 +3,7 @@
 ## Setup for Music History Exercise
 If you haven't done this already:
 ```sh
-mkdir -p ~/workspace/python/exercises/music-sql && cd $_
+mkdir -p ~/workspace/python/exercises/music-history && cd $_
 touch queries.sql
 ```
 
