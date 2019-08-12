@@ -149,4 +149,66 @@ After you have made all these changes, run your code to ensure that you still ge
 
 After you are done with the exercises for this chapter, you will be displaying students, instructors, cohorts, and exercises to the terminal. You could surmise that you will then need the `create_student()`, `create_instructor()`, `create_cohort()`, and `create_exercise()` methods on your class to convert the row data into instances of objects.
 
-Since each of those methods will only be used once - each inside the corresponding method to query the data
+Since each of those methods will only be used once - each inside the corresponding method to query the data - then we can write a lambda. It sounds fancy, but it just means "anonymous function".
+
+You got plenty of practice with those in the client side course. Here's some JavaScript code to create an array from another array.
+
+```js
+const childrenNames = children.map(child => child.full_name)
+```
+
+In the code above, the `child => child.full_name` is a lambda, or anonymous function. In Python, there is a keyword of `lambda` to create these.
+
+You are currently assigning the row factory method with a named function.
+
+```py
+conn.row_factory = self.create_student
+```
+
+You can delete the `create_student()` function and define it as a lambda instead.
+
+```py
+conn.row_factory = lambda cursor, row: Student(
+    row[1], row[2], row[3], row[5]
+)
+```
+
+Run your code to make sure it still works.
+
+## Represent Student as a String
+
+Now you can use the `__repr__` dunder method to provide a default string representation of a student.
+
+```py
+class Student():
+
+    def __init__(self, id, first, last, handle, cohort):
+        self.id = id
+        self.first_name = first
+        self.last_name = last
+        self.slack_handle = handle
+        self.cohort = cohort
+
+    def __repr__(self):
+        return f'{self.first_name} {self.last_name} is in {self.cohort}'
+```
+
+Since that is how you were printing out the student information when looping over the database results, you can replace the following code...
+
+```py
+for student in all_students:
+    print(f'{student.first_name} {student.last_name} is in {student.cohort}')
+```
+
+With this straightforward loop...
+
+```py
+for student in all_students:
+    print(student)
+```
+
+Or this concise [list comprehension](https://www.digitalocean.com/community/tutorials/understanding-list-comprehensions-in-python-3)...
+
+```py
+[print(s) for s in all_students]
+```
