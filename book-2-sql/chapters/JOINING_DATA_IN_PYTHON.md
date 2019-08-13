@@ -35,9 +35,9 @@ ExerciseId  Name                Id  FirstName   LastName
 6           "Bag o' Loot"       3   "Juan"      "Rodriguez"
 ```
 
-Notice that Overly Excited is assigned to two students, so there are two rows in the results for Overly Excited. You can't use SQL to generate a single row for Overly Excited with both student names as columns. The data you can back in a one to many query will generate flat data: a row for every relationship.
+Notice that Overly Excited is assigned to two students, so there are two rows in the results for Overly Excited. You can't use SQL to generate a single row for Overly Excited with both student names as columns. The data you get back in a one to many query will generate flat data: a row for every relationship.
 
-The output you want to produce for this data set is...
+The output you want to produce for this data set is nested - not flat.
 
 ```
 Overly Excited
@@ -57,7 +57,7 @@ Bag o' Loot
     * Juan Rodriguez
 ```
 
-If that's the output, then consider which data structure in Python that you need to accomplish it. Perhaps each exercise could be a dictionary. The keys of the dictionary could be the name of the exercise, and the values would be lists of students.
+To turn flat data into grouped data, then consider which data structure in Python that you need to accomplish it. Perhaps each exercise could be a dictionary. The keys of the dictionary could be the name of the exercise, and the values would be lists of students.
 
 ```json
 {
