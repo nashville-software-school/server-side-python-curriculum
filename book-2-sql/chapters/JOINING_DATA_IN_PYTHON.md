@@ -27,12 +27,12 @@ That wil produce results like this.
 ```
 ExerciseId  Name                Id  FirstName   LastName
 ============================================================
-2	        "Overly Excited"	2	"Ryan"	    "Tanay"
-2	        "Overly Excited"	1	"Kate"	    "Williams"
-1	        "ChickenMonkey"	    3	"Juan"	    "Rodriguez"
-5	        "Mary Margaret"	    3	"Juan"	    "Rodriguez"
-7       	"Urban Planner"	    2	"Ryan"	    "Tanay"
-6	        "Bag o' Loot"	    3	"Juan"	    "Rodriguez"
+2           "Overly Excited"    2   "Ryan"      "Tanay"
+2           "Overly Excited"    1   "Kate"      "Williams"
+1           "ChickenMonkey"     3   "Juan"      "Rodriguez"
+5           "Mary Margaret"     3   "Juan"      "Rodriguez"
+7           "Urban Planner"     2   "Ryan"      "Tanay"
+6           "Bag o' Loot"       3   "Juan"      "Rodriguez"
 ```
 
 Notice that Overly Excited is assigned to two students, so there are two rows in the results for Overly Excited. You can't use SQL to generate a single row for Overly Excited with both student names as columns. The data you can back in a one to many query will generate flat data: a row for every relationship.
@@ -115,8 +115,45 @@ for row in dataset:
 Then you start using the dictionary. For each row, you are going to determine if the dictionary has the current exercise's name as a key. If it doesn't have the key yet, you will create it and put the student's name in a list. If it already has the key, you will append to the list of students.
 
 ```py
-if exercise_name not in exercises:
-    exercises[exercise_name] = [student_name]
-else:
-    exercises[exercise_name].append(student_name)
+for row in dataset:
+    exercise_id = row[0]
+    exercise_name = row[1]
+    student_id = row[2]
+    student_name = f'{row[3]} {row[4]}'
+
+    if exercise_name not in exercises:
+        exercises[exercise_name] = [student_name]
+    else:
+        exercises[exercise_name].append(student_name)
+```
+
+If you `print(exercises)` after that loop is complete, you will see a data structure like the example one above.
+
+> **_Note:_** It won't be this pretty. It will all be squashed together in the terminal.
+
+```py
+{
+    'Overly Excited': ['Ryan Tanay', 'Kate Williams'],
+    'ChickenMonkey': ['Juan Rodriguez'],
+    'Mary Margaret': ['Juan Rodriguez'],
+    'Urban Planner': ['Ryan Tanay'],
+    "Bag o' Loot": ['Juan Rodriguez', 'Jessawynne Parker'],
+    'Zoolandia': ['Rainu Ittycheriah', 'Meg Ducharme', 'Jessawynne Parker'],
+    'Kandy Korner': ['Hannah Hall'],
+    'Stock Report': ['Steven Holmes', 'Tanner Terry'],
+    'Kneel Diamonds': ['Steven Holmes', 'Hannah Hall'],
+    'Probes': ['Tanner Terry'],
+    'Boy Bands & Vegetables': ['Jessawynne Parker']
+}
+```
+
+## Iterating your Exercise Dictionary
+
+Once the dictionary is built, then you can iterate all of the items in it. When you access the `items()` in a dictionary, you have to define a variable to hold the key, and one to hold the value in the `for` loop.
+
+```py
+for exercise_name, students in exercises.items():
+    print(exercise_name)
+    for student in students:
+        print(f'\t* {student}')
 ```
