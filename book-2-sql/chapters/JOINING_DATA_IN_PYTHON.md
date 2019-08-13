@@ -2,7 +2,7 @@
 
 Up to this point, you have seen a basic join in your SQL code and how to deal with it in Python, but now it is time to look at a more complex relationship.
 
-Student and exercises.
+Students and exercises.
 
 Working with student and cohort is far simpler because a student can only be assigned to one cohort. However, a student can be working on multiple exercises at the same time, so the relationship is more complex. Thus, the Python code required to represent the data is complex.
 
@@ -157,3 +157,5 @@ for exercise_name, students in exercises.items():
     for student in students:
         print(f'\t* {student}')
 ```
+
+![showing all exercises with related students](./images/students-per-exercise.gif)
