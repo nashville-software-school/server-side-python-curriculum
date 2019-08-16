@@ -44,7 +44,7 @@ class Swimming:
 ```
 
 
-Now you can define a class an implement the interface for a walking animal. You can start with a Penguin.
+Now you can define a class and implement the interface for a walking animal. You can start with a Penguin.
 
 > animals.py
 
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     bob = Penguin("Bob")
 
     # Create a habitat
-    SeaWorld = Habitat()
+    SeaWorld = Habitat("SeaWorld")
     SeaWorld.add_animal(bob)
 
     print(SeaWorld.animals)
