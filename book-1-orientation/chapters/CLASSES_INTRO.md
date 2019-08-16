@@ -58,8 +58,8 @@ For any class, when you create an instance of it, it executes an internal `__ini
 Put this code in your module.
 
 ```py
-for attr, value in mockingbird.__dict__.items():
-    print(f'{attr}:\n{value}\n')
+for prop, value in mockingbird.__dict__.items():
+    print(f'{prop}:\n{value}\n')
 ```
 
 You will see the following output:
@@ -94,8 +94,8 @@ mockingbird.author = "Harper Lee"
 mockingbird.year_published = 1960
 mockingbird.publisher = "J. B. Lippincott & Co."
 
-for attr, value in mockingbird.__dict__.items():
-    print(f'{attr}:\n{value}\n')
+for prop, value in mockingbird.__dict__.items():
+    print(f'{prop}:\n{value}\n')
 ```
 
 Examine the properties again by moving the `for` loop you used earlier to after you have define the properties. You will see the following output.
@@ -149,9 +149,6 @@ True
 You start reading To Kill a Mockingbird at page 34
 You start reading To Kill a Mockingbird at page 89
 ```
-
-
-
 
 ### Practice: Pizza Joint
 
@@ -208,9 +205,9 @@ rolling_hills.business_name = "Rolling Hills Farm"
 rolling_hills.total_acreage = 325
 ```
 
-## Practice: Urban Planner
+### Practice: Urban Planner
 
-### Setup
+#### Setup
 
 ```sh
 mkdir -p ~/workspace/python/exercises/planner && cd $_
@@ -219,7 +216,7 @@ touch building.py
 
 In this exercise, you are going to define your own **`Building`** type and create several instances of it to design your own virtual city. Create a class named **`Building`** in the `building.py` file and define the following fields, properties, and methods.
 
-### Properties
+#### Properties
 
 * `designer` - It will hold your name.
 * `date_constructed` - This will hold the exact time the building was created.
@@ -227,14 +224,14 @@ In this exercise, you are going to define your own **`Building`** type and creat
 * `address`
 * `stories`
 
-### Methods
+#### Methods
 
 * Define a `construct()` method. The method's logic should set the `date_constructed` field's value to `datetime.datetime.now()`. You will need to have `import datetime` at the top of your file.
 
 * Define a `purchase()` method. The method should accept a single string argument of the name of the person purchasing a building. The method should take that string and assign it to the `owner` property.
 
 
-### Constructor
+#### Constructor
 
 Define your `__init__` method to accept two arguments
 
@@ -247,36 +244,99 @@ Once defined this way, you can send those values as  parameters when you create 
  eight_hundred_eighth = Building("800 8th Street", 12)
  ```
 
+#### Creating Your Buildings
+
+1. Create 5 building instances
+1. Have each one get purchased by a real estate magnate
+1. After purchased, construct each one
+1. Once all building are purchased and constructed, print the address, owner, stories, and date constructed to the terminal for each one.
+
+##### Example
+
+```sh
+800 8th Street was purchased by Bob Builder on 03/14/2018 and has 12 stories.
+```
+
+## Type Relationships
+
+You can define two types in your system that represent two real-world entities that have a relationship with each other. Consider banks and their customers. What is their relationship?
+
+Customers usually make decisions to have an account at a single bank at a time. A bank can have many customers. This is a one-to-many relationship. In Python, you can establish this relationship by defining a list on the bank object that will contains instances of customers. Consider the following code.
+
+```py
+class Bank:
+
+    def __init__(self, name):
+        self.business_name = name
+        self.customers = list()
+```
+
+When you create a bank, you specify the name of it on construction, and it get initialized with an empty list of customers.
+
+```py
+first_tennessee = Bank("First Tennessee")
+```
+
+Now define a customer.
+
+```py
+class Customer:
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+```
+
+Now you can create a few people who are shopping for a bank.
+
+```py
+mo = Customer("Mo", "Silvera")
+warner = Customer("Warner", "Carpenter")
+ken = Customer("Ken", "Perkerwicz")
+```
+
+All three of these people choose First Tennessee as their bank, so add the object references to the `customers` list on the bank.
+
+```py
+first_tennessee.customers.extend(mo)
+first_tennessee.customers.extend(warner)
+first_tennessee.customers.extend(ken)
+```
+
+Now the object have a relationship with each other. If you want to view all the customers of a bank, just iterate the `customers` list.
+
+```py
+for customer in first_tennessee.customers:
+    print(f'{customer.first_name} {customer.last_name} is a customer of {first_tennessee.business_name}')
+```
+
 ### Practice: Companies and Employees
 
 #### Setup
 
 ```sh
 mkdir -p ~/workspace/python/exercises/classes && cd $_
-touch employees.py
+touch employees_departments.py
 ```
 
 #### Instructions
 
-1. Create an Employee class that contains information about employees of a company and define methods to get/set employee name, job title, and start date.
-2. Copy this `Company` class into your module.
+1. Create an **`Employee`** type that contains information about employees of a company. Each employee must have a name, job title, and employment start date.
+1. Create a **`Company`** type that employees can work for. A company should have a business name, address, and industry type.
+1. Create two companies, and 5 people who want to work for them.
+1. Assign 2 people to be employees of the first company.
+1. Assign 3 people to be employees of the first company.
+1. Output a report to the terminal the displays a business name, and its employees.
 
-    ```
-    class Company(object):
-        """This represents a company in which people work"""
+For example:
 
-        def __init__(self, company_name, date_founded):
-            self.company_name = company_name
-            self.date_founded = date_founded
+```
+Acme Explosives is in the chemical industry and has the following employees
+   * Michael Chang
+   * Martina Navritilova
 
-        def get_company_name(self):
-            """Returns the name of the company"""
-
-            return self.company_name
-
-        # Add the remaining methods to fill the requirements below
-    ```
-
-3. Consider the concept of [aggregation](../FND_11_INHERIT_COMPOSE_AGGREGATE.md#aggregation), and modify the `Company` class so that you assign employees to a company.
-4. Create a company, and three employees, and then assign the employees to the company.
-
+Jetways is in the transportation industry and has the following employees
+   * Serena Williams
+   * Roger Federer
+   * Pete Sampras
+```

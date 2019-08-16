@@ -66,7 +66,7 @@ Define a Python class named `Student`. This class will have 5 properties.
 1. Last name (string)
 1. Age (integer)
 1. Cohort number (integer)
-1. Full name (read only)
+1. Full name (read-only string)
 
 * Define getters for all properties.
 * Define a setter for all but the read only property.
