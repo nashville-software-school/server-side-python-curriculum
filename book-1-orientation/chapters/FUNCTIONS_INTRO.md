@@ -57,7 +57,7 @@ Write a program that prints the numbers from 1 to 100. You can use Python's [ran
 * For the multiples of seven (7, 14, 21, etc.) print "Monkey".
 * For numbers which are multiples of both five and seven print "ChickenMonkey".
 
-To determine if a number can be evenly divided by 5 or 7, use the Python [remainder](https://docs.python.org/3.7/reference/expressions.html#binary-arithmetic-operations) operator.
+To determine if a number can be evenly divided by 5 or 7, use the Python [modulo](https://docs.python.org/3.7/reference/expressions.html#binary-arithmetic-operations) operator.
 
 ## Coins to Cash
 
@@ -67,7 +67,7 @@ touch coinsToCash.py
 code .
 ```
 
-Define a dictionary and store it in a variable named `piggyBank`. The dictionary should have the following keys defined.
+Create a function called `calc_dollars`. In the function body, define a dictionary and store it in a variable named `piggyBank`. The dictionary should have the following keys defined.
 
 * quarters
 * nickels
@@ -82,13 +82,11 @@ piggyBank = {
     "nickels": 9,
     "dimes": 32
 }
-
-dollarAmount = 0
 ```
 
-Once you have given yourself a large stash of coins in your piggybank, look at each key and perform the appropriate math on the integer value to determine how much money you have in dollars. Store that value in a variable named `dollarAmount`.
+Once you have given yourself a large stash of coins in your piggybank, look at each key and perform the appropriate math on the integer value to determine how much money you have in dollars. Store that value in a variable named `dollarAmount` and print it.
 
-When done, print the final dollar amount. Given the coins shown above, the output would be `7.07`
+Given the coins shown above, the output would be `7.07` when you call calc_dollars()
 
 ## Cash to Coins
 
