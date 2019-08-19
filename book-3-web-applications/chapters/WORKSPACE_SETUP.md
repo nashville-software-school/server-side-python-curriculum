@@ -11,8 +11,8 @@ cd ~/workspace/python/[directory name]
 ### OSX
 
 ```sh
-python -m venv env
-source ./env/bin/activate
+python -m venv myprojectenv
+source ./myprojectenv/bin/activate
 pip install django
 pip freeze > requirements.txt
 ```
@@ -22,8 +22,8 @@ pip freeze > requirements.txt
 Determine where you want to create your environment directory. Use that path below. **Do not use** `c:\path\to\environment` because that path doesn't exist. Preferably make it inside your project directory. For example, `c:\Users\[me]\workspace\python\[project directory]`.
 
 ```sh
-c:\Python37\python -m venv ~/workspace/python/[directory name]/env
-~/workspace/python/[directory name]/env/Scripts/activate.bat
+c:\Python37\python -m venv ~/workspace/python/[directory name]/myprojectenv
+~/workspace/python/[directory name]/myprojectenv/Scripts/activate.bat
 pip install django
 pip freeze > requirements.txt
 ```
@@ -66,7 +66,7 @@ Open `.vscode/settings.json` and add the following code. Replace `yourusername` 
 
 ```json
 {
-    "python.pythonPath": "/Users/{you}/path/to/project/env/bin/python"
+    "python.pythonPath": "/Users/{you}/path/to/project/myprojectenv/bin/python"
 }
 ```
 
