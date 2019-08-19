@@ -8,9 +8,17 @@ The purpose of this application is to allow librarians to manage the books in th
 
 Time to deconstruct this problem into what you need to build in our application. First, you need to define the tables and relationships you will need in your database.
 
-* Libraries
-* Books
-* Librarians _(the users)_
+#### Resources
+
+1. Libraries
+1. Books
+1. Librarians _(the users)_
+
+#### Relationships
+
+* Books are assigned to a library
+* Track which librarian adds a book
+* Librarians are assigned to a library
 
 Now take some time to create an ERD of this database structure on [dbdiagram.io](https://dbdiagram.io).
 
@@ -92,6 +100,8 @@ from .librarian import Librarian
 ' >> __init__.py
 ```
 
+> **Tip:** The `__init__.py` file turns the models directory into a Python package instead of just a directory containing files.
+
 Now that all of the files are created, it's time to define all of the models. Each model must define a property for each column you want in the corresponding database table that it will create.
 
 ### Library Model
@@ -124,33 +134,111 @@ Now you can define the models for a patron, and a library.
 
 Now that you have a **`Library`** model and a **`Book`** model, it's time to define the relationship between them. If two models are related, you open the model that represents the table with the foreign key and add a `ForeignKey` field. Since the book table has a foreign key to the library table, then open up your `book.py` module and add the following foreign key to it.
 
+In order to reference another model, you need to import it. Put the following statement at the top of the file.
+
+```py
+from .library import Library
+```
+
+Then establish the relationship in the class with the following property.
+
 ```py
 location = models.ForeignKey(Library, on_delete=models.CASCADE)
 ```
 
 Now each book will have a `location` property on it, and it stores the primary key of one of the libraries.
 
-## Assigning Data to Users
+You also want to track which librarian added
 
-Django has a namespace `django.contrib.auth.models` that you can use to utilize its built-in user authentication and authorization system. In your application, librarians will register new accounts and be able to manage which library they are assigned to, add/remove books, and assign books to libraries.
+## Librarian Model
 
-Each user should only be able to access data that they created, and not other people's data. Since each user will be creating a farm, and then assigning animals and facilities to it, we need to assign farms to users.
+Since the librarian is the main user of the system, you are going to leverage the built-in user management packages that Django provides out of the box.
 
-1. Open `farm.py`.
-1. Import models like all the other classes.
-1. Then include `from django.contrib.auth.models import User` as the next import.
-1. Use the Model code generator to create the `Farm` class.
-1. Define a `name` property of type `CharField` and a `date_create` property of type `DateField`.
-1. Then define a `user` property that is a `ForeignKey` to the `User` class that you imported from Django.
+Open `librarian.py` and place the following code in it. Your instructor will walk you through this code and explain the concepts in it.
 
-![](./images/farm-model.gif)
-
-## Related Type Attribute
-
-When any model has a foreign key to another model, you can specify a `related_name` attribute on that property. For example, the **`Animal`** model has a foreign key to both the **`Facility`** and **`AnimalType`** model. This allows you to use the Django ORM to easily select sets of data.
-
-Change your **`Animal`** class foreign key properties to the following.
+> **Important:** Never define your own User in a Django app. Seriously. Never. Always extend it. In this application, we are creating a seperate model and making a one-to-one relationship between it and the built-in User.
 
 ```py
+from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from .library import Library
 
+
+class Librarian(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    location = models.ForeignKey(
+        Library, related_name="librarians", on_delete=models.CASCADE)
+
+
+# These receiver hooks allow you to continue to
+# work with the `User` class in your Python code.
+
+
+# Every time a `User` is created, a matching `Librarian`
+# object will be created and attached as a one-to-one
+# property
+@receiver(post_save, sender=User)
+def create_librarian(sender, instance, created, **kwargs):
+    if created:
+        Librarian.objects.create(user=instance)
+
+# Every time a `User` is saved, its matching `Librarian`
+# object will be saved.
+@receiver(post_save, sender=User)
+def save_librarian(sender, instance, **kwargs):
+    instance.librarian.save()
 ```
+
+## Tracking the Librarian
+
+Now that we have a librarian model, remember that the book model also has a foreign key to the librarian since you want to track which librarian adds each book to the inventory. First import the model in `book.py`.
+
+```py
+from .librarian import Librarian
+```
+
+Then establish the relationship
+
+```py
+librarian = models.ForeignKey(Librarian, on_delete=models.CASCADE)
+```
+
+
+## New Migration for Your Models
+
+In the `library-management/libraryproject/libraryproject` directory, open the `urls.py` file and add the following import statement. This is needed so that Django knows abotu the location of your models.
+
+```py
+from libraryapp.models import *
+```
+
+Now it's time to generate instructions for how to update the database and create tables/relationships for libraries, librarians and books. Right now, those tables don't exist.
+
+Run the following command from `library-management/libraryproject`.
+
+```sh
+python manage.py makemigration
+```
+
+You should see the following output. If you don't, see an instructor.
+
+```sh
+Migrations for 'libraryapp':
+  libraryapp/migrations/0001_initial.py
+    - Create model Library
+    - Create model Librarian
+    - Create model Book
+```
+
+That simply creates the instructions for how your database will change. You can look at the instructions by opening the `libraryproject/libraryapp/migrations/0001_initial.py` file. To apply the instructions, and officially update your database, you have to execute the migration with the following command.
+
+```sh
+python manage.py migrate
+```
+
+Now if you go back to Tableplus, and reload the workspace, you will see three new tables in your database.
+
+![book, library, and librarian tables](./images/book-library-librarian-tables.png)
+
