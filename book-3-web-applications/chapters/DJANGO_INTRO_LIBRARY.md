@@ -167,7 +167,10 @@ from .library import Library
 class Librarian(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     location = models.ForeignKey(
-        Library, related_name="librarians", on_delete=models.CASCADE)
+        Library, related_name="librarians",
+        null=True, # Makes column nullable in DB
+        blank=True, # Allows blank value on objects
+        on_delete=models.CASCADE)
 
 
 # These receiver hooks allow you to continue to
