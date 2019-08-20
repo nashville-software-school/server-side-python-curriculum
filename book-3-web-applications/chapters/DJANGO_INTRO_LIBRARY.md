@@ -47,16 +47,6 @@ When you tell Django to create a project, it automatically generates an administ
 
 Right now, you should see `library-management/libraryproject/libraryproject` directory. That nested `libraryproject` directory is the administrative application.
 
-## Create Super User
-
-Be in the `library-management/libraryproject` directory, and run the following command. Enter in whatever credentials you want to use for your super user account.
-
-```sh
-python manage.py createsuperuser
-```
-
-This account will allow you to use the web-based administration site that Django provides. You'll learn more about this later.
-
 ## Create Nashville Library Application
 
 Your application's purpose is to manage the libraries, librarians and books, so you will create a Django application with an appropriate name. Make the name of the app one word and all lower case. Do not use spaces. Do not use dashes. Do not use underscores.
@@ -243,3 +233,12 @@ Now if you go back to Tableplus, and reload the workspace, you will see three ne
 
 ![book, library, and librarian tables](./images/book-library-librarian-tables.png)
 
+## Create Super User
+
+Be in the `library-management/libraryproject` directory, and run the following command. Enter in whatever credentials you want to use for your super user account.
+
+```sh
+python manage.py createsuperuser
+```
+
+This account will allow you to use the web-based administration site that Django provides. You'll learn more about this later.
