@@ -120,15 +120,13 @@ Then create the properties for the class. There are also code generators for tho
 
 ![property generator example](./images/property-generator.gif)
 
-Now you can define the models for a patron, and a library.
-
 ### Book Model
 
 > **Lightning Exercise:** It's your job to create a Book model in the `book.py` module. A book should have the following properties.
->    * Title
->    * ISBN number
->    * Author
->    * Year published
+>    * Title (CharField)
+>    * ISBN number (CharField)
+>    * Author (CharField)
+>    * Year published (IntegerField)
 
 ## Creating Relationships Between Models
 
