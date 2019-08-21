@@ -1,4 +1,4 @@
-# Added Authentication to your Django Application
+# Adding Authentication to your Django Application
 
 ## Setting up the Routes
 
@@ -66,3 +66,5 @@ def list_books(request):
 Make sure you visit http://localhost:8000/accounts/logout to ensure that you are unauthenticated. Then go to the book list, and you will be immediately redirected to the login view.
 
 ![animation of visiting the book list and being redirected to login view](./images/login-required-implementation.gif)
+
+> **Lightning Exercise:** Add the decorator to the appropriate modules so that the user has to be authenticated to view libraries, and librarians.
