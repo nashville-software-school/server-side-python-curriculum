@@ -3,5 +3,6 @@
 * Chapter 1 - [Setting up Visual Studio Code to Work with Django](./chapters/WORKSPACE_SETUP.md)
 * Chapter 2 - [Django Intro - Project and Database Setup](./chapters/DJANGO_INTRO_LIBRARY.md)
 * Chapter 3 - [Django Intro - Views and Templates](./chapters/DJANGO_VIEWS.md)
-* Chapter 4 - [Student Exercises 4 - Django Models](./chapters/STUDENT_EXERCISES_MODELS.md)
-* Chapter 5 - [Student Exercises 5 - Django Views](./chapters/STUDENT_EXERCISES_VIEWS.md)
+* Chapter 4 - [Django Intro - Authentication](./chapters/DJANGO_AUTHENTICATION.md)
+* Chapter 5 - [Student Exercises 4 - Django Models](./chapters/STUDENT_EXERCISES_MODELS.md)
+* Chapter 6 - [Student Exercises 5 - Django Views](./chapters/STUDENT_EXERCISES_VIEWS.md)

@@ -224,16 +224,17 @@ VALUES
 
 > **Lightning Exercise:** Create two more users with the admin site, and then use SQL to create a book that each librarian added to the inventory.
 
-## Librarian View
+## Library View
 
-Now it's your turn to create a view, and a corresponding template to list librarians.
+Now it's your turn to create a view, and a corresponding template to list libraries.
 
-1. Create `libraryapp/views/librarians/list.py`
-1. Create `libraryapp/templates/librarians/list.html`
+1. Create `libraryapp/views/libraries/list.py`
+1. Create `libraryapp/templates/libraries/list.html`
+1. Define the URL that you want to expose to list libraries in `libraryapp/urls.py`
 
 ## Advanced Creation of Simple Model Instances
 
-> **Important:** The following code requires a solid understanding of the concept of higher order functions. If the code you have written so far makes sense to you, and the code below does not after reading it and reflecting upon it, then it is in your best interest to move on to the next concept.
+> **Warning:** The following code requires a solid understanding of the concept of higher order functions. If the code you have written so far makes sense to you, and the code below does not after reading it and reflecting upon it, then it is in your best interest to move on to the next concept.
 
 Create a `libraryapp/models/modelfactory.py` file and place the following code in it.
 
@@ -268,7 +269,8 @@ Import the factory function into the book list module, and invoke the function w
 ```py
 import sqlite3
 from django.shortcuts import render
-from libraryapp.models import Book, model_factory
+from libraryapp.models import Book
+from libraryapp.models import model_factory
 from ..connection import Connection
 
 
