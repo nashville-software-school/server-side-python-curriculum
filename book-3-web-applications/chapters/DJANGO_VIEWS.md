@@ -1,5 +1,26 @@
 # Views and Templates to Display Data
 
+## Creating Sample Data
+
+Before you start creating views so that your can render HTML in the browser, you need some data first. Open up your database and execute the following SQL.
+
+```sql
+insert into libraryapp_library
+(title, address)
+values
+('Bellview Library', '500 Main Street');
+
+insert into libraryapp_book
+(title, isbn, year_published, location_id, author, librarian_id)
+values
+('Lamb', '59359409490', 2004, 1, 'Christopher Moore', 1);
+
+insert into libraryapp_book
+(title, isbn, year_published, location_id, author, librarian_id)
+values
+('Taiko', '04275747474873', 2001, 1, 'Eiji Yoshikawa', 1);
+```
+
 ## Django Views
 
 The main responsiblity of a Django view is to respond to a HTTP request on a certain URL. The view will hold all of the logic required to get the appropriate data from the database, and then attach that data to a template for representing it in HTML.
@@ -76,9 +97,11 @@ from .views import *
 
 app_name = "libraryapp"
 urlpatterns = [
-    url(r'^books$', list_books, name='list_products'),
+    url(r'^books$', list_books, name='list_books'),
 ]
 ```
+
+Then in the `libraryproject/urls.py` file, include the URL mappings from your `libraryapp` file.
 
 ```py
 from django.contrib import admin
@@ -102,11 +125,10 @@ urlpatterns = [
 
 > **Important:** The following code requires a solid understanding of Python list comprehensions, and the concept of higher order functions. If the code you have written so far makes sense to you, and the code below does not after reading it and reflecting upon it, then it is in your best interest to move on to the next concept.
 
+Create a `libraryapp/models/modelfactory.py` file and place the following code in it.
+
 ```py
 import sqlite3
-from django.shortcuts import render
-from libraryapp.models import Book
-from ..connection import Connection
 
 # Higher order function to create instances of models
 # when performing single table queries
@@ -118,6 +140,25 @@ def model_factory(model_type):
             setattr(instance, col, smart_row[col])
         return instance
     return create
+```
+
+Add the method to the models package in `__init__.py`.
+
+```py
+from .library import Library
+from .book import Book
+from .librarian import Librarian
+from .modelfactory import model_factory
+```
+
+Import the factory function into the book list module, and invoke the function with the Book model as an argument. Then when you invoke `fetchall()`, then end result will be a list of **`Book`** instances.
+
+```py
+import sqlite3
+from django.shortcuts import render
+from libraryapp.models import Book, model_factory
+from ..connection import Connection
+
 
 def list_books(request):
     with sqlite3.connect(Connection.db_path) as conn:
@@ -136,7 +177,7 @@ def list_books(request):
         from libraryapp_book b
         """)
 
-        all_books = [book for book in db_cursor.fetchall()]
+        all_books = db_cursor.fetchall()
 
     template_name = 'books/list.html'
     return render(request, template_name, {'all_books': all_books})
