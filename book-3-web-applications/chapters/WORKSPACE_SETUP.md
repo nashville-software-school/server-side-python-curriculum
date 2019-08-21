@@ -75,3 +75,9 @@ Open `.vscode/settings.json` and add the following code. Replace `yourusername` 
 Use `Cmd+Shift+p` on OSX and `Ctrl+Shift+p` on Windows to open the command pallette. Type in `select interpreter` and choose that command. In the list of options it provides, choose the one that points to your local `env` directory.
 
 ![select python interpreter](./images/select-interpreter.gif)
+
+## Create Django Debug Profile
+
+To debug you Django projects, set up a Django profile in the Debug panel.
+
+![selecting the python and django debug profile](./images/django-debug-setup.gif)
