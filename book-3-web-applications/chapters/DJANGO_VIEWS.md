@@ -224,6 +224,69 @@ VALUES
 
 > **Lightning Exercise:** Create two more users with the admin site, and then use SQL to create a book that each librarian added to the inventory.
 
+## Listing Librarians (i.e. Users)
+
+Since the `libraryapp_librarian` table is one you created that extends the `auth_user`, when you build the `views/librarians/list.py` view, your SQL needs to join in the `auth_user` table.
+
+```py
+import sqlite3
+from django.shortcuts import render
+from libraryapp.models import Librarian
+from libraryapp.models import model_factory
+from ..connection import Connection
+
+
+def list_librarians(request):
+    with sqlite3.connect(Connection.db_path) as conn:
+        conn.row_factory = model_factory(Librarian)
+        db_cursor = conn.cursor()
+
+        db_cursor.execute("""
+        select
+            l.id,
+            l.location_id,
+            l.user_id,
+            u.first_name,
+            u.last_name,
+            u.email
+        from libraryapp_librarian l
+        join auth_user u on l.user_id = u.id
+        """)
+
+        all_librarians = db_cursor.fetchall()
+
+    template_name = 'librarians/list.html'
+    return render(request, template_name, {'all_librarians': all_librarians})
+```
+
+Then your `libraryapp/templates/librarians/list.html` template will iterate the `all_librarians` key on the context dictionary.
+
+```html
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Library</title>
+  </head>
+  <body>
+    <h1>Librarians</h1>
+
+    <ol>
+    {% for librarian in all_librarians %}
+        <li>{{ librarian.first_name }} {{ librarian.last_name }}</li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>
+```
+
+Also make sure you add your URL pattern.
+
+```py
+url(r'^librarians$', list_librarians, name='list_librarians'),
+```
+
 ## Library View
 
 Now it's your turn to create a view, and a corresponding template to list libraries.
