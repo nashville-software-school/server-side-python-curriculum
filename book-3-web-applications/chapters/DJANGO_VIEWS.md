@@ -224,6 +224,13 @@ VALUES
 
 > **Lightning Exercise:** Create two more users with the admin site, and then use SQL to create a book that each librarian added to the inventory.
 
+## Librarian View
+
+Now it's your turn to create a view, and a corresponding template to list librarians.
+
+1. Create `libraryapp/views/librarians/list.py`
+1. Create `libraryapp/templates/librarians/list.html`
+
 ## Advanced Creation of Simple Model Instances
 
 > **Important:** The following code requires a solid understanding of the concept of higher order functions. If the code you have written so far makes sense to you, and the code below does not after reading it and reflecting upon it, then it is in your best interest to move on to the next concept.

@@ -2,17 +2,30 @@
 
 ## Create Root Project Directory
 
+When you use the `django-admin` command to start a project, it will automatically create a sub-directory with the name you specify. Therefore, be in the directory where you want the new sub-directory to be created.
+
 ```sh
-cd ~/workspace/python/[directory name]
+cd ~/workspace/python/
+```
+
+## Project Creation
+
+Create the main container project, and create your database with all of the tables needed for Django to work.
+
+```sh
+django-admin startproject myawesomeproject
+cd myawesomeproject
 ```
 
 ## Create Virtual Environment
 
 ### OSX
 
+You can name your environment directory whatever you like. Just make sure it is relevant to your project's name.
+
 ```sh
-python -m venv myprojectenv
-source ./myprojectenv/bin/activate
+python -m venv myawesomeprojectenv
+source ./myawesomeprojectenv/bin/activate
 pip install django
 pip freeze > requirements.txt
 ```
@@ -22,26 +35,24 @@ pip freeze > requirements.txt
 Determine where you want to create your environment directory. Use that path below. **Do not use** `c:\path\to\environment` because that path doesn't exist. Preferably make it inside your project directory. For example, `c:\Users\[me]\workspace\python\[project directory]`.
 
 ```sh
-c:\Python37\python -m venv ~/workspace/python/[directory name]/myprojectenv
-~/workspace/python/[directory name]/myprojectenv/Scripts/activate.bat
+c:\Python37\python -m venv ~/workspace/python/myawesomeproject/myawesomeprojectenv
+~/workspace/python/myawesomeproject/myawesomeprojectenv/Scripts/activate.bat
 pip install django
 pip freeze > requirements.txt
-```
-
-## Project Creation
-
-Create the main container project, and create your database with all of the tables needed for Django to work.
-
-```sh
-django-admin startproject [name of project]
-cd [nameofproject]
-python manage.py migrate
 ```
 
 ## Application Creation
 
 ```sh
 python manage.py startapp [name of application]
+```
+
+## Run Default Django Migration
+
+Running this command from your project directory will create the database and the Django user management tables.
+
+```sh
+python manage.py migrate
 ```
 
 ## Project Settings
@@ -72,7 +83,7 @@ Open `.vscode/settings.json` and add the following code. Replace `yourusername` 
 
 ## Selecting Interpreter
 
-Use `Cmd+Shift+p` on OSX and `Ctrl+Shift+p` on Windows to open the command pallette. Type in `select interpreter` and choose that command. In the list of options it provides, choose the one that points to your local `env` directory.
+Use `Cmd+Shift+p` on OSX and `Ctrl+Shift+p` on Windows to open the command pallette. Type in `select interpreter` and choose that command. In the list of options it provides, choose the one that points to your environment directory. It's usually the last option in the list.
 
 ![select python interpreter](./images/select-interpreter.gif)
 
