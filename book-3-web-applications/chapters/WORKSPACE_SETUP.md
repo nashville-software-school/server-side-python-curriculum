@@ -80,4 +80,10 @@ Use `Cmd+Shift+p` on OSX and `Ctrl+Shift+p` on Windows to open the command palle
 
 To debug you Django projects, set up a Django profile in the Debug panel.
 
+1. Open the Debug panel
+1. If the gear icon at the top of the panel has a red dot on it, then you have no profiles set up yet, so click on the gear.
+1. Select Python from the first set of options
+1. Select Django from the second set of options
+1. Then type in the path to the `manage.py` file relative from where you started Visual Studio Code.
+
 ![selecting the python and django debug profile](./images/django-debug-setup.gif)
