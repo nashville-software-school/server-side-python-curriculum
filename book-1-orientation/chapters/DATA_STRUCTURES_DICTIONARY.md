@@ -38,7 +38,7 @@ age: 5
 
 ```sh
 mkdir -p ~/workspace/python/dictionaries && cd $_
-touch stocks.py
+touch dictionaryOfWords.py
 ```
 
 ## References
@@ -49,11 +49,11 @@ touch stocks.py
 
 ## Practice: Dictionary of Words
 
-You are going to buid a Python Dictionary to represent an actual dictionary. Each key/value pair within the Dictionary will contain a single word as the key, and a definition as the value. Below is some starter code. You need to add a few more words and definitions to the dictionary.
+You are going to build a Python Dictionary to represent an actual dictionary. Each key/value pair within the Dictionary will contain a single word as the key, and a definition as the value. Below is some starter code. You need to add a few more words and definitions to the dictionary.
 
 After you have added them, use square bracket notation to output the definition of two of the words to the console.
 
-Lastly, use the `foreach` loop to iterate over the KeyValuePairs and display the entire dictionary to the console.
+Lastly, use the `for in` loop to iterate over the KeyValuePairs and display the entire dictionary to the console.
 
 ```py
 """
@@ -68,13 +68,13 @@ Add several more words and their definitions
 """
 
 """
-Use square bracket lookup to get the definition two
+Use square bracket lookup to get the definition of two
 words and output them to the console with `print()`
 """
 
 
 """
-Loop over dictionary to get the following output:
+Loop over the dictionary to get the following output:
     The definition of [WORD] is [DEFINITION]
     The definition of [WORD] is [DEFINITION]
     The definition of [WORD] is [DEFINITION]
@@ -83,7 +83,7 @@ Loop over dictionary to get the following output:
 
 ## Practice: English Idioms
 
-Create a new Python file and paste the following code into it. At the end write a `for` loop to produce the output below.
+Create a new Python file and paste the following code into it. At the end write a `for in` loop to produce the output below.
 
 ```py
 idioms = {
@@ -153,6 +153,13 @@ touch family_dict.py
 ## Advanced Challenge: Stock Portfolio
 
 A block of publicly traded stock has a variety of attributes. Let's look at a few of them. A stock has a ticker symbol and a company name. Create a simple dictionary with ticker symbols and company names.
+
+### Setup
+
+```
+mkdir -p ~/workspace/python/exercises/stocksChallenge && cd $_
+touch stocks.py
+```
 
 ##### Example
 
