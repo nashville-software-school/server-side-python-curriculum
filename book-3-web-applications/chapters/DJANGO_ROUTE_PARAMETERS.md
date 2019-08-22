@@ -91,4 +91,19 @@ Create `templates/books/detail.html` and use the following code.
 
 ## Refactor List Template
 
-Make each item a hyperlink. Use `reverse()` and interpolate the book `id` in each URL.
+Open `templates/books/list.html` and change each line item to the following code.
+
+```html
+<li>
+    <a href="{% url 'libraryapp:book_details' book.id %}"> {{ book.title }} </a>
+    by {{book.author}} published in {{book.year_published}}
+</li>
+```
+
+The `url` keyword in the interpolation is a shortcut for Django to look up a named route in your `urls.py`. Then you specify the name of the route you want to look up. In this case, it's the `book_details` route in the library application. The third item in there - `book.id` - is the route parameter you want to send to that URL.
+
+This code will generate `http://localhost:8080/book/{id}` for each book.
+
+Refresh your page and click on the title of each book. You should be taken to the detail page of each one.
+
+![animation that clicks on the hyperlink of book titles and shows the detail page](./images/hyperlink-to-detail.gif)
