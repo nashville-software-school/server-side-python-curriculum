@@ -1,5 +1,7 @@
 # Book 3 - Django Web Applications
 
+This book introduces you to the Django web application framework, and using the MVC design pattern.
+
 * Chapter 1 - [Setting up Visual Studio Code to Work with Django](./chapters/WORKSPACE_SETUP.md)
 * Chapter 2 - [Django Intro - Project and Database Setup](./chapters/DJANGO_INTRO_LIBRARY.md)
 * Chapter 3 - [Django Intro - Views and Templates](./chapters/DJANGO_VIEWS.md)
@@ -11,3 +13,8 @@
 * Chapter 9 - [Django Intro - Deleting](./chapters/DJANGO_DELETING.md)
 * Chapter 10 - [Django Intro - Complex Relationships](./chapters/DJANGO_COMPLEX_DATA_STRUCTURES.md)
 * Chapter 11 - [Student Exercises - Djangafied](./chapters/STUDENT_EXERCISES_DJANGO.md)
+
+## Bangazon Workforce Management Sprint
+
+#### Let's Talk About SQL Assessment
+
