@@ -4,7 +4,7 @@
 
 ## Librarians Adding Books in Libraries
 
-Time for you to implement your first form so that users can enter in a new book and assign it to a library. For now, you can start with building the template. Create the `templates/books/create.html` template, and put the following code in it.
+Time for you to implement your first form so that users can enter in a new book and assign it to a library. For now, you can start with building the template. Create the `templates/books/form.html` template, and put the following code in it.
 
 ```html
 {% load staticfiles %}
@@ -106,7 +106,7 @@ def create_book(request):
 
                 all_libraries.append(library)
 
-        template_name = 'books/create.html'
+        template_name = 'books/form.html'
         return render(request, template_name, {'all_libraries': all_libraries})
 
 ```
@@ -151,6 +151,6 @@ Place the following code in your file at the bottom to handle the case of the re
 
 Now it is your turn to follow this pattern to create a form for creating a new entry in the database for libraries. You need to create the following items to make it work.
 
-1. A Django template in `templates/libraries/create.html` that displays a form for entering in all the values for a library.
+1. A Django template in `templates/libraries/form.html` that displays a form for entering in all the values for a library.
 1. A new URL pattern in `libraryapp/urls.py`
 1. A new view in `views/libraries/create.py` to handle the GET and POST requests.
