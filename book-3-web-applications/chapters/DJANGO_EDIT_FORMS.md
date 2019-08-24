@@ -10,10 +10,12 @@ Here's the process, which is slightly different that doing it in a single page a
 1. Code in the view will check for the hidden input field of `actual_method` and see if its value is "EDIT".
 1. The view will then query the database for the single record to be edited.
 1. The server will return a template, with the single resource object in its context.
-1. The template will populate the `value` attribute of all of the input field with their corresponding value from the context's resource object.
+1. The template will populate the `value` attribute of all of the input fields with their corresponding value from the context's resource object.
 1. Once the user has changed the values, and clicks the Update button, the form will be submitted to the detail view for the resource.
 1. The view will then check for the `actual_method` field again, and see if its value is "PUT".
 1. Then the view will perform an UPDATE statement in the database, and then redirect the user back to the detail view.
+
+This is a difficult signal flow to visualize, and takes months _(sometimes years)_ of practice before it feels comfortable. You won't get it right the first, second, third, or fourth time you try it. Maybe on the 15th time.
 
 Let's start.
 
@@ -29,9 +31,27 @@ Add the following code to your `templates/books/detail.html` template.
 </form>
 ```
 
+The `url 'libraryapp:book_details'` part of the action looks in the `urls.py` file and generates the matching URL pattern for that named view. In your application, it matches this named route.
+
+```py
+url(r'^books/(?P<book_id>[0-9]+)/$', book_details, name="book_details"),
+```
+
+So Django will build the string `/books`. It's not done. That URL pattern also has `(?P<book_id>[0-9]+)` in it, which is the route parameter. Therefore, you have to pass in the id of the book, which is the third part of the `action` method for your form. Django will then put that id at the end of the generated URL - `/books/12`
+
+This is the final HTML that gets generated if you clicked on the edit button for a book whose primary key in the database is 12.
+
+```html
+<form action="/books/12/" method="POST">
+    <input type="hidden" name="csrfmiddlewaretoken" value="...">
+    <input type="hidden" name="actual_method" value="EDIT">
+    <button>Edit</button>
+</form>
+```
+
 ### Refactor Details View
 
-When the user wants to edit a book, all we have in the request is the `id` of the book, which means we need to go to the database to get all the rest of the values. In `views/books/details.py` you already have that code in the `GET` handler, so instead of writing duplicate code, you are going to add a new function named `get_book()` that both the `GET` handler and the `EDIT` handler can both use.
+When the user wants to edit a book, all we have in the request is the `id` of the book since it's in the URL as a route parameter. This means we need to go to the database to get all the rest of the values. In `views/books/details.py` you already have SQL code that queries the database for a single book. It's in the `GET` handler, so instead of writing duplicate code, you are going to add a new function named `get_book()` that both the `GET` handler and the `EDIT` handler can both use.
 
 Add the following function to `details.py` above the `book_details` function.
 
@@ -60,32 +80,61 @@ def get_book(book_id):
 Then refactor the `book_details()` function to use it.
 
 ```py
-if request.method == 'GET':
-    book = get_book(book_id)
-    template_name = 'books/detail.html'
-    return render(request, template_name, {'book': book})
+@login_required
+def book_details(request, book_id):
+    if request.method == 'GET':
+        book = get_book(book_id)
+        return render(request, 'books/detail.html', {'book': book})
+
 ```
 
 ### Returning the Edit Form
 
-Now it's time to handle the request to edit the book. Since this request is a POST, add this condition to the POST handler in `views/books/details.py`.
+Now it's time to handle the request to edit the book. Since this request is a POST, you need to add another `if` condition to handle the case in which the user clicked the Edit button. The only way to know if the user clicked the edit button is to look for the input field named `actual_method` and see if its value is EDIT.
 
 ```py
-if (
-    "actual_method" in form_data
-    and form_data["actual_method"] == "EDIT"
-):
-    book = get_book(book_id)
-    libraries = get_libraries()
-    template_name = 'books/form.html'
-    return render(request, template_name, {'book': book, 'all_libraries': libraries})
+if request.method == 'POST':
+    form_data = request.POST
+
+    # Check if this request is for deleting a book
+    if (
+        "actual_method" in form_data
+        and form_data["actual_method"] == "DELETE"
+    ):
+        with sqlite3.connect(Connection.db_path) as conn:
+            db_cursor = conn.cursor()
+
+            db_cursor.execute("""
+            DELETE FROM libraryapp_book
+            WHERE id = ?
+            """, (book_id,))
+
+        return redirect(reverse('libraryapp:list_books'))
+
+    # Check if the request is for editing a book
+    if (
+        "actual_method" in form_data
+        and form_data["actual_method"] == "EDIT"
+    ):
+        book = get_book(book_id)
+        libraries = get_libraries()
+
+        return render(request, 'books/form.html', {
+            'book': book,
+            'all_libraries': libraries
+        })
 ```
 
-You are reusing the form that is used to create a book, but this time, you are binding a context dictionary to the template.
+Notice the the template - `books/form.html` - is the same template you used for creating a new book. What's different in this case is that we are providing a context dictionary to the template with a `book` key and an `all_libraries` key.
 
-## Create and Edit Form
+### Create and Edit Form
 
-Since you are sending the `form.html` template to the client when one is being created, and when one is being edited, you need to modify the template. Replace your template with the code below. In this version, note that the `value` attribute of each of the input fields interpolates the corresponding property on a Book object.
+Since you are now sending the `form.html` template to the client in two different cases...
+
+* When a book is being created
+* When a book is being edited
+
+...you need to modify the template. Replace your template with the code below. In this version, note that the `value` attribute of each of the input fields interpolates the corresponding property on a Book object.
 
 In the dropdown, there is an inline `{% if %}` statement that pre-selects the library that the book is assigned to.
 
@@ -124,16 +173,22 @@ Then at the end, a hidden input field is added **only** when the form is being u
           <label for="location">Library: </label>
           <select id="location" type="text" name="location">
                 {% for library in all_libraries %}
-                    <option {% if library.id == book.location_id %}selected{% endif %} value="{{ library.id }}">{{ library.title }}</option>
+                    <option
+                        {% if library.id == book.location_id %}
+                            selected
+                        {% endif %}
+                        value="{{ library.id }}">
+                        {{ library.title }}
+                    </option>
                 {% endfor %}
           </select>
       </fieldset>
 
       {% if book.id is not None %}
         <input type="hidden" name="book_id" value="{{ book.id }}">
-        <input type="submit" value="Change It" />
+        <input type="submit" value="Update" />
       {% else %}
-        <input type="submit" value="Add It" />
+        <input type="submit" value="Create" />
       {% endif %}
 
     </form>
