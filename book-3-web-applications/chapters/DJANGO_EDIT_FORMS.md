@@ -119,10 +119,14 @@ if request.method == 'POST':
         book = get_book(book_id)
         libraries = get_libraries()
 
-        return render(request, 'books/form.html', {
+        template = 'books/form.html'
+
+        data_context = {
             'book': book,
             'all_libraries': libraries
-        })
+        }
+
+        return render(request, template, data_context)
 ```
 
 Notice the the template - `books/form.html` - is the same template you used for creating a new book. What's different in this case is that we are providing a context dictionary to the template with a `book` key and an `all_libraries` key.
