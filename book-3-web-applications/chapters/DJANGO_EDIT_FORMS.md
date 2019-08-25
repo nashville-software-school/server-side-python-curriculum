@@ -139,6 +139,8 @@ The first one determines where the form should be submitted.
 
 The second one determines which button should appear, and adds an additional hidden field if the user is editing. This additional field with differentiate between the two, otherwise, identical POST requests. On creation, it's a straightforward POST operation. When editing, the request sent to the server still must be POST - _since HTML forms don't support PUT_ - so you are passing along additional information that you can check for when processing the form.
 
+> #### libraryproject/libraryapp/templates/books/form.html
+
 ```html
 {% load staticfiles %}
 <!DOCTYPE html>
@@ -197,12 +199,7 @@ The second one determines which button should appear, and adds an additional hid
 </html>
 ```
 
-
 Python is very forgiving. If the `book` object is not in the context dictionary for the template, then the form fields will not be populated with a value, even though the code explicitly accesses a property on an object that does not exist. You might expect an exception to be thrown, but it does not.
-
-At this point you should test that your edit button displays the edit form and that it is pre-populated with the current book's values.
-
-![animation showing that clicking the edit button displays the book form with the input fields populated with values](./images/edit-button-displays-form.gif)
 
 ## Updating Database from User Input
 
@@ -220,6 +217,8 @@ Now that you are displaying an edit form to your user, the next step is to updat
 ```
 
 That allows you to check for that value in the POST logic of your `book_details()` method. In that case, you will have a SQL `UPDATE` statement to change the values of the record in the database.
+
+> #### libraryproject/libraryapp/views/books/details.py
 
 ```py
 @login_required
