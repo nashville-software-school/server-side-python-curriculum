@@ -108,11 +108,17 @@ from .views import *
 app_name = "libraryapp"
 
 urlpatterns = [
+    url(r'^$', book_list, name='books'),
     url(r'^books$', book_list, name='books'),
 ]
 ```
 
-This pattern maps any HTTP request to `http://localhost:8000/books` to be handled by the `book_list()` function in the `views/books/list.py` module.
+These two patterns ensures that HTTP requests to
+
+* `http://localhost:8000`
+* `http://localhost:8000/books`
+
+Are handled by the `book_list()` function in the `views/books/list.py` module.
 
 Then in the `libraryproject/urls.py` file, include the URL mappings from your `libraryapp`. This pattern is followed because Django projects usually grow and start containing more than one application. By having each application define its own URLs, and then importing each set of those into the project, it prevents the project `urls.py` from becoming bloated and hard to read/maintain.
 
