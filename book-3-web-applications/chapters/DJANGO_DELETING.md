@@ -11,14 +11,14 @@ If you want to use any other verb, then you need to deliver JavaScript to the br
 
 ## Delete Without Delete
 
-If you can't make an HTTP request with the DELETE verb without JavaScript, then how can you delete something in a web application that utilizes hyperlinks and forms to make requests to the server?
+If you can't make an HTTP request with the DELETE verb without JavaScript, then how can you delete something in a web application that can only utilize hyperlinks _(GET)_ and forms _(POST)_ to make requests to the server?
 
 You will put a button element inside a form and make a POST request to the same route as if you were viewing the details of a book, but you will utilize a hidden form field to provide additional information to the server to process the request correctly.
 
 Open `templates/books/detail.html` and place this code before the closing `</body>` tag.
 
 ```html
-<form action="{% url 'libraryapp:book_details' book.id %}" method="POST">
+<form action="{% url 'libraryapp:book' book.id %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="actual_method" value="DELETE">
     <button>Delete</button>
@@ -69,3 +69,9 @@ if request.method == 'POST':
 This code will execute a DELETE statement in your database to get rid of the book data, and then redirect the user to the list of books so that s/he will immediately see that the book is no longer in the inventory.
 
 Click your Delete button and watch it happen. If your code doesn't work, go through the chapter again and make sure you placed all of the code exactly where the instructions say to. If that doesn't fix it, then please see your instruction team.
+
+## Demo
+
+Once all your code is in place, you should be able to go to the detail view of any book and delete it.
+
+![animation showing the deletion of a book](./images/deleting-book.gif)
