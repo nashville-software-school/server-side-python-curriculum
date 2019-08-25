@@ -254,8 +254,6 @@ VALUES
 
 Since the `libraryapp_librarian` table is one you created that extends the `auth_user`, when you build the `views/librarians/list.py` view, your SQL needs to join in the `auth_user` table.
 
-
-
 ```py
 import sqlite3
 from django.shortcuts import render

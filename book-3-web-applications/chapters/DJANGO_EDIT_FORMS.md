@@ -1,6 +1,6 @@
 # Editing Resources
 
-It's time to revisit editing resources in a database via user interactions in the browser - everyone's favorite part of NSS. ❤️
+It's time to revisit editing resources - everyone's favorite part of NSS. ❤️
 
 Here's the process, which is slightly different that doing it in a single page application like you did in the client-side course.
 
@@ -21,115 +21,101 @@ Let's start.
 
 ### The Edit Button
 
-Add the following code to your `templates/books/detail.html` template.
+The Edit button requires some thought first. When the user clicks that button, what is actually being requested? The book is not actually being modified at that moment, but rather the user is requesting that s/he be provided with an interface to change the book's state. You will provide an HTML form - just like the create form - but when the form is rendered, the book's details should be pre-populated.
+
+Therefore, this is a GET request, not a PUT or a POST. Normally, the affordance for a GET request is a hyperlink. In this case, though, you would want to provide a button next to the delete button so that the UX is consistent.
+
+Luckily, HTML form elements also support the verb of GET. Even though, the vast majority of the time, you will use POST with a form, in this case, a GET is more appropriate.
+
+Refactor your book detail template to the following code.
 
 ```html
-<form action="{% url 'libraryapp:book_details' book.id %}" method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="actual_method" value="EDIT">
-    <button>Edit</button>
-</form>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Library</title>
+</head>
+
+<body>
+
+    <section id="book-details">
+        <h1>{{ book.title }}</h1>
+        <h2>By {{ book.author }}</h2>
+
+        <div>Published in {{ book.year_published }}</div>
+        <div>ISBN: {{ book.isbn }}</div>
+    </section>
+
+    <section id="book-actions" style="display:flex;">
+        <form action="{% url 'libraryapp:book' book.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button>Delete</button>
+        </form>
+
+        <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+    </section>
+
+</body>
+
+</html>
 ```
 
-The `url 'libraryapp:book_details'` part of the action looks in the `urls.py` file and generates the matching URL pattern for that named view. In your application, it matches this named route.
-
-```py
-url(r'^books/(?P<book_id>[0-9]+)/$', book_details, name="book_details"),
-```
-
-So Django will build the string `/books`. It's not done. That URL pattern also has `(?P<book_id>[0-9]+)` in it, which is the route parameter. Therefore, you have to pass in the id of the book, which is the third part of the `action` method for your form. Django will then put that id at the end of the generated URL - `/books/12`
-
-This is the final HTML that gets generated if you clicked on the edit button for a book whose primary key in the database is 12.
+This produces the following HTML for the Edit button.
 
 ```html
-<form action="/books/12/" method="POST">
+<form action="/books/21/form" method="GET">
     <input type="hidden" name="csrfmiddlewaretoken" value="...">
-    <input type="hidden" name="actual_method" value="EDIT">
     <button>Edit</button>
 </form>
 ```
 
-### Refactor Details View
+This is a new URL pattern, so you need to add the following pattern to your `urls.py`.
 
-When the user wants to edit a book, all we have in the request is the `id` of the book since it's in the URL as a route parameter. This means we need to go to the database to get all the rest of the values. In `views/books/details.py` you already have SQL code that queries the database for a single book. It's in the `GET` handler, so instead of writing duplicate code, you are going to add a new function named `get_book()` that both the `GET` handler and the `EDIT` handler can both use.
-
-Add the following function to `details.py` above the `book_details` function.
+> #### libraryproject/libraryapp/urls.py
 
 ```py
-def get_book(book_id):
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Book)
-        db_cursor = conn.cursor()
-
-        db_cursor.execute("""
-        SELECT
-            b.id,
-            b.title,
-            b.isbn,
-            b.author,
-            b.year_published,
-            b.librarian_id,
-            b.location_id
-        FROM libraryapp_book b
-        WHERE b.id = ?
-        """, (book_id,))
-
-        return db_cursor.fetchone()
+url(r'^books/(?P<book_id>[0-9]+)/form$', book_edit_form, name='book_edit_form'),
 ```
 
-Then refactor the `book_details()` function to use it.
+### Book Edit Form View
+
+Now you need a view to handle that GET request and send the HTML form back to the client. Add the following view function to the `form.py` module.
+
+> #### libraryproject/libraryapp/views/books/form.py
 
 ```py
 @login_required
-def book_details(request, book_id):
+def book_edit_form(request, book_id):
+
     if request.method == 'GET':
-        book = get_book(book_id)
-        return render(request, 'books/detail.html', {'book': book})
-
-```
-
-### Returning the Edit Form
-
-Now it's time to handle the request to edit the book. Since this request is a POST, you need to add another `if` condition to handle the case in which the user clicked the Edit button. The only way to know if the user clicked the edit button is to look for the input field named `actual_method` and see if its value is EDIT.
-
-```py
-if request.method == 'POST':
-    form_data = request.POST
-
-    # Check if this request is for deleting a book
-    if (
-        "actual_method" in form_data
-        and form_data["actual_method"] == "DELETE"
-    ):
-        with sqlite3.connect(Connection.db_path) as conn:
-            db_cursor = conn.cursor()
-
-            db_cursor.execute("""
-            DELETE FROM libraryapp_book
-            WHERE id = ?
-            """, (book_id,))
-
-        return redirect(reverse('libraryapp:books'))
-
-    # Check if the request is for editing a book
-    if (
-        "actual_method" in form_data
-        and form_data["actual_method"] == "EDIT"
-    ):
         book = get_book(book_id)
         libraries = get_libraries()
 
         template = 'books/form.html'
-
-        data_context = {
+        context = {
             'book': book,
             'all_libraries': libraries
         }
 
-        return render(request, template, data_context)
+        return render(request, template, context)
 ```
 
-Notice the the template - `books/form.html` - is the same template you used for creating a new book. What's different in this case is that we are providing a context dictionary to the template with a `book` key and an `all_libraries` key.
+### Update the Package
+
+Since you have a new view, you need to import it into the package.
+
+> #### libraryproject/libraryapp/views/\_\_init__.py
+
+```py
+from .books.form import book_form, book_edit_form
+```
 
 ### Create and Edit Form
 
@@ -143,6 +129,15 @@ Since you are now sending the `form.html` template to the client in two differen
 In the dropdown, there is an inline `{% if %}` statement that pre-selects the library that the book is assigned to.
 
 Then at the end, a hidden input field is added **only** when the form is being used for edit. This hidden input field will store the `id` property of the book, and will be used by the view when posted.
+
+Notice that there are two `{% if %}` conditions now in the template.
+
+The first one determines where the form should be submitted.
+
+1. If the `book.id` parameter exists in the context, that means that the user is changing the current state of the book. Therefore, the POST request should be sent to `/books/{id}`.
+1. Otherwise, the user is creating a new book, and the POST request should be sent to `/books`.
+
+The second one determines which button should appear, and adds an additional hidden field if the user is editing. This additional field with differentiate between the two, otherwise, identical POST requests. On creation, it's a straightforward POST operation. When editing, the request sent to the server still must be POST - _since HTML forms don't support PUT_ - so you are passing along additional information that you can check for when processing the form.
 
 ```html
 {% load staticfiles %}
@@ -211,13 +206,76 @@ At this point you should test that your edit button displays the edit form and t
 
 ## Updating Database from User Input
 
-Now that you are displaying an edit form to your user, the next step is to update the database record once the new values have been entered by the user and the Update button is clicked. The form will do a POST request
+Now that you are displaying an edit form to your user, the next step is to update the database record once the new values have been entered by the user and the Update button is clicked. The form will do a POST request, but also pass along a hidden key of `actual_method` with a value of `PUT`.
 
 ```html
-<form action="/book" method="post">
-    ...
+<form action="/books/21" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="...">
 
-    <input type="hidden" name="book_id" value="12">
+    <!-- Other inputs left out for brevity's sake -->
+
+    <input type="hidden" name="actual_method" value="PUT">
     <input type="submit" value="Update">
 </form>
 ```
+
+That allows you to check for that value in the POST logic of your `book_details()` method. In that case, you will have a SQL `UPDATE` statement to change the values of the record in the database.
+
+```py
+@login_required
+def book_details(request, book_id):
+    if request.method == 'GET':
+        book = get_book(book_id)
+        template_name = 'books/detail.html'
+        return render(request, template_name, {'book': book})
+
+    elif request.method == 'POST':
+        form_data = request.POST
+
+        # Check if this POST is for editing a book
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "PUT"
+        ):
+            with sqlite3.connect(Connection.db_path) as conn:
+                db_cursor = conn.cursor()
+
+                db_cursor.execute("""
+                UPDATE libraryapp_book
+                SET title = ?,
+                    author = ?,
+                    isbn = ?,
+                    year_published = ?,
+                    location_id = ?
+                WHERE id = ?
+                """,
+                (
+                    form_data['title'], form_data['author'],
+                    form_data['isbn'], form_data['year_published'],
+                    form_data["location"], form_data["book_id"],
+                ))
+
+            return redirect(reverse('libraryapp:books'))
+
+        # Check if this POST is for deleting a book
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "DELETE"
+        ):
+            with sqlite3.connect(Connection.db_path) as conn:
+                db_cursor = conn.cursor()
+
+                db_cursor.execute("""
+                    DELETE FROM libraryapp_book
+                    WHERE id = ?
+                """, (book_id,))
+
+            return redirect(reverse('libraryapp:books'))
+
+```
+
+## Demo
+
+Time to try it out. If everything is in place you should be able to edit any of your books.
+
+![animation of editing book](./images/edit-in-action.gif)
