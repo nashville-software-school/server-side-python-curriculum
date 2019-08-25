@@ -19,7 +19,9 @@ You never need to touch these views, and they live in Django and have all the lo
 
 ### Login Screen Template
 
-By default, the login view looks for a template path of  `registration/login.html`, so you need to create the `libraryapp/templates/registration/login.html` file. Then place the following code in it.
+By default, the login view looks for a template path of  `registration/login.html`, so you need to create that file. Then place the following code in it.
+
+> #### libraryproject/libraryapp/templates/registration/login.html
 
 ```py
 <h2>Login</h2>
