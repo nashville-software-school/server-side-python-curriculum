@@ -150,6 +150,12 @@ elif request.method == 'POST':
 
 Once the book is created, your view now redirects the client to the list of books so that s/he can see that the book is now in the collection.
 
+## Demo
+
+Once all of this code is into place, you should be able to add a new book to your collection.
+
+![animation showing the creation of a new book and then showing that book in the book list](./images/creating-book.gif)
+
 ## Practice: Creating Libraries
 
 Now it is your turn to follow this pattern to create a form for creating a new entry in the database for libraries. You need to create the following items to make it work.
