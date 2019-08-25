@@ -109,7 +109,7 @@ if request.method == 'POST':
             WHERE id = ?
             """, (book_id,))
 
-        return redirect(reverse('libraryapp:list_books'))
+        return redirect(reverse('libraryapp:books'))
 
     # Check if the request is for editing a book
     if (
@@ -148,57 +148,76 @@ Then at the end, a hidden input field is added **only** when the form is being u
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Bangazon</title>
-  </head>
-  <body>
+    <title>Library</title>
+</head>
+
+<body>
     <h1>Inventory Book</h1>
 
-    <form action="{% url 'libraryapp:create_book' %}" method="post">
-      {% csrf_token %}
-      <fieldset>
-          <label for="title">Title: </label>
-          <input id="title" type="text" name="title" value="{{ book.title }}">
-      </fieldset>
-      <fieldset>
-          <label for="author">Author: </label>
-          <input id="author" type="text" name="author" value="{{ book.author }}">
-      </fieldset>
-      <fieldset>
-          <label for="year_published">Year of publication: </label>
-          <input id="year_published" type="number" name="year_published" value="{{ book.year_published }}">
-      </fieldset>
-      <fieldset>
-          <label for="isbn">ISBN: </label>
-          <input id="isbn" type="text" name="isbn" value="{{ book.isbn }}">
-      </fieldset>
-      <fieldset>
-          <label for="location">Library: </label>
-          <select id="location" type="text" name="location">
+    {% if book.id is not None %}
+        <form action="{% url 'libraryapp:book' book.id %}" method="post">
+    {% else %}
+        <form action="{% url 'libraryapp:books' %}" method="post">
+    {% endif %}
+        {% csrf_token %}
+        <fieldset>
+            <label for="title">Title: </label>
+            <input id="title" type="text" name="title" value="{{ book.title }}">
+        </fieldset>
+        <fieldset>
+            <label for="author">Author: </label>
+            <input id="author" type="text" name="author" value="{{ book.author }}">
+        </fieldset>
+        <fieldset>
+            <label for="year_published">Year of publication: </label>
+            <input id="year_published" type="number" name="year_published" value="{{ book.year_published }}">
+        </fieldset>
+        <fieldset>
+            <label for="isbn">ISBN: </label>
+            <input id="isbn" type="text" name="isbn" value="{{ book.isbn }}">
+        </fieldset>
+        <fieldset>
+            <label for="location">Library: </label>
+            <select id="location" type="text" name="location">
                 {% for library in all_libraries %}
-                    <option
-                        {% if library.id == book.location_id %}
-                            selected
-                        {% endif %}
-                        value="{{ library.id }}">
-                        {{ library.title }}
-                    </option>
+                <option {% if library.id == book.location_id %}selected{% endif %} value="{{ library.id }}">
+                    {{ library.title }}</option>
                 {% endfor %}
-          </select>
-      </fieldset>
+            </select>
+        </fieldset>
 
-      {% if book.id is not None %}
-        <input type="hidden" name="book_id" value="{{ book.id }}">
-        <input type="submit" value="Update" />
-      {% else %}
-        <input type="submit" value="Create" />
-      {% endif %}
+        {% if book.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
 
     </form>
-  </body>
+</body>
+
 </html>
 ```
 
 
 Python is very forgiving. If the `book` object is not in the context dictionary for the template, then the form fields will not be populated with a value, even though the code explicitly accesses a property on an object that does not exist. You might expect an exception to be thrown, but it does not.
+
+At this point you should test that your edit button displays the edit form and that it is pre-populated with the current book's values.
+
+![animation showing that clicking the edit button displays the book form with the input fields populated with values](./images/edit-button-displays-form.gif)
+
+## Updating Database from User Input
+
+Now that you are displaying an edit form to your user, the next step is to update the database record once the new values have been entered by the user and the Update button is clicked. The form will do a POST request
+
+```html
+<form action="/book" method="post">
+    ...
+
+    <input type="hidden" name="book_id" value="12">
+    <input type="submit" value="Update">
+</form>
+```

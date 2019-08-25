@@ -50,7 +50,7 @@ from libraryapp.models import Book
 from ..connection import Connection
 
 
-def list_books(request):
+def book_list(request):
     with sqlite3.connect(Connection.db_path) as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
@@ -97,7 +97,7 @@ from .views import *
 
 app_name = "libraryapp"
 urlpatterns = [
-    url(r'^books$', list_books, name='list_books'),
+    url(r'^books$', book_list, name='books'),
 ]
 ```
 
@@ -337,7 +337,7 @@ from libraryapp.models import model_factory
 from ..connection import Connection
 
 
-def list_books(request):
+def book_list(request):
     with sqlite3.connect(Connection.db_path) as conn:
         conn.row_factory = model_factory(Book)
         db_cursor = conn.cursor()

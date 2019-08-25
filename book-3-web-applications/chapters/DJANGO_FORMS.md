@@ -144,7 +144,7 @@ Place the following code in your file at the bottom to handle the case of the re
                 form_data['isbn'], form_data['year_published'],
                 request.user.librarian.id, form_data["location"]))
 
-        return redirect(reverse('libraryapp:list_books'))
+        return redirect(reverse('libraryapp:books'))
 ```
 
 ## Creating Libraries

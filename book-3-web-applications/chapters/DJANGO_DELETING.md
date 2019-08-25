@@ -63,7 +63,7 @@ if request.method == 'POST':
             WHERE id = ?
             """, (book_id))
 
-        return redirect(reverse('libraryapp:list_books'))
+        return redirect(reverse('libraryapp:books'))
 ```
 
 This code will execute a DELETE statement in your database to get rid of the book data, and then redirect the user to the list of books so that s/he will immediately see that the book is no longer in the inventory.

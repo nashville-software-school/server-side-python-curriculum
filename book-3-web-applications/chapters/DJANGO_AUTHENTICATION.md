@@ -60,7 +60,7 @@ Then put that decorator above your book list view.
 
 ```py
 @login_required
-def list_books(request):
+def book_list(request):
 ```
 
 Make sure you visit http://localhost:8000/accounts/logout to ensure that you are unauthenticated. Then go to the book list, and you will be immediately redirected to the login view.
