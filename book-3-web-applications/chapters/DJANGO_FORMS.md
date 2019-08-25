@@ -102,6 +102,16 @@ def book_form(request):
         return render(request, template, context)
 ```
 
+## Updating the Views Package
+
+Import this new view into the package file.
+
+> #### libraryproject/libraryapp/views/\_\_init__.py
+
+```py
+from .books.form import book_form
+```
+
 ## Handling the POST Request
 
 When the user fills out the form and clicks the submit button, the browser will collect all the values of the form and submit a POST request to a URL. You must then handle that request and create a book.
@@ -150,3 +160,4 @@ Now it is your turn to follow this pattern to create a form for creating a new e
 1. A new URL pattern in `libraryapp/urls.py` for the collection of libraries.
 1. A new view in `views/libraries/form.py` to handle the GET request for the library HTML form.
 1. A new view in `views/libraries/list.py` that will handle GET requests _(list of libraries)_, and POST requests _(for creating new libraries)_.
+1. Two new `import` statements in `views/__init__.py` to add the views into the package.
