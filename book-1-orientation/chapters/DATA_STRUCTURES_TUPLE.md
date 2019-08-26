@@ -30,14 +30,16 @@ code .
     if animal_to_find in zoo:
         # Print that the animal was found
     ```
-1. You can reverse engineer a tuple into another tuple with the following syntax.
+1. You can reverse engineer (unpack) a tuple into another tuple with the following syntax.
     ```py
     children = ("Sally", "Hansel", "Gretel", "Svetlana")
-    (first_child, second_child) = children
+    (first_child, second_child, third_child, fourth_child) = children
     print(first_child) # Output is "Sally"
     print(second_child) # Output is "Hansel"
+    print(third_child) # Output is "Gretel"
+    print(fourth_child) # Output is "Svetlana"
     ```
-    Create a variable for the first three animals in your zoo tuple, and print them to the console.
+    Create a variable for the animals in your zoo tuple, and print them to the console.
 1. Convert your tuple into a list.
 1. Use `extend()` to add three more animals to your zoo.
 1. Convert the list back into a tuple.
