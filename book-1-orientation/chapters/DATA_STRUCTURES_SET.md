@@ -6,9 +6,9 @@ You can create a set in one of two ways.
 
 ```py
 # Using set() to create a set
-languages = set('english', 'mandarin chinese', 'spanish', 'english', 'spanish', 'portugese')
+languages = set()
 
-# Using curly braces
+# Using curly braces allows you to initialize the set with values
 languages = { 'english', 'mandarin chinese', 'spanish', 'english', 'spanish', 'portugese' }
 ```
 
