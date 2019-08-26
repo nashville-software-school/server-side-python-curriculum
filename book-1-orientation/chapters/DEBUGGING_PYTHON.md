@@ -5,3 +5,5 @@ Please read the "[Python debug configurations in Visual Studio Code](https://cod
 Here's a short animation showing you a breakpoint being set in the code, and then inspecting the value of the `all_students` variable in both the variables panel and in a pop-up window in the editor.
 
 ![setting a breakpoint and inspecting a variable's contents](./images/debugging_intro.gif)
+
+Your instruction team will show you how to use the debugger to step through a for loop of different data structures to get your started.
