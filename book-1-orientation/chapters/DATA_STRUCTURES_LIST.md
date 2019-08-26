@@ -29,14 +29,31 @@ animals = ["Jack", "Noonan", "Blue", "Gypsy"]
     [1, 3, 1, 2, 4, 2, 5, 4, 2, 5]
     ```
 
-1. Then iterate a different list of numbers that are sequential from 1 to 10.
+1. Then iterate a different list of numbers that are sequential from 1 to 10. Use the following code as your starting point.
 
     ```py
+    import random
     """
     Print a message to the console indicating whether each value of
     `number` is in the `my_randoms` list.
     """
-    for number in range(1, 10):
+
+    my_randoms = list()
+    for i in range(10):
+        my_randoms.append(random.randrange(1, 6, 1))
+
+    # Generate a list of numbers 1..10
+    numbers_1_to_10 = range(1, 10)
+
+    # Iterate from 1 to 10
+    for number in numbers_1_to_10:
+        the_numbers_match = False
+
+        # Iterate your random number list here
+
+        # Do the two numbers match? Change the boolean.
+
+        print(f'{number} is in the random list')
     ```
 
 #### Example Output in the Terminal
