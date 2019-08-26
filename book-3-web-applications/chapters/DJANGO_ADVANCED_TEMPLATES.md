@@ -95,7 +95,6 @@ Now to add navigation links for your application. Open `base.html` replace its c
 </html>
 ```
 
-
 ## Add Book Link
 
 After the main heading in your book list, add a link to the book creation form.

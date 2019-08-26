@@ -36,9 +36,7 @@ animals = ["Jack", "Noonan", "Blue", "Gypsy"]
     Print a message to the console indicating whether each value of
     `number` is in the `my_randoms` list.
     """
-    for number in range(1, 6):
-
-    }
+    for number in range(1, 10):
     ```
 
 #### Example Output in the Terminal
