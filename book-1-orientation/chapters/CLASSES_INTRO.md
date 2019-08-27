@@ -37,10 +37,10 @@ class Book:
         self.author = ""
         self.current_page = 1
         self.year_published = 0
-        self.currently_reading = false
+        self.currently_reading = False
 
     def start_reading(self):
-        self.currently_reading = true
+        self.currently_reading = True
         print(f'You start reading {self.title} at page {self.current_page}')
 
     def stop_reading(self, page):
