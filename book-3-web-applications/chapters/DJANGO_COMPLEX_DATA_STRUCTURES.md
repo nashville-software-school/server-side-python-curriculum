@@ -90,3 +90,9 @@ In the `detail.html` template for your book, update the book info section to use
     <div>Registered by {{ book.librarian.first_name }} {{ book.librarian.last_name }}</div>
 </section>
 ```
+
+## Demo
+
+Once this code is in place, you should now see the librarian and library assigned to the book.
+
+![animation showing details of several books with related data included](./images/books-with-related-data.gif)
