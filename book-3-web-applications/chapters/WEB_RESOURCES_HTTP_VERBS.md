@@ -48,9 +48,9 @@ This is why the POST verb is _almost always_ used to create things in web applic
 
 ## Guidance
 
-Because of how resources should be defined, and how verbs drive their change in state, be cognizant of how you define your URLs in your Django applications.
+Because of how resources should be defined, and how verbs drive their change in state, be cognizant of how you define your URIs in your Django applications.
 
 * Requests that change to the state of the book collection resource should be sent to `/books`
-* Requests that change the state of a single book should be sent to `/book/{id}`.
+* Requests that change the state of a single book should be sent to `/books/{id}`.
 
 For more guidance, please read the [REST Resource Naming Guide](https://restfulapi.net/resource-naming/).
