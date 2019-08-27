@@ -2,7 +2,13 @@
 
 ## Goals
 
-The purpose of this application is to allow librarians to manage the books in their library's inventory. The user will be able to add new books, remove obsolete books, and mark when a book has been checked out by a patron or checked back in.
+The purpose of this application is to allow librarians to manage the books in their library's inventory. A librarian will be able to add new books, view all books, add libraries, view all libraries, and view all librarians.
+
+## Signal Flow
+
+For those who like to have the signal flow visualized, this is a high-level overview of all of the pieces involved when Django gets an HTTP request from a client in order to generate an HTTP response. You will be using all of these blue pieces during this book.
+
+![visualization of signal flow from HTTP request to HTTP response in a Django application](./images/django-signal-flow.png)
 
 ### Design Data Relationships
 
