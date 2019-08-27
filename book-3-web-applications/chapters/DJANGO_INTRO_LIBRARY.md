@@ -96,7 +96,7 @@ Models are created in Django applications to be Python-based representations of 
 
 Yes, your application's models will also define how they are related to each other.
 
-First, create a `models` sub-directory in your `libraryapp` directory. Then create all the files needed for this package. Having the `__init__.py` import all of the classes from the other modules is necessary.
+First you are going to use the commands below to create a `models` sub-directory in your `libraryapp` directory. It will also create all the files needed for this package. The `echo` command is being used to create the `__init__.py` file and add text inside of it at the same time.
 
 > **Note:** You will notice a `libraryapp/models.py` file that gets automatically generated for your application. You will not be using that file, and can delete it.
 
@@ -236,7 +236,7 @@ Now it's time to generate instructions for how to update the database and create
 Run the following command from `library-management/libraryproject`.
 
 ```sh
-python manage.py makemigration
+python manage.py makemigrations
 ```
 
 You should see the following output. If you don't, see an instructor.
