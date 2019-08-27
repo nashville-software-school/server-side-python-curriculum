@@ -14,6 +14,8 @@ A class is like an object constructor, or a blueprint for creating objects. It h
 
 Once a class is defined, you can use it to crank out objects based on the class. We call those objects _instances_ of the class.
 
+![visualization of two instances of the Student class](./images/python-class-instances.png)
+
 To define a class, you begin with the keyword `class` and then define at least an `__init__` method on for the class. The `__init__` method holds the instructions for what to do when a developer makes an instance of your class.
 
 Imagine you want to build a Python application that allows a person to keep track of all of their books in their library. Each book has common properties, and things that can be done with it.
