@@ -54,7 +54,7 @@ touch cars.py
 ### Setup
 
 ```
-mkdir -p ~/workspace/python//challenges/sets-car-challenge && cd $_
+mkdir -p ~/workspace/python/challenges/sets-car-challenge && cd $_
 touch cars.py
 ```
 
