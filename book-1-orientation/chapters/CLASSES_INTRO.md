@@ -300,9 +300,9 @@ ken = Customer("Ken", "Perkerwicz")
 All three of these people choose First Tennessee as their bank, so add the object references to the `customers` list on the bank.
 
 ```py
-first_tennessee.customers.extend(mo)
-first_tennessee.customers.extend(warner)
-first_tennessee.customers.extend(ken)
+first_tennessee.customers.append(mo)
+first_tennessee.customers.append(warner)
+first_tennessee.customers.append(ken)
 ```
 
 Now the object have a relationship with each other. If you want to view all the customers of a bank, just iterate the `customers` list.
