@@ -36,7 +36,7 @@ class Product():
 
     @price.setter # The setter
     def price(self, new_price):
-        if isinstance(new_price, float):
+        if type(new_price) is float:
             self.__price = new_price
         else:
             raise TypeError('Please provide a floating point value for the price')
