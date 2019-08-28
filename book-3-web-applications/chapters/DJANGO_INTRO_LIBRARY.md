@@ -102,7 +102,7 @@ First you are going to use the commands below to create a `models` sub-directory
 
 ```sh
 md models && cd $_
-touch library.py book.py librarian __init__.py
+touch library.py book.py librarian.py __init__.py
 echo 'from .library import Library
 from .book import Book
 from .librarian import Librarian
