@@ -11,6 +11,8 @@ from django.conf.urls import url, include
 
 Then add the URLs to your existing patterns. This lets your application use the built-in login and logout views that Django provides.
 
+> #### libraryproject/libraryapp/urls.py
+
 ```py
 url(r'accounts/', include('django.contrib.auth.urls')),
 ```
@@ -30,6 +32,30 @@ By default, the login view looks for a template path of  `registration/login.htm
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
+```
+
+## Customize Logout
+
+By default, the Django logout function takes the user to the admin site, which you don't want to happen. It's confusing to the user since the UI branding will be different from your site. Therefore, you set up your own view and URL pattern.
+
+> #### libraryproject/libraryapp/urls.py
+
+```py
+url(r'^logout/$', logout_user, name='logout'),
+```
+
+### Redirect on Logout
+
+> #### libraryproject/libraryapp/views/auth/logout.py
+
+```py
+from django.urls import reverse
+from django.shortcuts import redirect
+from django.contrib.auth import logout
+
+def logout_user(request):
+    logout(request)
+    return redirect(reverse('libraryapp:home'))
 ```
 
 ## Where to Go When User Authenticates

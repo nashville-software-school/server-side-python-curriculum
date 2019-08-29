@@ -108,7 +108,7 @@ from .views import *
 app_name = "libraryapp"
 
 urlpatterns = [
-    url(r'^$', book_list, name='books'),
+    url(r'^$', book_list, name='home'),
     url(r'^books$', book_list, name='books'),
 ]
 ```

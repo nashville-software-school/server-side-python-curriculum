@@ -174,7 +174,6 @@ As soon as you put that query into your view and visit your library list in the 
 
 The output you want to present to users is a list of libraries, with a sub-list of books in that library.
 
-
 ![](./images/library-list-with-books.png)
 
 To accomplish this, you must do several complex refactors of your library list view, and your library list template. Start with the view. Add the following row factory function to your library list view.
@@ -237,5 +236,234 @@ for (library, book) in libraries:
     # book to the list of books for the current library
     else:
         library_groups[library.id].books.append(book)
-
 ```
+
+Give the query above that returned 6 rows, here's the process.
+
+THe first iteration of the `for` loop, the `library_groups` dictionary has nothing in it
+
+```py
+print(library_groups)
+
+>>> {}
+```
+
+The `if` condition evaluates to true, so the first library's primary key is added as a key to the dictionary and it's value is the library.
+
+```py
+{
+    1: {
+        "id": 1,
+        "title": "Bellview Library",
+        "address": "500 Main Street",
+        "books": []
+    }
+}
+```
+
+Then the current book is added to the list.
+
+```py
+{
+    1: {
+        "id": 1,
+        "title": "Bellview Library",
+        "address": "500 Main Street",
+        "books": [
+            {
+                "id": 2,
+                "title": "Lamb",
+                "author": "Roger Moore",
+                "year_published": 2004,
+                "isbn": "59359409490"
+            }
+        ]
+    }
+}
+```
+
+Now it moves on to the second row in the dataset. Does the key of "1" exist in the dictionary? Sure does, so the `if` condition evaluates to false, and the current book is added to the existing library.
+
+
+```py
+{
+    1: {
+        "id": 1,
+        "title": "Bellview Library",
+        "address": "500 Main Street",
+        "books": [
+            {
+                "id": 2,
+                "title": "Lamb",
+                "author": "Roger Moore",
+                "year_published": 2004,
+                "isbn": "59359409490"
+            },
+            {
+                "id": 11,
+                "title": "Taiko",
+                "author": "Eiji Yoshikawa",
+                "year_published": 1997,
+                "isbn": "04275747474873"
+            }
+        ]
+    }
+}
+```
+
+The third row is still the same library, so the current book is added to the existing library.
+
+```py
+{
+    1: {
+        "id": 1,
+        "title": "Bellview Library",
+        "address": "500 Main Street",
+        "books": [
+            {
+                "id": 2,
+                "title": "Lamb",
+                "author": "Roger Moore",
+                "year_published": 2004,
+                "isbn": "59359409490"
+            },
+            {
+                "id": 11,
+                "title": "Taiko",
+                "author": "Eiji Yoshikawa",
+                "year_published": 1997,
+                "isbn": "04275747474873"
+            },
+            {
+                "id": 12,
+                "title": "The Golem and the Jinni",
+                "author": "Helene Wecker",
+                "year_published": 2013,
+                "isbn": "8592475822"
+            }
+        ]
+    }
+}
+```
+
+The fourth row is a new library and the key of "2" does not exist in our dictionary, so its added and the new library is the value.
+
+```py
+{
+    2: {
+        "id": 2,
+        "title": "Franklin Library",
+        "address": "1004 Franklin Hwy",
+        "books": []
+    },
+    1: {
+        "id": 1,
+        "title": "Bellview Library",
+        "address": "500 Main Street",
+        "books": [
+            {
+                "id": 2,
+                "title": "Lamb",
+                "author": "Roger Moore",
+                "year_published": 2004,
+                "isbn": "59359409490"
+            },
+            {
+                "id": 11,
+                "title": "Taiko",
+                "author": "Eiji Yoshikawa",
+                "year_published": 1997,
+                "isbn": "04275747474873"
+            },
+            {
+                "id": 12,
+                "title": "The Golem and the Jinni",
+                "author": "Helene Wecker",
+                "year_published": 2013,
+                "isbn": "8592475822"
+            }
+        ]
+    }
+}
+```
+
+Then the current book is added to that library's books list.
+
+```py
+{
+    2: {
+        "id": 2,
+        "title": "Franklin Library",
+        "address": "1004 Franklin Hwy",
+        "books": [
+            {
+                "id": 17,
+                "title": "The Traitor's Wife",
+                "author": "Allison Pataki",
+                "year_published": 2014,
+                "isbn": "625485937"
+            }
+        ]
+    },
+    1: {
+        "id": 1,
+        "title": "Bellview Library",
+        "address": "500 Main Street",
+        "books": [
+            {
+                "id": 2,
+                "title": "Lamb",
+                "author": "Roger Moore",
+                "year_published": 2004,
+                "isbn": "59359409490"
+            },
+            {
+                "id": 11,
+                "title": "Taiko",
+                "author": "Eiji Yoshikawa",
+                "year_published": 1997,
+                "isbn": "04275747474873"
+            },
+            {
+                "id": 12,
+                "title": "The Golem and the Jinni",
+                "author": "Helene Wecker",
+                "year_published": 2013,
+                "isbn": "8592475822"
+            }
+        ]
+    }
+}
+```
+
+This process continues until all libraries are in the dictionary, and all books have been added to their corresponding library.
+
+The last step is binding the `library_groups` to the template so the data can be displayed. But the entire dictionary is not used. The `values()` method is used to generate a new list of just the library objects. Since the books are in a list, as a property of the library, that allows you to use a nested loop in your template to generate the view shown above.
+
+```jinja
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>Libraries</h1>
+
+    <a href="{% url 'libraryapp:library_form' %}">Add Library</a>
+
+    <ol>
+    {% for library in all_libraries %}
+        <li>
+            <a href="{% url 'libraryapp:library' library.id %}">
+                {{ library.title }}
+            </a>
+            ({{ library.address }})
+            <ul>
+            {% for book in library.books %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
+```
+
+![](./images/library-list-with-books.png)
