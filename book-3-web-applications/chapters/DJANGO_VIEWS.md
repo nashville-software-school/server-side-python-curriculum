@@ -1,5 +1,11 @@
 # Views and Templates to Display Data
 
+In Django, views and templates work together to take complex data structures that you build in Python, and convert them into HTML representations for your customers to view and understand.
+
+| Views | Templates |
+| ---|---|
+| The brains of the operation. Queries data from the database and provides it as context for a template | Defines HTML structure and specifies where the contextual data should be rendered _(interpolated)_  |
+
 ## Creating Sample Data
 
 Before you start creating views so that your can render HTML in the browser, you need some data first. Open up your database and execute the following SQL.
@@ -404,4 +410,68 @@ def book_list(request):
         }
 
         return render(request, template, context)
+```
+
+## The Home Template
+
+Before you move on, you should create a home page. For now, it will be a dumb template - meaning it won't have any data in its context. It is just a welcome message for your users when they first visit your site.
+
+### The Template
+
+> #### libraryproject/libraryapp/templates/home.html
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nashville Library Management System</title>
+</head>
+
+<body>
+
+    <h1>Welcome to the Nashville Library Management System</h1>
+
+</body>
+
+</html>
+```
+
+### The View
+
+> #### libraryproject/libraryapp/views/home.py
+
+```py
+from django.shortcuts import render
+
+def home(request):
+    if request.method == 'GET':
+        template = 'home.html'
+        context = {}
+
+        return render(request, template, context)
+```
+
+### Adding View to Package
+
+Add the following import to your package init.
+
+> #### libraryproject/libraryapp/views/__init__.py
+
+```py
+from .home import home
+```
+
+### Home Page URL
+
+Add the following `'home'` pattern to your application URLs.
+
+> #### libraryproject/libraryapp/urls.py
+
+```py
+urlpatterns = [
+    url(r'^$', home, name='home'),
+    url(r'^books$', book_list, name='books'),
+]
 ```
