@@ -364,7 +364,7 @@ Remember, each class should be in its own file. Define the **`City`** class in t
 
 ### Importing into Main
 
-Open the `main.py` file and import the **`Building`** class from `building.py`. Once you have defined your **`City`** class, also import that into `main.py`. For this exercise, all the logic of constructing buildings and building your city will be in `city.py`, so take all of your logic from `building.py` and move it over.
+Open the `main.py` file and import the **`Building`** class from `building.py`. Once you have defined your **`City`** class, also import that into `main.py`. For this exercise, all the logic of constructing buildings and building your city will be in `main.py`, so take all of your logic from `building.py` and move it over to main.
 
 > ##### `main.py`
 
