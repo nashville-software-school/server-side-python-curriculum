@@ -352,7 +352,7 @@ Now the output is different. You will see that only the penguin was added to the
 ```
 Ralph the Painted Dog can't swim, so please do not try to put it in the Sea World habitat
 Ralph the Painted Dog can't swim, so please do not try to put it in the Sea World habitat
-Bob the Penguin
+Bob the Penguin lives in Sea World
 ```
 
 Both methods stopped a painted dog from being added to an aquarium. One is more _Pythonic_ than the other, but both are effective. Our recommendation is to follow the guidance of the Python community and use duck typing, and exceptions to determine if an object can be used for any specific purpose.
