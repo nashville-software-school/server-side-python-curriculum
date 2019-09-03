@@ -20,6 +20,6 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 * Chapter 13 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
 * Chapter 14 - [Decorators](./chapters/DECORATORS_INTRO.md)
 
-> ## __Group Project__ - Trestlebridge Farms
+> ## __Group Project__ - Keahua Arboretum
 
 > #### Let's Talk About Python Assessment

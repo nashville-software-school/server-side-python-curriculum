@@ -95,11 +95,38 @@ Jean shorts lumbersexual stumptown tumeric everyday carry readymade
 1. Read the "[A guide to Python's function decorators](https://www.thecodeship.com/patterns/guide-to-python-function-decorators/)" article and do all of the exercises in it to learn the basic vocabulary and syntax of what a decorator is.
 1. Read the "[Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)" article and do all of the exercises in it to explore decorator in greater depth.
 
-## Family Report with Decorators
+## Practice: Family Report with Decorators
 
+You need to write functions to represent tasks that members of a family need to perform on a regular basis.
 
+```py
+def laundry():
+    return "The dirty laundry was cleaned"
 
-## Basic Practice - Michael's Mortuary
+def garbage():
+    return "The garbage was taken out"
+
+def dust():
+    return "The house was dusted"
+
+def groom():
+    return "The dog was brushed"
+```
+
+Write a decorator function named `@kids` that, when placed above a function, will modify the return value of that function to have "by the kids" appended to the end. For example, if the decorator is above the `garbage()` function, when you invoke the method, it should return "The garbage was taken out by the kids"
+
+```py
+@kids
+def garbage():
+    return "The garbage was taken out"
+
+result = garbage()
+print(result)  # "The garbage was taken out by the kids"
+```
+
+Now write two more decorator functions named `@dad` and `@mom` and place them above the functions that you want to assign to the parents. The output should be appended with "by Dad" or "by Mom".
+
+## Practice: Michael's Mortuary
 
 Michael Tambornino's father opened up the Juniper Hill Mortuary back in 1959 and has served their community faithfully since. It's a trusted business that people in the entire town use to make sure that a family member's death is handled with care and compassion.
 
