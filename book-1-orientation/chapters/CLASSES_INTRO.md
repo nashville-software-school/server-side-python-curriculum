@@ -375,7 +375,7 @@ from city import City
 
 ### Birth of a City
 
-Create a new city instance and add your buildings to it. Once all buildings are in the city, iterate the city's building collection and output the information about each building in the city.
+Create a new city instance and add your building instances to it. Once all buildings are in the city, iterate the city's building collection and output the information about each building in the city.
 
 > ##### `main.py`
 
@@ -387,4 +387,3 @@ megalopolis = City()
 for building in megalopolis.buildings:
     print(building)
 ```
-
