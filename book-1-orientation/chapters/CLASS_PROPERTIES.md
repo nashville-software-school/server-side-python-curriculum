@@ -58,6 +58,24 @@ p = Product()
 p.price = 1.0 # Everything works ok
 ```
 
+## "Private" Variables
+
+The `self.__price` is considered a privately scoped attribute and should not be accessed. It is obfuscated by Python to not show up as an attribute. There is a method in Python named `dir()`. It returns a list of valid attributes of the object. Look at what the valid attributes are for the object referenced by `p`.
+
+```py
+print(dir(p))
+
+['__class__', '__delattr__', '__dict__', '__dir__',
+ '__doc__', '__eq__', '__format__', '__ge__',
+ '__getattribute__', '__gt__', '__hash__', '__init__',
+ '__init_subclass__', '__le__', '__lt__', '__module__',
+ '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+ '__repr__', '__setattr__', '__sizeof__', '__str__',
+ '__subclasshook__', '__weakref__', 'price']
+ ```
+
+ Note that `price` is in that list, but `__price` is not. Therefore, even though you, as the class designer, know that `__price` exists, you should not try to access it on an instance of the class.
+
 ## Practice: Solid Student
 
 Define a Python class named `Student`. This class will have 5 properties.
