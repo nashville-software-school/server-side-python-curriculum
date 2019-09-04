@@ -70,6 +70,14 @@ class ISwimming:
         print("The animal swims")
 ```
 
+### Update the movements Package
+
+> #### `movements/__init__.py`
+
+```py
+from .walking import IWalking
+from .swimming import ISwimming
+```
 
 Now you can define a class and implement the interface for a walking animal. You can start with a Penguin. Note that when a class inherits from two parents that you have to discard using the `super().__init__()` syntax and explicitly invoke the initialization method of both. You also need to pass `self` as an argument - something that is not needed when you use the `super()` abstraction.
 
