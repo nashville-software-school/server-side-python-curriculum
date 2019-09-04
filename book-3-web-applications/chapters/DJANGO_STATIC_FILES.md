@@ -33,11 +33,15 @@ body {
 
 ## CSS Content Block
 
-Update your base template to include the base CSS and add a content block so that dervied templates can specify their own CSS files. Note the keyword of `static` in the interpolated value of the `href` attribute of the `<link>` tag.
+Update your base template to include the base CSS and add a content block so that dervied templates can specify their own CSS files. Note the keyword of `static` in the interpolated value of the `href` attribute of the `<link>` tag. It also adds a `<main>` element around your content block.
 
 > #### `libraryapp/templates/shared/base.html`
 
 ```jinja
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="utf-8">
     <title>Library</title>
@@ -47,6 +51,29 @@ Update your base template to include the base CSS and add a content block so tha
     {% block css %}
     {% endblock %}
 </head>
+
+<body>
+
+    <nav id="site-nav">
+        <ol class="navList">
+            <li class="navList__route"><a href="{% url 'libraryapp:home' %}">Home</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:libraries' %}">Libraries</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:books' %}">Books</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:librarians' %}">Librarians</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:logout' %}">Logout</a></li>
+        </ol>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+
+</html>
 ```
 
 ## Book List Styles
@@ -78,7 +105,7 @@ Next step is to create a CSS file to style the book list. Create a `styles/books
 }
 ```
 
-Also update the book list template to request the `books.css` file, and include all those classes.
+Also update the book list template to request the `books.css` file, and include all those classes. In a derived template, you also need to `{% load staticfiles %}` to use static files in your application, even though the base template also had that instruction in it.
 
 ```jinja
 {% extends 'shared/base.html' %}
