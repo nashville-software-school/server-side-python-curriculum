@@ -17,7 +17,7 @@ You will put a button element inside a form and make a POST request to the same 
 
 Open `templates/books/detail.html` and place this code before the closing `</body>` tag.
 
-```html
+```jinja
 <form action="{% url 'libraryapp:book' book.id %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="actual_method" value="DELETE">

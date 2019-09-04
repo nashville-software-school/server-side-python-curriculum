@@ -80,7 +80,7 @@ from .books.details import book_details
 
 Create `templates/books/detail.html` and use the following code.
 
-```html
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -102,7 +102,7 @@ Create `templates/books/detail.html` and use the following code.
 
 Open `templates/books/list.html` and change each line item to the following code.
 
-```html
+```jinja
 <li>
     <a href="{% url 'libraryapp:book' book.id %}"> {{ book.title }} </a>
     by {{book.author}} published in {{book.year_published}}

@@ -178,6 +178,8 @@ The output you want to present to users is a list of libraries, with a sub-list 
 
 To accomplish this, you must do several complex refactors of your library list view, and your library list template. Start with the view. Add the following row factory function to your library list view.
 
+> #### libraryproject/libraryapp/views/libraries/list.py
+
 ```py
 def create_library(cursor, row):
     _row = sqlite3.Row(cursor, row)
@@ -238,9 +240,11 @@ for (library, book) in libraries:
         library_groups[library.id].books.append(book)
 ```
 
-Give the query above that returned 6 rows, here's the process.
+Given the query that you ran earlier which returned 6 rows, here's the process for converting those rows into groups.
 
-THe first iteration of the `for` loop, the `library_groups` dictionary has nothing in it
+![](./images/books-per-library.png)
+
+With the first iteration of the `for` loop, the `library_groups` dictionary has nothing in it
 
 ```py
 print(library_groups)
@@ -248,7 +252,7 @@ print(library_groups)
 >>> {}
 ```
 
-The `if` condition evaluates to true, so the first library's primary key is added as a key to the dictionary and it's value is the library.
+Therefore, since there is no `1` key in the dictionary, the `if` condition evaluates to true. In that case, the first library's primary key is added as a key to the dictionary and it's value is the library.
 
 ```py
 {
@@ -346,7 +350,7 @@ The third row is still the same library, so the current book is added to the exi
 }
 ```
 
-The fourth row is a new library and the key of "2" does not exist in our dictionary, so its added and the new library is the value.
+The fourth row is a new library and the key of "2" does not exist in our dictionary, so it iss added and the new library is the value.
 
 ```py
 {

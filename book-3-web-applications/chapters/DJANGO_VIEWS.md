@@ -157,7 +157,7 @@ Then open that file in Visual Studio code, and place the following code into it.
 
 > #### libraryproject/libraryapp/templates/books/list.html
 
-```html
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -237,7 +237,7 @@ Yep, this is Python code written inside an HTML file. Weird, I know. It's like t
 
 Here's another example that shows both the for loop, but with an nested if statement to show you the use of the interpolation punctuation.
 
-```html
+```jinja
 {% for book in all_books %}
     {% if book.year_published > 2000 %}
         <li>{{ book.title }} by {{book.author}} published in {{book.year_published}}</li>
@@ -301,7 +301,7 @@ Then your `templates/librarians/list.html` template will iterate the `all_librar
 
 > #### libraryproject/libraryapp/templates/librarians/list.html
 
-```html
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>

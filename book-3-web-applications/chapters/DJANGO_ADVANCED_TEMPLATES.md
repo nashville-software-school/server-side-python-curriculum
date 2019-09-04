@@ -8,7 +8,7 @@ To make the application's templates more scalable and easy to maintain, you are 
 
 > #### libraryproject/libraryapp/templates/shared/base.html
 
-```html
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,7 @@ Go through your application and have every template extend the base template, an
 
 Now to add navigation links for your application. Open `base.html` replace its contents with the following code.
 
-```html
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -99,7 +99,7 @@ Now to add navigation links for your application. Open `base.html` replace its c
 
 After the main heading in your book list, add a link to the book creation form.
 
-```html
+```jinja
 <h1>Books</h1>
 
 <a href="{% url 'libraryapp:book_form' %}">Add Book to Inventory</a>
