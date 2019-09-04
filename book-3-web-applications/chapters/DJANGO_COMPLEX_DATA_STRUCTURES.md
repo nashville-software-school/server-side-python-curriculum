@@ -105,7 +105,7 @@ Once this code is in place, you should now see the librarian and library assigne
 
 ## Joining Related Data on a Collection of Items
 
-Things get even more complex when you want to display a list of resources - such as Liraries - and show their related data. Each library has multiple books in its inventory. Since you cannot use SQL to generate complex structures _(it only give you flat data back)_ then the Python developer is responsible for converting the flat data into grouped data.
+Things get even more complex when you want to display a list of resources - such as Libraries - and show their related data. Each library has multiple books in its inventory. Since you cannot use SQL to generate complex structures _(it only gives you flat data back)_ then the Python developer is responsible for converting the flat data into grouped data.
 
 Use this query to get all libraries and their related books in TablePlus.
 
