@@ -19,7 +19,7 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 * Chapter 12 - [Python Packages](./chapters/PYTHON_PACKAGES.md)
 * Chapter 13 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
 * Chapter 14 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
-* Chapter 14 - [Decorators](./chapters/DECORATORS_INTRO.md)
+* Chapter 15 - [Decorators](./chapters/DECORATORS_INTRO.md)
 
 > ## __Group Project__ - Keahua Arboretum
 
