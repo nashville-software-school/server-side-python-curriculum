@@ -47,11 +47,12 @@ Overly Excited
 ChickenMonkey
     * Juan Rodriguez
 
-Mary Margaret
+Stock Report
     * Juan Rodriguez
 
 Urban Planner
     * Ryan Tanay
+    * Natasha Cox
 
 Bag o' Loot
     * Juan Rodriguez
@@ -63,7 +64,7 @@ To turn flat data into grouped data, then consider which data structure in Pytho
 {
     "Overly Excited": ["Ryan Tanay", "Kate Williams"],
     "ChickenMonkey": ["Juan Rodriguez"],
-    "Mary Margaret": ["Juan Rodriguez"],
+    "Stock Report": ["Juan Rodriguez", "Natasha Cox"],
     "Urban Planner": ["Ryan Tanay"],
     "Bag o' Loot": ["Juan Rodriguez"]
 }
@@ -135,12 +136,12 @@ If you `print(exercises)` after that loop is complete, you will see a data struc
 {
     'Overly Excited': ['Ryan Tanay', 'Kate Williams'],
     'ChickenMonkey': ['Juan Rodriguez'],
-    'Mary Margaret': ['Juan Rodriguez'],
+    'Stock Report': ['Juan Rodriguez', 'Natasha Cox'],
     'Urban Planner': ['Ryan Tanay'],
     "Bag o' Loot": ['Juan Rodriguez', 'Jessawynne Parker'],
     'Zoolandia': ['Rainu Ittycheriah', 'Meg Ducharme', 'Jessawynne Parker'],
     'Kandy Korner': ['Hannah Hall'],
-    'Stock Report': ['Steven Holmes', 'Tanner Terry'],
+    'Kill Nickelback': ['Steven Holmes', 'Tanner Terry'],
     'Kneel Diamonds': ['Steven Holmes', 'Hannah Hall'],
     'Probes': ['Tanner Terry'],
     'Boy Bands & Vegetables': ['Jessawynne Parker']

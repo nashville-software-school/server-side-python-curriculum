@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-mkdir -p ~/workspace/python/exercises/studentexercises && cd $_
+cd ~/workspace/python/StudentExercises && cd $_
 touch studentexercises.db
 tableplus studentexercises.db
 ```
@@ -21,6 +21,8 @@ This will create and open a completely blank SQLite database. In this chapter, y
 ## Defining your Tables
 
 Read the instructions below and create an ERD of the database before you start creating the tables and inserting the data. Make sure that each table has a primary key column and foreign key constraints for the relationships.
+In this part of building your application, you will be creating the database tables and the data that you will be querying in your application logic later.
+
 
 ### Cohort
 
@@ -63,7 +65,7 @@ You must define a table to store data about an instructor. The table must have t
 1. Last name
 1. Slack handle
 1. The instructor's cohort
-1. The instructor's specialty (e.g. jokes, snack cakes, dancing, etc.)
+1. The instructor's specialty (e.g. dad jokes, excitement, dancing, etc.)
 
 ### Exercise
 
