@@ -14,12 +14,14 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 * Chapter 7 - [Common Types - Sets](./chapters/DATA_STRUCTURES_SET.md)
 * Chapter 8 - [Python Functions](./chapters/FUNCTIONS_INTRO.md)
 * Chapter 9 - [Custom Types with Classes](./chapters/CLASSES_INTRO.md)
-* Chapter 10 - [Class Properties](./chapters/CLASS_PROPERTIES.md)
-* Chapter 11 - [Exceptions and Try/Catch](./chapters/TRY_CATCH_INTRO.md)
-* Chapter 12 - [Python Packages](./chapters/PYTHON_PACKAGES.md)
-* Chapter 13 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
-* Chapter 14 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
-* Chapter 15 - [Decorators](./chapters/DECORATORS_INTRO.md)
+* Chapter 10 - [Student Exercises - Part One](./chapters/STUDENT_EXERCISES_TYPES.md)
+* Chapter 11 - [Class Properties](./chapters/CLASS_PROPERTIES.md)
+* Chapter 12 - [Exceptions and Try/Catch](./chapters/TRY_CATCH_INTRO.md)
+* Chapter 13 - [Python Packages](./chapters/PYTHON_PACKAGES.md)
+* Chapter 14 - [Inheritance](./chapters/INHERITANCE_INTRO.md)
+* Chapter 15 - [Student Exercises - Part Two](./chapters/STUDENT_EXERCISES_INHERITANCE.md)
+* Chapter 16 - [Multiple Inheritance](./chapters/MULTIPLE_INHERITANCE.md)
+* Chapter 17 - [Decorators](./chapters/DECORATORS_INTRO.md)
 
 > ## __Group Project__ - Keahua Arboretum
 
