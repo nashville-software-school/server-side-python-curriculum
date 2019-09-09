@@ -19,5 +19,5 @@ This book introduces you to the Django web application framework, and using the 
 
 ## Bangazon Workforce Management Sprint
 
-#### Let's Talk About SQL Assessment
+#### Let's Talk About Django Assessment
 
