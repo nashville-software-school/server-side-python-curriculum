@@ -6,7 +6,7 @@ List the exercises assigned to each student. Display each student name and the e
 
 ```sh
 Jessawynne Parker is working on:
-    * Mary Margaret
+    * Stock Report
     * Boy Bands & Vegetables
 
 Tanner Terry is working on:
