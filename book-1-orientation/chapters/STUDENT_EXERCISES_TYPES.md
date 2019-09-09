@@ -2,20 +2,6 @@
 
 You are going to build a console application that tracks exercises that are assigned to students at Nashville Software School. These are the constraints and requirements for your application.
 
-## Entity Relationship Diagram
-
-First, build an ERD based on these requirements using [dbdiagram.io](https://dbdiagram.io).
-
-## Setup
-
-> **Note:** Make sure that each class you define is in its own file.
-
-```sh
-mkdir -p ~/workspace/python/StudentExercises && cd $_
-touch student.py cohort.py instructor.py exercise.py
-code .
-```
-
 
 ## Student
 
@@ -59,6 +45,20 @@ You must define a type for representing an exercise in code. An exercise can be 
 
 The learning objective of this exercise is to practice creating instances of custom types that you defined with `class`, establishing the relationships between them, and practicing basic data structures in Python.
 
+## Entity Relationship Diagram
+
+First, build an ERD based on these above requirements using [dbdiagram.io](https://dbdiagram.io).
+
+## Setup
+
+> **Note:** Make sure that each class you define is in its own file.
+
+```sh
+mkdir -p ~/workspace/python/StudentExercises && cd $_
+touch main.py student.py cohort.py instructor.py exercise.py
+code .
+```
+
 Once you have defined all of your custom types, go to `main.py`, import the classes you need, and implement the following logic.
 
 1. Create 4, or more, exercises.
@@ -69,16 +69,28 @@ Once you have defined all of your custom types, go to `main.py`, import the clas
 
 ## Challenge
 
+Continuing inside of `main.py` with the instances of the classes you made previously, create the lists below.
+
+##### Example:
+If I had a student instance referenced by the variable `ivan`:
+```py
+students = [ivan]
+```
+
+
 1. Create a list of students. Add all of the student instances to it.
     ```py
     students = list()
-
     ```
 1. Create a list of exercises. Add all of the exercise instances to it.
     ```py
     exercises = list()
-
     ```
 
-Generate a report that displays which students are working on which exercises.
+Now, generate a report that displays which students are working on which exercises.
 
+##### Example
+
+```sh
+Ivan is working on Kandy Korner, Stocks Report, and Planet List.
+```

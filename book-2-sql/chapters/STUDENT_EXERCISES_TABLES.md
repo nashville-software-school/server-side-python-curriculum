@@ -30,7 +30,7 @@ You must define a table to store data about a cohort. We are giving you the SQL 
 
 The table must have the following columns.
 
-1. The cohort's name (Evening Cohort 6, Day Cohort 25, etc.)
+1. The cohort's name (Evening Cohort 6, Day Cohort 26, etc.)
 
 ```sql
 CREATE TABLE Cohort (
