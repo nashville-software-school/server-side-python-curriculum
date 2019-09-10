@@ -43,3 +43,15 @@ pip install -U django
 ## TablePlus
 
 [TablePlus](https://tableplus.io/windows) will let you view, query and manage your SQLite databases during the course.
+
+Lastly, setup an alias for TablePlus. Open the `~/.zshrc` initialization file - which is in your home directory - in your favorite code editor, and enter in the following alias.
+
+```sh
+alias tableplus="open -a """TablePlus""" "
+```
+
+Save the file, and reload your init file with the source command in the terminal.
+
+```sh
+source ~/.zshrc
+```
