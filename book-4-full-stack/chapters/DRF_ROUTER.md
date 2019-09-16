@@ -5,7 +5,7 @@ Time to configure the `DefaultRouter` in the `url.py` module to accept incoming 
 > ##### `kennywoodapi/urls.py`
 
 ```py
-from kennywoodapi.views import ListParkAreas
+from kennywoodapi.views import ParkAreas
 ```
 
 Then you need to set up the mapping between the URL and the ViewSet. Update your module with the following code.
@@ -14,7 +14,7 @@ Then you need to set up the mapping between the URL and the ViewSet. Update your
 
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'parkareas', ListParkAreas, 'parkarea')
+router.register(r'parkareas', ParkAreas, 'parkarea')
 ```
 
 That's the last piece to see something in the browsable API in the browser.  Open http://localhost:8000 in your browser and you should see a URL for park areas.

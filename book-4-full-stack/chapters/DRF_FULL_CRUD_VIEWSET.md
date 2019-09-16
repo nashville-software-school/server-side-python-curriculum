@@ -1,8 +1,9 @@
 # Completing Your ViewSet for CRUD
 
+Now it's time to fill out your `
+
 ```py
-"""View module for handling requests about park areas
-"""
+"""Park Areas for Kennywood Amusement Park"""
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
@@ -27,7 +28,7 @@ class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ListParkAreas(ViewSet):
-    """View class for handling requests about park areas"""
+    """Park Areas for Kennywood Amusement Park"""
 
     def create(self, request):
         """Handle POST operations

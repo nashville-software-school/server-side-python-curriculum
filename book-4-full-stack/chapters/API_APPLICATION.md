@@ -6,11 +6,12 @@ Now that the project is set up and has some initial configuration, it's time to 
 python manage.py startapp kennywoodapi
 ```
 
-Now you need to update your application settings to enable Django REST Framework, CORS headers, and your application. Replace the following section in your `settings.py` file with the code below.
+Now you need to update your application settings to enable Django REST Framework, CORS headers, and your application. Replace the following sections, and add the sections marked as new, in your `settings.py` file with the code below.
 
 > ##### `settings.py`
 
 ```sh
+# Replace existing list
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -23,6 +24,36 @@ INSTALLED_APPS = [
     'corsheaders',
     'kennywoodapi',
 ]
+
+# This is new
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
+
+# Replace existing list
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# This is new
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8080',
+    'http://127.0.0.1:8080'
+)
 ```
 
 ## Basic Setup of Routing

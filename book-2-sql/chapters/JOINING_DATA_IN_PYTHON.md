@@ -128,7 +128,60 @@ for row in dataset:
         exercises[exercise_name].append(student_name)
 ```
 
-If you `print(exercises)` after that loop is complete, you will see a data structure like the example one above.
+
+
+
+
+
+
+
+
+
+
+With the first iteration of the `for` loop, the `exercises` dictionary has nothing in it
+
+```py
+print(exercises)
+
+>>> {}
+```
+
+Therefore, since there is no 'Overly Excited' key in the dictionary, the `if` condition evaluates to true. In that case, the first exercise name is added as a key to the dictionary and it's value is the current student.
+
+```py
+{
+    'Overly Excited': ['Ryan Tanay']
+}
+```
+
+Now it moves on to the second row in the dataset. Does the key of 'Overly Excited' exist in the dictionary? Sure does, so the `if` condition evaluates to false, and the current student is added to the existing library.
+
+```py
+{
+    'Overly Excited': ['Ryan Tanay', 'Kate Wiliams']
+}
+```
+
+The third row is for the 'ChickenMonkey' exercise, so a new key is added and the matching student is in the list value
+
+```py
+{
+    'Overly Excited': ['Ryan Tanay', 'Kate Wiliams'],
+    'ChickenMonkey': ['Juan Rodriguez']
+}
+```
+
+The fourth row is for another new exercise, so it is added and the student is in the list value.
+
+```py
+{
+    'Overly Excited': ['Ryan Tanay', 'Kate Wiliams'],
+    'ChickenMonkey': ['Juan Rodriguez']
+    'Stock Report': ['Juan Rodriguez']
+}
+```
+
+This process continues until each row in dataset has been evaluated. If you `print(exercises)` after that loop is complete, you will see a data structure like the example one below.
 
 > **_Note:_** It won't be this pretty. It will all be squashed together in the terminal.
 

@@ -10,7 +10,6 @@ mkdir views
 touch views/__init__.py
 ```
 
-
 ## Park Area View and Serializer
 
 You are going to be using an abstraction in the Django REST Framework library called a `ViewSet`. This particular type allows you to write more abstract code than you did for your first Django exercises and project.
@@ -46,8 +45,8 @@ class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'url', 'name', 'theme')
 
 
-class ListParkAreas(ViewSet):
-    """View class for handling requests about park areas"""
+class ParkAreas(ViewSet):
+    """Park Areas for Kennywood Amusement Park"""
 
     def list(self, request):
         """Handle GET requests to park areas resource
@@ -79,6 +78,14 @@ FROM kennywoodapi_parkarea pa
 ```
 
 Django will now write that SQL _**for you**_.
+
+## Add View to Package
+
+> ##### `kennywoodapi/views/__init__.py`
+
+```py
+from .parkarea import ParkAreas
+```
 
 ## Create your First Park Area
 
