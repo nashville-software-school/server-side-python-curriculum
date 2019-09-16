@@ -21,7 +21,21 @@ Please take a few minutes to read the documentation on the [sqlite3](https://doc
 
 You can now use the `sqlite3` package to interact with your database. Here's a sample function that gets all students from your Student Exercises database. You can copy this directly into `reports.py`.
 
-> **IMPORTANT:** Make sure you replace the placeholder `/absolute/path/to/home/directory/` in the db path below with your real home directory. It is important to use the full, absolute path to your database file so that debugging will work. Use the `pwd` command in your terminal to get your absolute path.
+> **IMPORTANT:**
+>
+> Make sure you replace the placeholder `/absolute/path/to/home/directory/` in the db path below with your real home directory. It is important to use the full, absolute path to your database file so that debugging will work. Use the `pwd` command in your terminal to get your absolute path.
+>
+> In the code below, the example uses OSX absolute path syntax. If you are on a Windows machine and run `pwd` in Git Bash, the you will see a path like the following.
+>
+> ```sh
+> /c/Users/username/workspace
+> ```
+>
+> You need to remove the /c at the beginning
+>
+> ```sh
+> /Users/username/workspace
+> ```
 
 ```py
 import sqlite3
