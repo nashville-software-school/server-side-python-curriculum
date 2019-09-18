@@ -101,8 +101,10 @@ First you are going to use the commands below to create a `models` sub-directory
 > **Note:** You will notice a `libraryapp/models.py` file that gets automatically generated for your application. You will not be using that file, and can delete it.
 
 ```sh
-md models && cd $_
+mkdir models && cd $_
+
 touch library.py book.py librarian.py __init__.py
+
 echo 'from .library import Library
 from .book import Book
 from .librarian import Librarian
