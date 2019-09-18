@@ -101,6 +101,14 @@ def book_list(request):
         return render(request, template, context)
 ```
 
+Import the view into the package init file.
+
+> #### libraryproject/libraryapp/views/__init__.py
+
+```py
+from .books.list import book_list
+```
+
 This function is now called a view since it will handle HTTP requests. Which HTTP request, you might ask? Well, you define that in `urls.py`.
 
 Create a `urls.py` file in the `libraryapp` directory. This file will define all of the URLs that your library application will respond to. Place the following code in it.
