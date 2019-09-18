@@ -101,9 +101,9 @@ def book_list(request):
         return render(request, template, context)
 ```
 
-Import the view into the package init file.
+Import the function into the package init file.
 
-> #### libraryproject/libraryapp/views/__init__.py
+> #### libraryproject/libraryapp/views/\_\_init__.py
 
 ```py
 from .books.list import book_list
