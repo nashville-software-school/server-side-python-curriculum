@@ -20,7 +20,7 @@ Time for you to implement your first form so that users can enter in a new book 
     <h1>Inventory Book</h1>
 
 
-    <form action="{% url 'libraryapp:create_book' %}" method="post">
+    <form action="{% url 'libraryapp:book_form' %}" method="post">
       {% csrf_token %}
       <fieldset>
           <label for="title">Title: </label>
