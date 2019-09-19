@@ -438,7 +438,7 @@ def book_list(request):
 
 ## The Home Template
 
-Before you move on, you should create a home page. For now, it will be a dumb template - meaning it won't have any data in its context. It is just a welcome message for your users when they first visit your site.
+Before you move on, you should create a home page. Right now, the root route `/` and `/books` both show the listing of books, so you are going to change that. For now, it will be a dumb template - meaning it won't have any data in its context. It is just a welcome message for your users when they first visit your site.
 
 ### The Template
 
@@ -481,7 +481,7 @@ def home(request):
 
 Add the following import to your package init.
 
-> #### libraryproject/libraryapp/views/__init__.py
+> #### libraryproject/libraryapp/views/\_\_init__.py
 
 ```py
 from .home import home
@@ -489,7 +489,7 @@ from .home import home
 
 ### Home Page URL
 
-Add the following `'home'` pattern to your application URLs.
+Update the `'home'` pattern in your application URLs.
 
 > #### libraryproject/libraryapp/urls.py
 
