@@ -44,7 +44,7 @@ cd Scripts
 activate.bat
 cd ..
 cd ..
-pip install django
+pip install django pylint autopep8
 pip freeze > requirements.txt
 ```
 
