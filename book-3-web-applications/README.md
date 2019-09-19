@@ -2,7 +2,6 @@
 
 This book introduces you to the Django web application framework, and using the MVC design pattern.
 
-* Chapter 1 - [Setting up Visual Studio Code to Work with Django](./chapters/WORKSPACE_SETUP.md)
 * Chapter 2 - [About the Web: Resources and Verbs](./chapters/WEB_RESOURCES_HTTP_VERBS.md)
 * Chapter 3 - [Django Intro - Project and Database Setup](./chapters/DJANGO_INTRO_LIBRARY.md)
 * Chapter 4 - [Django Intro - Views and Templates](./chapters/DJANGO_VIEWS.md)
@@ -20,4 +19,7 @@ This book introduces you to the Django web application framework, and using the 
 ## Bangazon Workforce Management Sprint
 
 #### Let's Talk About Django Assessment
+
+* Supplement - [Setting up Visual Studio Code to Work with Django](./chapters/WORKSPACE_SETUP.md)
+
 

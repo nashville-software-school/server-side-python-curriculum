@@ -58,6 +58,8 @@ def logout_user(request):
     return redirect(reverse('libraryapp:home'))
 ```
 
+Then import the `logout_user` view into `libraryapp/views/__init__.py`.
+
 ## Where to Go When User Authenticates
 
 Open your `settings.py` file and place the following configuration variable at the bottom of the file. This tells Django which URL it should redirect the browser to when the user authenticates. For now, you will redirect the user to the list of books.

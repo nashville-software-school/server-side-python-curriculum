@@ -34,12 +34,16 @@ pip freeze > requirements.txt
 
 Determine where you want to create your environment directory. Use that path below. **Do not use** `c:\path\to\environment` because that path doesn't exist. Preferably make it inside your project directory. For example, `c:\Users\[me]\workspace\python\[project directory]`.
 
-Windows users cannot use Git Bash, you must do this with Command Line or Powershell.
+Windows users cannot use Git Bash, you must do this with Windows Command Line.
 
 ```sh
 cd workspace\python\myawesomeproject
 python -m venv myawesomeprojectenv
-myawesomeprojectenv/Scripts/activate.bat
+cd myawesomeprojectenv
+cd Scripts
+activate.bat
+cd ..
+cd ..
 pip install django
 pip freeze > requirements.txt
 ```
