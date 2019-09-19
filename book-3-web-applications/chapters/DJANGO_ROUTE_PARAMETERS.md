@@ -6,15 +6,21 @@ http://localhost:8000/books/1
 
 The `1` is the route parameter.
 
-## URL Pattern
+## A New Way to Define URL Patterns
 
-Start by adding the following URL patters to `urls.py`.
+Import the following method into your application `urls.py`.
 
 ```py
-url(r'^books/(?P<book_id>[0-9]+)/$', book_details, name="book"),
+from django.urls import path
 ```
 
-The `(?P<book_id>[0-9]+)` part of that URL pattern is a regular expression, mixed with some Django magic, to capture any integer that is the route parameter, and stores that number in the `book_id` variable.
+Then define the following URL pattern.
+
+```py
+path('books/<int:book_id>/', book_details, name='book'),
+```
+
+The `<int:book_id>` part of that URL pattern is used to capture any integer that is the route parameter, and stores that number in the `book_id` variable.
 
 ## Detail View
 
@@ -112,7 +118,7 @@ Open `templates/books/list.html` and change each line item to the following code
 The `url` keyword in the interpolation is a shortcut for Django to look up a named route in your `urls.py`. Then you specify the name of the route you want to look up. In this case, it's the pattern named `book` in the library application.
 
 ```py
-url(r'^books/(?P<book_id>[0-9]+)$', book_details, name="book"),
+path('books/<int:book_id>/', book_details, name='book'),
 ```
 
 The third item in there - `book.id` - is the route parameter you want to send to that URL.

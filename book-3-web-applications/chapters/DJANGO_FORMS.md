@@ -116,7 +116,7 @@ from .books.form import book_form
 
 When the user fills out the form and clicks the submit button, the browser will collect all the values of the form and submit a POST request to a URL. You must then handle that request and create a book.
 
-Where should the request be sent. Thinking back to chapter 2 where you reviewed HTTP requests and verbs, what operation are you performing? You are making a change to the collection of books by creating a new one. Therefore, you will submit the request to `/books`.
+Where should the request be sent. Thinking back to chapter 1 where you reviewed HTTP requests and verbs, what operation are you performing? You are making a change to the collection of books by creating a new one. Therefore, you will submit the request to `/books`.
 
 You already have a pattern defined in `urls.py` for that URL.
 
