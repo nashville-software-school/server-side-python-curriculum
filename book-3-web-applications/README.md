@@ -12,8 +12,8 @@ This book introduces you to the Django web application framework, and using the 
 * Chapter 8 - [Django Intro - Editing](./chapters/DJANGO_EDIT_FORMS.md)
 * Chapter 9 - [Django Intro - Extending Base Templates](./chapters/DJANGO_ADVANCED_TEMPLATES.md)
 * Chapter 10 - [Django Intro - Complex Relationships](./chapters/DJANGO_COMPLEX_DATA_STRUCTURES.md)
-* Chapter 11 - [Student Exercises - Djangafied](./chapters/STUDENT_EXERCISES_DJANGO.md)
-* Chapter 12 - [Serving up Static Files](./chapters/DJANGO_STATIC_FILES.md)
+* Chapter 11 - [Django Intro - Serving up Static Files](./chapters/DJANGO_STATIC_FILES.md)
+* Chapter 12 - [Student Exercises - Djangafied](./chapters/STUDENT_EXERCISES_DJANGO.md)
 * Chapter 13 - [Student Exercises - In a Grid](./chapters/STUDENT_EXERCISES_CSS.md)
 
 ## Bangazon Workforce Management Sprint
