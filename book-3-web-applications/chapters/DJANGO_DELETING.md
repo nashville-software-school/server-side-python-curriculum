@@ -61,7 +61,7 @@ if request.method == 'POST':
             db_cursor.execute("""
             DELETE FROM libraryapp_book
             WHERE id = ?
-            """, (book_id))
+            """, (book_id,))
 
         return redirect(reverse('libraryapp:books'))
 ```
