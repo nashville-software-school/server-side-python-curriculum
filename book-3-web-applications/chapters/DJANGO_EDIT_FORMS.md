@@ -251,7 +251,7 @@ def book_details(request, book_id):
                 (
                     form_data['title'], form_data['author'],
                     form_data['isbn'], form_data['year_published'],
-                    form_data["location"], form_data["book_id"],
+                    form_data["location"], book_id,
                 ))
 
             return redirect(reverse('libraryapp:books'))
