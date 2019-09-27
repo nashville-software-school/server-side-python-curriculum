@@ -21,6 +21,7 @@ In this application, customers are going to build an itinerary of attractions th
 
 ```py
 from django.db import models
+from django.db.models import F
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -31,16 +32,11 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     family_members = models.IntegerField()
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
-@receiver(post_save, sender=User)
-def create_customer(sender, instance, created, **kwargs):
-    if created:
-        Customer.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_customer(sender, instance, **kwargs):
-    instance.customer.save()
+    class Meta:
+        ordering = (F('user.date_joined').asc(nulls_last=True),)
 ```
 
 > ##### `kennywoodapi/models/parkarea.py`
@@ -54,8 +50,7 @@ class ParkArea(models.Model):
     theme = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = ("parkarea")
-        verbose_name_plural = ("parkareas")
+        ordering = ("theme",)
 
     def __str__(self):
         return self.name
@@ -73,8 +68,7 @@ class Attraction(models.Model):
     area = models.ForeignKey(ParkArea, on_delete=models.DO_NOTHING)
 
     class Meta:
-        verbose_name = ("attraction")
-        verbose_name_plural = ("attractions")
+        ordering = ("area",)
 
     def __str__(self):
         return self.name
@@ -94,6 +88,7 @@ class Itinerary(models.Model):
     starttime = models.IntegerField()
 
     class Meta:
+        ordering = ("starttime")
         verbose_name = ("itinerary")
         verbose_name_plural = ("itineraries")
 

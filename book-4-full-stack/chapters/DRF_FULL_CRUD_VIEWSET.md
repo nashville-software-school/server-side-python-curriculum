@@ -1,6 +1,6 @@
 # Completing Your ViewSet for CRUD
 
-Now it's time to fill out your `
+Now it's time to fill out your `parkarea.py` module with all of the CRUD actions that it needs to perform. You can copy pasta this entire block of code into your module.
 
 ```py
 """Park Areas for Kennywood Amusement Park"""
@@ -100,3 +100,35 @@ class ListParkAreas(ViewSet):
             areas, many=True, context={'request': request})
         return Response(serializer.data)
 ```
+
+## Using Your New API
+
+Time to bring back our old friend Postman! Fire it up and make some requests.
+
+### Create a Park Area
+
+Create a POST request and set the `Content-Type` header.
+
+![](./images/api-create-url-method-header.png)
+
+Click the Body tab and create a JSON object representing a new park.
+
+![](./images/api-create-body.png)
+
+When you submit that request, you should get a response very similar to what's below. Your `id` property will likely be different.
+
+![](./images/api-create-response.png)
+
+Now visit your browsable API in the browser and look at your list of park areas. Your new area should be in the list.
+
+
+![](./images/api-create-browsable-view.png)
+
+## Modify a Park Area
+
+Perform a PUT request in Postman to change the `name` property of the park area you just created to "Kennywood Motor Speedway". Verify the change by viewing it in the browsable API.
+
+## Delete a Park Area
+
+Perform a DELETE request to remove the park area you just created. Verify the change by viewing it in the browsable API.
+
