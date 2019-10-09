@@ -39,7 +39,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 ```
 
-If you are a Mac user on Mojave, and receive a similar error to the one below when trying to run `pyenv install 3.7.3`
+If try to run `pyenv install 3.7.3` and receive an error similar to the one below 
 
 ```
 BUILD FAILED (OS X 10.14.6 using python-build 20180424)
@@ -51,6 +51,8 @@ Run the following command in your terminal:
  ```
  sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target / 
  ```
+
+ After this is completed, try running `pyenv install 3.7.3` again
 
 
 ## Python Linter
