@@ -6,3 +6,15 @@
 1. [Bokeh](https://bokeh.pydata.org/en/latest/) - Interactive visualization library that targets modern web browsers for presentation
 1. [Keras: The Python Deep Learning library](https://keras.io/#you-have-just-found-keras)
 
+## Possible Reports and Visualizations
+
+For an eCommerce site like Bangazon, business development teammates and sales executives would love to see these kinds of reports.
+
+1. Top revenue generating customer(s).
+1. Total number of transactions per day, week, month, year.
+1. Customers who purchased the most per quarter.
+1. Lowest revenue generating customer(s). These would be people who sell the least number of items they post for sale.
+1. Customers that haven't accessed the site in the last 3 months.
+1. Most recommended product(s).
+1. Most liked product(s).
+1. Most disliked product(s).
