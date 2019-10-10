@@ -2,13 +2,13 @@
 
 ## Downloading the Database Files
 
-Click the big download button from the [Chinook Database](http://chinookdatabase.codeplex.com/) site. Know which directory that it's being downloaded to.
+Download the [Chinook Database](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite?raw=true). It will immediately download into your `Downloads` directory.
 
 ## Moving the SQLite Database to Your Workspace
 
 1. In your CLI, get to the directory where you extracted the archive. It should be something like the following.
     ```
-    cd ~/Downloads/ChinookDatabase1.4_CompleteVersion
+    cd ~/Downloads
     ```
 
 1. Create a directory for your work.
