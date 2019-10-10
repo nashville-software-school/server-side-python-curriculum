@@ -6,6 +6,10 @@
 1. [Bokeh](https://bokeh.pydata.org/en/latest/) - Interactive visualization library that targets modern web browsers for presentation
 1. [Keras: The Python Deep Learning library](https://keras.io/#you-have-just-found-keras)
 
+## Serializing Data Frames as JSON
+
+A Panda data frame has a [.to_json()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html) method that will serialize the Python data structure into JSON format in order to send the data to a client. The client can then parse that JSON into a JavaScript object/array and use it however it likes.
+
 ## Possible Reports and Visualizations
 
 For an eCommerce site like Bangazon, business development teammates and sales executives would love to see these kinds of reports.
