@@ -35,5 +35,5 @@ if order is not None:
         if direction == "desc":
             filter = f'-{order}'
 
-    products = products.order_by(order)
+    products = products.order_by(filter)
 ```
