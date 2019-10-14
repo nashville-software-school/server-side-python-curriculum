@@ -33,7 +33,7 @@ if order is not None:
 
     if direction is not None:
         if direction == "desc":
-            filter = f'-{order}'
+            filter = f'-{filter}'
 
     products = products.order_by(filter)
 ```
