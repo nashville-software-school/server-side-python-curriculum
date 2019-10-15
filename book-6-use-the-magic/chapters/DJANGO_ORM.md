@@ -66,7 +66,11 @@ class OrderProduct(models.Model):
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING, related_name="cart")
 ```
 
-Then create a new route named `orders/cart` and perform the following logic.
+What you have to do next is create a custom action on the ViewSet. This action's name actually defines a brand new route, for you without any more action on your part.
+
+So, for example, the action below is named `cart`. It is on the product ViewSet. Therefore, your app will now respond to any request to `http://localhost:8000/product/cart`.
+
+This is the logic of getting the products on the current user's cart.
 
 1. Determine if there is an order created for the authenticated customer.
 1. If there isn't, return a 404.
