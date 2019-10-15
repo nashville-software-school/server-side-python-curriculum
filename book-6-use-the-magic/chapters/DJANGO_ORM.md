@@ -74,6 +74,8 @@ Then create a new route named `orders/cart` and perform the following logic.
 1. Serialize the products by importing the `ProductSerializer` from the `views/product.py` module.
 
 ```py
+from rest_framework.decorators import action
+
 # Example request:
 #   http://localhost:8000/orders/cart
 @action(methods=['get'], detail=False)
