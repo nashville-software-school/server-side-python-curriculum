@@ -6,15 +6,21 @@ http://localhost:8000/books/1
 
 The `1` is the route parameter.
 
-## URL Pattern
+## A New Way to Define URL Patterns
 
-Start by adding the following URL patters to `urls.py`.
+Import the following method into your application `urls.py`.
 
 ```py
-url(r'^books/(?P<book_id>[0-9]+)/$', book_details, name="book_details"),
+from django.urls import path
 ```
 
-The `(?P<book_id>[0-9]+)` part of that URL pattern is a regular expression, mixed with some Django magic, to capture any integer that is the route parameter, and stores that number in the `book_id` variable.
+Then define the following URL pattern.
+
+```py
+path('books/<int:book_id>/', book_details, name='book'),
+```
+
+The `<int:book_id>` part of that URL pattern is used to capture any integer that is the route parameter, and stores that number in the `book_id` variable.
 
 ## Detail View
 
@@ -26,15 +32,15 @@ Create the `views/books/details.py` file and use the following code.
 
 ```py
 import sqlite3
-from django.shortcuts import render
+from django.urls import reverse
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from libraryapp.models import Book
+from libraryapp.models import Book, Library
 from libraryapp.models import model_factory
 from ..connection import Connection
 
 
-@login_required
-def book_details(request, book_id):
+def get_book(book_id):
     with sqlite3.connect(Connection.db_path) as conn:
         conn.row_factory = model_factory(Book)
         db_cursor = conn.cursor()
@@ -50,12 +56,21 @@ def book_details(request, book_id):
             b.location_id
         FROM libraryapp_book b
         WHERE b.id = ?
-        """, (book_id))
+        """, (book_id,))
 
-        book = db_cursor.fetchone()
+        return db_cursor.fetchone()
 
-    template_name = 'books/detail.html'
-    return render(request, template_name, {'book': book})
+@login_required
+def book_details(request, book_id):
+    if request.method == 'GET':
+        book = get_book(book_id)
+
+        template = 'books/detail.html'
+        context = {
+            'book': book
+        }
+
+        return render(request, template, context)
 ```
 
 
@@ -71,7 +86,7 @@ from .books.details import book_details
 
 Create `templates/books/detail.html` and use the following code.
 
-```html
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -91,4 +106,33 @@ Create `templates/books/detail.html` and use the following code.
 
 ## Refactor List Template
 
-Make each item a hyperlink. Use `reverse()` and interpolate the book `id` in each URL.
+Open `templates/books/list.html` and change each line item to the following code.
+
+```jinja
+<li>
+    <a href="{% url 'libraryapp:book' book.id %}"> {{ book.title }} </a>
+    by {{book.author}} published in {{book.year_published}}
+</li>
+```
+
+The `url` keyword in the interpolation is a shortcut for Django to look up a named route in your `urls.py`. Then you specify the name of the route you want to look up. In this case, it's the pattern named `book` in the library application.
+
+```py
+path('books/<int:book_id>/', book_details, name='book'),
+```
+
+The third item in there - `book.id` - is the route parameter you want to send to that URL.
+
+This code will generate `http://localhost:8080/books/{id}` for each book.
+
+Refresh your page and click on the title of each book. You should be taken to the detail page of each one.
+
+![animation that clicks on the hyperlink of book titles and shows the detail page](./images/hyperlink-to-detail.gif)
+
+## Practice: Library Details
+
+Follow these steps so that the user can see a detail view of each library in your system.
+
+## Practice: Librarian Details
+
+Follow these steps so that the user can see a detail view of each library in your system.

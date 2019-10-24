@@ -36,7 +36,7 @@ class Product():
 
     @price.setter # The setter
     def price(self, new_price):
-        if isinstance(new_price, float):
+        if type(new_price) is float:
             self.__price = new_price
         else:
             raise TypeError('Please provide a floating point value for the price')
@@ -57,6 +57,24 @@ Now set the value to a floating point decimal.
 p = Product()
 p.price = 1.0 # Everything works ok
 ```
+
+## "Private" Variables
+
+The `self.__price` is considered a privately scoped attribute and should not be accessed. It is obfuscated by Python to not show up as an attribute. There is a method in Python named `dir()`. It returns a list of valid attributes of the object. Look at what the valid attributes are for the object referenced by `p`.
+
+```py
+print(dir(p))
+
+['__class__', '__delattr__', '__dict__', '__dir__',
+ '__doc__', '__eq__', '__format__', '__ge__',
+ '__getattribute__', '__gt__', '__hash__', '__init__',
+ '__init_subclass__', '__le__', '__lt__', '__module__',
+ '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+ '__repr__', '__setattr__', '__sizeof__', '__str__',
+ '__subclasshook__', '__weakref__', 'price']
+ ```
+
+ Note that `price` is in that list, but `__price` is not. Therefore, even though you, as the class designer, know that `__price` exists, you should not try to access it on an instance of the class.
 
 ## Practice: Solid Student
 
@@ -110,4 +128,43 @@ Change your class so that any objects created from it will be rerpesented as str
 
 ```haml
 Mike Ellis is 35 years old and is in cohort 39
+```
+
+## Practice: Sensitive Information
+
+Create a class to represent a patient of a doctor's office. The **`Patient`** class will accept the following information during initialization
+
+1. Social security number
+1. Date of birth
+1. Health insurance account number
+1. First name
+1. Last name
+1. Address
+
+The first three properties should be read-only. First name and last name should not be exposed as properties at all, but instead expose a calculated property of `full_name`. Address should have a getter and setter.
+
+```py
+cashew = Patient(
+    "097-23-1003", "08/13/92", "7001294103",
+    "Daniela", "Agnoletti", "500 Infinity Way"
+)
+
+# This should not change the state of the object
+cashew.social_security_number = "838-31-2256"
+
+# Neither should this
+cashew.date_of_birth = "01-30-90"
+
+# But printing either of them should work
+print(cashew.social_security_number)   # "097-23-1003"
+
+# These two statements should output nothing
+print(cashew.first_name)
+print(cashew.last_name)
+
+# But this should output the full name
+print(cashew.full_name)   # "Daniela Agnoletti"
+
+
+
 ```

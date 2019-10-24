@@ -1,5 +1,11 @@
 # Views and Templates to Display Data
 
+In Django, views and templates work together to take complex data structures that you build in Python, and convert them into HTML representations for your customers to view and understand.
+
+| Views | Templates |
+| ---|---|
+| The brains of the operation. Queries data from the database and provides it as context for a template | Defines HTML structure and specifies where the contextual data should be rendered _(interpolated)_  |
+
 ## Creating Sample Data
 
 Before you start creating views so that your can render HTML in the browser, you need some data first. Open up your database and execute the following SQL.
@@ -34,7 +40,9 @@ mkdir books && cd $_
 touch list.py
 ```
 
-Open `views/connection.py` and place the following code in it. This allows any view to import the path to the database so each can connect to it and query data.
+Open `connection.py` and place the following code in it. This allows any view to import the path to the database so each can connect to it and query data.
+
+> #### libraryproject/libraryapp/views/connection.py
 
 ```py
 class Connection:
@@ -43,6 +51,8 @@ class Connection:
 
 Next, open `views/books/list.py` and paste in the following code. Note that the row factory being used for this connection to the database uses the built-in `sqlite3.Row` method. This allows developers to access columns in each row in the dataset by the column name instead of by index in the tuple.
 
+> #### libraryproject/libraryapp/views/books/list.py
+
 ```py
 import sqlite3
 from django.shortcuts import render
@@ -50,58 +60,83 @@ from libraryapp.models import Book
 from ..connection import Connection
 
 
-def list_books(request):
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = sqlite3.Row
-        db_cursor = conn.cursor()
+def book_list(request):
+    if request.method == 'GET':
+        with sqlite3.connect(Connection.db_path) as conn:
+            conn.row_factory = sqlite3.Row
+            db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-        select
-            b.id,
-            b.title,
-            b.isbn,
-            b.author,
-            b.year_published,
-            b.librarian_id,
-            b.location_id
-        from libraryapp_book b
-        """)
+            db_cursor.execute("""
+            select
+                b.id,
+                b.title,
+                b.isbn,
+                b.author,
+                b.year_published,
+                b.librarian_id,
+                b.location_id
+            from libraryapp_book b
+            """)
 
-        all_books = []
-        dataset = db_cursor.fetchall()
+            all_books = []
+            dataset = db_cursor.fetchall()
 
-        for row in dataset:
-            book = Book()
-            book.id = row['id']
-            book.title = row['title']
-            book.isbn = row['isbn']
-            book.author = row['author']
-            book.year_published = row['year_published']
-            book.librarian_id = row['librarian_id']
-            book.location_id = row['location_id']
+            for row in dataset:
+                book = Book()
+                book.id = row['id']
+                book.title = row['title']
+                book.isbn = row['isbn']
+                book.author = row['author']
+                book.year_published = row['year_published']
+                book.librarian_id = row['librarian_id']
+                book.location_id = row['location_id']
 
-            all_books.append(book)
+                all_books.append(book)
 
-    template_name = 'books/list.html'
-    return render(request, template_name, {'all_books': all_books})
+        template = 'books/list.html'
+        context = {
+            'all_books': all_books
+        }
+
+        return render(request, template, context)
+```
+
+Import the function into the package init file.
+
+> #### libraryproject/libraryapp/views/\_\_init__.py
+
+```py
+from .books.list import book_list
 ```
 
 This function is now called a view since it will handle HTTP requests. Which HTTP request, you might ask? Well, you define that in `urls.py`.
 
 Create a `urls.py` file in the `libraryapp` directory. This file will define all of the URLs that your library application will respond to. Place the following code in it.
 
+> #### libraryproject/libraryapp/urls.py
+
 ```py
 from django.conf.urls import url
 from .views import *
 
-
 app_name = "libraryapp"
+
 urlpatterns = [
-    url(r'^books$', list_books, name='list_books'),
+    url(r'^$', book_list, name='home'),
+    url(r'^books$', book_list, name='books'),
 ]
 ```
 
+These two patterns ensures that HTTP requests to
+
+* `http://localhost:8000`
+* `http://localhost:8000/books`
+
+Are handled by the `book_list()` function in the `views/books/list.py` module.
+
 Then in the `libraryproject/urls.py` file, include the URL mappings from your `libraryapp`. This pattern is followed because Django projects usually grow and start containing more than one application. By having each application define its own URLs, and then importing each set of those into the project, it prevents the project `urls.py` from becoming bloated and hard to read/maintain.
+
+> #### libraryproject/libraryproject/urls.py
 
 ```py
 from django.contrib import admin
@@ -128,7 +163,9 @@ touch books/list.html
 
 Then open that file in Visual Studio code, and place the following code into it.
 
-```html
+> #### libraryproject/libraryapp/templates/books/list.html
+
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -155,11 +192,15 @@ Then open that file in Visual Studio code, and place the following code into it.
 Look back in your `views/books/list.py` file and review the following two lines at the bottom.
 
 ```py
-template_name = 'books/list.html'
-return render(request, template_name, {'all_books': all_books})
+template = 'books/list.html'
+context = {
+    'all_books': all_books
+}
+
+return render(request, template, context)
 ```
 
-When a view wants to generate some HTML representations of data, it needs to specify a template to use. Above, the `template_name` variable is holding the path and filename of the template you just created.
+When a view wants to generate some HTML representations of data, it needs to specify a template to use. Above, the `template` variable is holding the path and filename of the template you just created.
 
 Then the `render()` method is invoked. That method takes the HTTP request as the first argument, the template to be used as the second argument, and then a dictionary containing the data to be used in the template.
 
@@ -176,7 +217,12 @@ The key name is able to be used in the template, which is why the template has t
 If you changed your view to the following code.
 
 ```py
-return render(request, template_name, {'the_list_of_books': all_books})
+template = 'books/list.html'
+context = {
+    'the_list_of_books': all_books
+}
+
+return render(request, template, context)
 ```
 
 Then your template loop would also change to the following.
@@ -199,7 +245,7 @@ Yep, this is Python code written inside an HTML file. Weird, I know. It's like t
 
 Here's another example that shows both the for loop, but with an nested if statement to show you the use of the interpolation punctuation.
 
-```html
+```jinja
 {% for book in all_books %}
     {% if book.year_published > 2000 %}
         <li>{{ book.title }} by {{book.author}} published in {{book.year_published}}</li>
@@ -232,13 +278,12 @@ Since the `libraryapp_librarian` table is one you created that extends the `auth
 import sqlite3
 from django.shortcuts import render
 from libraryapp.models import Librarian
-from libraryapp.models import model_factory
 from ..connection import Connection
 
 
 def list_librarians(request):
     with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Librarian)
+        conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 
         db_cursor.execute("""
@@ -253,15 +298,34 @@ def list_librarians(request):
         join auth_user u on l.user_id = u.id
         """)
 
-        all_librarians = db_cursor.fetchall()
+        all_librarians = []
+        dataset = db_cursor.fetchall()
+
+        for row in dataset:
+            lib = Librarian()
+            lib.id = row["id"]
+            lib.location_id = row["location_id"]
+            lib.user_id = row["user_id"]
+            lib.first_name = row["first_name"]
+            lib.last_name = row["last_name"]
+            lib.email = row["email"]
+
+            all_librarians.append(lib)
 
     template_name = 'librarians/list.html'
-    return render(request, template_name, {'all_librarians': all_librarians})
+
+    context = {
+        'all_librarians': all_librarians
+    }
+
+    return render(request, template_name, context)
 ```
 
-Then your `libraryapp/templates/librarians/list.html` template will iterate the `all_librarians` key on the context dictionary.
+Then your `templates/librarians/list.html` template will iterate the `all_librarians` key on the context dictionary.
 
-```html
+> #### libraryproject/libraryapp/templates/librarians/list.html
+
+```jinja
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -284,7 +348,7 @@ Then your `libraryapp/templates/librarians/list.html` template will iterate the 
 Also make sure you add your URL pattern.
 
 ```py
-url(r'^librarians$', list_librarians, name='list_librarians'),
+url(r'^librarians$', librarian_list, name='librarians'),
 ```
 
 ## Library View
@@ -299,7 +363,9 @@ Now it's your turn to create a view, and a corresponding template to list librar
 
 > **Warning:** The following code requires a solid understanding of the concept of higher order functions. If the code you have written so far makes sense to you, and the code below does not after reading it and reflecting upon it, then it is in your best interest to move on to the next concept.
 
-Create a `libraryapp/models/modelfactory.py` file and place the following code in it.
+Create a `models/modelfactory.py` file and place the following code in it.
+
+> #### libraryproject/libraryapp/models/modelfactory.py
 
 ```py
 import sqlite3
@@ -316,7 +382,9 @@ def model_factory(model_type):
     return create
 ```
 
-Add the function to the models package in `libraryapp/models/__init__.py`.
+Import the function into the pckage.
+
+> #### libraryproject/libraryapp/models/\_\_init__.py
 
 ```py
 from .library import Library
@@ -329,6 +397,8 @@ Import the factory function into the book list module, and invoke the function w
 
 > **Rule for using model_factory:** Your SQL statement must query a single table, and each column in the table must be specified in the SQL.
 
+> #### libraryproject/libraryapp/views/books/list.py
+
 ```py
 import sqlite3
 from django.shortcuts import render
@@ -337,25 +407,95 @@ from libraryapp.models import model_factory
 from ..connection import Connection
 
 
-def list_books(request):
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Book)
-        db_cursor = conn.cursor()
+def book_list(request):
+    if request.method == 'GET':
+        with sqlite3.connect(Connection.db_path) as conn:
 
-        db_cursor.execute("""
-        select
-            b.id,
-            b.title,
-            b.isbn,
-            b.author,
-            b.year_published,
-            b.librarian_id,
-            b.location_id
-        from libraryapp_book b
-        """)
+            conn.row_factory = model_factory(Book)
 
-        all_books = db_cursor.fetchall()
+            db_cursor = conn.cursor()
+            db_cursor.execute("""
+            select
+                b.id,
+                b.title,
+                b.isbn,
+                b.author,
+                b.year_published,
+                b.librarian_id,
+                b.location_id
+            from libraryapp_book b
+            """)
 
-    template_name = 'books/list.html'
-    return render(request, template_name, {'all_books': all_books})
+            all_books = db_cursor.fetchall()
+
+        template = 'books/list.html'
+        context = {
+            'all_books': all_books
+        }
+
+        return render(request, template, context)
+```
+
+## The Home Template
+
+Before you move on, you should create a home page. Right now, the root route `/` and `/books` both show the listing of books, so you are going to change that. For now, it will be a dumb template - meaning it won't have any data in its context. It is just a welcome message for your users when they first visit your site.
+
+### The Template
+
+> #### libraryproject/libraryapp/templates/home.html
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nashville Library Management System</title>
+</head>
+
+<body>
+
+    <h1>Welcome to the Nashville Library Management System</h1>
+
+</body>
+
+</html>
+```
+
+### The View
+
+> #### libraryproject/libraryapp/views/home.py
+
+```py
+from django.shortcuts import render
+
+def home(request):
+    if request.method == 'GET':
+        template = 'home.html'
+        context = {}
+
+        return render(request, template, context)
+```
+
+### Adding View to Package
+
+Add the following import to your package init.
+
+> #### libraryproject/libraryapp/views/\_\_init__.py
+
+```py
+from .home import home
+```
+
+### Home Page URL
+
+Update the `'home'` pattern in your application URLs.
+
+> #### libraryproject/libraryapp/urls.py
+
+```py
+urlpatterns = [
+    url(r'^$', home, name='home'),
+    url(r'^books$', book_list, name='books'),
+]
 ```

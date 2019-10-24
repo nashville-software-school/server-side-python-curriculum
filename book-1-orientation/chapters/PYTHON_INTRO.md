@@ -12,9 +12,9 @@ code .
 
 Next, copy pasta the code in the [humansizes.py](exercises/assets/humansizes.py) into yours. The first thing you might notice is the lack of curly braces defining the beginning and ending of a block of logic. In Python, indentation is king. Whitespace matters, unlike in JavaScript.
 
-## Running a Module of Code
+## Evaluating a module of Code
 
-In your CLI, execute the module of code by typing `python humansizes.py`.
+If you don't already have it open, click the orange demon-thingy icon in the upper right of your VSCode screen to launch an AREPL session. This will allow you to see the results of your `print()` statements.
 
 ## Code Review
 
@@ -92,18 +92,14 @@ In Python, it's kinda backwards.
 from food_factory import factory
 ```
 
-Python will look in every directory that is defined in `sys.path` for a file, or executable, that matches the name in your import statement. If you ever want to see those locations, you can just run the python interpreter in the CLI and take a look. Type `python` then hit enter:
+Python will look in every directory that is defined in `sys.path` for a file, or executable, that matches the name in your import statement. If you ever want to see those locations, you can just print them and take a look. As a test, add this to your `humansizes.py` file
 
 ```py
-> python
-
-[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import sys
->>> sys.path
-['', '/Users/student/.pyenv/versions/3.4.3/lib/python34.zip', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/lib-dynload', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/site-packages']
-
+import sys
+print(sys.path)
 ```
+In the AREPL window, you would see something like
+> ['', '/Users/student/.pyenv/versions/3.4.3/lib/python34.zip', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/lib-dynload', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/site-packages']
 
 ## Import Your Module
 
@@ -115,17 +111,13 @@ import module
 module.function_name(arguments)
 ```
 
-Consider the [`humansizes.py`](./assets/humansizes.py) file you created. In the same directory, open the interpreter and import the file as a module.
+In the same directory as `humansizes.py`, create another file, `index.py`. In it, import the `humansizes` module
 
 ```py
-> python
-
-[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import humansizes
->>> print(humansizes.approximate_size(80808080, True))
-77.1 MiB
+import humansizes
+print(humansizes.approximate_size(80808080, True))
 ```
+In AREPL you'll see the number, such as `77.1 MiB`
 
 ## Function Docstrings
 

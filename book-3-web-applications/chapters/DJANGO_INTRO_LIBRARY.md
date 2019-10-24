@@ -2,7 +2,13 @@
 
 ## Goals
 
-The purpose of this application is to allow librarians to manage the books in their library's inventory. The user will be able to add new books, remove obsolete books, and mark when a book has been checked out by a patron or checked back in.
+The purpose of this application is to allow librarians to manage the books in their library's inventory. A librarian will be able to add new books, view all books, add libraries, view all libraries, and view all librarians.
+
+## Signal Flow
+
+For those who like to have the signal flow visualized, this is a high-level overview of all of the pieces involved when Django gets an HTTP request from a client in order to generate an HTTP response. You will be using all of these blue pieces during this book.
+
+![visualization of signal flow from HTTP request to HTTP response in a Django application](./images/django-signal-flow.png)
 
 ### Design Data Relationships
 
@@ -22,16 +28,12 @@ Time to deconstruct this problem into what you need to build in our application.
 
 Now take some time to create an ERD of this database structure on [dbdiagram.io](https://dbdiagram.io).
 
-## Virtual Environment Setup
+## Base Directory
 
-At the level of your project's directory where your `manage.py` file is, set up your virtual environment.
+Create a directory that will contain your Django project.
 
 ```sh
 mkdir -p ~/workspace/python/library-management && cd $_
-python -m venv libraryenv
-source ./libraryenv/bin/activate
-pip install django
-pip freeze > requirements.txt
 ```
 
 ## Create Django Project
@@ -49,13 +51,26 @@ When you tell Django to create a project, it automatically generates an administ
 
 Right now, you should see `library-management/libraryproject/libraryproject` directory. That nested `libraryproject` directory is the administrative application.
 
+## Virtual Environment
+
+The next step is to create a virtual environment which prevents your operating system from getting cluttered with all of the software your application will install and use. This contains all of the 3rd-party code within the context of this project.
+
+At the level of your project's directory where your `manage.py` file is, set up your virtual environment.
+
+```sh
+python -m venv libraryenv
+source ./libraryenv/bin/activate
+pip install django
+pip freeze > requirements.txt
+```
+
 > Now would be a great time to setup your .gitignore file in the project directory and then make your repo. Make sure you gitignore your environment.
 
 ## Create Nashville Library Application
 
-Your application's purpose is to manage the libraries, librarians and books, so you will create a Django application with an appropriate name. Make the name of the app one word and all lower case. Do not use spaces. Do not use dashes. Do not use underscores.
+Your application's purpose is to manage the libraries, librarians, and books, so you will create a Django application with an appropriate name. Make the name of the app one word and all lower case. Do not use spaces. Do not use dashes. Do not use underscores.
 
-Then you will run what's called a database migration. The `migrate` command you see below will create the database for your application, and create a set of tables that Django uses for user management.
+Then you will run what's called a database migration. The `migrate` command you see below will create the database for your application, and create a set of tables that Django maintains for user management.
 
 ```sh
 python manage.py startapp libraryapp
@@ -81,13 +96,19 @@ INSTALLED_APPS = [
 
 ## Create Models
 
-First, create a `models` sub-directory in your `libraryapp` directory. Then create all the files needed for this package. Having the `__init__.py` import all of the classes from the other modules is necessary.
+Models are created in Django applications to be Python-based representations of the structure and data types used in your database. You will be defining Python classes that are representations of a table. The properties of each model class will be columns in the corresponding database table. For each property, you will describe the data type _(string, integer, boolean, etc.)_, other related properties such as number of characters allowed, and if the column stores a foreign key to another table.
+
+Yes, your application's models will also define how they are related to each other.
+
+First you are going to use the commands below to create a `models` sub-directory in your `libraryapp` directory. It will also create all the files needed for this package. The `echo` command is being used to create the `__init__.py` file and add text inside of it at the same time.
 
 > **Note:** You will notice a `libraryapp/models.py` file that gets automatically generated for your application. You will not be using that file, and can delete it.
 
 ```sh
-md models && cd $_
-touch library.py book.py librarian __init__.py
+mkdir models && cd $_
+
+touch library.py book.py librarian.py __init__.py
+
 echo 'from .library import Library
 from .book import Book
 from .librarian import Librarian
@@ -102,6 +123,8 @@ Now that all of the files are created, it's time to define all of the models. Ea
 
 Open `library.py` and use the power of your Python extensions to add the `from django.db import models` at the top of the files. This import is needed for Python classes that are modeling a database table.
 
+Just start typing the word `model` and choose `import_db_models` from the list options.
+
 ![import django db models](./images/model-import-generator.gif)
 
 Then create a new class with another code generator. Type in `Model` and select that item from the suggested list.
@@ -111,6 +134,11 @@ The code generator will erroneously put underscores before the verbose meta fiel
 ![class generator example for animal types](./images/class-generator.gif)
 
 Then create the properties for the class. There are also code generators for those. The code generator produces an initial argument with an underscore at the beginning with two quotes inside parenthesis. You can delete that entire first argument.
+
+The two columns needed on the `Library` table are:
+
+1. title _(the name of the library)_
+1. address
 
 ![property generator example](./images/property-generator.gif)
 
@@ -203,7 +231,7 @@ librarian = models.ForeignKey(Librarian, on_delete=models.CASCADE)
 
 ## New Migration for Your Models
 
-In the `library-management/libraryproject/libraryproject` directory, open the `urls.py` file and add the following import statement. This is needed so that Django knows abotu the location of your models.
+In the `library-management/libraryproject/libraryproject` directory, open the `urls.py` file and add the following import statement. This is needed so that Django knows about the location of your models.
 
 ```py
 from libraryapp.models import *
@@ -214,7 +242,7 @@ Now it's time to generate instructions for how to update the database and create
 Run the following command from `library-management/libraryproject`.
 
 ```sh
-python manage.py makemigration
+python manage.py makemigrations
 ```
 
 You should see the following output. If you don't, see an instructor.
@@ -233,7 +261,7 @@ That simply creates the instructions for how your database will change. You can 
 python manage.py migrate
 ```
 
-Now if you go back to Tableplus, and reload the workspace, you will see three new tables in your database.
+Now if you go back to TablePlus, and reload the workspace, you will see three new tables in your database.
 
 ![book, library, and librarian tables](./images/book-library-librarian-tables.png)
 
