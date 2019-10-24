@@ -24,6 +24,8 @@ Now take some time to create an ERD of this database structure on [dbdiagram.io]
 
 ## Virtual Environment Setup
 
+At the level of your project's directory where your `manage.py` file is, set up your virtual environment.
+
 ```sh
 mkdir -p ~/workspace/python/library-management && cd $_
 python -m venv libraryenv
@@ -46,6 +48,8 @@ cd libraryproject
 When you tell Django to create a project, it automatically generates an administrative application that you can use to manage data in the database, set up users, etc. Every Django project starts with this administrative application. You then have to create another application for what you want to build.
 
 Right now, you should see `library-management/libraryproject/libraryproject` directory. That nested `libraryproject` directory is the administrative application.
+
+> Now would be a great time to setup your .gitignore file in the project directory and then make your repo. Make sure you gitignore your environment.
 
 ## Create Nashville Library Application
 
