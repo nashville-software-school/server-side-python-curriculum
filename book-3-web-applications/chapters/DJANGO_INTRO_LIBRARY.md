@@ -55,12 +55,16 @@ Right now, you should see `library-management/libraryproject/libraryproject` dir
 
 The next step is to create a virtual environment which prevents your operating system from getting cluttered with all of the software your application will install and use. This contains all of the 3rd-party code within the context of this project.
 
+At the level of your project's directory where your `manage.py` file is, set up your virtual environment.
+
 ```sh
 python -m venv libraryenv
 source ./libraryenv/bin/activate
 pip install django
 pip freeze > requirements.txt
 ```
+
+> Now would be a great time to setup your .gitignore file in the project directory and then make your repo. Make sure you gitignore your environment.
 
 ## Create Nashville Library Application
 
