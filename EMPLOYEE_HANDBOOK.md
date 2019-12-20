@@ -1,5 +1,3 @@
-# Bangazon Employee Handbook
-
 ## Support & Guidance
 
 ### Mentoring
@@ -50,7 +48,6 @@ You must provide clear steps for any teammate to test the code.
 1. System configuration.
 1. 3rd party libraries that need to be installed.
 1. Command line utilities to run.
-1. If there is a UI component, give clear instructions for steps to perform in the UI, and what they should expect to see as the outcome of those steps.
 
 #### Link to Feature Ticket
 
@@ -66,24 +63,7 @@ We will be following the [Python Community's coding guidelines](https://www.pyth
     ThisIsBadPractice = False;
     this_is_good_practice = True;
     ```
-2. All classes and methods will be documented with docstrings.
-3. Four **spaces** for indentation.
-4. Surround top-level function and class definitions with two blank lines. Method definitions inside a class are surrounded by a single blank line.
-    ```
-    import random
-
-
-    def Bar():
-        """Top level function"""
-
-
-    class Foo:
-        """Sample Foo class that does nothing"""
-
-        def __init__(self):
-            """Constructor function for Foo class"""
-            bar = False
-    ```
-5. Import statements on seperate lines.
+2. Four **spaces** for indentation.
+3. Import statements on seperate lines.
 
 

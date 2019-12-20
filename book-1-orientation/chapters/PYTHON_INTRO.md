@@ -57,38 +57,36 @@ if __name__ == '__main__':
 
 > ☞ Like JavaScript, Python is a dynamically typed language, meaning that the compiler determines the type of a variable at run-time.
 
-① This looks like an object from JavaScript, but in Python Land, it's called a dictionary
+① This is called a dictionary. Everything to the left of the colon is considered a _key_, while everything on the right side of the colon is called a _value_. `{key: value}`
 
-② In JavaScript, you used the `function` to define functions, but in Python, it's `def`. Just like in JavaScript, functions are first-class objects and can be passed to other functions.
+② In Python, you use the `def` keyword to define functions. Functions are first-class objects and can be passed to other functions.
 
-③ For `if` and `for` blocks, you don't use {} to define the block scope. You use a colon, and then indent the corresponding code.
+③ For `if` and `for` blocks, you use a colon to define block scope, and then indent the corresponding code.
 
-④ This is the style for writing a ternary condition in Python.
+④ This is how you write a bite-sized conditional (ternary) in python! One line!
 
-⑤ The `print()` method is Python's `console.log()`
+⑤ The `print()` method let's will "print" output to your console.
 
 ## Python Modules
 
-Importing other modules in Python is very similar to how you did it in Browserify and React, using the `import` statement.
+Typically, you will want to use some tools to accomplish what you are trying to do.
+Your "tools" can be found in "toolbags", called _modules_. 
+Here is how you can import a module.
 
 ```py
+# import toolbag
+# import module
 import http
 import sys
 import student
 import instructor
 ```
 
-But compared to how you've written it before, the syntax looks a little inside-out when importing a specific part of a module. With JavaScript modules, you specified what you want to import and from where.
-
-```js
-// JavaScript importing
-import factory from "./foodFactory"
-```
-
-In Python, it's kinda backwards.
+Here is how you can import a specific "tool", (_function_), from a module.
 
 ```py
-# Python importing
+# from toolbag import tool
+# from module import function
 from food_factory import factory
 ```
 
