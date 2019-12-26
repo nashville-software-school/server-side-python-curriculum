@@ -1,9 +1,12 @@
 # Python Lists
 
-A list is the new array from JavaScript. They are collections of similar items. The syntax is identical to JavaScript's array.
+Lists are one of the more common data types that you will come across.
+They serve as simple containers that can hold objects.
+They are collections of similar items, like a grocery list. 
+The syntax is identical to JavaScript's array.
 
 ```py
-animals = ["Jack", "Noonan", "Blue", "Gypsy"]
+groceries = ["milk", "bread", "flashlight", "blizzard survival guide"]
 ```
 
 ## Reference
