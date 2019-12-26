@@ -1,29 +1,39 @@
 # Python Functions
 
-Python functions are the same as JavaScript functions, but the syntax is different and white space matters.
+A function is a block of organized, reusable code that is used to perform a single, related action. 
+Functions provide better modularity for your application and a high degree of code reusing.
+
+Remember saying `print('Print!')`?? 
+`print` is a function that we have been using up until now.
+
+You can define functions to provide the required functionality. Here are simple rules to define a function in Python.
+
+```python
+def functionname( parameters ):
+   "function_docstring"
+   function_suite
+   return [expression]
+```
+
+* Function blocks begin with the keyword `def` followed by the function name and parentheses ( `( )` ).
+* Any input parameters or `arguments` should be placed within these parentheses. 
+You can also define parameters inside these parentheses.
+* The first statement of a function can be an optional statement - the documentation string of the function or `docstring`.
+* The code block within every function starts with a colon (`:`) and is _indented_ (whitespace matters!!).
+* The statement return `[expression]` exits a function, optionally passing back an expression to the caller. 
+A return statement with no arguments is the same as return `None`.
 
 Let's say that again: **WHITE SPACE MATTERS**.
 
-Remember how we hounded you about proper formatting in the client side course? Now, you have to do it for real or your code won't work. When writing a function You must indent the contents of the function.
+If you do not use appropriate whitespace, your code won't work. 
+When writing a function You must indent the contents of the function (4 spaces).
 
-Look at how the same function is written in the two different syntaxes.
-
-```js
-const createPerson = (firstName, lastName, age, occupation) => {
-    return {
-        firstName,
-        lastName,
-        age,
-        occupation
-    }
-}
-
-melissa = createPerson("Melissa", "Bell", 25, "Software Developer")
-```
+Let's look at a function that will create a person.
 
 ```python
-# Function and variable names are snake case instead of camel case
+# Function and variable names are snake case. Look it up!
 def create_person(first_name, last_name, age, occupation):
+    """Return a dictionary that represents a person."""
     return {
         "first_name": first_name,
         "last_name": last_name,
@@ -31,12 +41,42 @@ def create_person(first_name, last_name, age, occupation):
         "occupation": occupation,
     }
 
-melissa = create_person("Melissa", "Bell", 25, "Software Developer")
+melissa = create_person("Melissa", "Bell", 25, "Data Analyst")
 ```
+
+* Like the above example, `create_person` starts with the `def` keyword.
+* The name of the function it `create_person`.
+Note that it is all _lowercase_, and words are separated by an _underscore_.
+* `create_person` accepts 4 arguments as input: `first_name, last_name, age, occupation`.
+The trick here is to understand that these arguments haven't been defined yet. 
+They are simply placeholders, or variables!
+* Note the colon at the end of the first line! 
+This is important.
+* The next line is the docstring. 
+This helps describe the function at a high level.
+Note the indent!
+* Lastly, our `logic` or `[expression]`.
+This is a simple function that does only one thing.. 
+Returns a dictionary with the values mapped to specific keys!
+
+Let's look at how our function is being called. 
+```python
+melissa = create_person("Melissa", "Bell", 25, "Data Analyst")
+```
+Regarding function arguments, order matters. 
+The function defined 4 arguments (`first_name, last_name, age, occupation`) that must be provided when called. 
+So, mapping it out..
+* first_name: "Mellisa"
+* last_name: "Bell"
+* age: 25
+* occupation: "Data Analyst"
 
 ## Practice: Activities for Kids
 
-Define four Python functions named `run`, `swing`, `slide`, and `hide_and_seek`. Each function should take a child's name as an argument. Each function should print that the child performed the activity.
+Define four Python functions named `run`, `swing`, `slide`, and `hide_and_seek`. 
+Each function should take a child's name as an argument. 
+Each function should print that the child performed the activity.
+This should be done in a brand new notebook.
 
 For example, `Jay ran like a fool!` or `Chantelle slid down the slide!`.
 
@@ -51,7 +91,9 @@ hiding_kids = ["Henry", "Heather", "Hayley", "Hugh"]
 
 ## Practice: ChickenMonkey
 
-Write a program that prints the numbers from 1 to 100. You can use Python's [range()](https://www.pythoncentral.io/pythons-range-function-explained/) to quickly make a list of numbers.
+Write a program that prints the numbers from 1 to 100. 
+This should be in a brand new notebook.
+You can use Python's [range()](https://www.pythoncentral.io/pythons-range-function-explained/) to quickly make a list of numbers.
 
 * For multiples of five (5, 10, 15, etc.) print "Chicken" instead of the number
 * For the multiples of seven (7, 14, 21, etc.) print "Monkey".
@@ -67,7 +109,10 @@ touch coinsToCash.py
 code .
 ```
 
-Create a function called `calc_dollars`. In the function body, define a dictionary and store it in a variable named `piggyBank`. The dictionary should have the following keys defined.
+Create a function called `calc_dollars`. 
+This should be in a new notebook.
+In the function body, define a dictionary and store it in a variable named `piggyBank`. 
+The dictionary should have the following keys defined.
 
 * quarters
 * nickels
@@ -84,7 +129,8 @@ piggyBank = {
 }
 ```
 
-Once you have given yourself a large stash of coins in your piggybank, look at each key and perform the appropriate math on the integer value to determine how much money you have in dollars. Store that value in a variable named `dollarAmount` and print it.
+Once you have given yourself a large stash of coins in your piggybank, look at each key and perform the appropriate math on the integer value to determine how much money you have in dollars. 
+Store that value in a variable named `dollarAmount` and print it.
 
 Given the coins shown above, the output would be `7.07` when you call calc_dollars()
 
@@ -96,7 +142,9 @@ touch cashToCoins.py
 code .
 ```
 
-Now do the reverse. Convert the dollar amount into the coins that make up that dollar amount. The final result is an object with the correct number of quarters, dimes, nickels, and pennies.
+Now do the reverse.
+Convert the dollar amount into the coins that make up that dollar amount. 
+The final result is an object with the correct number of quarters, dimes, nickels, and pennies.
 
 ```py
 dollarAmount = 8.69

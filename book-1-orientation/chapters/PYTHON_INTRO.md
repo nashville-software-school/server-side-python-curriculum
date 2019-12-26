@@ -5,16 +5,13 @@
 Here's your very first Python code module. Go ahead and create a new directory for storing your Python code and create a file named `humansizes.py`.
 
 ```sh
-mkdir ~/workspace/python/intro && cd $_
-touch humansizes.py
-code .
+mkdir -p ~/workspace/python/intro && cd $_
+jupyter notebook
 ```
 
-Next, copy pasta the code in the [humansizes.py](exercises/assets/humansizes.py) into yours. The first thing you might notice is the lack of curly braces defining the beginning and ending of a block of logic. In Python, indentation is king. Whitespace matters, unlike in JavaScript.
+Go ahead and create a new notebook, and call it `humansizes`.
 
-## Evaluating a module of Code
-
-If you don't already have it open, click the orange demon-thingy icon in the upper right of your VSCode screen to launch an AREPL session. This will allow you to see the results of your `print()` statements.
+Next, copy the following snippets into your notebook, one cell each.
 
 ## Code Review
 
@@ -23,7 +20,8 @@ Let's take a look at the code.
 ```python
 ① SUFFIXES = {1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
             1024: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']}
-
+```
+```python
 ② def approximate_size(size, a_kilobyte_is_1024_bytes=True):
 
     '''Convert a file size to human-readable form.
@@ -48,14 +46,14 @@ Let's take a look at the code.
             return '{0:.1f} {1}'.format(size, suffix)
 
     raise ValueError('number too large')
-
-if __name__ == '__main__':
-⑤   print(approximate_size(16384, False))
-    print(approximate_size(size=16384, a_kilobyte_is_1024_bytes=False))
-    print(approximate_size(-16384))
+```
+```python
+⑤ print(approximate_size(16384, False))
+print(approximate_size(size=16384, a_kilobyte_is_1024_bytes=False))
+print(approximate_size(-16384))
 ```
 
-> ☞ Like JavaScript, Python is a dynamically typed language, meaning that the compiler determines the type of a variable at run-time.
+> ☞ Python is a dynamically typed language, meaning that the compiler determines the type of a variable at run-time.
 
 ① This is called a dictionary. Everything to the left of the colon is considered a _key_, while everything on the right side of the colon is called a _value_. `{key: value}`
 

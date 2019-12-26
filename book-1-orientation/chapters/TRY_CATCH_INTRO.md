@@ -1,59 +1,52 @@
 # Basic Exception Handling
 
-Because Python is a dynamically typed language, you need to carefully consider how to get the type of a variable and make no assumptions in your code.
+There are many scenarios in python that can cause your code to stop running.
+If python notices some code that is structured incorrectly, or is not abiding by some of it's rules, it will throw an `Exception`.
+This is python's way of telling you that something bad just happened.
 
 Let's look at some basic code and see what harmful side-effects can happen.
 
 ```python
-class BankAccount():
-
-  def __init__(self):
-    self.balance = 0
-
-  def add_money(self, amount):
-    """Add money to a bank account
-
+def get_index_of_item(a_list, value):
+    """Return the index of 'value' in 'a_list'
+    
     Arguments:
-      amount - A numerical value by which the bank account's balance will increase
+        a_list - A list of elements
+        value  - Any item that could be in the list
     """
-    self.balance += amount
-
-  def withdraw_money(self, amount):
-    """Withdraw money to a bank account
-
-    Arguments:
-      amount - A numerical value by which the bank account's balance will decrease
-    """
-    self.balance -= amount
+    return a_list.index(value)
 ```
 
-Given this class, a developer could easily write this code.
+Python `lists` have a method called `index` that will return the index of the value in that list.
+However, what happens when you try to get the index of a value that is _not_ in the list?
 
 ```python
-my_account = BankAccount()
-my_account.add_money('Gazillion dollars')
+my_list = [1, 2, 3, 4]
+get_index_of_item(my_list, 5)
 ```
 
-This will raise a `TypeError` exception because the logic for the `add_money()` tries to perform a mathematical calculation on the value that is stored in the `amount` argument. We passed in a string, so Python will yell at us.
-There is no type coercion in Python. So, in JavaScript "2" + 2 will work, and give you "22", but not so in Python.
+This will raise a `ValueError` exception because the logic for the `get_index_of_item()` assumes that the value exists in the list, in this case it doesn't, so Python will yell at us.
 
-So we need to think about these kinds of issues when writing our code instead of assuming the the code that invokes this method will *always* do the correct thing. We need implement exception handling so that a useful exception is raised to the invoking code.
+So we need to think about these kinds of issues when writing our code instead of assuming the the code that invokes this method will *always* do the correct thing. 
+We need implement exception handling so that a useful exception is raised to the invoking code, or different logic gets implemented when a certain exception shows up.
 
 Let's look at how to do that with `try...except` blocks.
 
 ```python
-  def add_money(self, amount):
-    """Add money to a bank account
-
+def get_index_of_item(a_list, value):
+    """Return the index of 'value' in 'a_list'
+    
     Arguments:
-      amount - A numerical value by which the bank account's balance will increase
+        a_list - A list of elements
+        value  - Any item that could be in the list
     """
     try:
-      self.balance += amount
-      return self.balance
-    except TypeError:
-      print('(Error): The add_money method requies a numeric value')
-      raise
+        return a_list.index(value)
+
+    except ValueError:
+        print(f'{value} is not in the list.')
+        return -1
 ```
 
-Now, if an incorrect type of value is passed, a human-friendly message is output to the console and the exception is re-raised up to the calling code.
+Now, if an incorrect type of value is passed, a human-friendly message is output to the console and `-1` is returned to the implementer rather than the actual index. 
+

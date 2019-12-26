@@ -1,6 +1,7 @@
 # Packages
 
-Python packages are a way to collect many classes into a single namespace. Consider the following directory structure for containing classes representing different electronic appliances.
+Python packages are a way to collect many classes into a single namespace. 
+Consider the following directory structure for containing classes representing different electronic appliances.
 
 ![images of appliances directory and sub-directories](./images/package-directory-structure.png)
 
@@ -21,7 +22,8 @@ kenmore = Washer()
 samsung = Refrigerator()
 ```
 
-Since all of those are appliances, but you defined a directory structure to organize them in your project more logically, it makes the imports more complex. What Python packages allow you to do is provide an abstraction so that external code does not have to rely on knowledge about your directory structure.
+Since all of those are appliances, but you defined a directory structure to organize them in your project more logically, it makes the imports more complex. 
+What Python packages allow you to do is provide an abstraction so that external code does not have to rely on knowledge about your directory structure.
 
 You collect all of those classes into a single namespace. The goals is to make the import statements access the same namespace.
 
@@ -68,6 +70,7 @@ samsung = Refrigerator()
 ```
 
 ## Practice: Importing Packages
-Clone this repo and refactor it to make it run error-free. Run `index.py` and use the error message to figure out where to start. Once the errors are gone, create a can opener and open a can (But hold your nose!)
+Clone this repo and refactor it to make it run error-free. Run `index.py` and use the error message to figure out where to start. 
+Once the errors are gone, create a can opener and open a can (But hold your nose!)
 
 https://github.com/nashville-software-school/python-imports
