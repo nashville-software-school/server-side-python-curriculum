@@ -112,8 +112,8 @@ For your integration tests, you are going to mimic, and automate, this process _
 
 So, what should you test? For this course, you'll concentrate on these:
 
->*context*: what we send to the template
->*content*: the rendered html
+>*context*: what we send to the template  
+>*content*: the rendered html  
 >*response_codes*
 
 ### Create a new Animal
@@ -183,7 +183,7 @@ def test_list_animals(self):
 
 ## Test Discovery
 
-One file for all your tests can get cluttered quickly.
+One file for all your tests can get cluttered quickly.  
 Read the [Test Discovery section](https://docs.python.org/3.3/library/unittest.html#unittest-test-discovery) of the Python docs. It explains how you can run all tests inside a directory. This allows you to split your unit test suite into many, smaller, more maintainable modules, and the use a pattern matcher to find tests in all matching files.
 
 ```
