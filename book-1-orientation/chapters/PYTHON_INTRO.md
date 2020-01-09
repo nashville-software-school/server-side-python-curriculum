@@ -10,7 +10,7 @@ touch humansizes.py
 code .
 ```
 
-Next, copy pasta the code in the [humansizes.py](exercises/assets/humansizes.py) into yours. The first thing you might notice is the lack of curly braces defining the beginning and ending of a block of logic. In Python, indentation is king. Whitespace matters, unlike in JavaScript.
+Next, copy pasta the code in the [humansizes.py](assets/humansizes.py) into yours. The first thing you might notice is the lack of curly braces defining the beginning and ending of a block of logic. In Python, indentation is king. Whitespace matters, unlike in JavaScript.
 
 ## Evaluating a module of Code
 
