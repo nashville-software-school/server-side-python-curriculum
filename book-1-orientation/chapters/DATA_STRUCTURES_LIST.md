@@ -21,7 +21,7 @@ animals = ["Jack", "Noonan", "Blue", "Gypsy"]
 
     my_randoms = list()
     for i in range(10):
-        my_randoms.append(random.randrange(1, 6, 1))
+        my_randoms.append(random.randrange(1, 6))
     ```
 
     The `my_randoms` list will now contain random numbers
@@ -40,10 +40,10 @@ animals = ["Jack", "Noonan", "Blue", "Gypsy"]
 
     my_randoms = list()
     for i in range(10):
-        my_randoms.append(random.randrange(1, 6, 1))
+        my_randoms.append(random.randrange(1, 6))
 
     # Generate a list of numbers 1..10
-    numbers_1_to_10 = range(1, 10)
+    numbers_1_to_10 = range(1, 11)
 
     # Iterate from 1 to 10
     for number in numbers_1_to_10:
@@ -51,7 +51,7 @@ animals = ["Jack", "Noonan", "Blue", "Gypsy"]
 
         # Iterate your random number list here
 
-        # Do the two numbers match? Change the boolean.
+        # Does my_randoms contain number? Change the boolean.
 
         print(f'{number} is in the random list')
     ```
