@@ -61,16 +61,16 @@ CORS_ORIGIN_WHITELIST = (
 Replace the contents of `kennywood/urls.py` with the following code. You will configure the routes for your application in the next chapter after you set up your first view.
 
 ```py
-from django.conf.urls import url, include
+from django.urls import include, path
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter(trailing_slash=False)
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
-    url(r'^api-token-auth/', obtain_auth_token),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include(router.urls)),
+    path('api-token-auth/', obtain_auth_token),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 ```
 

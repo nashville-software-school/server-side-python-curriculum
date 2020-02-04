@@ -81,7 +81,7 @@ This is a new URL pattern, so you need to add the following pattern to your `url
 > #### libraryproject/libraryapp/urls.py
 
 ```py
-url(r'^books/(?P<book_id>[0-9]+)/form$', book_edit_form, name='book_edit_form'),
+path('books/<int:book_id>/form/', book_edit_form, name='book_edit_form'),
 ```
 
 ### Book Edit Form View

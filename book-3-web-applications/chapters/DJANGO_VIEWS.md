@@ -116,14 +116,14 @@ Create a `urls.py` file in the `libraryapp` directory. This file will define all
 > #### libraryproject/libraryapp/urls.py
 
 ```py
-from django.conf.urls import url
+from django.urls import path
 from .views import *
 
 app_name = "libraryapp"
 
 urlpatterns = [
-    url(r'^$', book_list, name='home'),
-    url(r'^books$', book_list, name='books'),
+    path('', book_list, name='home'),
+    path('books/', book_list, name='books'),
 ]
 ```
 
@@ -140,13 +140,13 @@ Then in the `libraryproject/urls.py` file, include the URL mappings from your `l
 
 ```py
 from django.contrib import admin
-from django.conf.urls import include, url
+from django.urls import include, path
 from django.urls import path
 from libraryapp.models import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', include('libraryapp.urls')),
+    path('', include('libraryapp.urls')),
 ]
 ```
 
@@ -348,7 +348,7 @@ Then your `templates/librarians/list.html` template will iterate the `all_librar
 Also make sure you add your URL pattern.
 
 ```py
-url(r'^librarians$', librarian_list, name='librarians'),
+path('librarians/', librarian_list, name='librarians'),
 ```
 
 ## Library View
@@ -495,7 +495,7 @@ Update the `'home'` pattern in your application URLs.
 
 ```py
 urlpatterns = [
-    url(r'^$', home, name='home'),
-    url(r'^books$', book_list, name='books'),
+    path('', home, name='home'),
+    path('books/', book_list, name='books'),
 ]
 ```
