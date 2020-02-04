@@ -1,7 +1,47 @@
 # Using the Django ORM
+Up to this point, you've interacted with your databases via SQl, using queries like
+```sql
+SELECT employee.first_name, employee.last_name, employee.department
+FROM employees
+WHERE employee.id = 2
+```
+
+But one of the powerful features of a framework like Django is its ability to streamline and abstract the process of interacting with your data. And you have already worked with the key the unlocking this streamlined process: Django Models.
+
+Once you’ve created your data models, Django automatically gives you a database-abstraction API that lets you create, retrieve, update and delete objects. That abstraction is referred to as an ORM -- Object Relational Mapper. Object relational mapping allows you to write queries like the one above, as well as much more complicated ones, using classes and methods. So, fetching that employee would look like this instead:
+
+```py
+   ①       ②       ③
+Employee.objects.get(pk=2)
+```
+
+① we are referencing the `Employee` model directly, not the employees table.  
+② `objects` refers to all of the instances of the Employee model in the db.  
+③ That `objects` object has a method named `get` that returns an object to us that represents the record with an id (or pk, for primary key) of 2.
+
+## The Django ORM in Action
+Let's look at using the Django ORM to create, read, update, and destroy a record in our db, using the following model
+
+```py
+class Product(models.Model):
+
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
+    price = models.DecimalField(max_digits=20, decimal_places=2)
+    quantity = models.IntegerField(default=1)
+```
+<!-- creating
+  save vs create
+deleting
+  CASCADING
+updating -->
+
+
+## Working With Querysets
+Calling `Foo.objects.<some method()>` results in what Django calls a queryset. A queryset is simply a collection of objects from your database.
+
 
 ## Filtering Querysets
-
 Suppose you want to see all of the products that were created by a particular user.
 
 ```py
@@ -95,3 +135,6 @@ def cart(self, request):
     serializer = ProductSerializer(products_on_order, many=True, context={'request': request})
     return Response(serializer.data)
 ```
+
+## Reference
+[Django querysets](https://docs.djangoproject.com/en/3.0/ref/models/querysets/#queryset-api)
