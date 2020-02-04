@@ -56,7 +56,7 @@ Time for you to implement your first form so that users can enter in a new book 
 Create the following entry in your URL patterns so that clients can request the book creation form.
 
 ```py
-url(r'^book/form$', book_form, name='book_form'),
+path('book/form', book_form, name='book_form'),
 ```
 
 ## Handling GET and POST Requests
@@ -121,7 +121,7 @@ Where should the request be sent. Thinking back to chapter 1 where you reviewed 
 You already have a pattern defined in `urls.py` for that URL.
 
 ```py
-url(r'^books$', book_list, name='books'),
+path('books', book_list, name='books'),
 ```
 
 That means that you have to refactor the `book_list()` method to handle a POST. That method already handles a GET request, so place the following code in your file at the bottom to handle the case of the request method being POST.

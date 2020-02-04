@@ -68,7 +68,7 @@
         1. router.register(r'bar', views.MyBarViewSet)
         2. router.register(r'users', views.UserViewSet)
     5. Then in the url_patterns list, you only have to include one line (?)
-        1. url(r'^', include(router.urls))
+        1. path('', include(router.urls))
     6. Finally, add the bar/urls.py to the root project urls.py file
 14. Create an endpoint for the root of the API, which is basically a table of contents
     1. Tutorial link: http://www.django-rest-framework.org/tutorial/5-relationships-and-hyperlinked-apis/#creating-an-endpoint-for-the-root-of-our-api

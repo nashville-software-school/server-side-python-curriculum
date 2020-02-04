@@ -110,10 +110,10 @@ Then set up those new routes to map to `/register`, and `/login`.
 
 ```py
 urlpatterns = [
-    url(r'^', include(router.urls)),
-    url(r'^register$', register_user),
-    url(r'^login$', login_user),
-    url(r'^api-token-auth$', obtain_auth_token),
-    url(r'^api-auth$', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include(router.urls)),
+    path('register/', register_user),
+    path('login/', login_user),
+    path('api-token-auth/', obtain_auth_token),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 ```

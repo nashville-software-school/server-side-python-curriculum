@@ -2,10 +2,10 @@
 
 ## Setting up the Routes
 
-Open `libraryapp/urls.py` and update your import statement to import the include method from the `django.conf.urls` package.
+Open `libraryapp/urls.py` and update your import statement to import the include method from the `django.urls` package.
 
 ```py
-from django.conf.urls import url, include
+from django.urls import include, path
 ```
 
 
@@ -14,7 +14,7 @@ Then add the URLs to your existing patterns. This lets your application use the 
 > #### libraryproject/libraryapp/urls.py
 
 ```py
-url(r'accounts/', include('django.contrib.auth.urls')),
+path('accounts/', include('django.contrib.auth.urls')),
 ```
 
 You never need to touch these views, and they live in Django and have all the logic you need.
@@ -41,7 +41,7 @@ By default, the Django logout function takes the user to the admin site, which y
 > #### libraryproject/libraryapp/urls.py
 
 ```py
-url(r'^logout/$', logout_user, name='logout'),
+path('logout/', logout_user, name='logout'),
 ```
 
 ### Redirect on Logout
