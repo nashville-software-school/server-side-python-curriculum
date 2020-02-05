@@ -57,12 +57,21 @@ The next step is to create a virtual environment which prevents your operating s
 
 At the level of your project's directory where your `manage.py` file is, set up your virtual environment.
 
+#### Mac users, run the following:
 ```sh
 python -m venv libraryenv
 source ./libraryenv/bin/activate
 pip install django
 pip freeze > requirements.txt
 ```
+#### Windows users, run the following:
+```sh
+python -m venv libraryenv
+source ./libraryenv/Scripts/activate
+pip install django
+pip freeze > requirements.txt
+```
+> Note the separate formats for the `source` command between Windows and Mac users. You will use this command each time you activate your virtual environment for your project.
 
 > Now would be a great time to setup your .gitignore file in the project directory and then make your repo. Make sure you gitignore your environment.
 
