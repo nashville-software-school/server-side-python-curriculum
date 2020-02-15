@@ -30,15 +30,58 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=20, decimal_places=2)
     quantity = models.IntegerField(default=1)
 ```
-<!-- creating
-  save vs create
-deleting
-  CASCADING
-updating -->
 
+1. Creating a new instance and saving it to the db can be done a couple of ways.
+```py
+# instantiate...
+new_prod = Product(
+    title = "wonder widget"
+    description = "The greatest thing since sliced bread"
+    price = 99.99
+    quantity = 125
+)
+
+# and then save to the db
+new_prod.save()
+
+# Or...
+# Use a shortcut to do both at the same time
+new_prod = Product.objects.create(
+    title = "wonder widget"
+    description = "The greatest thing since sliced bread"
+    price = 99.99
+    quantity = 125
+)
+```
+2. Retrieving
+```py
+# find one, by its id
+prod = Product.objects.get(pk=1)
+
+# find all
+products = Product.objects.all()
+```
+3. Updating
+```py
+# retrieve it first:
+prod = Product.objects.get(pk=1)
+
+# Reassign a property's value
+prod.price = 75.50
+
+# Save the change to the db
+prod.save()
+
+```
+4. Deleting
+```py
+# need to retrieve the object, then delete it. This is a safety measure that keeps up from deleting a whole collection accidentaly
+prod = Product.objects.get(pk=1)
+prod.delete()
+```
 
 ## Working With Querysets
-Calling `Foo.objects.<some method()>` results in what Django calls a queryset. A queryset is simply a collection of objects from your database.
+Above, we referenced `Product.objects` in each query. Calling `Foo.objects.<some method()>` results in what Django calls a queryset. A queryset is simply a collection of objects from your database.
 
 
 ## Filtering Querysets
@@ -138,3 +181,4 @@ def cart(self, request):
 
 ## Reference
 [Django querysets](https://docs.djangoproject.com/en/3.0/ref/models/querysets/#queryset-api)
+[Making Queries](https://docs.djangoproject.com/en/3.0/topics/db/queries/)
