@@ -2,7 +2,7 @@
 
 ## Defining Models Package and Modules
 
-Next, create the `models` directory and the initial files that will contain the individual Models for the application.
+Next, make sure you are in your kennywoodapi app and create the `models` directory and the initial files that will contain the individual Models for the application.
 
 ```sh
 mkdir models && cd $_
