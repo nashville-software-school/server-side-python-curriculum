@@ -29,16 +29,28 @@ class Product(models.Model):
     description = models.CharField(max_length=500)
     price = models.DecimalField(max_digits=20, decimal_places=2)
     quantity = models.IntegerField(default=1)
+    location = models.CharField(max_length=50)
+    created_date = models.DateTimeField(auto_now_add=True)
+    seller = models.ForeignKey("User", on_delete = models.CASCADE)
+    product_category = models.ForeignKey("ProductCategory", on_delete=models.Cascade)
 ```
 
 1. Creating a new instance and saving it to the db can be done a couple of ways.
 ```py
+
+# Gotta supply an instance of a User as the foreign key
+current_user = Customer.objects.get(user=request.auth.user)
+product_cat
+
 # instantiate...
 new_prod = Product(
-    title = "wonder widget"
-    description = "The greatest thing since sliced bread"
-    price = 99.99
-    quantity = 125
+    title = "wonder widget",
+    description = "The greatest thing since sliced bread",
+    price = 99.99,
+    quantity = 125,
+    location = "Nashville",
+    seller = current_user,
+    product_category_id = 3
 )
 
 # and then save to the db
@@ -47,10 +59,13 @@ new_prod.save()
 # Or...
 # Use a shortcut to do both at the same time
 new_prod = Product.objects.create(
-    title = "wonder widget"
-    description = "The greatest thing since sliced bread"
-    price = 99.99
-    quantity = 125
+    title = "wonder widget",
+    description = "The greatest thing since sliced bread",
+    price = 99.99,
+    quantity = 125,
+    location = "Nashville",
+    seller = current_user,
+    product_category_id = 3
 )
 ```
 2. Retrieving
