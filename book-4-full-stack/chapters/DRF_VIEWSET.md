@@ -16,7 +16,7 @@ You are going to be using an abstraction in the Django REST Framework library ca
 
 You will also be using another built-in type called a `HyperlinkedModelSerializer`. What this class does is take a Python object and convert it into JSON for you, **and** adds a virtual property of `url` to the resulting JSON.
 
-The `ViewSet` class allows you to write logic for the operations that can be performed on a resource in the API. The first operation you will handle is a client requesting all park areas. For this operation, the `ViewSet` exposes a `list()` method. Your logic goes in that method.
+The `ViewSet` class allows you to write logic for the operations that can be performed on a resource in the API. The first operations you will handle are a client requesting one park area, and a request for all park areas. For these operations, the `ViewSet` exposes `retrieve()` and `list()` methods. Your logic goes in those methods. 
 
 > ##### `kennywoodapi/views/parkarea.py`
 
@@ -48,6 +48,19 @@ class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
 class ParkAreas(ViewSet):
     """Park Areas for Kennywood Amusement Park"""
 
+    def retrieve(self, request, pk=None):
+        """Handle GET requests for single park area
+
+        Returns:
+            Response -- JSON serialized park area instance
+        """
+        try:
+            area = ParkArea.objects.get(pk=pk)
+            serializer = ParkAreaSerializer(area, context={'request': request})
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+            
     def list(self, request):
         """Handle GET requests to park areas resource
 
