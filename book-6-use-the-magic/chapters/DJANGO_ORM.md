@@ -1,7 +1,105 @@
 # Using the Django ORM
+Up to this point, you've interacted with your databases via SQl, using queries like
+```sql
+SELECT employee.first_name, employee.last_name, employee.department
+FROM employees
+WHERE employee.id = 2
+```
+
+But one of the powerful features of a framework like Django is its ability to streamline and abstract the process of interacting with your data. And you have already worked with the key the unlocking this streamlined process: Django Models.
+
+Once you’ve created your data models, Django automatically gives you a database-abstraction API that lets you create, retrieve, update and delete objects. That abstraction is referred to as an ORM -- Object Relational Mapper. Object relational mapping allows you to write queries like the one above, as well as much more complicated ones, using classes and methods. So, fetching that employee would look like this instead:
+
+```py
+   ①       ②       ③
+Employee.objects.get(pk=2)
+```
+
+① we are referencing the `Employee` model directly, not the employees table.  
+② `objects` refers to all of the instances of the Employee model in the db.  
+③ That `objects` object has a method named `get` that returns an object to us that represents the record with an id (or pk, for primary key) of 2.
+
+## The Django ORM in Action
+Let's look at using the Django ORM to create, read, update, and destroy a record in our db, using the following model
+
+```py
+class Product(models.Model):
+
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
+    price = models.DecimalField(max_digits=20, decimal_places=2)
+    quantity = models.IntegerField(default=1)
+    location = models.CharField(max_length=50)
+    created_date = models.DateTimeField(auto_now_add=True)
+    seller = models.ForeignKey("User", on_delete = models.CASCADE)
+    product_category = models.ForeignKey("ProductCategory", on_delete=models.Cascade)
+```
+
+1. Creating a new instance and saving it to the db can be done a couple of ways.
+```py
+
+# Gotta supply an instance of a User as the foreign key
+current_user = Customer.objects.get(user=request.auth.user)
+product_cat
+
+# instantiate...
+new_prod = Product(
+    title = "wonder widget",
+    description = "The greatest thing since sliced bread",
+    price = 99.99,
+    quantity = 125,
+    location = "Nashville",
+    seller = current_user,
+    product_category_id = 3
+)
+
+# and then save to the db
+new_prod.save()
+
+# Or...
+# Use a shortcut to do both at the same time
+new_prod = Product.objects.create(
+    title = "wonder widget",
+    description = "The greatest thing since sliced bread",
+    price = 99.99,
+    quantity = 125,
+    location = "Nashville",
+    seller = current_user,
+    product_category_id = 3
+)
+```
+2. Retrieving
+```py
+# find one, by its id
+prod = Product.objects.get(pk=1)
+
+# find all
+products = Product.objects.all()
+```
+3. Updating
+```py
+# retrieve it first:
+prod = Product.objects.get(pk=1)
+
+# Reassign a property's value
+prod.price = 75.50
+
+# Save the change to the db
+prod.save()
+
+```
+4. Deleting
+```py
+# need to retrieve the object, then delete it. This is a safety measure that keeps up from deleting a whole collection accidentaly
+prod = Product.objects.get(pk=1)
+prod.delete()
+```
+
+## Working With Querysets
+Above, we referenced `Product.objects` in each query. Calling `Foo.objects.<some method()>` results in what Django calls a queryset. A queryset is simply a collection of objects from your database.
+
 
 ## Filtering Querysets
-
 Suppose you want to see all of the products that were created by a particular user.
 
 ```py
@@ -95,3 +193,7 @@ def cart(self, request):
     serializer = ProductSerializer(products_on_order, many=True, context={'request': request})
     return Response(serializer.data)
 ```
+
+## Reference
+[Django querysets](https://docs.djangoproject.com/en/3.0/ref/models/querysets/#queryset-api)
+[Making Queries](https://docs.djangoproject.com/en/3.0/topics/db/queries/)
