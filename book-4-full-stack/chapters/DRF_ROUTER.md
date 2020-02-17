@@ -2,7 +2,7 @@
 
 Time to configure the `DefaultRouter` in the `url.py` module to accept incoming requests to `http://localhost:8000/parkareas` and direct those requests to your view module to be handled. The first thing you need to do is import your view into the module.
 
-> ##### `kennywoodapi/urls.py`
+> ##### `kennywood/urls.py`
 
 ```py
 from kennywoodapi.views import ParkAreas
@@ -10,7 +10,7 @@ from kennywoodapi.views import ParkAreas
 
 Then you need to set up the mapping between the URL and the ViewSet. Update your module with the following code.
 
-> ##### `kennywoodapi/urls.py`
+> ##### `kennywood/urls.py`
 
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
