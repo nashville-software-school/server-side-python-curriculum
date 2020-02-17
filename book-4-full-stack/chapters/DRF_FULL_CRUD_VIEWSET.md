@@ -27,7 +27,7 @@ class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'url', 'name', 'theme')
 
 
-class ListParkAreas(ViewSet):
+class ParkAreas(ViewSet):
     """Park Areas for Kennywood Amusement Park"""
 
     def create(self, request):
