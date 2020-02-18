@@ -100,7 +100,7 @@ from .register import register_user
 from .register import login_user
 ```
 
-Then import those views into `kennywoodapi/urls.py`.
+Then import those views into `kennywood/urls.py`.
 
 ```py
 from kennywoodapi.views import register_user, login_user
