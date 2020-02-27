@@ -122,6 +122,7 @@ import unittest
 from django.test import TestCase
 from django.urls import reverse
 from .models import Animal
+# from .views import <Why don't we need to do this?>
 
 class TestAnimal(TestCase):
     def test_post_animal(self):
@@ -179,15 +180,6 @@ def test_list_animals(self):
     # Finally, test the actual rendered content as the browser would receive it
     # .encode converts from unicode to utf-8. Don't get hung up on this. It's just how we can compare apples to apples
     self.assertIn(new_animal.name.encode(), response.content)
-```
-
-## Test Discovery
-
-One file for all your tests can get cluttered quickly.  
-Read the [Test Discovery section](https://docs.python.org/3.3/library/unittest.html#unittest-test-discovery) of the Python docs. It explains how you can run all tests inside a directory. This allows you to split your unit test suite into many, smaller, more maintainable modules, and the use a pattern matcher to find tests in all matching files.
-
-```
-python -m unittest discover -s . -p "Test*.py" -v
 ```
 
 ## Code Coverage
