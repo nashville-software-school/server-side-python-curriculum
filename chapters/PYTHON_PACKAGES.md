@@ -3,7 +3,7 @@
 Python packages are a way to collect many classes into a single namespace. 
 Consider the following directory structure for containing classes representing different electronic appliances.
 
-![images of appliances directory and sub-directories](./images/package-directory-structure.png)
+![images of appliances directory and sub-directories](images/package-directory-structure.png)
 
 
 In order to use those in the `main.py` module, this is what the `import` statements would look like.
