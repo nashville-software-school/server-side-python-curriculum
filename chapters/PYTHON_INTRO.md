@@ -1,135 +1,236 @@
-# Not Hello, World
+# The Plan
 
-## Setup
+1. Get an [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) up and running!
+For this course, we will be using a browser-based IDE called `jupyter`.
+When running, `jupyter` will allow use to write python code and see the results in real-time.
+2. Create a `notebook`. 
+You can think of a _notebook_ as a text document that you will write your code in. 
+Every time we want to write some code, we will either open an existing notebook, or create a new one.
+3. Start writing some python code!
+Yay!
 
-Here's your very first Python code module. Go ahead and create a new directory for storing your Python code and create a file named `humansizes.py`.
+# Step 1: Get `jupyter` Running
+
+First, open up your Terminal or Command Prompt.
+Then, paste in this command: 
 
 ```sh
-mkdir -p ~/workspace/python/intro && cd $_
+mkdir -p ~/Documents/python/orientation && cd $_
 jupyter notebook
 ```
 
-Go ahead and create a new notebook, and call it `humansizes`.
+This worked _if_..
+* A browser on your computer opened up
+* The browser is displaying something like this
 
-Next, copy the following snippets into your notebook, one cell each.
+![Jupyter Homepage](./images/jupyter_home.png)
 
-## Code Review
+# Step 2: Create a `Notebook`
 
-Let's take a look at the code.
+See that `New` button with the dropdown?
+Go ahead and click that. 
+Then click `Python3`.
+
+You should now have a _second_ tab open, looking something like this: 
+![Notebook Empty](./images/jupyter_notebook_empty.png)
+
+Go ahead and click the `Untitled` part in the top left, and rename it to `Chapter 1`.
+
+# Step 3: Code Something!
+
+Now we can start coding!
+For each of the next code snippets, copy them and paste them into separate `cells` within your notebook.
+
+## Basic Types
 
 ```python
-① SUFFIXES = {1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-            1024: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']}
+number = 12345
+float_number = 12.345
+some_text = 'This is text (a string)!'
+a_boolean = True
 ```
+
+Everything to the _left_ of the equal sign is a _variable_ name, while everything to the right of the equal sign is a value that gets assigned to the variable name. 
+This comes in handy when you want to reference a value later in your code. 
+
+Try running this code in a new cell below: 
 ```python
-② def approximate_size(size, a_kilobyte_is_1024_bytes=True):
-
-    '''Convert a file size to human-readable form.
-
-    (this is a docstring)
-
-    Keyword arguments:
-    size -- file size in bytes
-    a_kilobyte_is_1024_bytes -- if True (default), use multiples of 1024
-                                if False, use multiples of 1000
-
-    Returns: string
-
-    '''
-③   if size < 0:
-        raise ValueError('number must be non-negative')
-
-④   multiple = 1024 if a_kilobyte_is_1024_bytes else 1000
-    for suffix in SUFFIXES[multiple]:
-        size /= multiple
-        if size < multiple:
-            return '{0:.1f} {1}'.format(size, suffix)
-
-    raise ValueError('number too large')
+print(number)
+print(float_number)
+print(some_text)
+print(a_boolean)
 ```
+
+Notice how the _names_ don't show up, but the values the names represent do.
+Also, printing is cool!
+
+Just like SQL or Excel, python has _types_.
+We've already covered a few of the basic and most common types. 
+
+* Integer - `int()`
+* Float - `float()`
+* String - `str()`
+* Bool - `bool()`
+
+## Integer / Float
+
+Wanna do some math? 
+These characters should be your go-to.
+They can do everything you think numbers should be able to do.
+
+Take it away `int`s!
 ```python
-⑤ print(approximate_size(16384, False))
-print(approximate_size(size=16384, a_kilobyte_is_1024_bytes=False))
-print(approximate_size(-16384))
+print(1 + 1)
+print(10 - 5)
+print(2 * 3)
+print(6 / 2)
+print(5 / 2)
 ```
 
-> ☞ Python is a dynamically typed language, meaning that the compiler determines the type of a variable at run-time.
-
-① This is called a dictionary. Everything to the left of the colon is considered a _key_, while everything on the right side of the colon is called a _value_. `{key: value}`
-
-② In Python, you use the `def` keyword to define functions. Functions are first-class objects and can be passed to other functions.
-
-③ For `if` and `for` blocks, you use a colon to define block scope, and then indent the corresponding code.
-
-④ This is how you write a bite-sized conditional (ternary) in python! One line!
-
-⑤ The `print()` method let's will "print" output to your console.
-
-## Python Modules
-
-Typically, you will want to use some tools to accomplish what you are trying to do.
-Your "tools" can be found in "toolbags", called _modules_. 
-Here is how you can import a module.
-
-```py
-# import toolbag
-# import module
-import http
-import sys
-import student
-import instructor
+Now the `float`
+```python
+print(1.0 + 1.0)
+print(10.3 - 5.75)
+print(0.12345 * 0.6789)
+print(2_000_000.123 / 150.23)
 ```
 
-Here is how you can import a specific "tool", (_function_), from a module.
+## String
 
-```py
-# from toolbag import tool
-# from module import function
-from food_factory import factory
+_Text_.
+Nothing too special here!
+ 
+```python
+print('I am text.. With single quotes!')
+print("I am text.. With DOUBLE quotes!")
+print("I am text.." + ' Using both!!!!')
 ```
 
-Python will look in every directory that is defined in `sys.path` for a file, or executable, that matches the name in your import statement. If you ever want to see those locations, you can just print them and take a look. As a test, add this to your `humansizes.py` file
-
-```py
-import sys
-print(sys.path)
-```
-In the AREPL window, you would see something like
-> ['', '/Users/student/.pyenv/versions/3.4.3/lib/python34.zip', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/lib-dynload', '/Users/student/.pyenv/versions/3.4.3/lib/python3.4/site-packages']
-
-## Import Your Module
-
-Python will also look in the immediate directory for any files matching what you want to import. After it's imported, you can call any method in that module. Just precede it with the module name.
-
-```py
-import module
-
-module.function_name(arguments)
+With python, you can do some pretty cool things with text.
+Right out of the box!
+What if we wanted to dynamically create a greeting, for example.
+```python
+greeting_name = 'FooBar'
+greeting = 'Hello, my name is.. {name}'
 ```
 
-In the same directory as `humansizes.py`, create another file, `index.py`. In it, import the `humansizes` module
+Notice the `name` parameter there?
+We can substitute that with a variable!
+```python
+print(greeting.format(name=greeting_name))
 
-```py
-import humansizes
-print(humansizes.approximate_size(80808080, True))
-```
-In AREPL you'll see the number, such as `77.1 MiB`
-
-## Function Docstrings
-
-If you ever want to see the developer's documentation of a function, you can access the built-in `__doc__` property on the function.
-
-```
->>> print(humansizes.approximate_size.__doc__)
-
-Convert a file size to human-readable form.
-
-    Keyword arguments:
-      size                     -- file size in bytes
-      a_kilobyte_is_1024_bytes -- if True (default), use multiples of 1024
-                                if False, use multiples of 1000
-
-    Returns: string
+a_different_name = 'NotFooBar'
+print(greeting.format(name=a_different_name))
 ```
 
-Because this is so incredibly helpful, you need to get into the practice of providing a docstring for every method you write.
+Now try it yourself!
+```python
+# first declare a name variable
+# then print it using the greeting from before!
+```
+
+### Thoughts on _Methods_
+
+Remember the `SUM`, `MIN`, or `AVG` functions in Excel?
+You would use them like this: 
+```postgresql
+SELECT SUM(column) as sum_of_column 
+FROM table
+```
+
+In this scenario, `SUM` is a _function_. 
+Some function attributes might be:
+* Can take an argument, or arguments
+* Available to you with no strings attached.. 
+Use right out of the box
+* Performs an _action_.. 
+It goes out and tries to _do_ something. 
+Verb!!
+
+_Methods_ are pretty much the same thing..
+Except they _are strings attached_. 
+They are actions specific to something else. 
+
+As an example.. 
+```
+People can run.
+Trees cannot run.
+
+People can drive.
+Trees cannot drive.
+
+People can consume water.
+Trees can consume water.
+```
+
+Most objects in python have _methods_ associated with them. 
+They have the ability to do things!
+
+The syntax for that looks like: `object.method()`.
+Assuming `person` and `tree` exist..
+
+We can continue on our previous example.. 
+```python
+person.run()
+tree.drink()
+```
+
+## A Few of String Methods
+```python
+sentence = 'this is a sentence!'
+```
+
+String's have quite a few methods available for use.
+* `capitalize` - Capitalize the first letter
+* `upper` - Uppercase all the letters in the string
+* `replace` - Replace part of the string with something else
+* `strip` - Remove all whitespaces
+
+```python
+print(sentence.capitalize())
+print(sentence.lower())
+print(sentence.replace('sentence', 'not a sentence'))
+print(sentence.strip())
+```
+
+And [many more](https://docs.python.org/2.5/lib/string-methods.html)!
+
+## Boolean
+
+True or False?? 
+Yes or No? 
+
+```python
+this = True
+that = False
+
+print(this, that)
+```
+
+```python
+print(this == True)
+print(that == True)
+```
+
+```python
+print(this or that)
+print(this and that)
+print(this and not that)
+```
+
+Ok, these have all been absolute / static. 
+What else is can evaluate to True or False?
+
+```python
+print('foo' == 'foo')
+print('foo' == 'bar')
+print('foo' != 'foo')
+
+print(1 < 2)
+print(35 == 35.0)
+print(bool(''))
+```
+
+```python
+print(True if '' and 1 else False)
+```
