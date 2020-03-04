@@ -69,7 +69,7 @@ else:
 print(name)    
 ```
 
-### Exercise
+### Exercise 1
 
 Given the following: 
 ```python
@@ -80,3 +80,20 @@ Write a conditional that meets the following criteria:
 * When number is less than 3, print `low`
 * When number is between 3 and 20, print `mid`
 * Wen number is greater than 20, print `high`
+
+
+### Exercise 2
+
+Given the following: 
+```python
+number = 5
+prime = True
+```
+
+Write a conditional that meets the following criteria:
+* For when prime is True
+    * When number is less than 3, print `low`
+    * When number is between 3 and 20, print `mid`
+    * Wen number is greater than 20, print `high`
+* When prime is False
+    * print : 'Not a prime number'
