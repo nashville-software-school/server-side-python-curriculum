@@ -4,8 +4,9 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 
 ## Python Orientation
 
-* Chapter 1 - [Installations](chapters/INSTALLATION.md)
-* Chapter 2 - [Introduction to Python](chapters/PYTHON_INTRO.md)
+* Installations / Setup - [Installations](chapters/INSTALLATION.md)
+* Chapter 1 - [Introduction to Python](chapters/PYTHON_INTRO.md)
+* Chapter 2 - [Conditionals](chapters/PYTHON_INTRO.md)
 * Chapter 3 - [Common Types - Lists](chapters/DATA_STRUCTURES_LIST.md)
 * Chapter 4 - [Common Types - Dictionaries](chapters/DATA_STRUCTURES_DICTIONARY.md)
 * Chapter 5 - [Common Types - Tuples](chapters/DATA_STRUCTURES_TUPLE.md)
