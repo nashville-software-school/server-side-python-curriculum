@@ -143,13 +143,13 @@ Some function attributes might be:
 * Can take an argument, or arguments
 * Available to you with no strings attached.. 
 Use right out of the box
-* Performs an _action_.. 
+* Performs an _action_.
 It goes out and tries to _do_ something. 
 Verb!!
 
 _Methods_ are pretty much the same thing..
-Except they _are strings attached_. 
-They are actions specific to something else. 
+Except they _are attached to another object_. 
+They are actions specific to an object. 
 
 As an example.. 
 ```
@@ -163,17 +163,30 @@ People can consume water.
 Trees can consume water.
 ```
 
+In this scenario, people and trees are objects.
+Run, drive, and consume are all actions. 
+
+People would have the following methods: 
+* run
+* drive
+* consume 
+
+Tree would only have the following method:
+* consume
+
+If this were code, it may look something like this:
+```python
+people.run()
+people.drive()
+people.consume('water')
+
+trees.consume('water')
+```
+
 Most objects in python have _methods_ associated with them. 
 They have the ability to do things!
-
+Just like people and trees can do things.
 The syntax for that looks like: `object.method()`.
-Assuming `person` and `tree` exist..
-
-We can continue on our previous example.. 
-```python
-person.run()
-tree.drink()
-```
 
 ## A Few of String Methods
 ```python

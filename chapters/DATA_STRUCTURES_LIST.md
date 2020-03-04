@@ -1,15 +1,110 @@
 # Python Lists
 
+## Setup
+
+First, open up your Terminal or Command Prompt.
+Then, paste in this command: 
+
+```sh
+mkdir -p ~/Documents/python/orientation && cd $_
+jupyter notebook
+```
+
+Create a _new_ notebook labelled `Chapter 3` using the `python3` option.
+
+## Lists
+
 Lists are one of the more common data types that you will come across.
 They serve as simple containers that can hold objects.
-They are collections of similar items, like a grocery list. 
-The syntax is identical to JavaScript's array.
+They are collections of similar items, like a grocery list.
 
 ```py
 groceries = ["milk", "bread", "flashlight", "blizzard survival guide"]
+numbers = [1, 2, 3, 4, 5]
+random_values = ["foo", 1, True, None]
 ```
 
-## Reference
+The only special syntax for the list is the _square brackets_ `[]`.
+Every element in the list is separated by a comma.
+
+## Accessing Elements
+
+Ok, so you have a list. 
+How do you get at the different values within the list?
+How can you get the first element?
+The last element?
+The first 5 elements???
+Last 3?
+Every other?
+
+So many questions!
+Only one answer.
+By _slicing_ the list at it's _indices_.
+
+**Python starts at the number 0**.
+It is **zero-indexed**.
+
+So, with that in mind, every element in a list is automatically assigned a number, starting with zero.
+Let's take an example: 
+```python
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+Every fruit has an index (0-6): 
+* 'orange': 0
+* 'apple': 1
+* 'pear': 2 
+* 'banana': 3
+* 'kiwi': 4
+* 'apple': 5
+* 'banana': 6
+
+The index is _ALWAYS_ sequential, and updates when items get added or removed from the list.
+If we were to shuffle this list and mix up the values, the indices will still be 0-6.
+
+
+  
+
+### List Methods
+
+Just like strings, lists also have _methods_ that we can use.
+
+```python
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+```
+
+* `count` - Shows how many times something shows up in my list
+* `index` - At which position does something show up in my list
+* `reverse` - Reverse it!
+* `append` - Adds something to the end of the list
+* `sort` - Sorts it
+* `pop` - remove an element from the end of the list
+
+Go ahead and stick this in a cell and run it. 
+See what happens to our list!
+```python
+print(fruits.count('apple'))
+print(fruits.count('tangerine'))
+print(fruits.index('banana'))
+print(fruits.index('banana', 4))  # Find next banana starting a position 4
+
+fruits.reverse()
+print(fruits)
+
+fruits.append('grape')
+print(fruits)
+
+fruits.sort()
+print(fruits)
+
+print(fruits.pop())
+print(fruits)
+```
+
+Of course, these are _just a few methods_.
+There are [many more](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
+
+## Some References
 
 * [Python Lists](https://docs.python.org/3.6/tutorial/datastructures.html)
 * [Learn Python - Lists](http://www.learnpython.org/en/Lists)
