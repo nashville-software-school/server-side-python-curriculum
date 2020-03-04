@@ -1,6 +1,17 @@
 # Python Orientation
 
-This book builds a strong foundation in the syntax, data structures, and valuable methods available in the Python language. 
+This book builds a strong foundation in the syntax, data structures, and valuable methods available in the Python language.
+
+## Setup
+
+Run this command: 
+
+```bash
+cd ~/Documents
+git clone https://github.com/NSS-Data-Analytics-Cohort-2/python-orientation.git
+``` 
+
+Follow the installations section!
 
 ## Python Orientation
 
