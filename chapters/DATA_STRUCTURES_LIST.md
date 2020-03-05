@@ -62,9 +62,6 @@ Every fruit has an index (0-6):
 The index is _ALWAYS_ sequential, and updates when items get added or removed from the list.
 If we were to shuffle this list and mix up the values, the indices will still be 0-6.
 
-
-  
-
 ### List Methods
 
 Just like strings, lists also have _methods_ that we can use.
