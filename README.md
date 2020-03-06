@@ -19,7 +19,7 @@ Follow the installations section!
 * Chapter 1 - [Introduction to Python](chapters/Chapter%201.ipynb)
 * Chapter 2 - [Conditionals](chapters/Chapter%202.ipynb)
 * Chapter 3 - [Common Types - Lists](chapters/Chapter%203.ipynb)
-* Chapter 4 - [Common Types - Dictionaries](chapters/DATA_STRUCTURES_DICTIONARY.md)
+* Chapter 4 - [Common Types - Dictionaries](chapters/Chapter%204.ipynb)
 * Chapter 5 - [Common Types - Tuples](chapters/DATA_STRUCTURES_TUPLE.md)
 * Chapter 6 - [Common Types - Sets](chapters/DATA_STRUCTURES_SET.md)
 * Chapter 7 - [Python Functions](chapters/FUNCTIONS_INTRO.md)
