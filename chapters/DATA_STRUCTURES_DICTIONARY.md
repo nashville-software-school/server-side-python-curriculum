@@ -2,7 +2,8 @@
 
 ## Overview
 
-Dictionaries are the new Object from JavaScript. They are key/value pairs just like objects, but creating and accessing the key/value pairs can only be done with square-bracket notation.
+Dictionaries are the new Object from JavaScript. 
+They are key/value pairs just like objects, but creating and accessing the key/value pairs can only be done with square-bracket notation.
 
 You can create a dictionary in two ways.
 
