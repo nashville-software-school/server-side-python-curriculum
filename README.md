@@ -22,7 +22,7 @@ Follow the installations section!
 * Chapter 4 - [Common Types - Dictionaries](chapters/Chapter%204%20-%20Dictionaries.ipynb)
 * Chapter 5 - [Common Types - Tuples](chapters/Chapter%205%20-%20Tuples.ipynb)
 * Chapter 6 - [Common Types - Sets](chapters/Chapter%206%20-%20Sets.ipynb)
-* Chapter 7 - [Common Types - Sets](chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+* Chapter 7 - [Loops](chapters/Chapter%207%20-%20Loopin%20it.ipynb)
 * Chapter 7 - [Python Functions](chapters/FUNCTIONS_INTRO.md)
 * Chapter 8 - [Student Exercises - Part One](chapters/STUDENT_EXERCISES_TYPES.md)
 * Chapter 9 - [Exceptions and Try/Catch](chapters/TRY_CATCH_INTRO.md)
