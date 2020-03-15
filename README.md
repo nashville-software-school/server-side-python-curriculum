@@ -23,7 +23,7 @@ Follow the installations section!
 * Chapter 5 - [Common Types - Tuples](chapters/Chapter%205%20-%20Tuples.ipynb)
 * Chapter 6 - [Common Types - Sets](chapters/Chapter%206%20-%20Sets.ipynb)
 * Chapter 7 - [Loops](chapters/Chapter%207%20-%20Loopin%20it.ipynb)
-* Chapter 7 - [Python Functions](chapters/FUNCTIONS_INTRO.md)
+* Chapter 7 - [Python Functions](chapters/Chapter%208%20-%20Functions.ipynb)
 * Chapter 8 - [Student Exercises - Part One](chapters/STUDENT_EXERCISES_TYPES.md)
 * Chapter 9 - [Exceptions and Try/Catch](chapters/TRY_CATCH_INTRO.md)
 * Chapter 10 - [Python Packages](chapters/PYTHON_PACKAGES.md)
