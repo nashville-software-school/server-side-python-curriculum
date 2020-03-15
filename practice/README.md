@@ -19,3 +19,11 @@
 * [Lists](../chapters/Chapter%203%20-%20Lists.ipynb)
 * [Tuples](../chapters/Chapter%205%20-%20Tuples.ipynb)
 * [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+
+
+## 3. [Dictionary of Words](./Dictionary%20of%20Words.ipynb)
+#### Pre-Requisites
+* [Dictionaries](../chapters/Chapter%204%20-%20Dictionaries.ipynb)
+* [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+
+
