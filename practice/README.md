@@ -50,6 +50,7 @@
 #### Pre-Requisites
 * [Dictionaries](../chapters/Chapter%204%20-%20Dictionaries.ipynb)
 * [Tuples](../chapters/Chapter%205%20-%20Tuples.ipynb)
+* [Sets](../chapters/Chapter%206%20-%20Sets.ipynb)
 * [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
 * [Functions](../chapters/Chapter%208%20-%20Functions.ipynb)
 
