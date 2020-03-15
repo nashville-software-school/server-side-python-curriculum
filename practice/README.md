@@ -31,3 +31,11 @@
 #### Pre-Requisites
 * [Dictionaries](../chapters/Chapter%204%20-%20Dictionaries.ipynb)
 * [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+
+
+## 5. [The Family Dictionary](./The%20Family%20Dictionary.ipynb)
+#### Pre-Requisites
+* [Dictionaries](../chapters/Chapter%204%20-%20Dictionaries.ipynb)
+* [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+
+
