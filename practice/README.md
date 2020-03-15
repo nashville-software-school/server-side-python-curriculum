@@ -46,3 +46,11 @@
 * [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
 
 
+## 7. [Matching Make and Models - Advanced](./Matching%20Makes%20and%20Models.ipynb)
+#### Pre-Requisites
+* [Dictionaries](../chapters/Chapter%204%20-%20Dictionaries.ipynb)
+* [Tuples](../chapters/Chapter%205%20-%20Tuples.ipynb)
+* [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+* [Functions](../chapters/Chapter%208%20-%20Functions.ipynb)
+
+
