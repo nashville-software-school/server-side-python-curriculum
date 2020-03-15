@@ -63,3 +63,14 @@
 * [Functions](../chapters/Chapter%208%20-%20Functions.ipynb)
 
 
+## 8. [ChickenMonkey](./ChickenMonkey.ipynb)
+#### Pre-Requisites
+* [Conditionals](../chapters/Chapter%202%20-%20Conditionals.ipynb)
+* [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+
+#### New
+* [Range](https://docs.python.org/3/library/functions.html#func-range)
+* [Modulo](https://python-reference.readthedocs.io/en/latest/docs/operators/modulus.html)
+
+
+
