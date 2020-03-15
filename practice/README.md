@@ -39,3 +39,10 @@
 * [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
 
 
+## 6. [Stock Portfolio - Advanced](./Stock%20Portfolio.ipynb)
+#### Pre-Requisites
+* [Dictionaries](../chapters/Chapter%204%20-%20Dictionaries.ipynb)
+* [Tuples](../chapters/Chapter%205%20-%20Tuples.ipynb)
+* [Loops](../chapters/Chapter%207%20-%20Loopin%20it.ipynb)
+
+
