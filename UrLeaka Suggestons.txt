@@ -1,0 +1,100 @@
+Great introduction to the python work... I love the orientation training analogy.
+
+For the _"Python Way"_, why is this true...
+- "There should be one-- and preferably only one --obvious way to do it."
+
+What is the PythonWay.md?
+
+Are we going to have them save all save their work in the same place (i.e. cd ~Documents/python...
+
+_______________________________________________________________________________________________________________
+
+Chapter 1 - 
+
+Questions
+- Do we need to explain how greeting.format(name=var)) works?
+
+Changes
+- Split cells for student flow (i.e. "your turn...")
+
+
+
+Chapter 2 - 
+
+Questions
+
+Changes
+- no changes
+
+
+
+Chapter 3
+
+Questions
+Comment -- I like that you start out talking about indices and values first.
+
+
+Changes
+- For 2nd your turn... added number (10) to list.
+- added... "and feel free to add extra cells"
+
+
+
+
+Chapter 4
+
+Questions
+Comment - I like the dictionary definition in the beginning.
+
+Changes
+- added is to "What the animals's name??"
+
+
+
+
+Chapter 5
+
+Question
+- I didn't change much of this one because I was curious about the flow.  Did you want the students to start figureing out more of the responses and syntax to use by looking things up?  The tutorial has modeled things more before...
+- For example, "Create a variable for the animals in your zoo tuple, and print them to the console"Co" Is this the same as the example above?  Do they know what variables are?
+- "Convert your tuple into a list".  Will they know how to do this?  Will we suggest they go back to their old notebook?
+- "Convert the list back into a tuple"
+converting 
+
+Changes
+- added "dictionaries have curly brackets"
+- Introducing tuples doesn't work. (http://www.diveintopython.net/native_data_types/tuples.html)
+- Changed to [Python Tuples Examples](https://appdividend.com/2019/01/05/python-tuple-example-tutorial-complete-introduction-on-tuples/)
+
+
+
+
+Chapter 6
+
+Questions
+Comments - definitely will need to walk students through this one and explain it more in class...
+
+
+
+
+Chapter 7
+
+Questions
+- How many dictionary words and definitions do you want them to add?  Might want to be specific.
+- Do we need to add reminder code for the prompt to ..."Use square bracket lookup to get the definition of two words and output them to the console with print()"
+
+Comments 
+- Added ### Definition - What does Iteration mean?
+"**_Iteration_**, in the context of computer programming, is a process wherein a set of instructions or structures are repeated in a sequence a specified number of times or until a condition is met. When the first set of instructions is executed again, it is called an iteration. When a sequence of instructions is executed in a repeated manner, it is called a loop."
+Source: https://www.techopedia.com/definition/3821/iteration
+
+
+
+
+Chapter 8
+
+Questions
+- What's the difference between parameters and arguments?  Because we mention arguments later... I changed parameters to arguments...
+
+Changes
+- Changed parameters to arguments
