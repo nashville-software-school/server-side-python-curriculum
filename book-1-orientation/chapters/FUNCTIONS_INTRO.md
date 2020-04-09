@@ -33,31 +33,73 @@ def create_person(first_name, last_name, age, occupation):
 
 melissa = create_person("Melissa", "Bell", 25, "Software Developer")
 ```
+# Passing a Variable Number of Arguments to a Function
 
-## Practice: Activities for Kids
+In Python, we can pass a varying number of arguments to to a function. You can use either `*args` or `**kwargs`.
 
-Define four Python functions named `run`, `swing`, `slide`, and `hide_and_seek`. Each function should take a child's name as an argument. Each function should print that the child performed the activity.
+## Non Keyword Arguments
 
-For example, `Jay ran like a fool!` or `Chantelle slid down the slide!`.
+```python
+def add(*list_of_numbers):
+    sum = 0
+    
+    for number in list_of_numbers:
+        sum = sum + number
 
-The following lists of children should be iterated, and the names sent to the appropriate functions.
+    print("Sum:",sum)
 
-```py
-running_kids = ["Pam", "Sam", "Andrea", "Will"]
-swinging_kids = ["Marybeth", "Jenna", "Kevin", "Courtney"]
-sliding_kids = ["Mike", "Jack", "Jennifer", "Earl"]
-hiding_kids = ["Henry", "Heather", "Hayley", "Hugh"]
+add(3,5)
+add(4,5,6,7)
+add(1,2,3,5,6)
 ```
+
+Here we have a function that is responsible for adding together all the numbers. Since there could be a varying amount of numbers, we use a non keyword argument (indicated by the * before the argument name) to specify that the number of arguments will vary.
+
+
+## Keyword Arguments
+
+```python
+def list_person(**person):
+    for key, value in person.items():
+        print(f"{key} is {value}")
+
+melissa = list_person(first_name="Melissa", last_name="Bell", age=25, occupation="Software Developer")
+```
+
+While we are can still pass a variable number of arguments, the arguments now have a keyword associated with it. In other words, you get to name the arguments that you pass to the function (a dictionary with key value pairs).
 
 ## Practice: ChickenMonkey
 
 Write a program that prints the numbers from 1 to 100. You can use Python's [range()](https://www.pythoncentral.io/pythons-range-function-explained/) to quickly make a list of numbers.
 
-* For multiples of five (5, 10, 15, etc.) print "Chicken" instead of the number
+* For multiples of five (5, 10, 15, etc.) print "Chicken" instead of the number.
 * For the multiples of seven (7, 14, 21, etc.) print "Monkey".
 * For numbers which are multiples of both five and seven print "ChickenMonkey".
 
 To determine if a number can be evenly divided by 5 or 7, use the Python [modulo](https://docs.python.org/3.7/reference/expressions.html#binary-arithmetic-operations) operator.
+
+## Practice: Activities for Kids
+
+Define four Python functions named `run`, `swing`, `slide`, and `hide_and_seek`. Each function should take varying number of children's names as the argument.
+
+For example, the `run` function would be defined as follows:
+
+```python
+def run(*kids):
+    # Loop through all the kids and print that the child performed the activity.
+
+run("Joe", "Jenna")
+# Output: 
+# "Joe ran like a fool!"
+# "Jenna ran like a fool!"
+```
+
+Do the same for the following children:
+
+- Running kids: Pam, Sam, Andrea, Will
+- Swinging kids: Marybeth, Ariel, Kevin, Courtney
+- Sliding kids: Mike, Jack, Jennifer, Earl
+- Hiding kids: Henry, Heather, Hayley, Hugh
 
 ## Coins to Cash
 
@@ -67,26 +109,16 @@ touch coinsToCash.py
 code .
 ```
 
-Create a function called `calc_dollars`. In the function body, define a dictionary and store it in a variable named `piggyBank`. The dictionary should have the following keys defined.
+Create a function that will take all your coins and convert it to the cash amount.
 
-* quarters
-* nickels
-* dimes
-* pennies
+```python
+def calc_dollars(**coins):
+    # The function should look at each key (pennies, nickels, dimes and quarters) and perform the appropriate math on the integer value to determine how much money you have in dollars. Store that value in a variable named `dollarAmount` and print it.
 
-For each coin type, give yourself as many as you like.
-
-```js
-piggyBank = {
-    "pennies": 342,
-    "nickels": 9,
-    "dimes": 32
-}
+calc_dollars(pennies= 342, nickels=9, dimes=32, quarters=4)
 ```
 
-Once you have given yourself a large stash of coins in your piggybank, look at each key and perform the appropriate math on the integer value to determine how much money you have in dollars. Store that value in a variable named `dollarAmount` and print it.
-
-Given the coins shown above, the output would be `7.07` when you call calc_dollars()
+The output would be `8.07` when the function is executed with those arguments.
 
 ## Cash to Coins
 
