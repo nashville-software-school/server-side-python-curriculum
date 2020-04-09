@@ -39,6 +39,22 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 ```
 
+If try to run `pyenv install 3.7.3` and receive an error similar to the one below 
+
+```
+BUILD FAILED (OS X 10.14.6 using python-build 20180424)
+
+Inspect or clean up the working tree at /var/folders/r5/snljcx4x3dx8ccckm7hhdgy80000gn/T/python-build.20191008104728.34069 Results logged to /var/folders/r5/snljcx4x3dx8ccckm7hhdgy80000gn/T/python-build.20191008104728.34069.log
+```
+
+Run the following command in your terminal:
+ ```
+ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target / 
+ ```
+
+ After this is completed, try running `pyenv install 3.7.3` again
+
+
 ## Python Linter
 
 Run the following command to install the linter we will all be using during Python development.
