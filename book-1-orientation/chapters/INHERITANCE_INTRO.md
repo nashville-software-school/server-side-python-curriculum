@@ -29,7 +29,6 @@ class Zero:
 
     def charge_battery(self):
         ...
-}
 ```
 
 ```py
@@ -42,7 +41,6 @@ class Cessna:
 
     def refuel_tank(self):
         ...
-}
 ```
 
 ```py
@@ -55,7 +53,6 @@ class Tesla:
 
     def charge_battery(self):
         ...
-}
 ```
 
 ```py
@@ -68,7 +65,6 @@ class Ram:
 
     def refuel_tank(self):
         ...
-}
 ```
 
 
@@ -88,7 +84,6 @@ class Vehicle:
     def __init__(self):
         self.main_color = ""
         self.maximum_occupancy = ""
-}
 ```
 
 Then each of the other, more specific, types would inherit from it. The syntax for inheritance is to specify the parent class in parenthesis after the class definition.
@@ -119,7 +114,6 @@ class Vehicle:
 
     def drive(self):
         print("Vroooom!")
-}
 ```
 
 Once you do this, all of the specific vehicles can be driven. For now, however, they will all make the same sound, which is ridicuous because a plane doesn't sound like a truck which doesn't sound like a motorcycle.
