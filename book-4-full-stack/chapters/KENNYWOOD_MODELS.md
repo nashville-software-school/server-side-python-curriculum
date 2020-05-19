@@ -109,7 +109,7 @@ from kennywoodapi.models import *
 Then create a migration in the terminal.
 
 ```py
-python manage.py makemigration
+python manage.py makemigrations
 ```
 
 Once the migration is created, you run it to create the tables.
