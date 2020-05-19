@@ -107,7 +107,7 @@ To see how this all works, you are going to insert a park area into the database
 
 ```sql
 INSERT INTO
-    kennwoodapi_parkarea
+    kennywoodapi_parkarea
     ([name], theme)
 VALUES
     ('Splashing Safari', 'Water Rides')
