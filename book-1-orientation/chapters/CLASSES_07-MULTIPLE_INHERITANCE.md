@@ -1,3 +1,10 @@
+<!-- TODO: 
+Refactor for multiple inheritance
+Move flying/swimming/slithering out into their own classes -->
+
+MULTI-INHERITANCE
+
+
 # Interface Based Programming
 
 In Python, you can use classes to represent concrete things - Person, Building, Vehicle, Animal, Flower - but you also use them to define general types of things so that they can be grouped together in a more flexible way. The mechanism in Python is multiple inheritance. You can inherit from **more** than just one parent class!

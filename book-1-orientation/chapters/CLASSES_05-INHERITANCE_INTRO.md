@@ -1,3 +1,13 @@
+<!-- TODO: -->
+<!-- INHERITANCE
+Controlling and managing object properties:
+Overriding and getters/setters
+Use food and feed as examples.
+One animal has to be sung to when you feed it or it won't eat, so it's feed() method has to be different from he others
+Also, don't want anyone changing the food of an animal to something it can't eat, so we use a getter/setter to control that better -->
+
+
+
 # Class Based Inheritance
 
 Class based inheritance lets you specify that one type will contain **all** of the properties and methods that are defined in another type, without having to duplicate the code in the two source code files. Inheritance is a powerful feature of Python, but it should be used sparingly when you are defining many types in your program.

@@ -1,3 +1,6 @@
+TODO: 
+<!-- Fold this into Bobby Kawlins petting zoo narrative? -->
+
 # Python Class Properties
 
 By default, if you set an attribute of an object instance in, say, the `__init__` method, those values can be changed without restriction.
