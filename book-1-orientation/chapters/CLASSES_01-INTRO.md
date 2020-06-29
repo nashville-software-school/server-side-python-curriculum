@@ -1,7 +1,4 @@
 # Classes
-<!-- Intro to classes
-Intro petting zoo
-~20 different animal classes w/ name, species, date_added -->
 
 ## Why are you Learning This?
 
@@ -111,7 +108,6 @@ date_added: "2020-06-16"
 >
 > After a quick tour of the petting corral and a bite of cheese sampler, on the house, you head back to the office to get started
 
-<!-- TODO: Move exercises to supplementary chapter? -->
 ### Practice: Cute Critters Collection
 
 #### Setup
