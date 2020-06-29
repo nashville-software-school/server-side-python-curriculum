@@ -1,8 +1,8 @@
-# Critters and Croquettes Continued
+# Critters and Croquettes: Day 2
 
-You're feeling pretty good about your first steps to building what your new client, Bobby Kawlins, has hired you to create. You have a long list of critter classes ready to churn out as many goats, chickens and llamas as Bobby can stuff into his petting zoo. So, you decide to drob by and give Bobby an update on your progress in person. 
-
-> Bobby Kawlins doesn't greet you as you pass through the tapas bar and step into the critter corral. You're about to go back inside and ask the staff where he might be when you realize that the high pitched wail you just heard wasn't one of the resident peacocks, but a child. The boy is sitting in the dust under the "Critter Mix" dispensers ( "Just 50 cents for a whole handful!"), crying inconsolably.
+>You're feeling pretty good about your first steps to building what your new client, Bobby Kawlins, has hired you to create. You have a long list of critter classes ready to churn out as many goats, chickens and llamas as Bobby can stuff into his petting zoo. So, the next day you decide to drob by and give Bobby an update on your progress in person. 
+>
+> Bobby doesn't greet you as you pass through the tapas bar and step into the critter corral. You're about to go back inside and ask the staff where he might be when you realize that the high pitched wail you just heard wasn't one of the resident peacocks, but a child. The boy is sitting in the dust under the "Critter Mix" dispensers ( "Just 50 cents for a whole handful!"), crying inconsolably.
 >
 >Then you spot Bobby, patiently listening to an angry man vent his parental concern about the "life-threatening situation" you seem to have just missed witnessing in person.
 >
@@ -22,12 +22,12 @@ You're feeling pretty good about your first steps to building what your new clie
 >
 >"No problem," you assure him. 
 
-### Practice: Flexible Hours, Inflexible Classes
+### Practice: Clocking in the Critters
 It's time to update your collection of critter classes...again. 
 
 ##### *You are commiting your work, right? How about making a new branch for each Critters and Croquettes exercise? Of course you are! How silly of us to even bring it up*
 
-This time, add a `shift` property to all of your classes. Don't forget to add an argument to the __init__ method, too. When testing your changes, designate a critter as 'morning', 'midday' or 'afternoon' when it is instantiated.
+This time, add a `shift` property to all of your classes. Don't forget to add an argument to the __init__ method, too. When testing your changes, designate a critter's shift as 'morning', 'midday' or 'afternoon' when it is instantiated.
 
 > The day comes to an end, and you realize something is bugging you. You should feel good about helping Bobby solve his real-world problems, but when you look at your code it feels...off.
 >

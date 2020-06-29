@@ -19,7 +19,7 @@ Once a class is defined, you can use it to crank out objects based on the class.
 To define a class, you begin with the keyword `class` and then define at least an `__init__` method on for the class. The `__init__` method holds the instructions for what to do when a developer makes an instance of your class.
 
 <!-- NEW stuff -->
-## Critters and Croquettes Petting Zoo and Tapas Bar
+## Critters and Croquettes Petting Zoo and Tapas Bar: Day 1
 
 Lets build some classes for a business that's poised to become the #1 tourist trap in Gatlinburg: Critter and Croquettes Petting Zoo and Tapas Bar. Owner Bobby Andrew Kawlins has big plans for his business, starting with improving how he keeps records of his animals. As the newest member of the dev team, you want to really get a sense of what our new client needs, so you take a drive to Gatlinburg to sit down with Bobby in his office...
 
@@ -31,10 +31,7 @@ Lets build some classes for a business that's poised to become the #1 tourist tr
 >
 > "Exactly!" says Bobby.
 
-To help Bobby with that, we know we're going to need to represent animals in his petting zoo with our Python code. Each animal will have properties such as name, species, and year it was added to the zoo.
-
-
-
+To help Bobby with that, we know we're going to need to represent animals in his petting zoo with our Python code. Each animal will have properties such as name, breed, and year it was added to the zoo.
 
 Here's how you would define a template for how each animal will be represented in the application.
 
@@ -42,30 +39,30 @@ Here's how you would define a template for how each animal will be represented i
 # import the python datetime module to help us create a timestamp
 from datetime import date
 
-class Animal:
+class Llama:
 
     def __init__(self):
         # Establish the properties of each animal
         # with a default value
         self.name = ""
-        self.species = ""
+        self.breed = ""
         self.date_added = date.today()
 ```
 
 Remember, this class is not an animal itself. It's just a mechanism for creating animal objects. To create an instance of the class, you type the name of the class and put parenthesis after it. You should always store the object instance in a variable.
 
 ```py
-goat = Animal()
+miss_fuzz = Llama()
 ```
 
-For any class, when you create an instance of it, it executes an internal `__init__` method. In this method, one common thing to do is to define properties that every instance of the class will contain. Time to examine what the value of each of our book's properties are.
+For any class, when you create an instance of it, it executes an internal `__init__` method. In this method, one common thing to do is to define properties that every instance of the class will contain. Time to examine what the value of each of our llama's properties are.
 
 > **Tip:** What's up with that _self_ parameter that is the first argument of the `__init__` method? It's the instance of the class that you created.
 
-If you were to loop over the goat object you created...
+If you were to loop over the miss_fuzz object you created...
 
 ```py
-for prop, value in goat.__dict__.items():
+for prop, value in miss_fuzz.__dict__.items():
     print(f'{prop}:\n{value}\n')
 ```
 
@@ -75,28 +72,28 @@ for prop, value in goat.__dict__.items():
 name:
 
 
-species:
+breed:
 
 
 date_added: "2020-06-16" # or whatever the date is when you create the instance of Animal
 
 ```
 
-Update the object by defining the values for the name and species properties.
+Update the object by defining the values for the name and breed properties.
 
 ```py
-goat.name = "Bucky"
-goat.species = "miniature goat"
+miss_fuzz.name = "Miss Fuzz"
+miss_fuzz.breed = "domestic llama"
 ```
 
-Now looping over the goat object would produce the following output.
+Now looping over the miss_fuzz object would produce the following output.
 
 ```py
 name:
-Bucky
+Miss Fuzz
 
-species:
-miniature goat
+breed:
+domestic llama
 
 date_added: "2020-06-16"
 ```
@@ -118,30 +115,18 @@ touch animals.py
 ```
 
 #### Instructions
-1. Create 20 custom types (classes) for representing critters from Bobby's petting zoo in Python. Define each with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
+1. Create 20 custom types (classes) for representing critters from Bobby's petting zoo in Python. (_Seriously -- 20. Hey, we saw that. Don't roll your eyes at us!_). Define each class with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
 
 + name
-+ species
++ breed
 + date_added
 
+Use the `print()` method to see the results, like `print(miss_fuzz)`.  
+It will be...disappointing. You should see something like this: 
 
-If you have properly defined your classes, you should be able to do something like the following example:
+`<__main__.Llama object at 0x109df9cd0>`  
 
-```py
-# Make an instance of the Goat class.
-fainting_goat = Goat()
-# Assign values to your object's properties
-fainting_goat.name = "Bubba" 
-fainting_goat.species = "fainting goat"
-fainting_goat.date_added = "06/20/2020"
-```
-
-Use the `print()` method to see the results, like `print(goat)`.  
-It will be...disappointing. you should see something like this: 
-
-`<__main__.Goat object at 0x109df9cd0>`  
-
-What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a mre human readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(fainting_goat.name)` as a temporary solution.
+What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a mre human readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(miss_fuzz.name)` as a temporary solution.
 
 
 ## Class Construction Arguments
@@ -159,7 +144,7 @@ class Farm:
 rolling_hills = Farm("Rolling Hills Farm", 325)
 ```
 
-By passing the property value in during the instantiation of the object, I don't have to manually create the properties on a separate line of code.
+By passing the property value in during the instantiation of the object, you don't have to manually create the properties on a separate line of code.
 
 ```py
 # No need to do this!!
@@ -169,10 +154,9 @@ rolling_hills.total_acreage = 325
 
 ### Practice: Update Yer Critters Construction
 
-Refactor your critter classes to make your `__init__` method accept three arguments
+Refactor your critter classes to make your `__init__` method accept two arguments
 
 1. `name`
-2. `species`
-2. `date_added`
+2. `breed`
 
-Once defined this way, you can send those values as parameters when you create each instance
+Once defined this way, you can send those values as parameters when you create each instance.
