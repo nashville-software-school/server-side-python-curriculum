@@ -74,8 +74,8 @@ for animal in varmint_village.animals:
 ### Practice: Adding Attraction Types
 Define custom types for the three different animal attractions at Critters and Croquettes --  **`PettingZoo`**, **`SnakePit`**, and **`Aviary`**
 
-1. Give them each properties of `attraction_name` and `animals`
-1. `attraction_name` should be set when a habitat is instantiated, so be sure to have your `__init__` method take an argument for setting the name
+1. Give them each properties of `attraction_name`, `description` and `animals`
+1. `attraction_name` and `description` should be set when a habitat is instantiated, so be sure to have your `__init__` method take a arguments for setting those values
 1. Give `critters` an ititial value of an empty list
 1. Define a method on each class for adding animals to its `critters` array. Note that we did not do that in the example above. so, don't just copy and paste `Petting Zoo`
 1. Define even _more_ critter types that can live in Slither Inn and Twitter Towers.
