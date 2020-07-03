@@ -134,22 +134,23 @@ What the heck is that? Your instructors will explain this in more detail, and wi
 The `__init__()` method on a Python class can accept as many arguments as you like. Those arguments can then be used to initialize the properties of each object created from the class. Here's an example.
 
 ```py
-class Farm:
+class Pig:
 
-    def __init__(self, name, acres):
-        self.business_name = name
-        self.total_acreage = acres
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+        self.date_added = date.today()
 
 
-rolling_hills = Farm("Rolling Hills Farm", 325)
+wilbur = Pig("Wilbur", "pot-bellied pig")
 ```
 
 By passing the property value in during the instantiation of the object, you don't have to manually create the properties on a separate line of code.
 
 ```py
 # No need to do this!!
-rolling_hills.business_name = "Rolling Hills Farm"
-rolling_hills.total_acreage = 325
+wilbur.name = "Wilbur"
+wilbur.breed = "pot-bellied pig"
 ```
 
 ### Practice: Update Yer Critters Construction
