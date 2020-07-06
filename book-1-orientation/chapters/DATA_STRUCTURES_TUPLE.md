@@ -2,6 +2,32 @@
 
 Tuples are like lists, but are immutable. They can't be modified once defined. However, finding values in a tuple is faster than in a list.
 
+```py
+# Tuples (ordered, immutable & allows duplicates)
+
+my_tup = (1, 2, 3, 3, "hello")
+print(my_tup)
+
+# Immutable means you cannot change the tuple once it's been created: no changing an existing value, no adding new values, no removing values!
+my_tup[0] = "new value"
+print(my_tup[0])
+print(my_tup[-2])
+
+# Loop through the values in the tuple
+for value in my_tup:
+    print(value)
+
+# You CAN reassign a variable to a new tuple, though.
+my_tup = ("I'm thirsty", "I'm hungry")
+print(my_tup)
+
+# If you have one value in a tuple, you have to follow it with a comma! 
+my_little_tup = ("hello",)
+
+print(isinstance(my_little_tup, tuple))
+print(type(my_little_tup))
+```
+
 ## Setup
 
 ```sh

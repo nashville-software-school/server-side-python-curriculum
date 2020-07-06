@@ -7,6 +7,8 @@ Dictionaries are the new Object from JavaScript. They are key/value pairs just l
 You can create a dictionary in two ways.
 
 ```py
+# Dictionaries (unordered, mutable, does NOT allow duplicates & indexed w/ key value pairs)
+
 # Create an empty dictionary
 animal = dict()
 # Add k/v pairs
