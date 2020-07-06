@@ -16,24 +16,26 @@ Once a class is defined, you can use it to crank out objects based on the class.
 
 ![visualization of two instances of the Student class](./images/python-class-instances.png)
 
-To define a class, you begin with the keyword `class` and then define at least an `__init__` method on for the class. The `__init__` method holds the instructions for what to do when a developer makes an instance of your class.
+To define a class, such as **`Student`**, above, you begin with the keyword `class` and then define at least an `__init__` method for the class. The `__init__` method holds the instructions for what to do when a developer makes an instance of your class. 
+Below that are examples of objects being created as instances of **`Student`**. So, `fletcher` and `red` each hold the value of an object, each of which contains properties defined in the class, but each with their own unique values.
 
-<!-- NEW stuff -->
-## Critters and Croquettes Petting Zoo and Tapas Bar: Day 1
+## Critters and Croquettes Petting Zoo and Tapas Bar
 
-Lets build some classes for a business that's poised to become the #1 tourist trap in Gatlinburg: Critter and Croquettes Petting Zoo and Tapas Bar. Owner Bobby Andrew Kawlins has big plans for his business, starting with improving how he keeps records of his animals. As the newest member of the dev team, you want to really get a sense of what our new client needs, so you take a drive to Gatlinburg to sit down with Bobby in his office...
+Lets build some classes for a business that's poised to become the #1 tourist trap in Gatlinburg: Critters and Croquettes Petting Zoo and Tapas Bar. Owner Bobby Andrew Kawlins has big plans for his business, starting with improving how he keeps records of his animals. As the newest member of the dev team at Smoky Mountain Marketing, you want to really get a sense of what your new client needs, so you take a drive to the main strip in Gatlinburg to sit down with Bobby in his office...
 
-> Perched on a hill just down the street from Hillbilly Golf and Ripley's Believe it or Not, Critters and Croquettes Petting Zoo and Tapas Bar smells like new paint and carpet mixed with goats and chickens. Bobby is animated, full of ideas, and excited to have an app that will help him manage his growing empire.
+> Perched on a hill just down the street from Hillbilly Golf and Ripley's Believe it or Not, Critters and Croquettes Petting Zoo and Tapas Bar smells like new paint and carpet mixed with goats and llamas. Bobby is animated, full of ideas, and excited to have an app that will help him manage his growing empire.
+>
+>You get a full tour of the place, from the kitchen churning out small plates of shareable finger foods, to the outdoor corral of friendly four-legged critters looking for a pat on the head and a handful of treats. Bobby also makes sure you get a look at his glass tank crawling with a small collection of snakes, and his goldfish pond -- more of a puddle, really -- where a small school of fish can be seen just under the surface, and a few noisy mallards and Pekings joust for space to paddle in peace.
 >
 > "My market research tells me people are crying out for a place where they can eat like hipsters and feed miniature goats at the same time," Bobby tells you. "Right now I have a handful of critters, but the plan is to add more; a lot more. Nobody wants to stand in line to scratch a donkey's ears, you know?"
 >
-> You nod and smile. "Sounds great," you say. "So, sounds like you want to be able to keep records of your current animals, but also be able to add more as you acquire them."
+> You nod and smile. "Sounds great," you say. "Sounds like you want to be able to keep records of your current animals, but also be able to add more as you acquire them."
 >
 > "Exactly!" says Bobby.
 
-To help Bobby with that, we know we're going to need to represent animals in his petting zoo with our Python code. Each animal will have properties such as name, breed, and year it was added to the zoo.
+To help Bobby with that, you know you're going to need to represent animals in his petting zoo with code. Each animal will have properties such as name, species, and year it was added to the zoo. 
 
-Here's how you would define a template for how each animal will be represented in the application.
+Here's how you could define a template for how each animal will be represented in the application.
 
 ```py
 # import the python datetime module to help us create a timestamp
@@ -45,11 +47,10 @@ class Llama:
         # Establish the properties of each animal
         # with a default value
         self.name = ""
-        self.breed = ""
+        self.species = ""
         self.date_added = date.today()
 ```
-
-Remember, this class is not an animal itself. It's just a mechanism for creating animal objects. To create an instance of the class, you type the name of the class and put parenthesis after it. You should always store the object instance in a variable.
+Remember, this class is not a llama itself. It's just a mechanism for creating llama objects. To create an instance of the class, you type the name of the class and put parenthesis after it. You should always store the object instance in a variable.
 
 ```py
 miss_fuzz = Llama()
@@ -59,7 +60,7 @@ For any class, when you create an instance of it, it executes an internal `__ini
 
 > **Tip:** What's up with that _self_ parameter that is the first argument of the `__init__` method? It's the instance of the class that you created.
 
-If you were to loop over the miss_fuzz object you created...
+If you were to loop over the `miss_fuzz` object you created...
 
 ```py
 for prop, value in miss_fuzz.__dict__.items():
@@ -72,40 +73,44 @@ for prop, value in miss_fuzz.__dict__.items():
 name:
 
 
-breed:
+species:
 
 
 date_added: "2020-06-16" # or whatever the date is when you create the instance of Animal
 
 ```
 
-Update the object by defining the values for the name and breed properties.
+Update the object by defining the values for the name and species properties.
 
 ```py
 miss_fuzz.name = "Miss Fuzz"
-miss_fuzz.breed = "domestic llama"
+miss_fuzz.species = "domestic llama"
 ```
 
-Now looping over the miss_fuzz object would produce the following output.
+Now looping over the `miss_fuzz` object would produce the following output.
 
 ```py
 name:
 Miss Fuzz
 
-breed:
+species:
 domestic llama
 
 date_added: "2020-06-16"
 ```
+That's a good start, but animals -- in the real world and in our system -- also have some properties that help differentiate them from each other. For example, to us it's clear that a cottonmouth snake is quite different from a miniature goat. But without baking that distinction into our class definitions, our system can't recognize that difference. With that in mind, we can also give our critters additional properties that are not common across every class in the system.
+
+For example, Bobby's critters can be divided into three fairly distinct groups by how they move around their home: walking, slithering, and swimming. So, the **`Llama`** class could benefit from adding `self.walking = True` to it. And a **`KingSnake`** class would have `self.slithering = True` in its `__init__` method. Something tells you those distinctions might come in very handy for Bobby as his business grows... 
+
 > "Hello? Hey there, hello?"
 >
 > You snap out of your reverie, and realize you zoned out thinking about class syntax in Python. "Sorry", you say. "I was just...uh...already picturing how to build your app."
 >
 > Bobby smiles his infectious grin. "Oh, I understand completely. I could dream about pot-bellied pigs and pan tumaca all day, myself!"
 >
-> After a quick tour of the petting corral and a bite of cheese sampler, on the house, you head back to the office to get started
+> After a thorough hand-washing and a bite of cheese sampler, on the house, you head back to the office to get started
 
-### Practice: Cute Critters Collection
+### Practice: Classy Critters Collection
 
 #### Setup
 
@@ -115,19 +120,37 @@ touch animals.py
 ```
 
 #### Instructions
-1. Create 20 custom types (classes) for representing critters from Bobby's petting zoo in Python. (_Seriously -- 20. Hey, we saw that. Don't roll your eyes at us!_). Define each class with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
+You're going to create 15 custom types (classes) for representing critters from Bobby's petting zoo in Python. (_Seriously -- 15. Hey, we saw that. Don't roll your eyes at us!_)
+
+As shown earlier, define every class with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
 
 + name
-+ breed
++ species
 + date_added
 
-Use the `print()` method to see the results, like `print(miss_fuzz)`.  
-It will be...disappointing. You should see something like this: 
+But you should also take into consideration the fact that there are different types of animals at Critters and Croquettes. Specifically, there are critters in
+
+1. the petting area, such as donkeys, llamas, and goats
+1. the glass tank, like copperheads and rat snakes
+1. the pond, like mallards and goldfish
+
+With that in mind, make 5 critter types for each area. As you define each one, give it one of the following properties where most appropriate:
+
++ `this.swimming = True`
++ `this.slithering = True`
++ `this.walking = True`
+
+Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. you just want to get the logic working correctly. So, use the `print()` method to see your results.
+
+```py
+`print(miss_fuzz)`.  
+```
+
+It will be...disappointing. You should see something like this:  
 
 `<__main__.Llama object at 0x109df9cd0>`  
 
 What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a mre human readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(miss_fuzz.name)` as a temporary solution.
-
 
 ## Class Construction Arguments
 
@@ -136,11 +159,11 @@ The `__init__()` method on a Python class can accept as many arguments as you li
 ```py
 class Pig:
 
-    def __init__(self, name, breed):
+    def __init__(self, name, species):
         self.name = name
-        self.breed = breed
+        self.species = species
         self.date_added = date.today()
-
+        self.walking = True
 
 wilbur = Pig("Wilbur", "pot-bellied pig")
 ```
@@ -150,7 +173,7 @@ By passing the property value in during the instantiation of the object, you don
 ```py
 # No need to do this!!
 wilbur.name = "Wilbur"
-wilbur.breed = "pot-bellied pig"
+wilbur.species = "pot-bellied pig"
 ```
 
 ### Practice: Update Yer Critters Construction
@@ -158,6 +181,6 @@ wilbur.breed = "pot-bellied pig"
 Refactor your critter classes to make your `__init__` method accept two arguments
 
 1. `name`
-2. `breed`
+2. `species`
 
 Once defined this way, you can send those values as parameters when you create each instance.

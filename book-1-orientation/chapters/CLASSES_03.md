@@ -2,7 +2,7 @@
 
 The next morning you flip open your laptop, ready to look over your code and figure out why it didn't seem right yesterday. But, before you can settle in to read over your work, an email comes in from Bobby Kawlins. The subject reads "Critter Culinary Chaos!!" You're not surprised that Bobby types like he talks: lots of exclamation points.
 
-> "Hey there, awesome developer person! After we talked about tracking my animals' petting schedules, I had another idea." ('Why am I not surprised', you say to yourself.) "With the place starting to really take off, I've hired a couple of  interns to handle a lot of the care and feeding of all the critters. Frees me up to try out some new patatas bravas recipes for the tapas bar! 
+> "Hey there, awesome developer person! After we talked about tracking my animals' petting schedules, I had another idea." ('Why am I not surprised', you say to yourself.) "With the place starting to really take off, I've hired a couple of interns to handle a lot of the care and feeding of all the critters. Frees me up to try out some new patatas bravas recipes for the tapas bar! 
 >
 >"Problem is, we're having trouble keeping straight who fed what to which animal and when. Sound like something you can handle?"
 >
@@ -13,17 +13,18 @@ Luckily for you, and for Bobby, objects can not only represent attributes of som
 
 In our code, defining how to do stuff means using our old friend the function. And you know from your JavaScript days that when an object contains a function as a property, it's called a _method_.
 
-Let's add the ability to feed a critter in Bobby's petting zoo their particular food. We'll use the Llama example from the earlier chapter
+Let's add the ability to feed a critter in Bobby's petting zoo their particular food. We'll use the Llama example from the earlier chapter.
 
 ```py
 from datetime import date
 
 class Llama:
 
-    def __init__(self, name, breed, food):
+    def __init__(self, name, species, food):
         self.name = name
-        self.breed = breed
+        self.species = species
         self.date_added = date.today()
+        self.walking = True
         self.food = food
 
     def feed(self):
@@ -68,10 +69,10 @@ class Chicken:
     ...
 
     def __str__(self):
-        return f"{self.name} is a {self.breed}"
+        return f"{self.name} is a {self.species}"
 ```
 
-then the output will change
+then the output will change.
 
 ```py
 print(foghorn_leghorn)

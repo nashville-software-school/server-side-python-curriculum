@@ -27,10 +27,10 @@ It's time to update your collection of critter classes...again.
 
 ##### *You are commiting your work, right? How about making a new branch for each Critters and Croquettes exercise? Of course you are! How silly of us to even bring it up*
 
-This time, add a `shift` property to all of your classes. Don't forget to add an argument to the __init__ method, too. When testing your changes, designate a critter's shift as 'morning', 'midday' or 'afternoon' when it is instantiated.
+This time, add a `shift` property to the classes that define animals in the petting zoo. Update the ones with the `walking` property only, since they're the only ones that will need a break from being mauled by toddlers. Don't forget to add an argument to the __init__ method, too. When testing your changes, designate a critter's shift as 'morning', 'midday' or 'afternoon' when it is instantiated.
 
 > The day comes to an end, and you realize something is bugging you. You should feel good about helping Bobby solve his real-world problems, but when you look at your code it feels...off.
 >
 >It runs just fine, but you realize that you just spent an awful lot of time refactoring. You also have a sneaking suspicion that Bobby Kawlins isn't done having "great ideas."
 >
->You decide you're just hungry and tired, and before you get the urge to head-butt your computer you decide sleep on it.
+>You decide you're just hungry and tired, and before you get the urge to head-butt your computer you decide to sleep on it.
