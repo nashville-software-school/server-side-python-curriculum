@@ -2,7 +2,7 @@
 
 >By now, you've become used to calls from the ever-excited Bobby Kawlins about his beloved business. So, when your phone rings with the now-familiar number flashing on the sreen, you're not surprised when another curve ball comes your way.
 >
->"Hold on to your flip flops," Bobby warns you. "Today we break ground on two all-new animal attractions! The Slither Inn will house more snakes than an Indiana Jones movie, and Twitter Towers will be Gatlinburgs only five-story walk-though aviary, with feathered friends from flamingos to finches! And the petting zoo will now be known as Varmint Village. Now my visitors can hang out with a wider variety of critters than ever before!"
+>"Hold on to your flip flops," Bobby warns you. "Today we break ground on a massive expansion! The snake tank and goldfish pond are yesterday's news. Taking their place will be The Slither Inn, which will house more snakes than an Indiana Jones movie, and the Swimmin' Hole, Gatlinburg's only one-acre walk-through wetlands and wet bar, full of feathered friends and fantastic fish! And the petting zoo we're rebranding as Varmint Village. Now my visitors can hang out with a wider variety of critters than ever before in three awesome animal attractions!"
 >
 >Of course, you know Bobby isn't just calling to share the news of his burgeoning business.
 >
@@ -18,7 +18,7 @@ Up to this point, although you have made a whole pile of different classes, you 
 
 Now that Critters and Croquettes is exapanding into multiple animal attractions, this is a great time to expand your use of the class syntax to represent different real-world entities that have a relationship with each other.  
 
-Start with the original attraction, the petting zoo. All the critter classes you've created belong to that attraction. A llama or a miniature horse will never end up in the aviary or the snake pit. All the critters you've defined belong in the petting zoo. This is a one-to-many relationship. 
+Start with the original attraction, the petting zoo. A llama or a miniature horse will never end up in the wetlands or the snake pit. But the petting zoo has many different animals in it. This is a one-to-many relationship. 
 
 In Python, you can establish this relationship by defining a list on the petting zoo object that will contain instances of critters. Consider the following code.
 
@@ -42,10 +42,11 @@ Now when you define a critter...
 ```py
 class Burro:
 
-    def __init__(self, name, breed, food):
+    def __init__(self, name, species, food):
         self.name = name
-        self.breed = breed
+        self.species = species
         self.date_added = date.today()
+        self.walking = True
         self.food = food
     
     def feed(self):
@@ -68,7 +69,7 @@ Now the objects have a relationship with each other. If you want to view all the
 
 ```py
 for animal in varmint_village.animals:
-    print(f'You can find {animal.name} the {animal.breed} in {varmint_village.attraction_name}')
+    print(f'You can find {animal.name} the {animal.species} in {varmint_village.attraction_name}')
 ```
 
 ### Practice: Adding Attraction Types
@@ -78,7 +79,6 @@ Define custom types for the three different animal attractions at Critters and C
 1. `attraction_name` and `description` should be set when a habitat is instantiated, so be sure to have your `__init__` method take a arguments for setting those values
 1. Give `critters` an ititial value of an empty list
 1. Define a method on each class for adding animals to its `critters` array. Note that we did not do that in the example above. so, don't just copy and paste `Petting Zoo`
-1. Define even _more_ critter types that can live in Slither Inn and Twitter Towers.
 1. Once you have instances of your animals and attractions created, assign your critters to their appropriate attraction.
 
 1. Output a report to the terminal the displays each attraction and its critters.
