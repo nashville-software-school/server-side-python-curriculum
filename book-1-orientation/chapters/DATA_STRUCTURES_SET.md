@@ -1,10 +1,13 @@
 # Python Sets
 
-A set is a collection of things, like a list, but the collection is both unordered, and contains no duplicate elements. Developers use sets to easily filter down other collections to unique elements, and to see if two, or more, collections share any similar items.
+A set is a collection of things, like a list, but the collection is both unordered, unindexed, and contains no duplicate elements. Developers use sets to easily filter down other collections to unique elements, and to see if two, or more, collections share any similar items.
 
 You can create a set in one of two ways.
 
 ```py
+
+# Sets (unordered, unindexed & does NOT allow duplicates)
+
 # Using set() to create a set
 languages = set()
 
@@ -12,11 +15,28 @@ languages = set()
 languages = { 'english', 'mandarin chinese', 'spanish', 'english', 'spanish', 'portugese' }
 ```
 
-Notice that both of those sets were constructed with some duplicate items. However, when you print out the set, the duplicates are gone.
+Notice that the set was constructed with some duplicate items. However, when you print out the set, the duplicates are gone.
 
 ```py
 >>> print(languages)
-{'english', 'mandarin chinese', 'portugese', 'spanish'}
+{'english', 'mandarin chinese', 'portuguese', 'spanish'}
+```
+
+Because sets are unordered and unindexed, you cannot access the individual items in a set. And since you can't access an individual item, that also means you can't change it once it's been added to the set.
+
+```py
+# Put more stuff into a set
+languages.add("hindi")
+print(languages)
+
+# Loop over the set
+for language in languages:
+    print(language)
+
+instructors = {"Joe", "Madi", "Bryan"}
+# Check for item in a collection (You can do this with lists, dictionaries, and tuples as well!)
+if "Joe" in instructors:
+    print("Yes, Joe is in this collection")
 ```
 
 ## Setup

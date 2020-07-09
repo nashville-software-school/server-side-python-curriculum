@@ -32,6 +32,7 @@ Given this class, a developer could easily write this code.
 ```python
 my_account = BankAccount()
 my_account.add_money('Gazillion dollars')
+my_account.add_money(-55)
 ```
 
 This will raise a `TypeError` exception because the logic for the `add_money()` tries to perform a mathematical calculation on the value that is stored in the `amount` argument. We passed in a string, so Python will yell at us.
@@ -42,18 +43,26 @@ So we need to think about these kinds of issues when writing our code instead of
 Let's look at how to do that with `try...except` blocks.
 
 ```python
-  def add_money(self, amount):
+def add_money(self, amount):
     """Add money to a bank account
 
     Arguments:
       amount - A numerical value by which the bank account's balance will increase
     """
     try:
-      self.balance += amount
-      return self.balance
+        if amount >= 1:
+            self.balance += amount
+            print("Your deposit was successful")
+            return self.balance
+        else:
+            raise ArithmeticError("Amount needs to be a positive number")
+      
     except TypeError:
-      print('(Error): The add_money method requies a numeric value')
-      raise
+        print('(Error): The add_money method requires a numeric value')
+        raise
+    except ArithmeticError as err:
+        print(f"Your deposit was not successful. Error: {err}")
+        raise
 ```
 
 Now, if an incorrect type of value is passed, a human-friendly message is output to the console and the exception is re-raised up to the calling code.
