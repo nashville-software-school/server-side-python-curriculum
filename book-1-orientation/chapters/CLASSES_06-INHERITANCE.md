@@ -1,4 +1,4 @@
-# Critters and Croquettes: Day 5
+# Critters and Croquettes: Day 6
 
 > You are heads-down, working on your code when a co-worker Slacks you a link to an article in the Gatlinburg Visitor Gazette. It's a story about local attractions and their colorful owners. At the top is a picture of Bobby, smiling widely as always, pointing to a couple of frollicking goats. He's holding a cheerlful-looking child who seems as enthralled by the critters as he is. The caption grabs your attention.
 >
@@ -186,8 +186,10 @@ And that function's behavior could be
 ```py
 print(f'on {date.today()}, {self.name} had "Rockytop" sung to it so it would eat its {self.food}')
 ```
-That way only llamas get fed while singing to them. The question is, what do you name that function?
-`feed_llama`? Nope. Actually, you would name it `feed`. By giving it exactly the same name as **`Animal`**'s method for feeding _all_ animals, you then **_override_** the default logic. [Method overriding](https://en.wikipedia.org/wiki/Method_overriding), in object-oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses (parent classes).
+That way only llamas get fed while singing to them. The question is, what do you name that function? `feed_llama`? Nope. Actually, you would name it `feed`. By giving it exactly the same name as **`Animal`**'s method for feeding _all_ animals, you then **_override_** the default logic.  
+
+[Method overriding](https://en.wikipedia.org/wiki/Method_overriding), in object-oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses (parent classes). 
+
 Now, `feed` has multiple forms, but is implemented differently in different contexts using method overriding. That's polymorphism, and it's really cool and powerful. (Got your attention now? Here's that [article](https://www.programiz.com/python-programming/polymorphism) again.)
 
 Let's look at another example, using the vehicles from earlier. You can safely assume that each vehicle can be driven. What you can then do is implement a `drive()` method on the **`Vehicle`** class.
