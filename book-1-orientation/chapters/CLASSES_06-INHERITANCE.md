@@ -109,24 +109,41 @@ class Tesla(Vehicle):
         ...
 ```
 
-Now any instance of **`Tesla`** will have both of those properties on it automatically. **`Tesla`** is now a derived, or child, class because it inherits the properties of **`Vehicle`**.
+Now any instance of **`Tesla`** will have both of the properties from **`Vehicle`** on it automatically. **`Tesla`** is now a derived, or child, class because it inherits the properties of **`Vehicle`**.
+
+```py
+model_3 = Tesla()
+model_3.main_color = "red"
+
+print(model_3.main_color)
+#prints red
+```
 
 ## Lean and Mean Critters
 
->It's amazing how all that info just came flodding back to you. Dang, those NSS instructors were so great. You really should send them a note sometime to let them know how you're doing. Or buy them lunch some day at a pricey but tasteful local restaurant. For now, though, it's time to kick some critter code into high gear.
+>It's amazing how all that info just came flooding back to you. Dang, those NSS instructors were so great. You really should send them a note sometime to let them know how you're doing. Or buy them lunch at a pricey but tasteful local restaurant. For now, though, it's time to kick some critter code into high gear.
 >
->All those critter types with identical properties. That's the first thing to tackle. You decide to consolidate them into a base class. They're all animals, so it makes sense to name it **`Animal`**
+>All those critter types with identical properties -- that's the first thing to tackle. You decide to consolidate them into a base class. They're all animals, so it makes sense to name it **`Animal`**
 
 ```py
 class Animal:
-    def __init__(self, name, species, food):
+    def __init__(self, name, species, food, chip_num):
         self.name = name
         self.species = species
         self.food = food
+        self.__chip_number = chip_num
         self.date_added = date.today()
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+    
+    @property
+    def chip_number(self):
+        return self.__chip_number
+    
+    @chip_number.setter
+    def chip_number(self, num):
+        pass
 ```
 >With all of the properties that were common across all critter types defined in one class, you turn your attention to the existing pile of class definitions. They will need some additions and subtractions to make them all child classes of **`Animal`**. You start with **`Llama`**
 
@@ -134,9 +151,10 @@ class Animal:
 ```py
 class Llama:
 
-    def __init__(self, name, species, food):
+    def __init__(self, name, species, shift, food):
         self.name = name
         self.species = species
+        self.shift = shift
         self.date_added = date.today()
         self.walking = True
         self.food = food
@@ -150,20 +168,21 @@ class Llama:
 class Llama(Animal):
 
     # Remove redundant properties from Burro's initialization, and set their values via Animal
-    def __init__(self, name, species, food):
+    def __init__(self, name, species, shift, food):
         super().__init__(name, species, food)
+        self.shift = shift # stays on Llama because not all animals have shifts
         self.walking = True
 ```
-Luckily, the syntax for making a burro object stays exactly the same: 
+Luckily, the syntax for making a llama object stays exactly the same: 
 
 ```py
-stinky = Burro("Stinky", "burro", "barley hay")
+stinky = Llama("Stinky", "burro", "afternoon", "barley hay")
 ```
 
 Some things to note about these changes:
 1. The `walking` atribute was not added to **`Animal`**, but instead stays on **`Llama`**. Why? It's not unique to Llama, right? True, but because it's not a property shared by all critters in our system, it doesn't belong on **`Animal`**
 
-2. We can still pass the values for a llama object to **`Llama`**, even though those properties are now defined in **`Animal`**. How? Inside **`Llama`**'s `__init__` we call **`Animal`**'s `__init__` and pass those values "up" to it. `super()` is Python's way of designating the parent class. Here `super` is used in the sense of meaning 'above' or 'of the highest power'.
+2. We can still pass the values for a llama object to **`Llama`**, even though those properties are now defined in **`Animal`**. How? Inside **`Llama`**'s `__init__` function we call **`Animal`**'s `__init__` function and pass those values "up" to it. `super()` is Python's way of designating the parent class. Here, `super` is used in the sense of meaning 'above' or 'of the highest power'.
 
 3. Notice that we did not directly use **`Animal`** to make our llama object. At no point will you ever directly instantiate a base class. Instances are always created from the child class.
 
@@ -176,7 +195,7 @@ You know the drill by now! It's time to refactor all of your classes. This time 
 
 Esrlier in this chapter you may remember a mention of polymorphism. In a very small nutshell polymorphism means the ability to take various forms. Sounds like Invasion of the Body Snatchers, but this example shows how that can be expressed in Python.  
 
-You've now seen how to inherit common properties from a parent class. Each child class of **`Animal`**, for example can call `feed()` because they have automatically inherit it. This is great for when the act of feeding a critter is exactly the same for every critter type. But it's not ideal if you have an outlier or two that require a different behavior for the same action of 'feeding'. 
+You've now seen how to inherit common properties from a parent class. Each child class of **`Animal`**, for example can call `feed()` because they automatically inherit it. This is great for when the act of feeding a critter is exactly the same for every critter type. But it's not ideal if you have an outlier or two that require a different behavior for the same action of 'feeding'. 
 
 Let's use our **`Llama`** class again. Let's say that Bobby's llamas are a bit skittish and won't eat unless they feel calm and safe. Bobby has found that singing "Rockytop" to them somehow calms them down, and they then gobble all their Llama Chow. Feeding a llama, then, requires an extra step.
 

@@ -2,7 +2,7 @@
 
 # Multiple Inheritance
 
-In Python, you can use classes to represent concrete things - Person, Building, Vehicle, Animal, Flower - but you also use them to define general types of things so that they can be grouped together in a more flexible way. That mechanism in Python is called multiple inheritance. You can inherit from **more** than just one parent class!
+In Python, you can use classes to represent concrete things - Person, Building, Vehicle, Product, Flower - but you also use them to define general types of things so that they can be grouped together in a more flexible way. That mechanism in Python is called multiple inheritance. You can inherit from **more** than just one parent class!
 
 ## Why Are You Learning This?
 
@@ -20,7 +20,7 @@ Wouldn't it be nice to define `swimming` once and use it over and over just like
 
 Multiple Inheritance to the rescue!
 
-To make our code base as flexible as possible, you can define the properties and behaviors of each classification (or description) into a _separate class_. 
+To make our code base as flexible as possible, you can define the properties and behaviors of each classification (or description) into a separate class. 
 
 Note that these new classes will seem skimpy. They will seemingly do very little. This is by design. Their job will not be to directly represent a concrete thing, but to aid you in the process of representing a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things. But, they are still just good old Python classes. 
 
@@ -28,7 +28,7 @@ That's why it's called multiple inheritance. You can define a derived type that 
 
 ## Practice: Modularize ALL. THE. THINGS.
 
-Before you get all the moving parts of your newly-flexible code working with multiple inheritance, it's time to do some house cleaning to organize and modularize. You should end up with the following file structure. Create the necessary new files and move the appropriate code into those files where necessary.
+Before you get all the moving parts of your newly-flexible code working with multiple inheritance, it's time to do some house cleaning to organize and modularize. You should end up with the following file structure. Create the necessary new directories and files and move the appropriate code into those files where necessary.
 
 ```sh
 petting_zoo/
@@ -51,7 +51,7 @@ petting_zoo/
     |__ index.py
 ```
 
-AS you can see, you will also need to create an `__init__.py` file at the root of each subdirectory. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/master/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
+As you can see, you will also need to create an `__init__.py` file at the root of each subdirectory. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/master/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
 
 ## Defining How Animals Move
 
@@ -83,6 +83,7 @@ class Swimming:
         print("The animal swims")
 ```
 
+> #### `movements/slithering.py`
 ```py
 class Slithering:
 
@@ -106,7 +107,7 @@ from .slithering import Slithering
 
 Now you can define a class and implement multiple inheritance for a walking and swimming animal like a goose.
 
-**NOTE:** When a class inherits from two parents you have to discard using the `super().__init__()` syntax and explicitly invoke the initialization method of both. You also need to pass `self` as an argument - something that is not needed when you use the `super()` abstraction.
+**NOTE:** When a class inherits from two parents you have to discard using the `super().__init__()` syntax and explicitly invoke the initialization method of both by name. You also need to pass `self` as an argument - something that is not needed when you use the `super()` abstraction.
 
 > #### `animals/goose.py`
 
@@ -117,9 +118,12 @@ from movements import Walking, Swimming
 class Goose(Animal, Walking, Swimming):
 
     def __init__(self, name, species, food):
+        # No more super() when initializing multiple base classes
         Animal.__init__(self, name, species, food)
         Swimming.__init__(self)
         Walking.__init__(self)
+        # no more self.swimming = True
+        ...
     
     def honk(self): 
         print("The goose honks. A lot")
@@ -139,7 +143,7 @@ from .goose import Goose
 ```
 
 ### Create a Goose
-In your main `index.py` module, import the **`Goose`** class, and create one. Then makes it walk and swim.
+In your main `index.py` module, import the **`Goose`** class, and create one. Then make it walk and swim.
 
 > #### `index.py`
 
@@ -193,9 +197,11 @@ The animal swims
 
 Now each class can override and specialize inherited behavior, or simply choose to let the parent class' logic run, depending on the situation.
 
-## More Attractive Attractions 
+## Pracice: More Attractive Attractions 
 
-Your critter types are in much better shape, so it's time to overhaul the attractions, too, and apply some inheritance magic to them. After all, what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? Having an **`Attraction`** base class makes a lot of sense when you think about how quickly Bobby's business is growing.
+Your critter types are in much better shape, so it's time to overhaul the attractions, too, and apply some inheritance magic to them. After all, what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? 
+
+Having an **`Attraction`** base class makes a lot of sense when you think about how quickly Bobby's business is growing.
 
 Define an **`Attraction`** class in the new `attractions.py` module you created earlier. While we're at it, let's add some aditional behavior -- a delete method -- and define two dunder methods to help with identifying our objects -- `__str__` and `__len__`.
 
@@ -236,8 +242,8 @@ class PettingZoo(Attraction):
         super().__init__(name, description)
     
     def addAnimal(self, animal):
-        if animal.walking:
-            self.animals.append(animal)
+        self.animals.append(animal)
+      
 ```
 Don't forget to add the module imports to the attractions package.
 
@@ -279,7 +285,9 @@ You now have one goose in the petting zoo. Continue testing the creation of attr
 
 >That night, you go to bed tired but feeling good about your use of inhertance to better define how objects can be created in your system. You sleep deeply and soundly, until just before sunrise, that is. That's when a terrible dream creeps in and disturbs your slumber.
 >
->In the nightmare you are not a hotshot web app developer -- you are the newest intern at Critters and Croquettes Petting Zoo and Tapas Bar. And you have been assigned every job on the premises. One secord you're refilling the Critter Mix dispensers, the next you're scrubbing burned-on albondigas from a mountain of baking pans. Then suddenly you're faced with adding dozens of new animals to the habitats. Like a modern-day Noah, they keep coming and you keep having to find a place to put them all. And they're coming too fast. You can't keep up!
+>In the nightmare you are not a hotshot web app developer -- you are the newest intern at Critters and Croquettes Petting Zoo and Tapas Bar. And you have been assigned every job on the premises. 
+>
+>One secord you're refilling the Critter Mix dispensers, the next you're scrubbing burned-on albondigas from a mountain of baking pans. Then suddenly you're faced with adding dozens of new animals to the habitats. Like a modern-day Noah, they keep coming and you keep having to find a place to put them all. And they're coming too fast. You can't keep up!
 >
 >In your panicked state you make a mistake, then another and another. The wetlands ends up with a dozen bewildered goats desperately paddling around in it! Children cry as the petting zoo is overtaken by a hissing, biting goose named Bob! The snake pit is in chaos from an all-out battle between a flock of herons and the resident water snakes!
 >

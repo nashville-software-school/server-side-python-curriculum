@@ -140,17 +140,17 @@ With that in mind, make 5 critter types for each area. As you define each one, g
 + `this.slithering = True`
 + `this.walking = True`
 
-Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. you just want to get the logic working correctly. So, use the `print()` method to see your results.
+Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. You just want to get the logic working correctly. So, use the `print()` method to see your results.
 
 ```py
-`print(miss_fuzz)`.  
+print(miss_fuzz) 
 ```
 
 It will be...disappointing. You should see something like this:  
 
 `<__main__.Llama object at 0x109df9cd0>`  
 
-What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a mre human readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(miss_fuzz.name)` as a temporary solution.
+What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a more human-readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(miss_fuzz.name)` as a temporary solution.
 
 ## Class Construction Arguments
 
@@ -183,4 +183,4 @@ Refactor your critter classes to make your `__init__` method accept two argument
 1. `name`
 2. `species`
 
-Once defined this way, you can send those values as parameters when you create each instance.
+Once defined this way, you can send those values as arguments when you create each instance.

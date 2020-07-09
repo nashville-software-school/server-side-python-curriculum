@@ -1,8 +1,8 @@
 # Critters and Croquettes: Day 8
 
->You bolt awake, covered in a cold sweat. As you sigh in relief that it was all just a dream, you realize something almost as scary: it could really happen! Just yesterday you were testing your code and you put a goose in the petting zoo without a second thought. But geese belong in Critter Cove, not Varmint Village. Right now, there's no way to limit the type of animals that get placed in an attraction. 
+>You bolt awake, covered in a cold sweat. As you sigh in relief that it was all just a dream, you realize something almost as scary: it could really happen! Just yesterday you were testing your code and you put a goose in the petting zoo without a second thought. But geese belong in Critter Cove, not Varmint Village. Right now, there's no limit to the type of animals that get placed in an attraction. 
 >
->In Python, lists can contain any combination of object types. A single list could contain an integer, a boolean, and a string. This means that the `animals` attribute of your attractions classes can contain **any** kind of animal, regardless of whether it belongs there.
+>In Python, lists can contain any combination of object types. A single list could contain an integer, a boolean, and a string. This means that the `animals` attribute of your attractions classes can contain **any** critter type, regardless of whether it belongs there.
 >
 >You decide that you'll need to add a check to the `addAnimal` method of your attractions classes to make sure a critter belongs in the attraction you're adding it to. Luckily, you already have a built-in way of determining what kind of critter you're dealing with...
 
@@ -27,14 +27,14 @@ class PettingZoo(Attraction):
             if animal.swim_speed > -1:
                 self.animals.append(animal)
         except AttributeError as ex:
-            print(f'{animal} doesn\'t like to be petted, so please do not try to put it in the {self.name} attraction')
+            print(f'{animal} doesn\'t like to be petted, so please do not put it in the {self.name} attraction.')
 
     # Number 2: Actual typing check
     def add_animal_type_check(self, animal):
         if isinstance(animal, Swimming):
             self.animals.add(animal)
         else:
-            print(f'{animal} doesn\'t like to be petted, so please do not try to put it in the {self.name} attraction')
+            print(f'{animal} doesn\'t like to be petted, so please do not try to put it in the {self.name} attraction.')
 ```
 
 > ### Sidebar: Duck Typing
@@ -43,7 +43,7 @@ class PettingZoo(Attraction):
 >
 > The idea is that it doesn't actually matter what type my data is - just whether or not I can do what I want with it.
 
-Next, refactor your main logic to create a walking animal, like a llama.
+Next, refactor your main logic to create a walking animal, like a llama, as well as a swimming animal, like a goose
 
 > #### `index.py`
 
@@ -52,8 +52,8 @@ from animals import Goose, Llama
 from attractions import PettingZoo
 
 
-bob = Goose("Bob")
-miss_fuzz = Llama("Miss Fuzz")
+miss_fuzz = Llama("Miss Fuzz", "domesticated llama", "oats", "morning")
+bob = Goose("Bob", "Canada goose", "Goose Chow")
 
 varmint_village = PettingZoo("The Varmint Village")
 varmint_village.add_animal_pythonic(bob)
@@ -61,14 +61,14 @@ varmint_village.add_animal_type_check(bob)
 varmint_village.add_animal_pythonic(miss_fuzz)
 
 for animal in varmint_village.animals:
-    print(f'{animal} lives in Varmint Village')
+    print(f'{animal} lives in Varmint Village.')
 ```
 
 Now the output is different. You will see that only the llama was added to the petting zoo.
 
 ```
-Bob the goose doesn't like to be petted, so please do not try to put it in The Varmint Village attraction
-Bob the goose doesn't like to be petted, so please do not try to put it in The Varmint Village attraction
+Bob the goose doesn't like to be petted, so please do not try to put it in The Varmint Village attraction.
+Bob the goose doesn't like to be petted, so please do not try to put it in The Varmint Village attraction.
 Miss Fuzz the llama lives in The Varmint Village
 ```
 

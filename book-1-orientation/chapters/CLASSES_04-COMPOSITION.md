@@ -2,13 +2,13 @@
 
 >By now, you've become used to calls from the ever-excited Bobby Kawlins about his beloved business. So, when your phone rings with the now-familiar number flashing on the sreen, you're not surprised when another curve ball comes your way.
 >
->"Hold on to your flip flops," Bobby warns you. "Today we break ground on a massive expansion! The snake tank and goldfish pond are yesterday's news. Taking their place will be The Slither Inn, which will house more snakes than an Indiana Jones movie, and Critter Cove, Gatlinburg's only one-acre walk-through wetlands and wet bar, full of feathered friends and fantastic fish! And the petting zoo we're rebranding as Varmint Village. Now my visitors can hang out with a wider variety of critters than ever before in three awesome animal attractions!"
+>"Hold on to your flip flops," Bobby warns you. "Today we break ground on a massive expansion! The snake tank and goldfish pond are yesterday's news. Taking their place will be a custom-built 10,000-gallon terrarium/aquarian habitat, The Slither Inn, which will house more snakes than an Indiana Jones movie, and Critter Cove, Gatlinburg's only one-acre walk-through wetlands and wet bar, full of feathered friends and fantastic fish! And the petting zoo we're rebranding as Varmint Village! Now my visitors can hang out with a wider variety of critters than ever before in three awesome animal attractions!"
 >
 >Of course, you know Bobby isn't just calling to share the news of his burgeoning business.
 >
 >"Sounds like you're going to need a way to track which animals go into which attraction."
 >
->"Dang, you're on the ball, aren'tcha? That's right. I want to record where we display our critters, so we don't end up with an intern putting a rabbit in with the rattle snakes!"
+>"Dang, you're on the ball, aren'tcha? That's right. I want to record where we display our critters, so we don't end up with an intern putting a rabbit in with the rattlesnakes!"
 >
 >You think maybe what Bobby really needs is a better intern screening process. But you keep that thought to yourself.
 
@@ -42,9 +42,10 @@ Now when you define a critter...
 ```py
 class Burro:
 
-    def __init__(self, name, species, food):
+    def __init__(self, name, species, shift, food):
         self.name = name
         self.species = species
+        self.shift = shift
         self.date_added = date.today()
         self.walking = True
         self.food = food
@@ -56,7 +57,7 @@ class Burro:
 you can create an instance...
 
 ```py
-stinky = Burro("Stinky", "burro", "barley hay")
+stinky = Burro("Stinky", "burro", "afternoon", "barley hay")
 ```
 
 and then add your critter to the attraction

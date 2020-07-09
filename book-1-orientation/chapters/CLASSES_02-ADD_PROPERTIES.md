@@ -8,7 +8,7 @@
 >
 >That's when you also notice the agitated goat, pacing back and forth and shaking his horns while an employee tries to distract it with a handful of Criter Mix. You start to put together what happened.
 >
->Once the situation has been diffused with a handful of free passes and a promise of a full refund, and the boy and father have headed inside to clean up, you sidle up to Bobby.
+>Once the situation has been diffused with some free passes and a promise of a full refund, and the boy and father have headed inside to clean up, you sidle up to Bobby.
 >
 >"Goat: 1, Child: 0?" you smile. 
 >
@@ -27,7 +27,14 @@ It's time to update your collection of critter classes...again.
 
 ##### *You are commiting your work, right? How about making a new branch for each Critters and Croquettes exercise? Of course you are! How silly of us to even bring it up*
 
-This time, add a `shift` property to the classes that define animals in the petting zoo. Update the ones with the `walking` property only, since they're the only ones that will need a break from being mauled by toddlers. Don't forget to add an argument to the __init__ method, too. When testing your changes, designate a critter's shift as 'morning', 'midday' or 'afternoon' when it is instantiated.
+This time, add a `shift` property to the classes that define animals in the petting zoo. Update the ones with the `walking` property only, since they're the only ones that will need a break from being mauled by toddlers. Don't forget to add a parameter to the __init__ method, too. When testing your changes, designate a critter's shift as 'morning', 'midday' or 'afternoon' when it is instantiated.
+
+When finished, you should be able to do this
+```py
+roberto = Alpaca("Roberto", "alpaca", "midday")
+print(f'{roberto.name} the {roberto.species} is available to pet during the {roberto.shift} shift.')
+# prints Roberto the alpaca is available to pet during the midday shift.
+```
 
 > The day comes to an end, and you realize something is bugging you. You should feel good about helping Bobby solve his real-world problems, but when you look at your code it feels...off.
 >
