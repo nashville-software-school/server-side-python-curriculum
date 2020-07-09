@@ -1,7 +1,5 @@
 # Critters and Croquettes: Day 7
 
-<!-- TODO: Critter Intro -->
-
 # Multiple Inheritance
 
 In Python, you can use classes to represent concrete things - Person, Building, Vehicle, Animal, Flower - but you also use them to define general types of things so that they can be grouped together in a more flexible way. That mechanism in Python is called multiple inheritance. You can inherit from **more** than just one parent class!
@@ -16,23 +14,48 @@ Think about those ducks at the petting zoo. You classified them as `swimming` cr
 
 🐯 🦅 🐎 🦈 🙎🏾‍♀️ 🦉
 
-Additionaly, you also can see how, for example, `swimming` is present on some of your critter classes, but not all of them. 
+Additionaly, you also can see how, for example, `swimming` is present on some of your critter classes, but not all of them.  
+
 Wouldn't it be nice to define `swimming` once and use it over and over just like you are doing with `name` and `species` in **`Animal`**? That kind of flexibility would make it infinitely easier to represent the widest variety of critters possible in our system. 
 
-Multiple Inheritance to the rescue.
+Multiple Inheritance to the rescue!
 
 To make our code base as flexible as possible, you can define the properties and behaviors of each classification (or description) into a _separate class_. 
 
-Note that these new classes will seem skimpy. They will seemingly do very little. This is by design. Their job will not be to directly represent a concrete thing, but to aid you in the process of representing a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things. But, they are still just good old Python classes. And that's why it's called multiple inheritance. You can define a derived type that inherits properties from more than a single parent class.
+Note that these new classes will seem skimpy. They will seemingly do very little. This is by design. Their job will not be to directly represent a concrete thing, but to aid you in the process of representing a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things. But, they are still just good old Python classes. 
 
+That's why it's called multiple inheritance. You can define a derived type that inherits properties from more than a single parent class.
 
+## Practice: Modularize ALL. THE. THINGS.
 
+Before you get all the moving parts of your newly-flexible code working with multiple inheritance, it's time to do some house cleaning to organize and modularize. You should end up with the following file structure. Create the necessary new files and move the appropriate code into those files where necessary.
 
-![](./images/zoo-directory-structure.png)
+```sh
+petting_zoo/
+    |__ animals/
+          |__ __init__.py
+          |__ animal.py # put Animal class in here
+          |__ llama.py # one critter class
+          |__ goose.py # another critter class. you get the point 
+    |__ attractions/
+          |__ __init__.py
+          |__ atttraction.py
+          |__ petting_zoo.py
+          |__ snake_pit.py
+          |__ wetlands.py
+    |__ movements/
+          |__ __init__.py
+          |__ swimming.py
+          |__ slithering.py
+          |__ walking.py
+    |__ index.py
+```
+
+AS you can see, you will also need to create an `__init__.py` file at the root of each subdirectory. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/master/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
 
 ## Defining How Animals Move
 
-The first step is to define the different ways an animal can move.
+Now you're ready to roll. The first step is to take the properties you added to your critters that describe how they move, and define classes for those attributes instead.
 
 > #### `movements/walking.py`
 
@@ -88,8 +111,8 @@ Now you can define a class and implement multiple inheritance for a walking and 
 > #### `animals/goose.py`
 
 ```py
+# The package syntax is what allows for these clean import statements
 from movements import Walking, Swimming
-
 
 class Goose(Animal, Walking, Swimming):
 
@@ -116,17 +139,15 @@ from .goose import Goose
 ```
 
 ### Create a Goose
+In your main `index.py` module, import the **`Goose`** class, and create one. Then makes it walk and swim.
 
-<!-- TODO: refactor from here to end-->
-In your main zoo module, import the **`Penguin`** class, and create one. Then makes it walk and swim.
-
-> #### `zoo.py`
+> #### `index.py`
 
 ```py
-from animals import Penguin
+from animals import Goose
 
 
-bob = Penguin("Bob")
+bob = Goose("Bob", "Canada goose", "watercress sandwiches")
 bob.run()
 bob.swim()
 ```
@@ -138,56 +159,58 @@ The animal runs
 The animal swims
 ```
 
-
 ### Overriding the Run Method
 
-The run method's output is pretty boring and generic. I would rather state that a penguin waddles instead of walks. You can use method overriding to accomplish that.
+The run method's output is pretty boring and generic. Wouldn't you rather state that a goose waddles instead of walks? Sure you would. You know from implementing it in a previous chapter that you can use method overriding to accomplish that.
 
-> #### `animals/penguin.py`
+> #### `animals/goose.py`
 
 ```py
-class Penguin(IWalking, ISwimming):
+class Goose(Animal, Walking, Swimming):
 
-    def __init__(self, name):
-        ISwimming.__init__(self)
-        IWalking.__init__(self)
-        self.name = name
+    def __init__(self, name, species, food):
+        Animal.__init__(self, name, species, food)
+        Swimming.__init__(self)
+        Walking.__init__(self)
+    
+    def honk(self): 
+        print("The goose honks. A lot")
 
     # run is defined in the Walking parent class, but also here. This run method will take precedence and Walking's run method will not be called by Goose instances
     def run(self):
         print(f'{self} waddles')
 
     def __str__(self):
-        return f'{self.name} the Penguin'
+        return f'{self.name} the Goose'
 ```
 
 ##### Output
 
 ```sh
-Bob the Penguin waddles
+Bob the Goose waddles
 The animal swims
 ```
 
 Now each class can override and specialize inherited behavior, or simply choose to let the parent class' logic run, depending on the situation.
 
+## More Attractive Attractions 
 
-## Habitats for Certain Types of Animals
+Your critter types are in much better shape, so it's time to overhaul the attractions, too, and apply some inheritance magic to them. After all, what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? Having an **`Attraction`** base class makes a lot of sense when you think about how quickly Bobby's business is growing.
 
-Time to refactor how you are adding animals to attractions. You need to create classes to hold certain kinds of animals. For example, the Aquarium habitat will hold swimming animals, and the Savannah habitat will hold walking animals.
+Define an **`Attraction`** class in the new `attractions.py` module you created earlier. While we're at it, let's add some aditional behavior -- a delete method -- and define two dunder methods to help with identifying our objects -- `__str__` and `__len__`.
 
-Define a Habitat class in a new module.
-
-> #### `habitats/habitat.py`
+> #### `attractions/attraction.py`
 
 ```py
-class Habitat:
+class Attraction:
 
-    def __init__(self, name):
-        self.name = name
-        self.animals = set()
+    def __init__(self, name, description):
+        self.attraction_name = name
+        self.description = description
+        self.animals = list()
 
     def add_animal(self, animal):
-        self.animals.add(animal)
+        self.animals.append(animal)
 
     def remove_animal(self, animal):
         self.animals.remove(animal)
@@ -199,200 +222,67 @@ class Habitat:
         return len(self.animals)
 ```
 
-Next, import that module into the zoo module, create a new habitat, and add Bob to it.
+Next, refactor **`PettingZoo`**, **`SnakePit`**, and **`Aviary`** to be children of **`Attraction`**. Move each to its own module.  
 
-> #### `zoo.py`
+Note that `description` is now an additional parameter in **`Attraction`**'s `__init__`. Be sure each child class handles that appropriately in its `__init__`.
+
+Refactor example
+```py
+from . import Attraction
+
+class PettingZoo(Attraction):
+
+    def __init__(self, name, description):
+        super().__init__(name, description)
+    
+    def addAnimal(self, animal):
+        if animal.walking:
+            self.animals.append(animal)
+```
+Don't forget to add the module imports to the attractions package.
+
+>attractions/__init__.py
 
 ```py
-from animals import Penguin
-from habitat import Habitat
+from .attraction import Attraction
+from .petting_zoo import PettingZoo
+# etc
+```
+
+Next, import that module into the index.py module, create a new attraction, and add Bob to it.
+
+> #### `index.py`
+
+```py
+from animals import Goose
+from petting_zoo import PettingZoo
 
 
-# Create a penguin
-bob = Penguin("Bob")
+# Create a Goose
+bob = Goose("Bob", "Canada goose", "watercress sandwiches")
 
-# Create a habitat
-seaworld = Habitat("Sea World")
-seaworld.add_animal(bob)
+# Create an attraction
+varmint_village = PettingZoo("Varmint Village")
+varmint_village.add_animal(bob)
 
-for animal in seaworld.animals:
+for animal in varmint_village.animals:
     print(animal)
 ```
 
-When the set of animals is printed, you will see the following output.
+When the list of animals is printed, you will see the following output.
 
 ```sh
-Bob the Penguin
+Bob the Goose
 ```
-
-You now have one penguin in the habitat.
-
-### Unrestrictive Lists
-
-In Python, lists can contain any combination of object types. A single list could contain an integer, a boolean, and a string. This means that the `animals` attribute of your Sea World habitat can contain **any** kind of animal, regardless if it that animal can swim.
-
-Time to see this in action, and see why you should write code to avoid this from happening in nearly every case.
-
-### Painted Dogs Can't Swim
-
-Create a class for an African Painted Dog in a new file. Dogs can only walk. They can't fly and are awful in the water.
-
-> #### `animals/painted_dog.py`
-
-```py
-from movements import IWalking
+You now have one goose in the petting zoo. Continue testing the creation of attractions and animals, and adding animals to attractions. 
 
 
-class PaintedDog(IWalking):
-
-    def __init__(self, name):
-        super().__init__()
-        self.name = name
-
-    def __str__(self):
-        return f'{self.name} the Painted Dog'
-```
-
-Add the Painted Dog type to the `animals` namespace.
-
-> #### `animals/__init__.py`
-
-```py
-from .penguin import Penguin
-from .painted_dog import PaintedDog
-```
-
-Next, create a new painted dog instance in your main module, and add it to the habitat.
-
-> #### `zoo.py`
-
-```py
-from animals import Penguin, PaintedDog
-from habitat import Habitat
-
-
-bob = Penguin("Bob")
-ralph = PaintedDog("Ralph")
-
-seaworld = Habitat("Sea World")
-seaworld.add_animal(bob)
-seaworld.add_animal(ralph)
-
-for animal in seaworld.animals:
-    print(animal)
-```
-
-Now you see that there are two animals in the habitat.
-
-```sh
-Ralph the Painted Dog
-Bob the Penguin
-```
-
-But you named the habitat SeaWorld, which makes the assumption that **only swimming animals** should go into it. Right now, there's no way to limit the type of animals that gets placed in SeaWorld. What you need to do at this point is create a derived class of Habitat called Aquarium, and in that class we can make sure that only swimming animals can be placed in it.
-
-### Using your Interfaces to Restrict Lists
-
-You are going to see two ways to make sure that only swimming animals can be added to an aquarium habitat. One is by doing type checking, which is done in statically typed languages like Java or C#, and the other is the Pythonic way.
-
-> #### `habitats/aquarium.py`
-
-```py
-from . import Habitat
-from movements import ISwimming
-
-class Aquarium(Habitat):
-
-    def __init__(self, name):
-        super().__init__(name)
-
-    # Duck typing check
-    def add_swimmer_pythonic(self, animal):
-        try:
-            if animal.swim_speed > -1:
-                self.animals.add(animal)
-        except AttributeError as ex:
-            print(f'{animal} can\'t swim, so please do not try to put it in the {self.name} habitat')
-
-    # Actual typing check
-    def add_swimmer_type_check(self, animal):
-        if isinstance(animal, ISwimming):
-            self.animals.add(animal)
-        else:
-            print(f'{animal} can\'t swim, so please do not try to put it in the {self.name} habitat')
-```
-
-> ### Sidebar: Duck Typing
+>That night, you go to bed tired but feeling good about your use of inhertance to better define how objects can be created in your system. You sleep deeply and soundly, until just before sunrise, that is. That's when a terrible dream creeps in and disturbs your slumber.
 >
-> "If it looks like a duck, sounds like a duck, acts like a duck, and smells like a duck, then it can do all the things we want a duck to do. It's a duck."
+>In the nightmare you are not a hotshot web app developer -- you are the newest intern at Critters and Croquettes Petting Zoo and Tapas Bar. And you have been assigned every job on the premises. One secord you're refilling the Critter Mix dispensers, the next you're scrubbing burned-on albondigas from a mountain of baking pans. Then suddenly you're faced with adding dozens of new animals to the habitats. Like a modern-day Noah, they keep coming and you keep having to find a place to put them all. And they're coming too fast. You can't keep up!
 >
-> The idea is that it doesn't actually matter what type my data is - just whether or not I can do what I want with it.
+>In your panicked state you make a mistake, then another and another. The wetlands ends up with a dozen bewildered goats desperately paddling around in it! Children cry as the petting zoo is overtaken by a hissing, biting goose named Bob! The snake pit is in chaos from an all-out battle between a flock of herons and the resident water snakes!
+>
+>The shadow of Bobby Andrew Kawlins falls on you...
 
-Add the new class to the `habitats` package.
-
-> #### `habitats/__init__.py`
-
-```py
-from .habitat import Habitat
-from .aquarium import Aquarium
-```
-
-Next, refactor your main logic to create an aquarium.
-
-> #### `zoo.py`
-
-```py
-from animals import Penguin, PaintedDog
-from habitats import Aquarium
-
-
-bob = Penguin("Bob")
-ralph = PaintedDog("Ralph")
-
-seaworld = Aquarium("Sea World")
-seaworld.add_swimmer_pythonic(bob)
-seaworld.add_swimmer_pythonic(ralph)
-seaworld.add_swimmer_type_check(ralph)
-
-for animal in seaworld.animals:
-    print(f'{animal} lives in Sea World')
-```
-
-Now the output is different. You will see that only the penguin was added to the habitat.
-
-```
-Ralph the Painted Dog can't swim, so please do not try to put it in the Sea World habitat
-Ralph the Painted Dog can't swim, so please do not try to put it in the Sea World habitat
-Bob the Penguin lives in Sea World
-```
-
-Both methods stopped a painted dog from being added to an aquarium. One is more _Pythonic_ than the other, but both are effective. Our recommendation is to follow the guidance of the Python community and use duck typing, and exceptions to determine if an object can be used for any specific purpose.
-
-## Practice: Modularize ALL. THE. THINGS.
-
-Now that you have all the moving parts of your newly-flexible code working with multiple inheritance, it's time to do some house cleaning to organize and modularize. You should end up with the following file structure. Move the appropriate code into their files where necessary.
-
-You will also need to create an `__init__.py` file at the root of each subdirectory, as shown. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/master/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
-
-```sh
-petting_zoo/
-    |__ animals/
-          |__ __init__.py
-          |__ animal.py # put Animal class in here
-          |__ llama.py # one critter class
-          |__ goat.py # another critter class. you get the point 
-    |__ attractions/
-          |__ __init__.py
-          |__ atttraction.py
-          |__ petting_zoo.py
-          |__ snake_pit.py
-          |__ wetlands.py
-    |__ movements/
-          |__ __init__.py
-          |__ swimming.py
-          |__ slithering.py
-          |__ walking.py
-    |__ index.py
-```
-
-Finally, test everything to make sure your imports are working as they should. Wow, this is looking good! 
+To be continued
