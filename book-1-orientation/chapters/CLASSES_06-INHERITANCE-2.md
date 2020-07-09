@@ -14,7 +14,7 @@
 
 ```py
 if animal.slithering:
-  self.animals.push(animal)
+    self.animals.append(animal)
 ```
 
 ## Practice: Birds of a Feather, Snakes of a Scale?
@@ -23,7 +23,24 @@ if animal.slithering:
 3. Try adding a flying critter to a petting zoo's animals. What happens? If you get no feedback, the answer isn't "nothing". _Something_ happened, but maybe you didn't write any logic to provide the feedback you need, whether the result is positive or negative. Even on the command line, with no browser in sight, letting the user know what just happened is always a good idea. 
 
 
-## Déjà Zoo
->There it is again. That feeling that you've coded down this path before. It's those attractions classes. They're all so...alike. And what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? The problem will get worse. Sounds like it's time to get that inheritance train rolling again. But this time, you're going to bring out the big guns. 
+## Practice: Déjà Zoo
+>There it is again. That feeling that you've coded down this path before. It's those attractions classes. They're all so...alike. And what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? The problem will get worse. 
 >
-WHAT WILL OUR HERO DO NEXT? FIND OUT IN THE NEXT THRIILING CHAPTER IN THE CRITTERS AND CROQUETTES SAGA! (But first, commit and push up your damn code)
+>You decide to nip that mess in the bud before that happens, and apply some inheritance magic to your attraction types.
+
+### Instructions
+1. Define an **`Attraction`** base class at the top of `atractions.py`. Refer to **`Animal`** if needed.
+1. Give it the common properties from **`PettingZoo`**, **`SnakePit`**, and **`Aviary`**.
+1. Refactor **`PettingZoo`**, **`SnakePit`**, and **`Aviary`** to be children of **`Attraction`**. Note that `description` is now an additional parameter in `__init__`. Be sure **`Attraction`** handles that in its `__init__`.
+
+Refactor example
+```py
+class PettingZoo(Attraction):
+
+    def __init__(self, name, description):
+        super().__init__(name, description)
+    
+    def addAnimal(self, animal):
+        if animal.walking:
+            self.animals.append(animal)
+```

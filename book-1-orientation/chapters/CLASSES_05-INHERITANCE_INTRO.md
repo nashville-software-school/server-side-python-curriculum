@@ -168,7 +168,9 @@ Some things to note about these changes:
 3. Notice that we did not directly use **`Animal`** to make our llama object. At no point will you ever directly instantiate a base class. Instances are always created from the child class.
 
 ### Practice: The Great Inheritance Overhaul
-You know the drill by now! It's time to refactor all of your classes. This time it's in the name of not having to spend so much time refactoring your classes in the future. Start by defining **`Animal`** in your code. Then work your way through your critters to evolve them into its children.
+You know the drill by now! It's time to refactor all of your classes. This time it's in the name of not having to spend so much time refactoring your classes in the future. 
+1. Start by defining **`Animal`** at the top of `animals.py`. 
+1. Work your way through your critters to evolve them into its children.
 
 ## Overriding Parent Behavior
 
@@ -185,8 +187,8 @@ And that function's behavior could be
 print(f'on {date.today()}, {self.name} had "Rockytop" sung to it so it would eat its {self.food}')
 ```
 That way only llamas get fed while singing to them. The question is, what do you name that function?
-`feed_llama`? Nope. Actually, you would name it `feed`. By giving it exactly the same name as **`Animal`**'s method for feeding _all_ animals, you then **_override_** the default logic.
-Now, `feed` has multiple forms, but is implemented differently in different contexts. That's polymorphism, and it's really cool and powerful. (Got your attention now? Here's that [article](https://www.programiz.com/python-programming/polymorphism) again.)
+`feed_llama`? Nope. Actually, you would name it `feed`. By giving it exactly the same name as **`Animal`**'s method for feeding _all_ animals, you then **_override_** the default logic. [Method overriding](https://en.wikipedia.org/wiki/Method_overriding), in object-oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses (parent classes).
+Now, `feed` has multiple forms, but is implemented differently in different contexts using method overriding. That's polymorphism, and it's really cool and powerful. (Got your attention now? Here's that [article](https://www.programiz.com/python-programming/polymorphism) again.)
 
 Let's look at another example, using the vehicles from earlier. You can safely assume that each vehicle can be driven. What you can then do is implement a `drive()` method on the **`Vehicle`** class.
 
@@ -225,6 +227,8 @@ class Tesla(Vehicle):
 ```
 
 Now the Tesla will make a different noise.
+
+Also read [Method Overriding in Python](https://www.studytonight.com/python/method-overriding-in-python).
 
 ### Practice: Pacify Your Picky Eaters
 Customize the way some of your critters are fed. Use method overriding to define a more specific `feed` behavior on three of your child classes. 
