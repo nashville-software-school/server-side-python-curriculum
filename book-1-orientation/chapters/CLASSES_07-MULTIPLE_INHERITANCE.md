@@ -1,49 +1,32 @@
-<!-- TODO: 
-Refactor for multiple inheritance
-Move flying/swimming/slithering out into their own classes -->
+# Critters and Croquettes: Day 7
 
-MULTI-INHERITANCE
+<!-- TODO: Critter Intro -->
 
+# Multiple Inheritance
 
-# Interface Based Programming
-
-In Python, you can use classes to represent concrete things - Person, Building, Vehicle, Animal, Flower - but you also use them to define general types of things so that they can be grouped together in a more flexible way. The mechanism in Python is multiple inheritance. You can inherit from **more** than just one parent class!
+In Python, you can use classes to represent concrete things - Person, Building, Vehicle, Animal, Flower - but you also use them to define general types of things so that they can be grouped together in a more flexible way. That mechanism in Python is called multiple inheritance. You can inherit from **more** than just one parent class!
 
 ## Why Are You Learning This?
 
 You will use multiple inheritance to provide much more flexibility to your project to work with disparate types. It's one of the most powerful features of the Python language.
 
-You will also likely be asked about interfaces during the interview process. Python does not have concrete interfaces, but you can use classes to implement an interface-based system. After working with interfaces during your time at Nashville Software School, you should be able to describe interfaces in the following ways.
-
-1. Interfaces are a mechanism to introduce polymorphism into your system. They provide additional types to your classes.
-1. They allow you to define common properties and behaviors among different classes in your system so that you can group them together into collections.
-
 ## Zoological Zaniness
 
-Imagine a scenario in which you are writing an application in which you need to classify any animal species as ground-based, air-based, or water-based. Also consider that animals can be any combination of those classifications.
-
-For example, a platypus is both ground and water. Most birds are both air and ground. Cats are ground only. Dolphins are water only. Seagulls are air, ground, and water (they can dive to amazing depths and are great swimmers). So many possible combinations of behavior in the animal kingdom!
+Think about those ducks at the petting zoo. You classified them as `swimming` critters, but they can also fly and walk. And if Bobby ever added penguins (you wouldn't put it past him) they swim and walk, but they don't fly. Basically, a single property to define how a critter moves around is limiting. There are many possible combinations of behavior in the animal kingdom!
 
 🐯 🦅 🐎 🦈 🙎🏾‍♀️ 🦉
 
-To make our code base as flexible as possible, we define the properties and behaviors of each classification (or description) into an separate class. You are going to start with classes for animals that can walk and those that can swim.
+Additionaly, you also can see how, for example, `swimming` is present on some of your critter classes, but not all of them. 
+Wouldn't it be nice to define `swimming` once and use it over and over just like you are doing with `name` and `species` in **`Animal`**? That kind of flexibility would make it infinitely easier to represent the widest variety of critters possible in our system. 
 
-Note that the classes start with a capital I. This is to designate them as interfaces, instead of representations of a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things.
+Multiple Inheritance to the rescue.
 
-## Setup
+To make our code base as flexible as possible, you can define the properties and behaviors of each classification (or description) into a _separate class_. 
 
-```sh
-mkdir -p ~/workspace/python/exercises/zoo && cd $_
-mkdir animals
-touch animals/__init__.py animals/penguin.py
-mkdir movements
-touch movements/__init__.py movements/walking.py movements/swimming.py
-mkdir habitats
-touch habitats/__init__.py habitats/habitat.py
-touch zoo.py
-```
+Note that these new classes will seem skimpy. They will seemingly do very little. This is by design. Their job will not be to directly represent a concrete thing, but to aid you in the process of representing a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things. But, they are still just good old Python classes. And that's why it's called multiple inheritance. You can define a derived type that inherits properties from more than a single parent class.
 
-Your directory structure should look like this. The `__init__.py` file in each of those subdirectories makes the directories into packages. Your instruction team will discuss what a package is during class. Another word for package is `namespace`, which is used by other programming languages.
+
+
 
 ![](./images/zoo-directory-structure.png)
 
@@ -54,7 +37,7 @@ The first step is to define the different ways an animal can move.
 > #### `movements/walking.py`
 
 ```py
-class IWalking:
+class Walking:
 
     def __init__(self):
         self.walk_speed = 0
@@ -67,7 +50,7 @@ class IWalking:
 > #### `movements/swimming.py`
 
 ```py
-class ISwimming:
+class Swimming:
 
     def __init__(self):
         self.swim_speed = 0
@@ -77,46 +60,64 @@ class ISwimming:
         print("The animal swims")
 ```
 
+```py
+class Slithering:
+
+    def __init__(self):
+        self.slither_speed = 0
+        self.length = 0
+
+    def slither(self):
+        print("The animal slithers")
+```
+
 ### Update the movements Package
 
 > #### `movements/__init__.py`
 
 ```py
-from .walking import IWalking
-from .swimming import ISwimming
+from .walking import Walking
+from .swimming import Swimming
+from .slithering import Slithering
 ```
 
-Now you can define a class and implement the interface for a walking animal. You can start with a Penguin. Note that when a class inherits from two parents that you have to discard using the `super().__init__()` syntax and explicitly invoke the initialization method of both. You also need to pass `self` as an argument - something that is not needed when you use the `super()` abstraction.
+Now you can define a class and implement multiple inheritance for a walking and swimming animal like a goose.
 
-> #### `animals/penguin.py`
+**NOTE:** When a class inherits from two parents you have to discard using the `super().__init__()` syntax and explicitly invoke the initialization method of both. You also need to pass `self` as an argument - something that is not needed when you use the `super()` abstraction.
+
+> #### `animals/goose.py`
 
 ```py
-from movements import IWalking, ISwimming
+from movements import Walking, Swimming
 
 
-class Penguin(IWalking, ISwimming):
+class Goose(Animal, Walking, Swimming):
 
-    def __init__(self, name):
-        ISwimming.__init__(self)
-        IWalking.__init__(self)
-        self.name = name
+    def __init__(self, name, species, food):
+        Animal.__init__(self, name, species, food)
+        Swimming.__init__(self)
+        Walking.__init__(self)
+    
+    def honk(self): 
+        print("The goose honks. A lot")
 
     def __str__(self):
-        return f'{self.name} the Penguin'
+        return f'{self.name} the Goose'
 ```
 
-The **`Penguin`** class is now composed of the methods and properties of two smaller, focused classes.
+The **`Goose`** class is now composed of the methods and properties of the general base class of **`Animal`**, plus two smaller, focused classes.
 
 ### Update the Package
 
 > #### `animals/__init__.py`
 
 ```py
-from .penguin import Penguin
+from .goose import Goose
 ```
 
-### Create a Penguin
+### Create a Goose
 
+<!-- TODO: refactor from here to end-->
 In your main zoo module, import the **`Penguin`** class, and create one. Then makes it walk and swim.
 
 > #### `zoo.py`
@@ -140,7 +141,7 @@ The animal swims
 
 ### Overriding the Run Method
 
-The run method's output is pretty boring and generic. I would rather state that a penguin waddles instead of walks.
+The run method's output is pretty boring and generic. I would rather state that a penguin waddles instead of walks. You can use method overriding to accomplish that.
 
 > #### `animals/penguin.py`
 
@@ -152,6 +153,7 @@ class Penguin(IWalking, ISwimming):
         IWalking.__init__(self)
         self.name = name
 
+    # run is defined in the Walking parent class, but also here. This run method will take precedence and Walking's run method will not be called by Goose instances
     def run(self):
         print(f'{self} waddles')
 
@@ -169,15 +171,9 @@ The animal swims
 Now each class can override and specialize inherited behavior, or simply choose to let the parent class' logic run, depending on the situation.
 
 
-### Important Vocabulary: Method Overriding
-
-[Method overriding](https://en.wikipedia.org/wiki/Method_overriding), in object-oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses or parent classes.
-
-Also read [Method Overriding in Python](https://www.studytonight.com/python/method-overriding-in-python).
-
 ## Habitats for Certain Types of Animals
 
-Time to start putting animals in habitats. You need to create classes to hold certain kinds of animals. For example, the Aquarium habitat will hold swimming animals, and the Savannah habitat will hold walking animals.
+Time to refactor how you are adding animals to attractions. You need to create classes to hold certain kinds of animals. For example, the Aquarium habitat will hold swimming animals, and the Savannah habitat will hold walking animals.
 
 Define a Habitat class in a new module.
 
@@ -372,92 +368,31 @@ Bob the Penguin lives in Sea World
 
 Both methods stopped a painted dog from being added to an aquarium. One is more _Pythonic_ than the other, but both are effective. Our recommendation is to follow the guidance of the Python community and use duck typing, and exceptions to determine if an object can be used for any specific purpose.
 
-## Practice: Uncle Jake's Flower Shop
+## Practice: Modularize ALL. THE. THINGS.
 
-Uncle Jake (a.k.a. Jake Mendenhyll) opened his flower shop in 1972, at the height of the Flower Power cultural phenomenon. Since then, his two daughters, and 1 grandson have joined him in running the shop.
+Now that you have all the moving parts of your newly-flexible code working with multiple inheritance, it's time to do some house cleaning to organize and modularize. You should end up with the following file structure. Move the appropriate code into their files where necessary.
 
-Their two biggest seasons are Mother's Day and Valentine's Day. Throughout Denver, the tradition of sending an Uncle Jake arrangement has passed across generations, and people trust Jake and his family to send the best flowers. Since 1980, the contents of each arrangement has never changed.
+You will also need to create an `__init__.py` file at the root of each subdirectory, as shown. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/master/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
 
-#### Mother's Day Arrangement
-
-The Mother's Day arrangement contains daisies, baby's breath, and poppies. This arrangement is a bit more reserved, and Jake makes sure that each flower stem is cut to 4 inches.
-
-Also, each flower in this arrangement is organically grown with no pesticides used. Because of this, these arrangements have to be transported in a non-refrigerated container.
-
-#### Valentine's Day Arrangement
-
-The Valentine's Day arrangement includes the traditional rose. Jake has red, pink, and blue ones to send the right message. It also has lillies and alstroemeria to add more depth to the color of the arrangement.
-
-This arrangment is flamboyant and extravagent. Each flower stem is cut to 7 inches. Flowers in this arrangement are not organically grown, so they can be transported in a refrigerated container.
-
-#### Instructions
-
-Your task is to define classes for each type of flower, and a class for each arrangement type. Each arrangement instance should have an attribute of `flowers` which will contain at least one of each type of the corresponding flowers listed above.
-
-Your code must ensure that only the right flowers can be added to each arrangement. Here's some terse starter code.
-
-* Rose, lillies, and alstroemeria share some attribute that the others do not _(perfect case for an interface class)_
-* All flowers share some common attributes
-
-
-```py
-class Arrangement:
-
-    def __init__(self):
-        self.__flowers = []
-
-    def enhance(self, flower):
-        self.__flowers.append(flower)
-
-
-class MothersDay(Arrangement):
-
-    def __init__(self):
-        super().__init__()
-
-class ValentinesDay(Arrangement):
-    def __init__(self):
-        super().__init__()
-     
-    # Override the `enhance` method to ensure only
-    # roses, lillies, and alstroemeria can be added
-
-
-class Rose:
-    pass
-
-if __name__ == "__main__":
-    for_beth = ValentinesDay()
-    red_rose = Rose()
-
-    for_beth.flowers.append(red_rose)
+```sh
+petting_zoo/
+    |__ animals/
+          |__ __init__.py
+          |__ animal.py # put Animal class in here
+          |__ llama.py # one critter class
+          |__ goat.py # another critter class. you get the point 
+    |__ attractions/
+          |__ __init__.py
+          |__ atttraction.py
+          |__ petting_zoo.py
+          |__ snake_pit.py
+          |__ wetlands.py
+    |__ movements/
+          |__ __init__.py
+          |__ swimming.py
+          |__ slithering.py
+          |__ walking.py
+    |__ index.py
 ```
 
-## Practice: Diggers and Fliers
-
-As an avid animal lover, you have started your very own collection of creatures in your home. You can use the code from the lesson as a starting point to have interfaces for walking and swimming animals, but you want to have several other kinds in your collection.
-
-This is the list of animals you want to own and care for.
-
-1. Parakeets
-1. Earthworms
-1. [Terrapins](https://en.wikipedia.org/wiki/Terrapin)
-1. Timber Rattlesnake
-1. Mice
-1. Ants
-1. Finches
-1. [Betta Fish](https://bettafish.org/)
-1. Copperhead snake
-1. Gerbils
-
-Each month, you clean out all of the habitats in a single day for efficiency. On that day, all animals need to be put into temporary containers. Each container will hold animals of similar, but different, types.
-
-* Animals that dig and live in the ground
-* Animals that move about on the ground
-* Animals that swim in water
-* Animals that fly above the ground
-
-1. Before you write any classes for the above animals, determine the common properties and behaviors that some of them share and define interface classes first.
-1. Once you believe you have a good set of interface classes, then start creating your specific animals and have them implement the appropriate interface(s).
-1. Then define classes to represent the containers that will hold various animals. Each container class should have a single property - a set to hold animal instances.
-1. Lastly, create one (or more if you like) instances of each type of animal and each container. Then add the animals to their corresponding container.
+Finally, test everything to make sure your imports are working as they should. Wow, this is looking good! 
