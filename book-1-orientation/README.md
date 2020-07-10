@@ -4,8 +4,7 @@ This book builds a strong foundation in the syntax, data structures, and valuabl
 
 ## Python Orientation
 
-* Chapter 1a - [OSX Installations](./chapters/INSTALLATIONS_OSX.md)
-* Chapter 1b - [Windows Installations](./chapters/INSTALLATIONS_WINDOWS.md)
+* Chapter 1 - [Installations](./chapters/INSTALLATIONS_OSX.md)
 * Chapter 2 - [Introduction to Python](./chapters/PYTHON_INTRO.md)
 * Chapter 3 - [Debugging Python in Visual Studio Code](./chapters/DEBUGGING_PYTHON.md)
 * Chapter 4 - [Common Types - Lists](./chapters/DATA_STRUCTURES_LIST.md)
