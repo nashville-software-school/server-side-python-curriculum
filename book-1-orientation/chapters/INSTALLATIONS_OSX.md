@@ -19,7 +19,7 @@ pyenv install 3.8.1
 pyenv global 3.8.1
 ```
 
-Now, when you check the version of Python with the command below, it should return 3.7.3.
+Now, when you check the version of Python with the command below, it should return 3.8.1.
 
 ```
 python --version
