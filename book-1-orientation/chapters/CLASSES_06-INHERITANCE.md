@@ -151,25 +151,28 @@ class Animal:
 ```py
 class Llama:
 
-    def __init__(self, name, species, shift, food):
+    def __init__(self, name, species, shift, food, chip_num):
         self.name = name
         self.species = species
         self.shift = shift
         self.date_added = date.today()
-        self.walking = True
         self.food = food
+        self.__chip_number = chip_num
+        self.walking = True
     
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+  
+    ...
 ```
 **After:**
 ```py
-# Designate Burro as a child class by adding (Animal) after the class name
+# Designate Llama as a child class by adding (Animal) after the class name
 class Llama(Animal):
 
-    # Remove redundant properties from Burro's initialization, and set their values via Animal
-    def __init__(self, name, species, shift, food):
-        super().__init__(name, species, food)
+    # Remove redundant properties from Llama's initialization, and set their values via Animal
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.shift = shift # stays on Llama because not all animals have shifts
         self.walking = True
 ```
@@ -193,7 +196,7 @@ You know the drill by now! It's time to refactor all of your classes. This time 
 
 ## Overriding Parent Behavior
 
-Esrlier in this chapter you may remember a mention of polymorphism. In a very small nutshell polymorphism means the ability to take various forms. Sounds like Invasion of the Body Snatchers, but this example shows how that can be expressed in Python.  
+Earlier in this chapter you may remember a mention of polymorphism. In a very small nutshell polymorphism means the ability to take various forms. Sounds like Invasion of the Body Snatchers, but this example shows how that can be expressed in Python.  
 
 You've now seen how to inherit common properties from a parent class. Each child class of **`Animal`**, for example can call `feed()` because they automatically inherit it. This is great for when the act of feeding a critter is exactly the same for every critter type. But it's not ideal if you have an outlier or two that require a different behavior for the same action of 'feeding'. 
 
