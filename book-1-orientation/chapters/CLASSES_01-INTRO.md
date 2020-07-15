@@ -136,9 +136,9 @@ But you should also take into consideration the fact that there are different ty
 
 With that in mind, make 5 critter types for each area. As you define each one, give it one of the following properties where most appropriate:
 
-+ `this.swimming = True`
-+ `this.slithering = True`
-+ `this.walking = True`
++ `self.swimming = True`
++ `self.slithering = True`
++ `self.walking = True`
 
 Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. You just want to get the logic working correctly. So, use the `print()` method to see your results.
 
