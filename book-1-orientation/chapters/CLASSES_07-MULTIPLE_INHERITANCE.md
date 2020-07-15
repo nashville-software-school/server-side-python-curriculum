@@ -228,7 +228,7 @@ class Attraction:
         return len(self.animals)
 ```
 
-Next, refactor **`PettingZoo`**, **`SnakePit`**, and **`Aviary`** to be children of **`Attraction`**. Move each to its own module.  
+Next, refactor **`PettingZoo`**, **`SnakePit`**, and **`Wetlands`** to be children of **`Attraction`**. Move each to its own module.  
 
 Note that `description` is now an additional parameter in **`Attraction`**'s `__init__`. Be sure each child class handles that appropriately in its `__init__`.
 

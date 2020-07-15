@@ -37,7 +37,9 @@ class PettingZoo(Attraction):
             print(f'{animal} doesn\'t like to be petted, so please do not try to put it in the {self.name} attraction.')
 ```
 
-> ### Sidebar: Duck Typing
+Both methods stopped a goose from being added to a petting_zoo. One is more _Pythonic_ than the other, but both are effective. Our recommendation is to follow the guidance of the Python community and use _duck typing_, and exceptions to determine if an object can be used for any specific purpose.
+
+> ### Duck Typing
 >
 > "If it looks like a duck, sounds like a duck, acts like a duck, and smells like a duck, then it can do all the things we want a duck to do. It's a duck."
 >
@@ -71,8 +73,6 @@ Bob the goose doesn't like to be petted, so please do not try to put it in The V
 Bob the goose doesn't like to be petted, so please do not try to put it in The Varmint Village attraction.
 Miss Fuzz the llama lives in The Varmint Village
 ```
-
-Both methods stopped a goose from being added to a petting_zoo. One is more _Pythonic_ than the other, but both are effective. Our recommendation is to follow the guidance of the Python community and use duck typing, and exceptions to determine if an object can be used for any specific purpose.
 
 ## Practice: Birds of a Feather, Snakes of a Scale?
 Refactor all of your attraction classes to check for the proper property before allowing the critter object to be added to its `animal` list.

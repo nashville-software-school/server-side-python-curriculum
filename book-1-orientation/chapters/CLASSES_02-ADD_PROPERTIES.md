@@ -1,6 +1,6 @@
 # Critters and Croquettes: Day 2
 
->You're feeling pretty good about your first steps to building what your new client, Bobby Kawlins, has hired you to create. You have a long list of critter classes ready to churn out as many goats, chickens and llamas as Bobby can stuff into his petting zoo. So, the next day you decide to drob by and give Bobby an update on your progress in person. 
+>You're feeling pretty good about your first steps to building what your new client, Bobby Kawlins, has hired you to create. You have a long list of critter classes ready to churn out as many goats, chickens and llamas as Bobby can stuff into his petting zoo. So, the next day you decide to drop by and give Bobby an update on your progress in person. 
 >
 > Bobby doesn't greet you as you pass through the tapas bar and step into the critter corral. You're about to go back inside and ask the staff where he might be when you realize that the high pitched wail you just heard wasn't one of the resident peacocks, but a child. The boy is sitting in the dust under the "Critter Mix" dispensers ( "Just 50 cents for a whole handful!"), crying inconsolably.
 >
