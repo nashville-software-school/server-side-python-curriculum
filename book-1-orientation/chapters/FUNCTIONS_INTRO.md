@@ -59,11 +59,20 @@ Here we have a function that is responsible for adding together all the numbers.
 ## Keyword Arguments
 
 ```python
-def list_person(**person):
-    for key, value in person.items():
-        print(f"{key} is {value}")
+def make_family(name, **member):
+    family_stuff = member.items()
+    family_str = f"We are the {name} family. "
+    for title, person in family_stuff:
+        family_str += f"The {title} is {person}. "
+    return family_str
+```
+Now we can make families of any size, and have flexibility to have those family members have whatever role we want
 
-melissa = list_person(first_name="Melissa", last_name="Bell", age=25, occupation="Software Developer")
+```py
+the_shepherds = make_family("Shepherd", mom="Anne", dad="Joe", dog="Murph")
+the_parkers = make_family("Parker", aunt="May", nephew="Peter")
+print(the_shepherds)
+print(the_parkers)
 ```
 
 While we are can still pass a variable number of arguments, the arguments now have a keyword associated with it. In other words, you get to name the arguments that you pass to the function (a dictionary with key value pairs).
