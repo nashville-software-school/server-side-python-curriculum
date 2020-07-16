@@ -23,7 +23,7 @@ console.log(mustache())
 console.log(lumberSexual())
 ```
 
-You will ocaassionally switch which one of these functions will have the characters reversed. You certainly don't want to manually modify this code each time you want to change which ones are normal and which ones are reversed.
+You will occasionally switch which one of these functions will have the characters reversed. You certainly don't want to manually modify this code each time you want to change which ones are normal and which ones are reversed.
 
 You will create a function to reverse any string.
 
@@ -45,7 +45,7 @@ console.log(lumberSexual())
 
 In this scenario, the `reversal()` function is considered a decorator because it consumes the output of the original method and then outputs something different.
 
-## Python Reveral Decorator
+## Python Reversal Decorator
 
 As you learn the Python language and the Django application framework, you will encounter decorators. Decorators are a specific syntax to do exactly what was done in the example above - send functions to other functions to extend their capabilities. Here's how the above JavaScript code would be done in Python.
 
@@ -130,7 +130,7 @@ Now write two more decorator functions named `@dad` and `@mom` and place them ab
 
 Michael Tambornino's father opened up the Juniper Hill Mortuary back in 1959 and has served their community faithfully since. It's a trusted business that people in the entire town use to make sure that a family member's death is handled with care and compassion.
 
-Michael took over the operation of the business in 2017 and realized that everything was still done non-digitally. All the ledgers, receipts, billing, and funeral records were hand-written and stored in massive filing cabinets in the basement. Michael new that one fire or flood would wipe out the entire business. In college, he took a couple accounting classes and an introduction to computing class and new that modern technology could make the operation of the business much easier and also have all the critical financial information backed up in case of catastrophe.
+Michael took over the operation of the business in 2017 and realized that everything was still done non-digitally. All the ledgers, receipts, billing, and funeral records were hand-written and stored in massive filing cabinets in the basement. Michael knew that one fire or flood would wipe out the entire business. In college, he took a couple accounting classes and an introduction to computing class and new that modern technology could make the operation of the business much easier and also have all the critical financial information backed up in case of catastrophe.
 
 He has hired you on a contract basis to start building applications that will allow him, and his staff, to enter information digitally on their computers or iPads any time they like.
 

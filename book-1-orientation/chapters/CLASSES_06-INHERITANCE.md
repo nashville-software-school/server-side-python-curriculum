@@ -1,6 +1,6 @@
 # Critters and Croquettes: Day 6
 
-> You are heads-down, working on your code when a co-worker Slacks you a link to an article in the Gatlinburg Visitor Gazette. It's a story about local attractions and their colorful owners. At the top is a picture of Bobby, smiling widely as always, pointing to a couple of frollicking goats. He's holding a cheerlful-looking child who seems as enthralled by the critters as he is. The caption grabs your attention.
+> You are heads-down, working on your code when a co-worker Slacks you a link to an article in the Gatlinburg Visitor Gazette. It's a story about local attractions and their colorful owners. At the top is a picture of Bobby, smiling widely as always, pointing to a couple of frolicking goats. He's holding a cheerful-looking child who seems as enthralled by the critters as he is. The caption grabs your attention.
 >
 > _"Critters and Croquettes Petting Zoo and Tapas Bar owner Bobby Andrew Kawlins surveys his ever-growing appetizers and animals empire with daughter Bobbi-Jean. 'One day, this will all be yours,' says the effervescent entrepreneur. 'You'll inherit what I built and make it bigger and better than ever!"_
 >
@@ -227,7 +227,7 @@ class Vehicle:
         print("Vroooom!")
 ```
 
-Once you do this, all of the specific vehicles can be driven. For now, however, they will all make the same sound, which is ridicuous because a plane doesn't sound like a truck which doesn't sound like a motorcycle.
+Once you do this, all of the specific vehicles can be driven. For now, however, they will all make the same sound, which is ridiculous because a plane doesn't sound like a truck which doesn't sound like a motorcycle.
 
 ```cs
 fxs = Zero()
