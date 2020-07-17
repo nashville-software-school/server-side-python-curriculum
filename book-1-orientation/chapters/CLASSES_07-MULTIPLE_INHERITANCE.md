@@ -39,7 +39,7 @@ petting_zoo/
           |__ goose.py # another critter class. you get the point 
     |__ attractions/
           |__ __init__.py
-          |__ atttraction.py
+          |__ attraction.py
           |__ petting_zoo.py
           |__ snake_pit.py
           |__ wetlands.py
@@ -113,6 +113,7 @@ Now you can define a class and implement multiple inheritance for a walking and 
 
 ```py
 # The package syntax is what allows for these clean import statements
+from .animal import Animal
 from movements import Walking, Swimming
 
 class Goose(Animal, Walking, Swimming):
@@ -197,7 +198,7 @@ The animal swims
 
 Now each class can override and specialize inherited behavior, or simply choose to let the parent class' logic run, depending on the situation.
 
-## Pracice: More Attractive Attractions 
+## Practice: More Attractive Attractions 
 
 Your critter types are in much better shape, so it's time to overhaul the attractions, too, and apply some inheritance magic to them. After all, what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? 
 
@@ -268,7 +269,7 @@ from petting_zoo import PettingZoo
 bob = Goose("Bob", "Canada goose", "watercress sandwiches")
 
 # Create an attraction
-varmint_village = PettingZoo("Varmint Village")
+varmint_village = PettingZoo("Varmint Village", "critters that like to dig and scurry")
 varmint_village.add_animal(bob)
 
 for animal in varmint_village.animals:
