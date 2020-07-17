@@ -1,6 +1,6 @@
 # Critters and Croquettes: Day 5
 
-> It's another perfect Smoky Mountains day, with cool air and a warm sun. You decide to head over to Critters and Croquettes for a light lunch and to see the plans Bobby has in store for his big expansion. When you arrive you're surprised to see Bobby looking worried. The usual exhuberance isn't present today.
+> It's another perfect Smoky Mountains day, with cool air and a warm sun. You decide to head over to Critters and Croquettes for a light lunch and to see the plans Bobby has in store for his big expansion. When you arrive you're surprised to see Bobby looking worried. The usual exuberance isn't present today.
 >
 >"Had a bit of a fright this morning, friend," Bobby explains. "One of our more...clever...alpacas found a way to climb up on a bench and jump the fence into the parking lot. Luckily, she smelled a fresh batch of huevos estrellados drifting out of the tapas bar and she wandered back in through the front door!
 >
