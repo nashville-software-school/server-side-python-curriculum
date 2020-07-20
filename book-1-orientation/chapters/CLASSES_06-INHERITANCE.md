@@ -179,7 +179,7 @@ class Llama(Animal):
 Luckily, the syntax for making a llama object stays exactly the same: 
 
 ```py
-stinky = Llama("Stinky", "burro", "afternoon", "barley hay")
+stinky = Llama("Stinky", "domestic llama", "afternoon", "barley hay")
 ```
 
 Some things to note about these changes:
