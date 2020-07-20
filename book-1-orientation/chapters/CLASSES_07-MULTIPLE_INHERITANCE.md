@@ -241,9 +241,6 @@ class PettingZoo(Attraction):
 
     def __init__(self, name, description):
         super().__init__(name, description)
-    
-    def addAnimal(self, animal):
-        self.animals.append(animal)
       
 ```
 Don't forget to add the module imports to the attractions package.

@@ -4,7 +4,7 @@
 >
 >In Python, lists can contain any combination of object types. A single list could contain an integer, a boolean, and a string. This means that the `animals` attribute of your attractions classes can contain **any** critter type, regardless of whether it belongs there.
 >
->You decide that you'll need to add a check to the `addAnimal` method of your attractions classes to make sure a critter belongs in the attraction you're adding it to. Luckily, you already have a built-in way of determining what kind of critter you're dealing with...
+>You decide that you'll need to add a check to the `add_animal` method of your attractions classes to make sure a critter belongs in the attraction you're adding it to. Luckily, you already have a built-in way of determining what kind of critter you're dealing with...
 
 ### Using Your Inherited Class Properties to Restrict Lists
 
@@ -32,7 +32,7 @@ class PettingZoo(Attraction):
     # Number 2: Actual typing check
     def add_animal_type_check(self, animal):
         if isinstance(animal, Swimming):
-            self.animals.add(animal)
+            self.animals.append(animal)
         else:
             print(f'{animal} doesn\'t like to be petted, so please do not try to put it in the {self.name} attraction.')
 ```
