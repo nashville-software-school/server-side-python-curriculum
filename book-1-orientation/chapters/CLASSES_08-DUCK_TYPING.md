@@ -26,7 +26,7 @@ class PettingZoo(Attraction):
         try:
             if animal.walk_speed > -1:
                 self.animals.append(animal)
-                print(f"{animal} lives in {self.attraction_name}")
+                print(f"{animal} now lives in {self.attraction_name}")
         except AttributeError as ex:
             print(f'{animal} doesn\'t like to be petted, so please do not put it in the {self.name} attraction.')
 
@@ -34,7 +34,7 @@ class PettingZoo(Attraction):
     def add_animal_type_check(self, animal):
         if isinstance(animal, Walking):
             self.animals.append(animal)
-            print(f"{animal} lives in {self.attraction_name}")
+            print(f"{animal} now lives in {self.attraction_name}")
         else:
             print(f'{animal} doesn\'t like to be petted, so please do not try to put it in the {self.name} attraction.')
 ```
@@ -58,7 +58,7 @@ from attractions import PettingZoo
 
 varmint_village = PettingZoo("The Varmint Village", "critters that love to be pet!")
 
-# remember, some animals may require more information than others; e.g. chip_num
+# remember, some animals may require more arguments than others; e.g. shift
 dolly = Llama("Dolly", "miniature llama", "morning", "hay", 1033)
 snappy = Alligator("Snappy", "American Alligator", "fish", 1044)
 
@@ -70,8 +70,8 @@ varmint_village.add_animal_pythonic(snappy)
 After you try adding the animals you should see the following output:
 
 ```
-Dolly the miniature llama lives in The Varmint Village
-Dolly the miniature llama lives in The Varmint Village
+Dolly the miniature llama now lives in The Varmint Village
+Dolly the miniature llama now lives in The Varmint Village
 Snappy the alligator doesn't like to be petted, so please do not put it in the The Varmint Village attraction.
 ```
 
@@ -82,7 +82,7 @@ for animal in varmint_village.animals:
     print(animal)
 ```
 
-You will see that only the llama was added to the petting zoo.
+You will see that only the llama was added to the petting zoo (twice in this case).
 
 ```
 Dolly the miniature llama
