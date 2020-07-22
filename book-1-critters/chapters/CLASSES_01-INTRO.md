@@ -16,7 +16,7 @@ Once a class is defined, you can use it to crank out objects based on the class.
 
 ![visualization of two instances of the Student class](./images/python-class-instances.png)
 
-To define a class, such as **`Student`**, above, you begin with the keyword `class` and then define at least an `__init__` method for the class. The `__init__` method holds the instructions for what to do when a developer makes an instance of your class. 
+To define a class, such as **`Student`**, above, you begin with the keyword `class` and then define at least an `__init__` method for the class. The `__init__` method holds the instructions for what to do when a developer makes an instance of your class.
 Below that are examples of objects being created as instances of **`Student`**. So, `fletcher` and `red` each hold the value of an object, each of which contains properties defined in the class, but each with their own unique values.
 
 ## Critters and Croquettes Petting Zoo and Tapas Bar
@@ -33,7 +33,7 @@ Lets build some classes for a business that's poised to become the #1 tourist tr
 >
 > "Exactly!" says Bobby.
 
-To help Bobby with that, you know you're going to need to represent animals in his petting zoo with code. Each animal will have properties such as name, species, and year it was added to the zoo. 
+To help Bobby with that, you know you're going to need to represent animals in his petting zoo with code. Each animal will have properties such as name, species, and year it was added to the zoo.
 
 Here's how you could define a template for how each animal will be represented in the application.
 
@@ -60,26 +60,6 @@ For any class, when you create an instance of it, it executes an internal `__ini
 
 > **Tip:** What's up with that _self_ parameter that is the first argument of the `__init__` method? It's the instance of the class that you created.
 
-If you were to loop over the `miss_fuzz` object you created...
-
-```py
-for prop, value in miss_fuzz.__dict__.items():
-    print(f'{prop}:\n{value}\n')
-```
-
-...you would see the following output:
-
-```py
-name:
-
-
-species:
-
-
-date_added: "2020-06-16" # or whatever the date is when you create the instance of Animal
-
-```
-
 Update the object by defining the values for the name and species properties.
 
 ```py
@@ -100,7 +80,7 @@ date_added: "2020-06-16"
 ```
 That's a good start, but animals -- in the real world and in our system -- also have some properties that help differentiate them from each other. For example, to us it's clear that a cottonmouth snake is quite different from a miniature goat. But without baking that distinction into our class definitions, our system can't recognize that difference. With that in mind, we can also give our critters additional properties that are not common across every class in the system.
 
-For example, Bobby's critters can be divided into three fairly distinct groups by how they move around their home: walking, slithering, and swimming. So, the **`Llama`** class could benefit from adding `self.walking = True` to it. And a **`KingSnake`** class would have `self.slithering = True` in its `__init__` method. Something tells you those distinctions might come in very handy for Bobby as his business grows... 
+For example, Bobby's critters can be divided into three fairly distinct groups by how they move around their home: walking, slithering, and swimming. So, the **`Llama`** class could benefit from adding `self.walking = True` to it. And a **`KingSnake`** class would have `self.slithering = True` in its `__init__` method. Something tells you those distinctions might come in very handy for Bobby as his business grows...
 
 > "Hello? Hey there, hello?"
 >
@@ -110,16 +90,16 @@ For example, Bobby's critters can be divided into three fairly distinct groups b
 >
 > After a thorough hand-washing and a bite of cheese sampler, on the house, you head back to the office to get started
 
-### Practice: Classy Critters Collection
+## Practice: Classy Critters Collection
 
-#### Setup
+### Setup
 
-```
+```sh
 mkdir -p ~/workspace/python/exercises/petting_zoo && cd $_
 touch animals.py
 ```
 
-#### Instructions
+### Instructions
 You're going to create 15 custom types (classes) for representing critters from Bobby's petting zoo in Python. (_Seriously -- 15. Hey, we saw that. Don't roll your eyes at us!_)
 
 As shown earlier, define every class with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
@@ -143,44 +123,12 @@ With that in mind, make 5 critter types for each area. As you define each one, g
 Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. You just want to get the logic working correctly. So, use the `print()` method to see your results.
 
 ```py
-print(miss_fuzz) 
+print(miss_fuzz)
 ```
 
-It will be...disappointing. You should see something like this:  
+It will be...disappointing. You should see something like this:
 
-`<__main__.Llama object at 0x109df9cd0>`  
+`<__main__.Llama object at 0x109df9cd0>`
 
 What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a more human-readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(miss_fuzz.name)` as a temporary solution.
 
-## Class Construction Arguments
-
-The `__init__()` method on a Python class can accept as many arguments as you like. Those arguments can then be used to initialize the properties of each object created from the class. Here's an example.
-
-```py
-class Pig:
-
-    def __init__(self, name, species):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
-        self.walking = True
-
-wilbur = Pig("Wilbur", "pot-bellied pig")
-```
-
-By passing the property value in during the instantiation of the object, you don't have to manually create the properties on a separate line of code.
-
-```py
-# No need to do this!!
-wilbur.name = "Wilbur"
-wilbur.species = "pot-bellied pig"
-```
-
-### Practice: Update Yer Critters Construction
-
-Refactor your critter classes to make your `__init__` method accept two arguments
-
-1. `name`
-2. `species`
-
-Once defined this way, you can send those values as arguments when you create each instance.
