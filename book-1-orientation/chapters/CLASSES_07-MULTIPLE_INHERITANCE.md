@@ -259,7 +259,7 @@ Next, import that module into the index.py module, create a new attraction, and 
 
 ```py
 from animals import Goose
-from petting_zoo import PettingZoo
+from attractions import PettingZoo
 
 
 # Create a Goose
