@@ -1,70 +1,30 @@
-# Bangazon LLC
+# Book 1 - Python Kennels Data
 
-## The Personal E-Commerce Platform
+## Chapters
 
-Bangazon LLC welcomes you to the team. You've been selected from a deep pool of candidates to help build the next, disruptive online platform. Our goal is to become the most personalized, and most powerful commericial platform for individuals all around the globe.
+| # | 🎅🏽 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 📔 <br/> Daily Journal <br/><sub>(_Data Server_)</sub> |🦆 <br/> Critters and Croquettes <br/><sub>(_Fundamentals &amp; <br/> Inheritance_)</sub> | &nbsp;&nbsp;&nbsp;🐍&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;Boa Translation Services&nbsp;&nbsp;&nbsp;<br/><sub>(_Language Fundamentals_)</sub> |
+|--|--|---|---|---|
+| 💻 | [Installations](./chapters/INSTALLATIONS.md) | | | |
+| 🐞 | [Debugging Python in Visual Studio Code](./chapters/DEBUGGING_PYTHON.md) | | | |
+| 1 | [Request and Response](./chapters/PK_INTRO_SETUP.md) <br/> <sub style="font-size:0.85rem;">#overview #pipenv #watchgod</sub> | |  | |
+| 2 | [Animals Package and Data](./chapters/PK_PACKAGES_INTRO.md) <br/> <sub style="font-size:0.85rem;">#packages #modules #lists #dictionaries</sub> | | | |
+| 3 |  [Animal Responses](./chapters/PK_ANIMAL_RESOURCE.md) <br/> <sub style="font-size:0.85rem;">#GET #functions #for-loop #if</sub> |  | | |
+| 4 | [Adding Animals](./chapters/PK_CREATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#POST</sub> |  | | |
+| 5 | [Discharging Animals](./chapters/PK_DELETE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#for-loop #enumerate #pop()</sub> |  | | |
+| 6 | [Animal Diagnosis](./chapters/PK_UPDATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#PUT #for-loop #enumerate</sub> |  | [Meeting Bobby Kawlins](./chapters/CC_PROJECT_SETUP.md) <br/> <sub style="font-size:0.85rem;"></sub> | |
+| 7 | [Animal Classes](./chapters/PK_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> |  | [Critter Creation](./chapters/CC_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> | |
+| 8 | [Kennel Database](./chapters/PK_DATABASE_INTRO.md) <br/> <sub style="font-size:0.85rem;">#database #sql #CREATE #INSERT</sub> |  | [Condensed Critter Creation](./chapters/CC_CONSTRUCTORS.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> | |
+| 9 | [Animal Queries](./chapters/PK_SQL_SELECT.md) <br/> <sub style="font-size:0.85rem;">#sql #SELECT #WHERE</sub> |  | [Packaging Animals for Transport](./chapters/CC_PACKAGES.md) <br/> <sub style="font-size:0.85rem;">#packages</sub> | |
+| 10 | [Deleting Animal Records](./chapters/PK_SQL_DELETE.md) <br/> <sub style="font-size:0.85rem;">#sql DELETE</sub> |  | [Piling On Properties](./chapters/CC_CLASS_PROPERTIES.md) <br/> <sub style="font-size:0.85rem;">#properties</sub> | |
+| 11 | [Updating Animal Records](./chapters/PK_SQL_UPDATE.md) <br/> <sub style="font-size:0.85rem;">#sql #UPDATE</sub> |  | [Food Function Fun](./chapters/CC_METHODS.md) <br/> <sub style="font-size:0.85rem;">#methods</sub> | |
+| 12 | [Animals by Location Report](./chapters/PK_SQL_JOINS.md) <br/> <sub style="font-size:0.85rem;">#sql #JOIN</sub> |  | [Composing Coming Attractions](./chapters/CC_COMPOSITION.md) <br/> <sub style="font-size:0.85rem;">#object-relationships</sub> | |
+| 13 |  |  | [Controlling the Animals](./chapters/CC_GETTER_SETTER.md) <br/> <sub style="font-size:0.85rem;">#properties #get #set</sub> |  |
+| 14 |  |  | [Eliminating Class Waste](./chapters/CC_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance</sub> |  |
+| 15 |  |  | [Complex, Clean Critter Classes](./chapters/CC_MULTIPLE_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance #multiple</sub> |  |
+| 16 |  |  | [If it Honks Like a Goose](./chapters/CC_DUCK_TYPING.md) <br/> <sub style="font-size:0.85rem;">#typing</sub> |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+| 👨‍👩‍👧‍👧 | Group Project: Tabloid | | | |
 
-You are needed to make that happen.
-
-In order to become a profitable, and sustainable organization, we need you to build all of the technology and tooling for the company.
-
-# Learning Objectives
-
-## Orientation
-
-Your first two weeks on the job will be you orientation to the technical languages, tools, and frameworks that you'll be using. You will also be introduced to the processes and procedures that you will need to follow to ensure high communication and high productivity for your team.
-
-1. Installation of required tools.
-1. Introduction to the language.
-1. Concepts of sustainable, scalable, object-oriented software development.
-1. Overview of server-side development ecosystem
-1. How the Internet works
-1. Inheritance, composition, and aggregation
-1. Entity relationships
-1. Structured Query Language (SQL)
-
-## Platform Development
-
-You will work on three different [Sprints](https://www.scruminc.com/sprint/) while you build the products that Bangazon Corporation needs in order to operate as a modern business. On each of these sprints, you will build features that your product owner has defined in the [Backlog](http://www.mountaingoatsoftware.com/agile/scrum/scrum-tools/product-backlog).
-
-Your management team will ensure that you have the proper training in the skills, concepts, and tools needed to complete the projects, and then you will fulfill the requirements for the project until you are done, as defined in the [Bangazon Definition of Done](https://github.com/nashville-software-school/bangazon-llc/blob/master/EMPLOYEE_HANDBOOK.md#definition-of-done).
-
-# The Python Way
-
-Beautiful is better than ugly.
-
-Explicit is better than implicit.
-
-Simple is better than complex.
-
-Complex is better than complicated.
-
-Flat is better than nested.
-
-Sparse is better than dense.
-
-Readability counts.
-
-Special cases aren't special enough to break the rules.
-
-Although practicality beats purity.
-
-Errors should never pass silently.
-
-Unless explicitly silenced.
-
-In the face of ambiguity, refuse the temptation to guess.
-
-There should be one-- and preferably only one --obvious way to do it.
-
-Although that way may not be obvious at first unless you're Dutch.
-
-Now is better than never.
-
-Although never is often better than *right* now.
-
-If the implementation is hard to explain, it's a bad idea.
-
-If the implementation is easy to explain, it may be a good idea.
-
-Namespaces are one honking great idea -- let's do more of those!
