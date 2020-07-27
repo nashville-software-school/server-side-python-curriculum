@@ -5,32 +5,16 @@
 ```sh
 cd ~/workspace/python
 django-admin startproject kennywood
-```
-
-## Virtual Environment
-
-A virtual environment allows you to install packages in the scope of this project without polluting global, system package installations.
-
-```sh
 cd kennywood
-python -m venv KennywoodEnv
-source ./KennywoodEnv/bin/activate
+pipenv shell
 ```
-
-Once the virtual environment is activated, you may notice that you prompt in the terminal change to have the word `KennywoodEnv` either in parenthesis or has the word `via` before it.
 
 ## Installed Required Packages
 
 Now you use pip to install all of the packages needed for this project.
 
 ```sh
-pip install django autopep8 pylint djangorestframework django-cors-headers pylint-django
-```
-
-Once they are installed, you use the `freeze` command to capture all of the packages, and their version numbers, in a file so that other developers can easily install those requirements on their machine.
-
-```sh
-pip freeze > requirements.txt
+pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
 ```
 
 ## Allowing Common Variables Names
@@ -55,7 +39,7 @@ In Visual Studio Code, `cmd+shift+p` and open "Preferences: Open Settings (JSON)
 
 ## Create Base Django Tables
 
-You may remember that Django gives you user and role management tables out of the box, and there is a built-in migration file that makes the tables for you. Go ahead and run that migration to set up the initial Django tables.
+Django gives user and role management tables for your application out of the box, and there is a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
 
 ```sh
 python manage.py migrate
