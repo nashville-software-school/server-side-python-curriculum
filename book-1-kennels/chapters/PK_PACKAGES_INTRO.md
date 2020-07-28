@@ -1,0 +1,110 @@
+# Modularizing Animal Data Responses
+
+Having the animal data hard-coded right inside the main Python file, as you might imagine, is a horrible idea. If you kept that up, you would have 1000's of line of code in a single file.
+
+## Gather Related Files into a Package
+
+A package in Python is just a directory with a certain file in it.
+
+That directory needs to have a file called `__init__.py` in it. It's that file, with its weird name, that magically makes a directory into a package.
+
+You may recall in JavaScript that if you wanted to import a module into another one, you had to specify the file path as well as the file name.
+
+```js
+import { AwesomeComponent } from "./awesome/list/AwesomeComponent.js"
+```
+
+With Python packages, you don't need to do that. You can combine all of the file in sub-directories, and sub-directories of sub-directories, into a single _namespace_.
+
+Time to see what that all means.
+
+```sh
+mkdir animals
+touch animals/__init__.py
+touch animals/request.py
+```
+
+Place the following code into the `animals/request.py` file.
+
+```py
+ANIMALS = [
+    {
+        "id": 1,
+        "name": "Snickers",
+        "species": "Dog"
+    },
+    {
+        "id": 2,
+        "name": "Gypsy",
+        "species": "Dog"
+    },
+    {
+        "id": 3,
+        "name": "Blue",
+        "species": "Cat"
+    }
+]
+
+
+def get_all_animals():
+    return ANIMALS
+```
+
+This Python module has one method defined it, and you want to make that method available to any other Python code. To do that, you import it into the `__init__.py` module.
+
+> #### `animals/__init__.py`
+
+```py
+from .request import get_all_animals
+```
+
+## Importing a Package Method
+
+Now you can import that function to be used in the main module. Put the new import statement shown below at the top of the file below the existing import statement.
+
+> #### `animals/request_handler.py`
+
+```py
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from animals import get_all_animals
+```
+
+## Using Imported Method
+
+Replace the following code...
+
+> #### `animals/request_handler.py`
+
+```py
+if self.path == "/animals":
+    response = [
+        { "id": 1, "name": "Snickers", "species": "Dog" },
+        { "id": 2, "name": "Lenny", "species": "Cat" }
+    ]
+
+else:
+    response = []
+```
+
+with this code...
+
+```py
+if self.path == "/animals":
+    response = get_all_animals()
+else:
+    response = []
+```
+
+Remember that whitespace matters in Python. The indentation level of your code determines which scope it is in. Ensure that the code above is one level of indentation further inside the `do_GET` function.
+
+Make the GET request from Postman and ensure that you get the list of all three animal dictionaries in the response as JSON.
+
+## Preparing for Locations and Employees
+
+To prepare for other resources being available in `python-server`, make the `locations` and `employees` directories now.
+
+Place an `__init__.py` file in each of those directories. Leave them empty for now.
+
+## Back Up Your Code
+
+Now would be a great time to create a `python-server` repository on your Github account and hook up your local directory and push your code up.
