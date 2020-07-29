@@ -33,20 +33,20 @@ Then download the [musichistory.db](./assets/musichistory.db) file into the dire
 >
 >Now when you go to download musichistory.db you can get to your WSL directories to put the .db file in. Or something like that :shrug:
 
-`music_history.db` **is** the database. It contains all of the tables and data. SQL comes in a variety of 'dialects'. We will be using SQLite, which, like your json files in the front-end, will allow us to simply use a file to represent our entire db. This makes it easy to get up an running with SQL without having to run a separate server to host the db.
+`music_history.db` **is** the database. It contains all of the tables and data. SQL comes in a variety of 'dialects'. We will be using SQLite, which, like your json files in the front-end, will allow us to simply use a file to represent our entire db. This makes it easy to get up and running with SQL without having to run a separate server to host the db.
 
 ### Time to connect!
-1. Type `shift + ctrl (or cmd) + P`. to open your VS Code Command Palette. 
+1. Type `shift + ctrl (or cmd) + P` to open your VS Code Command Palette. 
 1. Type in `SQLTools` to see all the commands for SQLTools. 
 1. Look for `SQLTools Management: Add New Connection` and select it.
 1. You'll be asked to select your database driver. Click on SQLite.<br>  
 <img src="./images/sqltools-driver.png" width="150"/>
 
 1. Fill out the Connection Settings by giving the connection a name ( can be anything. But let's call it music ) and by selecting `music_history.db` for the Database File.<br>  
-<img src="./images/sqltools-connection.png" width="150"/>
+<img src="./images/sqltools-connection.png" width="300"/>
 
 1. Click "Test Connection". You will likely be prompted to `enable sqltools.useNodeRuntime`.  If so, click `Enable Now`, which will prompt you to reload the window.<br>  
-<img src="./images/sqltools-node.png" width="150"/>
+<img src="./images/sqltools-node.png" width="300"/>
  
 1. Whew! Almost there. 
 1. `shift + ctrl (or cmd) + P` again to search and select `SQLTools:Connect`  
@@ -68,7 +68,7 @@ Here's how to get that `Song` table and all of its data with a SQL query:
 SELECT SongId, Title, SongLength, ReleaseDate
 FROM Song;
 ```
-Type that into `music.session.sql` and ask SQLTools to run it for you with, sigh, another `shift + ctl (or cmd) + P` and a search for SQLTools Connection: Run Current Query (Make sure your cursor is still on the line you wrote.)
+Type that into `music.session.sql` and ask SQLTools to run it for you with, sigh, another `shift + ctrl (or cmd) + P` and a search for SQLTools Connection: Run Current Query (Make sure your cursor is still on the line you wrote.)
 
 Hooray! You just ran your first SQL query.  
 Boo! Selecting that command is a pain in the butt.  
@@ -82,7 +82,7 @@ Let's make a keyboard shortcut. You're going to `Run Current Query` a _lot_.
 * Type in "sqltool"
 * Double click "SQLTools Connection: Run Current Query"
 * Hold down ctrl (or cmd) and tap "R" twice to bind it to "Cmd R + Cmd R" or "Ctrl R + Ctrl R"
-* Cmd+W to close shortcuts
+* type `ctrl (or cmd) + W` to close shortcuts
 
 Now, when you're ready to run a query, you can use that key binding instead. That will save you roughly 68 hours of your life over the span of your career. You're welcome.
 
