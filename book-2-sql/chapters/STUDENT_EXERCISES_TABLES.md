@@ -5,7 +5,6 @@
 ```sh
 cd ~/workspace/python/StudentExercises && cd $_
 touch studentexercises.db
-tableplus studentexercises.db
 ```
 
 This will create and open a completely blank SQLite database. In this chapter, you are going to be learning the usage of the following SQL statements.
