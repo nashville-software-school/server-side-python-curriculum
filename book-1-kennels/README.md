@@ -8,7 +8,7 @@
 | 🐞 | [Debugging Python in Visual Studio Code](./chapters/DEBUGGING_PYTHON.md) | | | |
 | 1 | [Request and Response](./chapters/PK_INTRO_SETUP.md) <br/> <sub style="font-size:0.85rem;">#overview #pipenv #watchgod</sub> | | | |
 | 2 | [Animals Package and Data](./chapters/PK_PACKAGES_INTRO.md) <br/> <sub style="font-size:0.85rem;">#packages #modules #lists #dictionaries</sub> | | | |
-| 3 |  [Animal Responses](./chapters/PK_ANIMAL_RESOURCE.md) <br/> <sub style="font-size:0.85rem;">#GET #functions #for-loop #if</sub> |  | | |
+| 3 |  [Animal Response](./chapters/PK_ANIMAL_RESOURCE.md) <br/> <sub style="font-size:0.85rem;">#GET #functions #for-loop #if</sub> |  | | |
 | 4 | [Adding Animals](./chapters/PK_CREATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#POST</sub> |  | | |
 | 5 | [Discharging Animals](./chapters/PK_DELETE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#for-loop #enumerate #pop()</sub> |  | | |
 | 6 | [Animal Diagnosis](./chapters/PK_UPDATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#PUT #for-loop #enumerate</sub> |  | [Meeting Bobby Kawlins](./chapters/CC_PROJECT_SETUP.md) <br/> <sub style="font-size:0.85rem;"></sub> | |
