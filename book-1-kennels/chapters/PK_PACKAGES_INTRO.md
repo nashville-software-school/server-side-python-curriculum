@@ -31,17 +31,20 @@ ANIMALS = [
     {
         "id": 1,
         "name": "Snickers",
-        "species": "Dog"
+        "species": "Dog",
+        "location": 1
     },
     {
         "id": 2,
         "name": "Gypsy",
-        "species": "Dog"
+        "species": "Dog",
+        "location": 1
     },
     {
         "id": 3,
         "name": "Blue",
-        "species": "Cat"
+        "species": "Cat",
+        "location": 2
     }
 ]
 
@@ -58,7 +61,7 @@ This Python module has one method defined it, and you want to make that method a
 from .request import get_all_animals
 ```
 
-## Importing a Package Method
+## Importing a Package Methods
 
 Now you can import that function to be used in the main module. Put the new import statement shown below at the top of the file below the existing import statement.
 

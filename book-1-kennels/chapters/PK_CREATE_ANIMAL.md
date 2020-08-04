@@ -32,7 +32,9 @@ Replace the existing `do_POST` method in the main module with the following code
         # Initialize new animal
         new_animal = None
 
-        # Add a new animal to the list
+        # Add a new animal to the list. Don't worry about
+        # the orange squiggle, you'll define the create_animal
+        # function next.
         if resource == "animals":
             new_animal = create_animal(post_body)
 
@@ -42,6 +44,8 @@ Replace the existing `do_POST` method in the main module with the following code
 
 ## Appending the Animals List
 
+Next, in the `animals/request.py` module, put the following function in to take the new dictionary representation sent my the client and append it to the `ANIMALS` list.
+
 ```py
 def create_animal(animal):
     # Get the id value of the last animal in the list
@@ -50,12 +54,68 @@ def create_animal(animal):
     # Add 1 to whatever that number is
     new_id = max_id + 1
 
-    # Add an `id` property to the animal object
+    # Add an `id` property to the animal dictionary
     animal["id"] = new_id
 
-    # Add the animal object to the list
+    # Add the animal dictionary to the list
     ANIMALS.append(animal)
 
-    # Return dictionary with `id` property added
+    # Return the dictionary with `id` property added
     return animal
 ```
+
+## Import the New Method
+
+Make the new function importable into the main module.
+
+1. In `animals/__init__.py`, import the create function.
+1. In the main module, add `create_animal` to the list of functions being imported from the `animals` package.
+
+## Create a New Animal
+
+Now open Postman and follow these steps to create a new animal.
+
+1. Open a new request tab.
+1. Make the URL `http://localhost:8088/animals`
+1. Make the request type `POST`.
+1. Click on the Body section beneath the URL
+1. Click on the `raw` radio button that appears.
+1. Paste in the following JSON in the text area beneath the radio button.
+    ```json
+    {
+        "name": "Snickers",
+        "species": "Dog",
+        "location": 1
+    }
+    ```
+1. Click the Send button.
+
+If your code was set up correctly, the status of the request should be 200 and you should see an animal object - with a new `id` property on it - in the response section at the bottom of Postman.
+
+![](./images/python-kennel-create-animal.gif)
+
+If this isn't working for you, please see an instructor as soon as possible.
+
+## Practice: Creating Locations
+
+1. Update the `do_POST` method in the main module to handle requests to the `/locations` path.
+1. Write a `create_location` function in the `locations/request.py` module that appends a new location dictionary to the list.
+
+Then perform a POST request from Postman to create a new location.
+
+## Practice: Creating Employees
+
+1. Update the `do_POST` method in the main module to handle requests to the `/employees` path.
+1. Write a `create_employee` function in the `employees/request.py` module that appends a new employee dictionary to the list.
+
+Then perform a POST request from Postman to create a new employee. Make sure that your employee JSON assigns the employee to a location with a foreign key.
+
+```json
+{
+    "name": "Emma Beaton",
+    "address": "54 Sycamore Avenue",
+    "locationId": 2
+}
+```
+
+
