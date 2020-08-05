@@ -24,7 +24,7 @@ touch animals/__init__.py
 touch animals/request.py
 ```
 
-Place the following code into the `animals/request.py` file.
+Place the following code into the `animals/request.py` file. You can either use the code below, **or** you can copy pasta from your own `database.json` file that you used for Nashville Kennels.
 
 ```py
 ANIMALS = [
@@ -32,19 +32,22 @@ ANIMALS = [
         "id": 1,
         "name": "Snickers",
         "species": "Dog",
-        "location": 1
+        "location": 1,
+        "customerId": 4
     },
     {
         "id": 2,
         "name": "Gypsy",
         "species": "Dog",
-        "location": 1
+        "location": 1,
+        "customerId": 2
     },
     {
         "id": 3,
         "name": "Blue",
         "species": "Cat",
-        "location": 2
+        "location": 2,
+        "customerId": 1
     }
 ]
 

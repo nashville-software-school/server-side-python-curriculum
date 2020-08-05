@@ -83,9 +83,10 @@ Now open Postman and follow these steps to create a new animal.
 1. Paste in the following JSON in the text area beneath the radio button.
     ```json
     {
-        "name": "Snickers",
-        "species": "Dog",
-        "location": 1
+        "name": "Falafel",
+        "species": "Cat",
+        "location": 1,
+        "customerId": 3
     }
     ```
 1. Click the Send button.
