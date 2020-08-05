@@ -32,21 +32,21 @@ ANIMALS = [
         "id": 1,
         "name": "Snickers",
         "species": "Dog",
-        "location": 1,
+        "locationId": 1,
         "customerId": 4
     },
     {
         "id": 2,
         "name": "Gypsy",
         "species": "Dog",
-        "location": 1,
+        "locationId": 1,
         "customerId": 2
     },
     {
         "id": 3,
         "name": "Blue",
         "species": "Cat",
-        "location": 2,
+        "locationId": 2,
         "customerId": 1
     }
 ]

@@ -12,7 +12,7 @@
 | 4 | [Adding Animals](./chapters/PK_CREATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#POST</sub> |  | | |
 | 5 | [Discharging Animals](./chapters/PK_DELETE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#for-loop #enumerate #pop()</sub> |  | | |
 | 6 | [Animal Diagnosis](./chapters/PK_UPDATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#PUT #for-loop #enumerate</sub> |  | [Meeting Bobby Kawlins](./chapters/CC_PROJECT_SETUP.md) <br/> <sub style="font-size:0.85rem;"></sub> | |
-| 7 | [Animal Classes](./chapters/PK_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> |  | [Critter Creation](./chapters/CC_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> | |
+| 7 | [Animal Class](./chapters/PK_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> |  | [Critter Creation](./chapters/CC_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> | |
 | 8 | [Kennel Database](./chapters/PK_DATABASE_INTRO.md) <br/> <sub style="font-size:0.85rem;">#database #sql #CREATE #INSERT</sub> |  | [Condensed Critter Creation](./chapters/CC_CONSTRUCTORS.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> | |
 | 9 | [Animal Queries](./chapters/PK_SQL_SELECT.md) <br/> <sub style="font-size:0.85rem;">#sql #SELECT #WHERE</sub> |  | [Packaging Animals for Transport](./chapters/CC_PACKAGES.md) <br/> <sub style="font-size:0.85rem;">#packages</sub> | |
 | 10 | [Deleting Animal Records](./chapters/PK_SQL_DELETE.md) <br/> <sub style="font-size:0.85rem;">#sql DELETE</sub> |  | [Piling On Properties](./chapters/CC_CLASS_PROPERTIES.md) <br/> <sub style="font-size:0.85rem;">#properties</sub> | |
