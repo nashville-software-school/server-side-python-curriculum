@@ -118,5 +118,3 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
     "locationId": 2
 }
 ```
-
-
