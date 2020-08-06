@@ -9,7 +9,7 @@ Time for you to implement your first form so that users can enter in a new book 
 > #### libraryproject/libraryapp/templates/books/form.html
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>

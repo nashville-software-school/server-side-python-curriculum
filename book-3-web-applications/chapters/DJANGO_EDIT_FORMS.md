@@ -30,7 +30,7 @@ Luckily, HTML form elements also support the verb of GET. Even though, the vast 
 Refactor your book detail template to the following code.
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -142,7 +142,7 @@ The second one determines which button should appear, and adds an additional hid
 > #### libraryproject/libraryapp/templates/books/form.html
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
