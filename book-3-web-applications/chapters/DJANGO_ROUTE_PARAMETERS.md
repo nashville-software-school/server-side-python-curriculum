@@ -87,7 +87,7 @@ from .books.details import book_details
 Create `templates/books/detail.html` and use the following code.
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>

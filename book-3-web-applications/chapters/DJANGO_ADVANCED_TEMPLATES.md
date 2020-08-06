@@ -9,7 +9,7 @@ To make the application's templates more scalable and easy to maintain, you are 
 > #### libraryproject/libraryapp/templates/shared/base.html
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -55,7 +55,7 @@ Go through your application and have every template extend the base template, an
 Now to add navigation links for your application. Open `base.html` replace its contents with the following code.
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 

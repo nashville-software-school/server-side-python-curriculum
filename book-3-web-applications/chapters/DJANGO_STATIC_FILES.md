@@ -38,7 +38,7 @@ Update your base template to include the base CSS and add a content block so tha
 > #### `libraryapp/templates/shared/base.html`
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -107,13 +107,13 @@ Next step is to create a CSS file to style the book list. Create a `styles/books
 }
 ```
 
-Also update the book list template to request the `books.css` file, and include all those classes. In a derived template, you also need to `{% load staticfiles %}` to use static files in your application, even though the base template also had that instruction in it.
+Also update the book list template to request the `books.css` file, and include all those classes. In a derived template, you also need to `{% load static %}` to use static files in your application, even though the base template also had that instruction in it.
 
 > #### `libraryapp/templates/books/list.html`
 
 ```jinja
 {% extends 'shared/base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'styles/books.css' %}" />
@@ -200,7 +200,7 @@ Here's the entire file that you can use to replace what you have.
 
 ```jinja
 {% extends 'shared/base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'styles/books.css' %}" />

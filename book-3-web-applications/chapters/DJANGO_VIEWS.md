@@ -166,7 +166,7 @@ Then open that file in Visual Studio code, and place the following code into it.
 > #### libraryproject/libraryapp/templates/books/list.html
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -326,7 +326,7 @@ Then your `templates/librarians/list.html` template will iterate the `all_librar
 > #### libraryproject/libraryapp/templates/librarians/list.html
 
 ```jinja
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
