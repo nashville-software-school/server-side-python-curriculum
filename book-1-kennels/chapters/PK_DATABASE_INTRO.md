@@ -2,6 +2,10 @@
 
 ## Videos to Watch First
 
+* [Creating Tables - SQL - Tutorial 6](https://youtu.be/SPPTQwx4FfE?t=300)
+* [Inserting Data - SQL - Tutorial 7](https://www.youtube.com/watch?v=3Qq93zqO3GE)
+* [Constraints - SQL - Tutorial 8](https://www.youtube.com/watch?v=9WP35xwZ3tk)
+
 
 ## Creating Database and SQL Files
 
