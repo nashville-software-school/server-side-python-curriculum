@@ -3,22 +3,50 @@
 ## Videos to Watch First
 
 
-## Creating Database File
+## Creating Database and SQL Files
 
+In your project directory, create two files:
+
+1. `kennel.db` : This is your database to store all of the data.
+1. `kennel.sql` : This is a text file to hold the SQL commands to interact with the database.
 
 ## Creating Connection to Database File
 
+1. Click on the SQLTools icon at the very left of VS Code. It looks like a soup can 🥫.
+1. Click on "Add New Connection"
+1. Choose SQLite in the window that appears.
+1. Enter in "Python Kennels" for the name of the connection.
+1. Click on the "Select File" button.
+1. Choose the `kennel.db` file you created.
+1. Click the "Test Connection" button to verify that it works.
+1. Click the "Save Connection" button.
+
+You should then see a new connection in the "Connections" panel in the upper-left part of your screen.
+
+![](./images/connecting-to-kennel-database.gif)
 
 ## Creating Tables
+
+Now open the `kennel.sql` file in VS Code.
 
 The `CREATE TABLE` SQL statement creates a table in a database to store a particular resource. Columns, or fields, are defined for each table to store the individual properties of that resource.
 
 Time to create a table for each of the four resources in this application.
 
-1. Locations
-1. Customers
-1. Animals
-1. Employees
+* Locations
+* Customers
+* Animals
+* Employees
+
+1. Copy the `CREATE TABLE` SQL commands below and paste it into the `kennel.sql` file.
+1. Highlight all of the text.
+1. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows. You will then be prompted to choose a connection.
+    ![](./images/choose-connection.png)
+1.  Choose "Python Kennels".
+1. A new tab will open in VS Code and you should see this message in it - **Query returned 0 rows**. That means it worked.
+    ![query returned 0 rows](./images/create-tables-complete.png)
+
+If any step of this didn't work, contact a member of your instruction team immediately to get it fixed.
 
 ```sql
 CREATE TABLE `Location` (
@@ -58,7 +86,13 @@ CREATE TABLE `Employee` (
 
 ## Inserting Starter Data
 
+
 The `INSERT INTO` SQL statement allows you to enter in the actual data about individual resources that will be stored in a table. The values have to match the order in which the columns were defined in the `CREATE TABLE` statements above, so yes, order matters.
+
+1. Once the tables are created from the step above, copy the `INSERT INTO` statements below into your `kennel.sql` file.
+1. Highlight only the `INSERT INTO` statements. Make sure none of the `CREATE TABLE` statements get highlighted.
+1. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows.
+1. A new tab will open in VS Code and you should see this message in it - **Query returned 0 rows**. That means it worked.
 
 ```sql
 INSERT INTO `Location` VALUES (null, 'Nashville North', "64 Washington Heights");
@@ -84,5 +118,8 @@ INSERT INTO `Animal` VALUES (null, "Jax", "Beagle", 1, 1);
 INSERT INTO `Animal` VALUES (null, "Falafel", "Siamese", 4, 2);
 INSERT INTO `Animal` VALUES (null, "Doodles", "Poodle", 3, 1);
 INSERT INTO `Animal` VALUES (null, "Daps", "Boxer", 2, 2);
-
 ```
+
+## What's Next
+
+After you got all the above steps to work, it's time to move to the next chapter and write your first queries to get information from the database.
