@@ -2,9 +2,13 @@
 
 In the previous chapter about extending base templates, you put a `<style>` tag in the `base.html` template. This is certainly not best practice. You want to have all of your styles in `.css` files contained in a `styles` subdirectory.
 
-When you start a Django application, one of the directories that it creates for you is `static`. Go ahead and create a sub-directory of `styles` in that directory, and then create a `styles/base.css` file. Remove the styles from the base HTML file and place the following CSS in the new static file.
+Any resources like CSS files, JS files, or images are considered 'static' assets, meaning Django just needs to serve them up when a browser asks for them. Your `settings.py` file has a default setting, `STATIC_URL = '/static/'`, that tells Django to look in a directory called `static` for those files.
 
-> #### `libraryapp/static/styles/base.css`
+In your `libraryapp` directory create a sub-directory called `static` and then add a `styles` directory to `static`. Then create a `styles/base.css` file. Remove the styles from the base HTML file.
+
+> #### `libraryapp/static/styles/base.css`  
+
+Then place the following CSS in the new `base.css` file.
 
 ```css
 body {
@@ -31,9 +35,19 @@ body {
 }
 ```
 
+To make the final connection between your `static` directory and your templates that will be asking for those files, add the following after the closing square bracket of your libraryapp's `urls.py`.
+
+```py
++ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+```
+
+It should look like this
+
+<img src="./images/static_settings.png" width="400"/>
+
 ## CSS Content Block
 
-Update your base template to include the base CSS and add a content block so that dervied templates can specify their own CSS files. Note the keyword of `static` in the interpolated value of the `href` attribute of the `<link>` tag. It also adds a `<main>` element around your content block.
+Update your base template to include the base CSS and add a content block so that dervied templates can specify their own CSS files. Note the keyword of `static` in the interpolated value of the `href` attribute of the `<link>` tag. This new code also adds a `<main>` element around your content block so we can add a class and style it.
 
 > #### `libraryapp/templates/shared/base.html`
 
