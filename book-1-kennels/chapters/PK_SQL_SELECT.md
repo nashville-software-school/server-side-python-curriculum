@@ -55,10 +55,10 @@ def get_all_animals():
                             row['location_id'], row['customer_id'])
             animal.id = row['id']
 
-            # Use `json` package to properly serialize object as JSON
-            animals.append(json.dumps(animal.__dict__))
+            animals.append(animal.__dict__))
 
-    return animals
+    # Use `json` package to properly serialize list as JSON
+    return json.dumps(animals)
 ```
 
 ## Request all Animals from Postman

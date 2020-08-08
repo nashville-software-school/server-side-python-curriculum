@@ -84,7 +84,7 @@ Then update the `do_GET()` function with the following code.
 
 ```py
     def do_GET(self):
-        self._set_headers()
+        self._set_headers(200)
         response = {}  # Default response
 
         # Parse the URL and capture the tuple that is returned

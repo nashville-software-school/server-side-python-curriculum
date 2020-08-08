@@ -4,23 +4,14 @@ When it's time for an animal to be picked up by their loving owner, you need to 
 
 ## Handle DELETE Requests
 
-In the main module, add the following method to the **`HandleRequests`** class. Note that the response code in this method is `204` instead of `200`.
+A 204 response code in HTTP means, _"I, the server, successfully processed your request, but I have no information to send back to you."_
 
-The 204 response code in HTTP means, _"I, the server, successfully processed your request, but I have no information to send back to you."_
-
-```py
-def _set_no_content_headers(self):
-    self.send_response(204)
-    self.send_header('Content-type', 'application/json')
-    self.end_headers()
-```
-
-Now add the method to the class to process the DELETE request.
+Add the method to the class to process the DELETE request. Note that the response code is set to 204 _(No Content)_ instead of 200 _(Ok)_ or 201 _(Created)_.
 
 ```py
 def do_DELETE(self):
     # Set a 204 response code
-    self._set_no_content_headers()
+    self._set_headers(204)
 
     # Parse the URL
     (resource, id) = self.parse_url(self.path)

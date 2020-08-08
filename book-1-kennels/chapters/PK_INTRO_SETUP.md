@@ -22,15 +22,17 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 class HandleRequests(BaseHTTPRequestHandler):
 
     # Here's a class function
-    def _set_headers(self):
-        self.send_response(200)
+    def _set_headers(self, status):
+        self.send_response(status)
         self.send_header('Content-type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
         self.end_headers()
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any GET request.
     def do_GET(self):
-        self._set_headers()
+        # Set the response code to 'Ok'
+        self._set_headers(200)
 
         # Your new console.log() that outputs to the terminal
         print(self.path)
@@ -51,8 +53,8 @@ class HandleRequests(BaseHTTPRequestHandler):
     # Here's a method on the class that overrides the parent's method.
     # It handles any POST request.
     def do_POST(self):
-        '''Reads post request body'''
-        self._set_headers()
+        # Set response code to 'Created'
+        self._set_headers(201)
 
         content_len = int(self.headers.get('content-length', 0))
         post_body = self.rfile.read(content_len)

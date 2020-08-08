@@ -18,8 +18,7 @@ Replace the existing `do_POST` method in the main module with the following code
 
 ```py
     def do_POST(self):
-        '''Reads post request body'''
-        self._set_headers()
+        self._set_headers(201)
         content_len = int(self.headers.get('content-length', 0))
         post_body = self.rfile.read(content_len)
 

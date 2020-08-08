@@ -19,11 +19,11 @@ In this chapter, you are going to make your Python server handle the PUT request
 
 ## Handle PUT Request
 
-Place the following method to the **`HandleRequests`** class in the main module.
+Place the following method to the **`HandleRequests`** class in the main module. Note that the status code is also 204 _(No Content)_ for a PUT request. You need to tell the client that the request was successful, but you don't send back the updated resource.
 
 ```py
 def do_PUT(self):
-    self._set_no_content_headers()
+    self._set_headers(204)
     content_len = int(self.headers.get('content-length', 0))
     post_body = self.rfile.read(content_len)
     post_body = json.loads(post_body)
