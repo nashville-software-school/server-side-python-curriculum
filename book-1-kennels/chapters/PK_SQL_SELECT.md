@@ -3,12 +3,16 @@
 
 ## Required Package from the Standard Library
 
+The `sqlite3` package is built into Python and will allow you to query your database. The `json` package is also built into Python and allows you to serialize Python data structures to JSON format, and vice versa.
+
 ```py
 import sqlite3
 import json
 ```
 
 ## Import the Database Model Class
+
+Now import the **`Animal`** class so that you can create instances of it for each row of data that gets returned from the database.
 
 ```py
 from models import Animal
@@ -47,7 +51,8 @@ def get_all_animals():
         for row in dataset:
 
             # Create an animal instance from the current row
-            animal = Animal(row['name'], row['breed'], row['status'], row['location_id'], row['customer_id'])
+            animal = Animal(row['name'], row['breed'], row['status'],
+                            row['location_id'], row['customer_id'])
             animal.id = row['id']
 
             # Use `json` package to properly serialize object as JSON
@@ -92,10 +97,12 @@ def get_single_animal(id):
         WHERE a.id = ?
         """, ( id, ))
 
+        # Load the single result into memory
         data = db_cursor.fetchone()
 
         # Create an animal instance from the current row
-        animal = Animal(data['name'], data['breed'], data['status'], data['location_id'], data['customer_id'])
+        animal = Animal(data['name'], data['breed'], data['status'],
+                        data['location_id'], data['customer_id'])
         animal.id = data['id']
 
         return json.dumps(animal.__dict__)
@@ -130,4 +137,14 @@ http://localhost:8088/animals/2
 http://localhost:8088/animals/3
 
 ![](./images/postman-request-single-animal.gif)
+
+## Practice: Locations, Customers, and Employees
+
+Follow this same pattern for all other resources.
+
+1. Import `json`, and `sqlite3`
+1. Import the corresponding class for the resource
+1. Write SQL statements to get all database rows for the `get_all_*` functions.
+1. Write SQL statements with a WHERE clause to get a single database row for the `get_single_*` functions.
+1. Request all resources with the Postman client and verify that all GET requests return the correct JSON representations.
 
