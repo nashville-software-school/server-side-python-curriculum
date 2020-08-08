@@ -1,5 +1,12 @@
 # Getting Animals from the Database
 
+## Videos to Watch First
+
+* [SQL SELECT Tutorial |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=YufocuHbYZo)
+* [SQL SELECT Tutorial - Part 2 |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=PkJKzR_sClM)
+* []()
+* []()
+* []()
 
 ## Required Package from the Standard Library
 

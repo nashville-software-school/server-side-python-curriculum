@@ -2,6 +2,7 @@
 
 ## Videos to Watch First
 
+* [What is SQL? [in 4 minutes for beginners]](https://www.youtube.com/watch?v=27axs9dO7AE)
 * [Creating Tables - SQL - Tutorial 6](https://youtu.be/SPPTQwx4FfE?t=300)
 * [Inserting Data - SQL - Tutorial 7](https://www.youtube.com/watch?v=3Qq93zqO3GE)
 * [Constraints - SQL - Tutorial 8](https://www.youtube.com/watch?v=9WP35xwZ3tk)
@@ -63,9 +64,9 @@ CREATE TABLE `Customer` (
     `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     `name`    TEXT NOT NULL,
     `address`    TEXT NOT NULL,
-    `email`    TEXT NOT NULL
+    `email`    TEXT NOT NULL,
+    `password`    TEXT NOT NULL
 );
-
 
 CREATE TABLE `Animal` (
 	`id`  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -111,10 +112,10 @@ INSERT INTO `Employee` VALUES (null, "Hannah Hall", "204 Empty Ave", 1);
 INSERT INTO `Employee` VALUES (null, "Leah Hoefling", "200 Success Way", 2);
 
 
-INSERT INTO `Customer` VALUES (null, "Mo Silvera", "200 Success Way", "mo@silvera.com");
-INSERT INTO `Customer` VALUES (null, "Bryan Nilsen", "500 Internal Error Blvd", "bryan@nilsen.com");
-INSERT INTO `Customer` VALUES (null, "Jenna Solis", "301 Redirect Ave", "jenna@solis.com");
-INSERT INTO `Customer` VALUES (null, "Emily Lemmon", "454 Mulberry Way", "emily@lemmon.com");
+INSERT INTO `Customer` VALUES (null, "Mo Silvera", "201 Created St", "mo@silvera.com", "password");
+INSERT INTO `Customer` VALUES (null, "Bryan Nilsen", "500 Internal Error Blvd", "bryan@nilsen.com", "password");
+INSERT INTO `Customer` VALUES (null, "Jenna Solis", "301 Redirect Ave", "jenna@solis.com", "password");
+INSERT INTO `Customer` VALUES (null, "Emily Lemmon", "454 Mulberry Way", "emily@lemmon.com", "password");
 
 
 
