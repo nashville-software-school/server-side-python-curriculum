@@ -158,7 +158,7 @@ def library_list(request):
 
         template = 'libraries/list.html'
         context = {
-            'all_libraries': libraries
+            'all_libraries': libraries.values()
         }
 
         return render(request, template, context)
