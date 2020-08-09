@@ -1,8 +1,33 @@
 # Handling Query String Parameters
 
+## Map of the URL
+
+The Uniform Resource Locator _(URL)_ has several parts that allow every resource on the World Wide Web to have a unique identifier, and allow for filtering of resources with parameters.
+
+![](./images/url-parts.png)
+
 ## Goal: Find a Customer by Email Address
 
 Get ready, because to do this task, the code is about to get significantly more complex.
+
+To get a customer resource by its email field - because you don't know its unique identifier - you would use a query string parameter.
+
+http://localhost:8088/customers?email=jenna@solis.com
+
+To get a customer by its name field - because you don't know its unique identifier - you would use a different query string parameter.
+
+http://localhost:8088/customers?name=Jenna+Solis
+
+This makes parsing the URL more difficult.
+
+1. Is there a question mark in the resource? If so, that means there is a query string parameter.
+1. Split on the `?` to separate `customers` from `email=jenna@solis.com`.
+1. Then split on the `=` to get the parameter name and property value separated as `[ 'email', 'jenna@solis.com' ]`.
+1. If there isn't a query string, you still have to check if there is a route parameter at the end, and parse that like you have been.
+
+Update the `parse_url()` method in the main module with the code below.
+
+> ##### `request_handler.py`
 
 ```py
     def parse_url(self, path):
@@ -12,7 +37,6 @@ Get ready, because to do this task, the code is about to get significantly more 
         # Check if there is a query string parameter
         if "?" in resource:
             # GIVEN: /customers?email=jenna@solis.com
-
 
             param = resource.split("?")[1]  # email=jenna@solis.com
             resource = resource.split("?")[0]  # 'customers'
@@ -35,4 +59,115 @@ Get ready, because to do this task, the code is about to get significantly more 
 
             return (resource, id)
 ```
+
+Whew.
+
+Ok, so if you thought that code was intense, now you need to refactor the `do_GET()` method in the main module.
+
+> ##### `request_handler.py`
+
+```py
+    def do_GET(self):
+        self._set_headers(200)
+
+        response = {}
+
+        # Parse URL and store entire tuple in a variable
+        parsed = self.parse_url(self.path)
+
+        # Response from parse_url() is a tuple with 2
+        # items in it, which means the request was for
+        # `/animals` or `/animals/2`
+        if len(parsed) == 2:
+            ( resource, id ) = parsed
+
+            if resource == "animals":
+                if id is not None:
+                    response = f"{get_single_animal(id)}"
+                else:
+                    response = f"{get_all_animals()}"
+            elif resource == "customers":
+                if id is not None:
+                    response = f"{get_single_customer(id)}"
+                else:
+                    response = f"{get_all_customers()}"
+
+        # Response from parse_url() is a tuple with 3
+        # items in it, which means the request was for
+        # `/resource?parameter=value`
+        elif len(parsed) == 3:
+            ( resource, key, value ) = parsed
+
+            # Is the resource `customers` and was there a
+            # query parameter that specified the customer
+            # email as a filtering value?
+            if key == "email" and resource == "customers":
+                response = get_customer_by_email(value)
+
+        self.wfile.write(response.encode())
+```
+
+## Finding the Customer with a WHERE Clause
+
+> ##### `customers/request.py`
+
+In the method that queries the database for customers that have the specified email, it's a simpler query with a single WHERE clause that uses a single SQL parameter.
+
+```py
+def get_customer_by_email(email):
+
+    with sqlite3.connect("./kennel.db") as conn:
+        conn.row_factory = sqlite3.Row
+        db_cursor = conn.cursor()
+
+        db_cursor.execute("""
+        select
+            c.id,
+            c.name,
+            c.address,
+            c.email,
+            c.password
+        from Customer c
+        WHERE c.email = ?
+        """, ( email, ))
+
+        data = db_cursor.fetchone()
+
+        # Create an customer instance from the current row
+        customer = Customer(data['name'], data['address'], data['email'],
+                        data['password'])
+        customer.id = data['id']
+
+        # Return the JSON serialized Customer object
+        return json.dumps(customer.__dict__)
+
+```
+
+You're going to need to read that all of that code plenty of times, and you'll need to try out different variations of writing it yourself.
+
+Funny... that's exactly what you're about to do.
+
+## Practice: Find Animals by Location
+
+If the client makes the following request...
+
+http://localhost:8088/animals?location_id=1
+
+Then the response should only contain the animals currently registered at that location.
+
+## Practice: Find Employees by Location
+
+If the client makes the following request...
+
+http://localhost:8088/employees?location_id=1
+
+Then the response should only contain the employees currently working at that location.
+
+## Practice: Find Animals by Status
+
+If the client makes the following request...
+
+http://localhost:8088/animals?status=Treatment
+
+Then the response should only the animals currently being treated by the employee, which could include medical care, bathing, nail clipping, etc...
 

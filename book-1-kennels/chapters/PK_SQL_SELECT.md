@@ -4,13 +4,12 @@
 
 * [SQL SELECT Tutorial |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=YufocuHbYZo)
 * [SQL SELECT Tutorial - Part 2 |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=PkJKzR_sClM)
-* []()
-* []()
-* []()
 
 ## Required Package from the Standard Library
 
 The `sqlite3` package is built into Python and will allow you to query your database. The `json` package is also built into Python and allows you to serialize Python data structures to JSON format, and vice versa.
+
+> ##### `animals/request.py`
 
 ```py
 import sqlite3
@@ -21,11 +20,17 @@ import json
 
 Now import the **`Animal`** class so that you can create instances of it for each row of data that gets returned from the database.
 
+> ##### `animals/request.py`
+
 ```py
 from models import Animal
 ```
 
 ## Get All Animals
+
+Now you can copy the function below into your animal request module to query the database for all animals, convert each row into an **`Animal`** instance, convert the list to JSON, and respond to the client request.
+
+> ##### `animals/request.py`
 
 ```py
 def get_all_animals():
@@ -84,14 +89,16 @@ Then you need to add a second argument to the `execute()` method. That second ar
 
 Since you will only get one row returned, you will use the `fetchone()` method instead of `fetchall()`.
 
+> ##### `animals/request.py`
+
 ```py
 def get_single_animal(id):
-    # Open a connection to the database
     with sqlite3.connect("./kennel.db") as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 
-        # Write the SQL query to get the information you want
+        # Use a ? parameter to inject a variable's value
+        # into the SQL statement.
         db_cursor.execute("""
         SELECT
             a.id,
