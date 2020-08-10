@@ -135,8 +135,7 @@ def get_customer_by_email(email):
 
         # Create an customer instance from the current row
         customer = Customer(data['name'], data['address'], data['email'],
-                        data['password'])
-        customer.id = data['id']
+                            data['password'], data['id'])
 
         # Return the JSON serialized Customer object
         return json.dumps(customer.__dict__)

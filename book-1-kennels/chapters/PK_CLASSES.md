@@ -25,12 +25,12 @@ class Animal():
     # Class initializer. It has 5 custom parameters, with the
     # special `self` parameter that every method on a class
     # needs as the first parameter.
-    def __init__(self, name, species, status, location, customer):
+    def __init__(self, name, species, status, location_id, customer_id):
         self.name = name
         self.species = species
         self.status = status
-        self.location_id = location
-        self.customer_id = customer
+        self.location_id = location_id
+        self.customer_id = customer_id
 ```
 
 Now, to create a new Python object **based** on that class, you would write the following code.
