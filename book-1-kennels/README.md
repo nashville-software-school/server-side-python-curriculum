@@ -21,7 +21,7 @@
 | 12 | [Using React Kennels Client Again](./chapters/PK_REACT_CLIENT.md) <br/> <sub style="font-size:0.85rem;">#react</sub> |  |  |
 | 13 | [Updating Animal Records](./chapters/PK_SQL_UPDATE.md) <br/> <sub style="font-size:0.85rem;">#sql #UPDATE #HTTP_PUT</sub> |  | [Food Function Fun](./chapters/CC_METHODS.md) <br/> <sub style="font-size:0.85rem;">#methods</sub> |
 | 14 | [Animals with Location Report](./chapters/PK_SQL_JOINS.md) <br/> <sub style="font-size:0.85rem;">#sql #JOIN #HTTP_GET</sub> | [Including Mood with Entry](./chapters/DJ_JOIN_MOOD.md) | [Composing Coming Attractions](./chapters/CC_COMPOSITION.md) <br/> <sub style="font-size:0.85rem;">#object-relationships</sub> |
-| 15 | [Admitting Animals](./chapters/PK_INSERT.md) <br/> <sub style="font-size:0.85rem;">#sql #INSERT</sub> | [Recording New Entries](./chapters/DJ_UPDATE.md) | [Controlling the Animals](./chapters/CC_GETTER_SETTER.md) <br/> <sub style="font-size:0.85rem;">#properties #get #set</sub> |
+| 15 | [Admitting Animals](./chapters/PK_POST_INSERT.md) <br/> <sub style="font-size:0.85rem;">#sql #INSERT</sub> | [Recording New Entries](./chapters/DJ_UPDATE.md) | [Controlling the Animals](./chapters/CC_GETTER_SETTER.md) <br/> <sub style="font-size:0.85rem;">#properties #get #set</sub> |
 | Interlude: SQL | [SQL Murder Mystery](https://mystery.knightlab.com/) |  |  |
 | 16 |  | [Editing Journal Entries](./chapters/DJ_UPDATE.md) | [Eliminating Class Waste](./chapters/CC_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance</sub> |
 | 17 |  |  | [Complex, Clean Critter Classes](./chapters/CC_MULTIPLE_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance #multiple</sub> |  |
