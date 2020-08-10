@@ -54,7 +54,9 @@ In most dialects of SQL, you can discard the `INNER` and it will be assumed. You
 
 In the query below, you start with selecting the `Animal` table and specify which fields you want. One field is `location_id`, but that's not enough. Remember, the goal is to have the location name and address embedded in the response.
 
-Now you can join the `Location` table into the query so that the name and address fields
+Now you can join the `Location` table into the query so that the name and address fields are in the results.
+
+#### SQL
 
 ```sql
 SELECT
@@ -71,10 +73,74 @@ JOIN Location l
     ON l.id = a.location_id
 ```
 
+#### Results
+
 |id|name|breed|status|location_id|customer_id|location_name|location_address|
 |--|--|--|--|--|--|--|--|
-1|	<span style="color:red">Snickers</span>|	Recreation|	Dalmation|	1|	4|	Nashville North|	64 Washington Heights	|
+1|	Snickers|	Recreation|	Dalmation|	1|	4|	Nashville North|	64 Washington Heights	|
 2|	Jax|	Recovery|	Beagle|	1|	1|	Nashville North|	64 Washington Heights	|
 3|	Falafel|	Treatment|	Siamese|	2|	4|	Nashville South|	101 Penn Ave	|
 4|	Doodles|	Kennel|	Poodle|	1|	3|	Nashville North|	64 Washington Heights	|
 6|	Daps|	Kennel|	Boxer|	2|	2|	Nashville South|	101 Penn Ave|
+
+## Columns Used to Make an Animal
+
+### Animal Fields
+
+Each row contains 8 fields. The information in the first 6 will be used to create an **`Animal`** instance in your Python code.
+
+![](./images/animal-columns.png)
+
+
+### Location Fields
+
+The final two columns will be used to create a **`Location`** instance in your Python code.
+
+![](./images/location-columns.png)
+
+## Updating The SQL
+
+Take the SQL statement from above and replace the existing SQL in the `get_all_animals()` function.
+
+> #### `animals/request.py`
+
+```py
+db_cursor.execute("""
+SELECT
+    a.id,
+    a.name,
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id,
+    l.name location_name,
+    l.address location_address,
+    c.name customer_name,
+    c.address customer_address
+FROM Animal a
+JOIN `Location` l
+    ON l.id = a.location_id
+""")
+```
+
+## Creating Location Instances
+
+Now replace your `for` loop with the following code.
+
+```py
+for row in dataset:
+
+    # Create an animal instance from the current row
+    animal = Animal(row['name'], row['breed'], row['status'],
+                    row['location_id'], row['customer_id'])
+    animal.id = row['id']
+
+    # Create a Location instance from the current row
+    location = Location(row['location_name'], row['location_address'])
+
+    # Add the dictionary representation of the location to the animal
+    animal.location = location.__dict__
+
+    # Add the dictionary representation of the animal to the list
+    animals.append(animal.__dict__)
+```
