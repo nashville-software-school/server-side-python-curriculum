@@ -1,11 +1,11 @@
-# Installations and Configuration for a DRF Project
+# DRF Installations and Configuration
 
 ## Creating the Project
 
 ```sh
 cd ~/workspace/python
-django-admin startproject kennywood
-cd kennywood
+django-admin startproject levelup
+cd levelup
 pipenv shell
 ```
 
