@@ -69,5 +69,11 @@ After this is completed, try running `pyenv install 3.8.1` again
 This tool will manage 3rd party software that is needed for each of your projects.
 
 ```sh
-brew install pipenv
+pip3 install pipenv
 ```
+
+## Orientation React Clients
+
+Visit the [kennel-template](https://github.com/nashville-software-school/kennel-template) repository and click the **`Use this template`** button to get the React client copied to your Github account.
+
+![animation showing how to use template](./images/kennel-template-process.gif)
