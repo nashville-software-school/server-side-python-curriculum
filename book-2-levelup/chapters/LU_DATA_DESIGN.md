@@ -4,75 +4,46 @@
 
 > Insert dialogue here
 
-## Create API Application
-
-Now that the project is set up and has some initial configuration, it's time to create an application for the Level Up API project. Django projects are containers for one, or more, applications. Right now, we only need one application in this project. Make sure you are in your project directory when you run this command.
-
-```sh
-python manage.py startapp levelupapi
-```
-
-## Setting Up Package Directories
-
-Run the following commands to remove some boilerplate files that you won't be using, and create directories that will contain the code for your application.
-
-```sh
-cd levelupapi
-rm models.py views.py
-mkdir models
-mkdir views
-```
-
-## Update Settings
-
-Below, there are four sections of your project's `settings.py` module. Replace your existing sections with the code below.
-
-> #### `levelup/levelup/settings.py`
-
-```py
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'corsheaders',
-    'levelupapi',
-]
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
-}
-
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-    'http://127.0.0.1:3000'
-)
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-```
 
 
 ## Design Models
+
+Now that the application has been configured correctly, it's time to start designing your database. In Django, you use model classes instead of writing `CREATE TABLE` SQL statements.
+
+Here is a quick example.
+
+Imagine that you want to create a table in your database to store information about toys. These toys have a few properties.
+
+* Color
+* Price
+* Material
+* Name
+
+In SQL, you would write the following SQL statement to create the table.
+
+```sql
+CREATE TABLE `Toy` (
+	`id`	    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`name`	    TEXT NOT NULL,
+	`material`	TEXT NOT NULL
+	`color` 	TEXT NOT NULL
+	`price` 	FLOAT NOT NULL
+);
+```
+
+Django can do that for you without ever needing to write SQL. You write classes that act as database models. You even get to leave out the `id` field. Django will add that automatically.
+
+```py
+from django.db import models
+
+class Toy(models.Model):
+    name = models.CharField(max_length=55)
+    material = models.CharField(max_length=55)
+    color = models.CharField(max_length=12)
+    price = models.DecimalField(max_length=7,decimal_places=2)
+```
+
+
 
 > Insert narrative for meeting Karen and her stumbling walkthrough of what she wants.
 
