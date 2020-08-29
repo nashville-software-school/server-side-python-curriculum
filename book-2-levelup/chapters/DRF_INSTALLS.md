@@ -29,7 +29,7 @@ good-names=i,j,ex,pk
 ' > .pylintrc
 ```
 
-In Visual Studio Code, `cmd+shift+p` and open "Preferences: Open Settings (JSON)". Add the following configuration item to the object.
+Open Visual Studio Code in the levelup directory, and then `cmd+shift+p` and open "Preferences: Open Settings (JSON)". Add the following configuration item to the object.
 
 ```json
 "python.linting.pylintArgs": [

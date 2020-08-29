@@ -1,5 +1,8 @@
 # Book 1 - Python Kennels Data
 
+![](./chapters/images/kennel-car.png)
+![](./chapters/images/kennel-car.png)
+
 ## Chapters
 
 | # | 🎅🏽 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 📔 <br/> Daily Journal <br/><sub>(_Data Server_)</sub> |🦆 <br/> Critters and Croquettes <br/><sub>(_Fundamentals &amp; <br/> Inheritance_)</sub>
