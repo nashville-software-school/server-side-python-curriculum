@@ -5,7 +5,7 @@
 
 ## Chapters
 
-| # | 🎅🏽 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 📔 <br/> Daily Journal <br/><sub>(_Data Server_)</sub> |🦆 <br/> Critters and Croquettes <br/><sub>(_Fundamentals &amp; <br/> Inheritance_)</sub>
+| # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 📔 ✒️ <br/> Daily Journal <br/><sub>(_Data Server_)</sub> | 🐑 🦆 <br/> Critters and Croquettes <br/><sub>(_Fundamentals &amp; <br/> Inheritance_)</sub>
 |--|--|---|---|
 | 💻 | [Installations](./chapters/INSTALLATIONS.md) | | |
 | 🐞 | [Debugging Python in Visual Studio Code](./chapters/DEBUGGING_PYTHON.md) | | |
