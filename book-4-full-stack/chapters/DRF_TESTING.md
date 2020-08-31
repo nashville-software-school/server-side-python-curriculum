@@ -132,7 +132,7 @@ class TestAnimal(TestCase):
 
         #  Use the client to send the request and store the response
         response = self.client.post(
-            reverse('history:animal-list'), new_animal
+            reverse('animal-list'), new_animal
           )
 
         # Assert
@@ -164,7 +164,7 @@ def test_list_animals(self):
     )
 
     # Now we can grab all the animals (meaning the one we just created) from the db
-    response = self.client.get(reverse('history:animal-list'))
+    response = self.client.get(reverse('animal-list'))
 
     # Check that the response is 200 OK.
     # This is checking for the GET request result, not the POST. We already checked that POST works in the previous test!
