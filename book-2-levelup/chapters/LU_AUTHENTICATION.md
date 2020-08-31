@@ -130,3 +130,15 @@ path('register', register_user)
 # Requests to http://localhost:8000/login will be routed to the login_user function
 path('register', register_user)
 ```
+
+## Authenticating a User
+
+Now you can test this out as an actual Gamer who would be using the application. Launch your initial React client, and try to log in with the account that was created with your fixtures.
+
+Username is `me@me.com`
+
+Password is `me`
+
+Verify that you can log in and that the logout link takes you back to the log in screen.
+
+![](./images/initial-client-auth.gif)
