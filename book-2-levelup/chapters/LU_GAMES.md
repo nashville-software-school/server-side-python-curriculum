@@ -185,3 +185,105 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'url', 'title', 'maker', 'number_of_players', 'skill_level', 'gametype')
         depth = 1
 ```
+
+## Step 4: The URL
+
+The last step is for the server to specify which URL it will respond to with information about games. In this case, you want to expose a `/games` resource at the end of the base API.
+
+http://localhost:8000/games
+
+and
+
+http://localhost:8000/games/1
+
+If any client submits a GET request to either one of those URLs, you need to clearly state that the **`Games`** ViewSet will handle the request. You will use a built-in class in Django called the `DefaultRouter`.
+
+
+Add the following import statement at the top of the urls module.
+
+> #### `levelup/levelup/urls.py`
+
+```py
+from levelupapi.views import Games
+```
+
+Then, add a new URL mapping to the default router.
+
+> #### `levelup/levelup/urls.py`
+
+```py
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'gametypes', GameTypes, 'gametype')
+router.register(r'games', Games, 'game')
+```
+
+## Client Code
+
+You can start off with this starter React code to request and display a list of games from the API.
+
+> #### `src/components/game/GameProvider.js`
+
+```jsx
+import React, { useState } from "react"
+
+export const GameContext = React.createContext()
+
+export const GameProvider = (props) => {
+    const [ games, setGames ] = useState([])
+
+    const getGames = () => {
+        return fetch("http://localhost:8000/games", {
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("lu_token")}`
+            }
+        })
+            .then(response => response.json())
+            .then(setGames)
+    }
+
+    return (
+        <GameContext.Provider value={{ games, getGames }} >
+            { props.children }
+        </GameContext.Provider>
+    )
+}
+```
+
+> #### `src/components/game/GameList.js`
+
+```jsx
+import React, { useContext, useEffect } from "react"
+import { GameContext } from "./GameProvider.js"
+
+export const GameList = (props) => {
+    const { games, getGames } = useContext(GameContext)
+
+    useEffect(() => {
+        getGames())
+    }, [])
+
+    return (
+        <article className="games">
+            {
+                games.map(game => {
+                    return <section key={`game--${game.id}`} className="game">
+                        <div className="game__title">{game.title} by {game.maker}</div>
+                        <div className="game__players">{game.number_of_players} players needed</div>
+                        <div className="game__skillLevel">Skill level is {game.skill_level}</div>
+                    </section>
+                })
+            }
+        </article>
+    )
+}
+```
+
+> #### `src/components/ApplicationViews.js`
+
+```jsx
+<GameProvider>
+    <Route exact path="/">
+        <GameList />
+    </Route>
+</GameProvider>
+```
