@@ -11,8 +11,8 @@ This book introduces you to the Django application framework, and the Django RES
 | 1 | [Level Up API Setup](./chapters/DRF_INSTALLS.md) | [Creating Kennywood API](./chapters/KW_SETUP.md) <br/> <sub style="font-size:0.85rem;">#settings #setup</sub> |  |
 | 2 | [Meeting Karen](./chapters/LU_DATA_DESIGN.md) <br/> <sub style="font-size:0.85rem;">#database #models</sub> | [Saturday in the Park](./chapters/SITP_SETUP.md) <br/> <sub style="font-size:0.85rem;">#react #client</sub> |  |
 | 3 | [Level Up Client](./chapters/LU_CLIENT.md) <br/> <sub style="font-size:0.85rem;">#react #components</sub> | [Design the Kennywood Database](./chapters/KW_MODELS.md) <br/> <sub style="font-size:0.85rem;">#models</sub> |  |
-| 4 | [Level Up Gamers](./chapters/LU_AUTHENTICATION.md) <br/> <sub style="font-size:0.85rem;">#authentication #tokens</sub> | [Signing in Park Patrons](./chapters/KW_TOKEN_AUTH.md) <br/> <sub style="font-size:0.85rem;">#auth #tokens</sub> |  |
-| 5 | [Karen Cares](./chapters/LU_FIXTURES.md) <br/> <sub style="font-size:0.85rem;">#data #fixtures</sub> |  |  |
+| 4 | [Karen Cares](./chapters/LU_FIXTURES.md) <br/> <sub style="font-size:0.85rem;">#data #fixtures</sub> |  |  |
+| 5 | [Level Up Gamers](./chapters/LU_AUTHENTICATION.md) <br/> <sub style="font-size:0.85rem;">#authentication #tokens</sub> | [Signing in Park Patrons](./chapters/KW_TOKEN_AUTH.md) <br/> <sub style="font-size:0.85rem;">#auth #tokens</sub> |  |
 | 6 | [Exposing Game Types](./chapters/LU_VIEWS_SERIALIZERS.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> | [Park Information Booth](./chapters/KW_ROUTER.md) <br/> <sub style="font-size:0.85rem;">#default-router</sub> |  |
 | 7 | [Exposing Games](./chapters/LU_VIEWS_SERIALIZERS.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> |  |  |
 | 8 | [Exposing Events](./chapters/LU_ROUTER_URLS.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> | [The Park Map](./chapters/KW_VIEW_SERIALIZER.md) <br/> <sub style="font-size:0.85rem;"> #viewset #list #retrieve #serializer</sub> | [Business Plan](./chapters/HD_FEATURES.md) |
