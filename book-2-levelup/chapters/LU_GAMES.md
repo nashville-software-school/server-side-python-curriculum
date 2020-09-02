@@ -1,16 +1,57 @@
-# Viewsets and Serializers
+# Listing Games
 
-These are two key terms that you are going to be introduced to in this chapter. They are the brains of the operation.
+There is one starter game in your database because
 
-The **ViewSet** has all of the logic for handling an incoming request from a client, determining what action is needed _(i.e. create data, get data, update data, or delete data)_, interacting with the database to do what the client asked, and then constructing a response to the client.
+## Preface: Seed the Database
 
-The **Serializer** has a much simpler job. Once the ViewSet has determined what kind of response should be sent to the client, if that response has any data, the Serializer converts the Python data into JSON format.
+Create the fixture below and then seed the database with the following command
 
-## Workflow Visualization
+```sh
+python manage.py loaddata games
+```
 
-Any time that you want to allow a client to access data in your database, there's a series of steps you have to follow in order to accomplish it with Django REST Framework.
+> #### `levelup/levelupapi/fixtures/games.json`
 
-![](./images/django-rest-process.png)
+```json
+[
+    {
+        "model": "levelupapi.game",
+        "pk": 1,
+        "fields": {
+            "title": "Welcome To",
+            "maker": "Benoit Turpin",
+            "gamer": 1,
+            "gametype": 1,
+            "number_of_players": 4,
+            "skill_level": 3
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 2,
+        "fields": {
+            "title": "Settlers of Catan",
+            "maker": "Klaus Teuber",
+            "gamer": 1,
+            "gametype": 1,
+            "number_of_players": 4,
+            "skill_level": 4
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 3,
+        "fields": {
+            "title": "Dungeons & Dragons",
+            "maker": "Wizards of the Coast",
+            "gamer": 1,
+            "gametype": 2,
+            "number_of_players": 5,
+            "skill_level": 3
+        }
+    }
+]
+```
 
 ## Step 1: The Game Model Class
 
