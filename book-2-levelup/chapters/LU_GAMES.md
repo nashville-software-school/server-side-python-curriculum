@@ -1,7 +1,5 @@
 # Listing Games
 
-
-
 ## Preface: Seed the Database
 
 Create the fixture below and then seed the database with the following command
@@ -64,7 +62,7 @@ Time to write the brains of the operation. The ViewSet will handle GET, POST, PU
 > #### `levelup/levelupapi/views/game.py`
 
 ```py
-"""View module for handling requests about park areas"""
+"""View module for handling requests about games"""
 from django.core.exceptions import ValidationError
 from rest_framework import status
 from django.http import HttpResponseServerError
