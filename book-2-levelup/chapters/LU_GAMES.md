@@ -1,6 +1,6 @@
 # Listing Games
 
-There is one starter game in your database because
+
 
 ## Preface: Seed the Database
 
@@ -57,7 +57,7 @@ python manage.py loaddata games
 
 You should already have the **`Game`** model for your application. If not, build it now after looking at the requirements in chapter 2.
 
-## Step 2: The Game View
+## Step 2: The Game ViewSet
 
 Time to write the brains of the operation. The ViewSet will handle GET, POST, PUT, and DELETE requests sent from a client application over the HTTP protocol.
 
