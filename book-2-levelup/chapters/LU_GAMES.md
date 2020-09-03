@@ -243,7 +243,7 @@ Add the following import statement at the top of the urls module.
 > #### `levelup/levelup/urls.py`
 
 ```py
-from levelupapi.views import Games
+from levelupapi.views import GameTypes, Games
 ```
 
 Then, add a new URL mapping to the default router.

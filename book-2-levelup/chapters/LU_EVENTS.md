@@ -228,23 +228,22 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
 
 ## Step 4: The URL
 
-The last step is for the server to specify which URL it will respond to with information about games. In this case, you want to expose a `/games` resource at the end of the base API.
+The last step is for the server to specify which URL it will respond to with information about events. In this case, you want to expose a `/events` resource at the end of the base API.
 
-http://localhost:8000/games
+http://localhost:8000/events
 
 and
 
-http://localhost:8000/games/1
+http://localhost:8000/events/1
 
-If any client submits a GET request to either one of those URLs, you need to clearly state that the **`Games`** ViewSet will handle the request. You will use a built-in class in Django called the `DefaultRouter`.
+If any client submits a GET request to either one of those URLs, you need to clearly state that the **`Events`** ViewSet will handle the request.
 
-
-Add the following import statement at the top of the urls module.
+Update the following import statement at the top of the urls module.
 
 > #### `levelup/levelup/urls.py`
 
 ```py
-from levelupapi.views import Games
+from levelupapi.views import Games, GameTypes, Events
 ```
 
 Then, add a new URL mapping to the default router.
@@ -255,6 +254,7 @@ Then, add a new URL mapping to the default router.
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'gametypes', GameTypes, 'gametype')
 router.register(r'games', Games, 'game')
+router.register(r'events', Events, 'event')
 ```
 
 ## Client Code
