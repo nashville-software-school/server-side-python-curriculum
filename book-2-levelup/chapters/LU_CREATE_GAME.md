@@ -10,13 +10,12 @@ const [ gameTypes, setTypes ] = useState([])
 
 Then add the following two functions to your **`GameProvider`** component so that you can get all game types to display in a dropdown in the form, and perform a POST request to save a new game to the database.
 
-* The URL resource for creating games is `/games`
-* The URL resource for getting types is `/gametypes`
+The URL for both of these fetch calls will start with `http://localhost:8000/`, but you need to ensure that you specify the correct resource after the `/`. Look in your server's `urls.py` module to ensure you target the correct resource with these functions.
 
 Make sure you add the `Authorization` header to both fetch requests.
 
 ```jsx
-const createGame = game => {
+const createGame = (game) => {
     return fetch("", { })
         .then()
         .then()
@@ -26,7 +25,6 @@ const getGameTypes = () => {
     return fetch("", { })
         .then()
         .then()
-
 }
 ```
 
@@ -61,7 +59,7 @@ export const GameForm = props => {
 
     /*
         Get game types on initialization so that the <select>
-        element presents game type choices to the user
+        element presents game type choices to the user.
     */
     useEffect(() => {
         getGameTypes()
@@ -69,7 +67,7 @@ export const GameForm = props => {
 
     /*
         Update the `currentGame` state variable every time
-        the state of one of the input fields changes
+        the state of one of the input fields changes.
     */
     const handleControlledInputChange = (event) => {
         const newGameState = Object.assign({}, currentGame)
@@ -97,14 +95,16 @@ export const GameForm = props => {
                     // Prevent form from being submitted
                     evt.preventDefault()
 
-                    // Send POST request to your API
-                    createGame({
+                    const game = {
                         maker: currentGame.maker,
                         title: currentGame.title,
                         numberOfPlayers: parseInt(currentGame.numberOfPlayers),
                         skillLevel: parseInt(currentGame.skillLevel),
                         gameTypeId: parseInt(currentGame.gameTypeId)
-                    })
+                    }
+
+                    // Send POST request to your API
+                    createGame(game)
                 }}
                 className="btn btn-primary">Create</button>
         </form>
