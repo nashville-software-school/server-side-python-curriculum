@@ -14,8 +14,6 @@
 >
 > Karen grimaces slightly, but quickly recovers, and says, "Yes, I'm sure you do. What I'm looking for is a way to meet people like me who play card games and board games, like me."
 >
-> You catch on to her subtle, repetitive use of "like me".
->
 > "My cat, Sheen," she continues, "likes to play games with me, but nothing quite as complex as Settlers of Catan or Bridge." Her face brightens a bit as she talks about how she tries to get her cats to play games with her.
 >
 > "One time, I even put catnip on some checkers and tried to see if Checkers - that's one of my cats, Checkers - could move the piece to play with me. It didn't really work." She laughs lightly, obviously playing the scenario out in her mind.
@@ -106,19 +104,42 @@ class Toy(models.Model):
     price = models.DecimalField(max_length=7,decimal_places=2)
 ```
 
+## Application User (Gamer) Model
+
+Django gives you a **`User`** model out of the box with fields like first name, last name, email, etc. already on it. If there additional fields that you want to capture about a user of your application, you need to create a separate model.
+
+In this application, you are going to ask each gamer to provide a short bio when they register. The Django user model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it, and it should have a 1 to 1 relationship with a corresponding user entry.
+
+> #### `levelup/levelupapi/models/gamer.py`
+
+```py
+from django.db import models
+from django.contrib.auth.models import User
 
 
-> Insert narrative for meeting Karen and her stumbling walkthrough of what she wants.
+class Gamer(models.Model):
 
-1. Django Users
-1. Gamers with 1 -> 1 to Users
-1. Game types
-1. Gamer games
-1. Gamer events
-1. GamerEvents &infin; -> &infin; model
-1. import all models to `__init__.py`
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=50)
+```
 
-## Migration of app models
+Then create a package initialization module and import your gamer model into it. Every model you create must be imported into this package init module.
+
+> #### `levelup/levelupapi/models/__init__.py`
+
+```py
+from .gamer import Gamer
+```
+
+## Level Up Models
+
+Once you have a good ERD that defines the tables and relationships for gamers, games, and events, create your modules and classes and import the classes into the package init module.
+
+## Migration of Models
+
+Once you have defined your models, you should review them with an instructor.
+
+When your models are approved, you can then run a migration to get the tables created in your database.
 
 ```sh
 python manage.py makemigrations levelupapi
