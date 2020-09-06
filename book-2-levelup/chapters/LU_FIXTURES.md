@@ -1,6 +1,35 @@
 # Karen Cares About Her Users
 
-> Karen decides to be benevolent and support Live RPG, table top and MMO games. Create fixture to populate the game type table.
+> You receive a phone call from Karen, sorry, Kari, on a Thursday morning.
+>
+> "Hello?"
+>
+> "Hi, this is Kari! I have an update for you." She seems very nervous.
+>
+> "Ok," you reply. "Let me grab my notes."
+>
+> You reach into your backpack on the other side of the couch where you are sitting and pull out your note journal, and decide on the slender green pen for today's notes.
+>
+> You click the pen and say, "Ok, I'm ready, Kari."
+>
+> "I was talking to some friends earlier in the week, and apparently many of them play games on their computers. I had no idea. Susan... she's a friend who watches my cats sometimes... well, she watches some because Sammy and Jasper don't like her. If I need someone to watch Sammy and Jasper, I can usually count on Helen. You see, Helen has cats, too, but not as many as me, so..."
+>
+> You sigh silently and listen to a 10-minute lecture about which of Karen's friends have particularly meaningful relationhips with each one of her myriad cats.
+>
+> "...and since they all told me that they play an online game called Fever Fantasy, I decided that I should allow people to create games and events for things other than board games."
+>
+> "Sure, no problem, Kari!" You write down that you need to add more game types to the database.
+>
+> "What about role-playing games?"
+>
+> "Uhhh, I don't think I want those kinds of people using my software," she says haughtily.
+>
+> "I'm not sure what you mean. I have plenty of friends who play role-playing games like Dungeons & Dragons and Shadowrun."
+>
+> There is a moment's pause and Karen replies, "Oooohhh, those role-playing games. Yes, I think my niece and nephew do that. They dress up like knights and wizards and go to some parks to pretend."
+>
+> After a short discussion, you both agree that the "software" will allow people to create board games, role-playing games, and MMO games.
+
 
 ## Video(s) to Watch First
 
@@ -28,21 +57,21 @@ Open that JSON file and put the following seed data in it.
         "model": "levelupapi.gametype",
         "pk": 1,
         "fields": {
-            "label": "Table top"
+            "label": "Board game"
         }
     },
     {
         "model": "levelupapi.gametype",
         "pk": 2,
         "fields": {
-            "label": "Role playing"
+            "label": "Role-playing game"
         }
     },
     {
         "model": "levelupapi.gametype",
         "pk": 3,
         "fields": {
-            "label": "MMO"
+            "label": "MMO game"
         }
     }
 ]
