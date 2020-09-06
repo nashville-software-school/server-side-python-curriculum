@@ -42,7 +42,7 @@
 >
 > "Ok, so people can create any game they want. Got it. So... who schedules an event? The person who creates the game, or anyone who wants to play the game?"
 >
-> Karen looks to the side for a moment to think and replies, "I think whoever submits a game should be the one to schedule an event to play it."
+> Karen looks to the side for a moment to think and replies, "I think anyone should be able to schedule an event for any game that has been added."
 >
 > You write more notes.
 >
