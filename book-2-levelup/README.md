@@ -19,8 +19,9 @@ This book introduces you to the Django application framework, and the Django RES
 | 9 | [Gamers Making Games](./chapters/LU_CREATE_GAME.md) <br/> <sub style="font-size:0.85rem;">#react #forms</sub> |  | [Park Renovations](./chapters/KW_FULL_CRUD_VIEWSET.md) <br/> <sub style="font-size:0.85rem;">#viewset #create #update #destroy</sub> |
 | 10 | [Creating Events](./chapters/LU_GAME_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#react #forms</sub> |  |  |
 | 11 | [Gamers Joining Events](./chapters/LU_CUSTOM_ACTION.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> |  | [Planning Rides](./chapters/KW_RIDES.md) <br/> <sub style="font-size:0.85rem;">#POST #relationships</sub> |
-| 12 | [Gamer Profiles](./chapters/LU_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> |  | [Rider Profiles](./chapters/KW_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> |
-| 13 | [Oops!](./chapters/LU_EDIT_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#edit #PUT</sub> | |  |
+| 12 | [Gamers Leaving Events](./chapters/LU_MODEL_PROPERTY.md) <br/> <sub style="font-size:0.85rem;">#models #unmapped-property</sub> |  | [Planning Rides](./chapters/KW_RIDES.md) <br/> <sub style="font-size:0.85rem;">#POST #relationships</sub> |
+| 13 | [Gamer Profiles](./chapters/LU_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> |  | [Rider Profiles](./chapters/KW_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> |
+| 14 | [Oops!](./chapters/LU_EDIT_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#edit #PUT</sub> | |  |
 | 14 |  |  |
 | 👨‍👩‍👧‍👧 | Group Project: Rare REST |  |
 
