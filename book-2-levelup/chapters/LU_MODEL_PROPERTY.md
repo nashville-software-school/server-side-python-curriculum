@@ -170,7 +170,7 @@ Time for all of your hard work to pay off. You will now use the `joined` propert
 
 In React, you need to update your **`EventList`** component in the client to allow the user to leave or join an event. Note that the `leaveEvent()` function was added the the deconstructed object from the event context.
 
-> **Vocabulary:** `condition ? what happens if true : what happens if false` is called a ternary statement in JavaScript. It's a condensed version of an `if..else` block of code.
+> **Vocabulary:** `condition ? what happens if true : what happens if false` is called a ternary statement in JavaScript. It's a condensed version of an `if..else` block of code that you can use in JSX, because interpolation only supports a single JavaScript statement.
 
 ```jsx
 import React, { useContext, useEffect } from "react"
