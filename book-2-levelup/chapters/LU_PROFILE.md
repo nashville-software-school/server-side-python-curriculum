@@ -58,7 +58,9 @@ This will let you build a view in your React client that looks like this.
 
 ## Django Profile View
 
-The first step is to create a ViewSet for building profile data.
+The first step is to create a ViewSet for building profile data. In this view set, you will see how you can define any structure you want for your JSON response. Just create a dictionary, and add any key/value pairs that you want.
+
+The `Response` class that is built in to Django REST Framework with serialize any Python dictionary as JSON to be sent back to the client in the response.
 
 > #### `levelup/levelupapi/views/profile.py`
 
@@ -90,6 +92,7 @@ class Profile(ViewSet):
         gamer = GamerSerializer(
             gamer, many=False, context={'request': request})
 
+        # Manually construct the JSON structure you want in the response
         profile = {}
         profile["gamer"] = gamer.data
         profile["events"] = events.data

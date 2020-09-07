@@ -1,91 +1,65 @@
-## Karen's Level Up Requirements
+# Kennwood API
+
+For this project, you are going to create a database, and a supporting Django REST Framework API that will allow people to build a schedule of attractions to visit when they go to Kennywood Park.
+
+![](./images/kennywood.jpeg)
 
 
+## Resources
 
-## Create Applications
+Here are the resources that you need to define in your application. Use dbdiagram.io to build an ERD of the resource fields and relationships.
 
-Now that the project is set up and has some initial configuration, it's time to create your application for the API you are building.
+### Visitors
 
-```sh
-python manage.py startapp kennywoodapi
-```
+Each visitor will be able to schedule events for their visit to the park. When a user registers, this is the information to gather.
 
-Now you need to update your application settings to enable Django REST Framework, CORS headers, and your application. Replace the following sections, and add the sections marked as new, in your `settings.py` file with the code below.
+* First name _(Stored on Django user)_
+* Last name _(Stored on Django user)_
+* Email address, which will serve as username as well _(Stored on Django user)_
+* Number of family members _(Stored on Visitor model)_
+* _(optional)_ Phone number _(Stored on Visitor model)_
+* _(optional)_ Special requirements _(Stored on Visitor model)_
 
-> ##### `settings.py`
 
-```sh
-# Replace existing list
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'corsheaders',
-    'kennywoodapi',
-]
+### Park Areas
 
-# This is new
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
-}
+Kennywood Park has many different named areas with themed rides inside each one. In the database, you need to store these properties of each park area.
 
-# Replace existing list
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+* Area name
+* Target population _(kids, adults, all)_
 
-# This is new
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8080',
-    'http://127.0.0.1:8080'
-)
-```
+### Attractions
 
-## Basic Setup of Routing
+The attractions come in three varieties.
 
-Replace the contents of `kennywood/urls.py` with the following code. You will configure the routes for your application in the next chapter after you set up your first view.
+1. Rides - Attractions where visitors sit in a vehicle. Roller coasters, ferris wheels, etc.
+1. Games - Games of skill, and arcade games.
+1. Themed - Visitors walk through themed structures. Haunted houses, wax museums, etc.
 
-```py
-from django.urls import include, path
-from rest_framework import routers
-from rest_framework.authtoken.views import obtain_auth_token
+You must record the following data about each attraction.
 
-router = routers.DefaultRouter(trailing_slash=False)
+* Name
+* Park area
+* Attraction type
+* Maximum occupancy _(not applicable for games)_
+* Height requirement _(only for rides)_
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path('api-token-auth/', obtain_auth_token),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-]
-```
+### Ratings
 
-## First Run
+Any vistor can rate any attraction on a scale of 1-5 and leave a note about their rating.
 
-Now you can start the project and verify that everything was configured correctly.
+## React Client Features
 
-```sh
-python manage.py runserver
-```
+Use the following features that your product owner has for the user interface to determine the views/methods needed for the API and the structure of the JSON representations needed in responses.
 
-Then open the URL of `http://127.0.0.1:8000/` in your browser and you should see a web page with no errors on it. If you do see error, please visit the instruction team.
-
-![initial view without routes](./images/drf-initial-view.png)
+* User must be able to register a new account
+* User must be able to login with email and password
+* User must be able to see a list of attractions
+* Each attraction must show its name, type, park area, occupancy (if applicable), and height requirement (if applicable).
+* User must be able to perform a gesture to add an attraction to the itinerary.
+* When a user adds an attraction to the itinerary, user must be prompted to add a time.
+* When a user chooses a time for an attraction, if another attraction has been chosen for that time slot, alert the user and do not add attraction to itinerary.
+* User must be able to view their profile, which lists the current itinerary, first name, last name, email address, and number of family members.
+* When the user views the itinerary, the attractions must be shown in order of time of day, and display the attaction name and park area.
+* User must be able to remove an attraction from the itinerary.
+* User must be able to update their email address and number of family members.
