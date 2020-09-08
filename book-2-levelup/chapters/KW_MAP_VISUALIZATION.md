@@ -20,6 +20,8 @@ The number determine which column of the row.
 
 The first step is to export the park area table data to a JSON file into a `fixtures/parkareas.json` file. Read the [Django dumpdata and loaddata](https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata) article to see how to export a single table to a JSON file.
 
+This gives you a snapshot of your data before you make changes to your model(s).
+
 ## Update Park Area Model
 
 Add a new property to the **`ParkArea`** Django model named `zone`. It's value will be alphanumeric. It will have two characters. The first will be a letter. The second will be a number. Make sure you set [`default=""` attribute](https://docs.djangoproject.com/en/3.1/ref/models/fields/#default) on the new property.
@@ -33,4 +35,4 @@ python manage.py migrate
 
 ## Update Data
 
-Now use your SQL skills and tools to connect to your database
+Now use your SQL skills and tools to connect to your database and run some `UPDATE` statements to give each park area a zone designation of your choosing.
