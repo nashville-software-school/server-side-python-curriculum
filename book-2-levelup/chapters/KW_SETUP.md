@@ -48,13 +48,19 @@ You must record the following data about each attraction.
 
 Any vistor can rate any attraction on a scale of 1-5 and leave a note about their rating.
 
+### Itinerary
+
+Store the relationship between a user and an attraction, along with the time of day, so that the user can have an itinerary.
+
 ## React Client Features
 
 Use the following features that your product owner has for the user interface to determine the views/methods needed for the API and the structure of the JSON representations needed in responses.
 
-* User must be able to register a new account
-* User must be able to login with email and password
-* User must be able to see a list of attractions
+* User must be able to register a new account.
+* User must be able to login with email and password.
+* User must be able to see a list of park areas.
+* When the user clicks on a park area, the attractions in that park area should be shown to the user.
+* User must be able to see a list of all attractions.
 * Each attraction must show its name, type, park area, occupancy (if applicable), and height requirement (if applicable).
 * User must be able to perform a gesture to add an attraction to the itinerary.
 * When a user adds an attraction to the itinerary, user must be prompted to add a time.

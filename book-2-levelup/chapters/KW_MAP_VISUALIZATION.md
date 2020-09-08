@@ -36,3 +36,17 @@ python manage.py migrate
 ## Update Data
 
 Now use your SQL skills and tools to connect to your database and run some `UPDATE` statements to give each park area a zone designation of your choosing.
+
+## Park Map Link
+
+Add a new link to your navigation bar labeled "Park Map". Make it change the browser route to `/map`.
+
+## Park Map Component
+
+Make a new UI component in your React application that visualizes all park areas in a grid layout. You can use Flexbox and other CSS properties to create the colors you want in this view.
+
+| | |
+|--|--|
+| Water Park | Coaster Canyon |
+| Kids Corner | Family Zone |
+| Arcade | Reacetrack |
