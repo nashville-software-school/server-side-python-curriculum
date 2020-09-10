@@ -11,15 +11,16 @@ You have been presented with an unique business opportunity. A local startup has
 
 ## Setup
 
-In this project, you are going to create an API, and a React client that will interact with it. This means that you need two new directories in `workspace` and will create two separate Github repositories to track the changes in each. You can use the suggested directories below, or decide on your own.
+In this project, you are going to create an API, and a React client that will interact with it. This means that you need two new directories in `workspace` and will create two separate Github repositories to track the changes in each.
+
+Start with creating the project for your API. You can use the suggested directory below, or decide on your own.
 
 ```sh
 cd ~/workspace/python
-django-admin startproject raterapi
-npm create-react-app raterclient
+django-admin startproject raterproject
 ```
 
-Once the two projects are set up, go create the Github repositories for them and do an initial commit.
+Then create the Github repository for your API project and do an initial commit.
 
 ## Step 1: Authentication
 

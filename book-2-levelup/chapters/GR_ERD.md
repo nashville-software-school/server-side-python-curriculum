@@ -20,17 +20,3 @@ Below are the features and requirements for what resources are needed for this a
 
 Use this information to create an ERD for this project. Visit your instruction team for approval once you believe you have a good diagram.
 
-## Categories
-
-You need to create a JSON fixture file that will seed the database table for categories with the following types.
-
-* Strategy
-* Dice
-* Card
-* Miniature
-* Deck building
-* Role playing
-* Sports
-* Adventure
-* Cooperative
-* Battle
