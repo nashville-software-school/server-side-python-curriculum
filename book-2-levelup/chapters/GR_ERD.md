@@ -20,3 +20,7 @@ Below are the features and requirements for what resources are needed for this a
 
 Use this information to create an ERD for this project. Visit your instruction team for approval once you believe you have a good diagram.
 
+## Helpful Resources
+
+* [Django ImageField](https://www.geeksforgeeks.org/imagefield-django-models/)
+* [How to Upload a File Using Django REST Framework](https://dev.to/djangotricks/how-to-upload-a-file-using-django-rest-framework-1kgf)
