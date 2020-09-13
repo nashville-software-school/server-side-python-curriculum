@@ -5,6 +5,7 @@ Below are the features and requirements for what resources are needed for this a
 * Players can create unique entries for games. Two players cannot create the same game in the system.
 * Games must have the following properties on creation:
     * Title
+    * Description
     * Designer
     * Year released
     * Number of players
