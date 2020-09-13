@@ -22,8 +22,8 @@ This book introduces you to the Django application framework, and the Django RES
 | 12 | [Gamers Leaving Events](./chapters/LU_MODEL_PROPERTY.md) <br/> <sub style="font-size:0.85rem;">#models #unmapped-property</sub> | [Game Ratings](./chapters/GR_GAME_RATINGS.md) | [Challenge: The Park Map](./chapters/KW_MAP_VISUALIZATION.md) |
 | 13 | [Gamer Profiles](./chapters/LU_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> | [Games in Action Pictures](./chapters/GR_UPLOADS.md) |  |
 | 14 | [Oops!](./chapters/LU_EDIT_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#edit #PUT</sub> | [Searching Games](./chapters/GR_SEARCH.md) | [Challenge: Multiple Itineraries](./chapters/KW_ITINERARIES.md) |
-| 14 |  | [Sorting Games](./chapters/GR_SORTING.md) |  |
-| 14 |  |  |  |
+| 15 |  | [Sorting Games](./chapters/GR_SORTING.md) |  |
+| 16 |  | [Edit Games](./chapters/GR_EDIT_GAME.md) |  |
 | 14 |  |  |  |
 | 14 |  |  |  |
 | 14 |  |  |  |
