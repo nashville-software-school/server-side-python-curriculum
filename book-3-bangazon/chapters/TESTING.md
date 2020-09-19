@@ -3,7 +3,7 @@
 1. Create `tests` directory in project.
 1. Create `tests/__init__.py` module.
 1. Import test classes into `__init__.py`.
-1. Run `python manage.py test tests -v 2` to execute all test classes.
+1. Run `python manage.py test tests -v 1` to execute all test classes.
 
 ## Module Init
 
