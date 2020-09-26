@@ -72,6 +72,20 @@ This tool will manage 3rd party software that is needed for each of your project
 pip3 install --user pipenv
 ```
 
+### Troubleshooting Pipenv
+If you get `command not found: pipenv` when trying to run pipenv:
+* mac and linux
+  * Open ~/.zshrc and add:
+      ```
+      export PIPENV_DIR="$HOME/.local"
+      export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
+      ```
+* windows
+  * First run `python -m site --user-site`
+  * Copy what that returns, replacing `site-packages` with `Scripts`
+  * In the control panel add what was copied to the path
+
+
 ## Orientation React Clients
 
 ### Nashville Kennels
