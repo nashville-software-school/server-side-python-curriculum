@@ -17,7 +17,7 @@ Run the commands specific to your system:
 
 | OSX        | WSL           |
 | ------------- |:-------------:|
-| For `pyenv` to install correctly, you need the Xcode command line tools. Type the following command into your terminal and wait for the installation to complete: `xcode-select --install` | `sudo apt-get install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git build-essential zlib1g-dev` |
+| For `pyenv` to install correctly, you need the Xcode command line tools. Type the following command into your terminal and wait for the installation to complete: `xcode-select --install` | `sudo apt-get install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git` |
 | | Update your PATH. Add the following line to your `.zshrc`: `export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"`      |
 
 ## Install Pyenv
@@ -34,9 +34,30 @@ Now, when you check the version of Python with the command below, it should retu
 python --version
 ```
 
-### Troubleshooting pyenv
+### Troubleshooting pyenv on Windows/WSL
 
-If it still returns a different version, you will need to edit your `~/.zshrc` file. Add the following to the bottom of the file.
+Add the following commands to `.bashrc` or `.zshrc` in your Ubuntu home directory.
+
+```sh
+# Configure pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+```
+
+Then try to install Python with the following command
+
+```sh
+CPPFLAGS="-I/usr/local/opt/zlib/include" pyenv install -v 3.8.1
+```
+
+### Troubleshooting pyenv on Mac
+
+Add the following commands to your `zshrc` file in your home directory.
 
 ```sh
 # Configure pyenv
