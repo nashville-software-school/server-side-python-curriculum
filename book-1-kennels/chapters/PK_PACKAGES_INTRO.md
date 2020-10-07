@@ -68,7 +68,7 @@ from .request import get_all_animals
 
 Now you can import that function to be used in the main module. Put the new import statement shown below at the top of the file below the existing import statement.
 
-> #### `animals/request_handler.py`
+> #### `request_handler.py`
 
 ```py
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -79,7 +79,7 @@ from animals import get_all_animals
 
 Replace the following code...
 
-> #### `animals/request_handler.py`
+> #### `request_handler.py`
 
 ```py
 if self.path == "/animals":
