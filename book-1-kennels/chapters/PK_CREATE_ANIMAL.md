@@ -90,7 +90,7 @@ Now open Postman and follow these steps to create a new animal.
     ```
 1. Click the Send button.
 
-If your code was set up correctly, the status of the request should be 200 and you should see an animal object - with a new `id` property on it - in the response section at the bottom of Postman.
+If your code was set up correctly, the status of the request should be 201 and you should see an animal object - with a new `id` property on it - in the response section at the bottom of Postman.
 
 ![](./images/python-kennel-create-animal.gif)
 
