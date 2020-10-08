@@ -7,6 +7,23 @@
 * [Inserting Data - SQL - Tutorial 7](https://www.youtube.com/watch?v=3Qq93zqO3GE)
 * [Constraints - SQL - Tutorial 8](https://www.youtube.com/watch?v=9WP35xwZ3tk)
 
+## Binding Keyboard Shortcut
+
+Before you start using SQL in VS Code, you need to set up a keyboard shortcut so that you can run a query without needing to use your mouse to click on an icon every time. It wastes too much time to click with a mouse when you are working with SQL.
+
+1. Cmd+Shift+P if you are on Mac.
+1. Ctrl+Shift+P if you are on Windows.
+1. Type in "shortcut" in the search bar.
+1. Choose **Keyboard Shortcuts** from the results.
+1. In the search bar for shortcuts, type in "sqltoolrun".
+1. Double click the **SQLTools Connection: Run Current Query** option.
+1. Hold down the Command key and tap R twice if you are on Mac
+1. Hold down the Control key and tap R twice if you are on Windows
+1. Then press enter to save the shortcut.
+
+
+![](./images/run-query-shortcut.gif)
+
 
 ## Creating Database and SQL Files
 
