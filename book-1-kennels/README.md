@@ -14,7 +14,7 @@
 | 3 |  [Animal Response](./chapters/PK_ANIMAL_RESOURCE.md) <br/> <sub style="font-size:0.85rem;">#HTTP_GET #functions #for_loop #if</sub> |  | |
 | 4 | [Adding Animals](./chapters/PK_CREATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#HTTP_POST</sub> |  | |
 | 5 | [Discharging Animals](./chapters/PK_DELETE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#for_loop #enumerate #pop()</sub> |  | |
-| 6 | [Animal Diagnosis](./chapters/PK_UPDATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#HTTP_PUT #for_loop #enumerate</sub> |  | [Meeting Bobby Kawlins](./chapters/CC_PROJECT_SETUP.md) <br/> <sub style="font-size:0.85rem;"></sub> |
+| 6 | [Animal Status](./chapters/PK_UPDATE_ANIMAL.md) <br/> <sub style="font-size:0.85rem;">#HTTP_PUT #for_loop #enumerate</sub> |  | [Meeting Bobby Kawlins](./chapters/CC_PROJECT_SETUP.md) <br/> <sub style="font-size:0.85rem;"></sub> |
 | 7 | [Animal Class](./chapters/PK_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> |  | [Critter Creation](./chapters/CC_CLASSES.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> |
 | Interlude: SQL | [SQL Bolt: Beginner SQL Tutorial](https://sqlbolt.com/) |  |  |
 | 8 | [Kennel Database](./chapters/PK_DATABASE_INTRO.md) <br/> <sub style="font-size:0.85rem;">#database #sql #CREATE #INSERT</sub> | [Daily Journal Database](./chapters/DJ_DATABASE_CREATION.md) | [Condensed Critter Creation](./chapters/CC_CONSTRUCTORS.md) <br/> <sub style="font-size:0.85rem;">#classes</sub> |
