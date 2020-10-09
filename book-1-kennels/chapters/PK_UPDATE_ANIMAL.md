@@ -68,6 +68,7 @@ Time to try updating an animal.
 1. Paste in the following JSON in the text area beneath the radio button.
     ```json
     {
+        "id": 2,
         "name": "Gypsy",
         "species": "Dog",
         "location": 1,
