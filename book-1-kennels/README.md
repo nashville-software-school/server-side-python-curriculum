@@ -29,6 +29,5 @@
 | 16 |  | [Editing Journal Entries](./chapters/DJ_UPDATE.md) | [Eliminating Class Waste](./chapters/CC_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance</sub> |
 | 17 |  |  | [Complex, Clean Critter Classes](./chapters/CC_MULTIPLE_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance #multiple</sub> |  |
 | 18 |  |  | [If it Honks Like a Goose](./chapters/CC_DUCK_TYPING.md) <br/> <sub style="font-size:0.85rem;">#typing</sub> |  |
-|  |  |  |  |  |
-| 👨‍👩‍👧‍👧 | Group Project: Tabloid | | | |
+| 👨‍👩‍👧‍👧 | Group Project: Rare | | | |
 
