@@ -26,30 +26,6 @@ Now import the **`Animal`** class so that you can create instances of it for eac
 from models import Animal
 ```
 
-## Making Your Model and Your Database Table Match
-
-If you look at your **`Animal`** class, and compare it to the Animal table in your database, there is one discrepancy.
-
-The Animal table has an `id` field.
-
-The **`Animal`** class does not have an `id` property defined.
-
-The **`Animal`** class will be used as the representation of the database table in Python. Therefore, you need to add an `id` property to the class.
-
-> ##### `models/animal.py`
-
-```py
-class Animal():
-
-    def __init__(self, name, species, status, location_id, customer_id, unique_id):
-        self.id = unique_id
-        self.name = name
-        self.species = species
-        self.status = status
-        self.location_id = location_id
-        self.customer_id = customer_id
-```
-
 ## Query for All Animals
 
 Now you can copy the function below into your animal request module to query the database for all animals, convert each row into an **`Animal`** instance, convert the list to JSON, and respond to the client request.
@@ -90,9 +66,9 @@ def get_all_animals():
             # Note that the database fields are specified in
             # exact order of the parameters defined in the
             # Animal class above.
-            animal = Animal(row['name'], row['breed'], row['status'],
-                            row['location_id'], row['customer_id'],
-                            row['id'])
+            animal = Animal(row['id'], row['name'], row['breed'],
+                            row['status'], row['location_id'],
+                            row['customer_id'])
 
             animals.append(animal.__dict__))
 
