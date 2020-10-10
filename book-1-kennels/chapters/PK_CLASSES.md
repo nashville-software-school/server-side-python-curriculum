@@ -25,7 +25,8 @@ class Animal():
     # Class initializer. It has 5 custom parameters, with the
     # special `self` parameter that every method on a class
     # needs as the first parameter.
-    def __init__(self, name, species, status, location_id, customer_id):
+    def __init__(self, id, name, species, status, location_id, customer_id):
+        self.id = id
         self.name = name
         self.species = species
         self.status = status
@@ -36,7 +37,7 @@ class Animal():
 Now, to create a new Python object **based** on that class, you would write the following code.
 
 ```py
-new_animal = Animal("Snickers", "Dog", "Recreation", 1, 4)
+new_animal = Animal(1, "Snickers", "Dog", "Recreation", 1, 4)
 ```
 
 It looks very much like invoking a function, and there are many similarities. Just like functions - which themselves are a definition of a plan - classes define how an object will look.
@@ -72,7 +73,8 @@ For example, locations have an `address` property. That means that the **`Locati
 ```py
 class Location:
 
-    def __init__(self, address):
+    def __init__(self, id, address):
+        self.id = id
         self.address = address
 ```
 
