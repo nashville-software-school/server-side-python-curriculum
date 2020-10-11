@@ -76,6 +76,14 @@ def get_all_animals():
     return json.dumps(animals)
 ```
 
+### For the Curious
+
+If you want to explore some black box concepts from the code in this chapter, here are some searches you can run.
+
+* [row_factory](https://duckduckgo.com/?q=sqlite3+connection+row_factory)
+* [Connection cursor](https://duckduckgo.com/?q=sqlite3+cursor)
+* [Cursor's fetchAll() method](https://duckduckgo.com/?q=sqlite3+cursor+fetchall)
+
 ## Request all Animals from Postman
 
 Open the Postman client and request all animals from http://localhost:8088/animals and verify that all five animals in the database get returned as JSON representations.
