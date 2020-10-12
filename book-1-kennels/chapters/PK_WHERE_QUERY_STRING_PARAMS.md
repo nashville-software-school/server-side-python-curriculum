@@ -109,9 +109,33 @@ Ok, so if you thought that code was intense, now you need to refactor the `do_GE
 
 ## Finding the Customer with a WHERE Clause
 
-> ##### `customers/request.py`
+### Optional Parameters
+
+Before you implement the method to query the database by the email address provided by the client, you need to update your **`Customer`** model to implement default parameter values.
+
+> ##### `models/customer.py`
+
+```py
+class Customer():
+
+    def __init__(self, id, name, address, email = "", password = ""):
+        self.id = id
+        self.name = name
+        self.address = address
+        self.email = email
+        self.password = password
+```
+
+The reason for this is because when create some Customer instances to send back the client, sending the password in the response is a bad idea. Also, there's no reason to send the email in the case since the client obviously already has the email address to reference.
+
+Now, you can create an instance of a Customer with only three positional arguments instead of needing all 5.
+
+### Query the Database
+
 
 In the method that queries the database for customers that have the specified email, it's a simpler query with a single WHERE clause that uses a single SQL parameter.
+
+> ##### `customers/request.py`
 
 ```py
 def get_customers_by_email(email):
@@ -136,7 +160,7 @@ def get_customers_by_email(email):
         dataset = db_cursor.fetchall()
 
         for row in dataset:
-            customer = Customer(row['id'], row['name'], row['address'], row['email'])
+            customer = Customer(row['id'], row['name'], row['address'], row['email'] , row['password'])
             customers.append(customer.__dict__)
 
     return json.dumps(customers)
