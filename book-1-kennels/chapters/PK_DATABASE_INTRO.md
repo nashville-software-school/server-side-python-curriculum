@@ -40,8 +40,10 @@ In your project directory, create two files:
 1. Enter in "Python Kennels" for the name of the connection.
 1. Click on the "Select File" button.
 1. Choose the `kennel.db` file you created.
-1. Click the "Test Connection" button to verify that it works.
+1. Click the "Test Connection" button to verify that it works. ( _Error? See note below_ )
 1. Click the "Save Connection" button.
+
+> NOTE - When testing the connection you may get an error along the lines of "cannot convert undefined or null to an object". Ignore the message and create the connection anyway. You will get a few prompts about enabling some extensions. Accept those (as well as the prompt about reloading vs code) and you should be good to go!
 
 You should then see a new connection in the "Connections" panel in the upper-left part of your screen.
 
