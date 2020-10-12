@@ -102,7 +102,7 @@ Ok, so if you thought that code was intense, now you need to refactor the `do_GE
             # query parameter that specified the customer
             # email as a filtering value?
             if key == "email" and resource == "customers":
-                response = get_customer_by_email(value)
+                response = get_customers_by_email(value)
 
         self.wfile.write(response.encode())
 ```
@@ -114,12 +114,13 @@ Ok, so if you thought that code was intense, now you need to refactor the `do_GE
 In the method that queries the database for customers that have the specified email, it's a simpler query with a single WHERE clause that uses a single SQL parameter.
 
 ```py
-def get_customer_by_email(email):
+def get_customers_by_email(email):
 
     with sqlite3.connect("./kennel.db") as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 
+        # Write the SQL query to get the information you want
         db_cursor.execute("""
         select
             c.id,
@@ -131,15 +132,14 @@ def get_customer_by_email(email):
         WHERE c.email = ?
         """, ( email, ))
 
-        data = db_cursor.fetchone()
+        customers = []
+        dataset = db_cursor.fetchall()
 
-        # Create an customer instance from the current row
-        customer = Customer(data['name'], data['address'], data['email'],
-                            data['password'], data['id'])
+        for row in dataset:
+            customer = Customer(row['id'], row['name'], row['address'], row['email'])
+            customers.append(customer.__dict__)
 
-        # Return the JSON serialized Customer object
-        return json.dumps(customer.__dict__)
-
+    return json.dumps(customers)
 ```
 
 You're going to need to read that all of that code plenty of times, and you'll need to try out different variations of writing it yourself.
