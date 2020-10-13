@@ -70,7 +70,7 @@ def get_all_animals():
                             row['status'], row['location_id'],
                             row['customer_id'])
 
-            animals.append(animal.__dict__))
+            animals.append(animal.__dict__)
 
     # Use `json` package to properly serialize list as JSON
     return json.dumps(animals)
