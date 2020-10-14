@@ -48,8 +48,8 @@ def get_all_animals():
             a.name,
             a.breed,
             a.status,
-            a.customer_id,
-            a.location_id
+            a.location_id,
+            a.customer_id
         FROM animal a
         """)
 
@@ -116,8 +116,8 @@ def get_single_animal(id):
             a.name,
             a.breed,
             a.status,
-            a.customer_id,
-            a.location_id
+            a.location_id,
+            a.customer_id
         FROM animal a
         WHERE a.id = ?
         """, ( id, ))
@@ -126,9 +126,9 @@ def get_single_animal(id):
         data = db_cursor.fetchone()
 
         # Create an animal instance from the current row
-        animal = Animal(data['name'], data['breed'], data['status'],
-                        data['location_id'], data['customer_id'],
-                        data['id'])
+        animal = Animal(data['id'], data['name'], data['breed'],
+                            data['status'], data['location_id'],
+                            data['customer_id'])
 
         return json.dumps(animal.__dict__)
 ```
@@ -142,8 +142,8 @@ SELECT
     a.name,
     a.breed,
     a.status,
-    a.customer_id,
-    a.location_id
+    a.location_id,
+    a.customer_id
 FROM animal a
 WHERE a.id = 3
 ```
