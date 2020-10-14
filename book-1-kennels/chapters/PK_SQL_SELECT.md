@@ -67,8 +67,8 @@ def get_all_animals():
             # exact order of the parameters defined in the
             # Animal class above.
             animal = Animal(row['id'], row['name'], row['breed'],
-                            row['status'], row['location_id'],
-                            row['customer_id'])
+                            row['status'], row['customer_id'],
+                            row['location_id'])
 
             animals.append(animal.__dict__)
 
@@ -126,9 +126,9 @@ def get_single_animal(id):
         data = db_cursor.fetchone()
 
         # Create an animal instance from the current row
-        animal = Animal(data['name'], data['breed'], data['status'],
-                        data['location_id'], data['customer_id'],
-                        data['id'])
+        animal = Animal(data['id'], data['name'], data['breed'],
+                            data['status'], data['customer_id'],
+                            data['location_id'])
 
         return json.dumps(animal.__dict__)
 ```
