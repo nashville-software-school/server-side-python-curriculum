@@ -48,8 +48,8 @@ def get_all_animals():
             a.name,
             a.breed,
             a.status,
-            a.customer_id,
-            a.location_id
+            a.location_id,
+            a.customer_id
         FROM animal a
         """)
 
@@ -67,8 +67,8 @@ def get_all_animals():
             # exact order of the parameters defined in the
             # Animal class above.
             animal = Animal(row['id'], row['name'], row['breed'],
-                            row['status'], row['customer_id'],
-                            row['location_id'])
+                            row['status'], row['location_id'],
+                            row['customer_id'])
 
             animals.append(animal.__dict__)
 
@@ -116,8 +116,8 @@ def get_single_animal(id):
             a.name,
             a.breed,
             a.status,
-            a.customer_id,
-            a.location_id
+            a.location_id,
+            a.customer_id
         FROM animal a
         WHERE a.id = ?
         """, ( id, ))
@@ -127,8 +127,8 @@ def get_single_animal(id):
 
         # Create an animal instance from the current row
         animal = Animal(data['id'], data['name'], data['breed'],
-                            data['status'], data['customer_id'],
-                            data['location_id'])
+                            data['status'], data['location_id'],
+                            data['customer_id'])
 
         return json.dumps(animal.__dict__)
 ```
@@ -142,8 +142,8 @@ SELECT
     a.name,
     a.breed,
     a.status,
-    a.customer_id,
-    a.location_id
+    a.location_id,
+    a.customer_id
 FROM animal a
 WHERE a.id = 3
 ```
