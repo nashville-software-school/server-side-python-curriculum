@@ -100,3 +100,6 @@ CREATE TABLE `Categories` (
 );
 ```
 
+## Ticket Order for Rare Project
+
+![](./rare-ticket-order.png)
