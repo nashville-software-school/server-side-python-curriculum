@@ -1,4 +1,10 @@
-# Rare SQL File
+# Rare Database
+
+## ERD
+
+https://dbdiagram.io/d/5f885a013a78976d7b77cb74
+
+## SQL Script
 
 ```sql
 CREATE TABLE `AccountTypes` (
@@ -20,12 +26,13 @@ CREATE TABLE `Users` (
   FOREIGN KEY(`account_type_id`) REFERENCES `AccountTypes`(`id`)
 );
 
-CREATE TABLE `DemotionQueue` (
-  `action` varchar,
-  `admin_id` int,
-  `approver_one_id` int,
+CREATE TABLE "DemotionQueue" (
+  "action" varchar,
+  "admin_id" int,
+  "approver_one_id" int,
   FOREIGN KEY(`admin_id`) REFERENCES `Users`(`id`),
-  FOREIGN KEY(`approver_one_id`) REFERENCES `Users`(`id`)
+  FOREIGN KEY(`approver_one_id`) REFERENCES `Users`(`id`),
+  PRIMARY KEY (action, admin_id, approver_one_id)
 );
 
 
