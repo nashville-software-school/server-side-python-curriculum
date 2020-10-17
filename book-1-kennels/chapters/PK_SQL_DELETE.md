@@ -20,8 +20,8 @@ def delete_animal(id):
 
 ## Delete Using Postman
 
-1. From the Postman client, perform a DELETE request to http://localhost:8080/animals/5
-1. Then request all animals again with a GET request to http://localhost:8080/animals
+1. From the Postman client, perform a DELETE request to http://localhost:8088/animals/5
+1. Then request all animals again with a GET request to http://localhost:8088/animals
 1. Verify that the animal with an id of 5 is not in the response and got deleted from the database.
 
 ## Adding the Animal Back
