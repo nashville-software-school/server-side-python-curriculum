@@ -53,7 +53,6 @@ In the request_handlers.py do_PUT method you'll need to add a way to handle that
 
 ```py
 def do_PUT(self):
-    self._set_headers(204)
     content_len = int(self.headers.get('content-length', 0))
     post_body = self.rfile.read(content_len)
     post_body = json.loads(post_body)
