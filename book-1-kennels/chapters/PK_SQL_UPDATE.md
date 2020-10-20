@@ -48,3 +48,29 @@ def update_animal(id, new_animal):
         # Forces 204 response by main module
         return True
 ```
+
+In the request_handlers.py do_PUT method you'll need to add a way to handle that returned boolean value
+
+```py
+def do_PUT(self):
+    self._set_headers(204)
+    content_len = int(self.headers.get('content-length', 0))
+    post_body = self.rfile.read(content_len)
+    post_body = json.loads(post_body)
+
+    # Parse the URL
+    (resource, id) = self.parse_url(self.path)
+   
+    success = False
+
+    if resource == "animals":
+        success = update_animal(id, post_body)
+    # rest of the elif's
+    
+    if success:
+        self._set_headers(204)
+    else:
+        self._set_headers(404)
+
+    self.wfile.write("".encode())
+ ```
