@@ -130,7 +130,7 @@ for row in dataset:
                     row['location_id'], row['customer_id'])
 
     # Create a Location instance from the current row
-    location = Location(row['location_id'], row['location_name'], row['location_address'])
+    location = Location(row['location_name'], row['location_address'])
 
     # Add the dictionary representation of the location to the animal
     animal.location = location.__dict__
