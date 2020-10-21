@@ -15,7 +15,7 @@ Therefore, you must update each field for the resource based on what the client 
 
 In the SQL below, note that there is a `?` parameter for each field in the animal table, and the tuple argument contains the corresponding key in the dictionary that the client sent in the request.
 
-Once the UPDATE statement executes, you then check to see if a database row was affected. You currently have 5 animals in your database. What if the client sent a request to http://localhost:8088/10345?
+Once the UPDATE statement executes, you then check to see if a database row was affected. You currently have 5 animals in your database. What if the client sent a request to http://localhost:8088/animals/10345?
 
 There is no animal with that `id` value, so the `rows_affected` variable will be 0. If it is 0, then you know the user specified an `id` that doesn't exist, so you will return `False` which generates a 404 _(Not Found)_ response back to the client.
 
