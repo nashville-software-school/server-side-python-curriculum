@@ -126,8 +126,8 @@ Now replace your `for` loop with the following code.
 for row in dataset:
 
     # Create an animal instance from the current row
-    animal = Animal(row['name'], row['breed'], row['status'],
-                    row['location_id'], row['customer_id'], row['id'])
+    animal = Animal(row['id'], row['name'], row['breed'], row['status'],
+                    row['location_id'], row['customer_id'])
 
     # Create a Location instance from the current row
     location = Location(row['location_name'], row['location_address'])
