@@ -19,7 +19,7 @@ Now you use pip to install all of the packages needed for this project.
 pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
 ```
 
-## Allowing Common Variables Names
+## Controlling Lint Errors
 
 The pylint package is very good at ensuring that you follow the community standards for variable naming, but there are certain times that you want to use variable names that are short and don't use snake case. You can put those variable names in a `.pylintrc` file in your project.
 
@@ -28,6 +28,9 @@ Without this configuration, your editor will put orange squiggles under those va
 ```sh
 echo '[FORMAT]
 good-names=i,j,ex,pk
+
+[MESSAGES CONTROL]
+disable=broad-except
 ' > .pylintrc
 ```
 
