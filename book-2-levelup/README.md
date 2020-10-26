@@ -13,6 +13,7 @@ This book introduces you to the Django application framework, and the Django RES
 | 3 | [Level Up Client](./chapters/LU_CLIENT.md) <br/> <sub style="font-size:0.85rem;">#react #components</sub> |  |  |
 | 4 | [Karen Cares](./chapters/LU_FIXTURES.md) <br/> <sub style="font-size:0.85rem;">#data #fixtures</sub> | [GamerRater Models](./chapters/GR_MODELS.md) |  |
 | 5 | [Level Up Gamers](./chapters/LU_AUTHENTICATION.md) <br/> <sub style="font-size:0.85rem;">#authentication #tokens</sub> |  |  |
+|  | _**[Interlude: Django ORM](./chapters/ORM_PRACTICE.md)**_ |  |  |
 | 6 | [Exposing Game Types](./chapters/LU_GAME_TYPES.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> | [GamerRater Client Setup](./chapters/GR_CLIENT.md) |  |
 | 7 | [Exposing Games](./chapters/LU_GAMES.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> | [GamerRater Fixtures](./chapters/GR_FIXTURES.md) |  |
 | 8 | [Exposing Events](./chapters/LU_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> |  |  |
