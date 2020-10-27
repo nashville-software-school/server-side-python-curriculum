@@ -27,7 +27,7 @@
 | 15 | [Admitting Animals](./chapters/PK_POST_INSERT.md) <br/> <sub style="font-size:0.85rem;">#sql #INSERT</sub> | [Recording New Entries](./chapters/DJ_INSERT.md) | [Controlling the Animals](./chapters/CC_GETTER_SETTER.md) <br/> <sub style="font-size:0.85rem;">#properties #get #set</sub> |
 | Interlude: SQL | [SQL Murder Mystery](https://mystery.knightlab.com/) |  |  |
 | 16 |  | [Editing Journal Entries](./chapters/DJ_UPDATE.md) | [Eliminating Class Waste](./chapters/CC_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance</sub> |
-| 17 |  |  | [Complex, Clean Critter Classes](./chapters/CC_MULTIPLE_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance #multiple</sub> |  |
-| 18 |  |  | [If it Honks Like a Goose](./chapters/CC_DUCK_TYPING.md) <br/> <sub style="font-size:0.85rem;">#typing</sub> |  |
+| 17 |  | [Add Entry Tags](./chapters/DJ_JOIN_TAGS.md) | [Complex, Clean Critter Classes](./chapters/CC_MULTIPLE_INHERITANCE.md) <br/> <sub style="font-size:0.85rem;">#inheritance #multiple</sub> |  |
+| 18 |  | [Add Entry Tags in Client](./chapters/DJ_ClIENT_TAGS.md) | [If it Honks Like a Goose](./chapters/CC_DUCK_TYPING.md) <br/> <sub style="font-size:0.85rem;">#typing</sub> |  |
 | 👨‍👩‍👧‍👧 | [Group Project: Rare](./chapters/RARE.md) | | | |
 
