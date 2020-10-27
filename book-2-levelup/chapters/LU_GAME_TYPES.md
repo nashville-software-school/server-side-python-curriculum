@@ -23,6 +23,14 @@ Time to write the brains of the operation. The ViewSet will only handle GET requ
 > #### `levelup/levelupapi/views/gametype.py`
 
 ```py
+"""View module for handling requests about game types"""
+from django.http import HttpResponseServerError
+from rest_framework.viewsets import ViewSet
+from rest_framework.response import Response
+from rest_framework import serializers
+from levelupapi.models import GameType
+
+
 class GameTypes(ViewSet):
     """Level up game types"""
 
@@ -106,6 +114,13 @@ Then, before the URL patterns that you already set up for authentication, add th
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'gametypes', GameTypes, 'gametype')
+
+urlpatterns = [
+    path('', include(router.urls)),
+    path('register', register_user),
+    path('login', login_user),
+    path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
+]
 ```
 
 ## Client Code
