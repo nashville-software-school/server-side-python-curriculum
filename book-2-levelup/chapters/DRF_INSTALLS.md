@@ -1,5 +1,15 @@
 # DRF Installations and Configuration
 
+## Setup
+
+Django is the web application framework that you will be using for the remainder of the course, so you need to install it globally first.
+
+Make sure you are not in an activated virtual environment.
+
+```sh
+pip install django
+````
+
 The initial creation of a Django project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
 
 ## Creating the Project
