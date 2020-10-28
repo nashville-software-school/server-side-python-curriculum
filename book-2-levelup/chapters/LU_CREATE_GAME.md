@@ -127,7 +127,5 @@ Add the following button to the header of the game list component JSX. When clic
 Then add the following route to the **`ApplicationViews`** component. Make sure you make it a child of the correct provider(s).
 
 ```jsx
-<Route exact path="/games/new">
-    <GameForm />
-</Route>
+<Route exact path="/games/new" render={props => <GameForm {...props} />} />
 ```

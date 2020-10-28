@@ -2,11 +2,7 @@
 
 ## Preface: Seed the Database
 
-Create the fixture below and then seed the database with the following command
-
-```sh
-python manage.py loaddata games
-```
+Create the following fixture file and then seed the database with the loaddata command beneath.
 
 > #### `levelup/levelupapi/fixtures/games.json`
 
@@ -50,6 +46,14 @@ python manage.py loaddata games
     }
 ]
 ```
+
+#### Load the fixture data
+
+```sh
+python manage.py loaddata games
+```
+
+
 
 ## Step 1: The Game Model Class
 
