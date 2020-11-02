@@ -131,6 +131,14 @@ path('register', register_user)
 path('register', register_user)
 ```
 
+## Starting the Server
+
+Run the following command in your `levelup` directory to start the Django application.
+
+```sh
+python manage.py runserver
+```
+
 ## Authenticating a User
 
 Now you can test this out as an actual Gamer who would be using the application. Launch your initial React client, and try to log in with the account that was created with your fixtures.
