@@ -128,7 +128,7 @@ In the code above, you will notice that the `register_user` and `login_user` fun
 # Requests to http://localhost:8000/register will be routed to the register_user function
 path('register', register_user)
 # Requests to http://localhost:8000/login will be routed to the login_user function
-path('login', register_user)
+path('login', login_user)
 ```
 
 ## Starting the Server
