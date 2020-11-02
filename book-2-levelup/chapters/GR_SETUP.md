@@ -24,7 +24,7 @@ Then create the Github repository for your API project and do an initial commit.
 
 ## Step 1: Authentication
 
-You can steal the registration and logic logic verbatim from Level Up - for both the client and the server.
+You can steal the registration and authentication logic verbatim from Level Up - for both the client and the server.
 
 ## The Process
 
