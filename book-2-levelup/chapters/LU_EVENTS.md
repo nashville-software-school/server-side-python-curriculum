@@ -1,4 +1,4 @@
-# Listing Games
+# Listing Events
 
 ## Preface: Seed the Database
 
@@ -161,7 +161,7 @@ class Events(ViewSet):
         # Support filtering events by game
         game = self.request.query_params.get('gameId', None)
         if game is not None:
-            events = events.filter(game__id=type)
+            events = events.filter(game__id=game)
 
         serializer = EventSerializer(
             events, many=True, context={'request': request})
