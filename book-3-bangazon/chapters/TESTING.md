@@ -2,7 +2,11 @@
 
 ## Setup
 
+When you want to have a test suite that verifies that your code continues to work as developers make changes, here's the quick list of things you need to
+
 1. Create `tests` directory in project.
+1. Create `tests/{resource_name}_tests.py` module for each resource.
+1. Write test classes in each test module.
 1. Create `tests/__init__.py` module.
 1. Import test classes into `__init__.py`.
 1. Run `python manage.py test tests -v 1` to execute all test classes.
@@ -120,3 +124,23 @@ class GameTests(APITestCase):
         self.assertEqual(json_response["skill_level"], 5)
         self.assertEqual(json_response["number_of_players"], 6)
 ```
+
+## Running the Test
+
+1. Open a terminal and change directory to your project directory.
+1. Run the following command
+    ```sh
+    python manage.py test tests -v 1
+    ```
+1. Look at the output and see if the test passes.
+    ![expected test output in terminal](./images/initial-test-output.png)
+1. If your test passed, move on to the next section, otherwise, call in an instructor.
+
+## Testing GET
+
+
+## Testing PUT
+
+
+## Testing DELETE
+
