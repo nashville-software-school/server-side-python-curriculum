@@ -25,5 +25,5 @@ This book introduces you to the Django application framework, and the Django RES
 | 14 | [Oops!](./chapters/LU_EDIT_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#edit #PUT</sub> | [Searching Games](./chapters/GR_SEARCH.md) |  |
 | 15 |  | [Sorting Games](./chapters/GR_SORTING.md) |  |
 | 16 |  | [Edit Games](./chapters/GR_EDIT_GAME.md) | [Challenge: The Park Map](./chapters/KW_MAP_VISUALIZATION.md) |
-| 👨‍👩‍👧‍👧 | Group Project: Rare REST |  |
+| 👨‍👩‍👧‍👧 | [Group Project: Rare REST](./chapters/RARE_REST.md) |  |
 
