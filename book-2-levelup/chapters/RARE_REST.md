@@ -26,6 +26,10 @@ django-admin startproject rare
 python manage.py startapp rareapi
 ```
 
+### Creating the .gitignore
+
+Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit.
+
 ## Rare ERD from Database Team
 
 https://dbdiagram.io/d/5f885a013a78976d7b77cb74
