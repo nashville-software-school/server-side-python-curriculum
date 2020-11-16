@@ -238,3 +238,7 @@ The last step is to include these URL patterns in the main `urls.py`, otherwise 
 ```py
 path('', include('levelupreports.urls')),
 ```
+
+## Viewing the Report
+
+Go to Chrome and go to the URL of http://localhost:8000/reports/usergames to view your HTML report. No JSON. No JavaScript or JSX needed. Just a fully-formed HTML document cooked and delivered by Django.
