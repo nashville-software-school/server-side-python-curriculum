@@ -232,3 +232,9 @@ urlpatterns = [
     path('reports/usergames', usergame_list),
 ]
 ```
+
+The last step is to include these URL patterns in the main `urls.py`, otherwise your app won't support them. Add the code below to the `urlpatterns` list in `levelup/urls.py` module.
+
+```py
+path('', include('levelupreports.urls')),
+```
