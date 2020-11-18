@@ -37,10 +37,12 @@ When the gamer is viewing an individual game, there should be a button labeled "
 
 
 ```html
- <input type="file" id="game_image" />
- <input type="hidden" name="game_id" value={game.id} />
- <button onChange={(evt) => {
+ <input type="file" id="game_image" onChange={(evt) => {
      createGameImageJSON(evt)
+ }} />
+ <input type="hidden" name="game_id" value={game.id} />
+ <button onClick={() => {
+     // Upload the stringified image that is stored in state
  }}>Upload</button>
 ```
 
@@ -57,10 +59,7 @@ const createGameImageJSON = (event) => {
     getBase64(event.target.files[0], (base64ImageString) => {
         console.log("Base64 of file is", base64ImageString);
 
-        /*
-            Now that you have the image string, you can POST your
-            image data to the API
-        */
+        // Update a component state variable to the value of base64ImageString
     });
 }
 ```
