@@ -143,4 +143,5 @@ When your models are approved, you can then run a migration to get the tables cr
 
 ```sh
 python manage.py makemigrations levelupapi
+python manage.py migrate
 ```
