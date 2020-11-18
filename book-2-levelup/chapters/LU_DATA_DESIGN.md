@@ -139,8 +139,14 @@ Once you have a good ERD that defines the tables and relationships for gamers, g
 
 Once you have defined your models, you should review them with an instructor.
 
-When your models are approved, you can then run a migration to get the tables created in your database.
+When your models are approved, you can then create a migration to get the tables created in your database.
 
 ```sh
 python manage.py makemigrations levelupapi
+```
+
+Now that migrations are created, you can execute them.
+
+```sh
+python manage.py migrate
 ```
