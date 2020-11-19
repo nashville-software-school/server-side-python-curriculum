@@ -1,10 +1,12 @@
 # Learning SQL with Chinook
 
-## Downloading the Database Files
+## Setup
+
+### Downloading the Database File
 
 Download the [Chinook Database](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite?raw=true). It will immediately download into your `Downloads` directory.
 
-## Moving the SQLite Database to Your Workspace
+### Move Database to Workspace
 
 1. In your CLI, get to the directory where you extracted the archive. It should be something like the following.
     ```sh
@@ -23,15 +25,22 @@ Download the [Chinook Database](https://github.com/lerocha/chinook-database/blob
     cp Chinook_Sqlite.sqlite ~/workspace/chinook
     ```
 
-That file **is** the database. It contains all of the tables and data. You can now open up that SQL file in your SQL editor to see it.
+That file **is** the database. It contains all of the tables and data. Open that directory in VS Code and create a connection to the database file.
 
 ## Instructions
 
-1. In your cohort's Github account, create a github repository for your answers. If your instructor is using Github Classroom, the repository will be created for you. If not, name your repository `chinook-{your Github username]`.
-1. Create an ERD of the Chinook database with dbdiagram.io. Make sure to label primary keys, foreign keys, and indicate the type of relationship (one to one, one to many, many to many, etc) for each relationship.
-1. When you're ready to start the exercise, create a new SQL window and begin writing your SQL.
+### Public Repo
+In your cohort's Github account, create a repository for your answers. Name your repository `chinook-{your Github username]`.
 
-For each of the following exercises, provide the appropriate query. Yes, even the ones that are expressed in the form of questions. Everything from class and the [Sqlite Documentation](http://www.sqlite.org/) is fair game.
+### ERD
+
+Create an ERD of the Chinook database with dbdiagram.io. Make sure to label primary keys, foreign keys, and indicate the type of relationship (one to one, one to many, many to many, etc) for each relationship.
+
+### Exercises
+
+For each of the following exercises, provide the appropriate query. Yes, even the ones that are expressed in the form of questions. Everything from class and the [Sqlite Documentation](http://www.sqlite.org/) is fair game. Create the file specified and write the query for that problem in that file.
+
+When you believe you have it solved, add/commit/push to your Github repo.
 
 1. `non_usa_customers.sql`: Provide a query showing Customers (just their full names, customer ID and country) who are not in the US.
 1. `brazil_customers.sql`: Provide a query only showing the Customers from Brazil.
