@@ -37,9 +37,7 @@ When the gamer is viewing an individual game, there should be a button labeled "
 
 
 ```html
- <input type="file" id="game_image" onChange={(evt) => {
-     createGameImageJSON(evt)
- }} />
+ <input type="file" id="game_image" onChange={createGameImageString} />
  <input type="hidden" name="game_id" value={game.id} />
  <button onClick={() => {
      // Upload the stringified image that is stored in state
@@ -55,7 +53,7 @@ const getBase64 = (file, callback) => {
     reader.readAsDataURL(file);
 }
 
-const createGameImageJSON = (event) => {
+const createGameImageString = (event) => {
     getBase64(event.target.files[0], (base64ImageString) => {
         console.log("Base64 of file is", base64ImageString);
 
