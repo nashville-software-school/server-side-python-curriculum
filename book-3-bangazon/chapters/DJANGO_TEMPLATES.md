@@ -21,11 +21,11 @@ Be in your LevelUp project directory.
     ```
 1. Add `levelupreports` to your installed apps in the `settings.py` module.
 1. Delete the `models.py` and `views.py` modules in the  application.
-1. Create a `views` directory in the application and create the following two modules in it.
+1. Create a `levelup/levelupreports/views` directory and create the following two modules in it.
     1. `__init__.py`
     1. `connection.py`
-1. Create a `templates` directory in the application.
-1. Create a `urls.py` module in the report application, and add the following code.
+1. Create a `levelup/levelupreports/templates` directory.
+1. Create a `levelup/levelupreports/urls.py` module. Code for this module is at the end of the chapter.
 
 ## Database Connection Module
 
