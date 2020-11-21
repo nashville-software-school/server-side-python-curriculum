@@ -4,15 +4,15 @@ In the previous chapter, you implemented full-stack code that let an authenticat
 
 In this chapter, you are going to implement full-stack code that will allow gamers to easily join _**and**_ leave scheduled events. You will also implement reactive code that will immediately show if the user is currently attending the event or not.
 
-You will learn about non-mapped Django model properties, use a JavaScript ternary statement to show the correct UI element, use `onClick()` handlers in React, and implement a custom action - a feature available in Django REST Framework view sets.
+You will learn about custom Django model properties, use a JavaScript ternary statement to show the correct UI element, use `onClick()` handlers in React, and implement a custom action - a feature available in Django REST Framework view sets.
 
 ![animation of joining and leaving events in the client](./images/levelup-join-leave.gif)
 
-## Non-Mapped Model Properties
+## Custom Model Properties
 
 Normally, every property on a Model class in Django directly reflects a column on a table in the database. Sometimes, though, you need additional properties on a model that are calculated during a request/response cycle with a client.
 
-In this chapter, you are going to add a `joined` non-mapped property to the **`Event`** class that will let the client application know if the currently authenticated user can join a particular event.
+In this chapter, you are going to add a `joined` custom property to the **`Event`** class that will let the client application know if the currently authenticated user can join a particular event.
 
 Assume there are 4 events.
 
@@ -73,7 +73,7 @@ You'll see how later in the chapter.
 
 ## Model Property
 
-Add the non-mapped property to event class. It's a simple property with a get/set, and with no additional validation logic.
+Add the following custom property to event class. It's a simple property with get/set methods with no additional validation logic.
 
 > #### `levelup/levelupclient/models/event.py`
 
@@ -89,11 +89,12 @@ Add the non-mapped property to event class. It's a simple property with a get/se
 
 ## Event Serializer
 
-Update the **`EventSerializer`** class to include the new, non-mapped property.
+Update the **`EventSerializer`** class to include the new, custom property.
 
 ```py
-        fields = ('id', 'url', 'game', 'organizer',
-                  'description', 'date', 'time', 'joined')
+fields = ('id', 'game', 'organizer',
+          'description', 'date', 'time',
+          'joined')
 ```
 
 ## List of Events

@@ -16,7 +16,7 @@ Below are the features and requirements for what resources are needed for this a
 * Players can rate games.
 * Players can write a review of a game.
 * Games can be searched, and sorted by category.
-* Players can see the average rating of a game _(by you implementing a non-mapped model property)_.
+* Players can see the average rating of a game _(by you implementing a custom model property)_.
 * Players can view all reviews for a game.
 
 Use this information to create an ERD for this project. Visit your instruction team for approval once you believe you have a good diagram.

@@ -7,7 +7,7 @@ You have been presented with an unique business opportunity. A local startup has
 * Players can rate games.
 * Players can write a review of a game.
 * Games can be searched, sorted by category, and sorted by year of release.
-* Players can see the average rating of a game _(by you implementing a non-mapped model property)_.
+* Players can see the average rating of a game _(by you implementing a custom model property)_.
 
 ## Setup
 

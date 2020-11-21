@@ -6,7 +6,7 @@ This book introduces you to the Django application framework, and the Django RES
 
 ## Chapters
 
-| # | 🕹 🎲<br/> Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ 🎯 <br/> GamerRater <br/> | 🎡 🎢 <br/> Kennywood <br/> <sub>_(Optional)_</sub>  |
+| # | 🕹 🎲<br/> Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ 🎯 <br/> GamerRater <br/> | 🍛 🍔 <br/> FavaMeal <br/> <sub>_(Custom actions &amp; properties )_</sub>  |
 |--|--|--|--|
 | 1 | [Level Up API Setup](./chapters/DRF_INSTALLS.md) | [GamerRater API Setup](./chapters/GR_SETUP.md) |  |
 | 2 | [Meeting Karen](./chapters/LU_DATA_DESIGN.md) <br/> <sub style="font-size:0.85rem;">#database #models</sub> | [GamerRater ERD](./chapters/GR_ERD.md) |  |
@@ -19,11 +19,20 @@ This book introduces you to the Django application framework, and the Django RES
 | 8 | [Exposing Events](./chapters/LU_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#orm #viewset #serializer #router</sub> |  |  |
 | 9 | [Gamers Making Games](./chapters/LU_CREATE_GAME.md) <br/> <sub style="font-size:0.85rem;">#react #forms</sub> | [GamerRater Games](./chapters/GR_GAMES.md) |  |
 | 10 | [Creating Events](./chapters/LU_GAME_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#react #forms</sub> | [Game Reviews](./chapters/GR_REVIEWS.md) |  |
-| 11 | [Gamers Joining Events](./chapters/LU_CUSTOM_ACTION.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> |  |  |
-| 12 | [Gamers Leaving Events](./chapters/LU_MODEL_PROPERTY.md) <br/> <sub style="font-size:0.85rem;">#models #unmapped-property</sub> | [Game Ratings](./chapters/GR_GAME_RATINGS.md) |  |
-| 13 | [Gamer Profiles](./chapters/LU_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#actions</sub> | [Games in Action Pictures](./chapters/GR_UPLOADS.md) | [Kennywood Client and Server](./chapters/KW_SETUP.md) |
-| 14 | [Oops!](./chapters/LU_EDIT_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#edit #PUT</sub> | [Searching Games](./chapters/GR_SEARCH.md) |  |
-| 15 |  | [Sorting Games](./chapters/GR_SORTING.md) |  |
-| 16 |  | [Edit Games](./chapters/GR_EDIT_GAME.md) | [Challenge: The Park Map](./chapters/KW_MAP_VISUALIZATION.md) |
+| 11 | [Gamers Joining Events](./chapters/LU_CUSTOM_ACTION.md) <br/> <sub style="font-size:0.85rem;">#custom-action</sub> |  |  |
+| 12 | [Gamers Leaving Events](./chapters/LU_MODEL_PROPERTY.md) <br/> <sub style="font-size:0.85rem;">#models #custom-property</sub> | [Game Ratings](./chapters/GR_GAME_RATINGS.md) | [Favorite Restaurants](./chapters/FV_REST_FAVE.md) <br/> <sub style="font-size:0.85rem;">#custom-action<br/>#custom-property</sub> |
+| 13 | [Gamer Profiles](./chapters/LU_PROFILE.md) <br/> <sub style="font-size:0.85rem;">#custom-action</sub> |  | [Favorite Meals](./chapters/FV_MEAL_FAVE.md) <br/> <sub style="font-size:0.85rem;">#custom-action<br/>#custom-property</sub> |
+| 14 | [Oops!](./chapters/LU_EDIT_EVENTS.md) <br/> <sub style="font-size:0.85rem;">#edit #PUT</sub> | [Edit Games](./chapters/GR_EDIT_GAME.md) | [Meal Ratings](./chapters/FV_MEAL_RATINGS.md) <br/> <sub style="font-size:0.85rem;">#custom-action<br/>#custom-property</sub> |
 | 👨‍👩‍👧‍👧 | [Group Project: Rare REST](./chapters/RARE_REST.md) |  |
+
+## Supplementary Chapters
+
+These chapters will let you explore more advanced capabilities and workflows between client and server with Django and the Django REST Framework plugin.
+
+| # | 🕹 🎲<br/> Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ 🎯 <br/> GamerRater <br/> | 🎡 🎢 <br/> Kennywood <br/> <sub>_(Optional)_</sub>  |
+|--|--|--|--|
+| 1 | [Event Attendees](./chapters/LU_ATTENDEE_COUNT.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Games in Action Pictures](./chapters/GR_UPLOADS.md) | |
+| 2 | | [Searching Games](./chapters/GR_SEARCH.md) |  |
+| 3 |  | [Sorting Games](./chapters/GR_SORTING.md) |  |
+| 4 |  |  |  |
 

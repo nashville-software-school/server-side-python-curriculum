@@ -14,9 +14,9 @@ touch views/__init__.py
 
 You are going to be using an abstraction in the Django REST Framework library called a `ViewSet`. This particular type allows you to write more abstract code than you did for your first Django exercises and project.
 
-You will also be using another built-in type called a `HyperlinkedModelSerializer`. What this class does is take a Python object and convert it into JSON for you, **and** adds a virtual property of `url` to the resulting JSON.
+You will also be using another built-in type called a `ModelSerializer`. What this class does is take a Python object and convert it into JSON for you, **and** adds a virtual property of `url` to the resulting JSON.
 
-The `ViewSet` class allows you to write logic for the operations that can be performed on a resource in the API. The first operations you will handle are a client requesting one park area, and a request for all park areas. For these operations, the `ViewSet` exposes `retrieve()` and `list()` methods. Your logic goes in those methods. 
+The `ViewSet` class allows you to write logic for the operations that can be performed on a resource in the API. The first operations you will handle are a client requesting one park area, and a request for all park areas. For these operations, the `ViewSet` exposes `retrieve()` and `list()` methods. Your logic goes in those methods.
 
 > ##### `kennywoodapi/views/parkarea.py`
 
@@ -30,19 +30,11 @@ from rest_framework import status
 from kennywoodapi.models import ParkArea
 
 
-class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
-    """JSON serializer for park areas
-
-    Arguments:
-        serializers.HyperlinkedModelSerializer
-    """
+class ParkAreaSerializer(serializers.ModelSerializer):
+    """JSON serializer for park areas"""
     class Meta:
         model = ParkArea
-        url = serializers.HyperlinkedIdentityField(
-            view_name='parkarea',
-            lookup_field='id'
-        )
-        fields = ('id', 'url', 'name', 'theme')
+        fields = ('id', 'name', 'theme')
 
 
 class ParkAreas(ViewSet):
@@ -60,7 +52,7 @@ class ParkAreas(ViewSet):
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
-            
+
     def list(self, request):
         """Handle GET requests to park areas resource
 

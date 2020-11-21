@@ -11,9 +11,9 @@ Plenty of options for you to choose from. Just make sure that the user can only 
 
 ## Displaying Rating
 
-When you show the details of a game, you are not going to list every individual rating given by users. You will need to show an average rating. Since the average is not stored in the database, but rather calculated each time, you will need a non-mapped property named `average_rating` on the **`Game`** model in your API.
+When you show the details of a game, you are not going to list every individual rating given by users. You will need to show an average rating. Since the average is not stored in the database, but rather calculated each time, you will need a custom property named `average_rating` on the **`Game`** model in your API.
 
-Then, any time a game is requested - either a single one, or the entire list - you need to calculate the average rating of each game and set the value of the non-mapped property.
+Then, any time a game is requested - either a single one, or the entire list - you need to calculate the average rating of each game and set the value of the custom property.
 
 ```py
 @property

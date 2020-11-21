@@ -12,7 +12,7 @@ from rest_framework import status
 from kennywoodapi.models import ParkArea
 
 
-class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
+class ParkAreaSerializer(serializers.ModelSerializer):
     """JSON serializer for park areas
 
     Arguments:
@@ -20,11 +20,7 @@ class ParkAreaSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = ParkArea
-        url = serializers.HyperlinkedIdentityField(
-            view_name='parkarea',
-            lookup_field='id'
-        )
-        fields = ('id', 'url', 'name', 'theme')
+        fields = ('id', 'name', 'theme')
 
 
 class ParkAreas(ViewSet):

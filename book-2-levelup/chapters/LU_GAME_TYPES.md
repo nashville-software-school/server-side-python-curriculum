@@ -70,7 +70,7 @@ The serializer class determines how the Python data should be serialized as JSON
 > #### `levelup/levelupapi/views/gametype.py`
 
 ```py
-class GameTypeSerializer(serializers.HyperlinkedModelSerializer):
+class GameTypeSerializer(serializers.ModelSerializer):
     """JSON serializer for game types
 
     Arguments:
@@ -78,11 +78,7 @@ class GameTypeSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = GameType
-        url = serializers.HyperlinkedIdentityField(
-            view_name='gametype',
-            lookup_field='id'
-        )
-        fields = ('id', 'url', 'label')
+        fields = ('id', 'label')
 ```
 
 ## Step 4: The URL
