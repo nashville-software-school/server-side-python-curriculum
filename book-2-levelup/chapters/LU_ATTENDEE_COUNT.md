@@ -52,8 +52,6 @@ It would provide the following result set.
 | Clue | 2 |
 | Stratego | 3 |
 
-
-
 ## Events per Game with Django
 
 ### Models
@@ -78,7 +76,6 @@ class Game(models.Model):
     @event_count.setter
     def event_count(self, value):
         self.__event_count = value
-
 
 
 class Event(models.Model):
@@ -119,3 +116,24 @@ class GameSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'event_count')
 ```
 
+Then the client would receive the following JSON.
+
+```json
+[
+    {
+        "id": 1,
+        "title": "Risk",
+        "event_count": 3
+    },
+    {
+        "id": 2,
+        "title": "Clue",
+        "event_count": 2
+    },
+    {
+        "id": 3,
+        "title": "Stratego",
+        "event_count": 3
+    }
+]
+```

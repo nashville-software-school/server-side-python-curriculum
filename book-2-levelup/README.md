@@ -29,10 +29,10 @@ This book introduces you to the Django application framework, and the Django RES
 
 These chapters will let you explore more advanced capabilities and workflows between client and server with Django and the Django REST Framework plugin.
 
-| # | 🕹 🎲<br/> Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ 🎯 <br/> GamerRater <br/> | 🎡 🎢 <br/> Kennywood <br/> <sub>_(Optional)_</sub>  |
-|--|--|--|--|
-| 1 | [Event Attendees](./chapters/LU_ATTENDEE_COUNT.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Games in Action Pictures](./chapters/GR_UPLOADS.md) | |
-| 2 | | [Searching Games](./chapters/GR_SEARCH.md) |  |
-| 3 |  | [Sorting Games](./chapters/GR_SORTING.md) |  |
-| 4 |  |  |  |
+| # | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
+|--|--|--|
+| 1 | [Event Attendees](./chapters/LU_ATTENDEE_COUNT_DEMO.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Games in Action Pictures](./chapters/GR_UPLOADS.md) |
+| 2 | [Gamer Event Count](./chapters/LU_EVENT_ATTENDEES.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub>| [Searching Games](./chapters/GR_SEARCH.md) |
+| 3 |  | [Sorting Games](./chapters/GR_SORTING.md) |
+| 4 |  |  |
 
