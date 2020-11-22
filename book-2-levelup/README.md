@@ -32,7 +32,7 @@ These chapters will let you explore more advanced capabilities and workflows bet
 | # | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
 |--|--|--|
 | 1 | [Event Attendees](./chapters/LU_ATTENDEE_COUNT_DEMO.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Games in Action Pictures](./chapters/GR_UPLOADS.md) |
-| 2 | [Gamer Event Count](./chapters/LU_EVENT_ATTENDEES.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub>| [Searching Games](./chapters/GR_SEARCH.md) |
-| 3 |  | [Sorting Games](./chapters/GR_SORTING.md) |
-| 4 |  |  |
+| 2 | [Event Attendees](./chapters/LU_EVENT_ATTENDEES.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Searching Games](./chapters/GR_SEARCH.md) |
+| 3 | [Events per Game](./chapters/LU_EVENT_COUNT.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Sorting Games](./chapters/GR_SORTING.md) |
+| 4 | [Joined Events](./chapters/LU_JOINED_Q_FILTER.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> |  |
 
