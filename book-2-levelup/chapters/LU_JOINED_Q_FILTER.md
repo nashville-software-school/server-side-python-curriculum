@@ -35,3 +35,49 @@ for event in events:
 ```
 
 This is advanced stuff here, but just in case you find a glimmer of understanding in the darkness while reading this chapter, and implementing this code, you may find a use for it in the next group project.
+
+## Challenge: User Events Created
+
+In the game viewset, when the client requests all games, or a single game, the resulting JSON should have a `user_event_count` property on it. If you had completed the previous chapter of adding `event_count` to each game using the `annotate()` method, you need to augment that statement to filter related events down to ones created by the current user.
+
+For example, if a game has an event scheduled, but the event was created by another user, the JSON would look like this.
+
+```json
+{
+    "id": 3,
+    "title": "Catchphrase",
+    "maker": "Hasbro Gaming",
+    "gamer": {
+        "id": 2
+    },
+    "number_of_players": 6,
+    "skill_level": 2,
+    "gametype": {
+        "id": 1,
+        "label": "Table top"
+    },
+    "event_count": 1,
+    "user_event_count": 0
+}
+```
+
+If the game has 2 scheduled events, and one of them was created by the current user, the JSON should look like this.
+
+```json
+{
+    "id": 8,
+    "title": "Clue",
+    "maker": "Milton Bradley",
+    "gamer": {
+        "id": 3
+    },
+    "number_of_players": 6,
+    "skill_level": 2,
+    "gametype": {
+        "id": 1,
+        "label": "Table top"
+    },
+    "event_count": 2,
+    "user_event_count": 1
+}
+```
