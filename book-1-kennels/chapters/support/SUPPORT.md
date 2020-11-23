@@ -1,10 +1,12 @@
-# Rare Database
+# Instructor Support Documentation
 
-## ERD
+## Rare Database
+
+### ERD
 
 https://dbdiagram.io/d/5f885a013a78976d7b77cb74
 
-## SQL Script
+### SQL Script
 
 ```sql
 CREATE TABLE "AccountTypes" (
@@ -140,6 +142,20 @@ INSERT INTO AccountTypes ('label') VALUES ('Admin');
 INSERT INTO AccountTypes ('label') VALUES ('Author');
 ```
 
-## Ticket Order for Rare Project
 
-![](./rare-ticket-order.png)
+## Bangazon Issues to Fix
+
+* Remove duplicate `line_items` on the cart, leave `lineitems`
+    * Students will need to remove line 159 from `views/profile.py`
+* Products keep getting added to the last, closed order.
+    * Students will need to add `payment_type=None` filter to the ORM statement on `views/profile.py` on line 210
+* Why does the same user profile always come back from `/profile`?
+    * Students will need to remove the hard coded value of 4 and change it to `user=request.auth.user`
+* When the number sold parameter is set, the wrong results are provided.
+    * Change the lte to gte
+* Customers are complaining that they can't remove an item from the cart.
+    * Students will need to add `lineitem.delete()` to `views/lineitem.py` on line 80
+* Customers are complaining that the expiration date on their payment type is incorrect.
+    * In `views/paymenttype.py` the dates are switched on lines 37 and 38
+* Get to `/paymenttypes` should only return current user's
+    * Students will need to change the `get()` to a `filter()` on line 82 of `views/paymenttype.py`.
