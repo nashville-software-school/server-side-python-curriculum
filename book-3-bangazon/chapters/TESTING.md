@@ -34,7 +34,7 @@ Just like with your views and models in your API application, your `tests` direc
 > #### `levelup/tests/__init__.py`
 
 ```py
-from .game_tests import GateTests
+from .game_tests import GameTests
 ```
 
 ### Test Case(s) Module
