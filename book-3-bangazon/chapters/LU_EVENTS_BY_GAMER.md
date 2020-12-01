@@ -10,7 +10,7 @@ You need to generate another HTML report that displays the events that each game
     ```json
     {
         1: {
-            "organizer_id": 1,
+            "gamer_id": 1,
             "full_name": "Molly Ringwald",
             "events": [
                 {
