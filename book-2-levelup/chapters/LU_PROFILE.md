@@ -215,7 +215,7 @@ Your instruction team will review this with you to explain how this is useful fo
 
 ```jsx
 import React, { useEffect, useContext } from "react"
-import { ProfileContext } from "./AuthProvider.js"
+import { ProfileContext } from "./ProfileProvider.js"
 import "./Profile.css"
 
 
