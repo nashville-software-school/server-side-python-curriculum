@@ -8,13 +8,13 @@ At its core, its purpose is simple: to generate AND and OR statements for a WHER
 
 ## Am I Attending?
 
-You can add as many virtual properties to objects with the `annotate()` method. In the previous chapter, you added an `attendees` property to all event objects that were created from a Django ORM query.
+You can add many virtual properties to objects with the `annotate()` method. In the previous chapter, you added an `attendees` property to all event objects that were created from a Django ORM query.
 
 This makes your code more efficient because you are only making a single query to the database, instead of an additional query for each row in the result set.
 
 In your viewset, you are currently iterating over the entire collection of events in your database, and checking if the current user is attending. If the user is attending, you are setting `joined = True` for that particular event.
 
-Since the current user attending is simply a subset of all gamers that are attending, you can use `annotate()` to add that aggregate property on each event with a single SQL statement instead of multiple ones.
+Since the current user attending is simply a subset of all gamers that are attending, you can use `Q()` to add that aggregate property on each event with a single SQL statement instead of multiple ones.
 
 
 ```py
@@ -26,6 +26,12 @@ events = Event.objects.annotate(
     )
 )
 ```
+
+In English, you are...
+
+1. Querying the `Event` table
+1. Aggregating how many total attendees there are
+1. Determining if the current user has joined the event by joining in registrations **AND** filtering by the `gamer` property of each registration.
 
 That will set the value of `joined` to 1 or 0. You want true or false. To get that, add a for loop that converts the numbers to booleans.
 
