@@ -28,14 +28,21 @@ You are only provided with a small sample of code in this chapter. You have to b
 
 ```jsx
 import React, { useContext, useState, useEffect } from "react"
+import { useHistory } from "react-router-dom"
 
 
-export const EventForm = props => {
+export const EventForm = () => {
+    const history = useHistory()
+
     const [currentEvent, setEvent] = useState({})
 
     useEffect(() => {
         // Get all existing games from API
     }, [])
+
+    const changeEventState = (domEvent) => {
+        // ...
+    }
 
     return (
         <form className="gameForm">
@@ -44,8 +51,8 @@ export const EventForm = props => {
                 <div className="form-group">
                     <label htmlFor="gameId">Game: </label>
                     <select name="gameId" className="form-control"
-                        value={currentEvent.gameId}
-                        onChange={handleControlledInputChange}>
+                        value={ currentEvent.gameId }
+                        onChange={ changeEventState }>
                         <option value="0">Select a game...</option>
                         {
                             games.map(game => (
@@ -63,6 +70,9 @@ export const EventForm = props => {
                     evt.preventDefault()
 
                     // Create the event
+
+
+                    // Once event is created, redirect user to event list
                 }}
                 className="btn btn-primary">Create Event</button>
         </form>
@@ -73,6 +83,3 @@ export const EventForm = props => {
 ## Create Event Button
 
 Add a button to the header of the event list component JSX. When clicked, it will redirect the browser to a `/events/new` route which should be handled by a new `<Route>` component in **`ApplicationViews`**.
-
-Remember to use the `render()` method on the route to make sure that props are sent to the **`EventForm`** so that it can use `props.history.push()` after the form is submitted.
-

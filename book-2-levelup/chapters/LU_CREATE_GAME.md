@@ -39,9 +39,11 @@ Now create a **`GameForm`** component and add the code below. Notice that the bu
 ```jsx
 import React, { useContext, useState, useEffect } from "react"
 import { GameContext } from "./GameProvider.js"
+import { useHistory } from 'react-router-dom'
 
 
-export const GameForm = props => {
+export const GameForm = () => {
+    const history = useHistory()
     const { createGame, getGameTypes, gameTypes } = useContext(GameContext)
 
     /*
@@ -69,9 +71,9 @@ export const GameForm = props => {
         Update the `currentGame` state variable every time
         the state of one of the input fields changes.
     */
-    const handleControlledInputChange = (event) => {
+    const changeGameState = (domEvent) => {
         const newGameState = Object.assign({}, currentGame)
-        newGameState[event.target.name] = event.target.value
+        newGameState[domEvent.target.name] = domEvent.target.value
         setCurrentGame(newGameState)
     }
 
@@ -83,7 +85,7 @@ export const GameForm = props => {
                     <label htmlFor="title">Title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         value={currentGame.title}
-                        onChange={handleControlledInputChange}
+                        onChange={changeGameState}
                     />
                 </div>
             </fieldset>
@@ -105,6 +107,7 @@ export const GameForm = props => {
 
                     // Send POST request to your API
                     createGame(game)
+                        .then(() => history.push("/games"))
                 }}
                 className="btn btn-primary">Create</button>
         </form>
