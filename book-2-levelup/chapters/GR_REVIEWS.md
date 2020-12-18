@@ -13,10 +13,14 @@ Your first Django ViewSet and React components you should create are for viewing
 
 ## Feature Requirements
 
-When the user is viewing a single game, then there should button labeled "Review Game". When the user clicks on that button, a form should be presented to the user that has a `<textarea>` element and a "Save" button.
+When the user is viewing a single game, then there should button labeled "Review Game". When the user clicks on that button, the client URL should change to `/game/{gameId}/review`. A `<Route exact path="/games/:gameId(\d+)/review">` in **`ApplicationViews`** should be set up to render a `<ReviewForm>` component when that URL is active. This form should contain a `<textarea>` element and a "Save" button.
+
+> **Hint**: Use the `useParams()` hook to access the `gameId` variable.
 
 When the user enters a review and clicks the save button, the review text should be sent to the API so that it can be saved in the database.
 
-Once the save is complete, redirect the user back to the game that was reviewed.
+Once the save is complete, use the `history.push()` method to redirect the user back to the game that was reviewed.
+
+> **Hint**: Use the `useHistory()` hook in the component.
 
 When the user is viewing a single game, a list of reviews should be displayed beneath the main details of the game.
