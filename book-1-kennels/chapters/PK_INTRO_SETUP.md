@@ -19,6 +19,9 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 # Here's a class. It inherits from another class.
+# For now, think of a class as a container for functions that
+# work together for a common purpose. In this case, that
+# common purpose is to respond to HTTP requests from a client.
 class HandleRequests(BaseHTTPRequestHandler):
 
     # Here's a class function
@@ -47,6 +50,8 @@ class HandleRequests(BaseHTTPRequestHandler):
 
         # It's an if..else statement
         if self.path == "/animals":
+            # In Python, this is a list of dictionaries
+            # In JavaScript, you would call it an array of objects
             response = [
                 { "id": 1, "name": "Snickers", "species": "Dog" },
                 { "id": 2, "name": "Lenny", "species": "Cat" }
