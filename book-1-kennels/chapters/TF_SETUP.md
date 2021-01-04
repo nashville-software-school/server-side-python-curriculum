@@ -1,8 +1,10 @@
 # Debugging Python
 
-As a professional junior developer, you will more often be working with existing code to fix bugs, write tests, and implement small features. You will rarely be involved with writing new applications from scratch. To give you some experience with that situation, you are going to be fixing four bugs in an existing Python API project.
+As a professional junior developer, you will more often be working with existing code to fix bugs, write tests, and implement small features. You will rarely be involved with writing new applications from scratch. To give you some experience with that situation, you are going to be fixing some bugs in an existing Python API project.
 
-## Getting the Project
+You will be working with two repositories. One for the client, and one for the server.
+
+## Getting the API Project
 
 When you are ready to take on this project, let your senior instructor know. You will be given a Github Classroom link that you can click to get a repository of code that you will be working on.
 
