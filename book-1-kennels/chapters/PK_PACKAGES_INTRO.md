@@ -2,6 +2,14 @@
 
 Having the animal data hard-coded right inside the main Python file, as you might imagine, is a horrible idea. If you kept that up, you would have 1000's of line of code in a single file.
 
+## Learning Objectives
+
+1. You should be able to identify a Python package.
+1. You should be able to explain what turns a directory into a Python package.
+1. You should be able to identify a Python import of another module.
+1. You should be able to discuss the difference in syntax between JavaScript imports and Python imports.
+
+
 ## Gather Related Files into a Package
 
 A package in Python is just a directory with a certain file in it.
