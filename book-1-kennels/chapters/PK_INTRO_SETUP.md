@@ -4,6 +4,20 @@ Oh no! The developer of `json-server` decided he didn't want to share his code a
 
 Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 - just like `json-server` did - and responds with data.
 
+## Learning Objectives
+
+1. You should be able to explain what a client and a server is in web development.
+1. You should be able to explain what an HTTP status code is.
+1. You should be able to explain the purpose of a 200 status code.
+1. You should be able to explain the purpose of a 201 status code.
+1. You should be able to explain the purpose of HTTP headers.
+1. You should be able to identify a Python function.
+1. You should be able to identify a Python `if` block.
+1. You should be able to identify a Python list.
+1. You should be able to identify a Python dictionary.
+1. You should be able to explain the purpose and action of a Python `print()` function.
+1. You should be able to explain that whitespace (i.e. indentation) defines scope in Python instead of `{}`.
+
 ## Directory and Code Setup
 
 ```sh
