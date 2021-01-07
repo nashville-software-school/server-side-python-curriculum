@@ -117,3 +117,18 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
     "locationId": 2
 }
 ```
+
+## Practice: Creating Customers on Registration
+
+1. Update the `do_POST` method in the main module to handle requests to the `/customers` path.
+1. Write a `create_employee` function in the `employees/request.py` module that appends a new employee dictionary to the list.
+
+Then perform a POST request from Postman to create a new employee. Make sure that your employee JSON assigns the employee to a location with a foreign key.
+
+```json
+{
+    "name": "Emma Beaton",
+    "email": "54 Sycamore Avenue",
+    "password": "jvt489yhv89rwhjvitreof"
+}
+```

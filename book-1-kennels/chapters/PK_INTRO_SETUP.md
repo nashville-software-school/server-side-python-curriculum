@@ -18,6 +18,10 @@ Luckily, you know you have Python installed on your computer and you found a sni
 1. You should be able to explain the purpose and action of a Python `print()` function.
 1. You should be able to explain that whitespace (i.e. indentation) defines scope in Python instead of `{}`.
 
+## Video Resources
+
+* [Parts of an HTTP Request](https://www.youtube.com/watch?v=pHFWGN-upGM)
+
 ## Directory and Code Setup
 
 ```sh
