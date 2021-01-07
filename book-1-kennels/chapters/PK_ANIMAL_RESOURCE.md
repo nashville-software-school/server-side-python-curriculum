@@ -15,6 +15,10 @@ In this chapter, you are going to write another function in your `animals/reques
 
 * [Unpacking a Tuple in Python](https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/)
 
+## Video Resources
+
+* [Python Tuples || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=NI26dqhs2Rk)
+
 ## Single Animal Lookup
 
 Copy the function below into your `animals/request.py` module.
@@ -74,6 +78,8 @@ class HandleRequests(BaseHTTPRequestHandler):
 
         # Try to get the item at index 2
         try:
+            # Convert the string "1" to the integer 1
+            # This is the new parseInt()
             id = int(path_params[2])
         except IndexError:
             pass  # No route parameter exists: /animals

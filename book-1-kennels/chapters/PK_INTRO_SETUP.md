@@ -21,6 +21,7 @@ Luckily, you know you have Python installed on your computer and you found a sni
 ## Video Resources
 
 * [Parts of an HTTP Request](https://www.youtube.com/watch?v=pHFWGN-upGM)
+* [Quick Intro to F-Strings in Python for String Formatting](https://www.youtube.com/watch?v=o0mvgsPQ8Jg)
 
 ## Directory and Code Setup
 
