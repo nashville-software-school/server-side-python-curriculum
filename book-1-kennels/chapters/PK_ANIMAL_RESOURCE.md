@@ -2,6 +2,19 @@
 
 In this chapter, you are going to write another function in your `animals/request.py` module, and also see your first `for..in` loop in Python.
 
+## Learning Objectives
+
+* You should be able to demonstrate how to use arguments and function parameters in Python.
+* You should be able to identify different parts of a URL path.
+* You should be able to explain the difference between a list and a tuple.
+* You should be able to identify a Python expression where a tuple is unpacked.
+* You should be able to implement the `int()` Python function to convert a string to an integer.
+* You should be able to explain how `try/except` blocks work in Python.
+
+## Reading Resources
+
+* [Unpacking a Tuple in Python](https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/)
+
 ## Single Animal Lookup
 
 Copy the function below into your `animals/request.py` module.
