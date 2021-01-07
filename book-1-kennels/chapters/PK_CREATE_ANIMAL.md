@@ -2,6 +2,17 @@
 
 In this chapter, you will write code to support the POST method of HTTP. From Postman, you will POST a new object to your Python server. That object will be converted from a string into a Python dictionary, and then added to the `ANIMALS` list in the `animals/request.py` module.
 
+## Learning Objectives
+
+* You should be able to import the `json` package into a module.
+* You should be able to explain the purpose of the POST method in HTTP.
+* You should be able to explain what part of the HTTP request contains the stringified JSON data.
+* You should be able to explain what the `json.loads()` method does.
+* You should be able to explain what the `201` HTTP status code means.
+* You should be able to explain what array index `-1` means in a Python list.
+* You should be able to implement and explain the use of the `append()` method on Python lists.
+
+
 ## Using the Built-in JSON package
 
 First, import the `json` package in the Python Standard Libary (_stlib_) at the top of the main module.
