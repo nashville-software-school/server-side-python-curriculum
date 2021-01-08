@@ -1,5 +1,18 @@
 # Handling Query String Parameters
 
+In this chapter, you will learn how to parse a URL to capture any query string parameters that may be in it, and then use those parameters to filter a SQL query.
+
+## Learning Objectives
+
+* You should be able to define a query string parameter.
+* You should be able to identify a query string parameter.
+* You should be able to explain how query string parameters are parsed from the URL path.
+* You should be able to explain the purpose of the `WHERE` clause in a SQL query.
+* You should be able to implement a `WHERE` clause in a SQL query.
+* You should be able to identify a SQL parameter.
+* You should be able to explain the purpose of a SQL parameter.
+* You should be able to use a query string parameter, in conjuntion with a SQL parameter to correctly filter the results of a SQL query.
+
 ## Map of the URL
 
 The Uniform Resource Locator _(URL)_ has several parts that allow every resource on the World Wide Web to have a unique identifier, and allow for filtering of resources with parameters.
