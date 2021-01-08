@@ -1,5 +1,15 @@
 # Deleting Animals from the Database
 
+In this chapter, you will learn how to use SQL to remove a row of data from a table.
+
+## Learning Objectives
+
+* You should be able to explain what SQL statement is needed to remove a row from a database table.
+* You should be able to implement and explain how to use a SQL parameter to remove a single row from a database table.
+* You should be able to implement a Python function in a module whose reposibility is to remove a single row from a database table.
+
+## Delete Function
+
 The `DELETE` SQL statement does exactly what you would expect... it deletes rows. In modern applications that expose resources at URL endpoints, the ability to delete all items in a table is never provided. What you provide is the ability to delete a single row.
 
 The syntax for this function is far simpler since you are not requesting information from the database and converting that data to animal instances.
