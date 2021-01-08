@@ -1,6 +1,13 @@
-# Updating a Database Row with New Data
+# Updating a Database Row
 
-The `UPDATE` statement in SQL requires that you specify the new value for the fields of one, or more, resource that you are targeting.
+In this chapter you will learn how to change the values of columns in an existing database table row.
+
+## Learning Objectives
+
+* You should be able to explain which HTTP method is used by the client to request that a resource's state should change.
+* You should be able to identify a SQL query that is changing the state of a row in a database table.
+* You should be able to implement multiple SQL parameters in a query.
+* You should be able to implement a SQL statement that updates the database with the state that was sent by the client in an HTTP request.
 
 ## Videos to Watch First
 
@@ -15,7 +22,9 @@ Therefore, you must update each field for the resource based on what the client 
 
 In the SQL below, note that there is a `?` parameter for each field in the animal table, and the tuple argument contains the corresponding key in the dictionary that the client sent in the request.
 
-Once the UPDATE statement executes, you then check to see if a database row was affected. You currently have 5 animals in your database. What if the client sent a request to http://localhost:8088/animals/10345?
+The `UPDATE` statement in SQL requires that you specify the new value for the fields of one, or more, resource that you are targeting.
+
+Once the `UPDATE` statement executes, you then check to see if a database row was affected. You currently have 5 animals in your database. What if the client sent a request to http://localhost:8088/animals/10345?
 
 There is no animal with that `id` value, so the `rows_affected` variable will be 0. If it is 0, then you know the user specified an `id` that doesn't exist, so you will return `False` which generates a 404 _(Not Found)_ response back to the client.
 
@@ -59,13 +68,13 @@ def do_PUT(self):
 
     # Parse the URL
     (resource, id) = self.parse_url(self.path)
-   
+
     success = False
 
     if resource == "animals":
         success = update_animal(id, post_body)
     # rest of the elif's
-    
+
     if success:
         self._set_headers(204)
     else:
