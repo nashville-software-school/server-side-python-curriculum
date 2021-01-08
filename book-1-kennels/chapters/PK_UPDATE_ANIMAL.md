@@ -1,5 +1,13 @@
 # Modifying Animal Status
 
+## Learning Objectives
+
+* You should be able to explain how to replace an item in a Python list using the index location.
+* You should be able to explain the purpose of the PUT method in HTTP requests.
+* You should be able to explain the purpose of the `break` keyword in Python.
+
+## Implementation
+
 A small refactor to start this chapter.
 
 Open your `animals/request.py` module, and add a new `status` key to each of your animal dictionaries.
