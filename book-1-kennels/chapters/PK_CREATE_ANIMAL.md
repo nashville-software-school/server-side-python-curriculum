@@ -12,6 +12,10 @@ In this chapter, you will write code to support the POST method of HTTP. From Po
 * You should be able to explain what array index `-1` means in a Python list.
 * You should be able to implement and explain the use of the `append()` method on Python lists.
 
+## Video Resources
+
+* [JSON in Python || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=pTT7HMqDnJw)
+
 
 ## Using the Built-in JSON package
 
@@ -132,14 +136,7 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
 ## Practice: Creating Customers on Registration
 
 1. Update the `do_POST` method in the main module to handle requests to the `/customers` path.
-1. Write a `create_employee` function in the `employees/request.py` module that appends a new employee dictionary to the list.
+1. Write a `create_customer` function in the `customers/request.py` module that appends a new customer dictionary to the list.
 
-Then perform a POST request from Postman to create a new employee. Make sure that your employee JSON assigns the employee to a location with a foreign key.
+Then perform a POST request from Postman to create a new customer. Check the **`Register`** component in your React client to remember what a customer object looks like.
 
-```json
-{
-    "name": "Emma Beaton",
-    "email": "54 Sycamore Avenue",
-    "password": "jvt489yhv89rwhjvitreof"
-}
-```
