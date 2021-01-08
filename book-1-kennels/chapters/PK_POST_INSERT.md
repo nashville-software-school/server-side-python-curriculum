@@ -1,5 +1,6 @@
 # Adding Animals to the Database
 
+
 Previously, when you initiated a POST operation from the Postman client, a new dictionary was added to an in-memory list with the `create_animal()` function. You are going to change that code to insert the new animal into the database.
 
 > #### `animals/request.py`
