@@ -1,5 +1,16 @@
 # Getting Animals from the Database
 
+## Learning Objectives
+
+* You should be able to explain the benefits of using classes in Python.
+* You should be able to explain the purpose of the initializer method.
+* You should be able to explain, and demonstrate, how to create a new instance of a custom type _(i.e. a class)_.
+* You should be able to identify where the Python code creates a connection to the database so that it can be queried for data.
+* You should be able to identify the method used to get the results of SQL query.
+* You should be able to explain how the data in row of results is used to create an instance of a custom type.
+* You should be able to explain the purpose of the SELECT, FROM, and WHERE keywords in SQL.
+* You should be able to identify a SQL parameter.
+
 ## Videos to Watch First
 
 * [SQL SELECT Tutorial |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=YufocuHbYZo)

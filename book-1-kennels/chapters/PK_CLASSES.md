@@ -6,9 +6,16 @@ It's time to store your data in a database.
 
 The first step in that process is to switch from using raw, Python lists and dictionaries to using custom types, or classes, to represent the resources.
 
-## Videos to Watch First
+## Learning Objectives
 
-* [Python OOP Tutorial 1: Classes and Instances](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
+* You should be able to identify a custom type _(i.e. a class)_ in Python code.
+* You should be able to identify how a method is defined in a class.
+* You should be able to identify a class initializer method.
+* You should be able to implement a class, with methods, in Python.
+
+## Video Resources
+
+* [Python 3's __init__(), self, Class and Instance Objects Explained Concisely](https://www.youtube.com/watch?v=AsafkCAJpJ0&t=177s)
 * [Python Classes and Objects || Python Tutorial](https://www.youtube.com/watch?v=apACNr7DC_s)
 
 ## Animal Class
