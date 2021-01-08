@@ -1,5 +1,15 @@
 # Getting Animals With Embedded Locations
 
+In this chapter you will learn how to utilize SQL joins to provide the client with related data in the JSON response for a resource.
+
+## Learning Objectives
+
+* You should be able to explain the purpose of joining tables in a SQL query.
+* You should be able to implement a SQL query that retrieves data from more than one table using a join.
+* You should be able to demonstrate how to create instances of classes and use data from a SQL query to define properties for it.
+* You should be able to discuss how to assign the an instance of one class as a property of different class.
+* You should be able to implement a solution for embedding a related resource in the JSON response to a client.
+
 ## Videos to Watch First
 
 * [SQL Joins Explained](https://www.youtube.com/watch?v=9yeOJ0ZMUYw)
