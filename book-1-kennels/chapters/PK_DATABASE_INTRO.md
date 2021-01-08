@@ -1,5 +1,15 @@
 # Creating Database Tables for Nashville Kennels
 
+In this chapter you will learn about using SQL to create database tables, defining relationships between them, and inserting some seed data.
+
+## Learning Objectives
+
+* You should be able to connect to a SQLite database file in Visual Studio Code.
+* You should be able to use the `CREATE TABLE` statement in SQL to define database tables.
+* You should be able to use the `INSERT INTO` statement in SQL to generate data for a table.
+* You should be able to use the `FOREIGN KEY` statements in SQL to designate columns that are foreign keys, which establish a relationships between tables.
+* You should be able to demonstrate that you can execute SQL statements in Visual Studio Code with a keyboard shortcut.
+
 ## Videos to Watch First
 
 * [What is SQL? [in 4 minutes for beginners]](https://www.youtube.com/watch?v=27axs9dO7AE)
