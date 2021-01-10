@@ -1,5 +1,15 @@
 # Adding Animals to the Database
 
+In this chapter, you will learn the step for inserting a new row into a database table.
+
+## Learning Objectives
+
+* You should be able to use SQL to insert data into a database.
+* You should be able to determine with SQL operation should be performed for each HTTP method on a request.
+* You should be able to diagram how input from a user in the browser is transmitted to a server, then which changes to the database are needed, and then what information the server sends back to the client.
+* You should be able to recognize Python code that returns the last primary key that was created in the database.
+
+## HTTP POST -> SQL INSERT
 
 Previously, when you initiated a POST operation from the Postman client, a new dictionary was added to an in-memory list with the `create_animal()` function. You are going to change that code to insert the new animal into the database.
 
