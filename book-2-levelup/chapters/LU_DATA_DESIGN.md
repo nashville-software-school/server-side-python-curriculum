@@ -68,6 +68,7 @@
 * You should be able to design a Django database model class based on the table definition in your ERD.
 * You should be able to explain the process of using Django commands to get your models turned into database tables.
 * You should be able to predict how a database table should be structured given a Django model.
+* You should be able to clarify the difference between a one-to-many relationship and a one-to-one relationship.
 
 ## Create ERD
 

@@ -30,6 +30,12 @@
 >
 > After a short discussion, you both agree that the "software" will allow people to create board games, role-playing games, and MMO games.
 
+## Learning Objectives
+
+* You should be able to explain what "seeding a database table" means.
+* You should be able to implement a JSON format fixture for a database table.
+* You should be able to apply a JSON fixture to get data inserted into a database table.
+* You should be able to implement fixtures in the correct order, based on the dependencies of your tables.
 
 ## Video(s) to Watch First
 
