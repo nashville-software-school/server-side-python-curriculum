@@ -6,6 +6,37 @@ The [Q](https://docs.djangoproject.com/en/3.1/topics/db/queries/#complex-lookups
 
 At its core, its purpose is simple: to generate AND and OR statements for a WHERE clause in SQL. Unfortunately, its simplicity is wrapped up into a very abstract syntax that requires months of practice to understand.
 
+## Quick Examples
+
+Imagine that you want to find games which contain the word "Puzzle" in either the `title` property, or the `maker` property. You can use the `Q()` function with the **OR** operator of `|` to do this.
+
+```py
+from django.db.models import Q
+from levelupapi.models import Game
+
+search = self.request.query_params.get('search', None)
+Game.objects.filter(
+    Q(title__startswith=search) |
+    Q(maker__startswith=search)
+)
+```
+
+How about finding events where the organizer is the same person who added the game to the database. Here you want the **AND** operator of `&`.
+
+
+```py
+from django.db.models import Q
+from levelupapi.models import Event, Gamer
+
+# Find a particular gamer
+gamer = Gamer.objects.get(id=7)
+
+Event.objects.filter(
+    Q(organizer=gamer) &
+    Q(game__gamer=gamer)
+)
+```
+
 ## Am I Attending?
 
 You can add many virtual properties to objects with the `annotate()` method. In the previous chapter, you added an `attendees` property to all event objects that were created from a Django ORM query.
@@ -31,7 +62,7 @@ In English, you are...
 
 1. Querying the `Event` table
 1. Aggregating how many total attendees there are
-1. Determining if the current user has joined the event by joining in registrations **AND** filtering by the `gamer` property of each registration.
+1. Determining if the current user has joined the event by joining in registrations and filtering those registration by the `gamer` property of each.
 
 That will set the value of `joined` to 1 or 0. You want true or false. To get that, add a for loop that converts the numbers to booleans.
 
