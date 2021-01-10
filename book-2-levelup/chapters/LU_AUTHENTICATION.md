@@ -1,5 +1,14 @@
 # Token Authentication with DRF
 
+## Learning Objectives
+
+* You should be able to identify an authentication token in an HTTP response.
+* You should be able to clarify the purpose of an authentication token.
+* You should be able to explain that an authentication token identifies a user, and not their primary key.
+* You should be able to determine which routes, and which methods, are needed to enable authentication.
+
+## Understanding Auth Tokens
+
 Tokens are used by a server its clients so that each client can be uniquely identified. For your application, when a user fills out the registration form, the following process occurs.
 
 1. Client sends a request to the server's `/register` route with the user's information in the body of the request.
