@@ -13,12 +13,18 @@ Install these extensions to get your VS Code editor set up for writing Python co
 
 ## Python on WSL
 
-Run the following two commands in Ubuntu terminal.
+Run the following two commands in Ubuntu terminal. Mac users skip to the next section.
 
 ```sh
 sudo apt update
 
 sudo apt install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl python3 python3-pip
+```
+
+Then install Homebrew with this command.
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ## Python on Mac
