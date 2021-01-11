@@ -49,7 +49,11 @@ Now, when you check the version of Python with the command below, it should retu
 python --version
 ```
 
-### Troubleshooting pyenv on Mac
+### Troubleshooting: Cannot Install pyenv on Mac Version
+
+If you get a message that `pyenv` could not install on your machine due to your Mac version, you need to visit the [Xcode downloads page](https://developer.apple.com/download/more/), then download and install the most recent published version of Xcode in the list.
+
+### Troubleshooting: System Does Not Recognize Global Version
 
 Add the following commands to your `zshrc` file in your home directory.
 
