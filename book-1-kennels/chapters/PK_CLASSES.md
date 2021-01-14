@@ -78,7 +78,7 @@ In each one create a class for the corresponding resources. Look at all of the p
 For example, locations have an `address` property. That means that the **`Location`** class should have that same property.
 
 ```py
-class Location:
+class Location():
 
     def __init__(self, id, address):
         self.id = id
