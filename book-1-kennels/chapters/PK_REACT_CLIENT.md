@@ -12,4 +12,6 @@ If/When you are prompted with the login screen, enter in the credentials for one
 
 Once authenticated, you should now be able to use your application just as you did when `json-server` was running and storing your data.
 
+> **Note**: Some of the client views will work, but some won't. You're not done building all the relationships in your Python server.
+
 ![animation of viewing difference resources in Kennel client](./images/kennel-react-client.gif)
