@@ -16,4 +16,7 @@ This book introduces you to integration testing, and  Django templates. You will
 
 | # | Level Up |
 |--|--|
-| 1 | [SQL Interlude: Database Views](./chapters/DB_VIEWS.md) <br/> <sub style="font-size:0.85rem;">#sql #views</sub> |  |
+| 1 | [SQL Interlude: Database Views](./chapters/DB_VIEWS.md) <br/> <sub style="font-size:0.85rem;">#sql #views</sub> 
+| 2 | [Django Permissions](./chapters/DJANGO_PERMISSIONS.md)
+| 3 | [Enforcing Permissions](./chapters/DJANGO_ENFORCING_PERMISSIONS.md)
+| 4 | [Deploying with Heroku](./chapters/HEROKU_DEPLOYMENT.md)
