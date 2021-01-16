@@ -1,20 +1,23 @@
-steps:
-1. install heroku cli
-1. Create heroku account
-2. create application in heroku
-3. connect heroku app to git
-4. pipenv install gunicorn django_on_heroku
-5. add to settings.py
+# Deploying with Heroku
+Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps. It's pretty simple to use for deploying your django application. Best of all, there's a free tier that will be powerful enough for what you'll need.
+
+### Steps
+1. Install heroku cli: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
+1. Create heroku account. You will want to use TFA for this: https://signup.heroku.com/
+2. Create application in heroku: https://dashboard.heroku.com/new-app
+3. After you create the application, it should have some cli commands for you to run to connect your code to the application
+4. There's a few extra packages you'll need to install `pipenv install gunicorn django_on_heroku`
+5. And some lines to add in `settings.py`
 ```py 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
 django_on_heroku.settings(locals())
 ```
-4. add procfile
-1. add and commit changes
-1. `git push heroku main`
-1. `heroku open` should see base rest framework unauthorized page
+4. Add a file called `Procfile` and paste in this line `web: gunicorn levelup.wsgi --log-file -`
+1. Add and commit all the changes
+1. To add code to the heroku server run: `git push heroku main`
+1. Run `heroku open` and you should see the base rest framework unauthorized page
 1. The next step is checking that a database was created. Run `heroku pg` and you should see something like this: 
 ![heroku pg output](./images/heroku_pg_output.png)
 1. Can't have a django project without tables so run `heroku run python manage.py migrate` The output should look similar to running it locally
