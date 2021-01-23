@@ -3,7 +3,7 @@ Heroku is a cloud platform that lets companies build, deliver, monitor and scale
 
 ### Steps
 1. Install heroku cli: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
-1. Create heroku account. You will want to use TFA for this: https://signup.heroku.com/
+1. Create heroku account. You will want to use two factor authentication (TFA) when creating your account: https://signup.heroku.com/
 2. Create application in heroku: https://dashboard.heroku.com/new-app
 3. After you create the application, it should have some cli commands for you to run to connect your code to the application
 4. There's a few extra packages you'll need to install `pipenv install gunicorn django_on_heroku`
@@ -28,13 +28,13 @@ django_on_heroku.settings(locals())
 
 ### Using Postman
 
-At this point you should be able to use postman to get data from the database. 
+At this point you should be able to use Postman to get data from the database. 
 
-Copy the token key you just created and add it to the postman headers:
+Copy the token key you just created and add it to the Postman headers:
 ![postman example headers](./images/postman_ex.png)
 
 Copy the url heroku gave you into the url bar and try it out!
 
 
 ### Front end Deployment
-Good news! Whatever you used to deploy during the front end will still work. You'll just need to update your api calls in react to use the deployed url 
+Good news! Whatever you used to deploy during the front end will still work. You'll just need to update your API calls in react to use the deployed URL 

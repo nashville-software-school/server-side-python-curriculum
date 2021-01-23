@@ -20,9 +20,9 @@ While we could change the default permission for every route, we can also change
 permission_classes = [ DjangoModelPermissions ]
 queryset = Game.objects.none()
 ```
-The `permission_classes` tells django which permission type to use. Since permissions are tide to the model, we need to add a `queryset` property so the view knows about the model and permissions. 
+The `permission_classes` tells django which permission type to use. Since permissions are tied to the model, we need to add a `queryset` property so the view knows about the model and permissions. 
 
-Using postman try to get all games as a player user. That should work. Now try to update a game. What happens?
+Using Postman try to get all games as a player user. That should work. Now try to update a game. What happens?
 
 ![Denied](https://media.giphy.com/media/OgbPFB5AE3jW/giphy.gif)
 
