@@ -33,7 +33,7 @@ At this point you should be able to use Postman to get data from the database.
 Copy the token key you just created and add it to the Postman headers:
 ![postman example headers](./images/postman_ex.png)
 
-Copy the url heroku gave you into the url bar and try it out!
+Copy the URL heroku gave you into the URL bar and try it out!
 
 
 ### Front end Deployment
