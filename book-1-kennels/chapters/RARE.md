@@ -39,6 +39,7 @@ For example, if your initial repo is named `Rare-Goofy-Gophers`, your new repo s
 1. `touch models/__init__.py posts/__init__.py categories/__init__.py tags/__init__.py comments/__init__.py`
 1. `curl https://www.toptal.com/developers/gitignore/api/python > .gitignore`
 1. `echo 'rare.db' >> .gitignore`
+1. `echo 'Pipfile*' >> .gitignore`
 1. `echo '.vscode' >> .gitignore`
 1. `git init`
 1. `git remote add origin {server repo URL}`
