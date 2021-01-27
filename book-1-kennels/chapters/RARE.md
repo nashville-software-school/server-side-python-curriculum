@@ -48,24 +48,19 @@ For example, if your initial repo is named `Rare-Goofy-Gophers`, your new repo s
 
 ## Constraints for Vanilla Python Rare
 
-* No admin. No account type table. Leave off account_type_id on user.
+* You are not going to worry about admin users for this first sprint. Assume all users are authors.
 * Since no admins, posts should be automatically published and not wait for approval.
 * No image uploads for user profile or post
 
 ## ERD
 
-The database development team has already taken a stab at the [ERD for this project](https://dbdiagram.io/d/5f885a013a78976d7b77cb74). You will use this to start building the project.
+The database development team has already taken a stab at the [ERD for this project](https://dbdiagram.io/d/5f885a013a78976d7b77cb74). You will use this to start building the project. Unfortunately, they built the ERD assuming that you were going to use Django to build the project. Therefore, you will see two user tables, but you only need one. As a team, decide what the consolidated user table should be structured.
 
 ## Create/Seed the Database
 
 The database team also has a SQL script for you to run to build the database. There are a small handful of INSERT statements they provided. Your team should create as many INSERT statements as needed to seed the database to your satisfaction.
 
 ```sql
-CREATE TABLE "AccountTypes" (
-  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-  "label" varchar
-);
-
 CREATE TABLE "Users" (
   "id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "first_name" varchar,
@@ -76,7 +71,6 @@ CREATE TABLE "Users" (
   "profile_image_url" varchar,
   "created_on" date,
   "active" bit,
-  "account_type_id" INTEGER,
   FOREIGN KEY(`account_type_id`) REFERENCES `AccountTypes`(`id`)
 );
 
