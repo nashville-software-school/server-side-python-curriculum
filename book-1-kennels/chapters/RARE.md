@@ -70,8 +70,7 @@ CREATE TABLE "Users" (
   "username" varchar,
   "profile_image_url" varchar,
   "created_on" date,
-  "active" bit,
-  FOREIGN KEY(`account_type_id`) REFERENCES `AccountTypes`(`id`)
+  "active" bit
 );
 
 CREATE TABLE "DemotionQueue" (
