@@ -45,8 +45,131 @@ For example, if your initial repo is named `Rare-Goofy-Gophers`, your new repo s
 1. `git push origin -u main`
 
 
-# Constraints for Vanilla Python Rare
+## Constraints for Vanilla Python Rare
 
 * No admin. No account type table. Leave off account_type_id on user.
 * Since no admins, posts should be automatically published and not wait for approval.
 * No image uploads for user profile or post
+
+## ERD
+
+The database development team has already taken a stab at the [ERD for this project](https://dbdiagram.io/d/5f885a013a78976d7b77cb74). You will use this to start building the project.
+
+## Create/Seed the Database
+
+The database team also has a SQL script for you to run to build the database. There are a small handful of INSERT statements they provided. Your team should create as many INSERT statements as needed to seed the database to your satisfaction.
+
+```sql
+CREATE TABLE "AccountTypes" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "label" varchar
+);
+
+CREATE TABLE "Users" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "first_name" varchar,
+  "last_name" varchar,
+  "email" varchar,
+  "bio" varchar,
+  "username" varchar,
+  "profile_image_url" varchar,
+  "created_on" date,
+  "active" bit,
+  "account_type_id" INTEGER,
+  FOREIGN KEY(`account_type_id`) REFERENCES `AccountTypes`(`id`)
+);
+
+CREATE TABLE "DemotionQueue" (
+  "action" varchar,
+  "admin_id" INTEGER,
+  "approver_one_id" INTEGER,
+  FOREIGN KEY(`admin_id`) REFERENCES `Users`(`id`),
+  FOREIGN KEY(`approver_one_id`) REFERENCES `Users`(`id`),
+  PRIMARY KEY (action, admin_id, approver_one_id)
+);
+
+
+CREATE TABLE "Subscriptions" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "follower_id" INTEGER,
+  "author_id" INTEGER,
+  "created_on" date,
+  FOREIGN KEY(`follower_id`) REFERENCES `Users`(`id`),
+  FOREIGN KEY(`author_id`) REFERENCES `Users`(`id`)
+);
+
+CREATE TABLE "Posts" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "user_id" INTEGER,
+  "category_id" INTEGER,
+  "title" varchar,
+  "publication_date" date,
+  "image_url" varchar,
+  "content" varchar,
+  "approved" bit
+);
+
+CREATE TABLE "Comments" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "post_id" INTEGER,
+  "author_id" INTEGER,
+  "content" varchar,
+  FOREIGN KEY(`post_id`) REFERENCES `Posts`(`id`),
+  FOREIGN KEY(`author_id`) REFERENCES `Users`(`id`)
+);
+
+CREATE TABLE "Reactions" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "label" varchar,
+  "image_url" varchar
+);
+
+CREATE TABLE "PostReactions" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "user_id" INTEGER,
+  "reaction_id" INTEGER,
+  "post_id" INTEGER,
+  FOREIGN KEY(`user_id`) REFERENCES `Users`(`id`),
+  FOREIGN KEY(`reaction_id`) REFERENCES `Reactions`(`id`),
+  FOREIGN KEY(`post_id`) REFERENCES `Posts`(`id`)
+);
+
+CREATE TABLE "Tags" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "label" varchar
+);
+
+CREATE TABLE "PostTags" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "post_id" INTEGER,
+  "tag_id" INTEGER,
+  FOREIGN KEY(`post_id`) REFERENCES `Posts`(`id`),
+  FOREIGN KEY(`tag_id`) REFERENCES `Tags`(`id`)
+);
+
+CREATE TABLE "Categories" (
+  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+  "label" varchar
+);
+
+INSERT INTO Categories ('label') VALUES ('News');
+INSERT INTO Tags ('label') VALUES ('JavaScript');
+INSERT INTO Reactions ('label', 'image_url') VALUES ('happy', 'https://pngtree.com/so/happy');
+INSERT INTO AccountTypes ('label') VALUES ('Admin');
+INSERT INTO AccountTypes ('label') VALUES ('Author');
+```
+
+## Wireframes
+
+![](./images/wireframe-login.png)
+![](./images/wireframe-register.png)
+![](./images/wireframe-create-post.png)
+![](./images/wireframe-edit-post.png)
+![](./images/wireframe-all-posts.png)
+![](./images/wireframe-post-view.png)
+![](./images/wireframe-post-detail.png)
+![](./images/wireframe-comments.png)
+![](./images/wireframe-post-by-author.png)
+![](./images/wireframe-profile.png)
+![](./images/wireframe-category-manager.png)
+![](./images/wireframe-tag-manager.png)
