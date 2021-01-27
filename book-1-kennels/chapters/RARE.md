@@ -68,6 +68,7 @@ CREATE TABLE "Users" (
   "email" varchar,
   "bio" varchar,
   "username" varchar,
+  "password" varchar,
   "profile_image_url" varchar,
   "created_on" date,
   "active" bit
