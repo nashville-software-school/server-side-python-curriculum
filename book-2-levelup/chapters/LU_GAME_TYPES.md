@@ -6,6 +6,18 @@ The **ViewSet** has all of the logic for handling an incoming request from a cli
 
 The **Serializer** has a much simpler job. Once the ViewSet has determined what kind of response should be sent to the client, if that response has any data, the Serializer converts the Python data into JSON format.
 
+## Learning Objectives
+
+* You should be able to describe the purpose of a Django View
+* You should be able to explain which View methods are used to respond to a request for all of a resource, or a single resource.
+* You should be able to discuss the purpose of a Serializer and how it differs from a View.
+* You should be able to explain which module contains the request URLs that an API will respond to.
+
+## Learning Resources
+
+* The [Serializers article](https://www.django-rest-framework.org/api-guide/serializers/) in the REST framework documentation is worth a quick read. It shows examples and explanations.
+* [Creating views and serializers — Django Rest Framework](https://medium.com/django-rest/django-rest-framework-creating-views-and-serializers-b76a96fb6fb7) provides a quick, high-level overview _(with example code)_ for using serializers.
+
 ## Workflow Visualization
 
 Any time that you want to allow a client to access data in your database, there's a series of steps you have to follow in order to accomplish it with Django REST Framework.

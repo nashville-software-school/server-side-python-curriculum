@@ -152,6 +152,7 @@ INSERT INTO Tags ('label') VALUES ('JavaScript');
 INSERT INTO Reactions ('label', 'image_url') VALUES ('happy', 'https://pngtree.com/so/happy');
 ```
 
+<!--
 ## Wireframes
 
 ![](./images/wireframe-login.png)
@@ -166,3 +167,4 @@ INSERT INTO Reactions ('label', 'image_url') VALUES ('happy', 'https://pngtree.c
 ![](./images/wireframe-profile.png)
 ![](./images/wireframe-category-manager.png)
 ![](./images/wireframe-tag-manager.png)
+-->

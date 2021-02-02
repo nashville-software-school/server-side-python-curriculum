@@ -1,5 +1,21 @@
 # Listing Games
 
+## Learning Objectives
+
+* You should be able to describe how to load some initial data into your database with Django.
+* You should be able to create a file containing JSON representations of the resources for your database.
+* You should be able to itemize the View methods needed to handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
+* You should be able to identify the ORM method used to get a single item from a table.
+* You should be able to identify the ORM method used to get all items from a table.
+* You should be able to identify the ORM method used to get all items from a table.
+* You should be able to explain the effect of the `depth` statement when used in a Serializer.
+
+## Learning Resources
+
+* Documentation: [Providing initial data for models](https://docs.djangoproject.com/en/3.1/howto/initial-data/)
+* Video: [How to Pre Load Data in Database With Django](https://www.youtube.com/watch?v=1_MROM737FI)
+
+
 ## Preface: Seed the Database
 
 Create the following fixture file and then seed the database with the loaddata command beneath.
