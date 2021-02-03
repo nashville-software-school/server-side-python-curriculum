@@ -26,7 +26,6 @@ You'll see how later in the chapter.
 [
     {
         "id": 1,
-        "url": "http://localhost:8000/events/1",
         "game": {
             "title": "Welcome To"
         },
@@ -37,7 +36,6 @@ You'll see how later in the chapter.
     },
     {
         "id": 2,
-        "url": "http://localhost:8000/events/2",
         "game": {
             "title": "Settlers of Catan",
         },
@@ -48,7 +46,6 @@ You'll see how later in the chapter.
     },
     {
         "id": 3,
-        "url": "http://localhost:8000/events/3",
         "game": {
             "title": "Dungeons & Dragons",
         },
@@ -59,7 +56,6 @@ You'll see how later in the chapter.
     },
     {
         "id": 10,
-        "url": "http://localhost:8000/events/10",
         "game": {
             "title": "Welcome To",
         },
