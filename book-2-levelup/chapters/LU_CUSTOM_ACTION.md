@@ -25,7 +25,7 @@ Add the following method to your event viewset.
 > #### `levelup/levelupapi/views/event.py`
 
 ```py
-    @action(methods=['get', 'post', 'delete'], detail=True)
+    @action(methods=['post', 'delete'], detail=True)
     def signup(self, request, pk=None):
         """Managing gamers signing up for events"""
 
