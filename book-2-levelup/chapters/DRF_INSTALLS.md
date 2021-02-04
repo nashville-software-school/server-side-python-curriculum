@@ -10,6 +10,12 @@ Make sure you are not in an activated virtual environment.
 pip install django
 ````
 
+If that does not work, try this.
+
+```sh
+pip3 install django
+````
+
 The initial creation of a Django project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
 
 ## Creating the Project
@@ -58,6 +64,12 @@ Now that the project is set up and has some initial configuration, it's time to 
 
 ```sh
 python manage.py startapp levelupapi
+```
+
+If that command throws errors, try this one.
+
+```sh
+python3 manage.py startapp levelupapi
 ```
 
 ## Setting Up Package Directories
@@ -129,5 +141,11 @@ Django gives user and role management tables for your application out of the box
 
 ```sh
 python manage.py migrate
+```
+
+If you needed to use `python3` in previous commands, also try it here.
+
+```sh
+python3 manage.py migrate
 ```
 
