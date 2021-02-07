@@ -26,7 +26,7 @@ There are two main types of automated testing:
 
 We will be covering integration tests in this chapter.
 
-## Integration Testing in Django
+## Integration Testing in Django / DjangoREST
 
 Django provides a test framework built on the Python standard `unittest` library. (Yes, it's called `unittest`, but it works great for integration testing too). This nifty tool allows you to simulate requests, insert test data, and inspect your application's output.
 
@@ -110,11 +110,7 @@ What's happening during this process?
 
 For your integration tests, you are going to mimic, and automate, this process _as if you were a web browser_. Your test code will generate the data necessary and then make an HTTP request instead of a user initiating the entire process.
 
-So, what should you test? For this course, you'll concentrate on these:
-
->*context*: what we send to the template  
->*content*: the rendered html  
->*response_codes*
+So, what should you test? For this course, you'll concentrate on the endpoints, and the operations they expose for creating, reading, updating, and deleting data. If we request to save a new payment type, or amusement park ride, or animal, does it end up in the database with the correct properties? If we ask for a list of a customer's products do we get them back in the response? you get the idea.
 
 ### Create a new Animal
 ```py
@@ -136,7 +132,7 @@ class TestAnimal(TestCase):
 
         #  Use the client to send the request and store the response
         response = self.client.post(
-            reverse('history:animal_form'), new_animal
+            reverse('animal-list'), new_animal
           )
 
         # Assert
@@ -146,11 +142,11 @@ class TestAnimal(TestCase):
 ```
 Note the reference in the code above to `self.client`. `Client` is a Python class that acts as a dummy Web browser, allowing you to test your views and interact with your Django app programmatically. The test client does not require the Web server to be running.
 
-Let's test that we can pull data from the db and represent it as HTML? How? With 2 response properties, `context` and `content`:
+Let's test that we can pull data from the db and represent it as JSON. How? With 2 response properties, `data` and `content`:
 
-`Response.context` is the context variable passed to the template by the view. This is incredibly useful for testing, because it allows us to confirm that our template is getting all the data it needs.
+`Response.data` is the serialized data for the response, before it's converted to JSON.
 
-`Response.content` is The body of the response. This is the final page content as rendered by the view, or any error message.
+`Response.content` is The body of the response. This is the final data content as rendered by the view, as JSON, or any error message.
 
 ### Get All Animals
 
@@ -168,14 +164,14 @@ def test_list_animals(self):
     )
 
     # Now we can grab all the animals (meaning the one we just created) from the db
-    response = self.client.get(reverse('history:animal_list'))
+    response = self.client.get(reverse('animal-list'))
 
     # Check that the response is 200 OK.
     # This is checking for the GET request result, not the POST. We already checked that POST works in the previous test!
     self.assertEqual(response.status_code, 200)
 
-    # Check that the rendered context contains 1 artist.
-    self.assertEqual(len(response.context['animal_list']), 1)
+    # Check that the rendered context contains 1 animal.
+    self.assertEqual(len(response.data), 1)
 
     # Finally, test the actual rendered content as the browser would receive it
     # .encode converts from unicode to utf-8. Don't get hung up on this. It's just how we can compare apples to apples
@@ -188,7 +184,4 @@ You can use the Python tool [coverage.py](https://coverage.readthedocs.io/en/lat
 
 
 # Resources
-
-* [Testing a Django web application](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing)
-* [Writing and running tests](https://docs.djangoproject.com/en/3.0/topics/testing/overview/)
 * [The Magic Tricks of Testing](https://www.youtube.com/watch?v=URSWYvyc42M) - Disregard that the example code is in Ruby. The concepts are the key takeaway.
