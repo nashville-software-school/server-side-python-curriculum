@@ -149,3 +149,4 @@ If you needed to use `python3` in previous commands, also try it here.
 python3 manage.py migrate
 ```
 
+ From this point on, if you needed to use `python3`, you'll use it every time instead of just `python`.

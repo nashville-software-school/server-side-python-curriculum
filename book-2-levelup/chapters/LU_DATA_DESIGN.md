@@ -148,6 +148,8 @@ Once you have defined your models, you should review them with an instructor.
 
 When your models are approved, you can then create a migration to get the tables created in your database.
 
+> Reminder: If you are a `python3` person, make sure you use that for these commands.
+
 ```sh
 python manage.py makemigrations levelupapi
 python manage.py migrate
