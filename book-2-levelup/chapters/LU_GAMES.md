@@ -314,7 +314,7 @@ export const GameList = (props) => {
     const { games, getGames } = useContext(GameContext)
 
     useEffect(() => {
-        getGames())
+        getGames()
     }, [])
 
     return (
@@ -346,7 +346,7 @@ export const ApplicationViews = () => {
         <main style={{
             margin: "5rem 2rem",
             lineHeight: "1.75rem"
-        }}> 
+        }}>
             <GameProvider>
                 <Route exact path="/">
                     <GameList />
