@@ -1,5 +1,14 @@
 # Listing Events
 
+## Learning Objectives
+
+* You should be able to describe the purpose of a Django View
+* You should be able to explain which View methods are used to respond to a request for all of a resource, or a single resource.
+* You should be able to discuss the purpose of a Serializer and how it differs from a View.
+* You should be able to describe how the keys in the request body can be access to assign values to Python object properties in PUT and POST operations.
+* You should be able explain how query string parameters can be accessed in your Python code.
+* You should be able to demonstrate how multiple serializers can be used to define which properties should be included when nested JSON data is being sent in the response.
+
 ## Preface: Seed the Database
 
 Create the fixture below and then seed the database with the following command

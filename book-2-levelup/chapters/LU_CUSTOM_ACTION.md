@@ -4,6 +4,15 @@ In this chapter, you are going to to allow gamers to sign up for an event that h
 
 ![animation showing joining an event](./images/levelup-join.gif)
 
+## Learning Objectives
+
+* You should be able to remember that a custom action is a method on a ViewSet.
+* You should be able to understand that a custom action allows the client to put a verb at the end of the URL to initiate a custom action.
+* You should be able to remember that a custom action can specify which HTTP methods are supported by it.
+* You should be able to understand that an API often does not want to provide the ability to directly manipulate some resources _(e.g. the Django User)_.
+* You should be able to explain that custom routes allow a client to manipulate resources without needing a separate ViewSet for that resource _(e.g. the `login` and `register` actions)_.
+
+
 ## Custom Action
 
 With Django REST Framework, you can create a custom action that your API must support by using the `@action` decorator above a ViewSet. For this action, you want a client to create a request that allows a gamer to sign up for an event.
