@@ -315,7 +315,7 @@ export const EventList = (props) => {
                         <div>{event.description}</div>
                         <div>
                             {
-                                new Date(date).toLocaleDateString("en-US",
+                                new Date(event.date).toLocaleDateString("en-US",
                                 {
                                     weekday: 'long',
                                     year: 'numeric',
