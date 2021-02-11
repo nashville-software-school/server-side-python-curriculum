@@ -179,10 +179,6 @@ An event has two related entities:
 1. An organizer _(a.k.a. a Gamer)_
 1. A game
 
-In a case where you don't want those related entities to be serialized with an auto-generated URL, you can use the less magical _ModelSerializer_.
-
-Therefore, the client likely doesn't care about the URL for the organizer or the game, only the event itself. The event gets serialized with a URL, and that serialization process, in turn, serializes its related entities without a URL on them.
-
 This is your first glimpse into how much control you _can_ have over how your data is serialized into JSON.
 
 You can use _ModelSerializer_ with the depth meta property set to let Django handle the entire serialization process for you, including related entities. You can also choose to use the _ModelSerializer_ to serialize any Python list/object without all the magic.
