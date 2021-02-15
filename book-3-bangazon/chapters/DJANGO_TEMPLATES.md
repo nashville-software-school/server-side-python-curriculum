@@ -17,7 +17,7 @@ Be in your LevelUp project directory.
 
 1. Create a new application for producing HTML reports.
     ```sh
-    python manage.py startapp levelupreports
+    python3 manage.py startapp levelupreports
     ```
 1. Add `levelupreports` to your installed apps in the `settings.py` module.
 1. Delete the `models.py` and `views.py` modules in the  application.

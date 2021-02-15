@@ -27,6 +27,7 @@ Then install Homebrew with this command.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+
 ## Python on Mac
 
 First, install the XCode Command Line tools with the following command in your terminal.
@@ -35,18 +36,22 @@ First, install the XCode Command Line tools with the following command in your t
 xcode-select --install
 ```
 
-## Install Pyenv
+You may get a message that it is already installed.
+
+> **Instructor Note:** _If you need the student to ensure that the latest version of Xcode CLT are installed, have them to go https://developer.apple.com/download/more/?=xcode, download the latest version, and then install it._
+
+### Install Pyenv and Python on Mac
 
 ```bash
 brew install pyenv
-pyenv install 3.8.1
-pyenv global 3.8.1
+pyenv install 3.9.1
+pyenv global 3.9.1
 ```
 
-Now, when you check the version of Python with the command below, it should return 3.8.1.
+Now, when you check the version of Python with the command below, it should return 3.9.1.
 
-```
-python --version
+```sh
+python3 --version
 ```
 
 ### Troubleshooting: Cannot Install pyenv on Mac Version
@@ -72,7 +77,7 @@ export CFLAGS="-I$(brew --prefix zlib)/include -I$(brew --prefix sqlite)/include
 export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix sqlite)/lib -L$(brew --prefix bzip2)/lib"
 ```
 
-If try to run `pyenv install 3.8.1` and receive an error similar to the one below
+If try to run `pyenv install 3.9.1` and receive an error similar to the one below
 
 ```
 BUILD FAILED (OS X 10.14.6 using python-build 20180424)
@@ -86,7 +91,7 @@ Run the following command in your terminal:
 sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 ```
 
-After this is completed, try running `pyenv install 3.8.1` again
+After this is completed, try running `pyenv install 3.9.1` again
 
 ## Install Pipenv
 
@@ -98,14 +103,14 @@ pip3 install --user pipenv
 
 ### Troubleshooting Pipenv
 If you get `command not found: pipenv` when trying to run pipenv:
-* mac and linux
+* Mac and Linux
   * Open ~/.zshrc and add:
       ```
       export PIPENV_DIR="$HOME/.local"
       export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
       ```
-* windows
-  * First run `python -m site --user-site`
+* Windows
+  * First run `python3 -m site --user-site`
   * Copy what that returns, replacing `site-packages` with `Scripts`
   * In the control panel add what was copied to the path
 

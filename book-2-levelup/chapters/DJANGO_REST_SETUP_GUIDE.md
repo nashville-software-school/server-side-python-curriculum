@@ -2,7 +2,7 @@
 
 #### If you think we've skipped anything important, or listed something out of order, let us know with a PR. We will update this to make it better/clearer for you and future generations of students who will sing your praises.
 
-#### Helpful hint: You will type python manage.py  a lot. Consider making an alias in your .zshrc file. Mine is "pyman"
+#### Helpful hint: You will type python3 manage.py  a lot. Consider making an alias in your .zshrc file. Mine is "pyman"
 
 1. Create a project folder and cd into it
 2. Create a virutal env and run it ( run pip install virtualenv if you don't have it installed yet )
@@ -14,7 +14,7 @@
     > `django-admin startproject foo`
 5. cd into foo/
 6. Create an app for your project:
-    > `python manage.py startapp bar`
+    > `python3 manage.py startapp bar`
 7. Add new app and rest_framework to project's INSTALLED_APPS setting in foo/settings.py by its name:
 ```python
   INSTALLED_APPS = [ 'bar', 'rest_framework', …etc ]
@@ -22,9 +22,9 @@
 8. Add model[s] to bar/models.py
     1. Tutorial link: http://www.django-rest-framework.org/tutorial/1-serialization/#creating-a-model-to-work-with
 9. Create initial migrations:
-    > `python manage.py makemigrations bar` ( bar is name of app )
+    > `python3 manage.py makemigrations bar` ( bar is name of app )
 10. Run migration file(s) to create table(s) in db:
-    > `python manage.py migrate`
+    > `python3 manage.py migrate`
 11. Create serializer file for your app and add serialize[s] for your model[s] (NOTE: Tutorial starts you out with regular serializers, then farther down the page has you refactor to use ModelSerializers. Might just want to start there)
     1. Tutorial link: http://www.django-rest-framework.org/tutorial/1-serialization/#creating-a-serializer-class
     2. > `touch bar/serializers.py`
@@ -73,16 +73,16 @@
 14. Create an endpoint for the root of the API, which is basically a table of contents
     1. Tutorial link: http://www.django-rest-framework.org/tutorial/5-relationships-and-hyperlinked-apis/#creating-an-endpoint-for-the-root-of-our-api
 15. Fire up your dev server with
-    > python manage.py runserver
+    > python3 manage.py runserver
 
 16. Navigate to `/myBarModel` to see if the Django UI presents you with a lovely page where you can add new instances of your model to the db.
 17. Another way to add new instances of your models and/or your users to the db is by creating a superuser and leveraging the Django admin UI ( which you can get to by loading /admin in the browser, for example : `localhost:8000/admin` )
-    1. > python manage.py createsuperuser
+    1. > python3 manage.py createsuperuser
     2. enter a username
     3. enter an email
     4. enter a password
     5. start your server
-        > python manage.py runserver and navigate to the url + /admin  and login
+        > python3 manage.py runserver and navigate to the url + /admin  and login
     6. To add instances of a model from your app, edit bar/admin.py
         1. Import:
             1. admin from django.contrib

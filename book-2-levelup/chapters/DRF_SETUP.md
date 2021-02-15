@@ -2,7 +2,7 @@
 
 1. Clone the [Kennywood API](https://github.com/nashville-software-school/kennywood-api) repository to your machine
 1. `cd kennywood-api`
-1. `python -m venv KennywoodEnv`
+1. `python3 -m venv KennywoodEnv`
 1. Activate the enviroment. Use the `source ./KennywoodEnv/bin/activate` command on OSX, or run `activate.bat` for Windows.
 1. `pip install -r requirements.txt`
 
@@ -31,9 +31,9 @@ In Visual Studio Code, `cmd+shift+p` and open "Preferences: Open Settings (JSON)
 You may remember that Django gives you user and role management tables out of the box, and there is a built-in migration file that makes the tables for you. Go ahead and run that migration to set up the initial Django tables.
 
 ```sh
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
 ```
 
 ## Create your First Park Area

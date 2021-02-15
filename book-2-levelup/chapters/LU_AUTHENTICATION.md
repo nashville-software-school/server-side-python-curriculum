@@ -145,7 +145,7 @@ path('login', login_user)
 Run the following command in your `levelup` directory to start the Django application.
 
 ```sh
-python manage.py runserver
+python3 manage.py runserver
 ```
 
 ## Authenticating a User

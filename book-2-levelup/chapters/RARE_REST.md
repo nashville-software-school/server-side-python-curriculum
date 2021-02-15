@@ -23,7 +23,7 @@ django-admin startproject rare
 ### Creating the API Application
 
 ```sh
-python manage.py startapp rareapi
+python3 manage.py startapp rareapi
 ```
 
 ### Creating the .gitignore

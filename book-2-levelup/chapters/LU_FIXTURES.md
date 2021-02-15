@@ -86,7 +86,7 @@ Open that JSON file and put the following seed data in it.
 Then load that data into the database with the following command.
 
 ```sh
-python manage.py loaddata gametypes
+python3 manage.py loaddata gametypes
 ```
 
 This will generate some `INSERT INTO` SQL statements behind the scenes in Django and create three records in the `levelupapi_gametype` table in your database. Run the following SQL to see them.
@@ -164,9 +164,9 @@ Create the following two files with the corresponding contents.
 Then execute the following commands.
 
 ```sh
-python manage.py loaddata users
-python manage.py loaddata tokens
-python manage.py loaddata gamers
+python3 manage.py loaddata users
+python3 manage.py loaddata tokens
+python3 manage.py loaddata gamers
 ```
 
 Once complete, each of those database tables will have one record in them. You can verify this by connecting to the database and running the following three SQL statements.

@@ -151,12 +151,12 @@ When your models are approved, you can then create a migration to get the tables
 > Reminder: If you are a `python3` person, make sure you use that for these commands.
 
 ```sh
-python manage.py makemigrations levelupapi
-python manage.py migrate
+python3 manage.py makemigrations levelupapi
+python3 manage.py migrate
 ```
 
 Now that migrations are created, you can execute them.
 
 ```sh
-python manage.py migrate
+python3 manage.py migrate
 ```

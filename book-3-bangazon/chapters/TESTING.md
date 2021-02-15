@@ -9,7 +9,7 @@ When you want to have a test suite that verifies that your code continues to wor
 1. Write test classes in each test module.
 1. Create `tests/__init__.py` module.
 1. Import test classes into `__init__.py`.
-1. Run `python manage.py test tests -v 1` to execute all test classes.
+1. Run `python3 manage.py test tests -v 1` to execute all test classes.
 
 ## Learning Objective
 
@@ -130,7 +130,7 @@ class GameTests(APITestCase):
 1. Open a terminal and change directory to your project directory.
 1. Run the following command
     ```sh
-    python manage.py test tests -v 1
+    python3 manage.py test tests -v 1
     ```
 1. Look at the output and see if the test passes.
     ![expected test output in terminal](./images/initial-test-output.png)

@@ -14,7 +14,7 @@
 Create the fixture below and then seed the database with the following command
 
 ```sh
-python manage.py loaddata events
+python3 manage.py loaddata events
 ```
 
 > #### `levelup/levelupapi/fixtures/events.json`

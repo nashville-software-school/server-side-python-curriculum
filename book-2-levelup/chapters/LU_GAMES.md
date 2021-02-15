@@ -66,7 +66,7 @@ Create the following fixture file and then seed the database with the loaddata c
 #### Load the fixture data
 
 ```sh
-python manage.py loaddata games
+python3 manage.py loaddata games
 ```
 
 

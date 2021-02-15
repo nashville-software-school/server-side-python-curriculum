@@ -62,7 +62,7 @@ if __name__ == '__main__':
 Then run the tests from the command line.
 
 ```py
-python manage.py test
+python3 manage.py test
 ```
 
 This example gives you a basic structure for assembling tests. We always start with a class named `Test` plus a description of the class, or model, that we want to test.

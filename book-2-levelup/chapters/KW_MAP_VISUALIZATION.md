@@ -29,8 +29,8 @@ Add a new property to the **`ParkArea`** Django model named `zone`. It's value w
 Then migrate your database.
 
 ```sh
-python manage.py makemigrations
-python manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 
 ## Update Data

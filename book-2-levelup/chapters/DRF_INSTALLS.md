@@ -63,7 +63,7 @@ Open Visual Studio Code in the levelup directory, and then `cmd+shift+p` and ope
 Now that the project is set up and has some initial configuration, it's time to create an application for the Level Up API project. Django projects are containers for one, or more, applications. Right now, we only need one application in this project. Make sure you are in your project directory when you run this command.
 
 ```sh
-python manage.py startapp levelupapi
+python3 manage.py startapp levelupapi
 ```
 
 If that command throws errors, try this one.
@@ -140,7 +140,7 @@ MIDDLEWARE = [
 Django gives user and role management tables for your application out of the box, and there is a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
 
 ```sh
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 If you needed to use `python3` in previous commands, also try it here.

@@ -109,13 +109,13 @@ from kennywoodapi.models import *
 Then create a migration in the terminal.
 
 ```py
-python manage.py makemigrations
+python3 manage.py makemigrations
 ```
 
 Once the migration is created, you run it to create the tables.
 
 ```py
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 Once that process is complete, connect to your database in your management tool (TablePlus, DBeaver, etc.) and you should see the following tables. Notice that Django prepended each of your table names with `kennywoodapi_`.
