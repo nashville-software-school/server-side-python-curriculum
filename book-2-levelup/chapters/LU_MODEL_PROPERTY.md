@@ -213,7 +213,7 @@ export const EventList = () => {
                     </section>
                 })
             }
-        </article >
+        </article>
     )
 }
 ```

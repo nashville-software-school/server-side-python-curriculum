@@ -68,14 +68,45 @@ export const GameForm = () => {
     }, [])
 
     /*
-        Update the `currentGame` state variable every time
-        the state of one of the input fields changes.
+        REFACTOR CHALLENGE START
+
+        Can you refactor this code so that all property
+        state changes can be handled with a single function
+        instead of five functions that all, largely, do
+        the same thing?
+
+        One hint: [event.target.name]
     */
-    const changeGameState = (domEvent) => {
-        const newGameState = Object.assign({}, currentGame)
-        newGameState[domEvent.target.name] = domEvent.target.value
+    const changeGameTitleState = (event) => {
+        const newGameState = { ...currentGame }
+        newGameState.title = event.target.value
         setCurrentGame(newGameState)
     }
+
+    const changeGameMakerState = (event) => {
+        const newGameState = { ...currentGame }
+        newGameState.maker = event.target.value
+        setCurrentGame(newGameState)
+    }
+
+    const changeGamePlayersState = (event) => {
+        const newGameState = { ...currentGame }
+        newGameState.numberOfPlayers = event.target.value
+        setCurrentGame(newGameState)
+    }
+
+    const changeGameSkillLevelState = (event) => {
+        const newGameState = { ...currentGame }
+        newGameState.skillLevel = event.target.value
+        setCurrentGame(newGameState)
+    }
+
+    const changeGameTypeState = (event) => {
+        const newGameState = { ...currentGame }
+        newGameState.gameTypeId = event.target.value
+        setCurrentGame(newGameState)
+    }
+    /* REFACTOR CHALLENGE END */
 
     return (
         <form className="gameForm">
@@ -85,7 +116,7 @@ export const GameForm = () => {
                     <label htmlFor="title">Title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         value={currentGame.title}
-                        onChange={changeGameState}
+                        onChange={changeGameTitleState}
                     />
                 </div>
             </fieldset>
