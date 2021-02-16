@@ -4,35 +4,40 @@
 
 Django is the web application framework that you will be using for the remainder of the course, so you need to install it globally first.
 
-Make sure you are not in an activated virtual environment.
-
-```sh
-pip install django
-````
-
-If that does not work, try this.
-
-```sh
-pip3 install django
-````
-
 The initial creation of a Django project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
 
-## Creating the Project
+## Virtual Environment with `pipenv`
+
+Virtual environments make sure that each project you build is clean and isolated from all of the other projects that may be on your system. This ensures that different projects can use specific versions of 3rd party software without conflicts.
+
+Run the following commands to install `pipenv`, which is an easy to use tool for managing virtual environments for Python projects.
+
+```sh
+pip3 install --user pipx
+pipx install pipenv
+```
+
+## Creating the Project and Virtual Environment
+
+Do not copy all of these at once and paste them into your terminal. Copy and run each one separately.
 
 ```sh
 cd ~/workspace/python
-django-admin startproject levelup
+mkdir levelup
 cd levelup
 pipenv shell
 ```
 
-## Installed Required Packages
-
-Now you use pip to install all of the packages needed for this project.
+Next, install these third-party packages for use in your project.
 
 ```sh
 pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
+```
+
+Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/python/levelup` directory.
+
+```sh
+django-admin startproject levelup .
 ```
 
 ## Controlling Lint Errors
