@@ -147,11 +147,3 @@ Django gives user and role management tables for your application out of the box
 ```sh
 python3 manage.py migrate
 ```
-
-If you needed to use `python3` in previous commands, also try it here.
-
-```sh
-python3 manage.py migrate
-```
-
- From this point on, if you needed to use `python3`, you'll use it every time instead of just `python`.
