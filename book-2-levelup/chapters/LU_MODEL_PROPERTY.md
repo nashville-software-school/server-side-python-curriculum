@@ -8,6 +8,14 @@ You will learn about custom Django model properties, use a JavaScript ternary st
 
 ![animation of joining and leaving events in the client](./images/levelup-join-leave.gif)
 
+## Learning Objectives
+
+* You should be able to identify a custom property in a Django model class.
+* You should be able to explain that a custom property exists on class instances, but is not a column in the database.
+* You should be able to differentiate between a model property that maps to a column in the database and a custom property.
+* You should be able to assign a value to a custom property in a View.
+* You should be able to understand that using a Django ORM method _(e.g. `get()` or `all()`)_ never assigns a value to a model's custom properties.
+
 ## Custom Model Properties
 
 Normally, every property on a Model class in Django directly reflects a column on a table in the database. Sometimes, though, you need additional properties on a model that are calculated during a request/response cycle with a client.
