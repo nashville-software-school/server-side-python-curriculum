@@ -12,7 +12,7 @@ Heroku is a cloud platform that lets companies build, deliver, monitor and scale
     2. Then copy the terminal output of this command `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
     3. Create a new file called `.env` and add `export SECRET_KEY=<paste output>`. 
     4. This creates an environment variable that gets created when the pipenv shell is started. Using `os.getenv('SECRET_KEY)` gets that env variable of that name to use in the django app
-    5. For the debug security warning, make sure to set `DEBUG` to false once you're done testing your api
+    5. For the debug security warning, make sure to set `DEBUG` to `False` once you're done testing your api
 7. Add some lines to end of `settings.py`
 ```py 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
