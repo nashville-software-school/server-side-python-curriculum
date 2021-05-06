@@ -28,7 +28,7 @@ Any time that you want to allow a client to access data in your database, there'
 
 You should already have the **`GameType`** model for your application. If not, build it now after looking at the requirements in chapter 2.
 
-## Step 2: The GameTypes View
+## Step 2: The GameTypeViewSet View Class
 
 Time to write the brains of the operation. The ViewSet will only handle GET requests sent from a client application over the HTTP protocol. You don't want to support POST, PUT, or DELETE because you don't want clients to have the ability to create, edit, or remove game types from the database.
 
@@ -43,7 +43,7 @@ from rest_framework import serializers
 from levelupapi.models import GameType
 
 
-class GameTypes(ViewSet):
+class GameTypeViewSet(ViewSet):
     """Level up game types"""
 
     def retrieve(self, request, pk=None):
@@ -65,13 +65,13 @@ class GameTypes(ViewSet):
         Returns:
             Response -- JSON serialized list of game types
         """
-        gametypes = GameType.objects.all()
+        game_types = GameType.objects.all()
 
         # Note the addtional `many=True` argument to the
         # serializer. It's needed when you are serializing
         # a list of objects instead of a single object.
         serializer = GameTypeSerializer(
-            gametypes, many=True, context={'request': request})
+            game_types, many=True, context={'request': request})
         return Response(serializer.data)
 ```
 
@@ -121,7 +121,7 @@ Then, before the URL patterns that you already set up for authentication, add th
 
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'gametypes', GameTypes, 'gametype')
+router.register(r'gametypes', GameTypeViewSet, 'gametype')
 
 urlpatterns = [
     path('', include(router.urls)),
