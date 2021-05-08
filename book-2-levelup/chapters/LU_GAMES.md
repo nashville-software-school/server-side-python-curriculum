@@ -7,7 +7,6 @@
 * You should be able to itemize the View methods needed to handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
 * You should be able to identify the ORM method used to get a single item from a table.
 * You should be able to identify the ORM method used to get all items from a table.
-* You should be able to identify the ORM method used to get all items from a table.
 * You should be able to explain the effect of the `depth` statement when used in a Serializer.
 
 ## Learning Resources
@@ -268,8 +267,8 @@ Then, add a new URL mapping to the default router.
 
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'gametypes', GameTypes, 'gametype')
-router.register(r'games', Games, 'game')
+router.register(r'gametypes', GameTypeView, 'gametype')
+router.register(r'games', GameView, 'game')
 ```
 
 ## Client Code
