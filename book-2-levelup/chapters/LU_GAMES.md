@@ -93,7 +93,7 @@ from rest_framework import status
 from levelupapi.models import Game, GameType, Gamer
 
 
-class Games(ViewSet):
+class GameView(ViewSet):
     """Level up games"""
 
     def create(self, request):

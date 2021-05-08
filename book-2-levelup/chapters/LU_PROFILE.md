@@ -146,7 +146,7 @@ First, import the `Profile` viewset.
 > #### `levelup/urls.py`
 
 ```py
-from levelupapi.views import Games, GameTypes, Events, Profile
+from levelupapi.views import Games, GameTypeview, Events, Profile
 ```
 
 Then add an entry to DefaultRouter.
