@@ -30,7 +30,7 @@ Create the following fixture file and then seed the database with the loaddata c
             "title": "Welcome To",
             "maker": "Benoit Turpin",
             "gamer": 1,
-            "gametype": 1,
+            "game_type": 1,
             "number_of_players": 4,
             "skill_level": 3
         }
@@ -42,7 +42,7 @@ Create the following fixture file and then seed the database with the loaddata c
             "title": "Settlers of Catan",
             "maker": "Klaus Teuber",
             "gamer": 1,
-            "gametype": 1,
+            "game_type": 1,
             "number_of_players": 4,
             "skill_level": 4
         }
@@ -54,7 +54,7 @@ Create the following fixture file and then seed the database with the loaddata c
             "title": "Dungeons & Dragons",
             "maker": "Wizards of the Coast",
             "gamer": 1,
-            "gametype": 2,
+            "game_type": 2,
             "number_of_players": 5,
             "skill_level": 3
         }
@@ -118,7 +118,7 @@ class GameView(ViewSet):
         # Use the Django ORM to get the record from the database
         # whose `id` is what the client passed as the
         # `gameTypeId` in the body of the request.
-        gametype = GameType.objects.get(pk=request.data["gameTypeId"])
+        game_type = GameType.objects.get(pk=request.data["gameTypeId"])
         game.game_type = game_type
 
         # Try to save the new game to the database, then
@@ -173,8 +173,8 @@ class GameView(ViewSet):
         game.skill_level = request.data["skillLevel"]
         game.gamer = gamer
 
-        gametype = GameType.objects.get(pk=request.data["gameTypeId"])
-        game.game_type = gametype
+        game_type = GameType.objects.get(pk=request.data["gameTypeId"])
+        game.game_type = game_type
         game.save()
 
         # 204 status code means everything worked but the
