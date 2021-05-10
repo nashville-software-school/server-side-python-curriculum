@@ -81,7 +81,7 @@ from levelupapi.models import Game, Event, Gamer
 from levelupapi.views.game import GameSerializer
 
 
-class Events(ViewSet):
+class EventView(ViewSet):
     """Level up events"""
 
     def create(self, request):
@@ -244,7 +244,7 @@ Update the following import statement at the top of the urls module.
 > #### `levelup/levelup/urls.py`
 
 ```py
-from levelupapi.views import Games, GameTypes, Events
+from levelupapi.views import Games, GameTypeView, Events
 ```
 
 Then, add a new URL mapping to the default router.
@@ -253,9 +253,9 @@ Then, add a new URL mapping to the default router.
 
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'gametypes', GameTypes, 'gametype')
-router.register(r'games', Games, 'game')
-router.register(r'events', Events, 'event')
+router.register(r'gametypes', GameTypeView, 'gametype')
+router.register(r'games', GameView, 'game')
+router.register(r'events', EventView, 'event')
 ```
 
 ## Client Code

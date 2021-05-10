@@ -7,7 +7,6 @@
 * You should be able to itemize the View methods needed to handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
 * You should be able to identify the ORM method used to get a single item from a table.
 * You should be able to identify the ORM method used to get all items from a table.
-* You should be able to identify the ORM method used to get all items from a table.
 * You should be able to explain the effect of the `depth` statement when used in a Serializer.
 
 ## Learning Resources
@@ -31,7 +30,7 @@ Create the following fixture file and then seed the database with the loaddata c
             "title": "Welcome To",
             "maker": "Benoit Turpin",
             "gamer": 1,
-            "gametype": 1,
+            "game_type": 1,
             "number_of_players": 4,
             "skill_level": 3
         }
@@ -43,7 +42,7 @@ Create the following fixture file and then seed the database with the loaddata c
             "title": "Settlers of Catan",
             "maker": "Klaus Teuber",
             "gamer": 1,
-            "gametype": 1,
+            "game_type": 1,
             "number_of_players": 4,
             "skill_level": 4
         }
@@ -55,7 +54,7 @@ Create the following fixture file and then seed the database with the loaddata c
             "title": "Dungeons & Dragons",
             "maker": "Wizards of the Coast",
             "gamer": 1,
-            "gametype": 2,
+            "game_type": 2,
             "number_of_players": 5,
             "skill_level": 3
         }
@@ -93,7 +92,7 @@ from rest_framework import status
 from levelupapi.models import Game, GameType, Gamer
 
 
-class Games(ViewSet):
+class GameView(ViewSet):
     """Level up games"""
 
     def create(self, request):
@@ -119,8 +118,8 @@ class Games(ViewSet):
         # Use the Django ORM to get the record from the database
         # whose `id` is what the client passed as the
         # `gameTypeId` in the body of the request.
-        gametype = GameType.objects.get(pk=request.data["gameTypeId"])
-        game.gametype = gametype
+        game_type = GameType.objects.get(pk=request.data["gameTypeId"])
+        game.game_type = game_type
 
         # Try to save the new game to the database, then
         # serialize the game instance as JSON, and send the
@@ -174,8 +173,8 @@ class Games(ViewSet):
         game.skill_level = request.data["skillLevel"]
         game.gamer = gamer
 
-        gametype = GameType.objects.get(pk=request.data["gameTypeId"])
-        game.gametype = gametype
+        game_type = GameType.objects.get(pk=request.data["gameTypeId"])
+        game.game_type = game_type
         game.save()
 
         # 204 status code means everything worked but the
@@ -215,7 +214,7 @@ class Games(ViewSet):
         # That URL will retrieve all tabletop games
         game_type = self.request.query_params.get('type', None)
         if game_type is not None:
-            games = games.filter(gametype__id=game_type)
+            games = games.filter(game_type__id=game_type)
 
         serializer = GameSerializer(
             games, many=True, context={'request': request})
@@ -237,7 +236,7 @@ class GameSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Game
-        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level', 'gametype')
+        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level', 'game_type')
         depth = 1
 ```
 
@@ -268,8 +267,8 @@ Then, add a new URL mapping to the default router.
 
 ```py
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'gametypes', GameTypes, 'gametype')
-router.register(r'games', Games, 'game')
+router.register(r'gametypes', GameTypeView, 'gametype')
+router.register(r'games', GameView, 'game')
 ```
 
 ## Client Code
