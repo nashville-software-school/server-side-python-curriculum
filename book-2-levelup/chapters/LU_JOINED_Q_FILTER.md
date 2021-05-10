@@ -50,10 +50,10 @@ Since the current user attending is simply a subset of all gamers that are atten
 
 ```py
 events = Event.objects.annotate(
-    attendees=Count('registrations'),
+    attendees_count=Count('attendees'),
     joined=Count(
-        'registrations',
-        filter=Q(registrations__gamer=gamer)
+        'attendees',
+        filter=Q(attendees=gamer)
     )
 )
 ```
@@ -62,7 +62,8 @@ In English, you are...
 
 1. Querying the `Event` table
 1. Aggregating how many total attendees there are
-1. Determining if the current user has joined the event by joining in registrations and filtering those registration by the `gamer` property of each.
+1. Determining if the current user has rsvp'd the event by filtering the attendees based on the gamer then counting the results
+
 
 That will set the value of `joined` to 1 or 0. You want true or false. To get that, add a for loop that converts the numbers to booleans.
 
