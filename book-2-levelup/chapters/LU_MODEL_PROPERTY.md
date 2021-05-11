@@ -97,7 +97,7 @@ Update the **`EventSerializer`** class to include the new, custom property.
 
 ```py
 fields = ('id', 'game', 'organizer',
-          'description', 'date', 'time',
+          'description', 'date', 'time', 'attendees',
           'joined')
 ```
 
@@ -118,13 +118,8 @@ Update the list method in the event viewset with the code below.
 
         # Set the `joined` property on every event
         for event in events:
-            event.joined = None
-
-            try:
-                EventGamers.objects.get(event=event, gamer=gamer)
-                event.joined = True
-            except EventGamers.DoesNotExist:
-                event.joined = False
+            # Check to see if the gamer is in the attendees list on the event
+            event.joined = gamer in event.attendees.all()
 
         # Support filtering events by game
         game = self.request.query_params.get('gameId', None)
