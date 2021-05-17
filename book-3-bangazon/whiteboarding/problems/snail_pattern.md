@@ -13,4 +13,8 @@ snail(list_example) # returns [1,2,3,6,9,8,7,4,5]
 
 
 ### Need a hint?
+The length of each inner list will always match the length of the outer list
+
+### Finished?
+Can you find another solution?
 

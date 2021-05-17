@@ -20,3 +20,13 @@ This book introduces you to integration testing, and  Django templates. You will
 | 2 | [Django Permissions](./chapters/DJANGO_PERMISSIONS.md)
 | 3 | [Enforcing Permissions](./chapters/DJANGO_ENFORCING_PERMISSIONS.md)
 | 4 | [Deploying with Heroku](./chapters/HEROKU_DEPLOYMENT.md)
+
+## Whiteboard Problems
+These exercises will test your knowledge of python fundamentals and increase your problem solving skills. If you're not sure where to start on a problem
+write out comments for yourself for steps you think you'll need then start coding. If something isn't clear to you ask your instructors some questions to help clarify the instructions
+
+| Fundamentals | Intermediate | Advanced |
+|--|--|--|
+[Even or Odd](./whiteboarding/problems/even_or_odd.md)  | [Sum of Multiples](./whiteboarding/problems/add_multiples_of_3_5.md) | [Snail Pattern](./whiteboarding/problems/snail_pattern.md)
+[Highest and Lowest](./whiteboarding/problems/highest_and_lowest.md) | [Palindrome](./whiteboarding/problems/palindrome.md)
+[Map Over Lists](./whiteboarding/problems/map_over_list.md) | [RGB Color to Hex Color Code](./whiteboarding/problems/rgb_to_hex.md)

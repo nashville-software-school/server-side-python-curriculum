@@ -35,13 +35,3 @@ These chapters will let you explore more advanced capabilities and workflows bet
 | 2 | [Event Attendees](./chapters/LU_EVENT_ATTENDEES.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Searching Games](./chapters/GR_SEARCH.md) |
 | 3 | [Events per Game](./chapters/LU_EVENT_COUNT.md) <br/> <sub style="font-size:0.85rem;">#orm #annotation #count</sub> | [Sorting Games](./chapters/GR_SORTING.md) |
 | 4 | [Joined Events](./chapters/LU_JOINED_Q_FILTER.md) <br/> <sub style="font-size:0.85rem;">#orm #Q</sub> |  |
-
-## Whiteboard Problems
-These exercises will test your knowledge of python fundamentals and increase your problem solving skills. If you're not sure where to start on a problem
-write out comments for yourself for steps you think you'll need then start coding
-
-| Fundamentals | Intermediate | Advanced |
-|--|--|--|
-[Even or Odd](./whiteboarding/problems/even_or_odd.md)  | [Sum of Multiples](./whiteboarding/problems/add_multiples_of_3_5.md)
-[Highest and Lowest](./whiteboarding/problems/highest_and_lowest.md) | [Palindrome](./whiteboarding/problems/palindrome.md)
-[Map Over Lists](./whiteboarding/problems/map_over_list.md) | [RGB Color to Hex Color Code](./whiteboarding/problems/rgb_to_hex.md)
