@@ -23,7 +23,11 @@ This book introduces you to integration testing, and  Django templates. You will
 
 ## Whiteboard Problems
 These exercises will test your knowledge of python fundamentals and increase your problem solving skills. If you're not sure where to start on a problem
-write out comments for yourself for steps you think you'll need then start coding. If something isn't clear to you ask your instructors some questions to help clarify the instructions
+write out comments for yourself for steps you think you'll need then start coding. If something isn't clear to you, ask your instructors questions to clarify the requirements. 
+
+Whiteboarding isn't necessarily about solving the problem, it's about the steps you take along the way. Don't worry too much if you get stuck and make sure you ask for help when you need it. 
+
+Also, there is no "right" way. There may be a cleaner, dry-er, or more pythonic way to solve the problem but you can save that for refactoring after you solve it the first time.
 
 | Fundamentals | Intermediate | Advanced |
 |--|--|--|
