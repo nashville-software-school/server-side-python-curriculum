@@ -1,7 +1,7 @@
 # RGB to Hexadecimal
 Write a function that takes in RGB color values and converts it into the hexadecimal color. The function should take three arguments for the R, G, and B values. If the R, G, or B values are outside of the 0 to 255 range they should be converted to the closest number in that range
 
-### Examples
+## Examples
 ```py
 rgb(255, 255, 255) # returns FFFFFF
 rgb(255, 255, 300) # returns FFFFFF

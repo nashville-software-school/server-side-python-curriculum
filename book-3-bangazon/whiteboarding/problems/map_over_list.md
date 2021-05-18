@@ -3,7 +3,7 @@
 Write a function that takes two parameters. The first parameter should be a list of lists. The second should be a lambda function.
 The function should map the lambda function over the contents of the inner lists
 
-### Examples
+## Examples
 ```py
 # Integer Example
 x = [[1,2,3],

@@ -1,4 +1,4 @@
-### Add Multiples of 3 and/or 5
+# Add Multiples of 3 and/or 5
 Write a function that that takes a positive integer as a parameter. 
 The function should return the sum of all the multiples of 3 and/or 5 less than (but not equal to) the number passed in
 

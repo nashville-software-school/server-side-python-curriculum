@@ -2,7 +2,7 @@
 
 Write a function that takes one parameter. The parameter will be a list of lists. Return the elements of the array arranged from outermost elements to the middle element, traveling clockwise. Take a look at the example images for a visual.
 
-### Examples
+## Examples
 ```py
 list_example = [[1,2,3],
          [4,5,6],
