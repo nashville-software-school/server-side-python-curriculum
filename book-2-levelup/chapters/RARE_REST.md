@@ -12,7 +12,7 @@ Since you already have a `client` and a `server` directory for Rare from the fir
 
 For example, if your initial repo is named `Rare-Goofy-Gophers`, your new repo should be named `Rare-API-Goofy-Gophers`.
 
-Then open the [Level Up API Setup](https://github.com/nashville-software-school/bangazon-llc/blob/full-stack-python/book-2-levelup/chapters/DRF_INSTALLS.md) chapter and follow those steps. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
+Then open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
 
 ### Creating the Project
 
