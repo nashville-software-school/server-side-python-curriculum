@@ -27,7 +27,14 @@ write out comments for yourself for steps you think you'll need then start codin
 
 Whiteboarding isn't necessarily about solving the problem, it's about the steps you take along the way. Don't worry too much if you get stuck and make sure you ask for help when you need it. 
 
-Also, there is no "right" way. There may be a cleaner, dry-er, or more pythonic way to solve the problem but you can save that for refactoring after you solve it the first time.
+Also, there is no "right" way. There may be a cleaner, dry-er, or more pythonic way to solve the problem but it's ok to save the refactoring for after you solve it the first time.
+
+If you want more practice with whiteboarding checkout:
+
+[Codewars](https://www.codewars.com/)
+
+[HackerRank](https://www.hackerrank.com/)
+
 
 | Fundamentals | Intermediate | Advanced |
 |--|--|--|
