@@ -13,6 +13,20 @@ make_palindrome('ababab')
 'abababa'
 ```
 
+## Starter code
+```py
+def make_palindrome(num):
+    # add your solution here
+    pass
+
+def test_make_palindrome_solution():
+    assert make_palindrome('abcdc') == 'abcdcba'
+    assert make_palindrome('ababab') == 'abababa'
+    assert make_palindrome('bccaaac') == 'bccacabacacbcacabac'
+
+```
+
+
 ### Need a Hint?
 Try copying and reversing the string parameter. Think of the original and the reverse copy overlapping each other till it makes the shortest string
 

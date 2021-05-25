@@ -29,6 +29,10 @@ Whiteboarding isn't necessarily about solving the problem, it's about the steps 
 
 Also, there is no "right" way. There may be a cleaner, dry-er, or more pythonic way to solve the problem but it's ok to save the refactoring for after you solve it the first time.
 
+Each challenge includes test code so you can check your work. To run the tests: 
+1. Install pytest `pip3 install -U pytest`
+2. `cd` into the folder with the test and run `pytest <file-name>.py` to see the test results
+
 If you want more practice with whiteboarding checkout:
 
 [Codewars](https://www.codewars.com/)

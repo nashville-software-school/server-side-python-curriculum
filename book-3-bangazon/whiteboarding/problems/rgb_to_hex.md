@@ -10,8 +10,25 @@ rgb(148, 0, 211) # returns 9400D3
 rgb(-20,275,125) # returns 00FF7D
 ```
 
+## Starter Code
+```py
+def rgb_to_hex(red, green, blue):
+    # add your solution here
+    pass
+
+def test_rgb_solution():
+    assert rgb_to_hex(255, 255, 255) == 'FFFFFF'
+    assert rgb_to_hex(255, 255, 300) == 'FFFFFF'
+    assert rgb_to_hex(0, 0, 0) == '000000'
+    assert rgb_to_hex(148, 0, 211) == '9400D3'
+    assert rgb_to_hex(254,253,252) == "FEFDFC"
+    assert rgb_to_hex(220, 67, 368) == "DC43FF"
+
+```
+
 ### Need a Hint?
 See if there's any built in python methods that convert a base 10 number to a base 16
 
 ### Finished?
+Run `pytest` in the terminal to see if your solution passes
 Can you find a way to refactor your solution?
