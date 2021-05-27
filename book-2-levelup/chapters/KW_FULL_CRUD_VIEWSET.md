@@ -23,7 +23,7 @@ class ParkAreaSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'theme')
 
 
-class ParkAreas(ViewSet):
+class ParkAreaView(ViewSet):
     """Park Areas for Kennywood Amusement Park"""
 
     def create(self, request):
