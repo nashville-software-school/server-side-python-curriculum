@@ -27,6 +27,8 @@ Download the [Chinook Database](https://github.com/lerocha/chinook-database/blob
 
 That file **is** the database. It contains all of the tables and data. Open that directory in VS Code and create a connection to the database file.
 
+If you are on a Windows machine and were unable to move your database to Workspace, click [here](./CHINOOK_WINDOWS_MOVE_DB.md)
+
 ## Instructions
 
 ### Public Repo
