@@ -77,6 +77,18 @@ If that command throws errors, try this one.
 python3 manage.py startapp levelupapi
 ```
 
+## Add Content To .gitignore File
+
+Create a `.gitignore` file by running the following command
+
+```sh
+touch .gitignore
+```
+
+Next, visit [Toptal](https://www.toptal.com/developers/gitignore) to generate the contents for your `.gitignore`.
+Enter `Django` and `VisualStudioCode` into the search input and click "Create".
+Copy everything that is generated and paste it into your `.gitignore` file.
+
 ## Setting Up Package Directories
 
 Run the following commands to remove some boilerplate files that you won't be using, and create directories that will contain the code for your application.
