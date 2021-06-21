@@ -8,19 +8,21 @@ Heroku is a cloud platform that lets companies build, deliver, monitor and scale
 3. After you create the application, it should have some cli commands for you to run to connect your code to the application
 4. There's a few extra packages you'll need to install `pipenv install gunicorn django_on_heroku`
 5. At the beginning of the `settings.py` around line 22 there are some Security warnings:
-    1. For the `SECRET_KEY` warning: change the line to `SECRET_KEY = os.getenv('SECRET_KEY')`
-    2. Then copy the terminal output of this command `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
-    3. Create a new file called `.env` and add `export SECRET_KEY=<paste output>`.
-    4. This creates an environment variable that gets created when the pipenv shell is started. Using `os.getenv('SECRET_KEY)` gets that env variable of that name to use in the django app
-    5. For the debug security warning, make sure to set `DEBUG` to `False` once you're done testing your api
+    1. If you have not already hidden your secret key: 
+    2. For the `SECRET_KEY` warning: change the line to `SECRET_KEY = os.getenv('SECRET_KEY')`
+    3. Then copy the terminal output of this command `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
+    4. Create a new file called `.env` and add `export SECRET_KEY=<paste output>`.
+    5. This creates an environment variable that gets created when the pipenv shell is started. Using `os.getenv('SECRET_KEY)` gets that env variable of that name to use in the django app
+    6. For the debug security warning, make sure to set `DEBUG` to `False` once you're done testing your api
 7. Add some lines to end of `settings.py`
 ```py
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 django_on_heroku.settings(locals())
 ```
-4. Add a file called `Procfile` and paste in this line `web: gunicorn levelup.wsgi --log-file -`
+4. Add a file called `Procfile` and paste in this line (change out `levelup` for your project module name) `web: gunicorn levelup.wsgi --log-file -`
 1. Add and commit all the changes
 1. To add code to the heroku server run: `git push heroku main`
 1. Run `heroku open` and you should see the base rest framework unauthorized page
