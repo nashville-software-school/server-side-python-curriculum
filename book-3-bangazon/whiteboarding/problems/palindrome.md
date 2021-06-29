@@ -22,7 +22,7 @@ def make_palindrome(num):
 def test_make_palindrome_solution():
     assert make_palindrome('abcdc') == 'abcdcba'
     assert make_palindrome('ababab') == 'abababa'
-    assert make_palindrome('bccaaac') == 'bccacabacacbcacabac'
+    assert make_palindrome('bccaaac') == 'bccaaaccb'
 
 ```
 
