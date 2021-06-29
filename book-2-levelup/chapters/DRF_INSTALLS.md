@@ -2,8 +2,6 @@
 
 ## Setup
 
-Django is the web application framework that you will be using for the remainder of the course, so you need to install it globally first.
-
 The initial creation of a Django project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
 
 ## Virtual Environment with `pipenv`
@@ -34,7 +32,7 @@ Next, install these third-party packages for use in your project.
 pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
 ```
 
-Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/python/levelup` directory.
+Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/python/levelup` directory. Don't forget the `.` at the end of the command
 
 ```sh
 django-admin startproject levelup .
@@ -42,6 +40,7 @@ django-admin startproject levelup .
 
 ## Controlling Lint Errors
 
+### Add Pylint file
 The pylint package is very good at ensuring that you follow the community standards for variable naming, but there are certain times that you want to use variable names that are short and don't use snake case. You can put those variable names in a `.pylintrc` file in your project.
 
 Without this configuration, your editor will put orange squiggles under those variable names to alert you that you violated community standards. It becomes annoying, so you override the default rules.
@@ -52,16 +51,26 @@ good-names=i,j,ex,pk
 
 [MESSAGES CONTROL]
 disable=broad-except
+
+[MASTER]
+disable=C0114,
 ' > .pylintrc
 ```
+### Select Python Interpreter
+Open VSCode and press `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
-Open Visual Studio Code in the levelup directory, and then `cmd+shift+p` and open "Preferences: Open Settings (JSON)". Add the following configuration item to the object.
+### Configure Pylint
+After selecting the python interpreter, there should be a popup to enable pylint, click yes. There should now be a .vscode folder in your directory. Open the settings.json file and add the following lines:
 
 ```json
 "python.linting.pylintArgs": [
     "--load-plugins=pylint_django"
 ],
+"python.linting.pylintArgs": [
+    "--django-settings-module=<folder name>.settings",
+],
 ```
+Notice that `<folder name>` should be the name of the folder that has the `settings.py` file
 
 ## Create API Application
 
@@ -147,3 +156,13 @@ Django gives user and role management tables for your application out of the box
 ```sh
 python3 manage.py migrate
 ```
+
+---
+
+## Optional - Hide Secret Key
+### Do this step if you know you will be deploying this app
+1. Create a `.env` file on the same level as the `manage.py` file. 
+2. In the terminal run: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`, copy the output
+3. Open the `.env` file and add `SECRET_KEY=<paste output>` without the angle brackets
+4. In the `settings.py` file around line 23 change the `SECRET_KEY` variable to be `SECRET_KEY = os.environ.get('SECRET_KEY')`
+5. Stop and restart the pipenv shell
