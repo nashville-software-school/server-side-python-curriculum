@@ -86,6 +86,20 @@ If that command throws errors, try this one.
 python3 manage.py startapp levelupapi
 ```
 
+## Add Content To .gitignore File
+
+Create a `.gitignore` file by running the following command
+
+```sh
+touch .gitignore
+```
+
+Next generate the content for your `.gitignore` file by running this command
+
+```sh
+curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
+```
+
 ## Setting Up Package Directories
 
 Run the following commands to remove some boilerplate files that you won't be using, and create directories that will contain the code for your application.
