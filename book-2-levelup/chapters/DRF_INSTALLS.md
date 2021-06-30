@@ -85,9 +85,11 @@ Create a `.gitignore` file by running the following command
 touch .gitignore
 ```
 
-Next, visit [Toptal](https://www.toptal.com/developers/gitignore) to generate the contents for your `.gitignore`.
-Enter `Django` and `VisualStudioCode` into the search input and click "Create".
-Copy everything that is generated and paste it into your `.gitignore` file.
+Next generate the content for your `.gitignore` file by running this command
+
+```sh
+curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
+```
 
 ## Setting Up Package Directories
 
