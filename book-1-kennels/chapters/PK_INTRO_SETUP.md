@@ -115,8 +115,8 @@ if __name__ == "__main__":
 
 Now you are going to install two tools:
 
-1. **autopep8** - This is a Python linter (_a linter checks your code for syntax mistakes_).
-1. **watchgod** - This will start your application, and then automatically restart it when you make changes to your code.
+1. **autopep8** - This is an auto formatter that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide.
+1. **pylint** - This is a linter that shows any lint errors in your code.
 
 First, start a virtual environment. Virtual environments ensure that software that install for a project doesn't pollute your entire operating system. It keeps everything contained to the project.
 
@@ -127,23 +127,40 @@ pipenv shell
 Once the virtual environment has started, you can install the 3rd-party software.
 
 ```sh
-pipenv install autopep8 watchgod
+pipenv install autopep8 pylint
 ```
-
-## Starting python-server
-
-Enter in the following command to start your new data server written in Python.
-
-```sh
-watchgod request_handler.main
+## Adjust VS Code Settings
+Open the command palette `cmd-shift-p` and search for "Open Settings (JSON)"
+Add these to the bottom of the file
 ```
-
-If there are no errors in the code, you will see the following, terse output.
-
-```sh
-➜ watchgod request_handler.main
-[09:34:37] watching "/Users/.../workspace/python-server" and reloading "request_handler.main" on changes...
+"python.formatting.autopep8Path": "${env:VIRTUAL_ENV}/bin/autopep8",
+"python.linting.enabled": true,
 ```
+Now if you press `opt-shift-f` while the `request_handler.py` file is active, some code should change to conform to PEP 8 standards
+
+## Running the Server with VS Code Debugger
+
+First we'll need to tell VS Code how to start the server. If there isn't a `.vscode` folder already create one now. Inside the `.vscode` folder create a file called `launch.json`. Paste in the following code
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Request Handler",
+            "type": "python",
+            "request": "launch",
+            "program": "./request_handler.py",
+            "console": "integratedTerminal",
+            "autoReload": {
+                "enable": true
+            }
+        }
+    ]
+}
+```
+Since the `request_handler.py` file has the code to run the server, this tells VS Code to run that file when using the debugger.
+To run the debugger, click the "Run and Debug" button on the far left nav column (should be 4th button down). Then click the green play button beside "Request Handler". Once the terminal opens you can move on to the next step. We'll go over adding breakpoints in class.
+![debugger](./images/python_debugger.gif)
 
 ## Requesting Animals via Postman
 
