@@ -40,7 +40,7 @@ You may get a message that it is already installed.
 
 > **Instructor Note:** _If you need the student to ensure that the latest version of Xcode CLT are installed, have them to go https://developer.apple.com/download/more/?=xcode, download the latest version, and then install it._
 
-### Install Pyenv and Python on Mac
+### Install Pyenv and Python
 
 ```bash
 brew install pyenv
