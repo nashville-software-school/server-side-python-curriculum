@@ -151,7 +151,10 @@ INSERT INTO Categories ('label') VALUES ('News');
 INSERT INTO Tags ('label') VALUES ('JavaScript');
 INSERT INTO Reactions ('label', 'image_url') VALUES ('happy', 'https://pngtree.com/so/happy');
 ```
+## Wireframes
 
+Wireframes from Product Team
+https://miro.com/app/board/o9J_kiGCSK4=/
 <!--
 ## Wireframes
 
