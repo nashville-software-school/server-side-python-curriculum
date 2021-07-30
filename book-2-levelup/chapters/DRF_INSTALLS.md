@@ -4,17 +4,6 @@
 
 The initial creation of a Django project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
 
-## Virtual Environment with `pipenv`
-
-Virtual environments make sure that each project you build is clean and isolated from all of the other projects that may be on your system. This ensures that different projects can use specific versions of 3rd party software without conflicts.
-
-Run the following commands to install `pipenv`, which is an easy to use tool for managing virtual environments for Python projects.
-
-```sh
-pip3 install --user pipx
-pipx install pipenv
-```
-
 ## Creating the Project and Virtual Environment
 
 Do not copy all of these at once and paste them into your terminal. Copy and run each one separately.
@@ -75,12 +64,6 @@ Notice that `<folder name>` should be the name of the folder that has the `setti
 ## Create API Application
 
 Now that the project is set up and has some initial configuration, it's time to create an application for the Level Up API project. Django projects are containers for one, or more, applications. Right now, we only need one application in this project. Make sure you are in your project directory when you run this command.
-
-```sh
-python3 manage.py startapp levelupapi
-```
-
-If that command throws errors, try this one.
 
 ```sh
 python3 manage.py startapp levelupapi
