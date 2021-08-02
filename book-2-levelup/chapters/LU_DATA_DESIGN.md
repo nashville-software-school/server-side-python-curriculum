@@ -99,7 +99,7 @@ CREATE TABLE `Toy` (
 );
 ```
 
-Django can do that for you without ever needing to write SQL. You write classes that act as database models. You even get to leave out the `id` field. Django will add that automatically.
+Django can do that for you without ever needing to write SQL. You write classes that act as database models. You even get to leave out the `id` field. Django will add that automatically. Here's the django docs on other field types: https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types
 
 ```py
 from django.db import models
