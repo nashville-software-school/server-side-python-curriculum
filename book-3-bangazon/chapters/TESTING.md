@@ -87,9 +87,9 @@ class GameTests(APITestCase):
         # SEED DATABASE WITH ONE GAME TYPE
         # This is needed because the API does not expose a /gametypes
         # endpoint for creating game types
-        gametype = GameType()
-        gametype.label = "Board game"
-        gametype.save()
+        game_type = GameType()
+        game_type.label = "Board game"
+        game_type.save()
 
 
     def test_create_game(self):
@@ -146,7 +146,7 @@ class GameTests(APITestCase):
 
         # Seed the database with a game
         game = Game()
-        game.gametype_id = 1
+        game.game_type_id = 1
         game.skill_level = 5
         game.title = "Monopoly"
         game.maker = "Milton Bradley"
@@ -182,7 +182,7 @@ class GameTests(APITestCase):
         Ensure we can change an existing game.
         """
         game = Game()
-        game.gametype_id = 1
+        game.game_type_id = 1
         game.skill_level = 5
         game.title = "Sorry"
         game.maker = "Milton Bradley"
@@ -224,7 +224,7 @@ class GameTests(APITestCase):
         Ensure we can delete an existing game.
         """
         game = Game()
-        game.gametype_id = 1
+        game.game_type_id = 1
         game.skill_level = 5
         game.title = "Sorry"
         game.maker = "Milton Bradley"

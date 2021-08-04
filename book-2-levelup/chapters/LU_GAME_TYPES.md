@@ -32,7 +32,7 @@ You should already have the **`GameType`** model for your application. If not, b
 
 Time to write the brains of the operation. The ViewSet will only handle GET requests sent from a client application over the HTTP protocol. You don't want to support POST, PUT, or DELETE because you don't want clients to have the ability to create, edit, or remove game types from the database.
 
-> #### `levelup/levelupapi/views/gametype.py`
+> #### `levelup/levelupapi/views/game_type.py`
 
 ```py
 """View module for handling requests about game types"""
@@ -67,7 +67,7 @@ class GameTypeView(ViewSet):
         """
         game_types = GameType.objects.all()
 
-        # Note the addtional `many=True` argument to the
+        # Note the additional `many=True` argument to the
         # serializer. It's needed when you are serializing
         # a list of objects instead of a single object.
         serializer = GameTypeSerializer(
@@ -79,7 +79,7 @@ class GameTypeView(ViewSet):
 
 The serializer class determines how the Python data should be serialized as JSON to be sent back to the client. Put the following code at the bottom of the same module as above.
 
-> #### `levelup/levelupapi/views/gametype.py`
+> #### `levelup/levelupapi/views/game_type.py`
 
 ```py
 class GameTypeSerializer(serializers.ModelSerializer):

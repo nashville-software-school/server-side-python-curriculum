@@ -90,7 +90,7 @@ For example, if a game has an event scheduled, but the event was created by anot
     },
     "number_of_players": 6,
     "skill_level": 2,
-    "gametype": {
+    "game_type": {
         "id": 1,
         "label": "Table top"
     },
@@ -111,7 +111,7 @@ If the game has 2 scheduled events, and one of them was created by the current u
     },
     "number_of_players": 6,
     "skill_level": 2,
-    "gametype": {
+    "game_type": {
         "id": 1,
         "label": "Table top"
     },

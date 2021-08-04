@@ -52,7 +52,7 @@ Be in the Level Up project directory _(~/workspace/python/levelup)_.
 
 ```sh
 mkdir levelupapi/fixtures
-touch levelupapi/fixtures/gametypes.json
+touch levelupapi/fixtures/game_types.json
 ```
 
 Open that JSON file and put the following seed data in it.
@@ -86,7 +86,7 @@ Open that JSON file and put the following seed data in it.
 Then load that data into the database with the following command.
 
 ```sh
-python3 manage.py loaddata gametypes
+python3 manage.py loaddata game_types
 ```
 
 This will generate some `INSERT INTO` SQL statements behind the scenes in Django and create three records in the `levelupapi_gametype` table in your database. Run the following SQL to see them.

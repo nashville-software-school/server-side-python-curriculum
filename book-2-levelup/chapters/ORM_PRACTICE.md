@@ -12,7 +12,7 @@ To retrieve all items in the Game table.
 
 ```sql
 SELECT g.id,
-    g.gametype_id,
+    g.game_type_id,
     g.title,
     g.maker,
     g.gamer_id,
@@ -37,7 +37,7 @@ To retrieve a single item in the Game table.
 
 ```sql
 SELECT g.id,
-    g.gametype_id,
+    g.game_type_id,
     g.title,
     g.maker,
     g.gamer_id,
@@ -63,7 +63,7 @@ To retrieve items in the Game table that match a specific GameType.
 
 ```sql
 SELECT g.id,
-    g.gametype_id,
+    g.game_type_id,
     g.title,
     g.maker,
     g.gamer_id,
@@ -72,7 +72,7 @@ SELECT g.id,
     t.label game_type
 FROM levelupapi_game g
 LEFT JOIN levelupapi_gametype t
-    ON g.gametype_id = t.id
+    ON g.game_type_id = t.id
 WHERE t.id = 2
 ```
 
@@ -82,7 +82,7 @@ The use of the dunderscore (`__`) here represents a join operation.
 
 ```py
 game_type_param = self.request.query_params.get('gameTypeId', None)
-games = Games.objects.filter(gametype__id=game_type_param)
+games = Games.objects.filter(game_type__id=game_type_param)
 ```
 
 ## Get events scheduled by gamer

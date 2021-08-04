@@ -16,7 +16,7 @@ Your task is to use the instructions for adding aggregate properties to object i
     "event_count": 4,
     "number_of_players": 80,
     "skill_level": 2,
-    "gametype": {
+    "game_type": {
         "id": 1,
         "label": "Table top"
     }

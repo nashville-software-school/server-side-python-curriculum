@@ -40,8 +40,8 @@ def update(self, request, pk=None):
     game.skill_level = request.data["skillLevel"]
     game.gamer = gamer
 
-    gametype = GameType.objects.get(pk=request.data["gameTypeId"])
-    game.gametype = gametype
+    game_type = GameType.objects.get(pk=request.data["gameTypeId"])
+    game.game_type = game_type
     game.save()
 
     return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -56,7 +56,7 @@ SELECT
     number_of_players,
     skill_level,
     gamer_id,
-    gametype_id
+    game_type_id
 FROM
     levelupapi_game
 WHERE
