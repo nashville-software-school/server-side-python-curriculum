@@ -15,7 +15,7 @@ In this chapter, you are going to to allow gamers to sign up for an event that h
 
 ## Custom Action
 
-With Django REST Framework, you can create a custom action that your API must support by using the `@action` decorator above a ViewSet. For this action, you want a client to create a request that allows a gamer to sign up for an event.
+With Django REST Framework, you can create a custom action that your API must support by using the `@action` decorator above a method within a ViewSet. For this action, you want a client to create a request that allows a gamer to sign up for an event.
 
 You also want to allow a client to allow a gamer to cancel their signup for an event.
 
