@@ -117,7 +117,7 @@ class Toy(models.Model):
 
 Django gives you a **`User`** model out of the box that already has fields on it like *first name*, *last name*, *email*, etc. If there are any additional fields that you want to capture about a user of your application, you need to create a separate model.
 
-In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it.
+In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it (here)[https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model]
 
 ##### *NOTE: Each Gamer should have a 1 to 1 relationship with a corresponding User entry.*
 
