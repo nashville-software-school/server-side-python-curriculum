@@ -100,9 +100,9 @@ def register_user(request):
 
 ```
 
-## Auth Package Imports
+## Views Package Imports
 
-The `auth` directory is going to become a package so that other modules can import the functions.
+The `views` directory is going to become a package so that other modules can import the functions. We tell our code it should be a module by adding an `__init__.py` file to the directory.
 
 Create the following file and place the code below in it.
 
@@ -112,7 +112,7 @@ Create the following file and place the code below in it.
 from .auth import login_user, register_user
 ```
 
-## Using Auth Package Views to Make Routes
+## Using Views Package to Make Routes
 
 The last step is to establish some URL routes that any client application can use to register and login a gamer to use the API.
 
