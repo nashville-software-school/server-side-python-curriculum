@@ -190,7 +190,9 @@ python3 manage.py migrate
 
 1. Open the `settings.py` file in your `levelup` directory.
 
-1. Locate the the `SECRET_KEY` variable (around line 23), and change it to be `SECRET_KEY = 'MY_SECRET_KEY'`
+1. Locate the the `SECRET_KEY` variable (around line 23), and change it to be `SECRET_KEY = os.environ.get('MY_SECRET_KEY')`
+
+1. Import `os` at the top of your `settings.py` file.
 
 1. Stop your virtual environment <kbd>Ctrl</kbd><kbd>D</kbd>, and then restart it `pipenv shell`.
 
@@ -210,7 +212,10 @@ Inside the `.vscode` create a file called `launch.json`. Paste the following cod
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
             "args": ["runserver"],
-            "django": true
+            "django": true,
+            "autoReload":{
+                "enable": true
+            }
         }
     ]
 }
