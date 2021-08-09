@@ -14,7 +14,7 @@
 >
 > "I was talking to some friends earlier in the week, and apparently many of them play games on their computers. I had no idea. Susan... she's a friend who watches my cats sometimes... well, she watches some because Sammy and Jasper don't like her. If I need someone to watch Sammy and Jasper, I can usually count on Helen. You see, Helen has cats, too, but not as many as me, so..."
 >
-> You sigh silently and listen to a 10-minute lecture about which of Karen's friends have particularly meaningful relationhips with each one of her myriad cats.
+> You sigh silently and listen to a 10-minute lecture about which of Karen's friends have particularly meaningful relationships with each one of her myriad cats.
 >
 > "...and since they all told me that they play an online game called Fever Fantasy, I decided that I should allow people to create games and events for things other than board games."
 >
@@ -48,7 +48,7 @@
 With Django, you can do that with something called fixtures. A fixture is a file that has JSON formatted data in it. That JSON data is then read by Django, converted into `INSERT INTO` SQL statements, and then executed to get some rows into your database tables.
 
 
-Be in the Level Up project directory _(~/workspace/python/levelup)_.
+Be in the project directory _`~/workspace/levelup-server`_
 
 ```sh
 mkdir levelupapi/fixtures
@@ -99,13 +99,13 @@ SELECT * FROM levelupapi_gametype;
 
 To create a full Gamer user account in your database, you need a record in three tables.
 
-1. `auth_user` which is the authentication table that Django builds for you out of the box.
-1. `authtoken_token` which also is part of the built-in authentication system of Django.
-1. `levelupapi_gamer` which is the table that gets created by Django from your **`Gamer`** model class that you wrote in the `levelup/levelupapi/models/gamer.py` module.
+1. `auth_user` - *which is the authentication table that Django builds for you out of the box.*
+1. `authtoken_token` - *which also is part of the built-in authentication system of Django.*
+1. `levelupapi_gamer` - *which is the table that gets created by Django from your **`Gamer`** model class that you wrote in the `levelup-server/levelupapi/models/gamer.py` module.*
 
-Create the following two files with the corresponding contents.
+Create the following three files with the corresponding contents.
 
-> #### `levelup/levelupapi/fixtures/users.json`
+> #### `levelup-server/levelupapi/fixtures/users.json`
 
 ```json
 [
@@ -130,7 +130,7 @@ Create the following two files with the corresponding contents.
 ]
 ```
 
-> #### `levelup/levelupapi/fixtures/tokens.json`
+> #### `levelup-server/levelupapi/fixtures/tokens.json`
 
 ```json
 [
@@ -146,7 +146,7 @@ Create the following two files with the corresponding contents.
 ```
 
 
-> #### `levelup/levelupapi/fixtures/gamers.json`
+> #### `levelup-server/levelupapi/fixtures/gamers.json`
 
 ```json
 [

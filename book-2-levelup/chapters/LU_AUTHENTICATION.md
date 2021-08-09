@@ -9,20 +9,25 @@
 
 ## Understanding Auth Tokens
 
-Tokens are used by a server its clients so that each client can be uniquely identified. For your application, when a user fills out the registration form, the following process occurs.
+Tokens are used by a server and its clients. When the user first registers on the client a unique token is created for that user. The client uses the token in all fetch calls to the server to identify the user making the request.  For your application, when a user fills out the registration form, the following process occurs:
 
 1. Client sends a request to the server's `/register` route with the user's information in the body of the request.
+
 1. Server extracts all of the information from the request and stores it in Python variables.
+
 1. A record in the `User` table is created.
+
 1. A record in the `Gamers` table is created.
-1. A new token is generated for the client. This token is unique for that user.
-1. The token is sent back to the client so that it can be used on future requests to identify the user. This way, the user doesn't have to keep filling out their username and password each time a new action is performed.
+
+1. A new Token is generated for the client by the server. That Token is unique to the user that was just created.
+
+1. The Token is sent back to the client so that it can be used on future requests to identify the user. This way, the user doesn't have to keep filling out their username and password each time a new action is performed.
 
 ## Login and Register Functions
 
 Create the following module in your API application. It is commented, so please read the logic once you have it created.
 
-> #### `levelup/levelupapi/views/auth.py`
+> #### `levelup-server/levelupapi/views/auth.py`
 
 ```py
 from django.contrib.auth import authenticate
@@ -70,7 +75,7 @@ def register_user(request):
     Method arguments:
       request -- The full HTTP request object
     '''
-    
+
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
     new_user = User.objects.create_user(
@@ -95,24 +100,28 @@ def register_user(request):
 
 ```
 
-## Auth Package Imports
+## Views Package Imports
 
-The `auth` directory is going to become a package so that other modules can import the functions. Create the `views/__init__.py` file and place the following code in it.
+The `views` directory is going to become a package so that other modules can import the functions. We tell our code it should be a module by adding an `__init__.py` file to the directory.
+
+Create the following file and place the code below in it.
+
+> #### `levelup-server/levelupapi/views/__init__.py`
 
 ```py
-from .auth import login_user
-from .auth import register_user
+from .auth import login_user, register_user
 ```
 
-## Using Auth Package Views to Make Routes
+## Using Views Package to Make Routes
 
 The last step is to establish some URL routes that any client application can use to register and login a gamer to use the API.
 
 Completely replace the contents of the following file with the code below.
 
-> #### `levelup/levelup/urls.py`
+> #### `levelup-server/levelup/urls.py`
 
 ```py
+from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from levelupapi.views import register_user, login_user
@@ -121,6 +130,7 @@ urlpatterns = [
     path('register', register_user),
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
+    path('admin/', admin.site.urls),
 ]
 ```
 
@@ -135,7 +145,7 @@ path('login', login_user)
 
 ## Starting the Server
 
-Run the following command in your `levelup` directory to start the Django application.
+Run the following command in your `levelup-server` directory to start the Django application.
 
 ```sh
 python3 manage.py runserver
@@ -143,11 +153,11 @@ python3 manage.py runserver
 
 ## Authenticating a User
 
-Now you can test this out as an actual Gamer who would be using the application. Launch your initial React client, and try to log in with the account that was created with your fixtures.
+Now you can test this out as an actual Gamer who would be using the application. Launch your initial React client, and try to log in with the account that was created by your fixtures.
 
-Username is `me@me.com`
+> Username is `me@me.com`
 
-Password is `me`
+> Password is `me`
 
 Verify that you can log in and that the logout link takes you back to the log in screen.
 

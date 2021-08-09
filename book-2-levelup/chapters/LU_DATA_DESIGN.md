@@ -99,7 +99,9 @@ CREATE TABLE `Toy` (
 );
 ```
 
-Django can do that for you without ever needing to write SQL. You write classes that act as database models. You even get to leave out the `id` field. Django will add that automatically. Here's the django docs on other field types: https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types
+Django can do that for you without ever needing to write SQL. You write classes that act as database models. You even get to leave out the `id` field. Django will add that automatically.
+
+##### *Here's the Django Docs on other field types: https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types*
 
 ```py
 from django.db import models
@@ -113,11 +115,13 @@ class Toy(models.Model):
 
 ## Application User (Gamer) Model
 
-Django gives you a **`User`** model out of the box with fields like first name, last name, email, etc. already on it. If there additional fields that you want to capture about a user of your application, you need to create a separate model.
+Django gives you a **`User`** model out of the box that already has fields on it like *first name*, *last name*, *email*, etc. If there are any additional fields that you want to capture about a user of your application, you need to create a separate model.
 
-In this application, you are going to ask each gamer to provide a short bio when they register. The Django user model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it, and it should have a 1 to 1 relationship with a corresponding user entry.
+In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it (here)[https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model]
 
-> #### `levelup/levelupapi/models/gamer.py`
+##### *NOTE: Each Gamer should have a 1 to 1 relationship with a corresponding User entry.*
+
+> #### `levelup-server/levelupapi/models/gamer.py`
 
 ```py
 from django.db import models
@@ -130,9 +134,11 @@ class Gamer(models.Model):
     bio = models.CharField(max_length=50)
 ```
 
-Then create a package initialization module and import your gamer model into it. Every model you create must be imported into this package init module.
+Then import your Gamer model into the package initialization module.
 
-> #### `levelup/levelupapi/models/__init__.py`
+##### *NOTE: Every model you create must be imported into this package init module.*
+
+> #### `levelup-server/levelupapi/models/__init__.py`
 
 ```py
 from .gamer import Gamer
@@ -140,23 +146,21 @@ from .gamer import Gamer
 
 ## Level Up Models
 
-Once you have a good ERD that defines the tables and relationships for gamers, games, and events, create your modules and classes and import the classes into the package init module.
+Once you have a good ERD that defines the tables and relationships for Gamers, Games, and Events, create your modules and classes and import the classes into the package init module.
 
 ## Migration of Models
 
-Once you have defined your models, you should review them with an instructor.
+#### *Once you have defined your models, you should review them with an instructor.*
 
-When your models are approved, you can then create a migration to get the tables created in your database.
-
-> Reminder: If you are a `python3` person, make sure you use that for these commands.
+When your models are approved, you can then create a migration to create the tables in your database.
 
 ```sh
 python3 manage.py makemigrations levelupapi
-python3 manage.py migrate
 ```
 
-Now that migrations are created, you can execute them.
+Now that migrations are created, run the following command to execute your migrations and crate the tables in your database.
 
 ```sh
 python3 manage.py migrate
 ```
+
