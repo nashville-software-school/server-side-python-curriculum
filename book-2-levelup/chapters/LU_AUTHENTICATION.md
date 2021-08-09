@@ -9,7 +9,7 @@
 
 ## Understanding Auth Tokens
 
-Tokens are used by a server and its clients to uniquely identify each of the clients. For your application, when a user fills out the registration form, the following process occurs:
+Tokens are used by a server and its clients. When the user first registers on the client a unique token is created for that user. The client uses the token in all fetch calls to the server to identify the user making the request.  For your application, when a user fills out the registration form, the following process occurs:
 
 1. Client sends a request to the server's `/register` route with the user's information in the body of the request.
 
