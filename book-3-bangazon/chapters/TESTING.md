@@ -17,7 +17,8 @@ After implementing the code in this chapter, you should be able to...
 
 * Explain the purpose of an integration test.
 * Apply code to verify that API operations work as expected.
-* Clarify the purpose of the `setUp()` method.
+* Identify which resources need to be created in setUp() before running a test.
+* Read test output errors to debug failed tests.
 
 ## Summary
 
