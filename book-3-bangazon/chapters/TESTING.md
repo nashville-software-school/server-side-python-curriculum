@@ -68,7 +68,10 @@ Copy and paste the code below into your `game_tests.py` module.
 > #### `levelup/tests/game_tests.py`
 
 ```py
+from rest_framework import status
 from rest_framework.test import APITestCase
+from rest_framework.authtoken.models import Token
+
 from levelupapi.models import GameType, Game
 
 class GameTests(APITestCase):
@@ -95,15 +98,18 @@ class GameTests(APITestCase):
         # Initiate POST request and capture the response
         response = self.client.post(url, gamer, format='json')
 
-        # Store the Token from the response data
-        self.token = 'Token ' + response.data['token']
+        # Store the TOKEN from the response data
+        self.token = Token.objects.get(pk=response.data['token'])
+
+        # Use the TOKEN to authenticate the requests
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
 
         # Assert that the response status code is 201 (CREATED)
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         # SEED THE DATABASE WITH A GAMETYPE
-        # This API does not expose a /gametypes
-        # URL path for creating GameTypes
+        # This is necessary because the API does not
+        # expose a /gametypes URL path for creating GameTypes
 
         # Create a new instance of GameType
         game_type = GameType()
@@ -130,23 +136,20 @@ class GameTests(APITestCase):
             "description": "More fun than a Barrel Of Monkeys!"
         }
 
-        # Use the TOKEN to authenticate the request
-        self.client.credentials(HTTP_AUTHORIZATION=self.token)
-
         # Initiate POST request and capture the response
         response = self.client.post(url, game, format='json')
 
         # Assert that the response status code is 201 (CREATED)
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"], 1)
-        self.assertEqual(response.data["name"], "Clue")
-        self.assertEqual(response.data["maker"], "Milton Bradley")
-        self.assertEqual(response.data["skill_level"], 5)
-        self.assertEqual(response.data["number_of_players"], 6)
-        self.assertEqual(response.data["game_type"], 1)
-        self.assertEqual(response.data["description"], "More fun than a Barrel Of Monkeys!")
+        self.assertEqual(response.data["gamer"], self.token.user_id)
+        self.assertEqual(response.data["name"], game['name'])
+        self.assertEqual(response.data["maker"], game['maker'])
+        self.assertEqual(response.data["skill_level"], game['skillLevel'])
+        self.assertEqual(response.data["number_of_players"], game['numberOfPlayers'])
+        self.assertEqual(response.data["game_type"], game['gameTypeId'])
+        self.assertEqual(response.data["description"], game['description'])
 ```
 
 ## Running the Test(s)
@@ -171,9 +174,9 @@ class GameTests(APITestCase):
 * ***ASK*** your classmates if they have seen the same issue.
 * ***DISCUSS*** potential solutions, and troubleshoot together.
 
-### After 20 minutes, if your test is STILL not passing...
+### If your test is STILL not passing...
 
-* ***CALL*** in an instructor for help!
+* ***CALL*** in an instructor for help before moving on to the next section.
 
 ----
 
@@ -205,23 +208,20 @@ Add the function below to your `GameTests` class.
         # Define the URL path for getting a single Game
         url = f'/games/{game.id}'
 
-        # Use the TOKEN to authenticate the request
-        self.client.credentials(HTTP_AUTHORIZATION=self.token)
-
         # Initiate GET request and capture the response
         response = self.client.get(url)
 
         # Assert that the response status code is 200 (OK)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"], 1)
-        self.assertEqual(response.data["name"], "Monopoly")
-        self.assertEqual(response.data["maker"], "Milton Bradley")
-        self.assertEqual(response.data["skill_level"], 5)
-        self.assertEqual(response.data["number_of_players"], 4)
-        self.assertEqual(response.data["game_type"], 1)
-        self.assertEqual(response.data["description"], "Real-Estate, and Finance, and Bankruptcy, OH MY!")
+        self.assertEqual(response.data["gamer"], game.gamer_id)
+        self.assertEqual(response.data["name"], game.name)
+        self.assertEqual(response.data["maker"], game.maker)
+        self.assertEqual(response.data["skill_level"], game.skill_level)
+        self.assertEqual(response.data["number_of_players"], game.number_of_players)
+        self.assertEqual(response.data["game_type"], game.game_type_id)
+        self.assertEqual(response.data["description"], game.description)
 ```
 
 ----
@@ -256,35 +256,34 @@ Add the function below to your `GameTests` class.
         new_game = {
             "name": "Sorry",
             "maker": "Hasbro",
-            "gameTypeId": 1,
             "skillLevel": 2,
             "numberOfPlayers": 4,
+            "gameTypeId": 1,
             "description": "Is it too late now to say sorry?"
         }
-
-        # Use the TOKEN to authenticate the request
-        self.client.credentials(HTTP_AUTHORIZATION=self.token)
 
         # Initiate PUT request and capture the response
         response = self.client.put(url, new_game, format="json")
 
         # Assert that the response status code is 204 (NO CONTENT)
-        self.assertEqual(response.status_code, 204)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
         # Initiate GET request and capture the response
         response = self.client.get(url)
 
         # Assert that the response status code is 200 (OK)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"], 1)
-        self.assertEqual(response.data["name"], "Sorry")
-        self.assertEqual(response.data["maker"], "Hasbro")
-        self.assertEqual(response.data["skill_level"], 2)
-        self.assertEqual(response.data["number_of_players"], 4)
-        self.assertEqual(response.data["game_type"], 1)
-        self.assertEqual(response.data["description"], "Is it too late now to say sorry?")
+        self.assertEqual(response.data["gamer"], self.token.user_id)
+        self.assertEqual(response.data["name"], new_game['name'])
+        self.assertEqual(response.data["maker"], new_game['maker'])
+        self.assertEqual(
+            response.data["skill_level"], new_game['skillLevel'])
+        self.assertEqual(
+            response.data["number_of_players"], new_game['numberOfPlayers'])
+        self.assertEqual(response.data["game_type"], new_game['gameTypeId'])
+        self.assertEqual(response.data["description"], new_game['description'])
 ```
 
 ----
@@ -299,15 +298,14 @@ Add the function below to your `GameTests` class.
         Ensure we can delete an existing game.
         """
 
-
         # Create a new instance of Game
         game = Game()
-        game.game_type_id = 1
-        game.skill_level = 5
+        game.gamer_id = 1
         game.name = "Sorry"
         game.maker = "Milton Bradley"
+        game.skill_level = 5
         game.number_of_players = 4
-        game.gamer_id = 1
+        game.game_type_id = 1
         game.description = "It's too late to apologize."
 
         # Save the Game to the testing database
@@ -316,20 +314,17 @@ Add the function below to your `GameTests` class.
         # Define the URL path for deleting an existing Game
         url = f'/games/{game.id}'
 
-        # Use the TOKEN to authenticate the request
-        self.client.credentials(HTTP_AUTHORIZATION=self.token)
-
         # Initiate DELETE request and capture the response
         response = self.client.delete(url)
 
         # Assert that the response status code is 204 (NO CONTENT)
-        self.assertEqual(response.status_code, 204)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
         # Initiate GET request and capture the response
         response = self.client.get(url)
 
         # Assert that the response status code is 404 (NOT FOUND)
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 ```
 
 
