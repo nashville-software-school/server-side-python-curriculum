@@ -13,12 +13,11 @@ When you want to have a test suite which verifies that your code continues to wo
 
 ## Learning Objectives
 
-After implementing the code in this chapter, you should be able to:
+After implementing the code in this chapter, you should be able to...
 
-* You should be able to explain the purpose of an integration test
-* You should be able to apply code to verify that API operations work as expected.
-* You should be able to clarify the purpose of the `setUp()` method.
-* You should be able to read a failed test output to
+* Explain the purpose of an integration test.
+* Apply code to verify that API operations work as expected.
+* Clarify the purpose of the `setUp()` method.
 
 ## Summary
 
@@ -42,57 +41,47 @@ from .game_tests import GameTests
 
 ### Test Case(s) Module
 
-1. Now create the module that will contain your first integration test.
+Now create the module that contains the first integration test.
 
-1. In this module, the `GameTests` class will contain all integration tests for Games.
+* For each resource you want to test (e.g. games, events, etc.) there will be a class. In this module, the GameTests class will contain all integration tests for games.
 
-###### *NOTE: Each resource you want to test (e.g. Games, Events, etc.) will have it's own class inside it's own module.*
+* If you need to have any resources created before a test is run, you can do that in setUp(). In the code below, the set up function does three things:
 
-### Setting Up Your Tests
+    * Registers a Gamer in the testing database.
+    * Captures the authentication Token from the response.
+    * Seeds the testing database with a GameType.
 
-If you need to create any resources *before* a test is run, you can do that in the `setUp()` method.
-
-For example, before we can run a test for creating a Game, we need to make sure we have a Gamer, a Token, and a GameType. In the code below, notice that the `setUp` function does three things:
-
-1. Registers a Gamer in the testing database.
-1. Captures the authentication Token from the response.
-1. Seeds the testing database with a GameType.
-
-### Test Functions
-
-Now, we can define the functions for running the integration tests.
+* Then define functions for running the integration tests.
 
 #### NOTE: All functions that contain integration tests ***must*** start with `test_`
 
 What you put after that is up to you... Just make sure it is very descriptive. For example, if you are writing a test for modifying a Game, a good name for that function would be `test_modifying_a_game_record_via_put_method()`.
 
-### Test - Create A Game
+### Test Functions
+
+Now, we can define the functions for running the integration tests.
+
+### Test - CREATE A New Game
 
 Copy and paste the code below into your `game_tests.py` module.
 
 > #### `levelup/tests/game_tests.py`
 
 ```py
-import json
-
-from rest_framework import status
 from rest_framework.test import APITestCase
 from levelupapi.models import GameType, Game
 
 class GameTests(APITestCase):
-    """
-    GameTests
-    """
     def setUp(self):
         """
-        Create a new User account, and create sample game type
+        Create a new Gamer, collect the auth Token, and create a sample GameType
         """
 
         # Define the URL path for registering a Gamer
-        url = "/register"
+        url = '/register'
 
         # Define the Gamer properties
-        data = {
+        gamer = {
             "username": "steve",
             "password": "Admin8*",
             "email": "steve@stevebrownlee.com",
@@ -104,22 +93,23 @@ class GameTests(APITestCase):
         }
 
         # Initiate POST request and capture the response
-        response = self.client.post(url, data, format='json')
+        response = self.client.post(url, gamer, format='json')
 
-        # Store the Token from the response
+        # Store the Token from the response data
         self.token = 'Token ' + response.data['token']
 
-        # Assert that the response status code is 201 CREATED
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        # Assert that the response status code is 201 (CREATED)
+        self.assertEqual(response.status_code, 201)
 
         # SEED THE DATABASE WITH A GAMETYPE
+        # This API does not expose a /gametypes
+        # URL path for creating GameTypes
 
-        # Since the API does not expose a
-        # /gametypes PATH path for creating GameTypes,
-        # we have to create a new instance of GameType
-        # and save it to the testing database
+        # Create a new instance of GameType
         game_type = GameType()
         game_type.label = "Board game"
+
+        # Save the GameType to the testing database
         game_type.save()
 
     def test_create_game(self):
@@ -131,7 +121,7 @@ class GameTests(APITestCase):
         url = "/games"
 
         # Define the Game properties
-        data = {
+        game = {
             "name": "Clue",
             "maker": "Milton Bradley",
             "skillLevel": 5,
@@ -144,10 +134,10 @@ class GameTests(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION=self.token)
 
         # Initiate POST request and capture the response
-        response = self.client.post(url, data, format='json')
+        response = self.client.post(url, game, format='json')
 
-        # Assert that the response status code is 201 CREATED
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        # Assert that the response status code is 201 (CREATED)
+        self.assertEqual(response.status_code, 201)
 
         # Assert that the values are correct
         self.assertEqual(response.data["gamer"], 1)
@@ -161,21 +151,33 @@ class GameTests(APITestCase):
 
 ## Running the Test(s)
 
-1. In the Terminal, navigate to your project directory and run the following command:
+1. Open the Terminal and navigate to your project directory.
+
+1. Run the test(s) with the following command:
 
     ```sh
     python3 manage.py test tests -v 1
     ```
 
-1. Look at the output and see if the test passes.
+1. Read the output and see if the test passes.
 
     ![expected test output in terminal](./images/initial-test-output.png)
 
-1. If your test passed, move on to the next section, otherwise, call in an instructor.
+1. Once your test is passing, move on to the next section!
+
+### If your test is NOT passing...
+
+* ***READ*** the output in your terminal to find out why.
+* ***ASK*** your classmates if they have seen the same issue.
+* ***DISCUSS*** potential solutions, and troubleshoot together.
+
+### After 20 minutes, if your test is STILL not passing...
+
+* ***CALL*** in an instructor for help!
 
 ----
 
-## Test - Get A Single Game
+## Test - GET A Single Game
 
 Add the function below to your `GameTests` class.
 
@@ -197,7 +199,7 @@ Add the function below to your `GameTests` class.
         game.game_type_id = 1
         game.description = "Real-Estate, and Finance, and Bankruptcy, OH MY!"
 
-        # Save it to the testing database
+        # Save the Game to the testing database
         game.save()
 
         # Define the URL path for getting a single Game
@@ -209,8 +211,8 @@ Add the function below to your `GameTests` class.
         # Initiate GET request and capture the response
         response = self.client.get(url)
 
-        # Assert that the response status code is 200 OK
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # Assert that the response status code is 200 (OK)
+        self.assertEqual(response.status_code, 200)
 
         # Assert that the values are correct
         self.assertEqual(response.data["gamer"], 1)
@@ -224,7 +226,7 @@ Add the function below to your `GameTests` class.
 
 ----
 
-## Test - Update A Game
+## Test - UPDATE A Game
 
 Add the function below to your `GameTests` class.
 
@@ -235,7 +237,6 @@ Add the function below to your `GameTests` class.
         """
 
         # Create a new instance of Game
-        # and save it to the testing database.
         game = Game()
         game.game_type_id = 1
         game.skill_level = 5
@@ -245,13 +246,14 @@ Add the function below to your `GameTests` class.
         game.gamer_id = 1
         game.description = "Not Sorry!"
 
+        # Save the Game to the testing database
         game.save()
 
         # Define the URL path for updating an existing Game
         url = f'/games/{game.id}'
 
         # Define NEW Game properties
-        data = {
+        new_game = {
             "name": "Sorry",
             "maker": "Hasbro",
             "gameTypeId": 1,
@@ -264,16 +266,16 @@ Add the function below to your `GameTests` class.
         self.client.credentials(HTTP_AUTHORIZATION=self.token)
 
         # Initiate PUT request and capture the response
-        response = self.client.put(url, data, format="json")
+        response = self.client.put(url, new_game, format="json")
 
-        # Assert that the response status code is 204 no content
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        # Assert that the response status code is 204 (NO CONTENT)
+        self.assertEqual(response.status_code, 204)
 
-        # GET the Game again to verify the changes
+        # Initiate GET request and capture the response
         response = self.client.get(url)
 
-        # Assert that the response status code is 200 OK
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # Assert that the response status code is 200 (OK)
+        self.assertEqual(response.status_code, 200)
 
         # Assert that the values are correct
         self.assertEqual(response.data["gamer"], 1)
@@ -287,7 +289,7 @@ Add the function below to your `GameTests` class.
 
 ----
 
-## Test - Delete a Game
+## Test - DELETE A Game
 
 Add the function below to your `GameTests` class.
 
@@ -298,7 +300,7 @@ Add the function below to your `GameTests` class.
         """
 
 
-        # Create a Game and save it to the testing database
+        # Create a new instance of Game
         game = Game()
         game.game_type_id = 1
         game.skill_level = 5
@@ -307,6 +309,8 @@ Add the function below to your `GameTests` class.
         game.number_of_players = 4
         game.gamer_id = 1
         game.description = "It's too late to apologize."
+
+        # Save the Game to the testing database
         game.save()
 
         # Define the URL path for deleting an existing Game
@@ -318,12 +322,14 @@ Add the function below to your `GameTests` class.
         # Initiate DELETE request and capture the response
         response = self.client.delete(url)
 
-        # Assert that the response status code is 204 no content
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        # Assert that the response status code is 204 (NO CONTENT)
+        self.assertEqual(response.status_code, 204)
 
-        # GET Game again
+        # Initiate GET request and capture the response
         response = self.client.get(url)
 
-        # Assert that the response status code is 404 NOT FOUND
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+        # Assert that the response status code is 404 (NOT FOUND)
+        self.assertEqual(response.status_code, 404)
 ```
+
+
