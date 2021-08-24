@@ -129,7 +129,7 @@ class GameTests(APITestCase):
 
         # Define the Game properties
         game = {
-            "name": "Clue",
+            "title": "Clue",
             "maker": "Milton Bradley",
             "skillLevel": 5,
             "numberOfPlayers": 6,
@@ -145,7 +145,7 @@ class GameTests(APITestCase):
 
         # Assert that the values are correct
         self.assertEqual(response.data["gamer"], self.token.user_id)
-        self.assertEqual(response.data["name"], game['name'])
+        self.assertEqual(response.data["title"], game['title'])
         self.assertEqual(response.data["maker"], game['maker'])
         self.assertEqual(response.data["skill_level"], game['skillLevel'])
         self.assertEqual(response.data["number_of_players"], game['numberOfPlayers'])
@@ -196,7 +196,7 @@ Add the function below to your `GameTests` class.
         # Create a new instance of Game
         game = Game()
         game.gamer_id = 1
-        game.name = "Monopoly"
+        game.title = "Monopoly"
         game.maker = "Milton Bradley"
         game.skill_level = 5
         game.number_of_players = 4
@@ -217,7 +217,7 @@ Add the function below to your `GameTests` class.
 
         # Assert that the values are correct
         self.assertEqual(response.data["gamer"], game.gamer_id)
-        self.assertEqual(response.data["name"], game.name)
+        self.assertEqual(response.data["title"], game.title)
         self.assertEqual(response.data["maker"], game.maker)
         self.assertEqual(response.data["skill_level"], game.skill_level)
         self.assertEqual(response.data["number_of_players"], game.number_of_players)
@@ -241,7 +241,7 @@ Add the function below to your `GameTests` class.
         game = Game()
         game.game_type_id = 1
         game.skill_level = 5
-        game.name = "Sorry"
+        game.title = "Sorry"
         game.maker = "Milton Bradley"
         game.number_of_players = 4
         game.gamer_id = 1
@@ -255,7 +255,7 @@ Add the function below to your `GameTests` class.
 
         # Define NEW Game properties
         new_game = {
-            "name": "Sorry",
+            "title": "Sorry",
             "maker": "Hasbro",
             "skillLevel": 2,
             "numberOfPlayers": 4,
@@ -277,7 +277,7 @@ Add the function below to your `GameTests` class.
 
         # Assert that the values are correct
         self.assertEqual(response.data["gamer"], self.token.user_id)
-        self.assertEqual(response.data["name"], new_game['name'])
+        self.assertEqual(response.data["title"], new_game['title'])
         self.assertEqual(response.data["maker"], new_game['maker'])
         self.assertEqual(
             response.data["skill_level"], new_game['skillLevel'])
@@ -302,7 +302,7 @@ Add the function below to your `GameTests` class.
         # Create a new instance of Game
         game = Game()
         game.gamer_id = 1
-        game.name = "Sorry"
+        game.title = "Sorry"
         game.maker = "Milton Bradley"
         game.skill_level = 5
         game.number_of_players = 4
