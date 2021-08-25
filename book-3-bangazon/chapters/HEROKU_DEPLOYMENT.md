@@ -17,16 +17,16 @@ Heroku is a cloud platform that lets companies and users build, deliver, monitor
 7. Scroll back to the top of the page and click on "Settings" to the right of "Deploy"
 8. In the "Config Vars" section, click on "Reveal Config Vars"
 9. For every key and value pair in the `.env` file add those pairs to the config variables
-10. Back in the terminal on the `deploy` branch, there's a few extra packages you'll need to install `pipenv install gunicorn django_on_heroku`
+10. Back in the terminal on the `deploy` branch, there's a few extra packages you'll need to install `pipenv install gunicorn django_on_heroku`. If you're a mac user and that fails, run `brew install postgresql` then rerun the pipenv install
 11. Add `import django_on_heroku` to the imports in `settings.py`
 12. Add these lines to the end of the `settings.py`
-```py
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = "/static/"
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+    ```py
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_URL = "/static/"
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-django_on_heroku.settings(locals())
-```
+    django_on_heroku.settings(locals())
+    ```
 4. Add a file called `Procfile` and paste in this line (change out `levelup` for your project module name) `web: gunicorn levelup.wsgi --log-file -`
 1. Add and commit all the changes
 1. To add code to the heroku server run: `git push origin deploy`. With automatic deploy enabled any changes to the `deploy` branch will trigger a new deployment
@@ -50,4 +50,4 @@ Copy the URL heroku gave you into the URL bar and try it out!
 
 
 ### Front end Deployment
-Good news! Whatever you used to deploy during the front end will still work. You'll just need to update your API calls in react to use the deployed URL
+Good news! Whatever you used to deploy during the front end will still work. You'll just need to update your API calls in react to use the deployed URL. Once your front end is deployed you'll need to add the new url to the `CORS_ORIGIN_WHITELIST` tuple in the `settings.py`.
