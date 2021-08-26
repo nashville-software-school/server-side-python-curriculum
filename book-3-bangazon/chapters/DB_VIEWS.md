@@ -94,4 +94,4 @@ You will get back the exact same data because the database will run the original
 
 1. Then update the Django report module to query the view instead.
 
-1. Verify that you report still generates the correct HTML.
+1. Verify that the report still generates the correct HTML.
