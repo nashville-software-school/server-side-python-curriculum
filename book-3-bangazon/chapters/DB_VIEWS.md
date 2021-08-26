@@ -6,7 +6,7 @@ Many companies have multiple applications that all query the same database. If t
 
 Here's an example.
 
-In the game by user report, you have the following SQL code in the Django report module.
+In the Games by User report, you have the following SQL code in the Django report module.
 
 ```sql
 SELECT
@@ -29,13 +29,24 @@ JOIN
 As you are building out more features of the Django REST API application, you realize that you need that exact query. You have two options.
 
 1. Copy pasta the SQL into one the API ViewSets.
+
+    ***OR***
+
 1. Create a database view and have the API application and the reporting application both query the view.
 
 You decide to make a view.
 
 ## Creating Views
 
-You can do this now. Open your SQL file for LevelUp and make a view. It's simple. Just put `CREATE VIEW VIEW_NAME AS` above the SQL statement and then execute it.
+If you haven't created a SQL file for LevelUp yet, do that now.
+
+Open your LevelUp SQL file. This is where you'll create the view.
+
+Put `CREATE VIEW [view_name] AS` followed by your SQL statement as shown below.
+
+Execute it to create the view, and add it to the database.
+
+> ##### `levelup-server/levelup.sql`
 
 ```sql
 CREATE VIEW GAMES_BY_USER AS
@@ -79,6 +90,8 @@ You will get back the exact same data because the database will run the original
 
 ## Practice: Events by User
 
-Take the SQL that you wrote for the Events by User report and save it to the database as a view. Then update the Django report module to query the view instead.
+1. Take the SQL that you wrote for the Events by User report and save it to the database as a view.
 
-Verify that you report still generates the correct HTML.
+1. Then update the Django report module to query the view instead.
+
+1. Verify that the report still generates the correct HTML.
