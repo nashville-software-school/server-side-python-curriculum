@@ -74,7 +74,14 @@ Now open the `levelupreports/views/users/gamesbyuser.py` module and replace the 
 
 ```sql
 SELECT
-    *
+    id,
+    title,
+    maker,
+    game_type_id,
+    number_of_players,
+    skill_level,
+    user_id,
+    full_name
 FROM
     GAMES_BY_USER
 ```
