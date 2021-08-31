@@ -206,16 +206,16 @@ Create a profile HTML representation component. In this code you will notice str
 Your instruction team will review this with you to explain how this is useful for working with React component lifecycle _(remember that the JSX is rendered before you have the data)_.
 
 ```jsx
-import React, { useEffect, useContext } from "react"
-import { ProfileContext } from "./ProfileProvider.js"
+import React, { useEffect } from "react"
+import { getProfile } from "./ProfileManager.js"
 import "./Profile.css"
 
 
 export const Profile = () => {
-    const { profile, getProfile } = useContext(ProfileContext)
+    const [ profile, changeProfile ] = useState([])
 
     useEffect(() => {
-        getProfile()
+        getProfile().then(data => changeProfile(data))
     }, [])
 
     return (

@@ -37,14 +37,14 @@ Now create a **`GameForm`** component and add the code below. Notice that the bu
 > #### `src/components/game/GameForm.js`
 
 ```jsx
-import React, { useContext, useState, useEffect } from "react"
-import { GameContext } from "./GameProvider.js"
+import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
+import { createGame, getGameTypes } from './GameManager.js'
 
 
 export const GameForm = () => {
     const history = useHistory()
-    const { createGame, getGameTypes, gameTypes } = useContext(GameContext)
+    const [gameTypes, populateGameTypes] = useState([])
 
     /*
         Since the input fields are bound to the values of
@@ -65,6 +65,9 @@ export const GameForm = () => {
     */
     useEffect(() => {
         getGameTypes()
+            .then(data => {
+                populateGameTypes(data)
+            })
     }, [])
 
     /*

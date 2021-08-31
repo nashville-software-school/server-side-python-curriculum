@@ -293,14 +293,15 @@ export const EventProvider = (props) => {
 > #### `src/components/game/EventList.js`
 
 ```jsx
-import React, { useContext, useEffect } from "react"
-import { EventContext } from "./EventProvider.js"
+import React, { useEffect } from "react"
+import { getEvents } from "./EventManager.js"
 
 export const EventList = (props) => {
-    const { events, getEvents } = useContext(EventContext)
+    const [ events, updateEvents ] = useState([])
 
     useEffect(() => {
         getEvents()
+            .then(data => updateEvents(data))
     }, [])
 
     return (

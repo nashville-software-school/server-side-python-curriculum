@@ -40,7 +40,7 @@ def signup(self, request, pk=None):
     # Django uses the `Authorization` header to determine
     # which user is making the request to sign up
     gamer = Gamer.objects.get(user=request.auth.user)
-    
+
     try:
         # Handle the case if the client specifies a game
         # that doesn't exist
@@ -98,17 +98,23 @@ Now you need to update your **`EventList`** component in the client to allow the
 Then that function is invoked when the join button - which is on the bottom of each event card - is clicked.
 
 ```jsx
-import React, { useContext, useEffect } from "react"
+import React, { useEffect } from "react"
 import { EventContext } from "./EventProvider.js"
 import { useHistory } from "react-router-dom"
+import { getEvents, joinEvent } from "./EventManager.js"
 import "./Events.css"
 
 export const EventList = () => {
     const history = useHistory()
-    const { events, getEvents, joinEvent } = useContext(EventContext)
+    const [ events, assignEvents ] = useState([])
+
+    const eventFetcher = () => {
+        getEvents()
+            .then(data => assignEvents(data))
+    }
 
     useEffect(() => {
-        getEvents()
+        eventFetcher()
     }, [])
 
     return (
@@ -131,7 +137,12 @@ export const EventList = () => {
                             {event.date} @ {event.time}
                         </div>
                         <button className="btn btn-2"
-                                onClick={() => joinEvent(event.id)}
+                                onClick={
+                                    () => {
+                                        joinEvent(event.id)
+                                            .then(() => eventFetcher())
+                                    }
+                                }
                         >Join</button>
                     </section>
                 })
