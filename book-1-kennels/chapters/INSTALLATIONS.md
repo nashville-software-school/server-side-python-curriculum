@@ -60,13 +60,14 @@ If you get a message that `pyenv` could not install on your machine due to your 
 
 ### Troubleshooting: System Does Not Recognize Global Version
 
-Add the following commands to your `zshrc` file in your home directory.
+Add the following commands to your `.zshrc` file in your home directory.
 
 ```sh
 # Configure pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
