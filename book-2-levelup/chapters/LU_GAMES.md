@@ -306,14 +306,14 @@ export const GameProvider = (props) => {
 > #### `src/components/game/GameList.js`
 
 ```jsx
-import React, { useContext, useEffect } from "react"
-import { GameContext } from "./GameProvider.js"
+import React, { useEffect } from "react"
+import { getGames } from "./GameManager.js"
 
 export const GameList = (props) => {
-    const { games, getGames } = useContext(GameContext)
+    const [ games, setGames ] = useState([])
 
     useEffect(() => {
-        getGames()
+        getGames().then(data => setGames(data))
     }, [])
 
     return (

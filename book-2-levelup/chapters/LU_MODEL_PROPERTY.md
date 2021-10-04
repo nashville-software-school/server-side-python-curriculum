@@ -173,17 +173,21 @@ In React, you need to update your **`EventList`** component in the client to all
 > **Vocabulary:** `condition ? what happens if true : what happens if false` is called a ternary statement in JavaScript. It's a condensed version of an `if..else` block of code that you can use in JSX, because interpolation only supports a single JavaScript statement.
 
 ```jsx
-import React, { useContext, useEffect } from "react"
-import { EventContext } from "./EventProvider.js"
+import React, { useEffect } from "react"
 import { useHistory } from "react-router-dom"
+import { getEvents, joinEvent, leaveEvent } from "./EventManager.js"
 import "./Events.css"
 
 export const EventList = () => {
     const history = useHistory()
-    const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext)
+    const [ events, updateEvents ] = useState([])
+
+    const eventFetcher = () => {
+        getEvents().then(data => updateEvents(data))
+    }
 
     useEffect(() => {
-        getEvents()
+        eventFetcher()
     }, [])
 
     return (
@@ -207,10 +211,10 @@ export const EventList = () => {
                         {
                             event.joined
                                 ? <button className="btn btn-3"
-                                    onClick={() => leaveEvent(event.id)}
+                                    onClick={() => leaveEvent(event.id).then(() => eventFetcher())}
                                     >Leave</button>
                                 : <button className="btn btn-2"
-                                    onClick={() => joinEvent(event.id)}
+                                    onClick={() => joinEvent(event.id).then(() => eventFetcher())}
                                     >Join</button>
                         }
                     </section>
