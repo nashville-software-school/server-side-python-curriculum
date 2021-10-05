@@ -150,7 +150,7 @@ pipenv shell
 * Once the virtual environment has started, you can install the 3rd-party software.
 
 ```sh
-pip install autopep8 pylint
+pip3 install autopep8 pylint
 ```
 * After that is installed you'll need to get the path to the autopep8 library. In the terminal type `which autopep8` and copy the output
 
