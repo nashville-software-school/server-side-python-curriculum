@@ -141,24 +141,26 @@ Now you are going to install two tools:
 1. **autopep8** - This is an auto formatter that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide.
 1. **pylint** - This is a linter that shows any lint errors in your code.
 
-First, start a virtual environment. Virtual environments ensure that software that install for a project doesn't pollute your entire operating system. It keeps everything contained to the project.
+* First, start a virtual environment. Virtual environments ensure that software that install for a project doesn't pollute your entire operating system. It keeps everything contained to the project.
 
 ```sh
 pipenv shell
 ```
 
-Once the virtual environment has started, you can install the 3rd-party software.
+* Once the virtual environment has started, you can install the 3rd-party software.
 
 ```sh
-pipenv install autopep8 pylint
+pip3 install autopep8 pylint
 ```
+* After that is installed you'll need to get the path to the autopep8 library. In the terminal type `which autopep8` and copy the output
+
 ## Adjust VS Code Settings
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
 Open the command palette again and search for "Open Settings (JSON)"
 Add these to the bottom of the file
 ```
-"python.formatting.autopep8Path": "${env:VIRTUAL_ENV}/bin/autopep8",
+"python.formatting.autopep8Path": "paste in the output from the which command",
 "python.linting.pylintEnabled": true,
 ```
 
