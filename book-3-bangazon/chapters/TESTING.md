@@ -1,4 +1,4 @@
-# Creating API Integration Tests
+# Ch.2 Creating API Integration Tests
 
 ## Setup
 
@@ -42,9 +42,9 @@ from .game_tests import GameTests
 Now create the module that contains the first integration test.
 
 1. For each resource you want to test (e.g. games, events, etc.) there will be a class. In this module, the `GameTests` class will contain all integration tests for games.
-1. If you need to have any resources created *before* a test is run, you can do that in `setUp()`. In the code below, the set up function does two things:
-    1. Registers a user in the testing database.
-    1. Seeds the testing database with a game type
+1. If you need to have any resources created _before_ a test is run, you can do that in `setUp()`. In the code below, the set up function does two things:
+   1. Registers a user in the testing database.
+   1. Seeds the testing database with a game type
 1. Then define functions for running the integration tests. All functions that contain integration tests **must** start with `test_`. What you put after that is up to you. Just make sure it is very descriptive. If the test is for modifying a game, then a good name for that function would be `test_modifying_a_game_record_via_put_method()`.
 
 > #### `levelup/tests/game_tests.py`
@@ -129,11 +129,11 @@ class GameTests(APITestCase):
 
 1. Open a terminal and change directory to your project directory.
 1. Run the following command
-    ```sh
-    python3 manage.py test tests -v 1
-    ```
+   ```sh
+   python3 manage.py test tests -v 1
+   ```
 1. Look at the output and see if the test passes.
-    ![expected test output in terminal](./images/initial-test-output.png)
+   ![expected test output in terminal](./images/initial-test-output.png)
 1. If your test passed, move on to the next section, otherwise, call in an instructor.
 
 ## Testing GET
@@ -214,7 +214,6 @@ class GameTests(APITestCase):
         self.assertEqual(json_response["skill_level"], 2)
         self.assertEqual(json_response["number_of_players"], 4)
 ```
-
 
 ## Testing DELETE
 
