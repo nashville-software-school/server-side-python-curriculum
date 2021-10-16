@@ -1,14 +1,14 @@
-# Editing Games
+# Ch. 14 Oops! - Editing Games
 
 ## Learning Objectives
 
-* You should be able to explain which HTTP method is used by the client to trigger an edit request.
-* You should be able to identify which method on a ViewSet is invoked when the client has requested a change in state for a resource.
-* You should be able to recite which HTTP status code should be on a response to an edit request.
+- You should be able to explain which HTTP method is used by the client to trigger an edit request.
+- You should be able to identify which method on a ViewSet is invoked when the client has requested a change in state for a resource.
+- You should be able to recite which HTTP status code should be on a response to an edit request.
 
 ## API View Code
 
-The code for updating is *very* similar to the creation code. The major difference is that while in the creation code, you had to create a new database model instance...
+The code for updating is _very_ similar to the creation code. The major difference is that while in the creation code, you had to create a new database model instance...
 
 ```py
 game = Game()

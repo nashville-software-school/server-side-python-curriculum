@@ -1,4 +1,6 @@
-# Annotate with Two Aggregations
+# Supp Ch.4 Joined Events
+
+## Annotate with Two Aggregations
 
 ## A Note About Q
 
@@ -23,7 +25,6 @@ Game.objects.filter(
 
 How about finding events where the organizer is the same person who added the game to the database. Here you want the **AND** operator of `&`.
 
-
 ```py
 from django.db.models import Q
 from levelupapi.models import Event, Gamer
@@ -47,7 +48,6 @@ In your viewset, you are currently iterating over the entire collection of event
 
 Since the current user attending is simply a subset of all gamers that are attending, you can use `Q()` to add that aggregate property on each event with a single SQL statement instead of multiple ones.
 
-
 ```py
 events = Event.objects.annotate(
     attendees_count=Count('attendees'),
@@ -63,7 +63,6 @@ In English, you are...
 1. Querying the `Event` table
 1. Aggregating how many total attendees there are
 1. Determining if the current user has rsvp'd the event by filtering the attendees based on the gamer then counting the results
-
 
 That will set the value of `joined` to 1 or 0. You want true or false. To get that, add a for loop that converts the numbers to booleans.
 
@@ -82,20 +81,20 @@ For example, if a game has an event scheduled, but the event was created by anot
 
 ```json
 {
-    "id": 3,
-    "title": "Catchphrase",
-    "maker": "Hasbro Gaming",
-    "gamer": {
-        "id": 2
-    },
-    "number_of_players": 6,
-    "skill_level": 2,
-    "gametype": {
-        "id": 1,
-        "label": "Table top"
-    },
-    "event_count": 1,
-    "user_event_count": 0
+  "id": 3,
+  "title": "Catchphrase",
+  "maker": "Hasbro Gaming",
+  "gamer": {
+    "id": 2
+  },
+  "number_of_players": 6,
+  "skill_level": 2,
+  "gametype": {
+    "id": 1,
+    "label": "Table top"
+  },
+  "event_count": 1,
+  "user_event_count": 0
 }
 ```
 
@@ -103,19 +102,19 @@ If the game has 2 scheduled events, and one of them was created by the current u
 
 ```json
 {
-    "id": 8,
-    "title": "Clue",
-    "maker": "Milton Bradley",
-    "gamer": {
-        "id": 3
-    },
-    "number_of_players": 6,
-    "skill_level": 2,
-    "gametype": {
-        "id": 1,
-        "label": "Table top"
-    },
-    "event_count": 2,
-    "user_event_count": 1
+  "id": 8,
+  "title": "Clue",
+  "maker": "Milton Bradley",
+  "gamer": {
+    "id": 3
+  },
+  "number_of_players": 6,
+  "skill_level": 2,
+  "gametype": {
+    "id": 1,
+    "label": "Table top"
+  },
+  "event_count": 2,
+  "user_event_count": 1
 }
 ```

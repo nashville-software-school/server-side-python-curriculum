@@ -1,19 +1,20 @@
-# Listing Games
+# Ch.7 Exposing Games
+
+## Listing Games
 
 ## Learning Objectives
 
-* You should be able to describe how to load some initial data into your database with Django.
-* You should be able to create a file containing JSON representations of the resources for your database.
-* You should be able to itemize the View methods needed to handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
-* You should be able to identify the ORM method used to get a single item from a table.
-* You should be able to identify the ORM method used to get all items from a table.
-* You should be able to explain the effect of the `depth` statement when used in a Serializer.
+- You should be able to describe how to load some initial data into your database with Django.
+- You should be able to create a file containing JSON representations of the resources for your database.
+- You should be able to itemize the View methods needed to handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
+- You should be able to identify the ORM method used to get a single item from a table.
+- You should be able to identify the ORM method used to get all items from a table.
+- You should be able to explain the effect of the `depth` statement when used in a Serializer.
 
 ## Learning Resources
 
-* Documentation: [Providing initial data for models](https://docs.djangoproject.com/en/3.1/howto/initial-data/)
-* Video: [How to Pre Load Data in Database With Django](https://www.youtube.com/watch?v=1_MROM737FI)
-
+- Documentation: [Providing initial data for models](https://docs.djangoproject.com/en/3.1/howto/initial-data/)
+- Video: [How to Pre Load Data in Database With Django](https://www.youtube.com/watch?v=1_MROM737FI)
 
 ## Preface: Seed the Database
 
@@ -23,42 +24,42 @@ Create the following fixture file and then seed the database with the loaddata c
 
 ```json
 [
-    {
-        "model": "levelupapi.game",
-        "pk": 1,
-        "fields": {
-            "title": "Welcome To",
-            "maker": "Benoit Turpin",
-            "gamer": 1,
-            "game_type": 1,
-            "number_of_players": 4,
-            "skill_level": 3
-        }
-    },
-    {
-        "model": "levelupapi.game",
-        "pk": 2,
-        "fields": {
-            "title": "Settlers of Catan",
-            "maker": "Klaus Teuber",
-            "gamer": 1,
-            "game_type": 1,
-            "number_of_players": 4,
-            "skill_level": 4
-        }
-    },
-    {
-        "model": "levelupapi.game",
-        "pk": 3,
-        "fields": {
-            "title": "Dungeons & Dragons",
-            "maker": "Wizards of the Coast",
-            "gamer": 1,
-            "game_type": 2,
-            "number_of_players": 5,
-            "skill_level": 3
-        }
+  {
+    "model": "levelupapi.game",
+    "pk": 1,
+    "fields": {
+      "title": "Welcome To",
+      "maker": "Benoit Turpin",
+      "gamer": 1,
+      "game_type": 1,
+      "number_of_players": 4,
+      "skill_level": 3
     }
+  },
+  {
+    "model": "levelupapi.game",
+    "pk": 2,
+    "fields": {
+      "title": "Settlers of Catan",
+      "maker": "Klaus Teuber",
+      "gamer": 1,
+      "game_type": 1,
+      "number_of_players": 4,
+      "skill_level": 4
+    }
+  },
+  {
+    "model": "levelupapi.game",
+    "pk": 3,
+    "fields": {
+      "title": "Dungeons & Dragons",
+      "maker": "Wizards of the Coast",
+      "gamer": 1,
+      "game_type": 2,
+      "number_of_players": 5,
+      "skill_level": 3
+    }
+  }
 ]
 ```
 
@@ -67,8 +68,6 @@ Create the following fixture file and then seed the database with the loaddata c
 ```sh
 python3 manage.py loaddata games
 ```
-
-
 
 ## Step 1: The Game Model Class
 
@@ -252,7 +251,6 @@ http://localhost:8000/games/1
 
 If any client submits a GET request to either one of those URLs, you need to clearly state that the **`Games`** ViewSet will handle the request. You will use a built-in class in Django called the `DefaultRouter`.
 
-
 Add the following import statement at the top of the urls module.
 
 > #### `levelup/levelup/urls.py`
@@ -278,80 +276,90 @@ You can start off with this starter React code to request and display a list of 
 > #### `src/components/game/GameProvider.js`
 
 ```jsx
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-export const GameContext = React.createContext()
+export const GameContext = React.createContext();
 
 export const GameProvider = (props) => {
-    const [ games, setGames ] = useState([])
+  const [games, setGames] = useState([]);
 
-    const getGames = () => {
-        return fetch("http://localhost:8000/games", {
-            headers:{
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`
-            }
-        })
-            .then(response => response.json())
-            .then(setGames)
-    }
+  const getGames = () => {
+    return fetch("http://localhost:8000/games", {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+      },
+    })
+      .then((response) => response.json())
+      .then(setGames);
+  };
 
-    return (
-        <GameContext.Provider value={{ games, getGames }} >
-            { props.children }
-        </GameContext.Provider>
-    )
-}
+  return (
+    <GameContext.Provider value={{ games, getGames }}>
+      {props.children}
+    </GameContext.Provider>
+  );
+};
 ```
 
 > #### `src/components/game/GameList.js`
 
 ```jsx
-import React, { useContext, useEffect } from "react"
-import { GameContext } from "./GameProvider.js"
+import React, { useContext, useEffect } from "react";
+import { GameContext } from "./GameProvider.js";
 
 export const GameList = (props) => {
-    const { games, getGames } = useContext(GameContext)
+  const { games, getGames } = useContext(GameContext);
 
-    useEffect(() => {
-        getGames()
-    }, [])
+  useEffect(() => {
+    getGames();
+  }, []);
 
-    return (
-        <article className="games">
-            {
-                games.map(game => {
-                    return <section key={`game--${game.id}`} className="game">
-                        <div className="game__title">{game.title} by {game.maker}</div>
-                        <div className="game__players">{game.number_of_players} players needed</div>
-                        <div className="game__skillLevel">Skill level is {game.skill_level}</div>
-                    </section>
-                })
-            }
-        </article>
-    )
-}
+  return (
+    <article className="games">
+      {games.map((game) => {
+        return (
+          <section key={`game--${game.id}`} className="game">
+            <div className="game__title">
+              {game.title} by {game.maker}
+            </div>
+            <div className="game__players">
+              {game.number_of_players} players needed
+            </div>
+            <div className="game__skillLevel">
+              Skill level is {game.skill_level}
+            </div>
+          </section>
+        );
+      })}
+    </article>
+  );
+};
 ```
 
 > #### `src/components/ApplicationViews.js`
 
 ```jsx
-import React from "react"
-import { Route } from "react-router-dom"
-import { GameList } from "./game/GameList.js"
-import { GameProvider } from "./game/GameProvider.js"
+import React from "react";
+import { Route } from "react-router-dom";
+import { GameList } from "./game/GameList.js";
+import { GameProvider } from "./game/GameProvider.js";
 
 export const ApplicationViews = () => {
-    return <>
-        <main style={{
-            margin: "5rem 2rem",
-            lineHeight: "1.75rem"
-        }}>
-            <GameProvider>
-                <Route exact path="/">
-                    <GameList />
-                </Route>
-            </GameProvider>
-        </main>
+  return (
+    <>
+      <main
+        style={{
+          margin: "5rem 2rem",
+          lineHeight: "1.75rem",
+        }}
+      >
+        <GameProvider>
+          <Route exact path="/">
+            <GameList />
+          </Route>
+        </GameProvider>
+      </main>
     </>
-}
+  );
+};
 ```

@@ -1,4 +1,6 @@
-# Viewsets and Serializers
+# Ch.6 Exposing Game Types
+
+## Viewsets and Serializers
 
 These are two key terms that you are going to be introduced to in this chapter. They are the brains of the operation.
 
@@ -8,15 +10,15 @@ The **Serializer** has a much simpler job. Once the ViewSet has determined what 
 
 ## Learning Objectives
 
-* You should be able to describe the purpose of a Django View
-* You should be able to explain which View methods are used to respond to a request for all of a resource, or a single resource.
-* You should be able to discuss the purpose of a Serializer and how it differs from a View.
-* You should be able to explain which module contains the request URLs that an API will respond to.
+- You should be able to describe the purpose of a Django View
+- You should be able to explain which View methods are used to respond to a request for all of a resource, or a single resource.
+- You should be able to discuss the purpose of a Serializer and how it differs from a View.
+- You should be able to explain which module contains the request URLs that an API will respond to.
 
 ## Learning Resources
 
-* The [Serializers article](https://www.django-rest-framework.org/api-guide/serializers/) in the REST framework documentation is worth a quick read. It shows examples and explanations.
-* [Creating views and serializers — Django Rest Framework](https://medium.com/django-rest/django-rest-framework-creating-views-and-serializers-b76a96fb6fb7) provides a quick, high-level overview _(with example code)_ for using serializers.
+- The [Serializers article](https://www.django-rest-framework.org/api-guide/serializers/) in the REST framework documentation is worth a quick read. It shows examples and explanations.
+- [Creating views and serializers — Django Rest Framework](https://medium.com/django-rest/django-rest-framework-creating-views-and-serializers-b76a96fb6fb7) provides a quick, high-level overview _(with example code)_ for using serializers.
 
 ## Workflow Visualization
 
@@ -104,7 +106,6 @@ and
 http://localhost:8000/gametypes/1
 
 If any client submits a GET request to either one of those URLs, you need to clearly state that the **`GameStates`** ViewSet will handle the request. You will use a built-in class in Django called the `DefaultRouter`.
-
 
 Add the following import statements at the top of the urls module.
 

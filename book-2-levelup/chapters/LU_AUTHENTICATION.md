@@ -1,11 +1,13 @@
-# Token Authentication with DRF
+# Ch. 5 Level Up Gamers
+
+## Token Authentication with DRF
 
 ## Learning Objectives
 
-* You should be able to identify an authentication token in an HTTP response.
-* You should be able to clarify the purpose of an authentication token.
-* You should be able to explain that an authentication token identifies a user, and not their primary key.
-* You should be able to determine which routes, and which methods, are needed to enable authentication.
+- You should be able to identify an authentication token in an HTTP response.
+- You should be able to clarify the purpose of an authentication token.
+- You should be able to explain that an authentication token identifies a user, and not their primary key.
+- You should be able to determine which routes, and which methods, are needed to enable authentication.
 
 ## Understanding Auth Tokens
 
@@ -70,7 +72,7 @@ def register_user(request):
     Method arguments:
       request -- The full HTTP request object
     '''
-    
+
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
     new_user = User.objects.create_user(

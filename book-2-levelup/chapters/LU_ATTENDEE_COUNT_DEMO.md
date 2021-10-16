@@ -1,3 +1,5 @@
+# Supp Ch.1 Event Attendees
+
 # SQL Aggregation in Django ORM
 
 In SQL, you can use functions like MIN(), MAX(), AVG(), and COUNT() to perform operations on multiple rows of a particular column and result in a single value.
@@ -10,26 +12,26 @@ Consider the following, simplified table containing games.
 
 > #### Games
 
-| id | title | skill_level |
-|--|--|--|
-| 1 | Risk | 2 |
-| 2 | Clue | 4 |
-| 3 | Stratego | 3 |
+| id  | title    | skill_level |
+| --- | -------- | ----------- |
+| 1   | Risk     | 2           |
+| 2   | Clue     | 4           |
+| 3   | Stratego | 3           |
 
 Here is a table that records events. There are 3 events for Risk, 2 events for Clue, and 3 events for Stratego.
 
 > #### Events
 
-| id | date | game_id |
-|--|--|--|
-| 1 | 2020-12-20 | 1 |
-| 2 | 2020-11-19 | 1 |
-| 4 | 2020-11-03 | 1 |
-| 5 | 2021-01-05 | 2 |
-| 6 | 2020-11-19 | 2 |
-| 7 | 2021-01-09 | 3 |
-| 8 | 2021-02-11 | 3 |
-| 9 | 2020-11-16 | 3 |
+| id  | date       | game_id |
+| --- | ---------- | ------- |
+| 1   | 2020-12-20 | 1       |
+| 2   | 2020-11-19 | 1       |
+| 4   | 2020-11-03 | 1       |
+| 5   | 2021-01-05 | 2       |
+| 6   | 2020-11-19 | 2       |
+| 7   | 2021-01-09 | 3       |
+| 8   | 2021-02-11 | 3       |
+| 9   | 2020-11-16 | 3       |
 
 #### Events per Game SQL
 
@@ -46,11 +48,11 @@ GROUP BY g.title
 
 It would provide the following result set.
 
-| title | event_count |
-|--|--|
-| Risk | 3 |
-| Clue | 2 |
-| Stratego | 3 |
+| title    | event_count |
+| -------- | ----------- |
+| Risk     | 3           |
+| Clue     | 2           |
+| Stratego | 3           |
 
 ## Events per Game with Django
 
@@ -120,20 +122,20 @@ Then the client would receive the following JSON.
 
 ```json
 [
-    {
-        "id": 1,
-        "title": "Risk",
-        "event_count": 3
-    },
-    {
-        "id": 2,
-        "title": "Clue",
-        "event_count": 2
-    },
-    {
-        "id": 3,
-        "title": "Stratego",
-        "event_count": 3
-    }
+  {
+    "id": 1,
+    "title": "Risk",
+    "event_count": 3
+  },
+  {
+    "id": 2,
+    "title": "Clue",
+    "event_count": 2
+  },
+  {
+    "id": 3,
+    "title": "Stratego",
+    "event_count": 3
+  }
 ]
 ```

@@ -1,4 +1,6 @@
-# DRF Installations and Configuration
+# Ch.1 Level Up API Setup
+
+## DRF Installations and Configuration
 
 ## Setup
 
@@ -41,6 +43,7 @@ django-admin startproject levelup .
 ## Controlling Lint Errors
 
 ### Add Pylint file
+
 The pylint package is very good at ensuring that you follow the community standards for variable naming, but there are certain times that you want to use variable names that are short and don't use snake case. You can put those variable names in a `.pylintrc` file in your project.
 
 Without this configuration, your editor will put orange squiggles under those variable names to alert you that you violated community standards. It becomes annoying, so you override the default rules.
@@ -56,10 +59,13 @@ disable=broad-except
 disable=C0114,
 ' > .pylintrc
 ```
+
 ### Select Python Interpreter
+
 Open VSCode and press `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
 ### Configure Pylint
+
 After selecting the python interpreter, there should be a popup to enable pylint, click yes. There should now be a .vscode folder in your directory. Open the settings.json file and add the following lines:
 
 ```json
@@ -70,6 +76,7 @@ After selecting the python interpreter, there should be a popup to enable pylint
     "--django-settings-module=<folder name>.settings",
 ],
 ```
+
 Notice that `<folder name>` should be the name of the folder that has the `settings.py` file
 
 ## Create API Application
@@ -174,8 +181,10 @@ python3 manage.py migrate
 ---
 
 ## Optional - Hide Secret Key
+
 ### Do this step if you know you will be deploying this app
-1. Create a `.env` file on the same level as the `manage.py` file. 
+
+1. Create a `.env` file on the same level as the `manage.py` file.
 2. In the terminal run: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`, copy the output
 3. Open the `.env` file and add `SECRET_KEY=<paste output>` without the angle brackets
 4. In the `settings.py` file around line 23 change the `SECRET_KEY` variable to be `SECRET_KEY = os.environ.get('SECRET_KEY')`
