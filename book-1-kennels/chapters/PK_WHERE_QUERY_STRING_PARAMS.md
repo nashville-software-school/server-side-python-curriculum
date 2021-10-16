@@ -1,17 +1,19 @@
-# Handling Query String Parameters
+# Ch.10 Customers by Email
+
+## Handling Query String Parameters
 
 In this chapter, you will learn how to parse a URL to capture any query string parameters that may be in it, and then use those parameters to filter a SQL query.
 
 ## Learning Objectives
 
-* You should be able to define a query string parameter.
-* You should be able to identify a query string parameter.
-* You should be able to explain how query string parameters are parsed from the URL path.
-* You should be able to explain the purpose of the `WHERE` clause in a SQL query.
-* You should be able to implement a `WHERE` clause in a SQL query.
-* You should be able to identify a SQL parameter.
-* You should be able to explain the purpose of a SQL parameter.
-* You should be able to use a query string parameter, in conjuntion with a SQL parameter to correctly filter the results of a SQL query.
+- You should be able to define a query string parameter.
+- You should be able to identify a query string parameter.
+- You should be able to explain how query string parameters are parsed from the URL path.
+- You should be able to explain the purpose of the `WHERE` clause in a SQL query.
+- You should be able to implement a `WHERE` clause in a SQL query.
+- You should be able to identify a SQL parameter.
+- You should be able to explain the purpose of a SQL parameter.
+- You should be able to use a query string parameter, in conjuntion with a SQL parameter to correctly filter the results of a SQL query.
 
 ## Map of the URL
 
@@ -145,7 +147,6 @@ Now, you can create an instance of a Customer with only three positional argumen
 
 ### Query the Database
 
-
 In the method that queries the database for customers that have the specified email, it's a simpler query with a single WHERE clause that uses a single SQL parameter.
 
 > ##### `customers/request.py`
@@ -206,4 +207,3 @@ If the client makes the following request...
 http://localhost:8088/animals?status=Treatment
 
 Then the response should only the animals currently being treated by the employee, which could include medical care, bathing, nail clipping, etc...
-

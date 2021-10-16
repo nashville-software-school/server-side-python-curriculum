@@ -1,10 +1,12 @@
-# Modifying Animal Status
+# Ch.6 Animal Status
+
+## Modifying Animal Status
 
 ## Learning Objectives
 
-* You should be able to explain how to replace an item in a Python list using the index location.
-* You should be able to explain the purpose of the PUT method in HTTP requests.
-* You should be able to explain the purpose of the `break` keyword in Python.
+- You should be able to explain how to replace an item in a Python list using the index location.
+- You should be able to explain the purpose of the PUT method in HTTP requests.
+- You should be able to explain the purpose of the `break` keyword in Python.
 
 ## Implementation
 
@@ -74,20 +76,19 @@ Time to try updating an animal.
 1. Click on the Body section beneath the URL
 1. Click on the `raw` radio button that appears.
 1. Paste in the following JSON in the text area beneath the radio button.
-    ```json
-    {
-        "id": 2,
-        "name": "Gypsy",
-        "species": "Dog",
-        "location": 1,
-        "customerId": 2,
-        "status": "Ready for discharge"
-    }
-    ```
+   ```json
+   {
+     "id": 2,
+     "name": "Gypsy",
+     "species": "Dog",
+     "location": 1,
+     "customerId": 2,
+     "status": "Ready for discharge"
+   }
+   ```
 1. Click the Send button.
 1. The response code should be `204` and the response text area at the bottom should be blank.
 1. Do another `GET` request to http://localhost:8088/animals to see that the animal's status is updated.
-
 
 ![animation of using Postman to update the status of an animal](./images/python-kennel-update-animal.gif)
 

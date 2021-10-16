@@ -1,4 +1,6 @@
-# Modularizing Animal Data Responses
+# Ch. 2 Animals Package and Data
+
+## Modularizing Animal Data Responses
 
 Having the animal data hard-coded right inside the main Python file, as you might imagine, is a horrible idea. If you kept that up, you would have 1000's of line of code in a single file.
 
@@ -9,7 +11,6 @@ Having the animal data hard-coded right inside the main Python file, as you migh
 1. You should be able to identify a Python import of another module.
 1. You should be able to discuss the difference in syntax between JavaScript imports and Python imports.
 
-
 ## Gather Related Files into a Package
 
 A package in Python is just a directory with a certain file in it.
@@ -19,7 +20,7 @@ That directory needs to have a file called `__init__.py` in it. It's that file, 
 You may recall in JavaScript that if you wanted to import a module into another one, you had to specify the file path as well as the file name.
 
 ```js
-import { AwesomeComponent } from "./awesome/list/AwesomeComponent.js"
+import { AwesomeComponent } from "./awesome/list/AwesomeComponent.js";
 ```
 
 With Python packages, you don't need to do that. You can combine all of the file in sub-directories, and sub-directories of sub-directories, into a single _namespace_.

@@ -1,19 +1,21 @@
-# Care Completed
+# Ch.5 Discharging Animals
+
+## Care Completed
 
 When it's time for an animal to be picked up by their loving owner, you need to discharge the animal from the system. For this chapter, you will be implementing support for the DELETE method.
 
 ## Learning Objectives
 
-* You should be able to implement and explain the benefit of using the `enumerate()` function with lists.
-* You should be able to explain what the `pop()` method on list does.
-* You should be able to describe the `204` HTTP status code.
-* You should be able to explain the purpose of the DELETE verb in HTTP requests.
+- You should be able to implement and explain the benefit of using the `enumerate()` function with lists.
+- You should be able to explain what the `pop()` method on list does.
+- You should be able to describe the `204` HTTP status code.
+- You should be able to explain the purpose of the DELETE verb in HTTP requests.
 
 ## Video Resources
 
-* [Python Enumerate Function - Python Quick Tips](https://www.youtube.com/watch?v=-MZiQaNI0QA)
-* [Pop() List Method In Python](https://www.youtube.com/watch?v=SUOX1-gMWPw)
-* [HTTP Response Status Codes](https://youtu.be/F2WK9U64AGs?t=246) - Just watch the content for the 204 status code
+- [Python Enumerate Function - Python Quick Tips](https://www.youtube.com/watch?v=-MZiQaNI0QA)
+- [Pop() List Method In Python](https://www.youtube.com/watch?v=SUOX1-gMWPw)
+- [HTTP Response Status Codes](https://youtu.be/F2WK9U64AGs?t=246) - Just watch the content for the 204 status code
 
 ## Handle DELETE Requests
 
@@ -76,4 +78,3 @@ Time to try deleting an animal.
 ## Practice: Delete Locations, Employees and Customers
 
 Add code to all required modules so that you support DELETE operations for the other resource types in your server.
-

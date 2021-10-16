@@ -1,20 +1,22 @@
-# Getting Animals from the Database
+# Ch.9 Animal Queries
+
+## Getting Animals from the Database
 
 ## Learning Objectives
 
-* You should be able to explain the benefits of using classes in Python.
-* You should be able to explain the purpose of the initializer method.
-* You should be able to explain, and demonstrate, how to create a new instance of a custom type _(i.e. a class)_.
-* You should be able to identify where the Python code creates a connection to the database so that it can be queried for data.
-* You should be able to identify the method used to get the results of SQL query.
-* You should be able to explain how the data in row of results is used to create an instance of a custom type.
-* You should be able to explain the purpose of the SELECT, FROM, and WHERE keywords in SQL.
-* You should be able to identify a SQL parameter.
+- You should be able to explain the benefits of using classes in Python.
+- You should be able to explain the purpose of the initializer method.
+- You should be able to explain, and demonstrate, how to create a new instance of a custom type _(i.e. a class)_.
+- You should be able to identify where the Python code creates a connection to the database so that it can be queried for data.
+- You should be able to identify the method used to get the results of SQL query.
+- You should be able to explain how the data in row of results is used to create an instance of a custom type.
+- You should be able to explain the purpose of the SELECT, FROM, and WHERE keywords in SQL.
+- You should be able to identify a SQL parameter.
 
 ## Videos to Watch First
 
-* [SQL SELECT Tutorial |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=YufocuHbYZo)
-* [SQL SELECT Tutorial - Part 2 |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=PkJKzR_sClM)
+- [SQL SELECT Tutorial |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=YufocuHbYZo)
+- [SQL SELECT Tutorial - Part 2 |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=PkJKzR_sClM)
 
 ## Required Package from the Standard Library
 
@@ -91,9 +93,9 @@ def get_all_animals():
 
 If you want to explore some black box concepts from the code in this chapter, here are some searches you can run.
 
-* [row_factory](https://duckduckgo.com/?q=sqlite3+connection+row_factory)
-* [Connection cursor](https://duckduckgo.com/?q=sqlite3+cursor)
-* [Cursor's fetchAll() method](https://duckduckgo.com/?q=sqlite3+cursor+fetchall)
+- [row_factory](https://duckduckgo.com/?q=sqlite3+connection+row_factory)
+- [Connection cursor](https://duckduckgo.com/?q=sqlite3+cursor)
+- [Cursor's fetchAll() method](https://duckduckgo.com/?q=sqlite3+cursor+fetchall)
 
 ## Request all Animals from Postman
 
@@ -183,4 +185,3 @@ Follow this same pattern for all other resources.
 1. Write SQL statements to get all database rows for the `get_all_*` functions.
 1. Write SQL statements with a WHERE clause to get a single database row for the `get_single_*` functions.
 1. Request all resources with the Postman client and verify that all GET requests return the correct JSON representations.
-

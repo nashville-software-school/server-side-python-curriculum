@@ -1,21 +1,23 @@
-# Creating Database Tables for Nashville Kennels
+# Ch.8 Kennel Database
+
+## Creating Database Tables for Nashville Kennels
 
 In this chapter you will learn about using SQL to create database tables, defining relationships between them, and inserting some seed data.
 
 ## Learning Objectives
 
-* You should be able to connect to a SQLite database file in Visual Studio Code.
-* You should be able to use the `CREATE TABLE` statement in SQL to define database tables.
-* You should be able to use the `INSERT INTO` statement in SQL to generate data for a table.
-* You should be able to use the `FOREIGN KEY` statements in SQL to designate columns that are foreign keys, which establish a relationships between tables.
-* You should be able to demonstrate that you can execute SQL statements in Visual Studio Code with a keyboard shortcut.
+- You should be able to connect to a SQLite database file in Visual Studio Code.
+- You should be able to use the `CREATE TABLE` statement in SQL to define database tables.
+- You should be able to use the `INSERT INTO` statement in SQL to generate data for a table.
+- You should be able to use the `FOREIGN KEY` statements in SQL to designate columns that are foreign keys, which establish a relationships between tables.
+- You should be able to demonstrate that you can execute SQL statements in Visual Studio Code with a keyboard shortcut.
 
 ## Videos to Watch First
 
-* [What is SQL? [in 4 minutes for beginners]](https://www.youtube.com/watch?v=27axs9dO7AE)
-* [Creating Tables - SQL - Tutorial 6](https://youtu.be/SPPTQwx4FfE?t=300)
-* [Inserting Data - SQL - Tutorial 7](https://www.youtube.com/watch?v=3Qq93zqO3GE)
-* [Constraints - SQL - Tutorial 8](https://www.youtube.com/watch?v=9WP35xwZ3tk)
+- [What is SQL? [in 4 minutes for beginners]](https://www.youtube.com/watch?v=27axs9dO7AE)
+- [Creating Tables - SQL - Tutorial 6](https://youtu.be/SPPTQwx4FfE?t=300)
+- [Inserting Data - SQL - Tutorial 7](https://www.youtube.com/watch?v=3Qq93zqO3GE)
+- [Constraints - SQL - Tutorial 8](https://www.youtube.com/watch?v=9WP35xwZ3tk)
 
 ## Binding Keyboard Shortcut
 
@@ -31,9 +33,7 @@ Before you start using SQL in VS Code, you need to set up a keyboard shortcut so
 1. Hold down the Control key and tap R twice if you are on Windows
 1. Then press enter to save the shortcut.
 
-
 ![](./images/run-query-shortcut.gif)
-
 
 ## Creating Database and SQL Files
 
@@ -66,18 +66,18 @@ The `CREATE TABLE` SQL statement creates a table in a database to store a partic
 
 Time to create a table for each of the four resources in this application.
 
-* Locations
-* Customers
-* Animals
-* Employees
+- Locations
+- Customers
+- Animals
+- Employees
 
 1. Copy the `CREATE TABLE` SQL commands below and paste it into the `kennel.sql` file.
 1. Highlight all of the text.
 1. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows. You will then be prompted to choose a connection.
-    ![](./images/choose-connection.png)
-1.  Choose "Python Kennels".
+   ![](./images/choose-connection.png)
+1. Choose "Python Kennels".
 1. A new tab will open in VS Code and you should see this message in it - **Query returned 0 rows**. That means it worked.
-    ![query returned 0 rows](./images/create-tables-complete.png)
+   ![query returned 0 rows](./images/create-tables-complete.png)
 
 If any step of this didn't work, contact a member of your instruction team immediately to get it fixed.
 
@@ -119,7 +119,6 @@ CREATE TABLE `Employee` (
 ```
 
 ## Inserting Starter Data
-
 
 The `INSERT INTO` SQL statement allows you to enter in the actual data about individual resources that will be stored in a table. The values have to match the order in which the columns were defined in the `CREATE TABLE` statements above, so yes, order matters.
 

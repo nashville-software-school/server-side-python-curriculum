@@ -1,23 +1,25 @@
-# Getting a Single Animal
+# Ch.3 Animal Response
+
+## Getting a Single Animal
 
 In this chapter, you are going to write another function in your `animals/request.py` module, and also see your first `for..in` loop in Python.
 
 ## Learning Objectives
 
-* You should be able to demonstrate how to use arguments and function parameters in Python.
-* You should be able to identify different parts of a URL path.
-* You should be able to explain the difference between a list and a tuple.
-* You should be able to identify a Python expression where a tuple is unpacked.
-* You should be able to implement the `int()` Python function to convert a string to an integer.
-* You should be able to explain how `try/except` blocks work in Python.
+- You should be able to demonstrate how to use arguments and function parameters in Python.
+- You should be able to identify different parts of a URL path.
+- You should be able to explain the difference between a list and a tuple.
+- You should be able to identify a Python expression where a tuple is unpacked.
+- You should be able to implement the `int()` Python function to convert a string to an integer.
+- You should be able to explain how `try/except` blocks work in Python.
 
 ## Reading Resources
 
-* [Unpacking a Tuple in Python](https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/)
+- [Unpacking a Tuple in Python](https://www.geeksforgeeks.org/unpacking-a-tuple-in-python/)
 
 ## Video Resources
 
-* [Python Tuples || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=NI26dqhs2Rk)
+- [Python Tuples || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=NI26dqhs2Rk)
 
 ## Single Animal Lookup
 
@@ -50,12 +52,12 @@ Finally, it returns the value of `requested_animal`. It will either be `None`, o
 
 In the `request_handler.py` module, the `self.path` property of the incoming request will be everything after the domain.
 
-| Requested URL | Path |
-|--|--|
-| localhost:8088/animals | /animals  |
-| localhost:8088/locations | /locations  |
-| localhost:8088/animals/new | /animals/new  |
-| localhost:8088/animals/1 | /animals/1  |
+| Requested URL              | Path         |
+| -------------------------- | ------------ |
+| localhost:8088/animals     | /animals     |
+| localhost:8088/locations   | /locations   |
+| localhost:8088/animals/new | /animals/new |
+| localhost:8088/animals/1   | /animals/1   |
 
 Therefore, if a client requests a single animal (_e.g. `/animals/8`_) then you need to isolate the `8` from the whole path string.
 

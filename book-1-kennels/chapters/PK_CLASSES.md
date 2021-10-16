@@ -1,4 +1,6 @@
-# Solving Transient Changes
+# Ch.7 Animal Class
+
+## Solving Transient Changes
 
 Changes that you make to your resources up to this point have been transient - meaning that as soon as the Python server restarts when you make changes to you code, the resources revert back to their initial state.
 
@@ -8,15 +10,15 @@ The first step in that process is to switch from using raw, Python lists and dic
 
 ## Learning Objectives
 
-* You should be able to identify a custom type _(i.e. a class)_ in Python code.
-* You should be able to identify how a method is defined in a class.
-* You should be able to identify a class initializer method.
-* You should be able to implement a class, with methods, in Python.
+- You should be able to identify a custom type _(i.e. a class)_ in Python code.
+- You should be able to identify how a method is defined in a class.
+- You should be able to identify a class initializer method.
+- You should be able to implement a class, with methods, in Python.
 
 ## Video Resources
 
-* [Python Classes and Objects || Python Tutorial](https://www.youtube.com/watch?v=apACNr7DC_s)
-* [Python 3's __init__(), self, Class and Instance Objects Explained Concisely](https://www.youtube.com/watch?v=AsafkCAJpJ0&t=177s)
+- [Python Classes and Objects || Python Tutorial](https://www.youtube.com/watch?v=apACNr7DC_s)
+- [Python 3's **init**(), self, Class and Instance Objects Explained Concisely](https://www.youtube.com/watch?v=AsafkCAJpJ0&t=177s)
 
 ## Animal Class
 

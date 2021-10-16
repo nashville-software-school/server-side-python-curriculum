@@ -1,4 +1,4 @@
-# Condensed Critter Construction
+# Supp Ch.3 Condensed Critter Construction
 
 In this chapter you will learn how to assign values to an object instance of a class on the same line of code where it is created, rather the the verbose process you are using now of...
 
@@ -27,7 +27,6 @@ wilbur = Pig("Wilbur", "pot-bellied pig")
 ```
 
 By passing the property value in during the instantiation of the object, you don't have to manually create the properties on a separate line of code.
-
 
 ## Practice: Update Yer Critters Construction
 

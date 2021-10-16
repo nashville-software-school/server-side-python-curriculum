@@ -1,4 +1,6 @@
-# Classes
+# Supp Ch.2 - Critter Creation
+
+## Classes
 
 ## Why are you Learning This?
 
@@ -38,6 +40,7 @@ class Llama:
         self.species = ""
         self.date_added = date.today()
 ```
+
 Remember, this class is not a llama itself. It's just a mechanism for creating llama objects. To create an instance of the class, you type the name of the class and put parenthesis after it. You should always store the object instance in a variable.
 
 ```py
@@ -66,6 +69,7 @@ domestic llama
 
 date_added: "2020-06-16"
 ```
+
 That's a good start, but animals -- in the real world and in our system -- also have some properties that help differentiate them from each other. For example, to us it's clear that a cottonmouth snake is quite different from a miniature goat. But without baking that distinction into our class definitions, our system can't recognize that difference. With that in mind, we can also give our critters additional properties that are not common across every class in the system.
 
 For example, Bobby's critters can be divided into three fairly distinct groups by how they move around their home: walking, slithering, and swimming. So, the **`Llama`** class could benefit from adding `self.walking = True` to it. And a **`KingSnake`** class would have `self.slithering = True` in its `__init__` method. Something tells you those distinctions might come in very handy for Bobby as his business grows...
@@ -88,13 +92,14 @@ touch animals.py
 ```
 
 ### Instructions
+
 You're going to create 15 custom types (classes) for representing critters from Bobby's petting zoo in Python. (_Seriously -- 15. Hey, we saw that. Don't roll your eyes at us!_)
 
 As shown earlier, define every class with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
 
-+ name
-+ species
-+ date_added
+- name
+- species
+- date_added
 
 But you should also take into consideration the fact that there are different types of animals at Critters and Croquettes. Specifically, there are critters in
 
@@ -104,9 +109,9 @@ But you should also take into consideration the fact that there are different ty
 
 With that in mind, make 5 critter types for each area. As you define each one, give it one of the following properties where most appropriate:
 
-+ `self.swimming = True`
-+ `self.slithering = True`
-+ `self.walking = True`
+- `self.swimming = True`
+- `self.slithering = True`
+- `self.walking = True`
 
 Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. You just want to get the logic working correctly. So, use the `print()` method to see your results.
 
@@ -119,4 +124,3 @@ It will be...disappointing. You should see something like this:
 `<__main__.Llama object at 0x109df9cd0>`
 
 What the heck is that? Your instructors will explain this in more detail, and will eventually show you a trick for getting a more human-readable output. For now, just note that you can't log out a Python object the way you could a Javascript object, and try `print(miss_fuzz.name)` as a temporary solution.
-
