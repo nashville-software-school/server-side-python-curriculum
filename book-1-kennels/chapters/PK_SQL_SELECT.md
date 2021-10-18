@@ -89,11 +89,11 @@ def get_all_animals():
 
 ### For the Curious
 
-If you want to explore some black box concepts from the code in this chapter, here are some searches you can run.
+If you want to explore some black box concepts from the code in this chapter, here are some links to the python docs for each.
 
-* [row_factory](https://duckduckgo.com/?q=sqlite3+connection+row_factory)
-* [Connection cursor](https://duckduckgo.com/?q=sqlite3+cursor)
-* [Cursor's fetchAll() method](https://duckduckgo.com/?q=sqlite3+cursor+fetchall)
+* [row_factory](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.row_factory)
+* [Connection cursor](https://docs.python.org/3/library/sqlite3.html)
+* [Cursor's fetchAll() method](https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.fetchall)
 
 ## Request all Animals from Postman
 
