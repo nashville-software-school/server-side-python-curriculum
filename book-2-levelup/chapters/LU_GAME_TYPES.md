@@ -15,8 +15,9 @@ The **Serializer** has a much simpler job. Once the ViewSet has determined what 
 
 ## Learning Resources
 
-* The [Serializers article](https://www.django-rest-framework.org/api-guide/serializers/) in the REST framework documentation is worth a quick read. It shows examples and explanations.
-* [Creating views and serializers — Django Rest Framework](https://medium.com/django-rest/django-rest-framework-creating-views-and-serializers-b76a96fb6fb7) provides a quick, high-level overview _(with example code)_ for using serializers.
+* [Overview of Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
+* [Default Router](https://www.django-rest-framework.org/api-guide/routers/#defaultrouter)
+* [Model Serializer](https://www.django-rest-framework.org/api-guide/serializers/#modelserializer)
 
 ## Workflow Visualization
 

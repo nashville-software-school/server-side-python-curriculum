@@ -6,17 +6,16 @@ In this chapter, you are going to let a user schedule an event, and then be redi
 
 ## Client Request Functions
 
-Add a `createEvent()` function in your **`EventProvider`** that will be responsible for performing the `fetch()` call to request that a new event be created in the server's database.
+Add a `createEvent()` function in your **`EventManager`** that will be responsible for performing the `fetch()` call to request that a new event be created in the server's database.
 
-Make sure you add the `Authorization` header to the fetch request.
+Make sure you add the `Authorization` and `Content-Type` headers to the fetch request.
 
 ```jsx
-const createEvent = () => {
+export const createEvent = () => {
     return fetch("", { })
 }
 ```
 
-Make sure you add that function to the `value` object for the context provider at the bottom of the module.
 
 ## Event Form
 
@@ -37,11 +36,11 @@ export const EventForm = () => {
     const [currentEvent, setEvent] = useState({})
 
     useEffect(() => {
-        // Get all existing games from API
+        // TODO: Get all existing games from API
     }, [])
 
     const changeEventState = (domEvent) => {
-        // ...
+        // TODO: Complete the onChange function
     }
 
     return (
@@ -63,16 +62,16 @@ export const EventForm = () => {
                 </div>
             </fieldset>
 
-            {/* Create the rest of the input fields */}
+            {/* TODO: Create the rest of the input fields */}
 
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault()
 
-                    // Create the event
+                    // TODO: Call the createEvent function and pass it the event object
 
 
-                    // Once event is created, redirect user to event list
+                    // TODO: Once event is created, redirect user to event list
                 }}
                 className="btn btn-primary">Create Event</button>
         </form>

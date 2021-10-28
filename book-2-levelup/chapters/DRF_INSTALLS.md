@@ -62,7 +62,7 @@ Find the option that has:
 
 There should now be a .vscode folder in your directory. Open the `settings.json` file and add the following lines:
 
-> `levelup-server/levelup/settings.py`
+> `levelup-server/.vscode/settings.json`
 
 ```json
 "python.linting.pylintArgs": [
@@ -71,7 +71,7 @@ There should now be a .vscode folder in your directory. Open the `settings.json`
 ],
 ```
 
-#### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file*
+#### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be*
 
 ## Create API Application
 
@@ -135,8 +135,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
 }
 
 # THIS IS NEW

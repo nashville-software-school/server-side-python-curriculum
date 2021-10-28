@@ -14,7 +14,7 @@ You will learn about custom Django model properties, use a JavaScript ternary st
 * You should be able to explain that a custom property exists on class instances, but is not a column in the database.
 * You should be able to differentiate between a model property that maps to a column in the database and a custom property.
 * You should be able to assign a value to a custom property in a View.
-* You should be able to understand that using a Django ORM method _(e.g. `get()` or `all()`)_ never assigns a value to a model's custom properties.
+
 
 ## Custom Model Properties
 
@@ -131,9 +131,9 @@ Update the list method in the event viewset with the code below.
         return Response(serializer.data)
 ```
 
-## Event Provider Method
+## Event Manager Method
 
-In the event provider, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to remove the relationship.
+In the event manager, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to remove the relationship.
 
 1. The event via the `eventId` parameter
 1. The user via the `Authorization` token
@@ -141,7 +141,7 @@ In the event provider, create the function to be invoked when the current gamer 
 > **Note:** The `.then(getEvents)` method was also added to the promise chain for `joinEvent()`. Make sure you have that in your function.
 
 ```js
-const leaveEvent = eventId => {
+export const leaveEvent = eventId => {
     return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
         method: "DELETE",
         headers:{
@@ -152,7 +152,7 @@ const leaveEvent = eventId => {
         .then(getEvents)
 }
 
-const joinEvent = eventId => {
+export const joinEvent = eventId => {
     return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
         method: "POST",
         headers:{
