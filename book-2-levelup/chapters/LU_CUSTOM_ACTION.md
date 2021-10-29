@@ -99,7 +99,6 @@ Then that function is invoked when the join button - which is on the bottom of e
 
 ```jsx
 import React, { useEffect } from "react"
-import { EventContext } from "./EventProvider.js"
 import { useHistory } from "react-router-dom"
 import { getEvents, joinEvent } from "./EventManager.js"
 import "./Events.css"

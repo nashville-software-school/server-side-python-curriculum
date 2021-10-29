@@ -153,7 +153,7 @@ _Make sure to import the `user_profile` function into the `urls.py`_
 ## Client Request
 
 
-### State Provider
+### State Manager
 
 On the client side, create a new manager to hold the fetch call.
 

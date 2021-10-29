@@ -5,7 +5,6 @@ Your task is to use the instructions from the previous chapter, and use...
 1. The `annotate()` method
 1. The `Count()` method
 1. The `related_name` attribute
-1. Custom model properties
 1. Model serializer field
 
 ...to add a `attendees_count` property to the JSON that gets returned for a list of events.

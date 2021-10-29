@@ -65,11 +65,12 @@ In English, you are...
 1. Determining if the current user has rsvp'd the event by filtering the attendees based on the gamer then counting the results
 
 
-That will set the value of `joined` to 1 or 0. You want true or false. To get that, add a for loop that converts the numbers to booleans.
+Now that we are setting the joined property through the annotate, the events for loop can be removed
 
 ```py
+# Delete these lines
 for event in events:
-    event.joined = bool(event.joined)
+   event.joined = gamer in event.attendees.all()
 ```
 
 This is advanced stuff here, but just in case you find a glimmer of understanding in the darkness while reading this chapter, and implementing this code, you may find a use for it in the next group project.
