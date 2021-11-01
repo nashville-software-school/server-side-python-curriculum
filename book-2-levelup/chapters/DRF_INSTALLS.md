@@ -71,7 +71,7 @@ There should now be a .vscode folder in your directory. Open the `settings.json`
 ],
 ```
 
-#### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be*
+#### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be `levelup.settings`*
 
 ## Create API Application
 
