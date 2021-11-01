@@ -155,7 +155,7 @@ python3 manage.py runserver
 
 Now you can test this out as an actual Gamer who would be using the application. Launch your initial React client, and try to log in with the account that was created by your fixtures.
 
-> Username is `me@me.com`
+> Username is `Carrie1945`
 
 > Password is `me`
 
