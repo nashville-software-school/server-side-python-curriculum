@@ -8,25 +8,20 @@ You will learn about custom Django model properties, use a JavaScript ternary st
 
 ![animation of joining and leaving events in the client](./images/levelup-join-leave.gif)
 
-## Learning Objectives
+## Learning Objective
 
-* You should be able to identify a custom property in a Django model class.
-* You should be able to explain that a custom property exists on class instances, but is not a column in the database.
-* You should be able to differentiate between a model property that maps to a column in the database and a custom property.
-* You should be able to assign a value to a custom property in a View.
-* You should be able to understand that using a Django ORM method _(e.g. `get()` or `all()`)_ never assigns a value to a model's custom properties.
+* You should be able to explain that extra serializer fields can exist on the serializer, but is not a column in the database.
+* You should be able to recognize the 
 
-## Custom Model Properties
+## Extra Serializer Fields
 
-Normally, every property on a Model class in Django directly reflects a column on a table in the database. Sometimes, though, you need additional properties on a model that are calculated during a request/response cycle with a client.
-
-In this chapter, you are going to add a `joined` custom property to the **`Event`** class that will let the client application know if the currently authenticated user can join a particular event.
+In this chapter, you are going to add a `joined` property to the **`Event`** that will let the client application know if the currently authenticated user is going to an event.
 
 Assume there are 4 events.
 
 A user has signed up for events #2 and #4.
 
-When that user is authenticated, and the client requests a list of all events, the JSON would look like the representations below. Note the value of the `joined` property on each event. That data is not in the database, but rather calculated by the view logic and put in the JSON on the fly.
+When that user is authenticated, and the client requests a list of all events, the JSON would look like the representations below. Note the value of the `joined` property on each event. That data is not in the database, but rather calculated by the view logic and put in the JSON by the serializer.
 
 You'll see how later in the chapter.
 
@@ -73,32 +68,23 @@ You'll see how later in the chapter.
         "joined": true
     }
 ]
-````
-
-## Model Property
-
-Add the following custom property to event class. It's a simple property with get/set methods with no additional validation logic.
-
-> #### `levelup/levelupclient/models/event.py`
-
-```py
-    @property
-    def joined(self):
-        return self.__joined
-
-    @joined.setter
-    def joined(self, value):
-        self.__joined = value
 ```
 
 ## Event Serializer
 
-Update the **`EventSerializer`** class to include the new, custom property.
+Update the **`EventSerializer`** class to include the new field. The `joined` variable tells the serializer what type of data it will be, in this case, `joined` will be a boolean. Then the field is added to the `fields` tuple.
 
 ```py
-fields = ('id', 'game', 'organizer',
-          'description', 'date', 'time', 'attendees',
-          'joined')
+class EventSerializer(serializers.ModelSerializer):
+    """JSON serializer for events"""
+    # if you have other variables outside the Meta class just add this line
+    joined = serializers.BooleanField()
+
+    class Meta:
+        model = Event
+        fields = ('id', 'game', 'host',
+                  'description', 'date',
+                  'time', 'attendees', 'joined')
 ```
 
 ## List of Events
@@ -131,9 +117,9 @@ Update the list method in the event viewset with the code below.
         return Response(serializer.data)
 ```
 
-## Event Provider Method
+## Event Manager Method
 
-In the event provider, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to remove the relationship.
+In the event manager, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to remove the relationship.
 
 1. The event via the `eventId` parameter
 1. The user via the `Authorization` token
@@ -141,7 +127,7 @@ In the event provider, create the function to be invoked when the current gamer 
 > **Note:** The `.then(getEvents)` method was also added to the promise chain for `joinEvent()`. Make sure you have that in your function.
 
 ```js
-const leaveEvent = eventId => {
+export const leaveEvent = eventId => {
     return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
         method: "DELETE",
         headers:{
@@ -152,7 +138,7 @@ const leaveEvent = eventId => {
         .then(getEvents)
 }
 
-const joinEvent = eventId => {
+export const joinEvent = eventId => {
     return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
         method: "POST",
         headers:{

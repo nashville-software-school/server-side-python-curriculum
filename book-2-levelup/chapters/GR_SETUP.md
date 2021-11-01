@@ -37,7 +37,6 @@ Future chapters will ask you to implement specific features, so use this cheatsh
 1. ViewSet
 1. Serializer
 1. DefaultRouter URL mapping
-1. React provider component with fetches
 1. React list component
 1. Route setup in application views
-1. Repeat steps 4 -> 9 for every resource you want the client to have access to
+1. Repeat steps 3 -> 9 for every resource you want the client to have access to

@@ -56,27 +56,9 @@ It would provide the following result set.
 
 ### Models
 
-Define the models first. Since the event count is a calculated property, and not something stored in the database, create a custom property that will be added to each instance of a Game.
-
-Note that the custom property's name is the exact same as the column alias in the SQL above.
+Make sure the `game` field on the event has a `related_name` attribute. This sets up an `events` field on the `game` that holds a list of the `events` that the `game` is attached to. 
 
 ```py
-from django.db import models
-
-
-class Game(models.Model):
-
-    title = models.CharField(max_length=55)
-    skill_level = models.IntegerField()
-
-    @property
-    def event_count(self):
-        return self.__event_count
-
-    @event_count.setter
-    def event_count(self, value):
-        self.__event_count = value
-
 
 class Event(models.Model):
 
@@ -84,7 +66,6 @@ class Event(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='events')
 ```
 
-> **Important:** The `related_name='events'` attribute on the game field must be in place to make the code below work.
 
 ### Annotate with Count
 
@@ -102,18 +83,18 @@ Then, in your `list` method on the game ViewSet, you can put the following code.
 games = Game.objects.annotate(event_count=Count('events'))
 ```
 
-> **Important:** The `related_name='events'` attribute that you put on the game field of the Event model is what makes this work as the argument to the Count() method.
-
 This statement will produce the exact same SQL statement as the one you wrote above and give you the same results.
 
-The last step would be to make sure that `event_count` got serialized in order to be sent back to the client as a property in the JSON.
+The last step would be to make sure that `event_count` got serialized in order to be sent back to the client as a property in the JSON. Since `event_count` is not a field on the model, we'll need to tell the serializer to expect a new field to sometimes be passed to the serializer
 
 ```py
 class GameSerializer(serializers.ModelSerializer):
+    event_count = serializers.IntegerField(default=None)
+
     """JSON serializer for games"""
     class Meta:
         model = Game
-        fields = ('id', 'title', 'event_count')
+        fields = ('all the other fields you already have', 'event_count')
 ```
 
 Then the client would receive the following JSON.

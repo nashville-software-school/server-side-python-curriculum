@@ -2,72 +2,16 @@
 
 ## Learning Objectives
 
-* You should be able to describe how to load some initial data into your database with Django.
-* You should be able to create a file containing JSON representations of the resources for your database.
-* You should be able to itemize the View methods needed to handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
+* You should be able to match which View methods handle requests for getting all resources, single resources, creating resources, updating resources, and deleting resources.
 * You should be able to identify the ORM method used to get a single item from a table.
 * You should be able to identify the ORM method used to get all items from a table.
 * You should be able to explain the effect of the `depth` statement when used in a Serializer.
 
 ## Learning Resources
-
-* Documentation: [Providing initial data for models](https://docs.djangoproject.com/en/3.1/howto/initial-data/)
-* Video: [How to Pre Load Data in Database With Django](https://www.youtube.com/watch?v=1_MROM737FI)
-
-
-## Preface: Seed the Database
-
-Create the following fixture file and then seed the database with the loaddata command beneath.
-
-> #### `levelup/levelupapi/fixtures/games.json`
-
-```json
-[
-    {
-        "model": "levelupapi.game",
-        "pk": 1,
-        "fields": {
-            "title": "Welcome To",
-            "maker": "Benoit Turpin",
-            "gamer": 1,
-            "game_type": 1,
-            "number_of_players": 4,
-            "skill_level": 3
-        }
-    },
-    {
-        "model": "levelupapi.game",
-        "pk": 2,
-        "fields": {
-            "title": "Settlers of Catan",
-            "maker": "Klaus Teuber",
-            "gamer": 1,
-            "game_type": 1,
-            "number_of_players": 4,
-            "skill_level": 4
-        }
-    },
-    {
-        "model": "levelupapi.game",
-        "pk": 3,
-        "fields": {
-            "title": "Dungeons & Dragons",
-            "maker": "Wizards of the Coast",
-            "gamer": 1,
-            "game_type": 2,
-            "number_of_players": 5,
-            "skill_level": 3
-        }
-    }
-]
-```
-
-#### Load the fixture data
-
-```sh
-python3 manage.py loaddata games
-```
-
+* [Overview of Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
+* [Default Router](https://www.django-rest-framework.org/api-guide/routers/#defaultrouter)
+* [Model Serializer](https://www.django-rest-framework.org/api-guide/serializers/#modelserializer)
+* [Serializer Depth](https://www.django-rest-framework.org/api-guide/serializers/#specifying-nested-serialization)
 
 
 ## Step 1: The Game Model Class
@@ -105,27 +49,26 @@ class GameView(ViewSet):
         # Uses the token passed in the `Authorization` header
         gamer = Gamer.objects.get(user=request.auth.user)
 
-        # Create a new Python instance of the Game class
-        # and set its properties from what was sent in the
-        # body of the request from the client.
-        game = Game()
-        game.title = request.data["title"]
-        game.maker = request.data["maker"]
-        game.number_of_players = request.data["numberOfPlayers"]
-        game.skill_level = request.data["skillLevel"]
-        game.gamer = gamer
-
         # Use the Django ORM to get the record from the database
         # whose `id` is what the client passed as the
         # `gameTypeId` in the body of the request.
         game_type = GameType.objects.get(pk=request.data["gameTypeId"])
-        game.game_type = game_type
 
         # Try to save the new game to the database, then
         # serialize the game instance as JSON, and send the
         # JSON as a response to the client request
         try:
-            game.save()
+            # Create a new Python instance of the Game class
+            # and set its properties from what was sent in the
+            # body of the request from the client.
+            game = Game.objects.create(
+                title=request.data["title"],
+                maker=request.data["maker"],
+                number_of_players=request.data["numberOfPlayers"],
+                skill_level=request.data["skillLevel"],
+                gamer=gamer,
+                game_type=game_type
+            )
             serializer = GameSerializer(game, context={'request': request})
             return Response(serializer.data)
 
@@ -236,9 +179,11 @@ class GameSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Game
-        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level', 'game_type')
+        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level', 'game_type', 'gamer')
         depth = 1
 ```
+
+> Once you have the url added in the next step, play around with the serializer. What happens when `depth = 1` is removed? What if you change it to `depth = 2`? [Docs](https://www.django-rest-framework.org/api-guide/serializers/#specifying-nested-serialization)
 
 ## Step 4: The URL
 
@@ -275,31 +220,17 @@ router.register(r'games', GameView, 'game')
 
 You can start off with this starter React code to request and display a list of games from the API.
 
-> #### `src/components/game/GameProvider.js`
+> #### `src/components/game/GameManager.js`
 
 ```jsx
-import React, { useState } from "react"
-
-export const GameContext = React.createContext()
-
-export const GameProvider = (props) => {
-    const [ games, setGames ] = useState([])
-
-    const getGames = () => {
-        return fetch("http://localhost:8000/games", {
-            headers:{
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`
-            }
-        })
-            .then(response => response.json())
-            .then(setGames)
-    }
-
-    return (
-        <GameContext.Provider value={{ games, getGames }} >
-            { props.children }
-        </GameContext.Provider>
-    )
+export const getGames = () => {
+    return fetch("http://localhost:8000/games", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+        .then(response => response.json())
+        .then(setGames)
 }
 ```
 
@@ -338,7 +269,6 @@ export const GameList = (props) => {
 import React from "react"
 import { Route } from "react-router-dom"
 import { GameList } from "./game/GameList.js"
-import { GameProvider } from "./game/GameProvider.js"
 
 export const ApplicationViews = () => {
     return <>
@@ -346,12 +276,31 @@ export const ApplicationViews = () => {
             margin: "5rem 2rem",
             lineHeight: "1.75rem"
         }}>
-            <GameProvider>
-                <Route exact path="/">
-                    <GameList />
-                </Route>
-            </GameProvider>
+            <Route exact path="/">
+                <GameList />
+            </Route>
         </main>
     </>
 }
 ```
+
+### Practice: Listing Events
+Follow the steps to write an `EventView` and `EventSerializer` class in the `views` package. The `EventView` should have:
+1. A `list` method that returns all the events in the database
+1. A `retrieve` method that returns a single event based on the pk in the url
+1. A `create` method that adds an event to the database. The `request.data` will need to include all the required field on the `Event` model
+1. A `delete` method that deletes an event from the database based on the pk in the url
+1. An `update` method that updates the event based on what the client sends to the api. It should update each of the fields on the `Event` model
+
+The `EventSerializer` should:
+1. Include the `id`, `game`, `organizer`, `description`, `date`, and `time` fields
+1. The `organizer` should only include the user's `first_name` and `last_name`. _Hint_ to get started: create a `GamerSerializer` and linking that serializer inside the `EventSerializer` like so
+```py
+class EventSerializer(ModelSerializer):
+    organizer = GamerSerializer()
+
+    class Meta:
+        # the rest of your code
+```
+
+Once you've tested the event list route in postman, add an `EventManager` file and `EventList` component in the react code to display a list of events

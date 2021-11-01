@@ -1,34 +1,26 @@
-# Karen Cares About Her Users
+# Carrie Cares About Her Users
 
-> You receive a phone call from Karen, sorry, Kari, on a Thursday morning.
+> You receive a phone call from Carrie, on a Thursday morning.
 >
 > "Hello?"
 >
-> "Hi, this is Kari! I have an update for you." She seems very nervous.
+> "Hi, this is Carrie! I have an update for you." She seems very nervous.
 >
 > "Ok," you reply. "Let me grab my notes."
 >
 > You reach into your backpack on the other side of the couch where you are sitting and pull out your note journal, and decide on the slender green pen for today's notes.
 >
-> You click the pen and say, "Ok, I'm ready, Kari."
+> You click the pen and say, "Ok, I'm ready, Carrie."
 >
-> "I was talking to some friends earlier in the week, and apparently many of them play games on their computers. I had no idea. Susan... she's a friend who watches my cats sometimes... well, she watches some because Sammy and Jasper don't like her. If I need someone to watch Sammy and Jasper, I can usually count on Helen. You see, Helen has cats, too, but not as many as me, so..."
+> "I was talking to my granddaughter the other day. She was telling me about role-playing games that aren't board games. I think it was called, Caves and Chimeras? Anyway, I'd like that to be one of the game type options on the website"
+
+> "Sure, no problem, Carrie!" You write down that you need to add more game types to the database.
 >
-> You sigh silently and listen to a 10-minute lecture about which of Karen's friends have particularly meaningful relationships with each one of her myriad cats.
+> "Then, my other grandchild was talking to their friends about organizing a time to play an online game together. So I wondered if that sort of game would work for this as well?"
 >
-> "...and since they all told me that they play an online game called Fever Fantasy, I decided that I should allow people to create games and events for things other than board games."
+> After a quick pause, you can't think of any reason an online game wouldn't work, "That shouldn't be a problem to implement. So users will be able to create board games, role-playing games, and MMO games?"
 >
-> "Sure, no problem, Kari!" You write down that you need to add more game types to the database.
->
-> "What about role-playing games?"
->
-> "Uhhh, I don't think I want those kinds of people using my software," she says haughtily.
->
-> "I'm not sure what you mean. I have plenty of friends who play role-playing games like Dungeons & Dragons and Shadowrun."
->
-> There is a moment's pause and Karen replies, "Oooohhh, those role-playing games. Yes, I think my niece and nephew do that. They dress up like knights and wizards and go to some parks to pretend."
->
-> After a short discussion, you both agree that the "software" will allow people to create board games, role-playing games, and MMO games.
+> "That sounds wonderful! I can't wait to show my grandkids what I've been up to."
 
 ## Learning Objectives
 
@@ -37,9 +29,10 @@
 * You should be able to apply a JSON fixture to get data inserted into a database table.
 * You should be able to implement fixtures in the correct order, based on the dependencies of your tables.
 
-## Video(s) to Watch First
+## Learning Resources
 
-* [How to Pre Load Data in Database With Django](https://www.youtube.com/watch?v=1_MROM737FI)
+* Documentation: [Providing initial data for models](https://docs.djangoproject.com/en/3.1/howto/initial-data/)
+* Video: [How to Pre Load Data in Database With Django](https://www.youtube.com/watch?v=1_MROM737FI)
 
 ## Seeding the Database
 
@@ -116,9 +109,9 @@ Create the following three files with the corresponding contents.
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
             "last_login": null,
             "is_superuser": false,
-            "username": "me@me.com",
-            "first_name": "Steve",
-            "last_name": "Brownlee",
+            "username": "Carrie1945",
+            "first_name": "Carrie",
+            "last_name": "Belk",
             "email": "me@me.com",
             "is_staff": false,
             "is_active": true,

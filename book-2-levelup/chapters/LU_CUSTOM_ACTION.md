@@ -72,15 +72,15 @@ def signup(self, request, pk=None):
             return Response({'message': ex.args[0]})
 ```
 
-## Event Provider Method
+## Event Manager Method
 
-In the event provider, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to create the relationship.
+In the event manager, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to create the relationship.
 
 1. The event via the `eventId` parameter
 1. The user via the `Authorization` token
 
 ```js
-const joinEvent = eventId => {
+export const joinEvent = eventId => {
     return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
         method: "POST",
         headers:{
@@ -99,7 +99,6 @@ Then that function is invoked when the join button - which is on the bottom of e
 
 ```jsx
 import React, { useEffect } from "react"
-import { EventContext } from "./EventProvider.js"
 import { useHistory } from "react-router-dom"
 import { getEvents, joinEvent } from "./EventManager.js"
 import "./Events.css"
@@ -129,7 +128,6 @@ export const EventList = () => {
             </header>
             {
                 events.map(event => {
-                    const attending = profile.events.some(evt => evt.id === event.id)
                     return <section key={event.id} className="registration">
                         <div className="registration__game">{event.game.title}</div>
                         <div>{event.description}</div>
