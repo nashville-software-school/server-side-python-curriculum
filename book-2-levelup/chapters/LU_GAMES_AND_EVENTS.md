@@ -230,7 +230,6 @@ export const getGames = () => {
         }
     })
         .then(response => response.json())
-        .then(setGames)
 }
 ```
 
