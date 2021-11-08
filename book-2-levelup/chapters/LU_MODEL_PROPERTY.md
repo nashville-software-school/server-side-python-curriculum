@@ -78,7 +78,7 @@ Update the **`EventSerializer`** class to include the new field. The `joined` va
 class EventSerializer(serializers.ModelSerializer):
     """JSON serializer for events"""
     # if you have other variables outside the Meta class just add this line
-    joined = serializers.BooleanField()
+    joined = serializers.BooleanField(required=False)
 
     class Meta:
         model = Event
