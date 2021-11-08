@@ -11,7 +11,7 @@ You will learn about custom Django model properties, use a JavaScript ternary st
 ## Learning Objective
 
 * You should be able to explain that extra serializer fields can exist on the serializer, but is not a column in the database.
-* You should be able to recognize the 
+* You should be able to recognize the `ManyToManyField` method to get the attendees from the database
 
 ## Extra Serializer Fields
 
