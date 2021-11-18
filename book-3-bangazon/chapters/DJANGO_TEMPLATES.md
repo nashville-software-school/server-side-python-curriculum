@@ -4,12 +4,20 @@
 
 After implementing the code in this chapter, you should be able to...
 
-1. Recall that you must use `sqlite3` to use SQL statements in a Django application.
 1. Recall that a Django application can return both JSON strings and HTML strings in a response.
-1. Understand that both the Django ORM and `sqlite3` can be used in a Django application to query the database.
+1. Understand that both the Django ORM and `sql` can be used in a Django application to query the database.
 1. Create a Django project with more than one application in it.
-1. Explain that one project is a REST-based API application that returns JSON strings, and the other is an application that returns HTML strings.
-1. Perform the steps of writing SQL, constructing the proper data structure from the results, binding that data structure to a Django template, and using the data in the Django template to build a string that returns HTML representations of the data to the client.
+1. Explain that one project is a Django Rest Framework API application that returns JSON strings, and the other is a Django application that returns HTML strings.
+1. Execute SQL using the django connection
+1. Bind data to a Django template
+1. Use the template context to loop over data in the html
+
+
+## Resources
+1. [Django Views](https://docs.djangoproject.com/en/3.2/topics/class-based-views/intro/)
+1. [Python Comprehensions](https://www.geeksforgeeks.org/comprehensions-in-python/)
+1. [Executing SQL within Django](https://docs.djangoproject.com/en/3.2/topics/db/sql/#executing-custom-sql-directly)
+1. [Django Templates](https://docs.djangoproject.com/en/3.2/topics/templates/)
 
 ## Setup
 
@@ -23,129 +31,130 @@ Be in your LevelUp project directory.
 1. Delete the `models.py` and `views.py` modules in the  application.
 1. Create a `levelup/levelupreports/views` directory and create the following two modules in it.
     1. `__init__.py`
-    1. `connection.py`
+    1. `helpers.py`
 1. Create a `levelup/levelupreports/templates` directory.
 1. Create a `levelup/levelupreports/urls.py` module. Code for this module is at the end of the chapter.
 
-## Database Connection Module
+## Database Helper Functions
+Back in book 1, we were using the sqlite3 module to connect to the database and return dictionary-like objects from the database. This time around since we are using django to connect to the database we'll need to write a function that takes the output from the db_cursor.fetchall function and returns a list of dictionaries. Add the following code to the `helpers.py` file
 
-Use the `pwd` terminal command to get the full, absolute path to the directory that contains the `db.sqlite` file for your project. Copy that path into the `db_path` variable. Make sure you keep `/db.sqlite3` at the end.
-
-```py
-class Connection:
-    db_path = "/absolute/path/to/levelup/db.sqlite3"
-```
-
-Then import it to the views package.
-
-> #### `levelupreports/views/__init__.py`
 
 ```py
-from .connection import Connection
+def dict_fetch_all(cursor):
+    """Return all rows from a cursor as a list of dictionaries"""
+    columns = [col[0] for col in cursor.description]
+    return [
+        dict(zip(columns, row))
+        for row in cursor.fetchall()
+    ]
+
 ```
 
-## Games by User View Function
 
-Since this Django application is not using the Django REST Framework plugin, you cannot use ViewSets, or ModelSerializers. Even though you could use the Django ORM - since this is a Django project - you are going to practice your SQL skills again.
 
-Therefore, you are going to be writing plain Python functions that will receive the client request, query the database with SQL, and then use Django templates to send the fully constructed HTML template in response.
+## Games by User View Class
+This should look somewhat familiar to you. There's a class view with a get method. Instead of `list`, `retrieve`, `update`, and `destroy` like the Rest Framework views have, basic django views have `get`, `post`, `put`, and `delete`. Notice that all the imports are coming from `django` instead of `rest_framework`. That is how you can tell this will be a django view. While we could still use the `ORM` to retrieve data from the database, `SQL` is an important tool to continue practicing.
+
+Fill in the correct sql and dictionary code in the starter below:
 
 > #### `levelupreports/views/users/gamesbyuser.py`
 
 ```py
 """Module for generating games by user report"""
-import sqlite3
 from django.shortcuts import render
-from levelupapi.models import Game
-from levelupreports.views import Connection
+from django.db import connection
+from django.views import View
+
+from levelupreports.views.helpers import dict_fetch_all
 
 
-def usergame_list(request):
-    """Function to build an HTML report of games by user"""
-    if request.method == 'GET':
-        # Connect to project database
-        with sqlite3.connect(Connection.db_path) as conn:
-            conn.row_factory = sqlite3.Row
-            db_cursor = conn.cursor()
+class UserGameList(View):
+    def get(self, request):
+        with connection.cursor() as db_cursor:
 
-            # Query for all games, with related user info.
+            # TODO: Write a query to get all games along with the gamer first name, last name, and id
             db_cursor.execute("""
-                SELECT
-                    g.id,
-                    g.title,
-                    g.maker,
-                    g.game_type_id,
-                    g.number_of_players,
-                    g.skill_level,
-                    u.id user_id,
-                    u.first_name || ' ' || u.last_name AS full_name
-                FROM
-                    levelupapi_game g
-                JOIN
-                    levelupapi_gamer gr ON g.gamer_id = gr.id
-                JOIN
-                    auth_user u ON gr.user_id = u.id
+            
             """)
+            # Pass the db_cursor to the dict_fetch_all function to turn the fetch_all() response into a dictionary
+            dataset = dict_fetch_all(db_cursor)
 
-            dataset = db_cursor.fetchall()
-
-            # Take the flat data from the database, and build the
+            # Take the flat data from the dataset, and build the
             # following data structure for each gamer.
+            # This will be the structure of the games_by_user list:
             #
-            # {
-            #     1: {
+            # [
+            #   {
+            #     "id": 1,
+            #     "full_name": "Admina Straytor",
+            #     "games": [
+            #       {
             #         "id": 1,
-            #         "full_name": "Admina Straytor",
-            #         "games": [
-            #             {
-            #                 "id": 1,
-            #                 "title": "Foo",
-            #                 "maker": "Bar Games",
-            #                 "skill_level": 3,
-            #                 "number_of_players": 4,
-            #                 "game_type_id": 2
-            #             }
-            #         ]
-            #     }
-            # }
+            #         "title": "Foo",
+            #         "maker": "Bar Games",
+            #         "skill_level": 3,
+            #         "number_of_players": 4,
+            #         "game_type_id": 2
+            #       },
+            #       {
+            #         "id": 2,
+            #         "title": "Foo 2",
+            #         "maker": "Bar Games 2",
+            #         "skill_level": 3,
+            #         "number_of_players": 4,
+            #         "game_type_id": 2
+            #       }
+            #     ]
+            #   },
+            # ]
 
-            games_by_user = {}
+            games_by_user = []
 
             for row in dataset:
-                # Crete a Game instance and set its properties
-                game = Game()
-                game.title = row["title"]
-                game.maker = row["maker"]
-                game.skill_level = row["skill_level"]
-                game.number_of_players = row["number_of_players"]
-                game.game_type_id = row["game_type_id"]
-
-                # Store the user's id
-                uid = row["user_id"]
-
-                # If the user's id is already a key in the dictionary...
-                if uid in games_by_user:
-
-                    # Add the current game to the `games` list for it
-                    games_by_user[uid]['games'].append(game)
-
+                # TODO: Create a dictionary called game that includes 
+                # the name, description, number_of_players, maker,
+                # game_type_id, and skill_level from the row dictionary
+                game = {
+                    
+                }
+                
+                # This is using a generator comprehension to find the user_dict in the games_by_user list
+                # The next function grabs the dictionary at the beginning of the generator, if the generator is empty it returns None
+                # This code is equivalent to:
+                # user_dict = None
+                # for user_game in games_by_user:
+                #     if user_game['gamer_id'] == row['gamer_id']:
+                #         user_dict = user_game
+                
+                user_dict = next(
+                    (
+                        user_game for user_game in games_by_user
+                        if user_game['gamer_id'] == row['gamer_id']
+                    ),
+                    None
+                )
+                
+                if user_dict:
+                    # If the user_dict is already in the games_by_user list, append the game to the games list
+                    user_dict['games'].append(game)
                 else:
-                    # Otherwise, create the key and dictionary value
-                    games_by_user[uid] = {}
-                    games_by_user[uid]["id"] = uid
-                    games_by_user[uid]["full_name"] = row["full_name"]
-                    games_by_user[uid]["games"] = [game]
-
-        # Get only the values from the dictionary and create a list from them
-        list_of_users_with_games = games_by_user.values()
-
-        # Specify the Django template and provide data context
+                    # If the user is not on the games_by_user list, create and add the user to the list
+                    games_by_user.append({
+                        "gamer_id": row['gamer_id'],
+                        "full_name": row['full_name'],
+                        "games": [game]
+                    })
+        
+        # The template string must match the file name of the html template
         template = 'users/list_with_games.html'
+        
+        # The context will be a dictionary that the template can access to show data
         context = {
-            'usergame_list': list_of_users_with_games
+            "usergame_list": games_by_user
         }
 
         return render(request, template, context)
+
 ```
 
 Then import it to the views package.
@@ -153,11 +162,9 @@ Then import it to the views package.
 > #### `levelupreports/views/__init__.py`
 
 ```py
-from .users.gamesbyuser import usergame_list
+from .users.gamesbyuser import UserGameList
 ```
 
-
-> **Instructor Note:** You are _**strongly encouraged**_ to take the time to understand the data structure above that is created from the results of the query. This is a common strategy for converting flat data from a SQL data set into a data structure to be used in your application.
 
 ## Django Templates, the New JSX
 
@@ -179,13 +186,15 @@ However, in a Django template, you can use Python `for..in` loops instead of hav
 
 You can even use `if/then` blocks, although you don't need it for this template. In JSX, you needed to use a JavaScript ternary statement to have conditional output.
 
+For more information take a look at the docs, [Django Templates](https://docs.djangoproject.com/en/3.2/topics/templates/)
+
 ## Games by User Template
 
 Create a `users` sub-directory in the existing `levelupreports/templates` directory and create the following file and contents.
 
 > #### `levelupreports/templates/users/list_with_games.html`
 
-```jinja
+```html
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -210,11 +219,11 @@ Create a `users` sub-directory in the existing `levelupreports/templates` direct
 </html>
 ```
 
-Note that you are iterating a list in the variable `usergame_list`. That's the single key in the context dictionary that got bound to this template back in the view.
+Note that you are iterating over the `usergame_list` list. That's the single key in the context dictionary that was bound to this template in the view.
 
 ```py
 context = {
-    'usergame_list': list_of_users_with_games
+    'usergame_list': games_by_user
 }
 ```
 
@@ -226,10 +235,10 @@ The last step is to define the URLs that this new application will support.
 
 ```py
 from django.urls import path
-from .views import usergame_list
+from .views import UserGameList
 
 urlpatterns = [
-    path('reports/usergames', usergame_list),
+    path('reports/usergames', UserGameList.as_view()),
 ]
 ```
 
