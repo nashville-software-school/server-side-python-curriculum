@@ -144,13 +144,12 @@ class GameTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"], self.token.user_id)
+        self.assertEqual(response.data["gamer"]['user'], self.token.user_id)
         self.assertEqual(response.data["title"], game['title'])
         self.assertEqual(response.data["maker"], game['maker'])
         self.assertEqual(response.data["skill_level"], game['skillLevel'])
         self.assertEqual(response.data["number_of_players"], game['numberOfPlayers'])
-        self.assertEqual(response.data["game_type"], game['gameTypeId'])
-        self.assertEqual(response.data["description"], game['description'])
+        self.assertEqual(response.data["game_type"]['id'], game['gameTypeId'])
 ```
 
 ## Running the Test(s)
@@ -201,7 +200,6 @@ Add the function below to your `GameTests` class.
         game.skill_level = 5
         game.number_of_players = 4
         game.game_type_id = 1
-        game.description = "Real-Estate, and Finance, and Bankruptcy, OH MY!"
 
         # Save the Game to the testing database
         game.save()
@@ -216,13 +214,12 @@ Add the function below to your `GameTests` class.
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"], game.gamer_id)
+        self.assertEqual(response.data["gamer"]['id'], game.gamer_id)
         self.assertEqual(response.data["title"], game.title)
         self.assertEqual(response.data["maker"], game.maker)
         self.assertEqual(response.data["skill_level"], game.skill_level)
         self.assertEqual(response.data["number_of_players"], game.number_of_players)
-        self.assertEqual(response.data["game_type"], game.game_type_id)
-        self.assertEqual(response.data["description"], game.description)
+        self.assertEqual(response.data["game_type"]['id'], game.game_type_id)
 ```
 
 ----
@@ -276,15 +273,15 @@ Add the function below to your `GameTests` class.
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"], self.token.user_id)
+        self.assertEqual(response.data["gamer"]['id'], self.token.user_id)
         self.assertEqual(response.data["title"], new_game['title'])
         self.assertEqual(response.data["maker"], new_game['maker'])
         self.assertEqual(
             response.data["skill_level"], new_game['skillLevel'])
         self.assertEqual(
             response.data["number_of_players"], new_game['numberOfPlayers'])
-        self.assertEqual(response.data["game_type"], new_game['gameTypeId'])
-        self.assertEqual(response.data["description"], new_game['description'])
+        self.assertEqual(response.data["game_type"]['id'], new_game['gameTypeId'])
+
 ```
 
 ----
