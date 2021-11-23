@@ -1,6 +1,9 @@
 # Deploying with Heroku
 Heroku is a cloud platform that lets companies and users build, deliver, monitor and scale apps. It's pretty simple to use for deploying your django application. Best of all, there's a free tier that will work well enough for what you'll need.
 
+## Video Tutorial
+https://vimeo.com/599704239 password: @7h#nVTJ5
+
 ### Before Starting
 1. Make sure you have the `db.sqlite3` in the gitignore and check that it is not in the github repo. If it is on github, fix that first before continuing.
 2. Follow the steps in Book 2 Chapter 1 to hide the django `SECRET_KEY` variable.
