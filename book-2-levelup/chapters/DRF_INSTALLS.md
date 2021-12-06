@@ -37,7 +37,7 @@ The pylint package is very good at ensuring that you follow the community standa
 Without this configuration, your editor will put orange squiggles under those variable names to alert you that you violated community standards. It becomes annoying, so you override the default rules.
 
 ```sh
-echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
+echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
 ```
 
 ### Select Python Interpreter
