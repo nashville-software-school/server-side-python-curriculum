@@ -1,4 +1,6 @@
-# Organizing Animals
+# Supp Ch.4 Packaging Animals for Transport
+
+## Organizing Animals
 
 1. Make directories for each animal type
 1. Make each directory a package

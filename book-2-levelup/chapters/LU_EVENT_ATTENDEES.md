@@ -1,4 +1,4 @@
-# Event Attendee Count
+# Supp Ch.2 Event Attendee Count
 
 Your task is to use the instructions from the previous chapter, and use...
 

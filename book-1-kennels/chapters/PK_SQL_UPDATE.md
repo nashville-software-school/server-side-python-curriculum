@@ -1,18 +1,20 @@
-# Updating a Database Row
+# Updating Animal Records
+
+## Updating a Database Row
 
 In this chapter you will learn how to change the values of columns in an existing database table row.
 
 ## Learning Objectives
 
-* You should be able to explain which HTTP method is used by the client to request that a resource's state should change.
-* You should be able to identify a SQL query that is changing the state of a row in a database table.
-* You should be able to implement multiple SQL parameters in a query.
-* You should be able to implement a SQL statement that updates the database with the state that was sent by the client in an HTTP request.
+- You should be able to explain which HTTP method is used by the client to request that a resource's state should change.
+- You should be able to identify a SQL query that is changing the state of a row in a database table.
+- You should be able to implement multiple SQL parameters in a query.
+- You should be able to implement a SQL statement that updates the database with the state that was sent by the client in an HTTP request.
 
 ## Videos to Watch First
 
-* [SQL UPDATE Statement |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=cd-hSl7_pGQ)
-* Watch the first 6 minutes of [Update & Delete | SQL | Tutorial 9](https://www.youtube.com/watch?v=rT7BhXLfhds)
+- [SQL UPDATE Statement |¦| SQL Tutorial |¦| SQL for Beginners](https://www.youtube.com/watch?v=cd-hSl7_pGQ)
+- Watch the first 6 minutes of [Update & Delete | SQL | Tutorial 9](https://www.youtube.com/watch?v=rT7BhXLfhds)
 
 ## More Parameters in SQL
 
@@ -81,4 +83,4 @@ def do_PUT(self):
         self._set_headers(404)
 
     self.wfile.write("".encode())
- ```
+```

@@ -1,3 +1,5 @@
+# Ch.3 Django: Using SQL and Templates
+
 # Generating HTML Reports with Django
 
 ## Learning Objectives
@@ -16,14 +18,14 @@ After implementing the code in this chapter, you should be able to...
 Be in your LevelUp project directory.
 
 1. Create a new application for producing HTML reports.
-    ```sh
-    python3 manage.py startapp levelupreports
-    ```
+   ```sh
+   python3 manage.py startapp levelupreports
+   ```
 1. Add `levelupreports` to your installed apps in the `settings.py` module.
-1. Delete the `models.py` and `views.py` modules in the  application.
+1. Delete the `models.py` and `views.py` modules in the application.
 1. Create a `levelup/levelupreports/views` directory and create the following two modules in it.
-    1. `__init__.py`
-    1. `connection.py`
+   1. `__init__.py`
+   1. `connection.py`
 1. Create a `levelup/levelupreports/templates` directory.
 1. Create a `levelup/levelupreports/urls.py` module. Code for this module is at the end of the chapter.
 
@@ -155,7 +157,6 @@ Then import it to the views package.
 ```py
 from .users.gamesbyuser import usergame_list
 ```
-
 
 > **Instructor Note:** You are _**strongly encouraged**_ to take the time to understand the data structure above that is created from the results of the query. This is a common strategy for converting flat data from a SQL data set into a data structure to be used in your application.
 

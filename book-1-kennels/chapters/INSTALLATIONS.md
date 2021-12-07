@@ -4,16 +4,16 @@
 
 Install these extensions to get your VS Code editor set up for writing Python code.
 
-* [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-* [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
-* [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
-* [SQLTools: SQLite Driver](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-sqlite)
-* [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
-* Watch the [Run Query Keyboard Shortcut](https://www.youtube.com/watch?v=4_9QTLGUqko) video to set up a shortcut for use in the course.
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+- [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
+- [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+- [SQLTools: SQLite Driver](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-sqlite)
+- [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
+- Watch the [Run Query Keyboard Shortcut](https://www.youtube.com/watch?v=4_9QTLGUqko) video to set up a shortcut for use in the course.
 
 ## Python on WSL
 
-Run the following two commands in Ubuntu terminal. Mac users skip to the next section.
+Run the following two commands in Ubuntu terminal, pay attention to terminal - you may be prompted to run additional commands. Mac users skip to the next section.
 
 ```sh
 sudo apt update
@@ -21,12 +21,17 @@ sudo apt update
 sudo apt install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl python3 python3-pip
 ```
 
+You MAY need to run this command (your terminal should tell you):
+
+```
+sudo apt-get install build-essential
+```
+
 Then install Homebrew with this command.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
 
 ## Python on Mac
 
@@ -103,18 +108,19 @@ pip3 install --user pipenv
 ```
 
 ### Troubleshooting Pipenv
-If you get `command not found: pipenv` when trying to run pipenv:
-* Mac and Linux
-  * Open ~/.zshrc and add:
-      ```
-      export PIPENV_DIR="$HOME/.local"
-      export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
-      ```
-* Windows
-  * First run `python3 -m site --user-site`
-  * Copy what that returns, replacing `site-packages` with `Scripts`
-  * In the control panel add what was copied to the path
 
+If you get `command not found: pipenv` when trying to run pipenv:
+
+- Mac and Linux
+  - Open ~/.zshrc and add:
+    ```
+    export PIPENV_DIR="$HOME/.local"
+    export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
+    ```
+- Windows
+  - First run `python3 -m site --user-site`
+  - Copy what that returns, replacing `site-packages` with `Scripts`
+  - In the control panel add what was copied to the path
 
 ## Orientation React Clients
 
@@ -125,7 +131,6 @@ Visit the [kennel-template](https://github.com/nashville-software-school/nashvil
 ![animation showing how to use template](./images/kennel-template-process.gif)
 
 Then clone your repository into your workspace directory.
-
 
 ### Daily Journal
 

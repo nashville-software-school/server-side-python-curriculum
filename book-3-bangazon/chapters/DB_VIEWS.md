@@ -1,4 +1,4 @@
-# Database Views
+# Supp Ch.1 SQL Interlude: Database Views
 
 Views are SQL statements that are stored in the database itself. Nothing more.
 

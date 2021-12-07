@@ -1,4 +1,6 @@
-# Switching Clients
+# Ch.12 Using React Kennles Client Again
+
+## Switching Clients
 
 Up to this point, you've been using Postman as the client to make requests to your Python server. Well, if you have completed all of the previous chapters, and their associated practice exercises, you should now be able to fire up your Nashville Kennels React client from 4-5 weeks ago.
 

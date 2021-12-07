@@ -1,13 +1,15 @@
-# Listing Events
+# Ch.8 Exposing Events
+
+## Listing Events
 
 ## Learning Objectives
 
-* You should be able to describe the purpose of a Django View
-* You should be able to explain which View methods are used to respond to a request for all of a resource, or a single resource.
-* You should be able to discuss the purpose of a Serializer and how it differs from a View.
-* You should be able to describe how the keys in the request body can be access to assign values to Python object properties in PUT and POST operations.
-* You should be able explain how query string parameters can be accessed in your Python code.
-* You should be able to demonstrate how multiple serializers can be used to define which properties should be included when nested JSON data is being sent in the response.
+- You should be able to describe the purpose of a Django View
+- You should be able to explain which View methods are used to respond to a request for all of a resource, or a single resource.
+- You should be able to discuss the purpose of a Serializer and how it differs from a View.
+- You should be able to describe how the keys in the request body can be access to assign values to Python object properties in PUT and POST operations.
+- You should be able explain how query string parameters can be accessed in your Python code.
+- You should be able to demonstrate how multiple serializers can be used to define which properties should be included when nested JSON data is being sent in the response.
 
 ## Preface: Seed the Database
 
@@ -21,39 +23,39 @@ python3 manage.py loaddata events
 
 ```json
 [
-    {
-        "model": "levelupapi.event",
-        "pk": 1,
-        "fields": {
-            "organizer": 1,
-            "description": "Welcome To at lunch",
-            "game": 1,
-            "date": "2021-10-04",
-            "time": "12:00"
-        }
-    },
-    {
-        "model": "levelupapi.event",
-        "pk": 2,
-        "fields": {
-            "organizer": 1,
-            "description": "Friday night Settlers and drinks",
-            "game": 2,
-            "date": "2021-08-14",
-            "time": "19:30"
-        }
-    },
-    {
-        "model": "levelupapi.event",
-        "pk": 3,
-        "fields": {
-            "organizer": 1,
-            "description": "Vale of the Frost King campaign. All weekend.",
-            "game": 3,
-            "date": "2021-04-20",
-            "time": "8:00"
-        }
+  {
+    "model": "levelupapi.event",
+    "pk": 1,
+    "fields": {
+      "organizer": 1,
+      "description": "Welcome To at lunch",
+      "game": 1,
+      "date": "2021-10-04",
+      "time": "12:00"
     }
+  },
+  {
+    "model": "levelupapi.event",
+    "pk": 2,
+    "fields": {
+      "organizer": 1,
+      "description": "Friday night Settlers and drinks",
+      "game": 2,
+      "date": "2021-08-14",
+      "time": "19:30"
+    }
+  },
+  {
+    "model": "levelupapi.event",
+    "pk": 3,
+    "fields": {
+      "organizer": 1,
+      "description": "Vale of the Frost King campaign. All weekend.",
+      "game": 3,
+      "date": "2021-04-20",
+      "time": "8:00"
+    }
+  }
 ]
 ```
 
@@ -265,80 +267,77 @@ You can start off with this starter React code to request and display a list of 
 > #### `src/components/game/EventProvider.js`
 
 ```jsx
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-export const EventContext = React.createContext()
+export const EventContext = React.createContext();
 
 export const EventProvider = (props) => {
-    const [ events, setEvents ] = useState([])
+  const [events, setEvents] = useState([]);
 
-    const getEvents = () => {
-        return fetch("http://localhost:8000/events", {
-            headers:{
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`
-            }
-        })
-            .then(response => response.json())
-            .then(setEvents)
-    }
+  const getEvents = () => {
+    return fetch("http://localhost:8000/events", {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+      },
+    })
+      .then((response) => response.json())
+      .then(setEvents);
+  };
 
-    return (
-        <EventContext.Provider value={{ events, getEvents }} >
-            { props.children }
-        </EventContext.Provider>
-    )
-}
+  return (
+    <EventContext.Provider value={{ events, getEvents }}>
+      {props.children}
+    </EventContext.Provider>
+  );
+};
 ```
 
 > #### `src/components/game/EventList.js`
 
 ```jsx
-import React, { useContext, useEffect } from "react"
-import { EventContext } from "./EventProvider.js"
+import React, { useContext, useEffect } from "react";
+import { EventContext } from "./EventProvider.js";
 
 export const EventList = (props) => {
-    const { events, getEvents } = useContext(EventContext)
+  const { events, getEvents } = useContext(EventContext);
 
-    useEffect(() => {
-        getEvents()
-    }, [])
+  useEffect(() => {
+    getEvents();
+  }, []);
 
-    return (
-        <article className="events">
-            <header className="events__header">
-                <h1>Level Up Game Events</h1>
-            </header>
-            {
-                events.map(event => {
-                    return <section key={event.id} className="registration">
-                        <div className="registration__game">{event.game.title}</div>
-                        <div>{event.description}</div>
-                        <div>
-                            {
-                                new Date(event.date).toLocaleDateString("en-US",
-                                {
-                                    weekday: 'long',
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })
-                            }
-                            @ {event.time}
-                        </div>
-                    </section>
-                })
-            }
-        </article >
-    )
-}
+  return (
+    <article className="events">
+      <header className="events__header">
+        <h1>Level Up Game Events</h1>
+      </header>
+      {events.map((event) => {
+        return (
+          <section key={event.id} className="registration">
+            <div className="registration__game">{event.game.title}</div>
+            <div>{event.description}</div>
+            <div>
+              {new Date(event.date).toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              @ {event.time}
+            </div>
+          </section>
+        );
+      })}
+    </article>
+  );
+};
 ```
 
 > #### `src/components/ApplicationViews.js`
 
 ```jsx
 <EventProvider>
-    <Route exact path="/events">
-        <EventList />
-    </Route>
+  <Route exact path="/events">
+    <EventList />
+  </Route>
 </EventProvider>
 ```

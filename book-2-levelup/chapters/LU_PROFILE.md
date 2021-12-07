@@ -1,10 +1,10 @@
-# Gamer Profiles
+# Ch. 13 Gamer Profiles
 
 In this chapter, you are going to create a ViewSet class with a `list()` method on it, but are going to bend the rules a little bit. The `list()` method isn't going to return a list of anything, but rather a single thing. You are going to expose a URL in your Django app that will return the profile information for a single user, without the need for a route parameter of the user's `id`. Instead, the `Authorization` header will be used to identify the user.
 
-| Method | URL |
-|--|--|
-| GET | http://localhost:8000/profile |
+| Method | URL                           |
+| ------ | ----------------------------- |
+| GET    | http://localhost:8000/profile |
 
 When the client sends a request to that URL, with an `Authorization` header containing a valid token, the server will respond with JSON containing information about the gamer, and the events that the gamer is attending.
 
@@ -17,36 +17,36 @@ There are two keys on the response object.
 
 ```json
 {
-    "gamer": {
-        "user": {
-            "first_name": "Emily",
-            "last_name": "Lemmon",
-            "username": "me@me.com"
-        },
-        "bio": "Outgoing and funny. Always have the best interests of other at heart."
+  "gamer": {
+    "user": {
+      "first_name": "Emily",
+      "last_name": "Lemmon",
+      "username": "me@me.com"
     },
-    "events": [
-        {
-            "id": 3,
-            "url": "http://localhost:8000/events/3",
-            "game": {
-                "title": "Dungeons & Dragons"
-            },
-            "description": "Vale of the Frost King campaign. All weekend.",
-            "date": "2021-04-20",
-            "time": "08:00:00"
-        },
-        {
-            "id": 10,
-            "url": "http://localhost:8000/events/10",
-            "game": {
-                "title": "Welcome To"
-            },
-            "description": "Lightning round welcome to session. Cards will be turned every minute. Drinking involved.",
-            "date": "2020-11-11",
-            "time": "17:30:00"
-        }
-    ]
+    "bio": "Outgoing and funny. Always have the best interests of other at heart."
+  },
+  "events": [
+    {
+      "id": 3,
+      "url": "http://localhost:8000/events/3",
+      "game": {
+        "title": "Dungeons & Dragons"
+      },
+      "description": "Vale of the Frost King campaign. All weekend.",
+      "date": "2021-04-20",
+      "time": "08:00:00"
+    },
+    {
+      "id": 10,
+      "url": "http://localhost:8000/events/10",
+      "game": {
+        "title": "Welcome To"
+      },
+      "description": "Lightning round welcome to session. Cards will be turned every minute. Drinking involved.",
+      "date": "2020-11-11",
+      "time": "17:30:00"
+    }
+  ]
 }
 ```
 
@@ -157,7 +157,6 @@ router.register(r'profile', Profile, 'profile')
 
 ## Client Request
 
-
 ### State Provider
 
 On the client side, create a new provider to maintain the state of the user's profile.
@@ -165,34 +164,34 @@ On the client side, create a new provider to maintain the state of the user's pr
 > #### `src/components/auth/ProfileProvider.js`
 
 ```jsx
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-export const ProfileContext = React.createContext()
+export const ProfileContext = React.createContext();
 
 export const ProfileProvider = (props) => {
-    /*
+  /*
         Must profile a default value for the `events` property
         so that React doesn't throw an error when you try to
         iterate the events array in the view.
     */
-    const [profile, setProfile] = useState({events:[]})
+  const [profile, setProfile] = useState({ events: [] });
 
-    const getProfile = () => {
-        return fetch("http://localhost:8000/profile", {
-            headers: {
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`
-            }
-        })
-            .then(response => response.json())
-            .then(setProfile)
-    }
+  const getProfile = () => {
+    return fetch("http://localhost:8000/profile", {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+      },
+    })
+      .then((response) => response.json())
+      .then(setProfile);
+  };
 
-    return (
-        <ProfileContext.Provider value={{ profile, getProfile }}>
-            {props.children}
-        </ProfileContext.Provider>
-    )
-}
+  return (
+    <ProfileContext.Provider value={{ profile, getProfile }}>
+      {props.children}
+    </ProfileContext.Provider>
+  );
+};
 ```
 
 ### Profile Component
@@ -200,60 +199,66 @@ export const ProfileProvider = (props) => {
 Create a profile HTML representation component. In this code you will notice strange interpolations.
 
 ```js
-{profile.gamer && profile.gamer.user.first_name}
+{
+  profile.gamer && profile.gamer.user.first_name;
+}
 ```
 
 Your instruction team will review this with you to explain how this is useful for working with React component lifecycle _(remember that the JSX is rendered before you have the data)_.
 
 ```jsx
-import React, { useEffect, useContext } from "react"
-import { ProfileContext } from "./ProfileProvider.js"
-import "./Profile.css"
-
+import React, { useEffect, useContext } from "react";
+import { ProfileContext } from "./ProfileProvider.js";
+import "./Profile.css";
 
 export const Profile = () => {
-    const { profile, getProfile } = useContext(ProfileContext)
+  const { profile, getProfile } = useContext(ProfileContext);
 
-    useEffect(() => {
-        getProfile()
-    }, [])
+  useEffect(() => {
+    getProfile();
+  }, []);
 
-    return (
-        <article className="profile">
-            <header>
-                <h1>Your Profile</h1>
-            </header>
-            <section className="profile__info">
-                <header className="profile__header">
-                    <h3>Your Info</h3>
-                </header>
-                <div className="profile__name">
-                    Welcome: {profile.gamer && profile.gamer.user.first_name} {profile.gamer && profile.gamer.user.last_name}
+  return (
+    <article className="profile">
+      <header>
+        <h1>Your Profile</h1>
+      </header>
+      <section className="profile__info">
+        <header className="profile__header">
+          <h3>Your Info</h3>
+        </header>
+        <div className="profile__name">
+          Welcome: {profile.gamer && profile.gamer.user.first_name}{" "}
+          {profile.gamer && profile.gamer.user.last_name}
+        </div>
+        <div className="profile__username">
+          Username: {profile.gamer && profile.gamer.user.username}
+        </div>
+        <div className="profile__bio">
+          About you: {profile.gamer && profile.gamer.bio}
+        </div>
+      </section>
+      <section className="profile__registrations">
+        <header className="registrations__header">
+          <h3>Your Events</h3>
+        </header>
+        <div className="registrations">
+          {profile.events.map((event) => {
+            return (
+              <div key={event.id} className="registration">
+                <div className="registration__game">{event.game.title}</div>
+                <div>{event.description}</div>
+                <div>
+                  {event.date} @ {event.time}
                 </div>
-                <div className="profile__username">Username: {profile.gamer && profile.gamer.user.username}</div>
-                <div className="profile__bio">About you: {profile.gamer && profile.gamer.bio}</div>
-            </section>
-            <section className="profile__registrations">
-                <header className="registrations__header">
-                    <h3>Your Events</h3>
-                </header>
-                <div className="registrations">
-                    {
-                        profile.events.map(event => {
-                            return <div key={event.id} className="registration">
-                                <div className="registration__game">{event.game.title}</div>
-                                <div>{event.description}</div>
-                                <div>
-                                    {event.date} @ {event.time}
-                                </div>
-                            </div>
-                        })
-                    }
-                </div>
-            </section>
-        </article>
-    )
-}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </article>
+  );
+};
 ```
 
 ### Profile Application View
@@ -264,8 +269,8 @@ Now add a route to **`ApplicationViews`** to display the profile view when the u
 
 ```jsx
 <ProfileProvider>
-    <Route exact path="/profile">
-        <Profile />
-    </Route>
+  <Route exact path="/profile">
+    <Profile />
+  </Route>
 </ProfileProvider>
 ```

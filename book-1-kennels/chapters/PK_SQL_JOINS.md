@@ -1,36 +1,38 @@
-# Getting Animals With Embedded Locations
+# Ch. 14 Animals with Location Report
+
+## Getting Animals With Embedded Locations
 
 In this chapter you will learn how to utilize SQL joins to provide the client with related data in the JSON response for a resource.
 
 ## Learning Objectives
 
-* You should be able to explain the purpose of joining tables in a SQL query.
-* You should be able to implement a SQL query that retrieves data from more than one table using a join.
-* You should be able to demonstrate how to create instances of classes and use data from a SQL query to define properties for it.
-* You should be able to discuss how to assign an instance of one class as a property of different class.
-* You should be able to implement a solution for embedding a related resource in the JSON response to a client.
+- You should be able to explain the purpose of joining tables in a SQL query.
+- You should be able to implement a SQL query that retrieves data from more than one table using a join.
+- You should be able to demonstrate how to create instances of classes and use data from a SQL query to define properties for it.
+- You should be able to discuss how to assign an instance of one class as a property of different class.
+- You should be able to implement a solution for embedding a related resource in the JSON response to a client.
 
 ## Videos to Watch First
 
-* [SQL Joins Explained](https://www.youtube.com/watch?v=9yeOJ0ZMUYw)
-* [SQL Joins Examples](https://www.youtube.com/watch?v=Jh_pvk48jHA)
-* [SQL Joins Tutorial for Beginners](https://www.youtube.com/watch?v=2HVMiPPuPIM)
+- [SQL Joins Explained](https://www.youtube.com/watch?v=9yeOJ0ZMUYw)
+- [SQL Joins Examples](https://www.youtube.com/watch?v=Jh_pvk48jHA)
+- [SQL Joins Tutorial for Beginners](https://www.youtube.com/watch?v=2HVMiPPuPIM)
 
 ## Joining Data for Python Kennel
 
 Right now in your React client, you get all locations, and get all animals from the API and then use JavaScript to "join" them together.
 
 ```js
-const animals = useAnimals()
-const locations = useLocations()
+const animals = useAnimals();
+const locations = useLocations();
 
 const findLocation = (locationId) => {
-    return locations.find(location => location.id === locationId)
-}
+  return locations.find((location) => location.id === locationId);
+};
 
-const animalsWithEmbeddedLocation = animals.map(animal => {
-    animal.location = findLocation(animal.locationId)
-})
+const animalsWithEmbeddedLocation = animals.map((animal) => {
+  animal.location = findLocation(animal.locationId);
+});
 ```
 
 This process requires two `fetch()` calls to the API and plenty of iterations to get the information together to generate the final HTML representations you want.
@@ -42,17 +44,17 @@ What if you could let the server do the joining of the data? That way, you only 
 You want the server to add the location data to each animal JSON representation that it returns. It would look like this.
 
 ```json
- {
-    "id": 6,
-    "name": "Daps",
-    "species": "Kennel",
-    "status": "Boxer",
-    "location_id": 2,
-    "customer_id": 2,
-    "location": {
-        "name": "Nashville South",
-        "address": "101 Penn Ave"
-    }
+{
+  "id": 6,
+  "name": "Daps",
+  "species": "Kennel",
+  "status": "Boxer",
+  "location_id": 2,
+  "customer_id": 2,
+  "location": {
+    "name": "Nashville South",
+    "address": "101 Penn Ave"
+  }
 }
 ```
 
@@ -101,13 +103,13 @@ JOIN Location l
 
 #### Results
 
-|id|name|breed|status|location_id|customer_id|location_name|location_address|
-|--|--|--|--|--|--|--|--|
-1|	Snickers|	Recreation|	Dalmation|	1|	4|	Nashville North|	64 Washington Heights	|
-2|	Jax|	Recovery|	Beagle|	1|	1|	Nashville North|	64 Washington Heights	|
-3|	Falafel|	Treatment|	Siamese|	2|	4|	Nashville South|	101 Penn Ave	|
-4|	Doodles|	Kennel|	Poodle|	1|	3|	Nashville North|	64 Washington Heights	|
-6|	Daps|	Kennel|	Boxer|	2|	2|	Nashville South|	101 Penn Ave|
+| id  | name     | breed      | status    | location_id | customer_id | location_name   | location_address      |
+| --- | -------- | ---------- | --------- | ----------- | ----------- | --------------- | --------------------- |
+| 1   | Snickers | Recreation | Dalmation | 1           | 4           | Nashville North | 64 Washington Heights |
+| 2   | Jax      | Recovery   | Beagle    | 1           | 1           | Nashville North | 64 Washington Heights |
+| 3   | Falafel  | Treatment  | Siamese   | 2           | 4           | Nashville South | 101 Penn Ave          |
+| 4   | Doodles  | Kennel     | Poodle    | 1           | 3           | Nashville North | 64 Washington Heights |
+| 6   | Daps     | Kennel     | Boxer     | 2           | 2           | Nashville South | 101 Penn Ave          |
 
 Take the SQL statement from above and replace the existing SQL in the `get_all_animals()` function.
 
@@ -118,7 +120,6 @@ Take the SQL statement from above and replace the existing SQL in the `get_all_a
 Each row contains 8 fields. The information in the first 6 will be used to create an **`Animal`** instance in your Python code.
 
 ![](./images/animal-columns.png)
-
 
 ### Location Fields
 

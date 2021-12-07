@@ -1,4 +1,4 @@
-# Joining an Event
+# Ch.11 Gamers Joining Events
 
 In this chapter, you are going to to allow gamers to sign up for an event that has been scheduled.
 
@@ -6,12 +6,11 @@ In this chapter, you are going to to allow gamers to sign up for an event that h
 
 ## Learning Objectives
 
-* You should be able to remember that a custom action is a method on a ViewSet.
-* You should be able to understand that a custom action allows the client to put a verb at the end of the URL to initiate a custom action.
-* You should be able to remember that a custom action can specify which HTTP methods are supported by it.
-* You should be able to understand that an API often does not want to provide the ability to directly manipulate some resources _(e.g. the Django User)_.
-* You should be able to explain that custom routes allow a client to manipulate resources without needing a separate ViewSet for that resource _(e.g. the `login` and `register` actions)_.
-
+- You should be able to remember that a custom action is a method on a ViewSet.
+- You should be able to understand that a custom action allows the client to put a verb at the end of the URL to initiate a custom action.
+- You should be able to remember that a custom action can specify which HTTP methods are supported by it.
+- You should be able to understand that an API often does not want to provide the ability to directly manipulate some resources _(e.g. the Django User)_.
+- You should be able to explain that custom routes allow a client to manipulate resources without needing a separate ViewSet for that resource _(e.g. the `login` and `register` actions)_.
 
 ## Custom Action
 
@@ -40,7 +39,7 @@ def signup(self, request, pk=None):
     # Django uses the `Authorization` header to determine
     # which user is making the request to sign up
     gamer = Gamer.objects.get(user=request.auth.user)
-    
+
     try:
         # Handle the case if the client specifies a game
         # that doesn't exist
@@ -80,15 +79,14 @@ In the event provider, create the function to be invoked when the current gamer 
 1. The user via the `Authorization` token
 
 ```js
-const joinEvent = eventId => {
-    return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
-        method: "POST",
-        headers:{
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
-        }
-    })
-        .then(response => response.json())
-}
+const joinEvent = (eventId) => {
+  return fetch(`http://localhost:8000/events/${eventId}/signup`, {
+    method: "POST",
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  }).then((response) => response.json());
+};
 ```
 
 ## Join and Leave Buttons
@@ -98,45 +96,48 @@ Now you need to update your **`EventList`** component in the client to allow the
 Then that function is invoked when the join button - which is on the bottom of each event card - is clicked.
 
 ```jsx
-import React, { useContext, useEffect } from "react"
-import { EventContext } from "./EventProvider.js"
-import { useHistory } from "react-router-dom"
-import "./Events.css"
+import React, { useContext, useEffect } from "react";
+import { EventContext } from "./EventProvider.js";
+import { useHistory } from "react-router-dom";
+import "./Events.css";
 
 export const EventList = () => {
-    const history = useHistory()
-    const { events, getEvents, joinEvent } = useContext(EventContext)
+  const history = useHistory();
+  const { events, getEvents, joinEvent } = useContext(EventContext);
 
-    useEffect(() => {
-        getEvents()
-    }, [])
+  useEffect(() => {
+    getEvents();
+  }, []);
 
-    return (
-        <article className="events">
-            <header className="events__header">
-                <h1>Level Up Game Events</h1>
-                <button className="btn btn-2 btn-sep icon-create"
-                    onClick={() => {
-                        history.push({ pathname: "/events/new" })
-                    }}
-                >Schedule New Event</button>
-            </header>
-            {
-                events.map(event => {
-                    const attending = profile.events.some(evt => evt.id === event.id)
-                    return <section key={event.id} className="registration">
-                        <div className="registration__game">{event.game.title}</div>
-                        <div>{event.description}</div>
-                        <div>
-                            {event.date} @ {event.time}
-                        </div>
-                        <button className="btn btn-2"
-                                onClick={() => joinEvent(event.id)}
-                        >Join</button>
-                    </section>
-                })
-            }
-        </article >
-    )
-}
+  return (
+    <article className="events">
+      <header className="events__header">
+        <h1>Level Up Game Events</h1>
+        <button
+          className="btn btn-2 btn-sep icon-create"
+          onClick={() => {
+            history.push({ pathname: "/events/new" });
+          }}
+        >
+          Schedule New Event
+        </button>
+      </header>
+      {events.map((event) => {
+        const attending = profile.events.some((evt) => evt.id === event.id);
+        return (
+          <section key={event.id} className="registration">
+            <div className="registration__game">{event.game.title}</div>
+            <div>{event.description}</div>
+            <div>
+              {event.date} @ {event.time}
+            </div>
+            <button className="btn btn-2" onClick={() => joinEvent(event.id)}>
+              Join
+            </button>
+          </section>
+        );
+      })}
+    </article>
+  );
+};
 ```

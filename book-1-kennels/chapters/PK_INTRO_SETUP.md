@@ -1,4 +1,6 @@
-# Replacing json-server with Python
+# Ch. 1 Request and Response
+
+## Replacing json-server with Python
 
 Oh no! The developer of `json-server` decided he didn't want to share his code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
 
@@ -20,8 +22,8 @@ Luckily, you know you have Python installed on your computer and you found a sni
 
 ## Video Resources
 
-* [Parts of an HTTP Request](https://www.youtube.com/watch?v=pHFWGN-upGM)
-* [Quick Intro to F-Strings in Python for String Formatting](https://www.youtube.com/watch?v=o0mvgsPQ8Jg)
+- [Parts of an HTTP Request](https://www.youtube.com/watch?v=pHFWGN-upGM)
+- [Quick Intro to F-Strings in Python for String Formatting](https://www.youtube.com/watch?v=o0mvgsPQ8Jg)
 
 ## Directory and Code Setup
 

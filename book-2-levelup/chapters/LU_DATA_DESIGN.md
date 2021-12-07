@@ -1,6 +1,6 @@
-# Karen's Level Up Requirements
+# Ch.2 Meeting Karen
 
-## Meeting Karen
+## Karen's Level Up Requirements
 
 > Karen is sitting at the table by the front window of the Cat Café where she wanted to meet and discuss the "program" she wants you to write for her. She smiles thinly as you enter, making the tiny bell above the door ring.
 >
@@ -64,11 +64,11 @@
 
 ## Learning Objectives
 
-* You should be able to create an ERD based on verbal requirements from a non-technical customer.
-* You should be able to design a Django database model class based on the table definition in your ERD.
-* You should be able to explain the process of using Django commands to get your models turned into database tables.
-* You should be able to predict how a database table should be structured given a Django model.
-* You should be able to clarify the difference between a one-to-many relationship and a one-to-one relationship.
+- You should be able to create an ERD based on verbal requirements from a non-technical customer.
+- You should be able to design a Django database model class based on the table definition in your ERD.
+- You should be able to explain the process of using Django commands to get your models turned into database tables.
+- You should be able to predict how a database table should be structured given a Django model.
+- You should be able to clarify the difference between a one-to-many relationship and a one-to-one relationship.
 
 ## Create ERD
 
@@ -82,10 +82,10 @@ Here is a quick example.
 
 Imagine that you want to create a table in your database to store information about toys. These toys have a few properties.
 
-* Color
-* Price
-* Material
-* Name
+- Color
+- Price
+- Material
+- Name
 
 In SQL, you would write the following SQL statement to create the table.
 

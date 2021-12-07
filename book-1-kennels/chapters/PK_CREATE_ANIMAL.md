@@ -1,21 +1,22 @@
-# Creating Animals
+# Adding Animals
+
+## Creating Animals
 
 In this chapter, you will write code to support the POST method of HTTP. From Postman, you will POST a new object to your Python server. That object will be converted from a string into a Python dictionary, and then added to the `ANIMALS` list in the `animals/request.py` module.
 
 ## Learning Objectives
 
-* You should be able to import the `json` package into a module.
-* You should be able to explain the purpose of the POST method in HTTP.
-* You should be able to explain what part of the HTTP request contains the stringified JSON data.
-* You should be able to explain what the `json.loads()` method does.
-* You should be able to explain what the `201` HTTP status code means.
-* You should be able to explain what array index `-1` means in a Python list.
-* You should be able to implement and explain the use of the `append()` method on Python lists.
+- You should be able to import the `json` package into a module.
+- You should be able to explain the purpose of the POST method in HTTP.
+- You should be able to explain what part of the HTTP request contains the stringified JSON data.
+- You should be able to explain what the `json.loads()` method does.
+- You should be able to explain what the `201` HTTP status code means.
+- You should be able to explain what array index `-1` means in a Python list.
+- You should be able to implement and explain the use of the `append()` method on Python lists.
 
 ## Video Resources
 
-* [JSON in Python || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=pTT7HMqDnJw)
-
+- [JSON in Python || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=pTT7HMqDnJw)
 
 ## Using the Built-in JSON package
 
@@ -95,14 +96,14 @@ Now open Postman and follow these steps to create a new animal.
 1. Click on the Body section beneath the URL
 1. Click on the `raw` radio button that appears.
 1. Paste in the following JSON in the text area beneath the radio button.
-    ```json
-    {
-        "name": "Falafel",
-        "species": "Cat",
-        "location": 1,
-        "customerId": 3
-    }
-    ```
+   ```json
+   {
+     "name": "Falafel",
+     "species": "Cat",
+     "location": 1,
+     "customerId": 3
+   }
+   ```
 1. Click the Send button.
 
 If your code was set up correctly, the status of the request should be 201 and you should see an animal object - with a new `id` property on it - in the response section at the bottom of Postman.
@@ -127,9 +128,9 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
 
 ```json
 {
-    "name": "Emma Beaton",
-    "address": "54 Sycamore Avenue",
-    "locationId": 2
+  "name": "Emma Beaton",
+  "address": "54 Sycamore Avenue",
+  "locationId": 2
 }
 ```
 
@@ -139,4 +140,3 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
 1. Write a `create_customer` function in the `customers/request.py` module that appends a new customer dictionary to the list.
 
 Then perform a POST request from Postman to create a new customer. Check the **`Register`** component in your React client to remember what a customer object looks like.
-
