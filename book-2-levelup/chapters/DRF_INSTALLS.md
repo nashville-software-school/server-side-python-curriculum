@@ -62,13 +62,12 @@ Open VSCode and press `cmd+shift+p` and select "Python: Select Interpretor". Fin
 ### Configure Pylint
 After selecting the python interpreter, there should be a popup to enable pylint, click yes. There should now be a .vscode folder in your directory. Open the settings.json file and add the following lines:
 
+If a .vscode directory does not get created, press `cmd+shift+p` and type "Python: Select Linter". Select `pylint` from the list of options.
 ```json
 "python.linting.pylintArgs": [
-    "--load-plugins=pylint_django"
-],
-"python.linting.pylintArgs": [
-    "--django-settings-module=<folder name>.settings",
-],
+    "--load-plugins=pylint_django",
+    "--django-settings-module=<folder name>.settings"
+]
 ```
 Notice that `<folder name>` should be the name of the folder that has the `settings.py` file
 
@@ -107,8 +106,9 @@ Run the following commands to remove some boilerplate files that you won't be us
 ```sh
 cd levelupapi
 rm models.py views.py
-mkdir models
-mkdir views
+mkdir models views
+touch models/__init__.py views/__init__.py
+
 ```
 
 ## Update Settings
@@ -168,7 +168,7 @@ MIDDLEWARE = [
 Django gives user and role management tables for your application out of the box, and there is a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
 
 ```sh
-python3 manage.py migrate
+python3 manage.py migrate --settings=levelup.settings
 ```
 
 ---
@@ -179,4 +179,6 @@ python3 manage.py migrate
 2. In the terminal run: `python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`, copy the output
 3. Open the `.env` file and add `SECRET_KEY=<paste output>` without the angle brackets
 4. In the `settings.py` file around line 23 change the `SECRET_KEY` variable to be `SECRET_KEY = os.environ.get('SECRET_KEY')`
+5. If you would like, you can also add `DJANGO_SETTINGS_MODULE=levelup.settings` to this .env file
 5. Stop and restart the pipenv shell
+
