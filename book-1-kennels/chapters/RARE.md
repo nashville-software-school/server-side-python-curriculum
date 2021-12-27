@@ -35,16 +35,12 @@ For example, if your initial repo is named `Rare-Goofy-Gophers`, your new repo s
 1. `pipenv shell`
 2. `pipenv install pylint`
 3. `touch request_handler.py`
-4. `mkdir models posts categories tags comments`
-5. `touch models/__init__.py posts/__init__.py categories/__init__.py tags/__init__.py comments/__init__.py`
+4. `mkdir models views`
+5. `touch models/__init__.py views/__init__.py`
 6. `curl https://www.toptal.com/developers/gitignore/api/python > .gitignore`
-7. `echo '*.db' >> .gitignore`
-8. `echo 'Pipfile*' >> .gitignore`
-9. `echo '.vscode' >> .gitignore`
-10. `echo '__pycache__' >> .gitignore`
-11. `git init`
-12. `git remote add origin {server repo URL}`
-13. `git push origin -u main`
+7.  `git init`
+8.  `git remote add origin {server repo URL}`
+9.  `git push origin -u main`
 
 
 ## Constraints for Vanilla Python Rare

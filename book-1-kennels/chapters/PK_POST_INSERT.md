@@ -17,7 +17,7 @@ Previously, when you initiated a POST operation from the Postman client, a new d
 
 ```py
 def create_animal(new_animal):
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         db_cursor = conn.cursor()
 
         db_cursor.execute("""

@@ -8,7 +8,7 @@ Forget how to do it?
 
 Then run the `npm start` command and wait for your application to render in the browser.
 
-If/When you are prompted with the login screen, enter in the credentials for one of the people that you created in your database. To see the emails and passwords, look in the `kennel.db` file in your Python server project.
+If/When you are prompted with the login screen, enter in the credentials for one of the people that you created in your database. To see the emails and passwords, look in the `kennel.sqlite3` file in your Python server project.
 
 Once authenticated, you should now be able to use your application just as you did when `json-server` was running and storing your data.
 

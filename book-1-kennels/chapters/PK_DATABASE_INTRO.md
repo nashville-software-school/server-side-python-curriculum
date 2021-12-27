@@ -39,7 +39,7 @@ Before you start using SQL in VS Code, you need to set up a keyboard shortcut so
 
 In your project directory, create two files:
 
-1. `kennel.db` : This is your database to store all of the data.
+1. `kennel.sqlite3` : This is your database to store all of the data.
 1. `kennel.sql` : This is a text file to hold the SQL commands to interact with the database.
 
 ## Creating Connection to Database File
@@ -48,7 +48,7 @@ In your project directory, create two files:
 1. Click on "Add New Connection"
 1. Choose SQLite in the window that appears.
 1. Enter in "Python Kennels" for the name of the connection.
-1. Enter `kennel.db` in the Database file input field. ( don't click Select File )
+1. Enter `kennel.sqlite3` in the Database file input field. ( don't click Select File )
 1. Click the "Test Connection" button to verify that it works. ( _Error? See note below_ )
 1. Click the "Save Connection" button.
 

@@ -46,7 +46,7 @@ Now you can copy the function below into your animal request module to query the
 ```py
 def get_all_animals():
     # Open a connection to the database
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
 
         # Just use these. It's a Black Box.
         conn.row_factory = sqlite3.Row
@@ -115,7 +115,7 @@ Since you will only get one row returned, you will use the `fetchone()` method i
 
 ```py
 def get_single_animal(id):
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 

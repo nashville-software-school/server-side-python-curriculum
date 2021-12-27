@@ -153,7 +153,7 @@ In the method that queries the database for customers that have the specified em
 ```py
 def get_customers_by_email(email):
 
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 
