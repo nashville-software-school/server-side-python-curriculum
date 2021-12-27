@@ -20,7 +20,7 @@
 
 The `sqlite3` package is built into Python and will allow you to query your database. The `json` package is also built into Python and allows you to serialize Python data structures to JSON format, and vice versa.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 import sqlite3
@@ -31,7 +31,7 @@ import json
 
 Now import the **`Animal`** class so that you can create instances of it for each row of data that gets returned from the database.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 from models import Animal
@@ -41,7 +41,7 @@ from models import Animal
 
 Now you can copy the function below into your animal request module to query the database for all animals, convert each row into an **`Animal`** instance, convert the list to JSON, and respond to the client request.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 def get_all_animals():
@@ -111,7 +111,7 @@ Then you need to add a second argument to the `execute()` method. That second ar
 
 Since you will only get one row returned, you will use the `fetchone()` method instead of `fetchall()`.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 def get_single_animal(id):

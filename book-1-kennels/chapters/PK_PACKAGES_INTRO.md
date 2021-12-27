@@ -27,12 +27,12 @@ With Python packages, you don't need to do that. You can combine all of the file
 Time to see what that all means.
 
 ```sh
-mkdir animals
-touch animals/__init__.py
-touch animals/request.py
+mkdir views
+touch views/__init__.py
+touch views/animal_requests.py
 ```
 
-Place the following code into the `animals/request.py` file. You can either use the code below, **or** you can copy pasta from your own `database.json` file that you used for Nashville Kennels.
+Place the following code into the `views/animal_requests.py` file. You can either use the code below, **or** you can copy pasta from your own `database.json` file that you used for Nashville Kennels.
 
 ```py
 ANIMALS = [
@@ -66,10 +66,10 @@ def get_all_animals():
 
 This Python module has one method defined it, and you want to make that method available to any other Python code. To do that, you import it into the `__init__.py` module.
 
-> #### `animals/__init__.py`
+> #### `views/__init__.py`
 
 ```py
-from .request import get_all_animals
+from .animal_requests import get_all_animals
 ```
 
 ## Importing a Package Methods
@@ -80,7 +80,7 @@ Now you can import that function to be used in the main module. Put the new impo
 
 ```py
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from animals import get_all_animals
+from views import get_all_animals
 ```
 
 ## Using Imported Method
@@ -115,9 +115,7 @@ Make the GET request from Postman and ensure that you get the list of all three 
 
 ## Preparing for Locations and Employees
 
-To prepare for other resources being available in `python-server`, make the `locations` and `employees` directories now.
-
-Place an `__init__.py` file in each of those directories. Leave them empty for now.
+To prepare for other resources being available in `python-server`, make the `locations_requests` and `employees_requests` files within the `views` directory now.
 
 ## Back Up Your Code
 

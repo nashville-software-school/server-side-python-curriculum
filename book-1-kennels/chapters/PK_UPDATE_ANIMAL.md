@@ -10,7 +10,7 @@
 
 A small refactor to start this chapter.
 
-Open your `animals/request.py` module, and add a new `status` key to each of your animal dictionaries.
+Open your `views/animal_requests.py` module, and add a new `status` key to each of your animal dictionaries.
 
 ```py
 {
@@ -49,7 +49,7 @@ def do_PUT(self):
 
 ## Replacing Dictionary with New One
 
-In `animals/request.py` add the following function which iterates the list of animals until it finds the right one, and then replaces it with what the client sent as the replacement.
+In `views/animal_requests.py` add the following function which iterates the list of animals until it finds the right one, and then replaces it with what the client sent as the replacement.
 
 ```py
 def update_animal(id, new_animal):

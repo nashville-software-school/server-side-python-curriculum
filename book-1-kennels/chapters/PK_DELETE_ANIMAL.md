@@ -39,7 +39,7 @@ def do_DELETE(self):
 
 ## Remove Animal Dictionary from the List
 
-In the `animals/request.py` module, add the following function.
+In the `views/animal_requests.py` module, add the following function.
 
 ```py
 def delete_animal(id):
@@ -58,7 +58,7 @@ def delete_animal(id):
         ANIMALS.pop(animal_index)
 ```
 
-Make sure you import that function into `animals/__init__.py`, and then import it from the package into `request_handler.py`.
+Make sure you import that function into `views/__init__.py`, and then import it from the package into `request_handler.py`.
 
 ## Initiate DELETE Request from Client
 

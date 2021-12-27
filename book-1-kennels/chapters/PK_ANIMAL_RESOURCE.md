@@ -1,6 +1,6 @@
 # Getting a Single Animal
 
-In this chapter, you are going to write another function in your `animals/request.py` module, and also see your first `for..in` loop in Python.
+In this chapter, you are going to write another function in your `views/animal_requests.py` module, and also see your first `for..in` loop in Python.
 
 ## Learning Objectives
 
@@ -21,7 +21,7 @@ In this chapter, you are going to write another function in your `animals/reques
 
 ## Single Animal Lookup
 
-Copy the function below into your `animals/request.py` module.
+Copy the function below into your `views/animal_requests.py` module.
 
 ```py
 # Function with a single parameter
@@ -121,12 +121,12 @@ Then update the `do_GET()` function with the following code.
 
 ## Practice: Locations
 
-Now follow the same pattern for location data. Create a `locations` package with a `request.py` module in it. Copy your locations array from the `database.json` file that you used for Nashville Kennel and paste it in at the top of the module and store it in a `LOCATIONS` variable.
+Now follow the same pattern for location data. If you haven't already, create a `locations_requests.py` file within the `views` module. Copy your locations array from the `database.json` file that you used for Nashville Kennel and paste it in at the top of the module and store it in a `LOCATIONS` variable.
 
-Then implement the following two functions in the `locations/request.py` module.
+Then implement the following two functions in the `views/location_requests.py` module.
 
 1. `get_all_locations`
-1. `get_single_location`
+2. `get_single_location`
 
 Then add another `if..else` statement to the `do_GET` method in the main module to handle GET requests to `/locations` and `locations/{id}`.
 

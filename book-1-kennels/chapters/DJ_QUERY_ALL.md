@@ -11,8 +11,8 @@ Time to practice the `INSERT INTO` SQL statement.
 ## Handling GET Requests for Entries
 
 1. Create a `request_handler.py` file in your Python project directory.
-1. Create an `entries` package directory and its corresponding `__init__.py` file.
-1. Create a `request.py` file in the `entries` package.
+1. Create an `views` package directory and its corresponding `__init__.py` file.
+1. Create a `entry_requests.py` file in the `views` package.
 1. For now, copy pasta the `request_handler.py` code from the Kennel application that your instructor is walking you through.
 1. Have your server listen for the http://localhost:8088/entries URL.
 1. Write a `get_all_entries()` function in the entries request module and write the SQL to get all records from the Entries table.
