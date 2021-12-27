@@ -29,7 +29,10 @@ Luckily, you know you have Python installed on your computer and you found a sni
 mkdir -p ~/workspace/python-server
 cd ~/workspace/python-server
 touch request_handler.py
+curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
 ```
+The last command populates a .gitignore file with commonly ignored files within python projects
+
 
 Then copy pasta the following code into the `request_handler.py` file.
 
