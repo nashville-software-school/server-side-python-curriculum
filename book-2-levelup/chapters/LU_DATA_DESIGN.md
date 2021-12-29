@@ -181,4 +181,4 @@ Now that migrations are created, run the following command to execute your migra
 python3 manage.py migrate
 ```
 
-You should now have a `db.sqlite3` file in the project folder. Make a connection to the database with SQLTools to see the tables in the database.
+You should now have a `db.sqlite3` file in the project folder. Make a connection to the database with SQLite Explorer to see the tables in the database.

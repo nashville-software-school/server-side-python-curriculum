@@ -6,8 +6,7 @@ Install these extensions to get your VS Code editor set up for writing Python co
 
 * [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 * [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
-* [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
-* [SQLTools: SQLite Driver](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-sqlite)
+* [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 * [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
 * [Python Docstring Generator](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 * [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
