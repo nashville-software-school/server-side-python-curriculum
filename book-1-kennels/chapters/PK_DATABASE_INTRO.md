@@ -49,9 +49,6 @@ In your project directory, create two files:
 3. Select your database file
 4. In the explorer tab (top tab on the left), there should be a new section at the bottom that says `Sqlite Explorer`
 
-> NOTE - When testing the connection you may get an error. Ignore the message and create the connection anyway. You will get a few prompts about enabling some extensions and installing sqlite3. Accept and install those (as well as the prompt about reloading vs code) and you should be good to go!
-
-You should then see a new connection in the "Connections" panel in the upper-left part of your screen.
 
 ![](./images/connect_db_file.gif)
 

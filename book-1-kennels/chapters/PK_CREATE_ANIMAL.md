@@ -83,7 +83,7 @@ def create_animal(animal):
 Make the new function importable into the main module.
 
 1. In `views/__init__.py`, import the create function.
-1. In the main module, add `create_animal` to the list of functions being imported from the `animals` package.
+1. In the main module, add `create_animal` to the list of functions being imported from the `views` package.
 
 ## Create a New Animal
 
