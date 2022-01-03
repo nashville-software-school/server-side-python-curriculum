@@ -100,18 +100,18 @@ After this is completed, try running `pyenv install 3.9.1` again
 This tool will manage 3rd party software that is needed for each of your projects.
 
 ```sh
-pip3 install --user pipenv
+python3 -m pip install pipenv
 ```
 
 ### Troubleshooting Pipenv
 If you get `command not found: pipenv` when trying to run pipenv:
-* Mac and Linux
+* Mac, WSL and Linux
   * Open ~/.zshrc and add:
       ```
       export PIPENV_DIR="$HOME/.local"
       export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
       ```
-* Windows
+* Windows (not using WSL)
   * First run `python3 -m site --user-site`
   * Copy what that returns, replacing `site-packages` with `Scripts`
   * In the control panel add what was copied to the path
