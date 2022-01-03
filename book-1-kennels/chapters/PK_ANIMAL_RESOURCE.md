@@ -61,9 +61,9 @@ Therefore, if a client requests a single animal (_e.g. `/animals/8`_) then you n
 
 ## Split and Exceptions and Tuples... Oh My
 
-To accomplish this, you need to add the following `parse_url()` method to the `HandlRequests` class. This method takes a single input - the path of the request - and returns a tuple.
+To accomplish this, you need to add the following `parse_url()` method to the `HandleRequests` class. This method takes a single input - the path of the request - and returns a tuple.
 
-A tuple is a specialized list in Python. What makes it difference is that it is immutable - meaning is cannot be changed after it is created. You can't add things, remove things, or change the position of anything in it.
+A tuple is a specialized list in Python. What makes it different is that it is immutable - meaning it cannot be changed after it is created. You can't add things, remove things, or change the position of anything in it.
 
 ```py
 class HandleRequests(BaseHTTPRequestHandler):
