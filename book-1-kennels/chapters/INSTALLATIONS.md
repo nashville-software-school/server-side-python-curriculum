@@ -10,7 +10,6 @@ Install these extensions to get your VS Code editor set up for writing Python co
 * [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
 * [Python Docstring Generator](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 * [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
-* Watch the [Run Query Keyboard Shortcut](https://www.youtube.com/watch?v=4_9QTLGUqko) video to set up a shortcut for use in the course.
 
 ## Python on WSL
 
