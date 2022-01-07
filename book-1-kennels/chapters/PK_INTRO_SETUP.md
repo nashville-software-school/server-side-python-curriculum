@@ -4,6 +4,8 @@ Oh no! The developer of `json-server` decided he didn't want to share his code a
 
 Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 - just like `json-server` did - and responds with data.
 
+By the end of this book, you will be able to write a server application that responds to HTTP requests from a react application. 
+
 ## Learning Objectives
 
 1. You should be able to explain what an HTTP status code is.
@@ -27,8 +29,8 @@ Luckily, you know you have Python installed on your computer and you found a sni
 ## Directory and Code Setup
 
 ```sh
-mkdir -p ~/workspace/python-server
-cd ~/workspace/python-server
+mkdir -p ~/workspace/kennels-server
+cd ~/workspace/kennels-server
 touch request_handler.py
 curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
 ```
@@ -210,6 +212,6 @@ To run the debugger, click the "Run and Debug" button on the far left nav column
 
 ## Requesting Animals via Postman
 
-If you haven't already, download [Postman](https://www.postman.com/downloads/). Now open Postman and request http://localhost:8088/animals and see what `python-server` responds with. You should get an array of two animal objects.
+If you haven't already, download [Postman](https://www.postman.com/downloads/). Now open Postman and request http://localhost:8088/animals and see what the `kennels-server` responds with. You should get an array of two animal objects.
 
 ![animation of postman requesting animals](./images/requesting-animals-postman.gif)
