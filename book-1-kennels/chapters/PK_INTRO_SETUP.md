@@ -6,7 +6,6 @@ Luckily, you know you have Python installed on your computer and you found a sni
 
 ## Learning Objectives
 
-1. You should be able to explain what a client and a server is in web development.
 1. You should be able to explain what an HTTP status code is.
 1. You should be able to explain the purpose of a 200 status code.
 1. You should be able to explain the purpose of a 201 status code.
@@ -18,10 +17,12 @@ Luckily, you know you have Python installed on your computer and you found a sni
 1. You should be able to explain the purpose and action of a Python `print()` function.
 1. You should be able to explain that whitespace (i.e. indentation) defines scope in Python instead of `{}`.
 
-## Video Resources
+## Resources
 
 * [Parts of an HTTP Request](https://www.youtube.com/watch?v=pHFWGN-upGM)
 * [Quick Intro to F-Strings in Python for String Formatting](https://www.youtube.com/watch?v=o0mvgsPQ8Jg)
+* [Why we use a virtual environment with Pipenv](https://serpapi.com/blog/python-virtual-environments-using-virtualenv-and-poetry/) (read up to the "How to use virtual environment" section since we're not using Poetry)
+* [Self in Python](https://www.geeksforgeeks.org/self-in-python-class/)
 
 ## Directory and Code Setup
 
@@ -31,10 +32,25 @@ cd ~/workspace/python-server
 touch request_handler.py
 curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
 ```
-The last command populates a .gitignore file with commonly ignored files within python projects
 
+### Supporting 3rd Party Software
 
-Then copy pasta the following code into the `request_handler.py` file.
+Now you are going to install two tools:
+
+1. **autopep8** - This is an auto formatter that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide. This will be installed globally, so you won't have to install this again.
+    * Run: `python3 -m pip install autopep8`
+3. **pylint** - This is a linter that shows any lint errors in your code. This will be installed locally within the pipenv environment (more on this later). For every new project you'll need to install pylint into each one.
+    * Run: `pipenv install pylint`
+
+Then, start a virtual environment. Virtual environments ensure that libraries installed for a project don't pollute the entire operating system. It keeps everything contained to the project.
+
+```sh
+pipenv shell
+```
+
+### Writing your first Python module
+
+We need to set up our server to handle different HTTP methods (GET, POST, PUT, DELETE). The following code sets up the beginning of our server to handle the GET, POST, and PUT methods by including methods called `do_GET`, `do_POST`, and `do_PUT`. Copy pasta the following code into the `request_handler.py` file. Read the comments to get a feel for what each method is doing. Make your own comments for any questions you have about what the code is doing. 
 
 ```py
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -137,27 +153,12 @@ if __name__ == "__main__":
 
 ```
 
-## Supporting 3rd Party Software
-
-Now you are going to install two tools:
-
-1. **autopep8** - This is an auto formatter that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide.
-1. **pylint** - This is a linter that shows any lint errors in your code.
-
-* To install those globally: `pip3 install autopep8 pylint`
-* In the terminal type `which autopep8` and copy the output
-
-* Then, start a virtual environment. Virtual environments ensure that libraries installed for a project don't pollute the entire operating system. It keeps everything contained to the project.
-
-```sh
-pipenv shell
-```
-
 ## Adjust VS Code Settings
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
 Open the command palette again and search for "Open Settings (JSON)"
-Add these to the bottom of the file
+Add these to the bottom of the file, updating the autopep8Path from the previous copy command
+
 ```
 "python.formatting.autopep8Path": "paste in the output from the which command",
 "python.linting.pylintEnabled": true,
@@ -209,6 +210,6 @@ To run the debugger, click the "Run and Debug" button on the far left nav column
 
 ## Requesting Animals via Postman
 
-Now start Postman and request http://localhost:8088/animals and see what `python-server` responds with. You should get an array of two animal objects.
+If you haven't already, download [Postman](https://www.postman.com/downloads/). Now open Postman and request http://localhost:8088/animals and see what `python-server` responds with. You should get an array of two animal objects.
 
 ![animation of postman requesting animals](./images/requesting-animals-postman.gif)
