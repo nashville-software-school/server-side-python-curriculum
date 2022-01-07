@@ -115,8 +115,8 @@ Make the GET request from Postman and ensure that you get the list of all three 
 
 ## Preparing for Locations and Employees
 
-To prepare for other resources being available in `python-server`, make the `locations_requests` and `employees_requests` files within the `views` directory now.
+To prepare for other resources being available in `kennels-server`, make the `locations_requests` and `employees_requests` files within the `views` directory now.
 
 ## Back Up Your Code
 
-Now would be a great time to create a `python-server` repository on your Github account and hook up your local directory and push your code up.
+Now would be a great time to create a `kennels-server` repository on your Github account and hook up your local directory and push your code up.
