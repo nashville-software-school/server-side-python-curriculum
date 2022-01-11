@@ -114,7 +114,7 @@ If this isn't working for you, please see an instructor as soon as possible.
 ## Practice: Creating Locations
 
 1. Update the `do_POST` method in the main module to handle requests to the `/locations` path.
-1. Write a `create_location` function in the `views/view_requests.py` module that appends a new location dictionary to the list.
+1. Write a `create_location` function in the `views/location_requests.py` module that appends a new location dictionary to the list.
 
 Then perform a POST request from Postman to create a new location.
 
