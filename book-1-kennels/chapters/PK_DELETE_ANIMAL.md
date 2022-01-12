@@ -39,7 +39,7 @@ def do_DELETE(self):
 
 ## Remove Animal Dictionary from the List
 
-In the `animals/request.py` module, add the following function.
+In the `animal_requests.py` module, add the following function.
 
 ```py
 def delete_animal(id):
