@@ -58,7 +58,7 @@ def delete_animal(id):
         ANIMALS.pop(animal_index)
 ```
 
-Make sure you import that function into `animals/__init__.py`, and then import it from the package into `request_handler.py`.
+Make sure you import that function into `__init__.py`, and then import it from the package into `request_handler.py`.
 
 ## Initiate DELETE Request from Client
 
