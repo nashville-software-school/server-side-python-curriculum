@@ -10,7 +10,7 @@
 
 A small refactor to start this chapter.
 
-Open your `animal_requests.py` module, and add a new `status` key to each of your animal dictionaries.
+Open your `animals/request.py` module, and add a new `status` key to each of your animal dictionaries.
 
 ```py
 {
