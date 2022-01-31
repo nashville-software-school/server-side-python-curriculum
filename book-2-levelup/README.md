@@ -16,11 +16,11 @@ This book introduces you to the Django application framework, and the Django RES
 |  | _**[Interlude: Django ORM][9]**_ |  |  |
 |  | _**[Interlude: Django Rest Views and Serializers][10]**_ |  |  |
 | 6 | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Client Setup][12] |  |
-| 7 | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Fixtures][14] |  |
+| 7 | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> | [GamerRater Fixtures][14] |  |
 | 8 | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> | [GamerRater Games][16] |  |
 | 9 | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Game Reviews][18] |  |
 | 10 | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#models \#custom-property</sub> | [Edit Games][26] | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+| 11 | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Edit Games][26] | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 12 | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 13 | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 14 | [Leaving and Joining Events][35]| [Game Ratings][21] | |
