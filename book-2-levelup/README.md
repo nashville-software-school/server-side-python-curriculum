@@ -15,14 +15,15 @@ This book introduces you to the Django application framework, and the Django RES
 | 5 | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
 |  | _**[Interlude: Django ORM][9]**_ |  |  |
 |  | _**[Interlude: Django Rest Views and Serializers][10]**_ |  |  |
-| 6 | [Exposing Game Types][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Client Setup][12] |  |
-| 7 | [Exposing Games and Events][13] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Fixtures][14] |  |
-| 8 | [Gamers Making Games][15] <br/> <sub style="font-size:0.85rem;">\#react #forms</sub> | [GamerRater Games][16] |  |
-| 9 | [Creating Events][17] <br/> <sub style="font-size:0.85rem;">\#react #forms</sub> | [Game Reviews][18] |  |
-| 10 | [Gamers Joining Events][19] <br/> <sub style="font-size:0.85rem;">\#custom-action</sub> |  |  |
-| 11 | [Gamers Leaving Events][20] <br/> <sub style="font-size:0.85rem;">\#models #custom-property</sub> | [Game Ratings][21] | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
-| 12 | [Gamer Profiles][23] <br/> <sub style="font-size:0.85rem;">\#custom-action</sub> |  | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
-| 13 | [Oops!][25] <br/> <sub style="font-size:0.85rem;">\#edit #PUT</sub> | [Edit Games][26] | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+| 6 | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Client Setup][12] |  |
+| 7 | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Fixtures][14] |  |
+| 8 | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> | [GamerRater Games][16] |  |
+| 9 | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Game Reviews][18] |  |
+| 10 | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
+| 11 | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#models \#custom-property</sub> | [Edit Games][26] | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+| 12 | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+| 13 | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+| 14 | [Leaving and Joining Events][35]| [Game Ratings][21] | |
 | 👨‍👩‍👧‍👧 | [Group Project: Rare REST][28] |  |
 
 ## Supplementary Chapters
@@ -45,21 +46,21 @@ These chapters will let you explore more advanced capabilities and workflows bet
 [8]:	./chapters/LU_AUTHENTICATION.md
 [9]:	./chapters/ORM_PRACTICE.md
 [10]:	./chapters/LU-view-serializer-interlude.md "Interlude: Django Rest Views and Serializers"
-[11]:	./chapters/LU_GAME_TYPES.md
+[11]:	./chapters/LU_LIST_RETRIEVE.md
 [12]:	./chapters/GR_CLIENT.md
-[13]:	./chapters/LU_GAMES_AND_EVENTS.md
+[13]:	./LU_CLIENT_LIST.md
 [14]:	./chapters/GR_FIXTURES.md
-[15]:	./chapters/LU_CREATE_GAME.md
+[15]:	./chapters/LU_CREATE.md
 [16]:	./chapters/GR_GAMES.md
-[17]:	./chapters/LU_GAME_EVENTS.md
+[17]:	./chapters/LU_CREATE_GAME.md
 [18]:	./chapters/GR_REVIEWS.md
-[19]:	./chapters/LU_CUSTOM_ACTION.md
-[20]:	./chapters/LU_MODEL_PROPERTY.md
+[19]:	./chapters/LU_UPDATE.md
+[20]:	./chapters/LU_EDIT_FORMS.md
 [21]:	./chapters/GR_GAME_RATINGS.md
 [22]:	./chapters/FV_REST_FAVE.md
-[23]:	./chapters/LU_PROFILE.md
+[23]:	./chapters/LU_DESTROY.md
 [24]:	./chapters/FV_MEAL_FAVE.md
-[25]:	./chapters/LU_EDIT_EVENTS.md
+[25]:	./chapters/LU_CUSTOM_ACTION.md
 [26]:	./chapters/GR_EDIT_GAME.md
 [27]:	./chapters/FV_MEAL_RATINGS.md
 [28]:	./chapters/RARE_REST.md
@@ -69,5 +70,6 @@ These chapters will let you explore more advanced capabilities and workflows bet
 [32]:	./chapters/GR_SEARCH.md
 [33]:	./chapters/LU_JOINED_Q_FILTER.md
 [34]:	./chapters/GR_SORTING.md
+[35]:   ./chapters/LU_MODEL_PROPERTY.md
 
 [image-1]:	./chapters/images/level-up.png

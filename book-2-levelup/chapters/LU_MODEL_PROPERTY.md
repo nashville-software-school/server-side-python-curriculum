@@ -1,125 +1,80 @@
 # Joining and Leaving Events
 
-In the previous chapter, you implemented full-stack code that let an authenticated user join an event.
+In the previous chapter, you implemented server side code that let an authenticated user join or leave an event.
 
-In this chapter, you are going to implement full-stack code that will allow gamers to easily join _**and**_ leave scheduled events. You will also implement reactive code that will immediately show if the user is currently attending the event or not.
+In this chapter, you are going to implement the react code that will allow gamers to easily join and  leave scheduled events. You will also implement reactive code that will immediately show if the user is currently attending the event or not.
 
-You will learn about custom Django model properties, use a JavaScript ternary statement to show the correct UI element, use `onClick()` handlers in React, and implement a custom action - a feature available in Django REST Framework view sets.
+You will learn about custom Django model properties, use a JavaScript ternary statement to show the correct UI element, and use `onClick()` handlers in React.
 
-![animation of joining and leaving events in the client](./images/levelup-join-leave.gif)
+![animation of joining and leaving events in the client][image-1]
 
 ## Learning Objective
 
-* You should be able to explain that extra serializer fields can exist on the serializer, but is not a column in the database.
+* You should be able to identify a custom property in a Django model class.
+* You should be able to explain that a custom property exists on class instances, but is not a column in the database.
+* You should be able to differentiate between a model property that maps to a column in the database and a custom property.
+* You should be able to assign a value to a custom property in a View.
 * You should be able to recognize the `ManyToManyField` method to get the attendees from the database
 
-## Extra Serializer Fields
+# Server Side
+## Custom Model Properties
 
-In this chapter, you are going to add a `joined` property to the **`Event`** that will let the client application know if the currently authenticated user is going to an event.
+Normally, every property on a Model class in Django directly reflects a column on a table in the database. Sometimes, though, you need additional properties on a model that are calculated during a request/response cycle with a client.
+
+In this chapter, you are going to add a `joined` custom property to the **`Event`** class that will let the client application know if the currently authenticated user can join a particular event.
 
 Assume there are 4 events.
 
 A user has signed up for events #2 and #4.
 
-When that user is authenticated, and the client requests a list of all events, the JSON would look like the representations below. Note the value of the `joined` property on each event. That data is not in the database, but rather calculated by the view logic and put in the JSON by the serializer.
+When that user is authenticated, and the client requests a list of all events, there should be a new `joined` key on each event. If the user is going to that event it’s value should be `true`, if not `false`. That data is not in the database, but rather calculated by the view logic.
 
-You'll see how later in the chapter.
 
-```json
-[
-    {
-        "id": 1,
-        "game": {
-            "title": "Welcome To"
-        },
-        "description": "Welcome To at lunch",
-        "date": "2021-10-04",
-        "time": "12:00:00",
-        "joined": false
-    },
-    {
-        "id": 2,
-        "game": {
-            "title": "Settlers of Catan",
-        },
-        "description": "Friday night Settlers and drinks",
-        "date": "2021-08-14",
-        "time": "19:30:00",
-        "joined": true
-    },
-    {
-        "id": 3,
-        "game": {
-            "title": "Dungeons & Dragons",
-        },
-        "description": "Vale of the Frost King campaign. All weekend.",
-        "date": "2021-04-20",
-        "time": "08:00:00",
-        "joined": false
-    },
-    {
-        "id": 10,
-        "game": {
-            "title": "Welcome To",
-        },
-        "description": "Lightning round welcome to session. Cards will be turned every minute. Drinking involved.",
-        "date": "2020-11-11",
-        "time": "17:30:00",
-        "joined": true
-    }
-]
+## Model Property
+
+Add the following custom property to `Event` model class. It's a simple property with get/set methods with no additional validation logic. Although it looks like a function, it will act like a regular field. To get the property on the event it’s just `event.joined` no need for parenthesis and to use the setter: `event.joined = True`
+
+> #### `levelup/levelupclient/models/event.py`
+
 ```
+@property
+def joined(self):
+     return self.__joined
 
+@joined.setter
+def joined(self, value):
+    self.__joined = value
+```
+ 
 ## Event Serializer
 
-Update the **`EventSerializer`** class to include the new field. The `joined` variable tells the serializer what type of data it will be, in this case, `joined` will be a boolean. Then the field is added to the `fields` tuple.
+Update the **`EventSerializer`** class to include the new, custom property.
 
-```py
-class EventSerializer(serializers.ModelSerializer):
-    """JSON serializer for events"""
-    # if you have other variables outside the Meta class just add this line
-    joined = serializers.BooleanField(required=False)
-
-    class Meta:
-        model = Event
-        fields = ('id', 'game', 'host',
-                  'description', 'date',
-                  'time', 'attendees', 'joined')
+```python
+fields = ('id', 'game', 'organizer',
+          'description', 'date', 'time', 'attendees',
+          'joined')
 ```
 
 ## List of Events
 
-Update the list method in the event viewset with the code below.
+To set the new `joined` property, you’ll need to loop through the `events` list. Update the `list` method in the `EventView`with the code below. Add it right before using the serializer
 
-```py
-    def list(self, request):
-        """Handle GET requests to events resource
+```python
+# Set the `joined` property on every event
+for event in events:
+    # Check to see if the gamer is in the attendees list on the event
+    event.joined = gamer in event.attendees.all()
 
-        Returns:
-            Response -- JSON serialized list of events
-        """
-        # Get the current authenticated user
-        gamer = Gamer.objects.get(user=request.auth.user)
-        events = Event.objects.all()
-
-        # Set the `joined` property on every event
-        for event in events:
-            # Check to see if the gamer is in the attendees list on the event
-            event.joined = gamer in event.attendees.all()
-
-        # Support filtering events by game
-        game = self.request.query_params.get('gameId', None)
-        if game is not None:
-            events = events.filter(game__id=type)
-
-        serializer = EventSerializer(
-            events, many=True, context={'request': request})
-        return Response(serializer.data)
+               
 ```
 
-## Event Manager Method
+You’ve seen the `add` and `remove` methods on the `ManyToManyField`. There’s also an `all` method that gets every gamer’s attending the event. The conditional, `gamer in event.attendees.all()` will evaluate to True or False if the gamer is in the attendees list. 
 
-In the event manager, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to remove the relationship.
+# Client Side
+## Event Manager Methods
+
+In the event provider, create the functions to be invoked when the current gamer wants to join or leave a specific event. This request has everything the server needs to remove the relationship.
 
 1. The event via the `eventId` parameter
 1. The user via the `Authorization` token
@@ -128,25 +83,11 @@ In the event manager, create the function to be invoked when the current gamer w
 
 ```js
 export const leaveEvent = eventId => {
-    return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
-        method: "DELETE",
-        headers:{
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
-        }
-    })
-        .then(response => response.json())
-        .then(getEvents)
+  // TODO: Write the DELETE fetch request to leave an event
 }
 
 export const joinEvent = eventId => {
-    return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
-        method: "POST",
-        headers:{
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
-        }
-    })
-        .then(response => response.json())
-        .then(getEvents)
+    // TODO: Write the POST fetch request to join and event
 }
 ```
 
@@ -154,59 +95,23 @@ export const joinEvent = eventId => {
 
 Time for all of your hard work to pay off. You will now use the `joined` property on each event to display a Join button, or a Leave button on each event.
 
-In React, you need to update your **`EventList`** component in the client to allow the user to leave or join an event. Note that the `leaveEvent()` function was added the the deconstructed object from the event context.
+In React, you need to update your **`EventList`** component in the client to allow the user to leave or join an event. Inside the `events.map`, use the `joined` property to write a ternary that shows the Leave Button if `joined === true` or shows the Join button if `event.joined === false`. The `onClick` function of each button should call the corresponding fetch call and then update the `events` state
 
 > **Vocabulary:** `condition ? what happens if true : what happens if false` is called a ternary statement in JavaScript. It's a condensed version of an `if..else` block of code that you can use in JSX, because interpolation only supports a single JavaScript statement.
 
-```jsx
-import React, { useEffect } from "react"
-import { useHistory } from "react-router-dom"
-import { getEvents, joinEvent, leaveEvent } from "./EventManager.js"
-import "./Events.css"
-
-export const EventList = () => {
-    const history = useHistory()
-    const [ events, updateEvents ] = useState([])
-
-    const eventFetcher = () => {
-        getEvents().then(data => updateEvents(data))
-    }
-
-    useEffect(() => {
-        eventFetcher()
-    }, [])
-
-    return (
-        <article className="events">
-            <header className="events__header">
-                <h1>Level Up Game Events</h1>
-                <button className="btn btn-2 btn-sep icon-create"
-                    onClick={() => {
-                        history.push({ pathname: "/events/new" })
-                    }}
-                >Schedule New Event</button>
-            </header>
-            {
-                events.map(event => {
-                    return <section key={event.id} className="registration">
-                        <div className="registration__game">{event.game.title}</div>
-                        <div>{event.description}</div>
-                        <div>
-                            {event.date} @ {event.time}
-                        </div>
-                        {
-                            event.joined
-                                ? <button className="btn btn-3"
-                                    onClick={() => leaveEvent(event.id).then(() => eventFetcher())}
-                                    >Leave</button>
-                                : <button className="btn btn-2"
-                                    onClick={() => joinEvent(event.id).then(() => eventFetcher())}
-                                    >Join</button>
-                        }
-                    </section>
-                })
-            }
-        </article>
-    )
+```js
+{
+  event.joined ?
+  // TODO: create the Leave button
+  :
+  // TODO: create the Join button
 }
+                     
 ```
+
+# Try it out
+Open your browser and go to the events page. 
+- Click on a Join button, it should flip to a Leave button
+- Click on a Leave button, it should flip to a Join button
+
+[image-1]:	./images/levelup-join-leave.gif

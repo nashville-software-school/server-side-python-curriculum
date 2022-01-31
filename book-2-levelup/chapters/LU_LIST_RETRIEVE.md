@@ -32,7 +32,6 @@ class GameTypeView(ViewSet):
         Returns:
             Response -- JSON serialized list of game types
         """
-        
 
 ```
 
