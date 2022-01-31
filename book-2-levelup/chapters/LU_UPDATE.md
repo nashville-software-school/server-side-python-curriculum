@@ -8,7 +8,7 @@ The `update` method will handle the `PUT` requests to the resource. In this chap
 
 ## API View Code
 `PUT` requests expect the entire object to be sent to the server regardless of whether a field has been updated. Here is the `update` method for the `GameView`:
-```json
+```python
 def update(self, request, pk):
     """Handle PUT requests for a game
 
