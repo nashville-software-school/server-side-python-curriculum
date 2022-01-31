@@ -36,7 +36,7 @@ Add the following custom property to `Event` model class. It's a simple property
 
 > #### `levelup/levelupclient/models/event.py`
 
-```
+```python
 @property
 def joined(self):
      return self.__joined
@@ -74,7 +74,7 @@ You’ve seen the `add` and `remove` methods on the `ManyToManyField`. There’s
 # Client Side
 ## Event Manager Methods
 
-In the event provider, create the functions to be invoked when the current gamer wants to join or leave a specific event. This request has everything the server needs to remove the relationship.
+In the event manager, create the functions to be invoked when the current gamer wants to join or leave a specific event. This request has everything the server needs to remove the relationship.
 
 1. The event via the `eventId` parameter
 1. The user via the `Authorization` token
