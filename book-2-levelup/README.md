@@ -48,7 +48,7 @@ These chapters will let you explore more advanced capabilities and workflows bet
 [10]:	./chapters/LU-view-serializer-interlude.md "Interlude: Django Rest Views and Serializers"
 [11]:	./chapters/LU_LIST_RETRIEVE.md
 [12]:	./chapters/GR_CLIENT.md
-[13]:	./LU_CLIENT_LIST.md
+[13]:	./chapters/LU_CLIENT_LIST.md
 [14]:	./chapters/GR_FIXTURES.md
 [15]:	./chapters/LU_CREATE.md
 [16]:	./chapters/GR_GAMES.md
