@@ -46,9 +46,9 @@ return Response(serializer.data)
 We’re using the `get`method of the ORM to retrieve a single `GameType`. This is equivalent to this sql execute: 
 ```python
 db_cursor.execute("""
-	select id, label
-	from levelupapi_gametype
-	where id = ?""",(pk,) 
+    select id, label
+    from levelupapi_gametype
+    where id = ?""",(pk,) 
 )
 ```
 
@@ -142,9 +142,9 @@ The `request` from the method parameters holds all the information for the reque
 After getting a value for `game_type`, we can use the ORM `filter` method to only include games with that game type. This is the equivalent of this command:
 ```py
 db_cursor.execute("""
-	select *
-	from levelupapi_game
-	where game_type_id = ?
+    select *
+    from levelupapi_game
+    where game_type_id = ?
 """, (game_type,))
 ```
 
@@ -161,9 +161,9 @@ What happens if you try to get a game type that doesn’t exist? Try `http://loc
 We can change that by adding a try/except block around the `GameType.obejcts.get` method call. Update the retrieval method with this code:
 ```py
 try:
-	game_type = GameType.objects.get(pk=pk)
-	serializer = GameTypeSerializer(game_type)
-	return Response(serializer.data)
+    game_type = GameType.objects.get(pk=pk)
+    serializer = GameTypeSerializer(game_type)
+    return Response(serializer.data)
 except GameType.DoesNotExist as ex:
     return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND) 
 ```
