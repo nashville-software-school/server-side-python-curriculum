@@ -1,9 +1,5 @@
 # Joining an Event
-
-In this chapter, you are going to to allow gamers to sign up for an event that has been scheduled.
-
-![animation showing joining an event](./images/levelup-join.gif)
-
+Right now, there’s no method for a user to join or leave an event. Instead of creating a view just for the `EventGamer` model, it’s better to add custom actions to either the `EventView`, since the `Event` model is the one that has the `ManyToManyField`. Custom actions on a view allow for more than just basic CRUD functionality.
 ## Learning Objectives
 
 * You should be able to remember that a custom action is a method on a ViewSet.
@@ -14,137 +10,46 @@ In this chapter, you are going to to allow gamers to sign up for an event that h
 
 ## Custom Action
 
-With Django REST Framework, you can create a custom action that your API must support by using the `@action` decorator above a method within a ViewSet. For this action, you want a client to create a request that allows a gamer to sign up for an event.
+With Django REST Framework, you can create a custom action that your API will support by using the `@action` decorator above a method within a ViewSet. For this action, you want a client to make a request to allow a gamer to sign up for an event.
 
-You also want to allow a client to allow a gamer to cancel their signup for an event.
-
-This mean that your custom action needs to support `POST`, and `DELETE` verbs.
-
-There are actually many ways to design this, and this chapter will show you one of them. You are going to support requests to the following URL.
-
-http://localhost:8000/events/2/signup
-
-The resource is `events`. The route parameter of `2` specifies which event is being targeted. The `signup` method at the end is your custom action.
+There will also be an action to allow a gamer to leave an event.
 
 ## Signup Method
 
-Add the following method to your event viewset.
+Add the following code to the  `EventView`
 
-> #### `levelup/levelupapi/views/event.py`
+Add this one to the imports at the top
+```py
+from rest_framework.decorators import action
+```
 
 ```py
-@action(methods=['post', 'delete'], detail=True)
-def signup(self, request, pk=None):
-    """Managing gamers signing up for events"""
-    # Django uses the `Authorization` header to determine
-    # which user is making the request to sign up
+@action(methods=['post'], detail=True)
+def signup(self, request, pk):
+    """Post request for a user to sign up for an event"""
+   
     gamer = Gamer.objects.get(user=request.auth.user)
+    event = Event.objects.get(pk=pk)
+    event.attendees.add(gamer)
+    return Response({'message': 'Gamer added'}, status=status.HTTP_201_CREATED)
+    
 
-    try:
-        # Handle the case if the client specifies a game
-        # that doesn't exist
-        event = Event.objects.get(pk=pk)
-    except Event.DoesNotExist:
-        return Response(
-            {'message': 'Event does not exist.'},
-            status=status.HTTP_400_BAD_REQUEST
-        )
-
-    # A gamer wants to sign up for an event
-    if request.method == "POST":
-        try:
-            # Using the attendees field on the event makes it simple to add a gamer to the event
-            # .add(gamer) will insert into the join table a new row the gamer_id and the event_id
-            event.attendees.add(gamer)
-            return Response({}, status=status.HTTP_201_CREATED)
-        except Exception as ex:
-            return Response({'message': ex.args[0]})
-
-    # User wants to leave a previously joined event
-    elif request.method == "DELETE":
-        try:
-            # The many to many relationship has a .remove method that removes the gamer from the attendees list
-            # The method deletes the row in the join table that has the gamer_id and event_id
-            event.attendees.remove(gamer)
-            return Response(None, status=status.HTTP_204_NO_CONTENT)
-        except Exception as ex:
-            return Response({'message': ex.args[0]})
 ```
 
-## Event Manager Method
+Using the `action` decorator turns a method into a new route. In this case, the action will accept `POST` methods and because `detail=True` the url will include the pk. Since we need to know which event the user wants to sign up for we’ll need to have the pk. The route is named after the function. So to call this method the url would be `http://locahost:8000/events/2/signup`
 
-In the event manager, create the function to be invoked when the current gamer wants to join a specific event. This request has everything the server needs to create the relationship.
+Just like in the `create` method, we get the gamer that’s logged in, then the event by it’s `pk`. The `ManyToManyField` , `attendees`, on the `Event` model takes care of most of the hard work. The `add` method on `attendees` creates the relationship between this event and gamer by adding the `event_id` and `gamer_id` to the join table. The response then sends back a `201` status code.
 
-1. The event via the `eventId` parameter
-1. The user via the `Authorization` token
+### Postman
+Make a `POST` request to `http://locahost:8000/events/1/signup`. If it was successful check the join `event_gamer` join table to see the new row that was added. 
 
-```js
-export const joinEvent = eventId => {
-    return fetch(`http://localhost:8000/events/${ eventId }/signup`, {
-        method: "POST",
-        headers:{
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
-        }
-    })
-        .then(response => response.json())
-}
-```
-
-## Join and Leave Buttons
-
-Now you need to update your **`EventList`** component in the client to allow the user to leave or join an event. Note that the `joinEvent()` function was added the the deconstructed object from the event context.
-
-Then that function is invoked when the join button - which is on the bottom of each event card - is clicked.
-
-```jsx
-import React, { useEffect } from "react"
-import { useHistory } from "react-router-dom"
-import { getEvents, joinEvent } from "./EventManager.js"
-import "./Events.css"
-
-export const EventList = () => {
-    const history = useHistory()
-    const [ events, assignEvents ] = useState([])
-
-    const eventFetcher = () => {
-        getEvents()
-            .then(data => assignEvents(data))
-    }
-
-    useEffect(() => {
-        eventFetcher()
-    }, [])
-
-    return (
-        <article className="events">
-            <header className="events__header">
-                <h1>Level Up Game Events</h1>
-                <button className="btn btn-2 btn-sep icon-create"
-                    onClick={() => {
-                        history.push({ pathname: "/events/new" })
-                    }}
-                >Schedule New Event</button>
-            </header>
-            {
-                events.map(event => {
-                    return <section key={event.id} className="registration">
-                        <div className="registration__game">{event.game.title}</div>
-                        <div>{event.description}</div>
-                        <div>
-                            {event.date} @ {event.time}
-                        </div>
-                        <button className="btn btn-2"
-                                onClick={
-                                    () => {
-                                        joinEvent(event.id)
-                                            .then(() => eventFetcher())
-                                    }
-                                }
-                        >Join</button>
-                    </section>
-                })
-            }
-        </article >
-    )
-}
-```
+## On your own
+Now there needs to be a way for a gamer to leave an event.
+1. Write a new method named `leave`
+2. It should have the `action` decorator
+3. It should accept `DELETE` requests
+4. It should be a detail route
+5. Get the gamer and the event objects
+6. Use the `remove` method on the `ManyToManyField` to delete the gamer from the join table
+7. Return a `204` Response
+8. Test in Postman by sending a `DELETE` request to `http://locahost:8000/events/1/leave`
