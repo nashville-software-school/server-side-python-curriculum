@@ -12,13 +12,13 @@ Here’s the code to create a game. We’ll break it down next.
             Response -- JSON serialized game instance
         """
         gamer = Gamer.objects.get(user=request.auth.user)
-        game_type = GameType.objects.get(pk=request.data["gameTypeId"])
+        game_type = GameType.objects.get(pk=request.data["game_type"])
 
         game = Game.objects.create(
             title=request.data["title"],
             maker=request.data["maker"],
-            number_of_players=request.data["numberOfPlayers"],
-            skill_level=request.data["skillLevel"],
+            number_of_players=request.data["number_of_players"],
+            skill_level=request.data["skill_level"],
             gamer=gamer,
             game_type=game_type
         )
@@ -56,11 +56,43 @@ Since we’ve added the `create` method to the view class, the `router` inside o
 {
     "title": "Codenames",
     "maker": "CGE",
-    "numberOfPlayers": 6,
-    "skillLevel": 3,
-    "gameTypeId": 2
+    "number_of_players": 6,
+    "skill_level": 3,
+    "game_type": 2
 }
 ```
 
 ## On Your Own
-Add the `create` method to the `EventView`. Take a look at the `Event` model to remember which fields you’ll need to account for. By the end, a `POST` request to `http://localhost:8000/events` should add a new event to the database.
+Add the `create` method to the `EventView`. Take a look at the `Event` model to remember which fields you’ll need to account for. For now, don't add any `attendees` to the event. We'll look at adding that later. By the end, a `POST` request to `http://localhost:8000/events` should add a new event to the database.
+
+## (Optional) Bonus
+Something you'll learn quickly as a developer is users cannot be trusted. If there's an input field that's expecting a number, some user somewhere will type "seven". Try it out in Postman. In the request body, change the value of `number_of_players` to `"six"`. There's also a `max_length` on the title but if you try to add a title over the character limit right now the code will let you. Let's add a validation check to the code. 
+
+1. First, we need to add a new serializer. This serializer will include the fields that are expected from the client. Notice it does not have the `gamer` in the fields. Since the `gamer` comes from the Auth header it will not be in the request body
+```python
+class CreateGameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ['id', 'title', 'maker', 'number_of_players', 'skill_level', 'game_type']
+```
+
+2. The new serializer will be used to validate and save the new game in the `create` method.  Here is what the updated `create` method will now look like:
+```python
+def create(self, request):
+    """Handle POST operations
+
+    Returns:
+        Response -- JSON serialized game instance
+    """
+    gamer = Gamer.objects.get(user=request.auth.user)
+    try:
+        serializer = CreateGameSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(gamer=gamer)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    except ValidationError as ex:
+        return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+```
+Instead of making a new instance of the `Game` model, the `request.data` dictionary is passed to the new serializer as the data. The keys on the dictionary     __must__ match what is in the fields on the serializer. After creating the serializer instance, call `is_valid` to make sure the client sent valid data. If the code passes validation, then the `save` method will add the game to the database and add an `id` to the serializer.
+3. Try it out again in Postman to see the difference in error handling
+4. Update the `EventView`'s create method to check for validation.
