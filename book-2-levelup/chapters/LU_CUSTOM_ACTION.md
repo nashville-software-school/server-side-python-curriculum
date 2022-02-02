@@ -36,12 +36,12 @@ def signup(self, request, pk):
 
 ```
 
-Using the `action` decorator turns a method into a new route. In this case, the action will accept `POST` methods and because `detail=True` the url will include the pk. Since we need to know which event the user wants to sign up for we’ll need to have the pk. The route is named after the function. So to call this method the url would be `http://locahost:8000/events/2/signup`
+Using the `action` decorator turns a method into a new route. In this case, the action will accept `POST` methods and because `detail=True` the url will include the pk. Since we need to know which event the user wants to sign up for we’ll need to have the pk. The route is named after the function. So to call this method the url would be `http://localhost:8000/events/2/signup`
 
 Just like in the `create` method, we get the gamer that’s logged in, then the event by it’s `pk`. The `ManyToManyField` , `attendees`, on the `Event` model takes care of most of the hard work. The `add` method on `attendees` creates the relationship between this event and gamer by adding the `event_id` and `gamer_id` to the join table. The response then sends back a `201` status code.
 
 ### Postman
-Make a `POST` request to `http://locahost:8000/events/1/signup`. If it was successful check the join `event_gamer` join table to see the new row that was added. 
+Make a `POST` request to `http://localhost:8000/events/1/signup`. If it was successful check the join `event_gamer` join table to see the new row that was added. 
 
 ## On your own
 Now there needs to be a way for a gamer to leave an event.
@@ -52,4 +52,4 @@ Now there needs to be a way for a gamer to leave an event.
 5. Get the gamer and the event objects
 6. Use the `remove` method on the `ManyToManyField` to delete the gamer from the join table
 7. Return a `204` Response
-8. Test in Postman by sending a `DELETE` request to `http://locahost:8000/events/1/leave`
+8. Test in Postman by sending a `DELETE` request to `http://localhost:8000/events/1/leave`
