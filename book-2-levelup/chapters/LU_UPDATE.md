@@ -19,10 +19,10 @@ def update(self, request, pk):
     game = Game.objects.get(pk=pk)
     game.title = request.data["title"]
     game.maker = request.data["maker"]
-    game.number_of_players = request.data["numberOfPlayers"]
-    game.skill_level = request.data["skillLevel"]
+    game.number_of_players = request.data["number_of_players"]
+    game.skill_level = request.data["skill_level"]
 
-    game_type = GameType.objects.get(pk=request.data["gameTypeId"])
+    game_type = GameType.objects.get(pk=request.data["game_type"])
     game.game_type = game_type
     game.save()
 
@@ -38,12 +38,38 @@ The `update` method is called when any `PUT` requests are made to `http://localh
 {
     "title": "Codenames 2 Player",
     "maker": "CGE",
-    "numberOfPlayers": 2,
-    "skillLevel": 3,
-    "gameTypeId": 2
+    "number_of_players": 2,
+    "skill_level": 3,
+    "game_type": 2
 }
 ```
 After making the request, `retrieve` the game to verify the updates
+
 ## On Your Own
 Write the code to `update` an event
 
+## (Optional) Bonus
+Let's follow the same pattern as [Chapter 8's](./chapters/LU_CREATE.md) bonus content and add validation to the `update` method. We'll reuse the same serializer from that chapter, so finish that chapter's bonus content if you haven't already.
+
+### Update with validation
+Here's the new code for the `update` method:
+```python
+def update(self, request, pk):
+    """Handle PUT requests for a game
+
+    Returns:
+        Response -- Empty body with 204 status code
+    """
+    try:
+        game = Game.objects.get(pk=pk)
+        serializer = CreateGameSerializer(game, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+    except ValidationError as ex:
+        return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+```
+This time, when using the `CreateGameSerializer`, the original game object is passed to the serializer, along with the `request.data`. This will make any updates on the game object. Then, just like in the `create`, check for validity and `save` the updated object. 
+
+### On Your Own
+Add validation to the `EventView`'s `update` method
