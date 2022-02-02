@@ -46,8 +46,8 @@ class GameTypeView(ViewSet):
             game_types, many=True, context={'request': request})
         return Response(serializer.data)
 
-	def update(self, request, pk):
-		"""Handle PUT requests to get all game types
+    def update(self, request, pk):
+        """Handle PUT requests to get all game types
 
         Returns:
             Response -- 204
@@ -56,18 +56,18 @@ class GameTypeView(ViewSet):
         game_type.label = request.data['label']
         game.save()
 		
-		return Response({}, status=status.HTTP_204_NO_CONTENT)
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
-	def destroy(self, request, pk):
-		"""Handle DELETE requests to get all game types
+    def destroy(self, request, pk):
+	"""Handle DELETE requests to get all game types
 
         Returns:
             Response -- 204
         """
-		game_type = GameType.objects.get(pk=pk)
-		game_type.delete()
+	game_type = GameType.objects.get(pk=pk)
+	game_type.delete()
 
-		return Response({}, status=status.HTTP_204_NO_CONTENT)
+	return Response({}, status=status.HTTP_204_NO_CONTENT)
 
 ```
 
