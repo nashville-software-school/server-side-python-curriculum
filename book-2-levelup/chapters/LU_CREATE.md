@@ -78,6 +78,10 @@ class CreateGameSerializer(serializers.ModelSerializer):
 
 2. The new serializer will be used to validate and save the new game in the `create` method.  Here is what the updated `create` method will now look like:
     ```python
+    // add this line at the top with the other imports
+    from django.core.exceptions import ValidationError
+
+    // this will replace the previous create method
     def create(self, request):
         """Handle POST operations
 
