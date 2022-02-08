@@ -87,13 +87,10 @@ class CreateGameSerializer(serializers.ModelSerializer):
             Response -- JSON serialized game instance
         """
         gamer = Gamer.objects.get(user=request.auth.user)
-        try:
-            serializer = CreateGameSerializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save(gamer=gamer)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except ValidationError as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+        serializer = CreateGameSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(gamer=gamer)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     ```
     
     Instead of making a new instance of the `Game` model, the `request.data` dictionary is passed to the new serializer as the data. The keys on the dictionary     __must__ match what is in the fields on the serializer. After creating the serializer instance, call `is_valid` to make sure the client sent valid data. If the code passes validation, then the `save` method will add the game to the database and add an `id` to the serializer.
