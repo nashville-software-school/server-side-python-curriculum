@@ -60,14 +60,11 @@ def update(self, request, pk):
     Returns:
         Response -- Empty body with 204 status code
     """
-    try:
-        game = Game.objects.get(pk=pk)
-        serializer = CreateGameSerializer(game, data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
-    except ValidationError as ex:
-        return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+    game = Game.objects.get(pk=pk)
+    serializer = CreateGameSerializer(game, data=request.data)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(None, status=status.HTTP_204_NO_CONTENT)
 ```
 This time, when using the `CreateGameSerializer`, the original game object is passed to the serializer, along with the `request.data`. This will make any updates on the game object. Then, just like in the `create`, check for validity and `save` the updated object. 
 
