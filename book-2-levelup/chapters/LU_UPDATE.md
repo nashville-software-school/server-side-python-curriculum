@@ -49,7 +49,7 @@ After making the request, `retrieve` the game to verify the updates
 Write the code to `update` an event
 
 ## (Optional) Bonus
-Let's follow the same pattern as [Chapter 8's](./chapters/LU_CREATE.md) bonus content and add validation to the `update` method. We'll reuse the same serializer from that chapter, so finish that chapter's bonus content if you haven't already.
+Let's follow the same pattern as [Chapter 8's](./LU_CREATE.md) bonus content and add validation to the `update` method. We'll reuse the same serializer from that chapter, so finish that chapter's bonus content if you haven't already.
 
 ### Update with validation
 Here's the new code for the `update` method:
