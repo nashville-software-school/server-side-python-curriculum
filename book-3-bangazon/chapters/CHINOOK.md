@@ -1,39 +1,37 @@
-# Ch.1 Learning SQL with Chinook
+# Learning SQL with Chinook
 
 ## Setup
 
 ### Downloading the Database File
 
-Download the [Chinook Database](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite?raw=true). It will immediately download into your `Downloads` directory.
+Follow the link below and click the "Download" button when you get there.
+
+[Chinook Database](./data/Chinook_Sqlite.sqlite)
 
 ### Move Database to Workspace
 
 1. In your CLI, get to the directory where you extracted the archive. It should be something like the following.
-
-   ```sh
-   cd ~/Downloads
-   ```
+    ```sh
+    cd ~/Downloads
+    ```
 
 1. Create a directory for your work.
 
-   ```sh
-   mkdir -p ~/workspace/chinook
-   ```
+    ```sh
+    mkdir -p ~/workspace/chinook
+    ```
 
-1. Move the `Chinook_Sqlite.sqlite` file to that directory
+2. Move the `Chinook_Sqlite.sqlite` file to that directory
 
-   ```sh
-   cp Chinook_Sqlite.sqlite ~/workspace/chinook
-   ```
+    ```sh
+    cp Chinook_Sqlite.sqlite ~/workspace/chinook
+    ```
 
 That file **is** the database. It contains all of the tables and data. Open that directory in VS Code and create a connection to the database file.
-
-If you are on a Windows machine and were unable to move your database to Workspace, click [here](./CHINOOK_WINDOWS_MOVE_DB.md)
 
 ## Instructions
 
 ### Public Repo
-
 In your cohort's Github account, create a repository for your answers. Name your repository `chinook-{your Github username]`.
 
 ### ERD
@@ -66,7 +64,7 @@ When you believe you have it solved, add/commit/push to your Github repo.
 1. `sales_agent_total_sales.sql`: Provide a query that shows total sales made by each sales agent.
 1. `top_2009_agent.sql`: Which sales agent made the most in sales in 2009?
 
-   > **Hint:** Use the [MAX](https://www.sqlite.org/lang_aggfunc.html#maxggunc) function on a [subquery](http://beginner-sql-tutorial.com/sql-subquery.htm).
+    > **Hint:** Use the [MAX](https://www.sqlite.org/lang_aggfunc.html#maxggunc) function on a [subquery](http://beginner-sql-tutorial.com/sql-subquery.htm).
 
 1. `top_agent.sql`: Which sales agent made the most in sales over all?
 1. `sales_agent_customer_count.sql`: Provide a query that shows the count of customers assigned to each sales agent.
