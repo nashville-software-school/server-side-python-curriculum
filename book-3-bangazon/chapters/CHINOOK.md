@@ -4,7 +4,9 @@
 
 ### Downloading the Database File
 
-Download the [Chinook Database](./data/Chinook_Sqlite.sqlite). It will immediately download into your `Downloads` directory.
+Follow the link below and click the "Download" button when you get there.
+
+[Chinook Database](./data/Chinook_Sqlite.sqlite)
 
 ### Move Database to Workspace
 
