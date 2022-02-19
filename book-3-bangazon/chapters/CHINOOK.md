@@ -4,7 +4,11 @@ Chinook is a sample database for SQL Server, SQLite, MySQL, etc. The Chinook dat
 
 ## Setup
 
-### Step One: Download the [Chinook Database File](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite?raw=true)
+### Downloading the Database File
+
+Follow the link below and click the "Download" button when you get there.
+
+[Chinook Database](./data/Chinook_Sqlite.sqlite)
 
 ##### *NOTE: The database will download into your* `Downloads` *directory by default.*
 
@@ -175,7 +179,7 @@ For each of the following exercises...
     * Which country's customers spent the most?
 
     > **HINT:** Use the [MAX](https://www.sqlite.org/lang_aggfunc.html#maxggunc) function on a [subquery](http://beginner-sql-tutorial.com/sql-subquery.htm).
-    
+
 1. `top_2013_track.sql`:
     * Provide a query that shows the most purchased track(s) of 2013.
 
