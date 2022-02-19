@@ -4,7 +4,7 @@
 
 ### Downloading the Database File
 
-Download the [Chinook Database](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite?raw=true). It will immediately download into your `Downloads` directory.
+Download the [Chinook Database](./data/Chinook_Sqlite.sqlite). It will immediately download into your `Downloads` directory.
 
 ### Move Database to Workspace
 
