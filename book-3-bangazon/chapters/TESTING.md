@@ -108,16 +108,20 @@ class GameTests(APITestCase):
         # Assert that the response status code is 201 (CREATED)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        # SEED THE DATABASE WITH A GAMETYPE
-        # This is necessary because the API does not
-        # expose a /gametypes URL path for creating GameTypes
+        # SEED THE DATABASE WITH A GameType and Game
+        # This is necessary because the tests use a seperate database that has nothing in it
+        # until rows are created in the set up
 
-        # Create a new instance of GameType
-        game_type = GameType()
-        game_type.label = "Board game"
-
-        # Save the GameType to the testing database
-        game_type.save()
+        self.game_type = GameType.objects.create(label="Board Game")
+        self.game = Game.objects.create(
+            gamer_id=1,
+            title="Sorry",
+            maker="Milton Bradley",
+            skill_level=5,
+            number_of_players=4,
+            game_type=self.game_type,
+        )
+        
 
     def test_create_game(self):
         """
@@ -131,10 +135,9 @@ class GameTests(APITestCase):
         game = {
             "title": "Clue",
             "maker": "Milton Bradley",
-            "skillLevel": 5,
-            "numberOfPlayers": 6,
-            "gameTypeId": 1,
-            "description": "More fun than a Barrel Of Monkeys!"
+            "skill_level": 5,
+            "number_of_players": 6,
+            "game_type": self.game_type.id,
         }
 
         # Initiate POST request and capture the response
@@ -147,9 +150,10 @@ class GameTests(APITestCase):
         self.assertEqual(response.data["gamer"]['user'], self.token.user_id)
         self.assertEqual(response.data["title"], game['title'])
         self.assertEqual(response.data["maker"], game['maker'])
-        self.assertEqual(response.data["skill_level"], game['skillLevel'])
-        self.assertEqual(response.data["number_of_players"], game['numberOfPlayers'])
-        self.assertEqual(response.data["game_type"]['id'], game['gameTypeId'])
+        self.assertEqual(response.data["skill_level"], game['skill_level'])
+        self.assertEqual(
+            response.data["number_of_players"], game['number_of_players'])
+        self.assertEqual(response.data["game_type"]['id'], game['game_type'])
 ```
 
 ## Running the Test(s)
@@ -191,21 +195,8 @@ Add the function below to your `GameTests` class.
         """
         Ensure we can GET an existing game.
         """
-
-        # Create a new instance of Game
-        game = Game()
-        game.gamer_id = 1
-        game.title = "Monopoly"
-        game.maker = "Milton Bradley"
-        game.skill_level = 5
-        game.number_of_players = 4
-        game.game_type_id = 1
-
-        # Save the Game to the testing database
-        game.save()
-
         # Define the URL path for getting a single Game
-        url = f'/games/{game.id}'
+        url = f'/games/{self.game.id}'
 
         # Initiate GET request and capture the response
         response = self.client.get(url)
@@ -214,12 +205,12 @@ Add the function below to your `GameTests` class.
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Assert that the values are correct
-        self.assertEqual(response.data["gamer"]['id'], game.gamer_id)
-        self.assertEqual(response.data["title"], game.title)
-        self.assertEqual(response.data["maker"], game.maker)
-        self.assertEqual(response.data["skill_level"], game.skill_level)
-        self.assertEqual(response.data["number_of_players"], game.number_of_players)
-        self.assertEqual(response.data["game_type"]['id'], game.game_type_id)
+        self.assertEqual(response.data["gamer"]['id'], self.game.gamer_id)
+        self.assertEqual(response.data["title"], self.game.title)
+        self.assertEqual(response.data["maker"], self.game.maker)
+        self.assertEqual(response.data["skill_level"], self.game.skill_level)
+        self.assertEqual(response.data["number_of_players"], self.game.number_of_players)
+        self.assertEqual(response.data["game_type"]['id'], self.game.game_type_id)
 ```
 
 ----
@@ -233,31 +224,16 @@ Add the function below to your `GameTests` class.
         """
         Ensure we can change an existing game.
         """
-
-        # Create a new instance of Game
-        game = Game()
-        game.game_type_id = 1
-        game.skill_level = 5
-        game.title = "Sorry"
-        game.maker = "Milton Bradley"
-        game.number_of_players = 4
-        game.gamer_id = 1
-        game.description = "Not Sorry!"
-
-        # Save the Game to the testing database
-        game.save()
-
         # Define the URL path for updating an existing Game
-        url = f'/games/{game.id}'
+        url = f'/games/{self.game.id}'
 
         # Define NEW Game properties
         new_game = {
             "title": "Sorry",
             "maker": "Hasbro",
-            "skillLevel": 2,
-            "numberOfPlayers": 4,
-            "gameTypeId": 1,
-            "description": "Is it too late now to say sorry?"
+            "skill_level": 2,
+            "number_of_players": 4,
+            "game_type": 1,
         }
 
         # Initiate PUT request and capture the response
@@ -277,10 +253,10 @@ Add the function below to your `GameTests` class.
         self.assertEqual(response.data["title"], new_game['title'])
         self.assertEqual(response.data["maker"], new_game['maker'])
         self.assertEqual(
-            response.data["skill_level"], new_game['skillLevel'])
+            response.data["skill_level"], new_game['skill_level'])
         self.assertEqual(
-            response.data["number_of_players"], new_game['numberOfPlayers'])
-        self.assertEqual(response.data["game_type"]['id'], new_game['gameTypeId'])
+            response.data["number_of_players"], new_game['number_of_players'])
+        self.assertEqual(response.data["game_type"]['id'], new_game['game_type'])
 
 ```
 
@@ -295,22 +271,8 @@ Add the function below to your `GameTests` class.
         """
         Ensure we can delete an existing game.
         """
-
-        # Create a new instance of Game
-        game = Game()
-        game.gamer_id = 1
-        game.title = "Sorry"
-        game.maker = "Milton Bradley"
-        game.skill_level = 5
-        game.number_of_players = 4
-        game.game_type_id = 1
-        game.description = "It's too late to apologize."
-
-        # Save the Game to the testing database
-        game.save()
-
         # Define the URL path for deleting an existing Game
-        url = f'/games/{game.id}'
+        url = f'/games/{self.game.id}'
 
         # Initiate DELETE request and capture the response
         response = self.client.delete(url)
