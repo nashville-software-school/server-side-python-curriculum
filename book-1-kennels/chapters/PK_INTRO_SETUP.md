@@ -4,7 +4,7 @@ Oh no! The developer of `json-server` decided he didn't want to share his code a
 
 Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 - just like `json-server` did - and responds with data.
 
-By the end of this book, you will be able to write a server application that responds to HTTP requests from a react application. 
+By the end of this book, you will be able to write a server application that responds to HTTP requests from a react application.
 
 ## Learning Objectives
 
@@ -52,7 +52,7 @@ pipenv shell
 
 ### Writing your first Python module
 
-We need to set up our server to handle different HTTP methods (GET, POST, PUT, DELETE). The following code sets up the beginning of our server to handle the GET, POST, and PUT methods by including methods called `do_GET`, `do_POST`, and `do_PUT`. Copy pasta the following code into the `request_handler.py` file. Read the comments to get a feel for what each method is doing. Make your own comments for any questions you have about what the code is doing. 
+We need to set up our server to handle different HTTP methods (GET, POST, PUT, DELETE). The following code sets up the beginning of our server to handle the GET, POST, and PUT methods by including methods called `do_GET`, `do_POST`, and `do_PUT`. Copy pasta the following code into the `request_handler.py` file. Read the comments to get a feel for what each method is doing. Make your own comments for any questions you have about what the code is doing.
 
 ```py
 from http.server import BaseHTTPRequestHandler, HTTPServer
