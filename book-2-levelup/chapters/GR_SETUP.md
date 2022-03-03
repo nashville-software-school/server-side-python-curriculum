@@ -24,7 +24,7 @@ Then create the Github repository for your API project and do an initial commit.
 
 ## Step 1: Authentication
 
-You can steal the registration and authentication logic verbatim from Level Up - for both the client and the server.
+You can steal the registration and authentication logic verbatim from Level Up in the `auth.py`.
 
 ## The Process
 
@@ -37,7 +37,6 @@ Future chapters will ask you to implement specific features, so use this cheatsh
 1. ViewSet
 1. Serializer
 1. DefaultRouter URL mapping
-1. React provider component with fetches
 1. React list component
 1. Route setup in application views
-1. Repeat steps 4 -> 9 for every resource you want the client to have access to
+1. Repeat steps 3 -> 9 for every resource you want the client to have access to

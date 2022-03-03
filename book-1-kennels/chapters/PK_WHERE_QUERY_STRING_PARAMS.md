@@ -148,12 +148,12 @@ Now, you can create an instance of a Customer with only three positional argumen
 
 In the method that queries the database for customers that have the specified email, it's a simpler query with a single WHERE clause that uses a single SQL parameter.
 
-> ##### `customers/request.py`
+> ##### `views/customer_requests.py`
 
 ```py
 def get_customers_by_email(email):
 
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 

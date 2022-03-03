@@ -20,7 +20,7 @@
 
 The `sqlite3` package is built into Python and will allow you to query your database. The `json` package is also built into Python and allows you to serialize Python data structures to JSON format, and vice versa.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 import sqlite3
@@ -31,7 +31,7 @@ import json
 
 Now import the **`Animal`** class so that you can create instances of it for each row of data that gets returned from the database.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 from models import Animal
@@ -41,12 +41,12 @@ from models import Animal
 
 Now you can copy the function below into your animal request module to query the database for all animals, convert each row into an **`Animal`** instance, convert the list to JSON, and respond to the client request.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 def get_all_animals():
     # Open a connection to the database
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
 
         # Just use these. It's a Black Box.
         conn.row_factory = sqlite3.Row
@@ -89,11 +89,11 @@ def get_all_animals():
 
 ### For the Curious
 
-If you want to explore some black box concepts from the code in this chapter, here are some searches you can run.
+If you want to explore some black box concepts from the code in this chapter, here are some links to the python docs for each.
 
-* [row_factory](https://duckduckgo.com/?q=sqlite3+connection+row_factory)
-* [Connection cursor](https://duckduckgo.com/?q=sqlite3+cursor)
-* [Cursor's fetchAll() method](https://duckduckgo.com/?q=sqlite3+cursor+fetchall)
+* [row_factory](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.row_factory)
+* [Connection cursor](https://docs.python.org/3/library/sqlite3.html)
+* [Cursor's fetchAll() method](https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.fetchall)
 
 ## Request all Animals from Postman
 
@@ -111,11 +111,11 @@ Then you need to add a second argument to the `execute()` method. That second ar
 
 Since you will only get one row returned, you will use the `fetchone()` method instead of `fetchall()`.
 
-> ##### `animals/request.py`
+> ##### `views/animal_requests.py`
 
 ```py
 def get_single_animal(id):
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 

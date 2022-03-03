@@ -25,38 +25,32 @@ Before you start using SQL in VS Code, you need to set up a keyboard shortcut so
 1. Ctrl+Shift+P if you are on Windows.
 1. Type in "shortcut" in the search bar.
 1. Choose **Keyboard Shortcuts** from the results.
-1. In the search bar for shortcuts, type in "sqltoolrun".
-1. Double click the **SQLTools Connection: Run Current Query** option.
+1. In the search bar for shortcuts, type in "runselectedquery".
+1. Double click the **Sqlite: Run Selected Query** option.
 1. Hold down the Command key and tap R twice if you are on Mac
 1. Hold down the Control key and tap R twice if you are on Windows
 1. Then press enter to save the shortcut.
 
 
-![](./images/run-query-shortcut.gif)
+![](./images/add_keyboard_shortcut.gif)
 
 
 ## Creating Database and SQL Files
 
 In your project directory, create two files:
 
-1. `kennel.db` : This is your database to store all of the data.
+1. `kennel.sqlite3` : This is your database to store all of the data.
 1. `kennel.sql` : This is a text file to hold the SQL commands to interact with the database.
 
-## Creating Connection to Database File
+## Connect to the Sqlite3 Database
 
-1. Click on the SQLTools icon at the very left of VS Code. It looks like a soup can 🥫.
-1. Click on "Add New Connection"
-1. Choose SQLite in the window that appears.
-1. Enter in "Python Kennels" for the name of the connection.
-1. Enter `kennel.db` in the Database file input field. ( don't click Select File )
-1. Click the "Test Connection" button to verify that it works. ( _Error? See note below_ )
-1. Click the "Save Connection" button.
+1. Open the Command Palette and type in `Sqlite: Open Database`
+2. A drop down should appear with the name of you database file
+3. Select your database file
+4. In the explorer tab (top tab on the left), there should be a new section at the bottom that says `Sqlite Explorer`
 
-> NOTE - When testing the connection you may get an error along the lines of "cannot convert undefined or null to an object". Ignore the message and create the connection anyway. You will get a few prompts about enabling some extensions. Accept those (as well as the prompt about reloading vs code) and you should be good to go!
 
-You should then see a new connection in the "Connections" panel in the upper-left part of your screen.
-
-![](./images/connecting-to-kennel-database.gif)
+![](./images/connect_db_file.gif)
 
 ## Creating Tables
 
@@ -72,12 +66,13 @@ Time to create a table for each of the four resources in this application.
 * Employees
 
 1. Copy the `CREATE TABLE` SQL commands below and paste it into the `kennel.sql` file.
-1. Highlight all of the text.
-1. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows. You will then be prompted to choose a connection.
-    ![](./images/choose-connection.png)
-1.  Choose "Python Kennels".
-1. A new tab will open in VS Code and you should see this message in it - **Query returned 0 rows**. That means it worked.
-    ![query returned 0 rows](./images/create-tables-complete.png)
+2. Highlight all of the text.
+3. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows. You will then be prompted to choose a database.
+4.  Choose `kennel.sqlite3`.
+5. If you refresh the database in the Sqlite Explorer and open the `kennel.sqlite3` dropdown you should see the tables
+
+[](./images/run_sql.gif)
+**Gif already has data inserted into tables**
 
 If any step of this didn't work, contact a member of your instruction team immediately to get it fixed.
 
@@ -126,7 +121,7 @@ The `INSERT INTO` SQL statement allows you to enter in the actual data about ind
 1. Once the tables are created from the step above, copy the `INSERT INTO` statements below into your `kennel.sql` file.
 1. Highlight only the `INSERT INTO` statements. Make sure none of the `CREATE TABLE` statements get highlighted.
 1. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows.
-1. A new tab will open in VS Code and you should see this message in it - **Query returned 0 rows**. That means it worked.
+1. To see the data in the table, open the `kennel.sqlite3` dropdown in the explorer and click the play button beside one of the tables. A new tab should open with a table containing all the contents
 
 ```sql
 INSERT INTO `Location` VALUES (null, 'Nashville North', "64 Washington Heights");

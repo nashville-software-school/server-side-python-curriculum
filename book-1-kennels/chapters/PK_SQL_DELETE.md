@@ -18,7 +18,7 @@ You just fire and forget.
 
 ```py
 def delete_animal(id):
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         db_cursor = conn.cursor()
 
         db_cursor.execute("""

@@ -50,10 +50,10 @@ Since the current user attending is simply a subset of all gamers that are atten
 
 ```py
 events = Event.objects.annotate(
-    attendees=Count('registrations'),
+    attendees_count=Count('attendees'),
     joined=Count(
-        'registrations',
-        filter=Q(registrations__gamer=gamer)
+        'attendees',
+        filter=Q(attendees=gamer)
     )
 )
 ```
@@ -62,13 +62,15 @@ In English, you are...
 
 1. Querying the `Event` table
 1. Aggregating how many total attendees there are
-1. Determining if the current user has joined the event by joining in registrations and filtering those registration by the `gamer` property of each.
+1. Determining if the current user has rsvp'd the event by filtering the attendees based on the gamer then counting the results
 
-That will set the value of `joined` to 1 or 0. You want true or false. To get that, add a for loop that converts the numbers to booleans.
+
+Now that we are setting the joined property through the annotate, the events for loop can be removed
 
 ```py
+# Delete these lines
 for event in events:
-    event.joined = bool(event.joined)
+   event.joined = gamer in event.attendees.all()
 ```
 
 This is advanced stuff here, but just in case you find a glimmer of understanding in the darkness while reading this chapter, and implementing this code, you may find a use for it in the next group project.
@@ -89,7 +91,7 @@ For example, if a game has an event scheduled, but the event was created by anot
     },
     "number_of_players": 6,
     "skill_level": 2,
-    "gametype": {
+    "game_type": {
         "id": 1,
         "label": "Table top"
     },
@@ -110,7 +112,7 @@ If the game has 2 scheduled events, and one of them was created by the current u
     },
     "number_of_players": 6,
     "skill_level": 2,
-    "gametype": {
+    "game_type": {
         "id": 1,
         "label": "Table top"
     },

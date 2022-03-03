@@ -65,44 +65,46 @@ The `Response` class that is built in to Django REST Framework with serialize an
 > #### `levelup/levelupapi/views/profile.py`
 
 ```py
-"""View module for handling requests about park areas"""
-from django.contrib.auth.models import User
-from rest_framework import status
-from rest_framework.decorators import action
-from rest_framework.viewsets import ViewSet
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework import serializers
-from levelupapi.models import Event, Gamer
 
 
-class Profile(ViewSet):
-    """Gamer can see profile information"""
+@api_view(['GET'])
+def user_profile(request):
+    """Handle GET requests to profile resource
 
-    def list(self, request):
-        """Handle GET requests to profile resource
+    Returns:
+        Response -- JSON representation of user info and events
+    """
+    gamer = Gamer.objects.get(user=request.auth.user)
+    
+    # TODO: Use the django orm to filter events if the gamer is attending the event
+    # attending = 
 
-        Returns:
-            Response -- JSON representation of user info and events
-        """
-        gamer = Gamer.objects.get(user=request.auth.user)
-        events = Event.objects.filter(registrations__gamer=gamer)
+    # TODO: Use the orm to filter events if the gamer is hosting the event
+    # hosting =
 
-        events = EventSerializer(
-            events, many=True, context={'request': request})
-        gamer = GamerSerializer(
-            gamer, many=False, context={'request': request})
+    attending = EventSerializer(
+        attending, many=True, context={'request': request})
+    hosting = EventSerializer(
+        hosting, many=True, context={'request': request})
+    gamer = GamerSerializer(
+        gamer, many=False, context={'request': request})
 
-        # Manually construct the JSON structure you want in the response
-        profile = {}
-        profile["gamer"] = gamer.data
-        profile["events"] = events.data
+    # Manually construct the JSON structure you want in the response
+    profile = {
+        "gamer": gamer.data,
+        "attending": attending.data,
+        "hosting": hosting.data
+    }
 
-        return Response(profile)
+    return Response(profile)
 ```
 
 ## Profile Serializers
 
-Beneath that class, in the same module, add these serializers to customize how the JSON representation will be built.
+Beneath that function, in the same module, add these serializers to customize how the JSON representation will be built.
 
 ```py
 class UserSerializer(serializers.ModelSerializer):
@@ -139,83 +141,45 @@ class EventSerializer(serializers.ModelSerializer):
 
 ## Profile URL
 
-Now to make the profile available to a client, the last step is to create a URL for it. Add a new entry to your DefaultRouter to make http://locahost:8000/profile a URL that your API will respond to and handle with the `Profile` viewset.
-
-First, import the `Profile` viewset.
-
-> #### `levelup/urls.py`
+Now to make the profile available to a client, the last step is to create a URL for it. Since this is a function view instead of a class view we'll add the url like we've added the login and register routes. In the `urlpatterns` list add this line:
 
 ```py
-from levelupapi.views import Games, GameTypes, Events, Profile
+path('profile', user_profile),
 ```
 
-Then add an entry to DefaultRouter.
+_Make sure to import the `user_profile` function into the `urls.py`_
 
-```py
-router.register(r'profile', Profile, 'profile')
-```
 
 ## Client Request
 
 
-### State Provider
+### State Manager
 
-On the client side, create a new provider to maintain the state of the user's profile.
+On the client side, create a new manager to hold the fetch call.
 
-> #### `src/components/auth/ProfileProvider.js`
+> #### `src/components/auth/ProfileManager.js`
 
 ```jsx
-import React, { useState } from "react"
-
-export const ProfileContext = React.createContext()
-
-export const ProfileProvider = (props) => {
-    /*
-        Must profile a default value for the `events` property
-        so that React doesn't throw an error when you try to
-        iterate the events array in the view.
-    */
-    const [profile, setProfile] = useState({events:[]})
-
-    const getProfile = () => {
-        return fetch("http://localhost:8000/profile", {
-            headers: {
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`
-            }
-        })
-            .then(response => response.json())
-            .then(setProfile)
-    }
-
-    return (
-        <ProfileContext.Provider value={{ profile, getProfile }}>
-            {props.children}
-        </ProfileContext.Provider>
-    )
+export const getProfile = () => {
+    // TODO: Add the fetch call to the profile resource
 }
+    
 ```
 
 ### Profile Component
 
-Create a profile HTML representation component. In this code you will notice strange interpolations.
-
-```js
-{profile.gamer && profile.gamer.user.first_name}
-```
-
-Your instruction team will review this with you to explain how this is useful for working with React component lifecycle _(remember that the JSX is rendered before you have the data)_.
 
 ```jsx
-import React, { useEffect, useContext } from "react"
-import { ProfileContext } from "./ProfileProvider.js"
+import React, { useEffect } from "react"
+import { getProfile } from "./ProfileManager.js"
 import "./Profile.css"
 
 
 export const Profile = () => {
-    const { profile, getProfile } = useContext(ProfileContext)
+    const [ profile, changeProfile ] = useState([])
 
     useEffect(() => {
-        getProfile()
+        getProfile().then(data => changeProfile(data))
     }, [])
 
     return (
@@ -228,27 +192,28 @@ export const Profile = () => {
                     <h3>Your Info</h3>
                 </header>
                 <div className="profile__name">
-                    Welcome: {profile.gamer && profile.gamer.user.first_name} {profile.gamer && profile.gamer.user.last_name}
+                {/* TODO: show the user's first and last name */}
+                    Welcome: firstName lastName
                 </div>
-                <div className="profile__username">Username: {profile.gamer && profile.gamer.user.username}</div>
-                <div className="profile__bio">About you: {profile.gamer && profile.gamer.bio}</div>
+                {/* TODO: show the user's username */}
+                <div className="profile__username">Username: username</div>
+                {/* TODO: show the user's bio */}
+                <div className="profile__bio">About you: bio</div>
             </section>
             <section className="profile__registrations">
                 <header className="registrations__header">
-                    <h3>Your Events</h3>
+                    <h3>Events you are attending</h3>
                 </header>
                 <div className="registrations">
-                    {
-                        profile.events.map(event => {
-                            return <div key={event.id} className="registration">
-                                <div className="registration__game">{event.game.title}</div>
-                                <div>{event.description}</div>
-                                <div>
-                                    {event.date} @ {event.time}
-                                </div>
-                            </div>
-                        })
-                    }
+                    {/* TODO: Map through the events the user is attending */}
+                </div>
+            </section>
+            <section className="profile__registrations">
+                <header className="registrations__header">
+                    <h3>Events you are hosting</h3>
+                </header>
+                <div className="registrations">
+                    {/* TODO: Map through the events the user is hosting */}
                 </div>
             </section>
         </article>
@@ -259,13 +224,3 @@ export const Profile = () => {
 ### Profile Application View
 
 Now add a route to **`ApplicationViews`** to display the profile view when the user clicks on the profile link in the nav bar and the browser URL changes to `/profile`.
-
-> #### `src/components/ApplicationViews.js`
-
-```jsx
-<ProfileProvider>
-    <Route exact path="/profile">
-        <Profile />
-    </Route>
-</ProfileProvider>
-```

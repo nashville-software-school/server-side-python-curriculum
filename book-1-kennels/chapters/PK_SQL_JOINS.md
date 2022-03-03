@@ -7,7 +7,7 @@ In this chapter you will learn how to utilize SQL joins to provide the client wi
 * You should be able to explain the purpose of joining tables in a SQL query.
 * You should be able to implement a SQL query that retrieves data from more than one table using a join.
 * You should be able to demonstrate how to create instances of classes and use data from a SQL query to define properties for it.
-* You should be able to discuss how to assign the an instance of one class as a property of different class.
+* You should be able to discuss how to assign an instance of one class as a property of different class.
 * You should be able to implement a solution for embedding a related resource in the JSON response to a client.
 
 ## Videos to Watch First
@@ -140,7 +140,7 @@ for row in dataset:
                     row['location_id'], row['customer_id'])
 
     # Create a Location instance from the current row
-    location = Location(row['location_name'], row['location_address'])
+    location = Location(row['id], row['location_name'], row['location_address'])
 
     # Add the dictionary representation of the location to the animal
     animal.location = location.__dict__

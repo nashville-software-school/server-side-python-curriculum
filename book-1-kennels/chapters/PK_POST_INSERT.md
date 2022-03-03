@@ -13,11 +13,11 @@ In this chapter, you will learn the step for inserting a new row into a database
 
 Previously, when you initiated a POST operation from the Postman client, a new dictionary was added to an in-memory list with the `create_animal()` function. You are going to change that code to insert the new animal into the database.
 
-> #### `animals/request.py`
+> #### `views/animal_requests.py`
 
 ```py
 def create_animal(new_animal):
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         db_cursor = conn.cursor()
 
         db_cursor.execute("""
@@ -62,6 +62,6 @@ Once you have implemented this code, use your Kennel React client application to
 If you feel like keeping your JavaScript/React skills fresh, feel free to take on this challenge.
 
 1. Add a new **`EmployeeForm`** component to your Kennel client application.
-1. Add a `saveEmployee()` function to your **`EmployeeProvider`** component.
-1. In Python add a `save_employee()` function to the `employees/request.py` module that performs an `INSERT INTO` SQL query to the Employees table.
+1. Add a `saveEmployee()` function to your **`EmployeeManager`** component.
+1. In Python add a `save_employee()` function to the `views/employee_requests.py` module that performs an `INSERT INTO` SQL query to the Employees table.
 1. Update the `do_POST()` method in the `request_handler` module in Python to accept POST requests to the `/employees` resource.

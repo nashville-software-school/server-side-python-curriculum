@@ -30,7 +30,7 @@ There is no animal with that `id` value, so the `rows_affected` variable will be
 
 ```py
 def update_animal(id, new_animal):
-    with sqlite3.connect("./kennel.db") as conn:
+    with sqlite3.connect("./kennel.sqlite3") as conn:
         db_cursor = conn.cursor()
 
         db_cursor.execute("""

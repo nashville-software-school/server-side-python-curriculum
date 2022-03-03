@@ -7,12 +7,13 @@ In this chapter, you are going to allow games to upload pictures of a game. Ther
 Time to review your model for game images. It should look like the following model. You can name the class whatever you like. You can name the image field property whatever you like.
 
 ```py
-class GamePicture:
+class GamePicture(models.Model):
     game = models.ForeignKey(Game, on_delete=models.DO_NOTHING, related_name='pictures')
     action_pic = models.ImageField(
         upload_to='actionimages', height_field=None,
         width_field=None, max_length=None, null=True)
 ```
+Add the new model to the `__init__.py` so that the model migrates. Before running the `makemigrations` command, you'll need to install an extra library: `pipenv install pillow`. Pillow is a library that makes uploading images and media possible.
 
 ## Media Settings
 

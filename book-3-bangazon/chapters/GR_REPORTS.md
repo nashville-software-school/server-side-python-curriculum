@@ -2,7 +2,7 @@
 
 The CEO of your startup is preparing the very first Annual Report to present to some of the backers who helped get the Gamer Rater platform off the ground. You have been asked to generate some data to include as part of the report.
 
-You are going to use your SQL skills, the `sqlite3` package in Python, and Django templates to create the following HTML reports.
+You are going to use your SQL skills` and Django templates to create the following HTML reports.
 
 + What are the top five games by rating?
 + What are the bottom five games by rating?

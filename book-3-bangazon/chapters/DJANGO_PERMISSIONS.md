@@ -10,7 +10,9 @@ While we could associate one or more permissions directly with a user, if you wa
 
 ## Creating Groups
 
-First we'll create a Player group in the django admin. If you haven't run `django manage.py createsuperuser` do that now. Next log into the django admin portal at `/admin` with the superuser. Click on groups and add a Players group. This group should be able to view games, events, and game types but should not be able to edit, create or delete them. They should also be able to join events.
+First we'll create a Player group in the django admin. If you haven't run `python3 manage.py createsuperuser` do that now. Next log into the django admin portal at `/admin` with the superuser. If you get a `Page not found` error add `path('admin/', admin.site.urls),` to your project's `urls.py urlpatterns` list.
+
+After logging in, click on groups and add a Players group. This group should be able to view games, events, and game types but should not be able to edit, create or delete them. They should also be able to join events.
 These are the permissions we'll add to the group:
 
 ```

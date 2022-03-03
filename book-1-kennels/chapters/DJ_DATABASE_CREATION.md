@@ -3,7 +3,7 @@
 ## Setup
 
 1. Create a new sub-directory in your `~/workspace` directory for this project. A good name would be `daily-journal-server`.
-1. In your project directory, create a `dailyjournal.db` file to be your database.
+1. In your project directory, create a `dailyjournal.sqlite3` file to be your database.
 
 ## Daily Journal ERD
 

@@ -1,6 +1,6 @@
 # Creating Animals
 
-In this chapter, you will write code to support the POST method of HTTP. From Postman, you will POST a new object to your Python server. That object will be converted from a string into a Python dictionary, and then added to the `ANIMALS` list in the `animals/request.py` module.
+In this chapter, you will write code to support the POST method of HTTP. From Postman, you will POST a new object to your Python server. That object will be converted from a string into a Python dictionary, and then added to the `ANIMALS` list in the `views/animal_requests.py` module.
 
 ## Learning Objectives
 
@@ -58,7 +58,7 @@ Replace the existing `do_POST` method in the main module with the following code
 
 ## Appending the Animals List
 
-Next, in the `animals/request.py` module, put the following function in to take the new dictionary representation sent my the client and append it to the `ANIMALS` list.
+Next, in the `views/animal_requests.py` module, put the following function in to take the new dictionary representation sent my the client and append it to the `ANIMALS` list.
 
 ```py
 def create_animal(animal):
@@ -82,8 +82,8 @@ def create_animal(animal):
 
 Make the new function importable into the main module.
 
-1. In `animals/__init__.py`, import the create function.
-1. In the main module, add `create_animal` to the list of functions being imported from the `animals` package.
+1. In `views/__init__.py`, import the create function.
+1. In the main module, add `create_animal` to the list of functions being imported from the `views` package.
 
 ## Create a New Animal
 
@@ -114,14 +114,14 @@ If this isn't working for you, please see an instructor as soon as possible.
 ## Practice: Creating Locations
 
 1. Update the `do_POST` method in the main module to handle requests to the `/locations` path.
-1. Write a `create_location` function in the `locations/request.py` module that appends a new location dictionary to the list.
+1. Write a `create_location` function in the `views/location_requests.py` module that appends a new location dictionary to the list.
 
 Then perform a POST request from Postman to create a new location.
 
 ## Practice: Creating Employees
 
 1. Update the `do_POST` method in the main module to handle requests to the `/employees` path.
-1. Write a `create_employee` function in the `employees/request.py` module that appends a new employee dictionary to the list.
+1. Write a `create_employee` function in the `views/employee_requests.py` module that appends a new employee dictionary to the list.
 
 Then perform a POST request from Postman to create a new employee. Make sure that your employee JSON assigns the employee to a location with a foreign key.
 
@@ -136,7 +136,7 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
 ## Practice: Creating Customers on Registration
 
 1. Update the `do_POST` method in the main module to handle requests to the `/customers` path.
-1. Write a `create_customer` function in the `customers/request.py` module that appends a new customer dictionary to the list.
+1. Write a `create_customer` function in the `views/customer_requests.py` module that appends a new customer dictionary to the list.
 
 Then perform a POST request from Postman to create a new customer. Check the **`Register`** component in your React client to remember what a customer object looks like.
 
