@@ -15,7 +15,7 @@ This is saying for every route, as long as the user is authenticated they can ha
 
 Before moving on, read about the different types of permission checks that Django offers: https://www.django-rest-framework.org/api-guide/permissions/#api-reference
 
-While we could change the default permission for every route, we can also change the permission per view. To do this, we'll open the `GameViewSet` and before the CRUD functions add:
+While we could change the default permission for every route, we can also change the permission per view. To do this, we'll open the `GameView` and before the CRUD functions add:
 ```py
 permission_classes = [ DjangoModelPermissions ]
 queryset = Game.objects.none()
