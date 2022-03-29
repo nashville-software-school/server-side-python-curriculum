@@ -14,15 +14,15 @@ Think about those ducks at the petting zoo. You classified them as `swimming` cr
 
 🐯 🦅 🐎 🦈 🙎🏾‍♀️ 🦉
 
-Additionaly, you also can see how, for example, `swimming` is present on some of your critter classes, but not all of them.  
+Additionaly, you also can see how, for example, `swimming` is present on some of your critter classes, but not all of them.
 
-Wouldn't it be nice to define `swimming` once and use it over and over just like you are doing with `name` and `species` in **`Animal`**? That kind of flexibility would make it infinitely easier to represent the widest variety of critters possible in our system. 
+Wouldn't it be nice to define `swimming` once and use it over and over just like you are doing with `name` and `species` in **`Animal`**? That kind of flexibility would make it infinitely easier to represent the widest variety of critters possible in our system.
 
 Multiple Inheritance to the rescue!
 
-To make our code base as flexible as possible, you can define the properties and behaviors of each classification (or description) into a separate class. 
+To make our code base as flexible as possible, you can define the properties and behaviors of each classification (or description) into a separate class.
 
-Note that these new classes will seem skimpy. They will seemingly do very little. This is by design. Their job will not be to directly represent a concrete thing, but to aid you in the process of representing a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things. But, they are still just good old Python classes. 
+Note that these new classes will seem skimpy. They will seemingly do very little. This is by design. Their job will not be to directly represent a concrete thing, but to aid you in the process of representing a concrete thing. They will be used to compose behavior and properties **into** objects that represent real things. But, they are still just good old Python classes.
 
 That's why it's called multiple inheritance. You can define a derived type that inherits properties from more than a single parent class.
 
@@ -36,7 +36,7 @@ petting_zoo/
           |__ __init__.py
           |__ animal.py # put Animal class in here
           |__ llama.py # one critter class
-          |__ goose.py # another critter class. you get the point 
+          |__ goose.py # another critter class. you get the point
     |__ attractions/
           |__ __init__.py
           |__ attraction.py
@@ -51,7 +51,7 @@ petting_zoo/
     |__ index.py
 ```
 
-As you can see, you will also need to create an `__init__.py` file at the root of each subdirectory. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/master/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
+As you can see, you will also need to create an `__init__.py` file at the root of each subdirectory. The `__init__.py` file makes the directories into packages. Refer back to the [packages](https://github.com/nashville-software-school/bangazon-llc/blob/main/book-1-orientation/chapters/PYTHON_PACKAGES.md) chapter for guidance on this if you need to.
 
 ## Defining How Animals Move
 
@@ -125,8 +125,8 @@ class Goose(Animal, Walking, Swimming):
         Walking.__init__(self)
         # no more self.swimming = True
         ...
-    
-    def honk(self): 
+
+    def honk(self):
         print("The goose honks. A lot")
 
     def __str__(self):
@@ -177,8 +177,8 @@ class Goose(Animal, Walking, Swimming):
         Animal.__init__(self, name, species, food)
         Swimming.__init__(self)
         Walking.__init__(self)
-    
-    def honk(self): 
+
+    def honk(self):
         print("The goose honks. A lot")
 
     # run is defined in the Walking parent class, but also here. This run method will take precedence and Walking's run method will not be called by Goose instances
@@ -198,9 +198,9 @@ The animal swims
 
 Now each class can override and specialize inherited behavior, or simply choose to let the parent class' logic run, depending on the situation.
 
-## Practice: More Attractive Attractions 
+## Practice: More Attractive Attractions
 
-Your critter types are in much better shape, so it's time to overhaul the attractions, too, and apply some inheritance magic to them. After all, what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"? 
+Your critter types are in much better shape, so it's time to overhaul the attractions, too, and apply some inheritance magic to them. After all, what happens when Bobby announces he's adding a "Monkey Island" or "Big Kat Kountry"?
 
 Having an **`Attraction`** base class makes a lot of sense when you think about how quickly Bobby's business is growing.
 
@@ -229,7 +229,7 @@ class Attraction:
         return len(self.animals)
 ```
 
-Next, refactor **`PettingZoo`**, **`SnakePit`**, and **`Wetlands`** to be children of **`Attraction`**. Move each to its own module.  
+Next, refactor **`PettingZoo`**, **`SnakePit`**, and **`Wetlands`** to be children of **`Attraction`**. Move each to its own module.
 
 Note that `description` is now an additional parameter in **`Attraction`**'s `__init__`. Be sure each child class handles that appropriately in its `__init__`.
 
@@ -241,7 +241,7 @@ class PettingZoo(Attraction):
 
     def __init__(self, name, description):
         super().__init__(name, description)
-      
+
 ```
 Don't forget to add the module imports to the attractions package.
 
@@ -278,12 +278,12 @@ When the list of animals is printed, you will see the following output.
 ```sh
 Bob the Goose
 ```
-You now have one goose in the petting zoo. Continue testing the creation of attractions and animals, and adding animals to attractions. 
+You now have one goose in the petting zoo. Continue testing the creation of attractions and animals, and adding animals to attractions.
 
 
 >That night, you go to bed tired but feeling good about your use of inhertance to better define how objects can be created in your system. You sleep deeply and soundly, until just before sunrise, that is. That's when a terrible dream creeps in and disturbs your slumber.
 >
->In the nightmare you are not a hotshot web app developer -- you are the newest intern at Critters and Croquettes Petting Zoo and Tapas Bar. And you have been assigned every job on the premises. 
+>In the nightmare you are not a hotshot web app developer -- you are the newest intern at Critters and Croquettes Petting Zoo and Tapas Bar. And you have been assigned every job on the premises.
 >
 >One secord you're refilling the Critter Mix dispensers, the next you're scrubbing burned-on albondigas from a mountain of baking pans. Then suddenly you're faced with adding dozens of new animals to the habitats. Like a modern-day Noah, they keep coming and you keep having to find a place to put them all. And they're coming too fast. You can't keep up!
 >

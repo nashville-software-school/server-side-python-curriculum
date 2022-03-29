@@ -62,7 +62,7 @@ def update_animal(id, new_animal):
             break
 ```
 
-Import this new function into the `animals/__init__.py` module, and then into the `request_handler.py` module.
+Import this new function into the `__init__.py` module, and then into the `request_handler.py` module.
 
 ## Initiate PUT Request from Client
 
