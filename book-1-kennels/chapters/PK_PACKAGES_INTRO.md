@@ -22,7 +22,7 @@ You may recall in JavaScript that if you wanted to import a module into another 
 import { AwesomeComponent } from "./awesome/list/AwesomeComponent.js"
 ```
 
-With Python packages, you don't need to do that. You can combine all of the file in sub-directories, and sub-directories of sub-directories, into a single _namespace_.
+With Python packages, you don't need to do that. You can combine all of the files in sub-directories, and sub-directories of sub-directories, into a single _namespace_.
 
 Time to see what that all means.
 
@@ -32,7 +32,7 @@ touch views/__init__.py
 touch views/animal_requests.py
 ```
 
-Place the following code into the `views/animal_requests.py` file. You can either use the code below, **or** you can copy pasta from your own `database.json` file that you used for Nashville Kennels.
+Place the following code into the `views/animal_requests.py` file.
 
 ```py
 ANIMALS = [
@@ -64,7 +64,7 @@ def get_all_animals():
     return ANIMALS
 ```
 
-This Python module has one method defined it, and you want to make that method available to any other Python code. To do that, you import it into the `__init__.py` module.
+This Python module has one method defined in it, and you want to make that method available to any other Python code. To do that, you import it into the `__init__.py` module.
 
 > #### `views/__init__.py`
 
@@ -115,7 +115,7 @@ Make the GET request from Postman and ensure that you get the list of all three 
 
 ## Preparing for Locations and Employees
 
-To prepare for other resources being available in `kennels-server`, make the `locations_requests` and `employees_requests` files within the `views` directory now.
+To prepare for other resources being available in `kennels-server`, make the `location_requests` and `employee_requests` files within the `views` directory now.
 
 ## Back Up Your Code
 

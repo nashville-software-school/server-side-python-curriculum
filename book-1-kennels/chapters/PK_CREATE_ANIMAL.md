@@ -58,7 +58,7 @@ Replace the existing `do_POST` method in the main module with the following code
 
 ## Appending the Animals List
 
-Next, in the `views/animal_requests.py` module, put the following function in to take the new dictionary representation sent my the client and append it to the `ANIMALS` list.
+Next, in the `views/animal_requests.py` module, put the following function in to take the new dictionary representation sent by the client and append it to the `ANIMALS` list.
 
 ```py
 def create_animal(animal):
