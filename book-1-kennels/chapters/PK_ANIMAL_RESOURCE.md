@@ -96,7 +96,7 @@ Now you can use this function to determine if the client requested all animals o
 First, import the `get_single_animal()` function from the animal package.
 
 ```py
-from animals import get_all_animals, get_single_animal
+from views import get_all_animals, get_single_animal
 ```
 
 Then update the `do_GET()` function with the following code.
