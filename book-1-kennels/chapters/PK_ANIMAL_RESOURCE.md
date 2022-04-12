@@ -93,10 +93,14 @@ class HandleRequests(BaseHTTPRequestHandler):
 
 Now you can use this function to determine if the client requested all animals or a single animal.
 
-First, import the `get_single_animal()` function from the animal package.
+First, import the `get_single_animal()` function from the `views/animal_requests.py` module to the `views/__init__.py` file.
 
 ```py
-from animals import get_all_animals, get_single_animal
+from .animal_requests import get_all_animals, get_single_animal
+```
+Next, import the `get_single_animal` function from the `views` package to the `request_handler.py` module.
+```py
+from views import get_all_animals, get_single_animal
 ```
 
 Then update the `do_GET()` function with the following code.
