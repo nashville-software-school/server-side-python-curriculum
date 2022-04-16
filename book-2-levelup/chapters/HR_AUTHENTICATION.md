@@ -22,6 +22,10 @@ Create the following module in your API application. It is commented, so please 
 
 > #### `honey-rae-server/repairsapi/views/auth.py`
 
+<details>
+    <summary>Expand for auth module code</summary>
+
+
 ```py
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
@@ -89,8 +93,8 @@ def register_user(request):
     # Return the token to the client
     data = { 'token': token.key }
     return Response(data)
-
 ```
+</details>
 
 ## Views Package Imports
 
