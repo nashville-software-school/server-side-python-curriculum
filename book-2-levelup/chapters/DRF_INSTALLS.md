@@ -98,7 +98,7 @@ Run the following commands to remove some boilerplate files that you won't be us
 ```sh
 rm levelupapi/models.py levelupapi/views.py
 mkdir levelupapi/models levelupapi/views
-touch levelupapi/models/__init__.py levelupapi/view/__init__.py
+touch levelupapi/models/__init__.py levelupapi/views/__init__.py
 ```
 
 ## Update Settings
