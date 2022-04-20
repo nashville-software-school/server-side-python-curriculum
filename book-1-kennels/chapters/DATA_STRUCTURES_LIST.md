@@ -6,7 +6,7 @@ A list is the new array from JavaScript. They are collections of similar items. 
 
 # Lists (ordered, mutable & allows duplicates)
 
-animals = ["Jack", "Noonan", "Blue", "Gypsy"]
+animals = ["Jack", "Noonan", "Blue", "Eleanor"]
 
 junk = ["Fred", True, [1, 2, 3], 234]
 

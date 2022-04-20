@@ -15,7 +15,7 @@ Open your `views/animal_requests.py` module, and add a new `status` key to each 
 ```py
 {
     "id": 2,
-    "name": "Gypsy",
+    "name": "Eleanor",
     "species": "Dog",
     "location": 1,
     "customerId": 2,
@@ -77,7 +77,7 @@ Time to try updating an animal.
     ```json
     {
         "id": 2,
-        "name": "Gypsy",
+        "name": "Eleanor",
         "species": "Dog",
         "location": 1,
         "customerId": 2,
