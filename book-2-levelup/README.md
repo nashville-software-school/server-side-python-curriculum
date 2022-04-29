@@ -6,7 +6,7 @@ This book introduces you to the Django application framework, and the Django RES
 
 ## Chapters
 
-| # | 🐕‍🦺 DeShawn Dog Walking API | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ GamerRater <br/> |
+| # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Collaborative_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ GamerRater <br/> |
 |--|--|--|--|--|
 | 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] | [GamerRater API Setup][2] |  |
 | 2 |  | [From Arrays to Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [GamerRater ERD][4] |  |

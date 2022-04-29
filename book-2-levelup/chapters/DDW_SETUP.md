@@ -22,7 +22,7 @@ Once that's done, open up the directory in VS Code.
 code .
 ```
 
-### Select Python Interpreter
+## Select Python Interpreter
 
 Once VS Code starts up, press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette, and select "Python: Select Interpreter".
 
@@ -30,3 +30,10 @@ Find the option that looks similar to the following example. Yours will not look
 
 `Python 3.9.10 (deshawn-NiFBQu_i) ~/.virtualenvs/deshawn-NiFBQu_i/bin/python`
 
+## Start in Debug Mode
+
+Start your Django project in Debug Mode with the keyboard shortcut of <kbd>SHIFT</kbd><kbd>⌥</kbd><kbd>D</kbd> (Mac), or <kbd>SHIFT</kbd><kbd>ALT</kbd><kbd>D</kbd> (Windows). A new terminal panel at the bottom of VS Code will appear and you will see your server running.
+
+![image of the debug terminal output](./images/debug-terminal.png)
+
+If you don't see this, call your team lead immediately.
