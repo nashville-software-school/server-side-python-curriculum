@@ -6,24 +6,24 @@ This book introduces you to the Django application framework, and the Django RES
 
 ## Chapters
 
-| # | 🍯 Honey Rae's Repairs | 🕹 Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ GamerRater <br/> |
-|--|--|--|--|
-| 1 | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] | [GamerRater API Setup][2] |  |
-| 2 | [From Arrays to Models](./chapters/HR_MODELS.md) |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [GamerRater ERD][4] |  |
-| 3 | [Authentication Setup](./chapters/HR_AUTHENTICATION.md) | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |  |  |
-| 4 | [Testing Authentication](./chapters/HR_REGISTER.md) | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data #fixtures</sub> | [GamerRater Models][7] |  |
-| 5 |  | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
+| # | 🐕‍🦺 DeShawn Dog Walking API | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ GamerRater <br/> |
+|--|--|--|--|--|
+| 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] | [GamerRater API Setup][2] |  |
+| 2 |  | [From Arrays to Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [GamerRater ERD][4] |  |
+| 3 |  | [Authentication Setup](./chapters/HR_AUTHENTICATION.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |  |  |
+| 4 |  | [Testing Authentication](./chapters/HR_REGISTER.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data #fixtures</sub> | [GamerRater Models][7] |  |
+| 5 |  | [Exposing Customer Data](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">#viewset #serializer</sub>| [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
 |  |  | _**[Interlude: Django ORM][9]**_ |  |  |
 |  |  | _**[Interlude: Django Rest Views and Serializers][10]**_ |  |  |
-| 6 |  | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Client Setup][12] |  |
-| 7 |  | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> | [GamerRater Fixtures][14] |  |
-| 8 |  | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> | [GamerRater Games][16] |  |
-| 9 |  | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Game Reviews][18] |  |
-| 10 |  | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 |  | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Edit Games][26] |  |
-| 12 |  | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  |  |
-| 13 |  | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | |  |
-| 14 |  | [Leaving and Joining Events][35]| [Game Ratings][21] | |
+| 6 |  |  | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Client Setup][12] |  |
+| 7 |  |  | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> | [GamerRater Fixtures][14] |  |
+| 8 |  |  | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> | [GamerRater Games][16] |  |
+| 9 |  |  | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Game Reviews][18] |  |
+| 10 |  |  | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
+| 11 |  |  | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Edit Games][26] |  |
+| 12 |  |  | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  |  |
+| 13 |  |  | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | |  |
+| 14 |  |  | [Leaving and Joining Events][35]| [Game Ratings][21] | |
 
 ## 🔐 Projects Unlocked
 
