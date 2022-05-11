@@ -27,6 +27,9 @@ python3 manage.py startapp rareapi
 
 Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit. Finally, create a local git repo with `git init` and connect it to your team's server side github repo with `git remote add origin <github ssh url>`. Once you have everything setup, push up the code. The other team members can now clone down the new Django project repo.
 
+### Issue Tickets
+The requirements for this project are more comprehensive than in V1. You will see many references to admin abilities. An admin is simply a user with more power. How do you give that power to a user? Update a user's `is_staff` property to `True`. Don't say we never gave you anything :)
+
 ## Rare ERD from Database Team
 
 https://dbdiagram.io/d/5f885a013a78976d7b77cb74
