@@ -9,7 +9,7 @@ The new client repo will have a React app in it that _some_ of you will recogniz
 
 The server side repo is a blank slate, ready for your elegant and advanced implementation of the API requirements from V1, but this time written using the Django REST framework.
 
-Then open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps while in your rare-v2 directory. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
+Next, choose one team member who will create the API project locally. As a team, walk through the creation of the Django application on that team member's computer. Open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps while in your rare-v2 directory. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
 
 ### Creating the Project
 
@@ -25,7 +25,7 @@ python3 manage.py startapp rareapi
 
 ### Creating the .gitignore
 
-Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit. Finally, create a local git repo with `git init` and connect it to your team's server side github repo with `git remote add origin <github ssh url>`. 
+Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit. Finally, create a local git repo with `git init` and connect it to your team's server side github repo with `git remote add origin <github ssh url>`. Once you have everything setup, push up the code. The other team members can now clone down the new Django project repo.
 
 ## Rare ERD from Database Team
 
