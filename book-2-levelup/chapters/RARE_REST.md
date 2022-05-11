@@ -1,18 +1,15 @@
 # Build Rare Professionally
 
-In these two sprints, you are going to be working as a professional development team in a larger organization - an organization with a database management team, and a product development team.
-
-Below, there are two links that you will use as reference for implementing this application.
+In this sprint, you are going to be creating a new API for the Rare client side application to consume.
 
 ## Setup
+Accept the assignments as usual. One member follows the assignment links and creates the group name in each. The other members follow the links and join the created teams. 
 
-Since you already have a `client` and a `server` directory for Rare from the first group project, it is recommended that everyone make an additional `api` directory as a sibling to the other two. This directory will be the home for your Django project.
+The new client repo will have a React app in it that _some_ of you will recognize. It is pretty much complete, but you will need to spend some time reading the code to familarize yourself with how it. We recommend creating a rare-v2 directory locally to clone this repo into, so you can keep your client and server projects in one place in your file system.
 
-**One teammate** should follow these steps and create a new repository in your cohort's organization. Make sure you follow the naming schema of your React client repo.
+The server side repo is a blank slate, ready for your elegant and advanced implementation of the API requirements from V1, but this time written using the Django REST framework.
 
-For example, if your initial repo is named `Rare-Goofy-Gophers`, your new repo should be named `Rare-API-Goofy-Gophers`.
-
-Then open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
+Then open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps while in your rare-v2 directory. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
 
 ### Creating the Project
 
@@ -28,7 +25,7 @@ python3 manage.py startapp rareapi
 
 ### Creating the .gitignore
 
-Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit.
+Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit. Finally, create a local git repo with `git init` and connect it to your team's server side github repo with `git remote add origin <github ssh url>`. 
 
 ## Rare ERD from Database Team
 
