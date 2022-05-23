@@ -118,21 +118,12 @@ class UserGameList(View):
                     
                 }
                 
-                # This is using a generator comprehension to find the user_dict in the games_by_user list
-                # The next function grabs the dictionary at the beginning of the generator, if the generator is empty it returns None
-                # This code is equivalent to:
-                # user_dict = None
-                # for user_game in games_by_user:
-                #     if user_game['gamer_id'] == row['gamer_id']:
-                #         user_dict = user_game
+                # See if the gamer has been added to the games_by_user list already
+                user_dict = None
+                for user_game in games_by_user:
+                     if user_game['gamer_id'] == row['gamer_id']:
+                         user_dict = user_game
                 
-                user_dict = next(
-                    (
-                        user_game for user_game in games_by_user
-                        if user_game['gamer_id'] == row['gamer_id']
-                    ),
-                    None
-                )
                 
                 if user_dict:
                     # If the user_dict is already in the games_by_user list, append the game to the games list
