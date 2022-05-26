@@ -55,9 +55,9 @@ Now, we can define the functions for running the integration tests.
 
 ### Test - CREATE A New Game
 
-Copy and paste the code below into your `test_game_view.py` module.
+Copy and paste the code below into your `test_game_view.py` module. The `tests` module should be a sibling to the `levelupapi` and `levelup` folders
 
-> #### `levelup/tests/test_game_view.py`
+> #### `./tests/test_game_view.py`
 
 ```py
 from rest_framework import status
