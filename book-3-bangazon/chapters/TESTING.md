@@ -143,7 +143,7 @@ class GameTests(APITestCase):
 
 Add the function below to your `GameTests` class.
 
-> #### `levelup/tests/game_tests.py`
+> #### `./tests/test_game_view.py`
 
 ```py
     def test_get_game(self):
