@@ -96,7 +96,7 @@ Now you can use this function to determine if the client requested all animals o
 First, import the `get_single_animal()` function from the animal package.
 
 ```py
-from animals import get_all_animals, get_single_animal
+from views import get_all_animals, get_single_animal
 ```
 
 Then update the `do_GET()` function with the following code.
@@ -121,7 +121,22 @@ Then update the `do_GET()` function with the following code.
 
 ## Practice: Locations
 
-Now follow the same pattern for location data. If you haven't already, create a `locations_requests.py` file within the `views` module. Copy your locations array from the `database.json` file that you used for Nashville Kennel and paste it in at the top of the module and store it in a `LOCATIONS` variable.
+Now follow the same pattern for location data. If you haven't already, create a `locations_requests.py` file within the `views` module. Use this list of locations dictionaries as your initial data. Paste it in at the top of the module and store it in a `LOCATIONS` variable.
+
+```py
+[
+        {
+            "id": 1,
+            "name": "Nashville North",
+            "address": "8422 Johnson Pike"
+        },
+        {
+            "id": 2,
+            "name": "Nashville South",
+            "address": "209 Emory Drive"
+        }
+    ]
+```
 
 Then implement the following two functions in the `views/location_requests.py` module.
 
@@ -132,8 +147,8 @@ Then add another `if..else` statement to the `do_GET` method in the main module 
 
 ## Practice: Employees
 
-Do the same thing for employee data.
+Do the same thing for employee data. Employees only need a name (and a unique id, of course)
 
 ## Practice: Customers
 
-Do the same thing for customer data.
+Do the same thing for customer data. Customers only need a name and id, as well.
