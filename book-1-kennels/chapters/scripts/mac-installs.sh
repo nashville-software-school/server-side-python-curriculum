@@ -1,4 +1,4 @@
-PYTHON_VERSION=3.9.10
+PYTHON_VERSION=3.9
 
 if [ $(brew list | grep -c pyenv) != 1 ];
 then
@@ -28,14 +28,16 @@ fi
 if [ $(pyenv versions | grep -c $PYTHON_VERSION) != 1 ];
 then
   echo Installing Python version $PYTHON_VERSION
-  pyenv install $PYTHON_VERSION
+  pyenv install ${PYTHON_VERSION}:latest
 else
   echo Skipping $PYTHON_VERSION install
 fi
 
-pyenv global $PYTHON_VERSION
+INSTALLED_PYTHON_VERSION=$(pyenv versions | grep -o ${PYTHON_VERSION}'.*[0-9]' | tail -1)
+pyenv global $INSTALLED_PYTHON_VERSION
 
-if [ $(python3 --version | grep -c $PYTHON_VERSION) != 1 ];
+
+if [ $(python3 --version | grep -c $INSTALLED_PYTHON_VERSION) != 1 ];
 then
     echo "Could not set the global python version let an instructor know"
     return 0
@@ -55,17 +57,14 @@ then
     return 0
 fi
 
-if [ $(code --list-extensions | grep -c streetsidesoftware.code-spell-checker) != 1 ];
-then
-  echo "Installing VS Code Extensions"
-  code --install-extension ms-python.python --force
-  code --install-extension ms-python.vscode-pylance --force
-  code --install-extension njpwerner.autodocstring --force
-  code --install-extension alexcvzz.vscode-sqlite --force
-  code --install-extension streetsidesoftware.code-spell-checker --force
-else
-  echo Skipping VS Code Extensions
-fi
+
+echo "Installing VS Code Extensions"
+code --install-extension ms-python.python --force
+code --install-extension ms-python.vscode-pylance --force
+code --install-extension njpwerner.autodocstring --force
+code --install-extension alexcvzz.vscode-sqlite --force
+code --install-extension streetsidesoftware.code-spell-checker --force
+
 
 
 echo Success! You are ready to start coding with Python
