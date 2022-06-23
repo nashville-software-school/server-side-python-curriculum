@@ -75,5 +75,15 @@ Copy the token key you created and add it to the Postman headers:
 Copy the URL heroku gave you into the URL bar and try it out!
 
 
-### Front end Deployment
-Good news! Whatever you used to deploy during the front end will still work. You'll just need to update your API calls in react to use the deployed URL. Once your front end is deployed you'll need to add the new url to the `CORS_ORIGIN_WHITELIST` tuple in the `settings.py`.
+### Front end Deployment with Heroku
+1. Create a new branch in your project named deploy. `git checkout -b deploy`
+2. If you haven't changed your client side fetch urls to hit your new backend make sure you've done this. Also make them https.
+3. Add, commit and push any changes and this new branch to your github.
+4. Now create the app in the terminal and give it a name (The name may be taken but if it is just run this again with a new name.) `heroku create -b https://github.com/mars/create-react-app-buildpack.git <app-name>`
+5. Now go to Heroku Profile and click on your new app.
+6. To deploy: You can either follow the "Automatic Deploy" or "Deploy from terminal" steps from above for this app.
+7. Watch the deployment activity either locally or in heroku for errors
+8. Take the heroku url and add it to the `CORS_ORIGIN_WHITELIST` of the server side settings.py file.
+9. Add, commit, push, and deploy that change
+10. If everything builds correctly go to the app in the browser and check it out
+
