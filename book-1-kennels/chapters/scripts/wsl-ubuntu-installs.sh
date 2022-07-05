@@ -14,7 +14,6 @@ then
   export PYENV_ROOT="$HOME/.pyenv"\n
   export PIPENV_DIR="$HOME/.local"\n
   export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"\n
-ga .
 
   if command -v pyenv 1>/dev/null 2>&1; then\n
     \texport PATH=$(pyenv root)/shims:$PATH\n
