@@ -31,51 +31,41 @@ To get a customer by its name field - because you don't know its unique identifi
 
 http://localhost:8088/customers?name=Jenna+Solis
 
-This makes parsing the URL more difficult.
-
-1. Is there a question mark in the resource? If so, that means there is a query string parameter.
-1. Split on the `?` to separate `customers` from `email=jenna@solis.com`.
-1. Then split on the `=` to get the parameter name and property value separated as `[ 'email', 'jenna@solis.com' ]`.
-1. If there isn't a query string, you still have to check if there is a route parameter at the end, and parse that like you have been.
+To make it easier to parse the url, we'll use a built in python library. The `urlParse` function will break the url up into it's seperate parts the resource (`/animals` or `/animals/1`) and the query (`email=jenna@solis.com`). Then, if there is a query in the url, it'll use the `parse_qs` function to create a dictionary from the query params. So `email=jenna@solis.com` becomes:
+```py
+{
+  "email": "jenna@solis.com"
+}
+```
 
 Update the `parse_url()` method in the main module with the code below.
 
 > ##### `request_handler.py`
 
 ```py
-    def parse_url(self, path):
-        path_params = path.split("/")
+# add this import to the top of the file
+from urllib.parse import urlparse, parse_qs
+    
+    # replace the parse_url function in the class
+    def parse_url(self):
+        """Parse the url into the resource and id"""
+        parsed_url = urlparse(self.path)
+        path_params = parsed_url.path.split('/')  # ['', 'animals', 1]
         resource = path_params[1]
 
-        # Check if there is a query string parameter
-        if "?" in resource:
-            # GIVEN: /customers?email=jenna@solis.com
+        if parsed_url.query:
+            query = parse_qs(parsed_url.query)
+            return (resource, query)
 
-            param = resource.split("?")[1]  # email=jenna@solis.com
-            resource = resource.split("?")[0]  # 'customers'
-            pair = param.split("=")  # [ 'email', 'jenna@solis.com' ]
-            key = pair[0]  # 'email'
-            value = pair[1]  # 'jenna@solis.com'
-
-            return ( resource, key, value )
-
-        # No query string parameter
-        else:
-            id = None
-
-            try:
-                id = int(path_params[2])
-            except IndexError:
-                pass  # No route parameter exists: /animals
-            except ValueError:
-                pass  # Request had trailing slash: /animals/
-
-            return (resource, id)
+        pk = None
+        try:
+            pk = int(path_params[2])
+        except (IndexError, ValueError):
+            pass
+        return (resource, pk)
 ```
 
-Whew.
-
-Ok, so if you thought that code was intense, now you need to refactor the `do_GET()` method in the main module.
+Next we'll need to refactor the `do_get` so we can call the correct function:
 
 > ##### `request_handler.py`
 
@@ -88,10 +78,8 @@ Ok, so if you thought that code was intense, now you need to refactor the `do_GE
         # Parse URL and store entire tuple in a variable
         parsed = self.parse_url(self.path)
 
-        # Response from parse_url() is a tuple with 2
-        # items in it, which means the request was for
-        # `/animals` or `/animals/2`
-        if len(parsed) == 2:
+        # If the path does not include a query parameter, continue with the original if block
+        if '?' not in self.path:
             ( resource, id ) = parsed
 
             if resource == "animals":
@@ -105,17 +93,12 @@ Ok, so if you thought that code was intense, now you need to refactor the `do_GE
                 else:
                     response = f"{get_all_customers()}"
 
-        # Response from parse_url() is a tuple with 3
-        # items in it, which means the request was for
-        # `/resource?parameter=value`
-        elif len(parsed) == 3:
-            ( resource, key, value ) = parsed
-
-            # Is the resource `customers` and was there a
-            # query parameter that specified the customer
-            # email as a filtering value?
-            if key == "email" and resource == "customers":
-                response = get_customers_by_email(value)
+       else: # There is a ? in the path, run the query param functions
+            (resource, query) = parsed
+            
+            # see if the query dictionary has an email key
+            if query.get('email') and resource == 'customers':
+                response = get_customer_by_email(query['email'])
 
         self.wfile.write(response.encode())
 ```
