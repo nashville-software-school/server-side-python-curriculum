@@ -24,6 +24,7 @@ This book introduces you to the Django application framework, and the Django RES
 | 12 |  |  | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  |  |
 | 13 |  |  | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | |  |
 | 14 |  |  | [Leaving and Joining Events][35]| [Game Ratings][21] | |
+| 🎓 | Django Self Assessment | Ask an instructor for the book 2 assessment | |
 
 ## 🔐 Projects Unlocked
 
