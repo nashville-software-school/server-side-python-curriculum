@@ -47,9 +47,9 @@ Update the `parse_url()` method in the main module with the code below.
 from urllib.parse import urlparse, parse_qs
     
     # replace the parse_url function in the class
-    def parse_url(self):
+    def parse_url(self, path):
         """Parse the url into the resource and id"""
-        parsed_url = urlparse(self.path)
+        parsed_url = urlparse(path)
         path_params = parsed_url.path.split('/')  # ['', 'animals', 1]
         resource = path_params[1]
 
@@ -98,7 +98,7 @@ Next we'll need to refactor the `do_get` so we can call the correct function:
             
             # see if the query dictionary has an email key
             if query.get('email') and resource == 'customers':
-                response = get_customer_by_email(query['email'])
+                response = get_customer_by_email(query['email'][0])
 
         self.wfile.write(response.encode())
 ```
