@@ -2,7 +2,7 @@ PYTHON_VERSION=3.9
 
 echo "Update Ubuntu and install required packages"
 sudo apt update
-sudo apt install -y gcc make build-essential openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev zlib1g-dev libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev python3 python3-pip wget liblzma-dev curl xz-utils libncurses5-dev python3-openssl llvm
+sudo apt install -y gcc make build-essential openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev zlib1g-dev libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev python3 python3-pip wget liblzma-dev curl xz-utils libncurses5-dev python3-openssl llvm sqlite
 
 echo "Install pyenv"
 curl https://pyenv.run | bash
