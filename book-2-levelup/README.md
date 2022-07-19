@@ -6,6 +6,7 @@ This book introduces you to the Django application framework, and the Django RES
 
 ## Chapters
 
+
 | # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Collaborative_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ GamerRater <br/> |
 |--|--|--|--|--|
 | 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] | [GamerRater API Setup][2] |  |
@@ -24,44 +25,33 @@ This book introduces you to the Django application framework, and the Django RES
 | 12 |  |  | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  |  |
 | 13 |  |  | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | |  |
 | 14 |  |  | [Leaving and Joining Events][35]| [Game Ratings][21] | |
-| 🎓 | Django Self Assessment | Ask an instructor for the book 2 assessment | |
->>>>>>> 4887ba76e90adb4a404e1a9b94b88df1f5a557cd
 
-This book introduces you to the Django application framework, and the Django REST API plugin for rapid API development.
+## 🔐 Projects Unlocked
 
-![Level Up logo][image-1]
+| # | Project&nbsp;Name | Description |
+|--|--|--|
+| 👨‍👩‍👧‍👧 | [Group Project: Rare REST][28] | When you complete LevelUp and GamerRater, you will join some teammates to build a content management platform called Rare. You will build a client in React, and the API with Django REST. |
 
-## Chapters
+## 🧭 Explorer Chapters
 
-| # | 🕹 🎲<br/> Level Up <br/><sub>(_Guided Tour_)</sub> | ⭐️ 🎯 <br/> GamerRater <br/> | 🍛 🍔 <br/> FavaMeal <br/> <sub>_(Custom actions &amp; properties )_</sub>  |
-|--|--|--|--|
-| 1 | [Level Up API Setup][1] | [GamerRater API Setup][2] |  |
-| 2 | [Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [GamerRater ERD][4] |  |
-| 3 | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |  |  |
-| 4 | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data #fixtures</sub> | [GamerRater Models][7] |  |
-| 5 | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
-|  | _**[Interlude: Django ORM][9]**_ |  |  |
-|  | _**[Interlude: Django Rest Views and Serializers][10]**_ |  |  |
-| 6 | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> | [GamerRater Client Setup][12] |  |
-| 7 | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> | [GamerRater Fixtures][14] |  |
-| 8 | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> | [GamerRater Games][16] |  |
-| 9 | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Game Reviews][18] |  |
-| 10 | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> | [Edit Games][26] | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
-| 12 | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
-| 13 | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
-| 14 | [Leaving and Joining Events][35]| [Game Ratings][21] | |
-| 👨‍👩‍👧‍👧 | [Group Project: Rare REST][28] |  |
-
-## Supplementary Chapters
-
-These chapters will let you explore more advanced capabilities and workflows between client and server with Django and the Django REST Framework plugin.
+Explorer chapters give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
 | # | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
 |--|--|--|
 | 1 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Games in Action Pictures][30] |
 | 2 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Searching Games][32] |
 | 3 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> | [Sorting Games][34] |
+
+## 🏕 Pioneer Chapters
+
+Pioneer chapters let you develop Deep Learning on the concepts that you practiced in this book.
+
+| # | 🍔 FavaMeal <br/> <sub>_(Custom actions &amp; properties )_</sub> | 🧠  Advanced Concepts |
+|--|--|--|
+| 1 | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |  |
+| 2 | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+| 3 | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
+
 
 [1]:	./chapters/DRF_INSTALLS.md
 [2]:	./chapters/GR_SETUP.md
@@ -100,5 +90,3 @@ These chapters will let you explore more advanced capabilities and workflows bet
 [35]:   ./chapters/LU_MODEL_PROPERTY.md
 
 [image-1]:	./chapters/images/level-up.png
-
-
