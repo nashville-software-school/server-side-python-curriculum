@@ -80,9 +80,9 @@ export const GameForm = () => {
                     const game = {
                         maker: currentGame.maker,
                         title: currentGame.title,
-                        numberOfPlayers: parseInt(currentGame.numberOfPlayers),
-                        skillLevel: parseInt(currentGame.skillLevel),
-                        gameTypeId: parseInt(currentGame.gameTypeId)
+                        number_of_players: parseInt(currentGame.numberOfPlayers),
+                        skill_level: parseInt(currentGame.skillLevel),
+                        game_type: parseInt(currentGame.gameTypeId)
                     }
 
                     // Send POST request to your API
