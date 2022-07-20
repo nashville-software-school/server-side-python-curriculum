@@ -92,6 +92,7 @@ Add the following import statements at the top of the urls module in the level f
 > #### `levelup/levelup/urls.py`
 
 ```py
+from django.conf.urls import include
 from rest_framework import routers
 from levelupapi.views import GameTypeView
 ```
