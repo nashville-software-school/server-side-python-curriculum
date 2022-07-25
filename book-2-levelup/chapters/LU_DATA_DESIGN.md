@@ -128,7 +128,7 @@ __Notice for the toy_type field, there's no need to put `_id` for the foreign ke
 
 Django gives you a **`User`** model out of the box that already has fields on it like *first name*, *last name*, *email*, etc. If there are any additional fields that you want to capture about a user of your application, you need to create a separate model. The new model will have a 1 to 1 relationship to the django **`User`** model to connect the two.
 
-In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it (here)[https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model]
+In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it [here](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model)
 
 > #### `levelup-server/levelupapi/models/gamer.py`
 
@@ -164,6 +164,8 @@ from .gamer import Gamer
 ## Level Up Models
 
 Once you have looked over the ERD and understand relationships for Gamers, Games, and Events, create your modules and classes. Then import the classes into the package init module.
+
+There is a many-many relationship between the Gamers and Events to show who is attending an event. Read the [Many to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-many-relationships) resource to learn how to set that up.
 
 ## Migration of Models
 
