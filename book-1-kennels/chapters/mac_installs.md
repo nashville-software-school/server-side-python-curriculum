@@ -6,7 +6,8 @@ Here's the script to run to get you ready to start python:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nashville-software-school/bangazon-llc/cohort-56/book-1-kennels/chapters/scripts/mac-installs.sh)"
 ```
 
-After running this script, if you do **not** see a message that says "Success! You are ready to start coding with Python", reach out to an instructor
+After running this script, if you **do** **not** see a message that says "Success! You are ready to start coding with Python", reach out to an instructor.
+To make sure the script was actually successful run `python3 --version` if you do not get a number that starts with 3.9, close the terminal, reopen and try that command again. If it still does not show 3.9 let an instructor know.
 
 ## Orientation React Clients
 
@@ -25,13 +26,7 @@ Visit the [daily-journal-template][8] repository and click the **`Use this templ
 
 Then clone your repository into your workspace directory.
 
-[1]:	https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
-[2]:	https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack
-[3]:	https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite
-[4]:	https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter
-[5]:	https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
-[6]:	https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
-[7]:	https://github.com/nashville-software-school/nashville-kennels-template
-[8]:	https://github.com/nashville-software-school/daily-journal-react-template
+[7]:	https://github.com/nashville-software-school/react-18-kennels-template
+[8]:	https://github.com/nashville-software-school/daily-journal-react-18-template
 
 [image-1]:	./images/kennel-template-process.gif

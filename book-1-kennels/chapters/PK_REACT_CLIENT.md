@@ -1,6 +1,6 @@
 # Switching Clients
 
-Up to this point, you've been using Postman as the client to make requests to your Python server. Well, if you have completed all of the previous chapters, and their associated practice exercises, you should now be able to fire up the Nashville Kennels Client from the Installations chapter. If you haven't cloned that already, here's the link: https://github.com/nashville-software-school/nashville-kennels-template
+Up to this point, you've been using Postman as the client to make requests to your Python server. Well, if you have completed all of the previous chapters, and their associated practice exercises, you should now be able to fire up the Nashville Kennels Client from the Installations chapter. If you haven't cloned that already, here's the link: https://github.com/nashville-software-school/react-18-kennels-template
 
 Forgot how to do it?
 

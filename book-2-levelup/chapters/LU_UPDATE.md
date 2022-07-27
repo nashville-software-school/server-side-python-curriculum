@@ -47,26 +47,3 @@ After making the request, `retrieve` the game to verify the updates
 
 ## On Your Own
 Write the code to `update` an event
-
-## (Optional) Bonus
-Let's follow the same pattern as [Chapter 8's](./LU_CREATE.md) bonus content and add validation to the `update` method. We'll reuse the same serializer from that chapter, so finish that chapter's bonus content if you haven't already.
-
-### Update with validation
-Here's the new code for the `update` method:
-```python
-def update(self, request, pk):
-    """Handle PUT requests for a game
-
-    Returns:
-        Response -- Empty body with 204 status code
-    """
-    game = Game.objects.get(pk=pk)
-    serializer = CreateGameSerializer(game, data=request.data)
-    serializer.is_valid(raise_exception=True)
-    serializer.save()
-    return Response(None, status=status.HTTP_204_NO_CONTENT)
-```
-This time, when using the `CreateGameSerializer`, the original game object is passed to the serializer, along with the `request.data`. This will make any updates on the game object. Then, just like in the `create`, check for validity and `save` the updated object. 
-
-### On Your Own
-Add validation to the `EventView`'s `update` method
