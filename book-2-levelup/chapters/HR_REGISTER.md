@@ -58,14 +58,14 @@ The following changes are needed to work with your API and not `json-server`.
 ```js
 import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const existDialog = useRef()
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -80,7 +80,7 @@ export const Login = () => {
             .then(authInfo => {
                 if (authInfo.valid) {
                     localStorage.setItem("honey_customer", authInfo.token)
-                    history.push("/")
+                    navigate("/")
                 } else {
                     existDialog.current.showModal()
                 }

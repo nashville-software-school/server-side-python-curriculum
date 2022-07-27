@@ -19,8 +19,8 @@ When the user is viewing a single game, then there should button labeled "Review
 
 When the user enters a review and clicks the save button, the review text should be sent to the API so that it can be saved in the database.
 
-Once the save is complete, use the `history.push()` method to redirect the user back to the game that was reviewed.
+Once the save is complete, use the `navigate()` method to redirect the user back to the game that was reviewed.
 
-> **Hint**: Use the `useHistory()` hook in the component.
+> **Hint**: Use the `useNavigate()` hook in the component.
 
 When the user is viewing a single game, a list of reviews should be displayed beneath the main details of the game.
