@@ -171,7 +171,7 @@ export const getProfile = () => {
 
 ```jsx
 import React, { useEffect } from "react"
-import { getProfile } from "../managers/ProfileManager.js"
+import { getProfile } from "../../managers/ProfileManager.js"
 import "./Profile.css"
 
 

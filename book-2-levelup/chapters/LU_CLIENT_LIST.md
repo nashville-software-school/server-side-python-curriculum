@@ -22,7 +22,7 @@ export const getGames = () => {
 
 ```jsx
 import React, { useEffect } from "react"
-import { getGames } from "../managers/GameManager.js"
+import { getGames } from "../../managers/GameManager.js"
 
 export const GameList = (props) => {
     const [ games, setGames ] = useState([])

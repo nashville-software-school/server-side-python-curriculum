@@ -29,7 +29,7 @@ Now create a **`GameForm`** component and add the code below. Notice that the bu
 ```jsx
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
-import { createGame, getGameTypes } from '../managers/GameManager.js'
+import { createGame, getGameTypes } from '../../managers/GameManager.js'
 
 
 export const GameForm = () => {
