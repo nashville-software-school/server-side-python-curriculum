@@ -4,6 +4,8 @@
 
 When you want to have a test suite which verifies that your code continues to work, even as developers make changes, here's the quick list of things you need to do:
 
+Using your existing `levelup` project:
+
 1. Create `tests` directory in your project.
 1. Create `tests/{resource_name}_tests.py` modules for each resource.
 1. Write test classes in each test module.
