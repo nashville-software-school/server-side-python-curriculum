@@ -34,7 +34,7 @@ When that user is authenticated, and the client requests a list of all events, t
 
 Add the following custom property to `Event` model class. It's a simple property with get/set methods with no additional validation logic. Although it looks like a function, it will act like a regular field. To get the property on the event it’s just `event.joined` no need for parenthesis and to use the setter: `event.joined = True`
 
-> #### `levelup/levelupclient/models/event.py`
+> #### `levelup/levelupapi/models/event.py`
 
 ```python
 @property
