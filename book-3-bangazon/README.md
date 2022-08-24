@@ -10,7 +10,7 @@ This book introduces you to integration testing, and  Django templates. You will
 | 2 | [API Integration Testing](./chapters/TESTING.md) <br/> <sub style="font-size:0.85rem;">#testing</sub> | [GamerRater API Testing](./chapters/GR_TESTS.md) |  |
 | 3 | [Django: Using SQL and Templates](./chapters/DJANGO_TEMPLATES.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |  |  |
 | 4 | [Events by Gamer](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> | [GamerRater Reports](./chapters/GR_REPORTS.md) |  |
-| 👨‍👩‍👧‍👧 | [Professional Project: Bangazon API](./chapters/BANG_SETUP.md) |  |
+| | [Self Assessment: Bangazon API](./chapters/BANG_SETUP.md) |  |
 
 ## Supplementary Chapters
 
