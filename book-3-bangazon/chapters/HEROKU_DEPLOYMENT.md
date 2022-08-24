@@ -80,10 +80,12 @@ Copy the URL heroku gave you into the URL bar and try it out!
 2. If you haven't changed your client side fetch urls to hit your new backend make sure you've done this. Also make them https.
 3. Add, commit and push any changes and this new branch to your github.
 4. Now create the app in the terminal and give it a name (The name may be taken but if it is just run this again with a new name.) `heroku create -b https://github.com/mars/create-react-app-buildpack.git <app-name>`
-5. Now go to Heroku Profile and click on your new app.
-6. To deploy: You can either follow the "Automatic Deploy" or "Deploy from terminal" steps from above for this app.
-7. Watch the deployment activity either locally or in heroku for errors
-8. Take the heroku url and add it to the `CORS_ORIGIN_WHITELIST` of the server side settings.py file.
-9. Add, commit, push, and deploy that change
-10. If everything builds correctly go to the app in the browser and check it out
+<!-- TODO: create-react-app-buildpack has been deprecated for heroku versions > 20 find a new way to deploy react frontend -->
+6. In the same terminal run `heroku stack:set heroku-20` 
+7. Now go to Heroku Profile and click on your new app.
+8. To deploy: You can either follow the "Automatic Deploy" or "Deploy from terminal" steps from above for this app.
+9. Watch the deployment activity either locally or in heroku for errors
+10. Take the heroku url and add it to the `CORS_ORIGIN_WHITELIST` of the server side settings.py file.
+11. Add, commit, push, and deploy that change
+12. If everything builds correctly go to the app in the browser and check it out
 
