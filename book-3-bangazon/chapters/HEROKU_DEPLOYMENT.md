@@ -4,6 +4,8 @@ Heroku is a cloud platform that lets companies and users build, deliver, monitor
 ## Video Tutorial
 https://vimeo.com/599704239 password: @7h#nVTJ5
 
+**As of Sept. 20th, Video is a little out of date. Run step 8 of the Heroku App Set Up to get around a bug in Django v4**
+
 ### 0. Before Starting
 1. Make sure you have the `db.sqlite3` in the gitignore and check that it is not in the github repo. If it is on github, fix that first before continuing.
 2. Follow the steps in Book 2 Chapter 1 to hide the django `SECRET_KEY` variable.
@@ -32,7 +34,8 @@ https://vimeo.com/599704239 password: @7h#nVTJ5
     import os
     import django_on_heroku
     ```
-8. Add a file called `Procfile` to the root directory of your project and paste in this line (change out `levelup` for your project module name) `web: gunicorn levelup.wsgi --log-file -`
+7. Add a file called `Procfile` to the root directory of your project and paste in this line (change out `levelup` for your project module name) `web: gunicorn levelup.wsgi --log-file -`
+8. Add these static files so heroku is happy: `touch rest_framework/css/bootstrap.min.css.map rest_framework/css/bootstrap-theme.min.css.map`
 9. Add, commit, and push all the changes to the deploy branch.
 
 ### 3. Automatic Deploy Set Up
