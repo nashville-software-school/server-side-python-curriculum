@@ -24,6 +24,7 @@ This book introduces you to the Django application framework, and the Django RES
 | 12 | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |  | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 13 | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 14 | [Leaving and Joining Events][35]| [Game Ratings][21] | |
+| | Django Self Assessment | Ask an instructor for the self assessment link|
 | 👨‍👩‍👧‍👧 | [Group Project: Rare REST][28] |  |
 
 ## Supplementary Chapters
@@ -35,6 +36,7 @@ These chapters will let you explore more advanced capabilities and workflows bet
 | 1 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Games in Action Pictures][30] |
 | 2 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Searching Games][32] |
 | 3 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> | [Sorting Games][34] |
+| 4 | [POST Validation][36] | | |
 
 [1]:	./chapters/DRF_INSTALLS.md
 [2]:	./chapters/GR_SETUP.md
@@ -70,6 +72,7 @@ These chapters will let you explore more advanced capabilities and workflows bet
 [32]:	./chapters/GR_SEARCH.md
 [33]:	./chapters/LU_JOINED_Q_FILTER.md
 [34]:	./chapters/GR_SORTING.md
-[35]:   ./chapters/LU_MODEL_PROPERTY.md
+[35]: ./chapters/LU_MODEL_PROPERTY.md
+[36]: ./chapters/LU_POST_VALIDATION.md
 
 [image-1]:	./chapters/images/level-up.png

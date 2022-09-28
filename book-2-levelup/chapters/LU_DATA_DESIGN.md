@@ -70,13 +70,13 @@
 
 ## ERD
 
-* There will be 4 main tables, `Gamer`, `Game`, `GameType`. and `Event`. 
-* Each of those tables have some fields that would be useful to keep track of in the database. 
-* The `Game` table will have a one to many relationship with `GameType` since a game will be associated with 1 game type and a game type can be associated with many games. 
-* The `Game` will also have a one to many relationship with `Gamer` because gamers can create more than one game. 
-* The `Event` table will have a 1 to many relationship with `Gamer`, called the organizer, because gamers can host many events but an event will only have 1 host. 
-* To keep track of who is attending events, there is a many to many relationship between gamers and events. There will need to be a join table to connect that many to many relationship. 
-After thinking about the requirements, you've come up with an erd.  
+* There will be 4 main tables, `Gamer`, `Game`, `GameType`. and `Event`.
+* Each of those tables have some fields that would be useful to keep track of in the database.
+* The `Game` table will have a one to many relationship with `GameType` since a game will be associated with 1 game type and a game type can be associated with many games.
+* The `Game` will also have a one to many relationship with `Gamer` because gamers can create more than one game.
+* The `Event` table will have a 1 to many relationship with `Gamer`, called the organizer, because gamers can host many events but an event will only have 1 host.
+* To keep track of who is attending events, there is a many to many relationship between gamers and events. There will need to be a join table to connect that many to many relationship.
+After thinking about the requirements, you've come up with an erd.
 
 ![level-up-erd](https://user-images.githubusercontent.com/18269696/139501440-14959d94-fdd9-42b0-912e-8adba1fe750e.png)
 
@@ -128,7 +128,7 @@ __Notice for the toy_type field, there's no need to put `_id` for the foreign ke
 
 Django gives you a **`User`** model out of the box that already has fields on it like *first name*, *last name*, *email*, etc. If there are any additional fields that you want to capture about a user of your application, you need to create a separate model. The new model will have a 1 to 1 relationship to the django **`User`** model to connect the two.
 
-In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it (here)[https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model]
+In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it [here](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model)
 
 > #### `levelup-server/levelupapi/models/gamer.py`
 
@@ -164,6 +164,8 @@ from .gamer import Gamer
 ## Level Up Models
 
 Once you have looked over the ERD and understand relationships for Gamers, Games, and Events, create your modules and classes. Then import the classes into the package init module.
+
+There is a many-many relationship between the Gamers and Events to show who is attending an event. Read the [Many to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-many-relationships) resource to learn how to set that up.
 
 ## Migration of Models
 

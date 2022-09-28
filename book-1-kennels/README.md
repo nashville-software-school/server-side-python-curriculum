@@ -9,7 +9,7 @@
 | 💻 | [Installations for Mac][1] | | |
 | 💻 | [Installations for WSL and Ubuntu][2] | | |
 | 🐞 | [Debugging Python in Visual Studio Code][3] | | |
-| 1 | [Request and Response][4] <br/> <sub style="font-size:0.85rem;">\#overview #pipenv #watchgod</sub> | | |
+| 1 | [Request and Response][4] <br/> <sub style="font-size:0.85rem;">\#overview #pipenv</sub> | | |
 | 2 | [Animals Package and Data][5] <br/> <sub style="font-size:0.85rem;">\#packages #modules #lists #dictionaries</sub> | | |
 | 3 |  [Animal Response][6] <br/> <sub style="font-size:0.85rem;">\#HTTP\_GET #functions #for\_loop #if</sub> |  | |
 | 4 | [Adding Animals][7] <br/> <sub style="font-size:0.85rem;">\#HTTP\_POST</sub> |  | |
@@ -29,6 +29,7 @@
 | 16 |  | [Editing Journal Entries][29] |  |
 | 17 |  | [Add Entry Tags][30] |  |  |
 | 18 |  | [Add Entry Tags in Client][31] |  |  |
+| 🎓 | SQL Self Assessment | Ask an instructor for the book 1 assessment | |
 | 👨‍👩‍👧‍👧 | [Group Project: Rare][32] | | | |
 
 ## Supplementary Chapters

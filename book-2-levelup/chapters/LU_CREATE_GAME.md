@@ -27,13 +27,13 @@ Now create a **`GameForm`** component and add the code below. Notice that the bu
 > #### `src/components/game/GameForm.js`
 
 ```jsx
-import React, { useState, useEffect } from "react"
-import { useHistory } from 'react-router-dom'
-import { createGame, getGameTypes } from './GameManager.js'
+import { useState, useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
+import { createGame, getGameTypes } from '../../managers/GameManager.js'
 
 
 export const GameForm = () => {
-    const history = useHistory()
+    const navigate = useNavigate()
     const [gameTypes, setGameTypes] = useState([])
 
     /*
@@ -80,14 +80,14 @@ export const GameForm = () => {
                     const game = {
                         maker: currentGame.maker,
                         title: currentGame.title,
-                        numberOfPlayers: parseInt(currentGame.numberOfPlayers),
-                        skillLevel: parseInt(currentGame.skillLevel),
-                        gameTypeId: parseInt(currentGame.gameTypeId)
+                        number_of_players: parseInt(currentGame.numberOfPlayers),
+                        skill_level: parseInt(currentGame.skillLevel),
+                        game_type: parseInt(currentGame.gameTypeId)
                     }
 
                     // Send POST request to your API
                     createGame(game)
-                        .then(() => history.push("/games"))
+                        .then(() => navigate("/games"))
                 }}
                 className="btn btn-primary">Create</button>
         </form>
@@ -102,7 +102,7 @@ Add the following button to the header of the game list component JSX. When clic
 ```jsx
 <button className="btn btn-2 btn-sep icon-create"
     onClick={() => {
-        history.push({ pathname: "/games/new" })
+        navigate({ pathname: "/games/new" })
     }}
 >Register New Game</button>
 ```
@@ -110,9 +110,7 @@ Add the following button to the header of the game list component JSX. When clic
 Then add the following route to the **`ApplicationViews`** component.
 
 ```jsx
-<Route exact path="/games/new">
-    <GameForm />
-</Route>
+<Route path="/games/new" element={<GameForm />} />
 ```
 
 

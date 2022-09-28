@@ -5,7 +5,7 @@ Now that we’ve added a way to get all games and events from the server, let’
 
 You can start off with this starter React code to request and display a list of games from the API. Note the `Authorization` header added to the fetch call. This will be in every fetch call to the database to let the server know which user is logged in.
 
-> #### `src/components/game/GameManager.js`
+> #### `src/managers/GameManager.js`
 
 ```jsx
 export const getGames = () => {
@@ -22,7 +22,7 @@ export const getGames = () => {
 
 ```jsx
 import React, { useEffect } from "react"
-import { getGames } from "./GameManager.js"
+import { getGames } from "../../managers/GameManager.js"
 
 export const GameList = (props) => {
     const [ games, setGames ] = useState([])
@@ -50,20 +50,22 @@ export const GameList = (props) => {
 > #### `src/components/ApplicationViews.js`
 
 ```jsx
-import React from "react"
-import { Route } from "react-router-dom"
-import { GameList } from "./game/GameList.js"
+import { Route, Routes } from "react-router-dom"
+import { Login } from "../components/auth/Login"
+import { Register } from "../components/auth/Register"
+import { Authorized } from "./Authorized"
+import { GameList } from "../components/game/GameList"
+
 
 export const ApplicationViews = () => {
     return <>
-        <main style={{
-            margin: "5rem 2rem",
-            lineHeight: "1.75rem"
-        }}>
-            <Route exact path="/">
-                <GameList />
+        <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route element={<Authorized />}>
+                <Route path="/" element={<GameList />} />
             </Route>
-        </main>
+        </Routes>
     </>
 }
 ```
