@@ -4,6 +4,8 @@
 
 When you want to have a test suite which verifies that your code continues to work, even as developers make changes, here's the quick list of things you need to do:
 
+Using your existing `levelup` project:
+
 1. Create `tests` directory in your project.
 1. Create `tests/{resource_name}_tests.py` modules for each resource.
 1. Write test classes in each test module.
@@ -55,9 +57,9 @@ Now, we can define the functions for running the integration tests.
 
 ### Test - CREATE A New Game
 
-Copy and paste the code below into your `test_game_view.py` module.
+Copy and paste the code below into your `test_game_view.py` module. The `tests` module should be a sibling to the `levelupapi` and `levelup` folders
 
-> #### `levelup/tests/test_game_view.py`
+> #### `./tests/test_game_view.py`
 
 ```py
 from rest_framework import status
@@ -143,7 +145,7 @@ class GameTests(APITestCase):
 
 Add the function below to your `GameTests` class.
 
-> #### `levelup/tests/game_tests.py`
+> #### `./tests/test_game_view.py`
 
 ```py
     def test_get_game(self):

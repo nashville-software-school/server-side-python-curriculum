@@ -26,12 +26,12 @@ You are only provided with a small sample of code in this chapter. You have to b
 > #### `src/components/event/EventForm.js`
 
 ```jsx
-import React, { useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 export const EventForm = () => {
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const [currentEvent, setEvent] = useState({})
 

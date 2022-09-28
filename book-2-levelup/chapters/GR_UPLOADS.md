@@ -78,6 +78,8 @@ Import the `uuid` package so that you can generate a unique file name for the up
 
 ```py
 import uuid
+import base64
+from django.core.files.base import ContentFile
 ```
 
 In the `create` method of your ViewSet, here is how you can save the file with a random file name.

@@ -92,6 +92,7 @@ Add the following import statements at the top of the urls module in the level f
 > #### `levelup/levelup/urls.py`
 
 ```py
+from django.conf.urls import include
 from rest_framework import routers
 from levelupapi.views import GameTypeView
 ```
@@ -113,8 +114,10 @@ path('', include(router.urls)),
 
 ## 6. Test it out
 Try it out in Postman! To run the server type into a terminal that has the shell running: `./manage.py runserver`
-`http://localhost:8000/gametypes` should return a list of all the game types
-`http://localhost:8000/gametypes/1` should return the game type with an id of 1
+Before running in Postman, add an authorization token to the headers. Here's the token from the fixture chapters to use `fa2eba9be8282d595c997ee5cd49f2ed31f65bed`. Here's how to add the token to the headers:
+![](images/postman_token.gif)
+* `http://localhost:8000/gametypes` should return a list of all the game types
+* `http://localhost:8000/gametypes/1` should return the game type with an id of 1
 
 # Practice
 Now repeat steps 1-6 for events and games. By the end you should have an `EventView` and `GameView` with the `list` and `retrieve` methods added. Each view should also have it’s own serializer. When you get to the `urls.py` you’ll only need to add the `router.register` calls to add the `/events` and `/games` resources.

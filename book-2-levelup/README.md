@@ -26,11 +26,11 @@ This book introduces you to the Django application framework, and the Django RES
 | 13 |  |  | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> | |  |
 | 14 |  |  | [Leaving and Joining Events][35]| [Game Ratings][21] | |
 
-## 🔐 Projects Unlocked
+## 🔐 Deep Learning Group Project Unlocked
 
 | # | Project&nbsp;Name | Description |
 |--|--|--|
-| 👨‍👩‍👧‍👧 | [Group Project: Rare REST][28] | When you complete LevelUp and GamerRater, you will join some teammates to build a content management platform called Rare. You will build a client in React, and the API with Django REST. |
+| 👨‍👩‍👧‍👧 | [Rare - The REST API][28] | When you complete LevelUp and GamerRater, you will join some teammates to build a content management platform called Rare. You will build a client in React, and the API with Django REST. |
 
 ## 🧭 Explorer Chapters
 
@@ -41,6 +41,7 @@ Explorer chapters give you the opportunity to expand on the Core chapters and th
 | 1 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Games in Action Pictures][30] |
 | 2 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Searching Games][32] |
 | 3 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> | [Sorting Games][34] |
+| 4 | [POST Validation][36] | | |
 
 ## 🏕 Pioneer Chapters
 
@@ -87,6 +88,7 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [32]:	./chapters/GR_SEARCH.md
 [33]:	./chapters/LU_JOINED_Q_FILTER.md
 [34]:	./chapters/GR_SORTING.md
-[35]:   ./chapters/LU_MODEL_PROPERTY.md
+[35]: ./chapters/LU_MODEL_PROPERTY.md
+[36]: ./chapters/LU_POST_VALIDATION.md
 
 [image-1]:	./chapters/images/level-up.png

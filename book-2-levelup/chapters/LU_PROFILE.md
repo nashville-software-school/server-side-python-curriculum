@@ -157,7 +157,7 @@ _Make sure to import the `user_profile` function into the `urls.py`_
 
 On the client side, create a new manager to hold the fetch call.
 
-> #### `src/components/auth/ProfileManager.js`
+> #### `src/managers/ProfileManager.js`
 
 ```jsx
 export const getProfile = () => {
@@ -171,7 +171,7 @@ export const getProfile = () => {
 
 ```jsx
 import React, { useEffect } from "react"
-import { getProfile } from "./ProfileManager.js"
+import { getProfile } from "../../managers/ProfileManager.js"
 import "./Profile.css"
 
 
