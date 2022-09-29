@@ -1,21 +1,5 @@
 # Book 1 - Python Kennels
 
-## Required Core Chapters
-
-| # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub> |
-|--|--|---|
-| 💻 | [Installations for Mac][1] | |
-| 💻 | [Installations for WSL and Ubuntu][2] | |
-| 🐞 | [Debugging Python in Visual Studio Code][3] | |
-| 1 | [Request and Response][4] <br/> <sub style="font-size:0.85rem;">\#overview #pipenv</sub> | [Review ERD][12] |
-| 2 | [Animals Module and Data][5] <br/> <sub style="font-size:0.85rem;">\#packages #modules #lists #dictionaries</sub> | [Kneel Diamonds Data ][13] |
-| 3 |  [Animal Response][6] <br/> <sub style="font-size:0.85rem;">\#HTTP\_GET #functions #for\_loop #if</sub> | [][14] |
-| 4 | [Adding Animals][7] <br/> <sub style="font-size:0.85rem;">\#HTTP\_POST</sub> | [][15] |
-| 5 | [Discharging Animals][8] <br/> <sub style="font-size:0.85rem;">\#for\_loop #enumerate #pop()</sub> |  [][16] |
-| 6 | [Animal Status][9] <br/> <sub style="font-size:0.85rem;">\#HTTP\_PUT #for\_loop #enumerate</sub> | [][17] |
-| 7 | [Animal Class][10] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | [][18] |
-| Interlude: SQL | [SQL Bolt: Beginner SQL Tutorial][11] |  |
-
 ## 👩‍👩‍👧‍👦 Team Collaboration Projects
 
 | # | Project Name | Summary |
@@ -24,13 +8,29 @@
 | 2 | [Build a Chimera](https://codesandbox.io/s/book-5-create-a-chimera-x6d1n) | In this fun project, you will be building a Web based UI that lets people build their own stuffed chimera for their kids. |
 
 
+## 🍎 Required Core Chapters
+
+| # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub> |
+|--|--|---|
+| 💻 | [Installations for Mac][1] | |
+| 💻 | [Installations for WSL and Ubuntu][2] | |
+| 🐞 | [Debugging Python in Visual Studio Code][3] | |
+| 1 | [Request and Response][4] <br/> <sub style="font-size:0.85rem;">\#overview #pipenv</sub> | [Review ERD][12] |
+| 2 | [Animals Module and Data][5] <br/> <sub style="font-size:0.85rem;">\#packages #modules #lists #dictionaries</sub> | [Kneel Diamonds Data ][13] |
+| 3 |  [Animal Response][6] <br/> <sub style="font-size:0.85rem;">\#HTTP\_GET #functions #for\_loop #if</sub> | [Single Resources][14] |
+| 4 | [Adding Animals][7] <br/> <sub style="font-size:0.85rem;">\#HTTP\_POST</sub> | [Place New Order][15] |
+| 5 | [Discharging Animals][8] <br/> <sub style="font-size:0.85rem;">\#for\_loop #enumerate #pop()</sub> |  [Cancel an Order][16] |
+| 6 | [Animal Status][9] <br/> <sub style="font-size:0.85rem;">\#HTTP\_PUT #for\_loop #enumerate</sub> | [Change an Order][17] |
+| 7 | [Animal Class][10] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | [][18] |
+| Interlude: SQL | [SQL Bolt: Beginner SQL Tutorial][11] |  |
+
 ## 🧭 Explorer Chapters
 
 Explorer chapters are optional and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
-| 1 |  |  |
+| 1 |  | [Expanding Orders][19] |
 | 1 |  |  |
 | 1 |  |  |
 | 1 |  |  |
@@ -67,8 +67,9 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 [11]:	https://sqlbolt.com/
 [12]:	./chapters/KD_REVIEW.md
 [13]:	./chapters/KD_PACKAGES.md
-[14]:	./chapters/KD_CLASSES.md
-[15]:	./chapters/KD_CLASSES.md
-[16]:	./chapters/KD_CLASSES.md
-[17]:	./chapters/KD_CLASSES.md
+[14]:	./chapters/KD_SINGLE_RESOURCES.md
+[15]:	./chapters/KD_CREATE_ORDER.md
+[16]:	./chapters/KD_CANCEL_ORDER.md
+[17]:	./chapters/KD_UPDATE_ORDER.md
 [18]:	./chapters/KD_CLASSES.md
+[19]:	./chapters/KD_EC_EXPAND_ORDER.md
