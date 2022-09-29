@@ -53,7 +53,7 @@ Replace the existing `do_POST` method in the main module with the following code
             new_animal = create_animal(post_body)
 
         # Encode the new animal and send in response
-        self.wfile.write(f"{new_animal}".encode())
+        self.wfile.write(json.dumps(new_animal).encode())
 ```
 
 ## Appending the Animals List
