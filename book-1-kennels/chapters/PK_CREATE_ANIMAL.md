@@ -99,7 +99,7 @@ Now open Postman and follow these steps to create a new animal.
     {
         "name": "Falafel",
         "species": "Cat",
-        "location": 1,
+        "locationId": 1,
         "customerId": 3
     }
     ```

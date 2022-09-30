@@ -1,13 +1,5 @@
 # Book 1 - Python Kennels
 
-## 👩‍👩‍👧‍👦 Team Collaboration Projects
-
-| # | Project Name | Summary |
-|--|--|--|
-| 1 | [Khandescending Grill](https://codesandbox.io/s/book-5-khandescending-grill-9s402) | The owners of Khandescending Grill have asked you to build a Web based UI that allows customers to pick which foods they want in their bowl and place an order. |
-| 2 | [Build a Chimera](https://codesandbox.io/s/book-5-create-a-chimera-x6d1n) | In this fun project, you will be building a Web based UI that lets people build their own stuffed chimera for their kids. |
-
-
 ## 🍎 Required Core Chapters
 
 | # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub> |
@@ -21,8 +13,15 @@
 | 4 | [Adding Animals][7] <br/> <sub style="font-size:0.85rem;">\#HTTP\_POST</sub> | [Place New Order][15] |
 | 5 | [Discharging Animals][8] <br/> <sub style="font-size:0.85rem;">\#for\_loop #enumerate #pop()</sub> |  [Cancel an Order][16] |
 | 6 | [Animal Status][9] <br/> <sub style="font-size:0.85rem;">\#HTTP\_PUT #for\_loop #enumerate</sub> | [Change an Order][17] |
-| 7 | [Animal Class][10] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | [][18] |
+| 7 | [Animal Class][10] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | [Defining Jewelry Classes][18] |
 | Interlude: SQL | [SQL Bolt: Beginner SQL Tutorial][11] |  |
+
+## 👩‍👩‍👧‍👦 Team Collaboration Projects
+
+| # | Project Name | Summary |
+|--|--|--|
+| 1 | [Brewed Awakenings]() | You will collaboratively design and build a simple API for the Brewed Awakenings client application that you worked on in the client-side course. |
+| 2 | [Buttons the Clown]() | You will collaboratively design and build an API as the replacement for `json-server` that you used for the eponymous client-side project. When complete, your client-side project should work with this API.  |
 
 ## 🧭 Explorer Chapters
 
@@ -30,7 +29,7 @@ Explorer chapters are optional and give you the opportunity to expand on the Cor
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
-| 1 |  | [Expanding Orders][19] |
+| 1 | [Expanding Animal Responses][19] | [Expanding Order Responses][20] |
 | 1 |  |  |
 | 1 |  |  |
 | 1 |  |  |
@@ -72,4 +71,5 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 [16]:	./chapters/KD_CANCEL_ORDER.md
 [17]:	./chapters/KD_UPDATE_ORDER.md
 [18]:	./chapters/KD_CLASSES.md
-[19]:	./chapters/KD_EC_EXPAND_ORDER.md
+[19]:	./chapters/PK_EC_EXPAND_ANIMAL.md
+[20]:	./chapters/KD_EC_EXPAND_ORDER.md
