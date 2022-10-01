@@ -27,7 +27,7 @@
 
 Explorer chapters are optional and give you the opportunity to expand on the Core chapters and the concepts in the book.
 
-| # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
+| # | 🐕 🐩 <br/> Python Kennels | 💎 💍 <br/> Kneel Diamonds |
 |--|--|--|
 | 1 | [Expanding Animal Responses][19] | [Expanding Order Responses][20] |
 | 2 | [Animal Not Found][21] | [Order Does Not Exist][22] |
@@ -36,7 +36,7 @@ Explorer chapters are optional and give you the opportunity to expand on the Cor
 
 ## 🏕 Pioneer Chapters
 
-Pioneer chapters are optional let you develop Deep Learning on the concepts that you practiced in this book.
+Pioneer chapters are optional let you develop Deep Learning on the concepts that you practiced in this book. Be prepared to quickly reach the limit of your capabilities, and stretch your Web researching skills, and asking good questions.
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
