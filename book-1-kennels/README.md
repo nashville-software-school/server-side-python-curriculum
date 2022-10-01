@@ -25,14 +25,14 @@
 
 ## 🧭 Explorer Chapters
 
-Explorer chapters are optional and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
+Explorer chapters are optional and give you the opportunity to expand on the Core chapters and the concepts in the book.
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
 | 1 | [Expanding Animal Responses][19] | [Expanding Order Responses][20] |
-| 1 |  |  |
-| 1 |  |  |
-| 1 |  |  |
+| 2 | [Animal Not Found][21] | [Order Does Not Exist][22] |
+| 3 | [Invalid Animal][25] | [Incomplete Order][26] |
+| 4 | [You Are a Customer Forever][27] | [Protect the Inventory][28] |
 
 ## 🏕 Pioneer Chapters
 
@@ -40,10 +40,10 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
-| 1 |  |  |
-| 1 |  |  |
-| 1 |  |  |
-| 1 |  |  |
+| 1 | 🌵 [Keep the Kennels Dry][23] |  |
+| 2 | 👁 [One Module to Rule Them All][24] |  |
+| 3 |  |  |
+| 4 |  |  |
 
 ## 🔐 Deep Learning Projects Unlocked
 
@@ -73,3 +73,11 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 [18]:	./chapters/KD_CLASSES.md
 [19]:	./chapters/PK_EC_EXPAND_ANIMAL.md
 [20]:	./chapters/KD_EC_EXPAND_ORDER.md
+[21]:	./chapters/PK_EC_404.md
+[22]:	./chapters/KD_EC_404.md
+[23]:	./chapters/PK_PC_DRY.md
+[24]:	./chapters/PK_PC_SAURON.md
+[25]:	./chapters/PK_EC_400.md
+[26]:	./chapters/KD_EC_400.md
+[27]:	./chapters/PK_EC_405.md
+[28]:	./chapters/KD_EC_405.md

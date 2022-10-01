@@ -75,4 +75,4 @@ requested_animal["location"] = matching_location
 
 Now that the related location and customer dictionaries are embedded directly on the animal, there's no need to have the `locationId` and `customerId` keys on the dictionary any longer.
 
-Use your searching skills to find out how to delete a key from a Python dictionary.
+Use your Web searching skills to find out how to delete a key from a Python dictionary.
