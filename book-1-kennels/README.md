@@ -20,8 +20,8 @@
 
 | # | Project Name | Summary |
 |--|--|--|
-| 1 | [Brewed Awakenings]() | You will collaboratively design and build a simple API for the Brewed Awakenings client application that you worked on in the client-side course. |
-| 2 | [Buttons the Clown]() | You will collaboratively design and build an API as the replacement for `json-server` that you used for the eponymous client-side project. When complete, your client-side project should work with this API.  |
+| 1 | Brewed Awakenings | You will collaboratively design and build a simple API for the Brewed Awakenings client application that you worked on in the client-side course. |
+| 2 | Buttons the Clown | You will collaboratively design and build an API as the replacement for `json-server` that you used for the eponymous client-side project. When complete, your client-side project should work with this API.  |
 
 ## 🧭 Explorer Chapters
 
@@ -47,7 +47,7 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 
 | # | Project&nbsp;Name | Description |
 |--|--|--|
-|1|[Pen Pal Society API](https://github.com/nss-group-projects/exomine)| In the client-side course, you built a JavaScript application called **The Pen Pal Society** as the self-assessment for one of the books. In this project, you will build a basic API that will replace `json-server` as the server. <br/><br/> When done, your self-assessment should work with zero changes to the client-side code. |
+|1| Pen Pal Society API | In the client-side course, you built a JavaScript application called **The Pen Pal Society** as the self-assessment for one of the books. In this project, you will build a basic API that will replace `json-server` as the server. <br/><br/> When done, your self-assessment should work with zero changes to the client-side code. |
 
 
 
