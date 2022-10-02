@@ -41,9 +41,7 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
 | 1 | 🌵 [Keep the Kennels Dry][23] |  |
-| 2 | 👁 [One Module to Rule Them All][24] |  |
-| 3 |  |  |
-| 4 |  |  |
+| 2 | 👁 [One Module to Rule Them All][24] | 👑 [The King of All Modules][29] |
 
 ## 🔐 Deep Learning Projects Unlocked
 
@@ -81,3 +79,4 @@ Pioneer chapters are optional let you develop Deep Learning on the concepts that
 [26]:	./chapters/KD_EC_400.md
 [27]:	./chapters/PK_EC_405.md
 [28]:	./chapters/KD_EC_405.md
+[29]:	./chapters/KD_PC_KING_OF_MODULES.md
