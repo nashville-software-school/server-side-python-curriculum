@@ -72,6 +72,7 @@ Time to create a table for each of the four resources in this application.
 5. If you refresh the database in the Sqlite Explorer and open the `kennel.sqlite3` dropdown you should see the tables
 
 [](./images/run_sql.gif)
+
 **Gif already has data inserted into tables**
 
 If any step of this didn't work, contact a member of your instruction team immediately to get it fixed.
@@ -114,7 +115,6 @@ CREATE TABLE `Employee` (
 ```
 
 ## Inserting Starter Data
-
 
 The `INSERT INTO` SQL statement allows you to enter in the actual data about individual resources that will be stored in a table. The values have to match the order in which the columns were defined in the `CREATE TABLE` statements above, so yes, order matters.
 
