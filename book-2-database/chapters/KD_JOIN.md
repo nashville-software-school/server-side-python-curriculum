@@ -19,8 +19,20 @@ The goal is to have the related information expanded and embedded in the JSON so
     "id": 1,
     "timestamp": 1614659931693,
     "style_id": 3,
+    "style": {
+        "style": "Vintage",
+        "price": 965
+    },
     "metal_id": 3,
-    "size_id": 2
+    "metal": {
+        "metal": "24K Gold",
+        "price": 1258.9
+    },
+    "size_id": 2,
+    "size": {
+        "carets": 0.75,
+        "price": 782
+    }
 }
 ```
 
@@ -49,14 +61,16 @@ Now you can join the `Location` table into the query so that the name and addres
 
 ```sql
 SELECT
-    a.id,
-    a.name,
-    a.breed,
-    a.status,
-    a.location_id,
-    a.customer_id,
-    l.name location_name,
-    l.address location_address
+    o.timestamp,
+    o.size_id,****
+    o.style_id,
+    o.metal_id,
+    st.style,
+    st.price,
+    m.metal,
+    m.price,
+    sz.carets,
+    sz.price
 FROM Animal a
 JOIN Location l
     ON l.id = a.location_id
@@ -121,3 +135,4 @@ Add an embedded customer object to the JSON response.
 ## Practice: Employee Locations
 
 Add a `location` property to the response when the user requests http://localhost:8088/employees so that the client immediately knows the details of the employee's workplace.
+
