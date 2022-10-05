@@ -10,7 +10,7 @@
 | 4 | [Deleting Animal Records][18] <br/> <sub style="font-size:0.85rem;">\#sql #DELETE #HTTP\_DELETE</sub> | [Create New Order][4] | [Deleting Journal Entries][19] |
 | 5 | [Using React Kennels Client Again][20] <br/> <sub style="font-size:0.85rem;">\#react</sub> | [Cancel an Order][5] | [Searching for Journal Entries][21]|
 | 6 | [Updating Animal Records][22] <br/> <sub style="font-size:0.85rem;">\#sql #UPDATE #HTTP\_PUT</sub> | [Update a Metal Price][6] |  |
-| 7 | [Animals with Location Report][24] <br/> <sub style="font-size:0.85rem;">\#sql #JOIN #HTTP\_GET</sub> |  | [Including Mood with Entry][25] |
+| 7 | [Animals with Location Report][24] <br/> <sub style="font-size:0.85rem;">\#sql #JOIN #HTTP\_GET</sub> | [Embedding Metal, Style, and Size][7] | [Including Mood with Entry][25] |
 | 8 | [Admitting Animals][26] <br/> <sub style="font-size:0.85rem;">\#sql #INSERT</sub> |  | [Recording New Entries][27] |
 | Interlude: SQL | [SQL Murder Mystery][28] | |
 | 👨‍👩‍👧‍👧 | [Group Project: Rare][32] | |
@@ -19,23 +19,22 @@
 
 Explorer chapters are optional, and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
-| # | 💎 💍  <br/> Kneel Diamonds | 📔 ✒️ <br/> Daily Journal  |
-|--|--|--|
-| 1 |  | [Editing Journal Entries][29] |
-| 2 |  | [Add Entry Tags][30] |
-| 3 |  | [Add Entry Tags in Client][31] |
-| 1 |  |  |
+| # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds | 📔 ✒️ <br/> Daily Journal  |
+|--|--|--|--|
+| 1 | [Sort Animals by Location][] | | [Editing Journal Entries][29] |
+| 2 | [Sort Animals by Customer][] | | [Add Entry Tags][30] |
+| 3 | [Get Animals by Location][] | | [Add Entry Tags in Client][31] |
+| 4 | [Sort Animals by Status][] |  |
+| 5 | [Get Animals by Status][] |  |
+| 5 | [Add Number of Animals for Location][] |  |
 
 ## 🏕 Pioneer Chapters
 
 Pioneer chapters let you develop Deep Learning on the concepts that you practiced in this book.
 
-| # | 💎 💍  <br/> Kneel Diamonds | 📔 ✒️ <br/> Daily Journal  |
+| # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
-| 1 |  |  |
-| 1 |  |  |
-| 1 |  |  |
-| 1 |  |  |
+| 1 | [Using CTE to Find Poodle Owners][] |  |
 
 
 [1]:	./chapters/KD_DATABASE_CREATION.md

@@ -59,80 +59,42 @@ Now you can join the `Location` table into the query so that the name and addres
 
 #### SQL
 
+Update the existing SQL in the `get_all_orders()` function to join in the 3 related tables, and select all required columns from those tables. Here's some SQL to get you started.
+
 ```sql
 SELECT
     o.timestamp,
-    o.size_id,****
+    o.size_id,
     o.style_id,
     o.metal_id,
-    st.style,
-    st.price,
     m.metal,
-    m.price,
-    sz.carets,
-    sz.price
-FROM Animal a
-JOIN Location l
-    ON l.id = a.location_id
+    m.price
+    -- You select the rest of the columns from the joined tables here
+FROM `Order` o
+JOIN Metals m ON m.id = o.metal_id
+-- You write the rest of the JOIN clauses here
 ```
 
-Take the SQL statement from above and replace the existing SQL in the `get_all_animals()` function.
+## Creating Extended Order Instances
 
-## Columns Used to Make an Animal
-
-### Animal Fields
-
-Each row contains 8 fields. The information in the first 6 will be used to create an **`Animal`** instance in your Python code.
-
-![](./images/animal-columns.png)
-
-
-### Location Fields
-
-The final two columns will be used to create a **`Location`** instance in your Python code.
-
-![](./images/location-columns.png)
-
-## Creating Location Instances
-
-Since you have two columns in each row from the locations table in your database, that means that you can create a new instance of the **`Location`** class, in addition to the instance of **`Animal`** class that you are already making, from each row in the results.
-
-Now replace your `for` loop with the following code.
+Update your logic for creating an Order instance to include the size, style, and metal. Here's some starter code.
 
 ```py
 for row in dataset:
 
-    # Create an animal instance from the current row
-    animal = Animal(row['id'], row['name'], row['breed'], row['status'],
-                    row['location_id'], row['customer_id'])
+    # Create an order instance from the current row
+    order = Order(row['timestamp'], row['metal_id'], row['style_id'], row['size_id'])
 
-    # Create a Location instance from the current row
-    location = Location(row['id'], row['location_name'], row['location_address'])
+    # Create a Size instance from the current row
 
-    # Add the dictionary representation of the location to the animal
-    animal.location = location.__dict__
+    # Create a Style instance from the current row
 
-    # Add the dictionary representation of the animal to the list
-    animals.append(animal.__dict__)
+    # Create a Size instance from the current row
+
+    # Add the dictionary representation of related object to the order instance
+    # Here what added the size would look like. You add the other two.
+    order.size = size.__dict__
+
+    # Add the dictionary representation of the order to the list
+    orders.append(order.__dict__)
 ```
-
-## Requesting from Postman Client
-
-Request all animals from the Postman client and verify that there is an embedded `location` property on each one.
-
-![](./images/postman-animals-with-location.gif)
-
-## Practice: Animals with Embedded Customer
-
-Add an embedded customer object to the JSON response.
-
-1. Add a `customer` property to the **`Animal`** table.
-1. JOIN in the Customer table in your SQL query.
-1. Select all of the columns that are needed for an instance of a **`Customer`**.
-1. Create an instance of a **`Customer`** for each row in the results.
-1. Add that instance of a customer
-
-## Practice: Employee Locations
-
-Add a `location` property to the response when the user requests http://localhost:8088/employees so that the client immediately knows the details of the employee's workplace.
-
