@@ -23,5 +23,7 @@ $L_g =$ Germane cognitive load
 $L_i =$ Intrinsic cognitive load
 
 $L_e =$ External cognitive load
+
+$\sum_{i=1}^\infty m_i =$ Sum of daily mistakes
 </sub>
 
