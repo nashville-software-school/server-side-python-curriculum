@@ -26,7 +26,7 @@ Explorer chapters are optional, and give you the opportunity to expand on the Co
 | 3 | [Get Animals by Location][35] | | [Add Entry Tags in Client][31] |
 | 4 | [Sort Animals by Status][36] |  |
 | 5 | [Get Animals by Status][37] |  |
-| 5 | [Add Number of Animals for Location][38] |  |
+| 6 | [Add Number of Animals for Location][38] |  |
 
 ## 🏕 Pioneer Chapters
 
@@ -35,6 +35,7 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
 | 1 | [Using CTE to Find Poodle Owners][39] |  |
+| 2 | [Sort Animals by Name][40] |  |
 
 
 [1]:	./chapters/KD_DATABASE_CREATION.md
@@ -65,10 +66,11 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [30]:	./chapters/DJ_JOIN_TAGS.md
 [31]:	./chapters/DJ_CLIENT_TAGS.md
 [32]:	./chapters/RARE.md
-[33]:	./chapters/RARE.md
-[34]:	./chapters/RARE.md
+[33]:	./chapters/PK_EC_SORT_BY_LOCATION.md
+[34]:	./chapters/PK_EC_SORT_BY_CUSTOMER.md
 [35]:	./chapters/RARE.md
-[36]:	./chapters/RARE.md
+[36]:	./chapters/PK_EC_SORT_BY_STATUS.md
 [37]:	./chapters/RARE.md
 [38]:	./chapters/RARE.md
 [39]:	./chapters/RARE.md
+[40]:	./chapters/RARE.md
