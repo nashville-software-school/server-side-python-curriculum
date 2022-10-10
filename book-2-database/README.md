@@ -21,7 +21,7 @@ Explorer chapters are optional, and give you the opportunity to expand on the Co
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds | 📔 ✒️ <br/> Daily Journal  |
 |--|--|--|--|
-| 1 | [Sort Animals by Location][33] | | [Editing Journal Entries][29] |
+| 1 | [Sort Animals by Location][33] | [Sort Resources by Price][40] | [Editing Journal Entries][29] |
 | 2 | [Sort Animals by Customer][34] | | [Add Entry Tags][30] |
 | 3 | [Get Animals by Location][35] | | [Add Entry Tags in Client][31] |
 | 4 | [Sort Animals by Status][36] |  |
@@ -34,8 +34,7 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
-| 1 | [Using CTE to Find Poodle Owners][39] |  |
-| 2 | [Sort Animals by Name][40] |  |
+| 1 | [Sort Animals by Name][39] |  |
 
 
 [1]:	./chapters/KD_DATABASE_CREATION.md
@@ -72,5 +71,5 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [36]:	./chapters/PK_EC_SORT_BY_STATUS.md
 [37]:	./chapters/PK_EC_FILTER_BY_STATUS.md
 [38]:	./chapters/PK_EC_ANIMAL_TOTALS.md
-[39]:	./chapters/RARE.md
-[40]:	./chapters/PK_PC_SORT_BY_NAME.md
+[39]:	./chapters/PK_PC_SORT_BY_NAME.md
+[40]:	./chapters/KD_EC_SORT_BY_PRICE.md
