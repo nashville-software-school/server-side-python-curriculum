@@ -68,9 +68,9 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [32]:	./chapters/RARE.md
 [33]:	./chapters/PK_EC_SORT_BY_LOCATION.md
 [34]:	./chapters/PK_EC_SORT_BY_CUSTOMER.md
-[35]:	./chapters/RARE.md
+[35]:	./chapters/PK_EC_FILTER_BY_LOCATION.md
 [36]:	./chapters/PK_EC_SORT_BY_STATUS.md
-[37]:	./chapters/RARE.md
-[38]:	./chapters/RARE.md
+[37]:	./chapters/PK_EC_FILTER_BY_STATUS.md
+[38]:	./chapters/PK_EC_ANIMAL_TOTALS.md
 [39]:	./chapters/RARE.md
 [40]:	./chapters/RARE.md
