@@ -13,7 +13,13 @@
 | 7 | [Animals with Location Report][24] <br/> <sub style="font-size:0.85rem;">\#sql #JOIN #HTTP\_GET</sub> | [Embedding Metal, Style, and Size][7] | [Including Mood with Entry][25] |
 | 8 | [Admitting Animals][26] <br/> <sub style="font-size:0.85rem;">\#sql #INSERT</sub> |  | [Recording New Entries][27] |
 | Interlude: SQL | [SQL Murder Mystery][28] | |
-| 👨‍👩‍👧‍👧 | [Group Project: Rare][32] | |
+
+## 👩‍👩‍👧‍👦 Team Collaboration Projects
+
+| # | Project Name | Summary |
+|--|--|--|
+|- | N/A | Once you have completed the two core projects, you are ready for the Deep Learning Group Project, so no other collaborative projects during this book. |
+
 
 ## 🧭 Explorer Chapters
 
@@ -35,6 +41,12 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
 | 1 | [Sort Animals by Name][39] |  |
+
+## 🔐 Deep Learning Group Projects Unlocked
+
+| # | Project&nbsp;Name | Description |
+|--|--|--|
+|1| [Rare Publishing Platform][32] | Your first, large full-stack group project. You will be building an API service with Python, and using SQL to manage the permanent state in your database. |
 
 
 [1]:	./chapters/KD_DATABASE_CREATION.md
