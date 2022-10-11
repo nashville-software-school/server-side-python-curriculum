@@ -45,7 +45,7 @@ Update the `parse_url()` method in the main module with the code below.
 ```py
 # add this import to the top of the file
 from urllib.parse import urlparse, parse_qs
-    
+
     # replace the parse_url function in the class
     def parse_url(self, path):
         """Parse the url into the resource and id"""
@@ -95,12 +95,12 @@ Next we'll need to refactor the `do_get` so we can call the correct function:
 
        else: # There is a ? in the path, run the query param functions
             (resource, query) = parsed
-            
+
             # see if the query dictionary has an email key
             if query.get('email') and resource == 'customers':
                 response = get_customer_by_email(query['email'][0])
 
-        self.wfile.write(response.encode())
+        self.wfile.write(json.dumps(response).encode())
 ```
 
 ## Finding the Customer with a WHERE Clause
@@ -159,7 +159,7 @@ def get_customers_by_email(email):
             customer = Customer(row['id'], row['name'], row['address'], row['email'] , row['password'])
             customers.append(customer.__dict__)
 
-    return json.dumps(customers)
+    return customers
 ```
 
 You're going to need to read that all of that code plenty of times, and you'll need to try out different variations of writing it yourself.

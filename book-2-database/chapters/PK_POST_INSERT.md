@@ -40,7 +40,7 @@ def create_animal(new_animal):
         new_animal['id'] = id
 
 
-    return json.dumps(new_animal)
+    return new_animal
 ```
 
 ## Admit Animal in the Postman Client

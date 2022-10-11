@@ -83,8 +83,7 @@ def get_all_animals():
 
             animals.append(animal.__dict__)
 
-    # Use `json` package to properly serialize list as JSON
-    return json.dumps(animals)
+    return animals
 ```
 
 ### For the Curious
@@ -141,7 +140,7 @@ def get_single_animal(id):
                             data['status'], data['location_id'],
                             data['customer_id'])
 
-        return json.dumps(animal.__dict__)
+        return animal.__dict__
 ```
 
 If the client requests http://localhost:8088/animals/3, then the `id` parameter to the function will be `3`. In this case, the generate SQL will look like this.
