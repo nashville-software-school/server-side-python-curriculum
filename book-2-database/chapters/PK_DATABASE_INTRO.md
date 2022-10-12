@@ -71,7 +71,7 @@ Time to create a table for each of the four resources in this application.
 4.  Choose `kennel.sqlite3`.
 5. If you refresh the database in the Sqlite Explorer and open the `kennel.sqlite3` dropdown you should see the tables
 
-[](./images/run_sql.gif)
+![](./images/run_sql.gif)
 
 **Gif already has data inserted into tables**
 
