@@ -94,9 +94,9 @@ If you want to explore some black box concepts from the code in this chapter, he
 * [Connection cursor](https://docs.python.org/3/library/sqlite3.html)
 * [Cursor's fetchAll() method](https://docs.python.org/3/library/sqlite3.html#sqlite3.Cursor.fetchall)
 
-## Request all Animals from Postman
+## Request all Animals
 
-Open the Postman client and request all animals from http://localhost:8088/animals and verify that all five animals in the database get returned as JSON representations.
+Open your API client and request all animals from http://localhost:8088/animals and verify that all five animals in the database get returned as JSON representations.
 
 ![](./images/postman-request-all-animals.gif)
 
