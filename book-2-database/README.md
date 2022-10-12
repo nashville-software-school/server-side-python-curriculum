@@ -67,7 +67,6 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [20]:	./chapters/PK_REACT_CLIENT.md
 [21]:	./chapters/DJ_ADD_SEARCH_QUERY.md
 [22]:	./chapters/PK_SQL_UPDATE.md
-[23]:	./chapters/TF_SETUP.md
 [24]:	./chapters/PK_SQL_JOINS.md
 [25]:	./chapters/DJ_JOIN_MOOD.md
 [26]:	./chapters/PK_POST_INSERT.md
