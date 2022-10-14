@@ -157,12 +157,14 @@ if __name__ == "__main__":
 ## Adjust VS Code Settings
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
-Open the command palette again and search for "Open Settings (JSON)"
-Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
+Open the command palette again and search for "Open User Settings (JSON)". Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
 
 ```
 "python.formatting.autopep8Path": "paste in the output from the which command",
 "python.linting.pylintEnabled": true,
+"python.analysis.diagnosticSeverityOverrides": {
+  "reportGeneralTypeIssues": "none"
+}
 ```
 
 With pylint enabled we need to control some of the warnings that VS Code will warn about. We can do this by creating a `.pylintrc` file. Copy this command into the terminal to create the file:
