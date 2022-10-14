@@ -63,5 +63,4 @@ If you feel like keeping your JavaScript/React skills fresh, feel free to take o
 
 1. Add a new **`EmployeeForm`** component to your Kennel client application.
 1. Add a `saveEmployee()` function to your **`EmployeeManager`** component.
-1. In Python add a `save_employee()` function to the `views/employee_requests.py` module that performs an `INSERT INTO` SQL query to the Employees table.
-1. Update the `do_POST()` method in the `request_handler` module in Python to accept POST requests to the `/employees` resource.
+1. Modify your existing `create_employee()` function in Python to the `views/employee_requests.py` module that performs an `INSERT INTO` SQL query to the Employees table.

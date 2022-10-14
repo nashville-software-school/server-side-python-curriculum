@@ -41,6 +41,7 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|
 | 1 | [Sort Animals by Name][39] |  |
+| 2 | [Assign Employees to Animals][41] |  |
 
 ## 🔐 Deep Learning Group Projects Unlocked
 
@@ -84,3 +85,4 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [38]:	./chapters/PK_EC_ANIMAL_TOTALS.md
 [39]:	./chapters/PK_PC_SORT_BY_NAME.md
 [40]:	./chapters/KD_EC_SORT_BY_PRICE.md
+[41]:	./chapters/PK_PC_ANIMALS_EMPLOYEES.md
