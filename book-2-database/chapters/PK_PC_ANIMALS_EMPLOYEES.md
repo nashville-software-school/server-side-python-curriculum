@@ -22,7 +22,7 @@ The next step is to look at your **`Employee`** model class and determine if any
 
 ## Getter Function
 
-Once that is done, you now need to focus on the `get_single_employee()` function. The SQL statement needs to be augmented to select all of the related animals for the requested employee. You will need to use the `JOIN` clause to get all of the needed information, and practice using aliases on column names to make each one unique in the `SELECT` statement.
+Once that is done, you now need to focus on the `get_single_employee()` function. The SQL statement needs to be augmented to select all of the related animals for the requested employee. You will need to use the `LEFT JOIN` clause to get all of the needed information, and practice using aliases on column names to make each one unique in the `SELECT` statement.
 
 We'll give you some starter hints and code for your logic. You need to swap out the `fetchone()` method to a `fetchall()` since you'll be getting multiple rows back. Which means you'll need a `for..in` loop to iterate that dataset.
 
@@ -37,4 +37,7 @@ for row in dataset:
         employee = Employee(...) # You define the right arguments
 ```
 
+Be aware that if an employee is not assigned to any animals, there will only be one row in the dataset and many of the columns will be NULL.
+
 That's all we're going to give you. Feel free to reach out to your coaches to discuss your ideas and flesh out a strategy, but remember that for Pioneer chapters, we won't give you any of the code, but we will discuss ideas with you.
+
