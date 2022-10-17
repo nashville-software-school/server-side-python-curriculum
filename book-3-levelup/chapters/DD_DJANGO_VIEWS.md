@@ -89,11 +89,20 @@ class AppointmentView(ViewSet):
         # Performs the INSERT statement into the deshawnapi_appontment table
         appointment.save()
 
-        # Serialization is covered in next chapter
+        # Serialization will be covered in the next chapter
         serialized = AppointmentSerializer(appointment, many=False)
 
         # Respond with the newly created appointment in JSON format with a 201 status code
         return Response(serialized.data, status=status.HTTP_201_CREATED)
+
+
+# The serializer will be covered in the next chapter
+class AppointmentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Appointment
+        fields = ('id', 'walker', 'date',)
+
 ```
 
 
