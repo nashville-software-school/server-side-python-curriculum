@@ -56,3 +56,7 @@ city = City.objects.get(name='Deenver')
 city.name = 'Denver'
 city.save()
 ```
+
+## Next Steps
+
+Now that you have seen how the Django ORM provides you with abstractions for basic SQL operations, move to the next chapter and see how these methods are used in Django Views.

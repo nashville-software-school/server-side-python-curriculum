@@ -54,7 +54,7 @@ from django.db import models
 class Appointment(models.Model):
     """Database model for tracking walker appointments"""
     completed = models.BooleanField(default=False)
-    date = models.DateField(auto_now=True, auto_now_add=False)
+    date = models.DateField()
     walker = models.ForeignKey('Walker', on_delete=models.CASCADE, related_name='appointments')
 ```
 
@@ -62,15 +62,22 @@ Here are some common things that beginners notice.
 
 1. To create a `walker_id` foreign key field, you don't need to put `_id` in the class definition. Django does that for you.
 2. The `default` argument will automatically set the value to 0 when a new row is inserted, making it optional on creation.
-3. The `auto_now=True` argument for a date field will automatically set the value to `datetime.now` when a new row is inserted, making it optional on creation.
 4. The `'Walker'` argument for the foreign key field is the name of the related class.
+
+## Update Models Package
+
+Open the `models/__init__.py` module and add your new class to the package.
+
+```py
+from .appointment import Appointment
+```
 
 ## Next Steps
 
-Now that you have define the database model, you have completed the first step toward performing a task called a database migration. There are a few more steps, before you can do it.
+Now that you have define the database model, you have completed the first step toward performing a task called a database migration. There are a few more steps before you can do it.
 
- | Term | Definition |
- | --| --|
- | Migration | A fancy word that software developers use for running an automated script that changes the structure, or data, of a database. |
+| Term | Definition |
+| --| --|
+| Migration | A fancy word that software developers use for running an automated script that changes the structure, or data, of a database. |
 
-Move to the next chapter to create your first Django view.
+Move to the next chapter to be introduced to a tool in Django called the ORM. It will replace the use for writing SQL statements by providing abstractions to the basic CRUD operations.

@@ -11,11 +11,11 @@ This book introduces you to the Django application framework, and the Django RES
 |--|--|--|--|
 | 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] |
 | 2 | [Database Models][2] | [From Arrays to Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
-| 3 | [Views][4] | [Authentication Setup](./chapters/HR_AUTHENTICATION.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
-| 4 | [Serializers][7] | [Testing Authentication](./chapters/HR_REGISTER.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data #fixtures</sub> |
-| 5 | [URLs][12] | [Exposing Customer Data](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">#viewset #serializer</sub>| [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
-| 6 | [ORM not SQL][14] |  | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> |
-| 7 |  |  | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
+| 3 | [ORM not SQL][14] | [Authentication Setup](./chapters/HR_AUTHENTICATION.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
+| 4 | [Views][4] | [Testing Authentication](./chapters/HR_REGISTER.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data #fixtures</sub> |
+| 5 | [Serializers][7] | [Exposing Customer Data](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">#viewset #serializer</sub>| [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
+| 6 | [URLs][12] |  | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> |
+| 7 | [Your First Migration][16] |  | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
 | 8 |  |  | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
 | 9 |  |  | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 10 |  |  | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
@@ -81,7 +81,7 @@ Pioneer chapters let you develop Deep Learning on the concepts that you practice
 [13]: ./chapters/LU_CLIENT_LIST.md
 [14]: ./chapters/DD_DJANGO_ORM.md
 [15]: ./chapters/LU_CREATE.md
-[16]: ./chapters/GR_GAMES.md
+[16]: ./chapters/DD_MIGRATION.md
 [17]: ./chapters/LU_CREATE_GAME.md
 [18]: ./chapters/GR_REVIEWS.md
 [19]: ./chapters/LU_UPDATE.md
