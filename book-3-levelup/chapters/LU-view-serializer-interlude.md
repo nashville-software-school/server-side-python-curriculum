@@ -8,11 +8,11 @@ The **Serializer** has a much simpler job. Once the ViewSet has determined what 
 
 ## Learning Resources
 
-* [Overview of Viewsets]()(https://www.django-rest-framework.org/api-guide/viewsets/)
-* [Model Serializer]()(https://www.django-rest-framework.org/api-guide/serializers/#modelserializer)
+* [Overview of Viewsets](https://www.django-rest-framework.org/api-guide/viewsets/)
+* [Model Serializer](https://www.django-rest-framework.org/api-guide/serializers/#modelserializer)
 
 ## Anatomy of a View
-Here is an example of a Django Rest View. Don’t worry too much about what the code is doing we’ll break down each method in the next chapters. Each model in the database that we want the client to interact with will have its own View. Within that view, there will be methods to handle the different http methods. 
+Here is an example of a Django Rest View. Don’t worry too much about what the code is doing we’ll break down each method in the next chapters. Each model in the database that we want the client to interact with will have its own View. Within that view, there will be methods to handle the different http methods.
 - `retrieve` -\> GET requests that have an id in the url, ex: `/animals/1`
 - `list` -\> GET requests that will return a list of everything in that table
 - `create` -\> POST requests to add a row to that table
@@ -33,7 +33,7 @@ class GameTypeView(ViewSet):
         game_type = GameType.objects.get(pk=pk)
         serializer = GameTypeSerializer(game_type, context={'request': request})
         return Response(serializer.data)
-        
+
 
     def list(self, request):
         """Handle GET requests to get all game types
@@ -55,7 +55,7 @@ class GameTypeView(ViewSet):
         game_type = GameType.objects.get(pk=pk)
         game_type.label = request.data['label']
         game.save()
-		
+
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk):

@@ -1,7 +1,5 @@
 # SQL -> ORM Reference
 
-![relationship between viewset, serializer, and ORM/SQL](./images/django-rest-actors.png)
-
 ## Query all games
 
 To retrieve all items in the Game table.

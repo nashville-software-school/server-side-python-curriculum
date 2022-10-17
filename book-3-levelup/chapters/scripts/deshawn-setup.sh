@@ -30,13 +30,14 @@ echo '{
             }
         }
     ]
-}' > ./.vscode/launch.json
+}
+' > ./.vscode/launch.json
 
 echo 'json
 "python.linting.pylintArgs": [
     "--load-plugins=pylint_django",
     "--django-settings-module=<folder name>.settings",
-],
+]
 ' > ./.vscode/settings.json
 
 echo '[
@@ -152,7 +153,8 @@ echo '[
             "name": "Element"
         }
     }
-] ' > ./deshawnapi/fixtures/dogs.json
+]
+' > ./deshawnapi/fixtures/dogs.json
 
 echo '[
     {
@@ -183,7 +185,8 @@ echo '[
             "name": "Boise"
         }
     }
-]' > ./deshawnapi/fixtures/cities.json
+]
+' > ./deshawnapi/fixtures/cities.json
 
 echo '[
     {
@@ -222,7 +225,8 @@ echo '[
             "email": "Ollie38@example.net"
         }
     }
-]' > ./deshawnapi/fixtures/walkers.json
+]
+' > ./deshawnapi/fixtures/walkers.json
 
 echo "
 from pathlib import Path
@@ -371,7 +375,6 @@ router.register(r'dogs', DogView, 'dog')
 urlpatterns = [
     path('', include(router.urls)),
 ]
-
 " > ./deshawnproject/urls.py
 
 echo "
@@ -410,7 +413,6 @@ class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = ('id', 'name',)
-
 " > ./deshawnapi/views/city_view.py
 
 echo "from rest_framework.viewsets import ViewSet
@@ -447,7 +449,6 @@ class DogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dog
         fields = ('id', 'name', 'walker', )
-
 " > ./deshawnapi/views/dog_view.py
 
 echo "
@@ -485,7 +486,6 @@ class WalkerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Walker
         fields = ('id', 'name', 'email', 'city', )
-
 " > ./deshawnapi/views/walker_view.py
 
 echo "from django.db import models
@@ -494,7 +494,6 @@ echo "from django.db import models
 class Dog(models.Model):
     name = models.CharField(max_length=155)
     walker = models.ForeignKey('Walker', on_delete=models.CASCADE, related_name='dogs')
-
 " > ./deshawnapi/models/dog.py
 
 echo "from django.db import models
@@ -504,7 +503,6 @@ class Walker(models.Model):
     name = models.CharField(max_length=155)
     email = models.CharField(max_length=155)
     city = models.ForeignKey('City', on_delete=models.CASCADE, related_name='walkers')
-
 " > ./deshawnapi/models/walker.py
 
 echo "from django.db import models
@@ -512,19 +510,16 @@ echo "from django.db import models
 
 class City(models.Model):
     name = models.CharField(max_length=155)
-
 " > ./deshawnapi/models/city.py
 
 echo "from .city import City
 from .walker import Walker
 from .dog import Dog
-
 " > ./deshawnapi/models/__init__.py
 
 echo "from .city_view import CityView
 from .dog_view import DogView
 from .walker_view import WalkerView
-
 " > ./deshawnapi/views/__init__.py
 
 echo '[FORMAT]
@@ -535,7 +530,6 @@ echo '[FORMAT]
 
 [MASTER]
   disable=C0114,
-
 ' > .pylintrc
 
 python3 manage.py makemigrations deshawnapi

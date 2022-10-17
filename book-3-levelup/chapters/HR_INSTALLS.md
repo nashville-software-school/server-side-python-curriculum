@@ -10,17 +10,8 @@ Do not copy all of these at once and paste them into your terminal. Copy and run
 
 ```sh
 cd ~/workspace
-```
-
-```sh
 mkdir honey-rae-server
-```
-
-```sh
 cd honey-rae-server
-```
-
-```sh
 pipenv shell
 ```
 
