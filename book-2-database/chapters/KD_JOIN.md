@@ -55,7 +55,19 @@ class Order():
 
 You are going to practice the `JOIN` process in SQL for this solution.
 
-Now you can join the `Location` table into the query so that the name and address fields are in the results. Put the following SQL in your `kennel.sql` file and run it. You should see the results displayed below.
+Now you can join the `Metals` table into the query so that the `name` and `price` fields are in the results. Run the following SQL to see the additional information from the Metals table.
+
+```sql
+SELECT
+    o.timestamp,
+    o.size_id,
+    o.style_id,
+    o.metal_id,
+    m.metal,
+    m.price
+FROM `Order` o
+JOIN Metals m ON m.id = o.metal_id
+```
 
 #### SQL
 
