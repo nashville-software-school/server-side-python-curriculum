@@ -4,8 +4,7 @@ This book introduces you to the Django application framework, and the Django RES
 
 ![Level Up logo][image-1]
 
-## Chapters
-
+## 🍎 Required Core Chapters
 
 | # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
 |--|--|--|--|
@@ -23,8 +22,6 @@ This book introduces you to the Django application framework, and the Django RES
 | 12 |  |  | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
 | 13 |  |  | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
 | 14 |  |  | [Leaving and Joining Events][35]|
-|  |  | _**[Interlude: Django ORM][9]**_ |  |  |
-|  |  | _**[Interlude: Django Rest Views and Serializers][10]**_ |  |  |
 
 
 ## 👩‍👩‍👧‍👦 Team Collaboration Projects
@@ -39,23 +36,21 @@ Explorer chapters give you the opportunity to expand on the Core chapters and th
 
 | # | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
 |--|--|--|
-| 1 | [Filtering Games][37] |  |
-| 1 | [Catching Errors][38] |  |
-| 1 | [Shallow Serializers][39] |  |
-| 1 |  |  |
-| 1 |  |  |
-| 1 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Games in Action Pictures][30] |
-| 2 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Searching Games][32] |
-| 3 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> | [Sorting Games][34] |
-| 4 | [POST Validation][36] | | |
+| 1 | [Filtering Games][37] | [Games in Action Pictures][30] |
+| 2 | [Catching Errors][38] | [Searching Games][32] |
+| 3 | [Shallow Serializers][39] | [Sorting Games][34] |
+| 4 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
+| 5 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
+| 6 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |  |
+| 7 | [POST Validation][36] | | |
 
 ## 🏕 Pioneer Chapters
 
-Pioneer chapters let you develop Deep Learning on the concepts that you practiced in this book.
+Pioneer chapters are optional and let you develop Deep Learning on the concepts that you practiced in this book.
 
-| # | 🍔 FavaMeal <br/> <sub>_(Custom actions &amp; properties )_</sub> | 🧠  Advanced Concepts |
-|--|--|--|
-| 1 | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |  |
+| # | 🍔 FavaMeal <br/> <sub>_(Custom actions &amp; properties )_</sub> |
+|--|--|
+| 1 | [Favorite Restaurants][22] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 2 | [Favorite Meals][24] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 | 3 | [Meal Ratings][27] <br/> <sub style="font-size:0.85rem;">\#custom-action<br/>\#custom-property</sub> |
 

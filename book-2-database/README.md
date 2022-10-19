@@ -1,6 +1,6 @@
 # Book 2 - A Database for Kennels
 
-## Chapters
+## 🍎 Required Core Chapters
 
 | # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub> | 📔 ✒️ <br/> Daily Journal <br/><sub>(_Optional for those who completed client-side project_)</sub> |
 |--|--|---|---|
@@ -20,7 +20,6 @@
 |--|--|--|
 |- | N/A | Once you have completed the two core projects, you are ready for the Deep Learning Group Project, so no other collaborative projects during this book. |
 
-
 ## 🧭 Explorer Chapters
 
 Explorer chapters are optional, and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
@@ -36,7 +35,7 @@ Explorer chapters are optional, and give you the opportunity to expand on the Co
 
 ## 🏕 Pioneer Chapters
 
-Pioneer chapters let you develop Deep Learning on the concepts that you practiced in this book.
+Pioneer chapters are optional and let you develop Deep Learning on the concepts that you practiced in this book.
 
 | # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds |
 |--|--|--|

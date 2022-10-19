@@ -1,7 +1,8 @@
-### Highest and Lowest
-Write a function that takes a string of comma separated numbers and returns the highest and lowest number as a dictionary
+# Highest and Lowest
 
-## Examples
+Write a function that takes a string of comma separated numbers and returns the highest and lowest number as a dictionary.
+
+## Example Code
 
 ```py
 highest_and_lowest("4, 7, 55555, -29834, 89")
@@ -13,6 +14,7 @@ highest_and_lowest("4, 7, 55555, -29834, 89")
 ```
 
 ## Starter Code
+
 ```py
 def highest_and_lowest(string_o_numbers):
     # add your solution here
@@ -24,13 +26,12 @@ def test_highest_and_lowest_solution():
     assert highest_and_lowest('1 -1') == { 'highest': 1, 'lowest': -1 }
     assert highest_and_lowest('42') == { 'highest': 42, 'lowest': 42 }
     assert highest_and_lowest('2189 3105 476 2849 1619 1816 1785 1037 3266 187 446 3032 1743 2940 535 1677 2176 968 176 2078 2404 2867') == { 'highest': 3266, 'lowest': 176 }
-
 ```
 
+## Need a hint?
 
-
-
-### Need a hint?
 Look up how to use the `max` and `min` functions in python
-### Finished?
+
+## Finished?
+
 Try writing your own `min` and `max` functions instead of using the built-in functions

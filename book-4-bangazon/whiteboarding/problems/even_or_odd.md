@@ -17,8 +17,10 @@ def test_even_or_odd_solution():
 
 ```
 
+## Need a hint?
 
-### Need a hint?
 Look up using the modulo operator
-### Finished?
+
+## Finished?
+
 Try rewriting using a ternary operator

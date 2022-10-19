@@ -3,16 +3,18 @@
 Write a function that takes one parameter. The parameter will be a list of lists. Return the elements of the array arranged from outermost elements to the middle element, traveling clockwise. Take a look at the example images for a visual.
 
 ## Examples
+
 ```py
 list_example = [[1,2,3],
          [4,5,6],
          [7,8,9]]
 snail(list_example) # returns [1,2,3,6,9,8,7,4,5]
 ```
+
 ![Snail Pattern](./snail.png)
 
+## Starter Code
 
-## Starter
 ```py
 def snail(matrix):
     # Add your code here
@@ -47,14 +49,13 @@ def test_snail_solution():
     ]
     expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     assert solution(arr) == expected
-
 ```
 
+## Need a hint?
 
-### Need a hint?
 The length of each inner list will always match the length of the outer list
 
-### Finished?
+## Finished?
+
 Run `pytest` in the terminal to see if your solution passes
 Can you find another solution?
-
