@@ -1,4 +1,4 @@
-# Book 2 - Level Up
+# Book 3 - Level Up
 
 This book introduces you to the Django application framework, and the Django REST API plugin for rapid API development.
 
