@@ -1,25 +1,10 @@
 # A Database Model
 
-Bring up your Honey Rae's Repair ERD that you created during the client side course. You are going to be making subtle changes to it to reflect how to think about designing the data in this project.
+Time to create a new ERD for the Honey Rae's Repairs application. This application allows customers to create service tickets for the team at Honey Rae's to work on over time. After a ticket is submitted, an employee can then access the application whenever she wants and assign herself to a ticket.
 
-## Current ERD
+The **User** table is colored differently because you won't be creating it yourself. Django creates it for you. More on that later.
 
-![](./images/honey-rae-api.png)
-
-## New ERD for Django
-
-1. Make all of the table names singluar
-1. Change `customerId` to `customer_id`
-1. Change `employeeId` to `employee_id`
-1. Change `dateCompleted` to `date_completed`
-1. Remove `name` and `email` from the **Customer** table _(explanation for this below)_.
-1. Add a **User** table with the following fields
-    * `id int pk`
-    * `first_name varchar`
-    * `last_name varchar`
-    * `email varchar`
-
-The **User** table is colored differently because you won't be creating it for your application. More on this below.
+Create this ERD in your database diagramming tool of choice.
 
 ![](./images/honey-rae-api-django.png)
 
@@ -34,7 +19,7 @@ Unfortunately, the **User** model doesn't have `address`, so you have to create 
 
 ### Customer Model
 
-Make the file below and copy pasta the code into it.
+Make the file below and copy pasta the code into it. This is the model that you will interact with, and it has a 1-1 relationship with the user model that lives inside Django.
 
 > #### `honeyrae-server/repairapi/models/customer.py`
 
@@ -49,6 +34,10 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # Additional address field to capture from the client
     address = models.CharField(max_length=155)
+
+    @property
+    def full_name(self):
+        return f'{self.user.first_name} {self.user.last_name}'
 ```
 
 Now that you have a model defined, it needs to be added to your project's models package.
@@ -67,11 +56,16 @@ Make the file below and copy pasta the code into it.
 
 ```py
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Employee(models.Model):
-    name = models.CharField(max_length=55)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     specialty = models.CharField(max_length=155)
+
+    @property
+    def full_name(self):
+        return f'{self.user.first_name} {self.user.last_name}'
 ```
 
 Now that you have a model defined, it needs to be added to your project's models package. Add the following code.
@@ -86,6 +80,8 @@ from .employee import Employee
 
 Make the file below and copy pasta the code into it. Remember, Python conventions don't use camel casing - for variable names or file names. The only exception is class names _(as you see below)_.
 
+Note that there is a line defining each field that is in the ERD above 👆🏿.
+
 > #### `honeyrae-server/repairapi/models/service_ticket.py`
 
 ```py
@@ -93,7 +89,7 @@ from django.db import models
 
 
 class ServiceTicket(models.Model):
-    customer = models.ForeignKey("Customer", on_delete=models.CASCADE, related_name='tickets')
+    customer = models.ForeignKey("Customer", on_delete=models.CASCADE, related_name='submitted_tickets')
     employee = models.ForeignKey("Employee", on_delete=models.CASCADE, related_name='assigned_tickets')
     description = models.CharField(max_length=155)
     emergency = models.BooleanField(default=False)

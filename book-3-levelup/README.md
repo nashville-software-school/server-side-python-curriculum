@@ -9,11 +9,11 @@ This book introduces you to the Django application framework, and the Django RES
 | # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
 |--|--|--|--|
 | 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] |
-| 2 | [Database Models][2] | [From Arrays to Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
+| 2 | [Database Models][2] | [Defining the Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
 | 3 | [ORM not SQL][14] | [Authentication Setup](./chapters/HR_AUTHENTICATION.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
 | 4 | [Views][4] | [Testing Authentication](./chapters/HR_REGISTER.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data #fixtures</sub> |
-| 5 | [Serializers][7] | [Exposing Customer Data](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">#viewset #serializer</sub>| [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
-| 6 | [URLs][12] |  | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> |
+| 5 | [Serializers][7] | [Customer View](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">#viewset #serializer</sub>| [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> |  |  |
+| 6 | [URLs][12] | [Tickets and Employees](./chapters/HR_EMPLOYEE_TICKET_VIEWS.md) <br/> <sub style="font-size:0.85rem;">#viewset #serializer</sub> | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset #serializer #router</sub> |
 | 7 | [Your First Migration][16] |  | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
 | 8 |  |  | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
 | 9 |  |  | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |

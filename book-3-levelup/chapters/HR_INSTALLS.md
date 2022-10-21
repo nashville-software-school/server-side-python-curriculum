@@ -1,8 +1,8 @@
-# DRF Installations and Configuration
+# Installations and Configuration
 
 ## Setup
 
-The initial creation of a Django project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
+The initial creation of a Django REST Framework project is not difficult, but it is very time intensive. It's mostly just mind-numbing, busy work so 🐻 with it. There's no way around it.
 
 ## Creating the Project and Virtual Environment
 
@@ -39,7 +39,15 @@ The pylint package is very good at ensuring that you follow the community standa
 Without this configuration, your editor will put orange squiggles under those variable names to alert you that you violated community standards. It becomes annoying, so you override the default rules.
 
 ```sh
-echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
+echo '[FORMAT]
+good-names=i,j,ex,pk
+
+[MESSAGES CONTROL]
+disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method
+
+[MASTER]
+disable=C0114
+' > .pylintrc
 ```
 
 ### Select Python Interpreter
@@ -48,7 +56,7 @@ Open VS Code and press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd
 
 Find the option that has:
 
-`<your folder name>-<random string>`
+`honeyrae-<random string>`
 
 ### Configure Pylint
 
@@ -69,11 +77,9 @@ There should now be a .vscode folder in your directory. Open the `settings.json`
 ```json
 "python.linting.pylintArgs": [
     "--load-plugins=pylint_django",
-    "--django-settings-module=<folder name>.settings",
+    "--django-settings-module=honeyrae.settings",
 ],
 ```
-
-#### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be `levelup.settings`*
 
 ## Create API Application
 
@@ -91,6 +97,7 @@ Create a `.gitignore` file and generate the content for it by running this comma
 
 ```sh
 curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
+echo '*.sqlite3' >> .gitignore
 ```
 
 ## Setting Up Package Directories
