@@ -4,7 +4,7 @@ The login form for the client you installed automatically enters in the credenti
 
 You will immediately be taken to the list of Bryan's tickets. The last one has been completed already, but it doesn't list the name of the employee who fixed it.
 
-<img src="./images/completed_ticket.png" width="630px" alt="Image of completed ticket, but undefined employee name" />
+<img src="./images/completed_ticket.png" width="300px" alt="Image of completed ticket, but undefined employee name" />
 
 This is because your API does not send back all of the information that the client needs to display that information. Watch the following video, and then implement the code yourself.
 
