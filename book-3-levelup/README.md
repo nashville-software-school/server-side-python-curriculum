@@ -8,7 +8,7 @@ This book introduces you to the Django application framework, and the Django RES
 
 | # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
 |--|--|--|--|
-| 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters$$/HR_INSTALLS.md) | [Level Up API Setup][1] |
+| 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] |
 | 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
 | 3 | [ORM not SQL][14] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Setup](./chapters/HR_AUTHENTICATION.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
 | 4 | [Views][4] <br/> <sub style="font-size:0.85rem;">\#viewset</sub> | [Testing Authentication](./chapters/HR_REGISTER.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data \#fixtures</sub> |
@@ -18,10 +18,10 @@ This book introduces you to the Django application framework, and the Django RES
 | 8 |  | [Honey Rae Client](./chapters/HR_CLIENT_INSTALL.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
 | 9 |  | [Expanding Customers and Employees](./chapters/HR_USER_SERIALIZER.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 10 |  | [Creating Tickets](./chapters/HR_TICKET_POST.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
-| 12 |  | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
-| 13 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
-| 14 |  |  | [Leaving and Joining Events][35]|
+| 11 |  | [Filtering and Finding Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 12 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
+| 13 |  | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
+| 14 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [Leaving and Joining Events][35]|
 
 
 ## 👩‍👩‍👧‍👦 Team Collaboration Projects
