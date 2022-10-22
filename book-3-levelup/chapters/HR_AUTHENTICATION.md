@@ -29,6 +29,7 @@ Create the following module in your API application. It is commented, so please 
 ```py
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
@@ -40,7 +41,7 @@ from repairsapi.models import Customer, Employee
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_user(request):
-    '''Handles the authentication of a customer or employee
+    '''Handles the authentication of a gamer
 
     Method arguments:
       request -- The full HTTP request object
@@ -70,12 +71,11 @@ def login_user(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
-    '''Handles the creation of a new custoer or employee for authentication
+    '''Handles the creation of a new gamer for authentication
 
     Method arguments:
       request -- The full HTTP request object
     '''
-
     account_type = request.data.get('account_type', None)
     email = request.data.get('email', None)
     first_name = request.data.get('first_name', None)
@@ -109,15 +109,23 @@ def register_user(request):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Create a new user by invoking the `create_user` helper method
-        # on Django's built-in User model
-        new_user = User.objects.create_user(
-            username=request.data['email'],
-            email=request.data['email'],
-            password=request.data['password'],
-            first_name=request.data['first_name'],
-            last_name=request.data['last_name']
-        )
+        try:
+            # Create a new user by invoking the `create_user` helper method
+            # on Django's built-in User model
+            new_user = User.objects.create_user(
+                username=request.data['email'],
+                email=request.data['email'],
+                password=request.data['password'],
+                first_name=request.data['first_name'],
+                last_name=request.data['last_name']
+            )
+        except IntegrityError:
+            return Response(
+                {'message': 'An account with that email address already exists'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Now save the extra info in the levelupapi_gamer table
 
         account = None
 
