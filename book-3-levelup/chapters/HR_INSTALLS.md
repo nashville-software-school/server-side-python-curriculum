@@ -12,6 +12,8 @@ Do not copy all of these at once and paste them into your terminal. Copy and run
 cd ~/workspace
 mkdir honey-rae-server
 cd honey-rae-server
+touch seed_database.sh
+touch db.sqlite3
 pipenv shell
 ```
 
