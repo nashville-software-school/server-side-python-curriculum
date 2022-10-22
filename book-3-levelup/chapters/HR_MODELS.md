@@ -4,7 +4,41 @@ Time to create a new ERD for the Honey Rae's Repairs application. This applicati
 
 The **User** table is colored differently because you won't be creating it yourself. Django creates it for you. More on that later.
 
-Create this ERD in your database diagramming tool of choice.
+Create this ERD in your database diagramming tool of choice _(dbdiagram, DrawSQL, etc...)_. If you are using dbdiagram, we provide the syntax below.
+
+<details>
+<summary>Expand to get dbdiagram definitions</summary>
+
+```txt
+Table User [headercolor: #2c3e50] {
+  id int pk
+  first_name varchar
+  last_name varchar
+  email varchar
+}
+
+Table Customer [headercolor: #f39c12] {
+  id int pk
+  address varchar
+  user_id int [ref: > User.id]
+}
+
+Table Employee [headercolor: #f39c12] {
+  id int pk
+  specialty varchar
+  user_id int [ref: > User.id]
+}
+
+Table ServiceTicket [headercolor: #f39c12] {
+  id int pk
+  customer_id int [ref: > Customer.id]
+  employee_id int [ref: > Employee.id]
+  description varchar
+  emergency boolean
+  date_completed date
+}
+```
+</details>
 
 ![](./images/honey-rae-api-django.png)
 
