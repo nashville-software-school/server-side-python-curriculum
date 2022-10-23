@@ -13,11 +13,11 @@ Use your API client to make the following requests and verify that you get a pro
 | GET | http://localhost:8000/serviceTickets | List of all tickets |
 | GET | http://localhost:8000/serviceTickets/4 | The fourth ticket |
 
-## Expanding Ticket Data
+## Expanding Ticket Data The Easy Way
 
 Once you have the initial view and serializer class for a service ticket, update the serializer to automatically expand any foreign keys - in this case, employee and customer - during the serialization to JSON.
 
-Currently, if you request ticket 7, the JSON serialized response looks like this. The employee and customer properties just have the interger foreign key value.
+Currently, if you request ticket 7, the JSON serialized response looks like this. The employee and customer properties just have the integer foreign key value.
 
 ```json
 {
@@ -30,7 +30,7 @@ Currently, if you request ticket 7, the JSON serialized response looks like this
 }
 ```
 
-Adding the `depth = 1` instruction on the Meta class make Django do that magic of expansion.
+Adding the `depth = 1` instruction on the Meta class makes Django do the magic of expansion.
 
 ```py
     class Meta:
