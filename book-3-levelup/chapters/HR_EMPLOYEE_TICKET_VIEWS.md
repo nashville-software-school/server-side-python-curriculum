@@ -12,3 +12,50 @@ Use your API client to make the following requests and verify that you get a pro
 | GET | http://localhost:8000/employees/2 | The second employee |
 | GET | http://localhost:8000/serviceTickets | List of all tickets |
 | GET | http://localhost:8000/serviceTickets/4 | The fourth ticket |
+
+## Expanding Ticket Data
+
+Once you have the initial view and serializer class for a service ticket, update the serializer to automatically expand any foreign keys - in this case, employee and customer - during the serialization to JSON.
+
+Currently, if you request ticket 7, the JSON serialized response looks like this. The employee and customer properties just have the interger foreign key value.
+
+```json
+{
+	"id": 7,
+	"description": "Aut qui possimus quisquam quibusdam illo in provident. Et repellendus reprehenderit quidem reiciendis deleniti doloribus.",
+	"emergency": true,
+	"date_completed": null,
+	"employee": 2,
+	"customer": 3
+}
+```
+
+Adding the `depth = 1` instruction on the Meta class make Django do that magic of expansion.
+
+```py
+    class Meta:
+        model = ServiceTicket
+        fields = ( 'id', 'description', 'emergency', 'date_completed', 'employee', 'customer', )
+        depth = 1
+```
+
+Request ticket 7 again, and the JSON now looks like this.
+
+```json
+{
+	"id": 7,
+	"description": "Aut qui possimus quisquam quibusdam illo in provident. Et repellendus reprehenderit quidem reiciendis deleniti doloribus.",
+	"emergency": true,
+	"date_completed": null,
+	"employee": {
+		"id": 2,
+		"specialty": "Laptops",
+		"user": 5
+	},
+	"customer": {
+		"id": 3,
+		"address": "401 Unauthorized Ct.",
+		"user": 4
+	}
+}
+```

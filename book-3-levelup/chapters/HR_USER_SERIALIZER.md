@@ -1,6 +1,6 @@
 # Override User Serialization
 
-The login form for the client you installed automatically enters in the credentials for Bryan Nilson, a customer who has submitted three service tickets to Honey Rae's Repairs. Go ahead and log in as him.
+The login form for the client you installed automatically enters in the credentials for Bryan Nilson, a customer who has submitted four service tickets to Honey Rae's Repairs. Go ahead and log in as him.
 
 You will immediately be taken to the list of Bryan's tickets. The last one has been completed already, but it doesn't list the name of the employee who fixed it.
 

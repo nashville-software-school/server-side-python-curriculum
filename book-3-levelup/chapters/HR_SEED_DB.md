@@ -191,6 +191,17 @@ Copy the following JSON into the `tickets.json` file.
             "emergency": false,
             "date_completed": "2022-02-02"
         }
+    },
+    {
+        "model": "repairsapi.serviceticket",
+        "pk": 9,
+        "fields": {
+            "customer": 3,
+            "employee": null,
+            "description": "Quae ea nam veritatis molestiae sapiente dolore omnis eaque ipsum. Et et architecto quod. Ea qui ipsa et. Quisquam quidem et qui nulla asperiores a. Porro illum tempore. Quaerat magni quo.",
+            "emergency": false,
+            "date_completed": null
+        }
     }
 ]
 ```
