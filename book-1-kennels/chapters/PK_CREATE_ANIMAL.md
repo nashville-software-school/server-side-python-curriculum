@@ -16,10 +16,9 @@ In this chapter, you will write code to support the POST method of HTTP. From Po
 
 * [JSON in Python || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=pTT7HMqDnJw)
 
-
 ## Using the Built-in JSON package
 
-First, import the `json` package in the Python Standard Libary (_stlib_) at the top of the main module.
+First, import the `json` package in the Python Standard Library (_stlib_) at the top of the main module.
 
 ```py
 import json
@@ -95,6 +94,7 @@ Now open Postman and follow these steps to create a new animal.
 1. Click on the Body section beneath the URL
 1. Click on the `raw` radio button that appears.
 1. Paste in the following JSON in the text area beneath the radio button.
+
     ```json
     {
         "name": "Falafel",
@@ -103,11 +103,12 @@ Now open Postman and follow these steps to create a new animal.
         "customerId": 3
     }
     ```
+
 1. Click the Send button.
 
 If your code was set up correctly, the status of the request should be 201 and you should see an animal object - with a new `id` property on it - in the response section at the bottom of Postman.
 
-![](./images/python-kennel-create-animal.gif)
+![./images/python-kennel-create-animal.gif]
 
 If this isn't working for you, please see an instructor as soon as possible.
 
@@ -139,4 +140,3 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
 1. Write a `create_customer` function in the `views/customer_requests.py` module that appends a new customer dictionary to the list.
 
 Then perform a POST request from Postman to create a new customer. Check the **`Register`** component in your React client to remember what a customer object looks like.
-
