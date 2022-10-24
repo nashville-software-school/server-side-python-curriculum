@@ -31,9 +31,7 @@ Before you start using SQL in VS Code, you need to set up a keyboard shortcut so
 1. Hold down the Control key and tap R twice if you are on Windows
 1. Then press enter to save the shortcut.
 
-
-![](./images/add_keyboard_shortcut.gif)
-
+![Adding a Keyboard Shortcut](./images/add_keyboard_shortcut.gif)
 
 ## Creating Database and SQL Files
 
@@ -49,8 +47,7 @@ In your project directory, create two files:
 3. Select your database file
 4. In the explorer tab (top tab on the left), there should be a new section at the bottom that says `Sqlite Explorer`
 
-
-![](./images/connect_db_file.gif)
+![Connecting to DB in VSCode](./images/connect_db_file.gif)
 
 ## Creating Tables
 
@@ -68,53 +65,51 @@ Time to create a table for each of the four resources in this application.
 1. Copy the `CREATE TABLE` SQL commands below and paste it into the `kennel.sql` file.
 2. Highlight all of the text.
 3. Press `Cmd+R+R` if you are on Mac, and `Ctrl+R+R` if you are on Windows. You will then be prompted to choose a database.
-4.  Choose `kennel.sqlite3`.
+4. Choose `kennel.sqlite3`.
 5. If you refresh the database in the Sqlite Explorer and open the `kennel.sqlite3` dropdown you should see the tables
 
-[](./images/run_sql.gif)
+![Running SQL file in VSCode](./images/run_sql.gif)
 **Gif already has data inserted into tables**
 
 If any step of this didn't work, contact a member of your instruction team immediately to get it fixed.
 
 ```sql
 CREATE TABLE `Location` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`name`	TEXT NOT NULL,
-	`address`	TEXT NOT NULL
+ `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+ `name` TEXT NOT NULL,
+ `address` TEXT NOT NULL
 );
 
 CREATE TABLE `Customer` (
-    `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    `name`    TEXT NOT NULL,
-    `address`    TEXT NOT NULL,
-    `email`    TEXT NOT NULL,
-    `password`    TEXT NOT NULL
+ `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+ `name` TEXT NOT NULL,
+ `address` TEXT NOT NULL,
+ `email` TEXT NOT NULL,
+ `password` TEXT NOT NULL
 );
 
 CREATE TABLE `Animal` (
-	`id`  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`name`  TEXT NOT NULL,
-	`status` TEXT NOT NULL,
-	`breed` TEXT NOT NULL,
-	`customer_id` INTEGER NOT NULL,
-	`location_id` INTEGER,
-	FOREIGN KEY(`customer_id`) REFERENCES `Customer`(`id`),
-	FOREIGN KEY(`location_id`) REFERENCES `Location`(`id`)
+ `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+ `name` TEXT NOT NULL,
+ `status` TEXT NOT NULL,
+ `breed` TEXT NOT NULL,
+ `customer_id` INTEGER NOT NULL,
+ `location_id` INTEGER,
+ FOREIGN KEY(`customer_id`) REFERENCES `Customer`(`id`),
+ FOREIGN KEY(`location_id`) REFERENCES `Location`(`id`)
 );
 
 
 CREATE TABLE `Employee` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`name`	TEXT NOT NULL,
-	`address`	TEXT NOT NULL,
-	`location_id` INTEGER NOT NULL,
-	FOREIGN KEY(`location_id`) REFERENCES `Location`(`id`)
-
+ `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+ `name` TEXT NOT NULL,
+ `address` TEXT NOT NULL,
+ `location_id` INTEGER NOT NULL,
+ FOREIGN KEY(`location_id`) REFERENCES `Location`(`id`)
 );
 ```
 
 ## Inserting Starter Data
-
 
 The `INSERT INTO` SQL statement allows you to enter in the actual data about individual resources that will be stored in a table. The values have to match the order in which the columns were defined in the `CREATE TABLE` statements above, so yes, order matters.
 
@@ -141,8 +136,7 @@ INSERT INTO `Customer` VALUES (null, "Jenna Solis", "301 Redirect Ave", "jenna@s
 INSERT INTO `Customer` VALUES (null, "Emily Lemmon", "454 Mulberry Way", "emily@lemmon.com", "password");
 
 
-
-INSERT INTO `Animal` VALUES (null, "Snickers", "Recreation", "Dalmation", 4, 1);
+INSERT INTO `Animal` VALUES (null, "Snickers", "Recreation", "Dalmatian", 4, 1);
 INSERT INTO `Animal` VALUES (null, "Jax", "Treatment", "Beagle", 1, 1);
 INSERT INTO `Animal` VALUES (null, "Falafel", "Treatment", "Siamese", 4, 2);
 INSERT INTO `Animal` VALUES (null, "Doodles", "Kennel", "Poodle", 3, 1);
