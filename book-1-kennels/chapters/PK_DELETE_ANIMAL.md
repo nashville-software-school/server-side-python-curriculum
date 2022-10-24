@@ -66,14 +66,13 @@ Time to try deleting an animal.
 
 1. Open a new tab in Postman.
 1. Set the method to `DELETE`.
-1. Put in the following URL: http://localhost:8088/animals/2
+1. Put in the following URL: <http://localhost:8088/animals/2>
 1. Click the Send button.
 1. The response code should be `204` and the response text area at the bottom should be blank.
-1. Do another `GET` request to http://localhost:8088/animals to ensure that the animal was removed.
+1. Do another `GET` request to <http://localhost:8088/animals> to ensure that the animal was removed.
 
 ![animation of deleting an animal resource with Postman request](./images/python-kennel-delete-animal.gif)
 
 ## Practice: Delete Locations, Employees and Customers
 
 Add code to all required modules so that you support DELETE operations for the other resource types in your server.
-
