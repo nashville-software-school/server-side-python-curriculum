@@ -9,7 +9,6 @@ Having the animal data hard-coded right inside the main Python file, as you migh
 1. You should be able to identify a Python import of another module.
 1. You should be able to discuss the difference in syntax between JavaScript imports and Python imports.
 
-
 ## Gather Related Files into a Package
 
 A package in Python is just a directory with a certain file in it.
@@ -66,7 +65,7 @@ def get_all_animals():
 
 This Python module has one method defined in it, and you want to make that method available to any other Python code. To do that, you import it into the `__init__.py` module.
 
-> #### `views/__init__.py`
+> ### `views/__init__.py`
 
 ```py
 from .animal_requests import get_all_animals
@@ -76,7 +75,7 @@ from .animal_requests import get_all_animals
 
 Now you can import that function to be used in the main module. Put the new import statement shown below at the top of the file below the existing import statement.
 
-> #### `request_handler.py`
+> ### `request_handler.py`
 
 ```py
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -87,7 +86,7 @@ from views import get_all_animals
 
 Replace the following code...
 
-> #### `request_handler.py`
+> ### `request_handler.py`
 
 ```py
 if self.path == "/animals":
