@@ -1,8 +1,4 @@
-# Replacing json-server with Python
-
-Oh no! The developer of `json-server` decided he didn't want to share his code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
-
-Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 - just like `json-server` did - and responds with data.
+# Creating a Server in Python
 
 By the end of this book, you will be able to write a server application that responds to HTTP requests from a react application.
 
@@ -41,7 +37,7 @@ Now you are going to install two tools:
 
 1. **autopep8** - This is an auto formatter that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide. This will be installed globally, so you won't have to install this again.
     * Run: `python3 -m pip install autopep8`
-3. **pylint** - This is a linter that shows any lint errors in your code. This will be installed locally within the pipenv environment (more on this later). For every new project you'll need to install pylint into each one.
+2. **pylint** - This is a linter that shows any lint errors in your code. This will be installed locally within the pipenv environment (more on this later). For every new project you'll need to install pylint into each one.
     * Run: `pipenv install pylint`
 
 Then, start a virtual environment. Virtual environments ensure that libraries installed for a project don't pollute the entire operating system. It keeps everything contained to the project.
@@ -156,18 +152,20 @@ if __name__ == "__main__":
 ```
 
 ## Adjust VS Code Settings
-First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
+
+First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpreter". Find the option that has `<your folder name>-<random string>`
 
 Open the command palette again and search for "Open Settings (JSON)"
 Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
 
-```
+```json
 "python.formatting.autopep8Path": "paste in the output from the which command",
 "python.linting.pylintEnabled": true,
 ```
 
 With pylint enabled we need to control some of the warnings that VS Code will warn about. We can do this by creating a `.pylintrc` file. Copy this command into the terminal to create the file:
-```
+
+```bash
 echo '[FORMAT]
 good-names=i,
     j,
@@ -184,11 +182,13 @@ good-names=i,
 disable=broad-except,redefined-builtin,missing-module-docstring
 ' > .pylintrc
 ```
+
 If you press `opt-shift-f` while the `request_handler.py` file is active, some code should change to conform to PEP 8 standards
 
 ## Running the Server with VS Code Debugger
 
 First we'll need to tell VS Code how to start the server. If there isn't a `.vscode` folder already create one now. Inside the `.vscode` folder create a file called `launch.json`. Paste in the following code
+
 ```json
 {
     "version": "0.2.0",
@@ -206,12 +206,14 @@ First we'll need to tell VS Code how to start the server. If there isn't a `.vsc
     ]
 }
 ```
+
 Since the `request_handler.py` file has the code to run the server, this tells VS Code to run that file when using the debugger.
 To run the debugger, click the "Run and Debug" button on the far left nav column (should be 4th button down). Then click the green play button beside "Request Handler". Once the terminal opens you can move on to the next step. We'll go over adding breakpoints in class.
+
 ![debugger](./images/python_debugger.gif)
 
 ## Requesting Animals via Postman
 
-If you haven't already, download [Postman](https://www.postman.com/downloads/). Now open Postman and request http://localhost:8088/animals and see what the `kennels-server` responds with. You should get an array of two animal objects.
+If you haven't already, download [Postman](https://www.postman.com/downloads/). Now open Postman and request <http://localhost:8088/animals> and see what the `kennels-server` responds with. You should get an array of two animal objects.
 
 ![animation of postman requesting animals](./images/requesting-animals-postman.gif)
