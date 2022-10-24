@@ -16,7 +16,7 @@ The first step in that process is to switch from using raw, Python lists and dic
 ## Video Resources
 
 * [Python Classes and Objects || Python Tutorial](https://www.youtube.com/watch?v=apACNr7DC_s)
-* [Python 3's __init__(), self, Class and Instance Objects Explained Concisely](https://www.youtube.com/watch?v=AsafkCAJpJ0&t=177s)
+* [Python 3's \_\_init\_\_(), self, Class and Instance Objects Explained Concisely](https://www.youtube.com/watch?v=AsafkCAJpJ0&t=177s)
 
 ## Animal Class
 
