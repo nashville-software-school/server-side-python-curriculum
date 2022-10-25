@@ -18,8 +18,8 @@ This book introduces you to the Django application framework, and the Django RES
 | 8 |  | [Honey Rae Client](./chapters/HR_CLIENT_INSTALL.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
 | 9 |  | [Expanding Customers and Employees](./chapters/HR_USER_SERIALIZER.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 10 |  | [Creating Tickets](./chapters/HR_TICKET_POST.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 |  | [Filtering and Finding Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
-| 12 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
+| 11 |  | [Filtering and Finding Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#GET</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 12 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
 | 13 |  | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
 | 14 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [Leaving and Joining Events][35]|
 
