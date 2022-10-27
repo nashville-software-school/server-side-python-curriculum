@@ -33,11 +33,12 @@ echo '{
 }
 ' > ./.vscode/launch.json
 
-echo 'json
-"python.linting.pylintArgs": [
-    "--load-plugins=pylint_django",
-    "--django-settings-module=<folder name>.settings",
-]
+echo '{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=deshawnproject.settings",
+    ]
+}
 ' > ./.vscode/settings.json
 
 echo '[
