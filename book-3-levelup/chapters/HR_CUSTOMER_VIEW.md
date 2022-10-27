@@ -108,3 +108,12 @@ Try it out in your API client!
 
 `http://localhost:8000/customers/1` should return the customer with an id of 1
 
+## Examples
+
+Here's how a request in Postman should look.
+
+![](./images/postman-authorization-header.png)
+
+Here's how a request in Insomnia should look.
+
+![](./images/insomnia-authorization-header.png)
