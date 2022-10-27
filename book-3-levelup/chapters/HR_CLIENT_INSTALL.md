@@ -16,7 +16,7 @@ Verify that you can log in and that the logout link takes you back to the log in
 
 <img src="./images/honey-rae-client-login.gif" width="800px" />
 
-Some things to investigate in the client and discuss with peers and your coaches.
+Here are some fun things to investigate and explore on your own and with peers if you want. These aren't learning objectives, so think of them as your personal Explorer chapters.
 
 | Tool | Explanation |
 | -- | -- |

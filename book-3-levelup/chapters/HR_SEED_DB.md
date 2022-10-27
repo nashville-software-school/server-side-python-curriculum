@@ -14,6 +14,7 @@ Be in the `repairsapi` directory and run the following commands to create the fi
 
 ```sh
 mkdir fixtures
+cd fixtures
 touch customers.json
 touch employees.json
 touch tickets.json

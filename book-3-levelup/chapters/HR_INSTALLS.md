@@ -120,7 +120,7 @@ These settings changes will be needed for any REST API application that you make
 
 Below, you can see `repairsapi` in the list of installed apps. Whatever project you create in the future, your application names in that project will go there instead.
 
-> `honey-rae-server/levelup/settings.py`
+> `honey-rae-server/honeyrae/settings.py`
 
 ```py
 

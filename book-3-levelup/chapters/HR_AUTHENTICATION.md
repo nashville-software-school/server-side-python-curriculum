@@ -41,7 +41,7 @@ from repairsapi.models import Customer, Employee
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_user(request):
-    '''Handles the authentication of a gamer
+    '''Handles the authentication of a user
 
     Method arguments:
       request -- The full HTTP request object
@@ -71,7 +71,7 @@ def login_user(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
-    '''Handles the creation of a new gamer for authentication
+    '''Handles the creation of a new user for authentication
 
     Method arguments:
       request -- The full HTTP request object
@@ -80,7 +80,6 @@ def register_user(request):
     email = request.data.get('email', None)
     first_name = request.data.get('first_name', None)
     last_name = request.data.get('last_name', None)
-    account_type = request.data.get('account_type', None)
     password = request.data.get('password', None)
 
     if account_type is not None \
@@ -125,8 +124,6 @@ def register_user(request):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Now save the extra info in the levelupapi_gamer table
-
         account = None
 
         if account_type == 'customer':
@@ -168,11 +165,11 @@ from .auth import login_user, register_user
 
 ## Defining Routes
 
-The last step is to establish some URL routes that any client application can use to register and login a gamer to use the API.
+The last step is to establish some URL routes that any client application can use to register and login a customer to use the API.
 
 Completely replace the contents of the following file with the code below.
 
-> #### `honey-rae-server/levelup/urls.py`
+> #### `honey-rae-server/honeyrae/urls.py`
 
 ```py
 from django.contrib import admin

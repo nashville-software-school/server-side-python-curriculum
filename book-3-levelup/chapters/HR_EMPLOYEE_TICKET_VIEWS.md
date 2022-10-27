@@ -17,6 +17,21 @@ Use your API client to make the following requests and verify that you get a pro
 
 Once you have the initial view and serializer class for a service ticket, update the serializer to automatically expand any foreign keys - in this case, employee and customer - during the serialization to JSON.
 
+## Ticket View
+
+When you create your service ticket view, instead of just having `ServiceTicket.objects.all()` in the `list()` method, you will need to take account of the fact that sometimes customers will be requesting their own tickets, and employees can view all tickets.
+
+Use the following code in to handle that situation.
+
+```py
+if request.auth.user.is_staff:
+    service_tickets = ServiceTicket.objects.all()
+else:
+    service_tickets = ServiceTicket.objects.filter(customer__user=request.auth.user)
+```
+
+## Serialization of Ticket
+
 Currently, if you request ticket 7, the JSON serialized response looks like this. The employee and customer properties just have the integer foreign key value.
 
 ```json

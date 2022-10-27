@@ -1,5 +1,12 @@
 # Classes
 
+## Setup
+
+```sh
+mkdir -p ~/workspace/python/exercises/petting_zoo && cd $_
+touch animals.py
+```
+
 ## Why are you Learning This?
 
 You are learning about the syntax and usage of classes because when you extract data from a relational database later in the course, each row of data represents the state of certain things, such as a student, a building, a book, or any other real-world object that you want to store data about.
@@ -23,7 +30,7 @@ Below that are examples of objects being created as instances of **`Student`**. 
 
 To help Bobby with his petting zoo, you know you're going to need to represent animals in his petting zoo with code. Each animal will have properties such as name, species, and year it was added to the zoo.
 
-Here's how you could define a template for how each animal will be represented in the application.
+Here's how you could define a template for how each animal will be represented in the application. Open the `animal.py` module and add the following code.
 
 ```py
 # import the python datetime module to help us create a timestamp
@@ -39,6 +46,8 @@ class Llama:
         self.date_added = date.today()
 ```
 Remember, this class is not a llama itself. It's just a mechanism for creating llama objects. To create an instance of the class, you type the name of the class and put parenthesis after it. You should always store the object instance in a variable.
+
+Right after the class definition in `animals.py`, create a new instance of a llama.
 
 ```py
 miss_fuzz = Llama()
@@ -80,15 +89,9 @@ For example, Bobby's critters can be divided into three fairly distinct groups b
 
 ## Practice: Classy Critters Collection
 
-### Setup
+You're going to create 15 classes for representing critters from Bobby's petting zoo in Python. (_Seriously -- 15. Hey, we saw that. Don't roll your eyes at us!_).
 
-```sh
-mkdir -p ~/workspace/python/exercises/petting_zoo && cd $_
-touch animals.py
-```
-
-### Instructions
-You're going to create 15 custom types (classes) for representing critters from Bobby's petting zoo in Python. (_Seriously -- 15. Hey, we saw that. Don't roll your eyes at us!_)
+You will create all of these classes at the beginning of your `animals.py` module.
 
 As shown earlier, define every class with the following properties in the `__init__` method so that each instance can have its own specific values for those properties:
 
@@ -96,17 +99,17 @@ As shown earlier, define every class with the following properties in the `__ini
 + species
 + date_added
 
-But you should also take into consideration the fact that there are different types of animals at Critters and Croquettes. Specifically, there are critters in
+But you should also take into consideration the fact that there are different categories of animals at Critters and Croquettes. Specifically, there are critters in the following areas.
 
 1. the petting area, such as donkeys, llamas, and goats
-1. the glass tank, like copperheads and rat snakes
-1. the pond, like mallards and goldfish
+2. the glass tank, like copperheads and rat snakes
+3. the pond, like mallards and goldfish
 
-With that in mind, make 5 critter types for each area. As you define each one, give it one of the following properties where most appropriate:
+With that in mind, designate 5 critter each to go in these areas. As you define each one, give it one of the following properties where most appropriate:
 
-+ `self.swimming = True`
-+ `self.slithering = True`
-+ `self.walking = True`
++ `self.swimming = True` - These animals are in the tank
++ `self.slithering = True` - These animals are in the pond
++ `self.walking = True` - These animals are in the petting area
 
 Once your classes are defined, make at least one instance of each of them. Now you'll have 15-plus objects created. Eventually, those objects might be stored in a database or sent to a browser to be viewed as HTML. For now, though, you're not worried about how this data will be represented. You just want to get the logic working correctly. So, use the `print()` method to see your results.
 

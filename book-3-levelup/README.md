@@ -37,8 +37,8 @@ Explorer chapters give you the opportunity to expand on the Core chapters and th
 | # | 🍯 <br/> Honey Rae's Repairs | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
 |--|--|--|--|
 | 1 | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) | [Filtering Games][37] | [Games in Action Pictures][30] |
-| 2 | [Finding Tickets](./chapters/HR_TICKET_FIND.md) | [Catching Errors][38] | [Searching Games][32] |
-| 3 | [More Filtering of Ticket](./chapters/HR_EC_TICKET_FILTER.d) | [Shallow Serializers][39] | [Sorting Games][34] |
+| 2 | [More Filtering of Tickets](./chapters/HR_EC_TICKET_FILTER.md) | [Catching Errors][38] | [Searching Games][32] |
+| 3 | [Finding Tickets](./chapters/HR_TICKET_FIND.md) | [Shallow Serializers][39] | [Sorting Games][34] |
 | 4 || [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
 | 5 || [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
 | 6 || [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |  |
