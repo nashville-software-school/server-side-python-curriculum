@@ -4,7 +4,17 @@ Visit the [Honey Rae Repairs Client - Django Version](https://github.com/nashvil
 
 For the remaining chapters, you will be testing your API with this React client instead of your API client _(Insomnia, Postman, etc...)_.
 
-The login form is autopopulated with the credentials of a customer. Feel free to remove the default values from the state variables if you wish.
+## Logging In
+
+1. Remember that you have to run `npm install` first.
+1. Start up the Honey Rae's React application
+1. Try to log in with the account that was created when you registered.
+    1. Enter the same email you used when you registered the account.
+    1. Use the same password that you used when you registered the account.
+
+Verify that you can log in and that the logout link takes you back to the log in screen.
+
+<img src="./images/honey-rae-client-login.gif" width="800px" />
 
 Some things to investigate in the client and discuss with peers and your coaches.
 

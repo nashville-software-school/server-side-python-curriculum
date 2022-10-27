@@ -97,6 +97,13 @@ path('', include(router.urls)),
 
 Try it out in your API client!
 
+1. Open the `tokens.json` file in your project and examine the `pk` key on each object. These are unique tokens assigned to every user in the system.
+2. Copy any one of them to use in your API client.
+3. Start a new request.
+4. Add a new header to the request named `Authorization`
+5. The value will be the word Token, followed by a space, and then the unique token you copied previously (e.g. `Token 0be249c88238743e5b4a7ac370b5145730c28e20`)
+6. Then grab one of the following two URLs and generate a request.
+
 `http://localhost:8000/customers` should return a list of all the game types
 
 `http://localhost:8000/customers/1` should return the customer with an id of 1

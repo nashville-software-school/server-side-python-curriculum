@@ -131,13 +131,4 @@ export const Login = () => {
 ```
 </details>
 
-### Logging In
 
-1. Start up the Honey Rae's React application
-1. Try to log in with the account that was created in the previous step.
-    1. Enter the same email you used when you registered the account.
-    1. Use the same password that you used when you registered the account.
-
-Verify that you can log in and that the logout link takes you back to the log in screen.
-
-<img src="./images/honey-rae-client-login.gif" width="800px" />
