@@ -38,7 +38,7 @@ Explorer chapters give you the opportunity to expand on the Core chapters and th
 |--|--|--|--|
 | 1 | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) | [Filtering Games][37] | [Games in Action Pictures][30] |
 | 2 | [Finding Tickets](./chapters/HR_TICKET_FIND.md) | [Catching Errors][38] | [Searching Games][32] |
-| 3 || [Shallow Serializers][39] | [Sorting Games][34] |
+| 3 | [More Filtering of Ticket](./chapters/HR_EC_TICKET_FILTER.d) | [Shallow Serializers][39] | [Sorting Games][34] |
 | 4 || [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
 | 5 || [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
 | 6 || [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |  |
