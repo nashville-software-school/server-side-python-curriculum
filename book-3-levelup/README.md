@@ -15,7 +15,7 @@ This book introduces you to the Django application framework, and the Django RES
 | 5 | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Getting Some Starter Data](./chapters/HR_SEED_DB.md) <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication \#tokens</sub> |  |  |
 | 6 | [URLs][12] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Customer View](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset \#serializer \#router</sub> |
 | 7 | [Your First Migration][16] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Tickets and Employees](./chapters/HR_EMPLOYEE_TICKET_VIEWS.md) <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
-| 8 |  | [Honey Rae Client](./chapters/HR_CLIENT_INSTALL.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
+| 8 | [Make an Appointment][40] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Honey Rae Client](./chapters/HR_CLIENT_INSTALL.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
 | 9 |  | [Expanding Customers and Employees](./chapters/HR_USER_SERIALIZER.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 10 |  | [Creating Tickets](./chapters/HR_TICKET_POST.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
 | 11 |  | [Filtering Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
@@ -100,5 +100,6 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [37]: ./chapters/LU_FILTER_GAMES.md
 [38]: ./chapters/LU_CATCHING_ERRORS.md
 [39]: ./chapters/LU_SERIALIZER_DEPTH.md
+[40]: ./chapters/DD_MAKE_APPOINTMENT.md
 
 [image-1]: ./chapters/images/level-up.png
