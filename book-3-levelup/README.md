@@ -18,10 +18,10 @@ This book introduces you to the Django application framework, and the Django RES
 | 8 |  | [Honey Rae Client](./chapters/HR_CLIENT_INSTALL.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
 | 9 |  | [Expanding Customers and Employees](./chapters/HR_USER_SERIALIZER.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 10 |  | [Creating Tickets](./chapters/HR_TICKET_POST.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 |  | [Filtering and Finding Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#GET</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 11 |  | [Filtering Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 12 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
-| 13 |  | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
-| 14 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [Leaving and Joining Events][35]|
+| 13 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
+| 14 |  |  | [Leaving and Joining Events][35]|
 
 
 ## 👩‍👩‍👧‍👦 Team Collaboration Projects
@@ -34,15 +34,15 @@ This book introduces you to the Django application framework, and the Django RES
 
 Explorer chapters give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
-| # | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
-|--|--|--|
-| 1 | [Filtering Games][37] | [Games in Action Pictures][30] |
-| 2 | [Catching Errors][38] | [Searching Games][32] |
-| 3 | [Shallow Serializers][39] | [Sorting Games][34] |
-| 4 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
-| 5 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
-| 6 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |  |
-| 7 | [POST Validation][36] | | |
+| # | 🍯 <br/> Honey Rae's Repairs | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
+|--|--|--|--|
+| 1 | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) | [Filtering Games][37] | [Games in Action Pictures][30] |
+| 2 | [Finding Tickets](./chapters/HR_TICKET_FIND.md) | [Catching Errors][38] | [Searching Games][32] |
+| 3 || [Shallow Serializers][39] | [Sorting Games][34] |
+| 4 || [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
+| 5 || [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
+| 6 || [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |  |
+| 7 || [POST Validation][36] | | |
 
 ## 🏕 Pioneer Chapters
 
