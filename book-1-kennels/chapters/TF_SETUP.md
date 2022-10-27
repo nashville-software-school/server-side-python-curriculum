@@ -12,7 +12,7 @@ When you are ready to take on this project, let your senior instructor know. You
 
 The other project in the client application. You won't be fixing anything in this code base. In fact, you should not modify the code at all. You need this project running, though, to see if your bug fixes are correct.
 
-1. Visit https://github.com/nashville-software-school/Tavern-API but do not clone this repo.
+1. Visit https://github.com/nashville-software-school/Tavern but do not clone this repo.
 1. Click on the "Use this template" button at the top.
 1. You can call this repo whatever you like on the next screen, but to avoid confusion, you might want to just call in Tavern.
 1. Once the repo is generated on your account, then clone your repository to you machine and follow the instructions in the README.
