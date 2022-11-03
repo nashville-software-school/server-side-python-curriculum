@@ -21,7 +21,7 @@ export const getGames = () => {
 > #### `src/components/game/GameList.js`
 
 ```jsx
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { getGames } from "../../managers/GameManager.js"
 
 export const GameList = (props) => {
@@ -47,7 +47,7 @@ export const GameList = (props) => {
 }
 ```
 
-> #### `src/components/ApplicationViews.js`
+> #### `src/views/ApplicationViews.js`
 
 ```jsx
 import { Route, Routes } from "react-router-dom"
@@ -71,4 +71,4 @@ export const ApplicationViews = () => {
 ```
 
 ## Practice: Listing Events
-Add an `EventManager` file and `EventList` component in the react code to display a list of events. The route should be `/events` for the event list. 
+Add an `EventManager` file and `EventList` component in the react code to display a list of events. The route should be `/events` for the event list.
