@@ -125,7 +125,9 @@ Before running in Postman, add an authorization token to the headers. Here's the
 Now repeat steps 1-6 for events and games. By the end you should have an `EventView` and `GameView` with the `list` and `retrieve` methods added. Each view should also have it’s own serializer. When you get to the `urls.py` you’ll only need to add the `router.register` calls to add the `/events` and `/games` resources.
 
 
-### Try it out
+### Optional: Try Filter and Query Params Again
 
-Try adding a game filter to the `EventView`’s `list`. The url will be `http://localhost:8000/events?game=1`. The result should be a list of events with a `game_id` of 1.
+After the basic view is done, try adding a game filter to the `EventView`’s `list`. The url will be `http://localhost:8000/events?game=1`. The result should be a list of events with a `game_id` of 1.
+
+Refer back to [filter chapter from Honey Rae Repairs API](../chapters/HR_TICKET_FILTER_FIND.md) to see the syntax for accessing query params and using the `filter()` method again.
 
