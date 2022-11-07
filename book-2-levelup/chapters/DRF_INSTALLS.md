@@ -170,7 +170,9 @@ python manage.py migrate
 
 ---
 
-### Running the Django Server with VS Code Debugger
+## Running the Django Server
+
+### With VS Code Debugger
 
 Inside the `.vscode` create a file called `launch.json`. Paste the following code in that file.
 
@@ -195,7 +197,7 @@ Inside the `.vscode` create a file called `launch.json`. Paste the following cod
 }
 ```
 
-### Running the Django Server with the terminal
+### With the terminal
 
 ```sh
 python manage.py runserver
