@@ -6,10 +6,11 @@ The initial creation of a Django project is not difficult, but it is very time i
 
 ## Creating the Project and Virtual Environment
 
+Go into the directory you've been storing your python projects in, then use the following commands to get setup.
+
 Do not copy all of these at once and paste them into your terminal. Copy and run each one separately.
 
 ```sh
-cd ~/workspace # go to your workspace
 mkdir levelup-server # create a new directory
 cd levelup-server # cd into that directory
 pipenv shell # initialize a new virtual environment
@@ -21,7 +22,7 @@ Next, install these third-party packages for use in your project.
 pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
 ```
 
-Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/python/levelup-server` directory. Don't forget the `.` at the end of the command
+Then you can create your very first Django project with the following command. Make sure you are in the `~/[...]/levelup-server` directory. Don't forget the `.` at the end of the command
 
 ```sh
 # DON'T FORGET THE DOT
@@ -46,7 +47,7 @@ Open VS Code and press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd
 
 Find the option that has:
 
-`<your folder name>-<random string>`
+`<YOUR_FOLDER_NAME>-<RANDOM_STRING>`
 
 ### Configure Pylint
 
@@ -80,16 +81,20 @@ Now that the project is set up and has some initial configuration, it's time to 
 #### *Make sure you are in your `levelup-server` directory when you run this command.*
 
 ```sh
-python3 manage.py startapp levelupapi
+python manage.py startapp levelupapi
 ```
 
 ## Add Content To .gitignore File
 
-Create a `.gitignore` file and generate the content for it by running this command
+1. Create a `.gitignore` file and generate the content for it by running this command
 
-```sh
-curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
-```
+    ```sh
+    curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
+    ```
+
+1. Uncomment out the `Pipfile.lock` line to make sure this gets ignored (line 95 when this was written)
+
+1. Add `.vscode` to the `.gitignore` file.
 
 ## Setting Up Package Directories
 
@@ -122,7 +127,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
     'levelupapi',
 ]
@@ -161,38 +165,10 @@ MIDDLEWARE = [
 Django gives user and role management tables for your application out of the box, and there is a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
 
 ```sh
-python3 manage.py migrate
+python manage.py migrate
 ```
 
 ---
-
-## Optional - Hide Secret Key
-
-### *Do this step if you know you will be deploying this ap*
-
-1. From your `levelup-server` directory, run the following command to create a `.env` file on the same level as your `manage.py` file.
-
-    ```zsh
-    touch .env
-    ```
-
-1. In the terminal run:
-
-    ```zsh
-    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
-    ```
-
-1. Copy the output.
-
-1. Open the `.env` file in VS Code, and add `MY_SECRET_KEY=<paste output>` (without the angle brackets, and without any quotes)
-
-1. Open the `settings.py` file in your `levelup` directory.
-
-1. Locate the the `SECRET_KEY` variable (around line 23), and change it to be `SECRET_KEY = os.environ.get('MY_SECRET_KEY')`
-
-1. Import `os` at the top of your `settings.py` file.
-
-1. Stop your virtual environment <kbd>Ctrl</kbd><kbd>D</kbd>, and then restart it `pipenv shell`.
 
 ### Running the Django Server with VS Code Debugger
 
@@ -217,4 +193,10 @@ Inside the `.vscode` create a file called `launch.json`. Paste the following cod
         }
     ]
 }
+```
+
+### Running the Django Server with the terminal
+
+```sh
+python manage.py runserver
 ```
