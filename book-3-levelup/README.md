@@ -22,6 +22,7 @@ This book introduces you to the Django application framework, and the Django RES
 | 12 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
 | 13 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
 | 14 |  |  | [Leaving and Joining Events][35]|
+| 🎓 | [Self-assessment](./chapters/DJANGO_ASSESSMENT.md) |  | |
 
 
 ## 👩‍👩‍👧‍👦 Team Collaboration Projects
