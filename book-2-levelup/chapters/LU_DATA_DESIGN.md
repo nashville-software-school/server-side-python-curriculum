@@ -57,7 +57,6 @@
 > You reply, "That's great! I'll let you know when I'm done with the first version and we can schedule a time to meet again."
 >
 
-
 ## Learning Objectives
 
 * You should be able to create an ERD based on verbal requirements from a non-technical customer.
@@ -65,8 +64,6 @@
 * You should be able to explain the process of using Django commands to get your models turned into database tables.
 * You should be able to predict how a database table should be structured given a Django model.
 * You should be able to clarify the difference between a one-to-many relationship and a one-to-one relationship.
-
-
 
 ## ERD
 
@@ -79,7 +76,6 @@
 After thinking about the requirements, you've come up with an erd.
 
 ![level-up-erd](https://user-images.githubusercontent.com/18269696/139501440-14959d94-fdd9-42b0-912e-8adba1fe750e.png)
-
 
 ## Design Models
 
@@ -99,18 +95,18 @@ In SQL, you would write the following SQL statement to create the table.
 
 ```sql
 CREATE TABLE `Toy` (
-	`id`	    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`name`	    TEXT NOT NULL,
-	`material`	TEXT NOT NULL,
-	`color` 	TEXT NOT NULL,
-	`price` 	FLOAT NOT NULL,
+ `id`     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+ `name`     TEXT NOT NULL,
+ `material` TEXT NOT NULL,
+ `color`  TEXT NOT NULL,
+ `price`  FLOAT NOT NULL,
     `toy_type_id`      INT NOT NULL
 );
 ```
 
 Django can do that for you without ever needing to write SQL. You write classes that act as database models. You even get to leave out the `id` field. Django will add that automatically.
 
-##### *Here's the Django Docs on other field types: https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types*
+> *Here's the Django Docs on other field types: <https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types>*
 
 ```py
 from django.db import models
@@ -122,65 +118,63 @@ class Toy(models.Model):
     price = models.DecimalField(max_length=7,decimal_places=2)
     toy_type = models.ForeignKey("Type", on_delete=models.CASCADE)
 ```
+
 __Notice for the toy_type field, there's no need to put `_id` for the foreign key. Django will do that for you when the table is created__
 
 ## Application User (Gamer) Model
 
-Django gives you a **`User`** model out of the box that already has fields on it like *first name*, *last name*, *email*, etc. If there are any additional fields that you want to capture about a user of your application, you need to create a separate model. The new model will have a 1 to 1 relationship to the django **`User`** model to connect the two.
+In this application, you are going to ask each Gamer to provide a short bio when they register. You need to create a __`Gamer`__ model with that field on it so that we can attach that bio to the right gamer.
 
-In this application, you are going to ask each Gamer to provide a short bio when they register. The Django User model does not have a `bio` field, so you need to create a **`Gamer`** model with that field on it. This is called "extending the user model". Read more about it [here](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model)
+Since we are using Firebase Authentication, we will use the uid we get back from it as our gamer uid. We'll get into how we're going to pass this from the frontend later. This needs to be a field on our __`Gamer`__ model as well.
 
-> #### `levelup-server/levelupapi/models/gamer.py`
+> ### `levelup-server/levelupapi/models/gamer.py`
 
 ```py
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class Gamer(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    uid = models.CharField(max_length=50)
     bio = models.CharField(max_length=50)
 ```
 
 Then import your Gamer model into the package initialization module.
 
-
-> #### `levelup-server/levelupapi/models/__init__.py`
+> ### `levelup-server/levelupapi/models/__init__.py`
 
 ```py
 from .gamer import Gamer
 ```
 
-##### *NOTE: Every model you create must be imported into this package init module.*
+> *NOTE: Every model you create must be imported into this package init module.*
 
 ## Resources
+
 * [Django Models](https://docs.djangoproject.com/en/3.2/topics/db/models/) - Overview of Django Models
-* [Extending the User Model](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model) - Explanation for how to add fields to the Django user
 * [Model Field Types](https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types) - All the options for data types in a model
 * [One to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-one-relationships) - How to add a foreign key to a model
-* [Many to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-many-relationships) - How to set up a Many-Many Relationship
 
 ## Level Up Models
 
 Once you have looked over the ERD and understand relationships for Gamers, Games, and Events, create your modules and classes. Then import the classes into the package init module.
 
-There is a many-many relationship between the Gamers and Events to show who is attending an event. Read the [Many to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-many-relationships) resource to learn how to set that up.
+There is a many-many relationship between the Gamers and Events to show who is attending an event. Read the [ForeignKey](https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ForeignKey) resource to learn how to set up the Join EventGamer model.
 
 ## Migration of Models
 
-__Once you have defined your models, you should review them with an instructor.__
+__Once you have defined your models, you should review them with an instructor, or a teammate who has had their's approved.__
 
 When your models are approved, you can then create a migration to create the tables in your database.
 
 ```sh
-python3 manage.py makemigrations levelupapi
+python manage.py makemigrations levelupapi
 ```
 
 Now that migrations are created, run the following command to execute your migrations and create the tables in your database.
 
 ```sh
-python3 manage.py migrate
+python manage.py migrate
 ```
 
 You should now have a `db.sqlite3` file in the project folder. Make a connection to the database with SQLite Explorer to see the tables in the database.
