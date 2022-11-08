@@ -39,70 +39,14 @@ When you are done building this project, let one of your coaches know and be pre
 
 ### Setup
 
-```sh
-cd ~/workspace
-mkdir tunapiano
-cd tunapiano
-pipenv shell
-```
+1. Clone the template repository
+2. `cd` to the directory it creates
+3. `pipenv shell`
+4. `pipenv install`
+5. Open in VS Code
+6. Make sure the correct interpreter is selected
+7. Implement the code
 
-Next, install these third-party packages for use in your project.
-
-```sh
-pipenv install django autopep8 pylint djangorestframework  pylint-django
-```
-
-Then you can create your Django project. Don't forget the `.` at the end of the command
-
-```sh
-# DON'T FORGET THE DOT
-django-admin startproject tunapiano .
-```
-
-Add the linting rules.
-
-```sh
-echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
-```
-
-Open your Workspace Settings and add the following settings to create your `settings.json` file for the project.
-
-```json
-"python.linting.pylintArgs": [
-    "--load-plugins=pylint_django",
-    "--django-settings-module=tunapiano.settings",
-],
-```
-
-Create a `.gitignore` file and generate the content for it by running this command in the terminal.
-
-```sh
-curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
-```
-
-Now create your API project.
-
-```sh
-python3 manage.py startapp tunaapi
-```
-
-Create the initial directories and package files.
-
-```sh
-rm tunaapi/models.py tunaapi/views.py
-mkdir tunaapi/models tunaapi/views
-touch tunaapi/models/__init__.py tunaapi/views/__init__.py
-```
-
-Make sure that the following apps are added to the `INSTALLED_APPS` in your `settings.py` module.
-
-```py
-    'rest_framework',
-    'rest_framework.authtoken',
-    'tunaapi',
-```
-
-Now you are ready to build your API. Read the requirements below.
 
 ### 🎶 Songs
 
