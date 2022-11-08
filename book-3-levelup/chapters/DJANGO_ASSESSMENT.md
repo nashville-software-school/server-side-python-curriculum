@@ -141,3 +141,42 @@ The following information should be captured for each song.
 ### Genres
 
 The genre model only needs to have the name of the genre on it.
+
+## JSON Responses
+
+Set up your serializers to produce the following JSON responses for getting songs and artists.
+
+## Song
+
+```json
+{
+    "id": 1,
+    "title": "Song Title",
+    "album": "Album Title",
+    "length": 342,
+    "genre": {
+        "description": "Pop"
+    },
+    "artist": {
+        "name": "Yerena Gonzalez"
+    }
+}
+```
+
+## Artist
+
+```json
+{
+    "id": 1,
+    "name": "Yerena Gonzalez",
+    "age": 26,
+    "bio": "Accusamus maxime sed illo doloribus minus. Quaerat et sed et. Harum consequatur hic ut magnam consequatur labore culpa tempore.",
+    "songs": [
+        {
+            "id": 1,
+            "title": "Song Title",
+            "album": "Album Title"
+        }
+    ]
+}
+```
