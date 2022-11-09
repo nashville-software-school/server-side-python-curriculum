@@ -92,7 +92,7 @@ To create a full Gamer user account in your database, you need a record in the G
 
 1. `levelupapi_gamer` - *which is the table that gets created by Django from your **`Gamer`** model class that you wrote in the `levelup-server/levelupapi/models/gamer.py` module.*
 
-Create the following three files with the corresponding contents.
+Create the following file with the corresponding contents.
 
 > #### `levelup-server/levelupapi/fixtures/gamers.json`
 
