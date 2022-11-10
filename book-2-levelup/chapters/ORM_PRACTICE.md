@@ -6,9 +6,9 @@
 
 To retrieve all items in the Game table.
 
-(GET) http://localhost:8000/games
+(GET) <http://localhost:8000/games>
 
-#### SQL
+### SQL (All Games)
 
 ```sql
 SELECT g.id,
@@ -21,9 +21,9 @@ SELECT g.id,
 FROM levelupapi_game g
 ```
 
-#### ORM
+### ORM (All Games)
 
-```py
+```django
 games = Games.objects.all()
 ```
 
@@ -31,9 +31,9 @@ games = Games.objects.all()
 
 To retrieve a single item in the Game table.
 
-(GET) http://localhost:8000/games/2
+(GET) <http://localhost:8000/games/2>
 
-#### SQL
+### SQL (Single Game)
 
 ```sql
 SELECT g.id,
@@ -47,9 +47,9 @@ FROM levelupapi_game g
 WHERE g.id = 2
 ```
 
-#### ORM
+### ORM (Single Game)
 
-```py
+```django
 game = Game.objects.get(pk=request.data["gameId"])
 ```
 
@@ -57,9 +57,9 @@ game = Game.objects.get(pk=request.data["gameId"])
 
 To retrieve items in the Game table that match a specific GameType.
 
-(GET) http://localhost:8000/games?gameTypeId=2
+(GET) <http://localhost:8000/games?gameTypeId=2>
 
-#### SQL
+### SQL (Game By Type)
 
 ```sql
 SELECT g.id,
@@ -76,11 +76,11 @@ LEFT JOIN levelupapi_gametype t
 WHERE t.id = 2
 ```
 
-#### ORM
+### ORM (Game By Type)
 
-The use of the dunderscore (`__`) here represents a join operation.
+The use of the dunderscore (`__`) here represents a join operation. Yes, you did read that right, that was not a typo. Double underscores are used so often that we call it the dunderscore.
 
-```py
+```django
 game_type_param = self.request.query_params.get('gameTypeId', None)
 games = Games.objects.filter(game_type__id=game_type_param)
 ```
@@ -89,51 +89,40 @@ games = Games.objects.filter(game_type__id=game_type_param)
 
 To retrieve items in the Events table that belong to a specific gamer.
 
-(GET) http://localhost:8000/profile/events
-- HEADERS:
-    * `Authorization: Token 5k5k5k5k5k5k5k`
+(GET) <http://localhost:8000/profile/events/5k5k5k5k5k5k5k>
 
-#### SQL
+### SQL (Events By Organizer)
 
 ```sql
 SELECT e.id,
        e.description
 FROM levelupapi_event e
 LEFT JOIN levelupapi_gamer g
-    ON e.gamer_id = g.id
-LEFT JOIN auth_user u
-    ON g.user_id= u.id
-LEFT JOIN authtoken_token t
-    ON t.user_id = u.id
-WHERE t.key = `5k5k5k5k5k5k5k`
+    ON e.organizer_id = g.id
+WHERE g.uid == "5k5k5k5k5k5k5k";
 ```
 
-#### ORM
+#### ORM (Events By Organizer)
 
 The use of the dunderscore (`__`) here represents a join operation.
 
-```py
-events = Event.objects.filter(organizer__user=request.auth.user)
+```django
+events = Event.objects.filter(organizer__uid=uid)
 ```
 
-## Delete events of a specific type
+## Delete Single Game
 
+(DELETE) <http://localhost:8000/games/5>
 
-(DELETE) http://localhost:8000/games/5
-
-#### SQL
+### SQL (Delete Single Event)
 
 ```sql
 DELETE FROM levelupapi_events WHERE id = 5
 ```
 
-#### ORM
+#### ORM (Delete Single Event)
 
-```py
+```django
 event = Event.objects.get(pk=pk)
 event.delete()
 ```
-
-
-
-
