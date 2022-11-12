@@ -23,7 +23,7 @@ FROM levelupapi_game g
 
 ### ORM (All Games)
 
-```django
+```python
 games = Games.objects.all()
 ```
 
@@ -49,7 +49,7 @@ WHERE g.id = 2
 
 ### ORM (Single Game)
 
-```django
+```python
 game = Game.objects.get(pk=request.data["gameId"])
 ```
 
@@ -80,7 +80,7 @@ WHERE t.id = 2
 
 The use of the dunderscore (`__`) here represents a join operation. Yes, you did read that right, that was not a typo. Double underscores are used so often that we call it the dunderscore.
 
-```django
+```python
 game_type_param = self.request.query_params.get('gameTypeId', None)
 games = Games.objects.filter(game_type__id=game_type_param)
 ```
@@ -106,7 +106,7 @@ WHERE g.uid == "5k5k5k5k5k5k5k";
 
 The use of the dunderscore (`__`) here represents a join operation.
 
-```django
+```python
 events = Event.objects.filter(organizer__uid=uid)
 ```
 
@@ -122,7 +122,7 @@ DELETE FROM levelupapi_events WHERE id = 5
 
 #### ORM (Delete Single Event)
 
-```django
+```python
 event = Event.objects.get(pk=pk)
 event.delete()
 ```
