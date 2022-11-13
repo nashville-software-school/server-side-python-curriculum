@@ -65,3 +65,4 @@ Now there needs to be a way for a gamer to leave an event.
 1. Use the `remove` method on the event_gamer object to delete the gamer from the join table
 1. Return a `204` Response
 1. Test in Postman by sending a `DELETE` request to `http://localhost:8000/events/1/leave`
+    * Pass the user_id in the body of the request
