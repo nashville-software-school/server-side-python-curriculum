@@ -94,9 +94,9 @@ const GameForm = ({ user }) => {
 };
 
 GameForm.propTypes = {
-  user: {
+  user: PropTypes.shape({
     uid: PropTypes.string.isRequired,
-  }.isRequired,
+  }).isRequired,
 };
 
 export default GameForm;
