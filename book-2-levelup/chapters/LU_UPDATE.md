@@ -1,5 +1,6 @@
 # Writing the `update` Requests
-The `update` method will handle the `PUT` requests to the resource. In this chapter, we’ll add the `update` method to the `GameView` and `EventView`. 
+
+The `update` method will handle the `PUT` requests to the resource. In this chapter, we’ll add the `update` method to the `GameView` and `EventView`.
 
 ## Learning Objectives
 
@@ -7,7 +8,9 @@ The `update` method will handle the `PUT` requests to the resource. In this chap
 * You should be able to identify which method on a ViewSet is invoked when the client has requested a change in state for a resource.
 
 ## API View Code
+
 `PUT` requests expect the entire object to be sent to the server regardless of whether a field has been updated. Here is the `update` method for the `GameView`:
+
 ```python
 def update(self, request, pk):
     """Handle PUT requests for a game
@@ -30,10 +33,13 @@ def update(self, request, pk):
 
 ```
 
-Just like in the `retrieve` method, we grab the `Game` object we want from the database. Each of the next lines are setting the fields on `game` to the values coming from the client, like in the `create` method. After all the fields are set, the changes are saved to the database.
+Just like in the `retrieve` method, we grab the `Game` object we want from the database. Each of the next lines are setting the fields on `game` to the values coming from the client, like in the `create` method.
+Notice that we are not updating the gamer on the game. We don't want to accidentally change this, so we've left that out of the put. Everything else should be passed through the request.After all the fields are set, the changes are saved to the database.
 
 ### Postman
+
 The `update` method is called when any `PUT` requests are made to `http://localhost:8000/games/{game_id}` Find the `id` for the “Codenames” game and send a `PUT` request for that game id. Let’s update the `title` and `numberOfPlayers`. Here’s the body to use in postman for the request:
+
 ```json
 {
     "title": "Codenames 2 Player",
@@ -43,7 +49,9 @@ The `update` method is called when any `PUT` requests are made to `http://localh
     "game_type": 2
 }
 ```
+
 After making the request, `retrieve` the game to verify the updates
 
 ## On Your Own
+
 Write the code to `update` an event
