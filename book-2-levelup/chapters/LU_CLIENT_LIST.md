@@ -11,16 +11,18 @@ You can start off with this starter React code to request and display a list of 
 ```jsx
 import { clientCredentials } from '../client';
 
-const getGames = () => new Promise((resolve, reject) => fetch(`${clientCredentials.databaseURL}/games`)
-  .then((response) => response.json())
-  .then(resolve)
-  .catch(reject));
+const getGames = () => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/games`)
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
 
 // eslint-disable-next-line import/prefer-default-export
 export { getGames };
 ```
 
-> #### `components/GameCard.js`
+> #### `components/game/GameCard.js`
 
 ```jsx
 import PropTypes from 'prop-types';
@@ -53,12 +55,12 @@ GameCard.propTypes = {
 export default GameCard;
 ```
 
-> #### `pages/index.js`
+> #### `pages/games/index.js`
 
 ```jsx
 import React, { useEffect, useState } from 'react';
-import GameCard from '../components/GameCard';
-import { getGames } from '../utils/data/gameData';
+import GameCard from '../../components/game/GameCard';
+import { getGames } from '../../utils/data/gameData';
 
 function Home() {
   const [games, setGames] = useState([]);
