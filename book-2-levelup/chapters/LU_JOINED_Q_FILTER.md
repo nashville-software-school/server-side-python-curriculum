@@ -68,9 +68,10 @@ In English, you are...
 Now that we are setting the joined property through the annotate, the events for loop can be removed
 
 ```py
-# Delete these lines
 for event in events:
-   event.joined = gamer in event.attendees.all()
+    # Check to see if there is a row in the Event Games table that has the passed in gamer and event
+    event.joined = len(EventGamer.objects.filter(
+        gamer=gamer, event=event)) > 0
 ```
 
 This is advanced stuff here, but just in case you find a glimmer of understanding in the darkness while reading this chapter, and implementing this code, you may find a use for it in the next group project.
