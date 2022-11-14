@@ -9,7 +9,11 @@ Your first Django ViewSet and React components you should create are for viewing
 
 ## React Files
 
-1. `managers/GameManager.js`
+1. `utils/data/gameData.js`
+1. `pages/games/index.js`
+1. `pages/games/[gameId].js`
+1. `pages/games/edit/[gameId].js`
+1. `pages/games/new.js`
 1. `components/game/GameList.js`
 1. `components/game/GameDetails.js`
 1. `components/game/GameForm.js`
