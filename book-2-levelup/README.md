@@ -36,7 +36,6 @@ These chapters will let you explore more advanced capabilities and workflows bet
 | 1 | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Games in Action Pictures][30] |
 | 2 | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> | [Searching Games][32] |
 | 3 | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> | [Sorting Games][34] |
-| 4 | [POST Validation][36] | | |
 
 [1]:	./chapters/DRF_INSTALLS.md
 [2]:	./chapters/GR_SETUP.md
@@ -73,6 +72,5 @@ These chapters will let you explore more advanced capabilities and workflows bet
 [33]:	./chapters/LU_JOINED_Q_FILTER.md
 [34]:	./chapters/GR_SORTING.md
 [35]: ./chapters/LU_MODEL_PROPERTY.md
-[36]: ./chapters/LU_POST_VALIDATION.md
 
 [image-1]:	./chapters/images/level-up.png
