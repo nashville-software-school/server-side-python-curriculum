@@ -10,10 +10,10 @@ We are going to handle our Authentication on the Client Side using Firebase. Fir
 
 1. User logs into the application.
 1. Client grabs the UID outside of the user object Firebase gives us.
-1. Client checks to see if the user has a row associated with them in the Gamer table using the `/checkgamer` route with the UID in the body of the request.
+1. Client checks to see if the user has a row associated with them in the Gamer table using the `/checkuser` route with the UID in the body of the request.
 
 1. If there is no associated Gamer:
-    * A empty response gets sent to the client from the `/checkgamer` endpoint.
+    * A empty response gets sent to the client from the `/checkuser` endpoint.
     * A form pops up on the screen for the user to fill out any extra information we need from them. (Ex: bio)
     * After user submits the form, the client sends a request to the server's `/register` route with the user's information in the body of the request.
     * Server extracts all of the information from the request and stores it in Python variables.
@@ -36,7 +36,7 @@ from rest_framework.response import Response
 
 
 @api_view(['POST'])
-def check_gamer(request):
+def check_user(request):
     '''Checks to see if User has Associated Gamer
 
     Method arguments:
@@ -93,7 +93,7 @@ Create the following file and place the code below in it.
 > #### `levelup-server/levelupapi/views/__init__.py`
 
 ```py
-from .auth import check_gamer, register_user
+from .auth import check_user, register_user
 ```
 
 ## Using Views Package to Make Routes
@@ -107,22 +107,22 @@ Completely replace the contents of the following file with the code below.
 ```py
 from django.contrib import admin
 from django.urls import path
-from levelupapi.views import register_user, check_gamer
+from levelupapi.views import register_user, check_user
 
 urlpatterns = [
     path('register', register_user),
-    path('checkgamer', check_gamer),
+    path('checkuser', check_user),
     path('admin/', admin.site.urls),
 ]
 ```
 
-In the code above, you will notice that the `register_user` and `check_gamer` functions are imported into the module. Then they are used to map a route to that view
+In the code above, you will notice that the `register_user` and `check_user` functions are imported into the module. Then they are used to map a route to that view
 
 ```py
 # Requests to http://localhost:8000/register will be routed to the register_user function
 path('register', register_user)
-# Requests to http://localhost:8000/checkgamer will be routed to the login_user function
-path('checkgamer', check_gamer),
+# Requests to http://localhost:8000/checkuser will be routed to the login_user function
+path('checkuser', check_user),
 ```
 
 ## Starting the Server
