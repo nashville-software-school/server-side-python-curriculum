@@ -20,6 +20,7 @@
 >
 > You also laugh at the idea of a cat playing checkers, and ask, "Can you tell me what you're looking for in the application you want me to build for you?"
 
+
 >
 > "Of course, dear!"
 >
@@ -77,7 +78,7 @@
 
 After thinking about the requirements, you've come up with an erd.
 
-[![Level Up ERD](https://user-images.githubusercontent.com/31781724/202054759-e8f20503-7568-4c7f-a577-f8fc4085e27a.png)](https://drawsql.app/teams/trinity-christiana-terry/diagrams/level-up/embed)
+[![Level Up ERD](https://user-images.githubusercontent.com/31781724/202056277-f58221cd-e076-41d1-b083-36cc5525b2a4.png)](https://drawsql.app/teams/trinity-christiana-terry/diagrams/level-up/embed)
 
 ## Design Models
 
