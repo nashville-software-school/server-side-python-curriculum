@@ -7,3 +7,6 @@ Visit the [Level Up NextJS Template](https://github.com/codetracker-learning/TEM
 Once the generation process is complete, clone the repository down to a directory of your choosing inside your `~/workspace` directory.
 
 Once cloned, make sure to follow the README to set up the client project with Firebase Auth.
+
+Everything should work if you see this error pop up: 
+![Screen Shot 2022-11-15 at 9 28 43 PM](https://user-images.githubusercontent.com/31781724/202076678-5093b2e4-510a-46f0-b56a-4868fd1ecb4a.png)
