@@ -113,13 +113,14 @@ Django can do that for you without ever needing to write SQL. You write classes 
 
 ```py
 from django.db import models
+from .type import Type
 
 class Toy(models.Model):
     name = models.CharField(max_length=55)
     material = models.CharField(max_length=55)
     color = models.CharField(max_length=12)
     price = models.DecimalField(max_length=7,decimal_places=2)
-    toy_type = models.ForeignKey("Type", on_delete=models.CASCADE)
+    toy_type = models.ForeignKey(Type, on_delete=models.CASCADE)
 ```
 
 __Notice for the toy_type field, there's no need to put `_id` for the foreign key. Django will do that for you when the table is created__
