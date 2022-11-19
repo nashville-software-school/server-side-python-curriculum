@@ -46,7 +46,7 @@ def check_user(request):
 
     # Use the built-in authenticate method to verify
     # authenticate returns the user object or None if no user is found
-    gamer = Gamer.objects.get(uid=uid)
+    gamer = Gamer.objects.filter(uid=uid).first()
 
     # If authentication was successful, respond with their token
     if gamer is not None:
