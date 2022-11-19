@@ -61,6 +61,7 @@ def check_user(request):
         data = { 'valid': False }
         return Response(data)
 
+
 @api_view(['POST'])
 def register_user(request):
     '''Handles the creation of a new gamer for authentication
@@ -72,14 +73,14 @@ def register_user(request):
     # Now save the user info in the levelupapi_gamer table
     gamer = Gamer.objects.create(
         bio=request.data['bio'],
-        user=request.data['uid']
+        uid=request.data['uid']
     )
 
     # Return the gamer info to the client
     data = {
-            'id': gamer.id,
-            'uid': gamer.uid,
-            'bio': gamer.bio
+        'id': gamer.id,
+        'uid': gamer.uid,
+        'bio': gamer.bio
     }
     return Response(data)
 ```
