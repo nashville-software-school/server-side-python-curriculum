@@ -57,40 +57,14 @@ from levelupapi.models import GameType
 
 
 class GameTests(APITestCase):
+
+    # Add any fixtures you want to run to build the test database
+    fixtures = ['users', 'tokens',  'games', 'categories']
+
     def setUp(self):
-        """
-        Create a new account and create sample category
-        """
-        url = "/register"
-        data = {
-            "username": "steve",
-            "password": "Admin8*",
-            "email": "steve@stevebrownlee.com",
-            "address": "100 Infinity Way",
-            "phone_number": "555-1212",
-            "first_name": "Steve",
-            "last_name": "Brownlee",
-            "bio": "Love those gamez!!"
-        }
-        # Initiate request and capture response
-        response = self.client.post(url, data, format='json')
-
-        # Parse the JSON in the response body
-        json_response = json.loads(response.content)
-
-        # Store the auth token
-        self.token = json_response["token"]
-
-        # Assert that a user was created
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-        # SEED DATABASE WITH ONE GAME TYPE
-        # This is needed because the API does not expose a /gametypes
-        # endpoint for creating game types
-        gametype = GameType()
-        gametype.label = "Board game"
-        gametype.save()
-
+        self.gamer = Gamer.objects.first()
+        token = Token.objects.get(user=self.gamer.user)
+        self.client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
 
     def test_create_game(self):
         """
