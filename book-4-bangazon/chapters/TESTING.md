@@ -59,7 +59,7 @@ from levelupapi.models import GameType
 class GameTests(APITestCase):
 
     # Add any fixtures you want to run to build the test database
-    fixtures = ['users', 'tokens',  'games', 'categories']
+    fixtures = ['users', 'tokens', 'gamers', 'game_types', 'games', 'events']
 
     def setUp(self):
         self.gamer = Gamer.objects.first()
