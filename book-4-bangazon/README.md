@@ -8,9 +8,15 @@ This book introduces you to integration testing, and  Django templates. You will
 |--|--|
 | 1 | [SQL Interlude: Chinook](./chapters/CHINOOK.md) <br/> <sub style="font-size:0.85rem;">#sql</sub> |
 | 2 | [API Integration Testing](./chapters/TESTING.md) <br/> <sub style="font-size:0.85rem;">#testing</sub> |
-| 3 | [Django: Using SQL and Templates](./chapters/DJANGO_TEMPLATES.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
-| 4 | [Events by Gamer](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
+| 3 | [Server Side Rendering (SSR)](./chapters/DJANGO_TEMPLATES.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
+| 4 | [SSR Events by Gamer Rreport](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
 | | [Self Assessment: Bangazon API](./chapters/BANG_SETUP.md) |
+
+## ⛅️ Deployment
+
+To deploy your Django REST API to the cloud, you are going use the Digital Ocean platform. Be aware that deploying any non-static application will incur some costs - on any platform. For Digital Ocean, the cost is $5.00/month, so if you are unwilling or unable to take on that cost, do not follow these steps.
+
+[Digital Ocean Deploy Walkthrough](./chapters/DEPLOY_DJANGO_01.md)
 
 ## 🧭 Explorer Chapters
 
