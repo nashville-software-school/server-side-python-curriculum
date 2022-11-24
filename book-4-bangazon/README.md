@@ -12,22 +12,15 @@ This book introduces you to integration testing, and  Django templates. You will
 | 4 | [SSR Events by Gamer Rreport](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
 | | [Self Assessment: Bangazon API](./chapters/BANG_SETUP.md) |
 
-## ⛅️ Deployment
-
-To deploy your Django REST API to the cloud, you are going use the Digital Ocean platform. Be aware that deploying any non-static application will incur some costs - on any platform. For Digital Ocean, the cost is $5.00/month, so if you are unwilling or unable to take on that cost, do not follow these steps.
-
-[Digital Ocean Deploy Walkthrough](./chapters/DEPLOY_DJANGO_01.md)
-
 ## 🧭 Explorer Chapters
 
 Explorer chapters are optional, and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
-| # | Level Up | GamerRater |
+| # | Level Up | ⛅️ Deployment |
 |--|--|--|
-| 1 | [SQL Interlude: Database Views](./chapters/DB_VIEWS.md) <br/> <sub style="font-size:0.85rem;">#sql #views</sub> |[GamerRater API Testing](./chapters/GR_TESTS.md) |
-| 2 | [Django Permissions](./chapters/DJANGO_PERMISSIONS.md) | [GamerRater Reports](./chapters/GR_REPORTS.md) |
+| 1 | [SQL Interlude: Database Views](./chapters/DB_VIEWS.md) <br/> <sub style="font-size:0.85rem;">#sql #views</sub> |[Digital Ocean Deploy Walkthrough](./chapters/DEPLOY_DJANGO_01.md) |
+| 2 | [Django Permissions](./chapters/DJANGO_PERMISSIONS.md) | [Heroku Walkthrough](./chapters/HEROKU_DEPLOYMENT.md) |
 | 3 | [Enforcing Permissions](./chapters/DJANGO_ENFORCING_PERMISSIONS.md) | |
-| 4 | [Deploying with Heroku](./chapters/HEROKU_DEPLOYMENT.md)
 
 ## 🏕 Pioneer Chapters
 
