@@ -9,7 +9,7 @@ This book introduces you to integration testing, and  Django templates. You will
 | 1 | [SQL Interlude: Chinook](./chapters/CHINOOK.md) <br/> <sub style="font-size:0.85rem;">#sql</sub> |
 | 2 | [API Integration Testing](./chapters/TESTING.md) <br/> <sub style="font-size:0.85rem;">#testing</sub> |
 | 3 | [Server Side Rendering (SSR)](./chapters/DJANGO_TEMPLATES.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
-| 4 | [SSR Events by Gamer Rreport](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
+| 4 | [SSR Events by Gamer Report](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
 | | [Self Assessment: Bangazon API](./chapters/BANG_SETUP.md) |
 
 ## 🧭 Explorer Chapters

@@ -76,9 +76,8 @@
 * The `Game` will also have a one to many relationship with `Gamer` because gamers can create more than one game.
 * The `Event` table will have a 1 to many relationship with `Gamer`, called the organizer, because gamers can host many events but an event will only have 1 host.
 * To keep track of who is attending events, there is a many to many relationship between gamers and events. There will need to be a join table to connect that many to many relationship.
-After thinking about the requirements, you've come up with an erd.
 
-![level-up-erd](https://user-images.githubusercontent.com/18269696/139501440-14959d94-fdd9-42b0-912e-8adba1fe750e.png)
+Given these requirements, design an accurate ERD for the database.
 
 
 ## Design Models
