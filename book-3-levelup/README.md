@@ -8,21 +8,21 @@ This book introduces you to the Django application framework, and the Django RES
 
 | # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
 |--|--|--|--|
-| 1 | [Installations and Setup](./chapters/DDW_SETUP.md) | [Installations and Setup](./chapters/HR_INSTALLS.md) | [Level Up API Setup][1] |
-| 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models](./chapters/HR_MODELS.md)  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
-| 3 | [ORM not SQL][14] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Setup](./chapters/HR_AUTHENTICATION.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
-| 4 | [Views][4] <br/> <sub style="font-size:0.85rem;">\#viewset</sub> | [Testing Authentication](./chapters/HR_REGISTER.md)  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data \#fixtures</sub> |
-| 5 | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Getting Some Starter Data](./chapters/HR_SEED_DB.md) <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication \#tokens</sub> |  |  |
-| 6 | [URLs][12] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Customer View](./chapters/HR_CUSTOMER_VIEW.md) <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset \#serializer \#router</sub> |
-| 7 | [Your First Migration][16] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Tickets and Employees](./chapters/HR_EMPLOYEE_TICKET_VIEWS.md) <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
-| 8 | [Make an Appointment][40] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Honey Rae Client](./chapters/HR_CLIENT_INSTALL.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
-| 9 |  | [Expanding Customers and Employees](./chapters/HR_USER_SERIALIZER.md) <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
-| 10 |  | [Creating Tickets](./chapters/HR_TICKET_POST.md) <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 |  | [Filtering Tickets](./chapters/HR_TICKET_FILTER_FIND.md) <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
-| 12 |  | [Assigning Tickets](./chapters/HR_TICKET_ASSIGN.md) <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
-| 13 |  | [Deleting Tickets](./chapters/HR_TICKET_DELETE.md) <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
+| 1 | [Installations and Setup][41] | [Installations and Setup][42] | [Level Up API Setup][1] |
+| 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models][43]  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
+| 3 | [ORM not SQL][14] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Setup][44] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
+| 4 | [Views][4] <br/> <sub style="font-size:0.85rem;">\#viewset</sub> | [Testing Authentication][45]  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data \#fixtures</sub> |
+| 5 | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Getting Some Starter Data][46] <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication \#tokens</sub> |  |  |
+| 6 | [URLs][12] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Customer View][47] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset \#serializer \#router</sub> |
+| 7 | [Your First Migration][16] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Tickets and Employees][48] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
+| 8 | [Make an Appointment][40] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Honey Rae Client][49] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
+| 9 |  | [Expanding Customers and Employees][50] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 10 |  | [Creating Tickets][51] <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
+| 11 |  | [Filtering Tickets][52] <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 12 |  | [Assigning Tickets][53] <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
+| 13 |  | [Deleting Tickets][54] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
 | 14 |  |  | [Leaving and Joining Events][35]|
-| 🎓 | [Self-assessment](./chapters/DJANGO_ASSESSMENT.md) |  | |
+| 🎓 | [Self-assessment][55] |  | |
 
 
 ## 👩‍👩‍👧‍👦 Team Collaboration Projects
@@ -102,5 +102,20 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [38]: ./chapters/LU_CATCHING_ERRORS.md
 [39]: ./chapters/LU_SERIALIZER_DEPTH.md
 [40]: ./chapters/DD_MAKE_APPOINTMENT.md
+[41]: ./chapters/DDW_SETUP.md
+[42]: ./chapters/HR_INSTALLS.md
+[43]: ./chapters/HR_MODELS.md
+[44]: ./chapters/HR_AUTHENTICATION.md
+[45]: ./chapters/HR_REGISTER.md
+[46]: ./chapters/HR_SEED_DB.md
+[47]: ./chapters/HR_CUSTOMER_VIEW.md
+[48]: ./chapters/HR_EMPLOYEE_TICKET_VIEWS.md
+[49]: ./chapters/HR_CLIENT_INSTALL.md
+[50]: ./chapters/HR_USER_SERIALIZER.md
+[51]: ./chapters/HR_TICKET_POST.md
+[52]: ./chapters/HR_TICKET_FILTER_FIND.md
+[53]: ./chapters/HR_TICKET_ASSIGN.md
+[54]: ./chapters/HR_TICKET_DELETE.md
+[55]: ./chapters/DJANGO_ASSESSMENT.md
 
 [image-1]: ./chapters/images/level-up.png
