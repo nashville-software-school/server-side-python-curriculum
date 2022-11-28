@@ -12,6 +12,3 @@ To prevent having an empty database every time you build and deploy, you can loa
 6. Enter in as many `loaddata` commands as you need to seed your database
 
 ![](./images/adding-fixtures.gif)
-
-
-[Go to Step 7 >](./DEPLOY_DJANGO_07.md)
