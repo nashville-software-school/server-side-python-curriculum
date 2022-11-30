@@ -2,6 +2,8 @@
 
 You are going to set up your Github repository to serve the static, built version of your React app.
 
+> **Special note from your coaches**: Once you make the decision to deploy your client and your API, there are changes that you have to make to ensure that the client will still work. All of your fetch calls must be made to your publicly deployed API, not localhost:8000. Discuss this with one of your coaches when you're ready.
+
 ## Repo Configuration
 
 1. Go to your Github repo.
