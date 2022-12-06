@@ -26,7 +26,10 @@ def signup(self, request, pk):
 
     gamer = Gamer.objects.get(user=request.data["user_id"])
     event = Event.objects.get(pk=pk)
-    event.attendees.add(gamer)
+    attendee = EventGamer.objects.create(
+        gamer=gamer,
+        event=event
+    )
     return Response({'message': 'Gamer added'}, status=status.HTTP_201_CREATED)
 ```
 
