@@ -51,7 +51,7 @@ Update the **`EventSerializer`** class to include the new, custom property.
 
 ```python
 fields = ('id', 'game', 'organizer',
-          'description', 'date', 'time', 'attendees',
+          'description', 'date', 'time',
           'joined')
 ```
 
