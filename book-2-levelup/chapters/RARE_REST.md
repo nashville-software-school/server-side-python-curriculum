@@ -14,7 +14,7 @@ Next, choose one team member who will create the API project locally. As a team,
 ### Creating the Project
 
 ```sh
-django-admin startproject rare
+django-admin startproject rare .
 ```
 
 ### Creating the API Application
