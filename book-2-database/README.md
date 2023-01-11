@@ -47,7 +47,7 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 | # | Project&nbsp;Name | Description |
 |--|--|--|
 |1| [Rare Publishing Platform][32] | Your first, large full-stack group project. You will be building an API service with Python, and using SQL to manage the permanent state in your database. |
-|1| [Choose Your Own Adventure][42] | You and your teammates can choose the concept, the user stories, the wireframes, the data, and the acceptance criteria for your own API. |
+|2| [Choose Your Own Adventure][42] | You and your teammates can choose the concept, the user stories, the wireframes, the data, and the acceptance criteria for your own API. |
 
 
 [1]:	./chapters/KD_DATABASE_CREATION.md
