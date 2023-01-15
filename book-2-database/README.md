@@ -13,12 +13,7 @@
 | 7 | [Animals with Location Report][24] <br/> <sub style="font-size:0.85rem;">\#sql #JOIN #HTTP\_GET</sub> | [Embedding Metal, Style, and Size][7] | [Including Mood with Entry][25] |
 | 8 | [Admitting Animals][26] <br/> <sub style="font-size:0.85rem;">\#sql #INSERT</sub> |  | [Recording New Entries][27] |
 | Interlude: SQL | [SQL Murder Mystery][28] | |
-
-## 👩‍👩‍👧‍👦 Team Collaboration Projects
-
-| # | Project Name | Summary |
-|--|--|--|
-|- | N/A | Once you have completed the two core projects, you are ready for the Deep Learning Group Project, so no other collaborative projects during this book. |
+| 🎓 | [Self-assessment][43] | | |
 
 ## 🧭 Explorer Chapters
 
@@ -87,3 +82,4 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [40]:	./chapters/KD_EC_SORT_BY_PRICE.md
 [41]:	./chapters/PK_PC_ANIMALS_EMPLOYEES.md
 [42]:	./chapters/ADVENTURE_GUIDELINES.md
+[43]:	./chapters/SNAKES_ON_A_BRAIN.md
