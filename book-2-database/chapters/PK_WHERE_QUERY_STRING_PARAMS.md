@@ -84,14 +84,14 @@ Next we'll need to refactor the `do_get` so we can call the correct function:
 
             if resource == "animals":
                 if id is not None:
-                    response = f"{get_single_animal(id)}"
+                    response = get_single_animal(id)
                 else:
-                    response = f"{get_all_animals()}"
+                    response = get_all_animals()
             elif resource == "customers":
                 if id is not None:
-                    response = f"{get_single_customer(id)}"
+                    response = get_single_customer(id)
                 else:
-                    response = f"{get_all_customers()}"
+                    response = get_all_customers()
 
        else: # There is a ? in the path, run the query param functions
             (resource, query) = parsed
