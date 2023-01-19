@@ -22,7 +22,7 @@ If you and your teammates choose to be creative and build an API that you dream 
 ## Getting Started Checklist
 
 - [ ] `.gitignore` created
-- [ ] `.sqlite3` added to `gitignore`
+- [ ] `*.sqlite3` added to the bottom of `gitignore`
 - [ ] Issue ticket template
 - [ ] Pull request template
 - [ ] Project created
