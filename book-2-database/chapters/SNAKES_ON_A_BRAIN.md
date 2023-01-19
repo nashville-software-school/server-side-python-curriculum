@@ -34,7 +34,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/species | List |
+| GET | http://localhost:8088/species | List |
 
 
 ---
@@ -46,7 +46,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/species/3 | Dictionary |
+| GET | http://localhost:8088/species/3 | Dictionary |
 
 
 ---
@@ -58,10 +58,10 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Status Code |
 |--|--|--|
-| GET | http://localhost:8000/snakefood | 404 |
-| PUT | http://localhost:8000/habitats/4 | 404 |
-| DELETE | http://localhost:8000/petstore/1 | 404 |
-| POST | http://localhost:8000/cleaners | 404 |
+| GET | http://localhost:8088/snakefood | 404 |
+| PUT | http://localhost:8088/habitats/4 | 404 |
+| DELETE | http://localhost:8088/petstore/1 | 404 |
+| POST | http://localhost:8088/cleaners | 404 |
 
 ---
 
@@ -72,7 +72,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/snakes | List |
+| GET | http://localhost:8088/snakes | List |
 
 ---
 
@@ -83,7 +83,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/snakes?species=1 | List |
+| GET | http://localhost:8088/snakes?species=1 | List |
 
 ---
 
@@ -95,7 +95,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/snakes/13 | Dictionary |
+| GET | http://localhost:8088/snakes/13 | Dictionary |
 
 ---
 
@@ -107,7 +107,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| POST | http://localhost:8080/snakes | Dictionary |
+| POST | http://localhost:8088/snakes | Dictionary |
 
 ---
 
@@ -119,7 +119,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| POST | http://localhost:8080/snakes | Dictionary |
+| POST | http://localhost:8088/snakes | Dictionary |
 
 ---
 
@@ -130,7 +130,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/owners | List |
+| GET | http://localhost:8088/owners | List |
 
 ---
 
@@ -141,7 +141,7 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 | Method | URL | Response Body |
 |--|--|--|
-| GET | http://localhost:8080/owners/4 | Dictionary |
+| GET | http://localhost:8088/owners/4 | Dictionary |
 
 
 # Data
