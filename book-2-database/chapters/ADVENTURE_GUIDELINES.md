@@ -19,10 +19,17 @@ If you and your teammates choose to be creative and build an API that you dream 
 4. You must work on branches at all times and the branches must be appropriately named _(i.e. `my_branch` is not a good name)_.
 5. You must write quailty Pull Requests that assume that your teammates have zero knowledge about how to test the PR.
 
-## Additional Guidelines
+## Getting Started Checklist
 
-1. Make sure you have a `.gitignore`. Refer back to the chapters to get the `curl` command needed to get a boilerplate one.
-1. Make sure that your database file name is added to the `.gitignore`.
+- [ ] `.gitignore` created
+- [ ] `.sqlite3` added to `gitignore`
+- [ ] Issue ticket template
+- [ ] Pull request template
+- [ ] Project created
+- [ ] Issues added to project
+- [ ] ERD created
+- [ ] Wireframes created
+- [ ] Each teammate is a collaborator on both the client-side and server-side repo _(with Admin rights)_
 
 ## Creative Kickstart
 
