@@ -1,5 +1,7 @@
 # Expanded Animal Response
 
+> 🧨 Before you start working on Explorer and Pioneer chapters, create a new branch labeled "explorer" for your two projects. This will allow you to re-use the existing code when you get to Book 2.
+
 Currently, if you request an animal, you get a JSON response in this form.
 
 ```json
