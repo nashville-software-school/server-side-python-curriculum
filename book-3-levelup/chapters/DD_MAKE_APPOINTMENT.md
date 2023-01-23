@@ -6,8 +6,8 @@ Perform the following requests with your API client.
 
 | Method | URL | Body |
 |--|--|--|
-| POST | http://localhost:8000/appointments | { "walkerId": 4, "appointmentDate": "2022-11-23" } |
-| POST | http://localhost:8000/appointments | { "walkerId": 1, "appointmentDate": "2022-12-01" } |
+| POST | http://localhost:8000/appointments | { "walkerId": 4, "date": "2022-11-23" } |
+| POST | http://localhost:8000/appointments | { "walkerId": 1, "date": "2022-12-01" } |
 
 Verify that you get a response with a 201 status code and that the new appointment is in the response body.
 
