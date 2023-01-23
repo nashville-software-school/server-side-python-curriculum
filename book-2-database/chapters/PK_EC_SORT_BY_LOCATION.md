@@ -76,7 +76,7 @@ Here's how you do it.
     ```
 1. Pass the query params to the all animals function.
     ```py
-    response = f"{get_all_animals(query_params)}"
+    response = get_all_animals(query_params)
     ```
 1. Since the `query_params` variable will contain a list of query parameters, you can check if there is one, and extract the key and value. Update the `get_all_animals` function with the following logic.
     ```py
