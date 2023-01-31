@@ -11,7 +11,7 @@ When either of those buttons are clicked, a new request is sent to the API with 
 
 ```js
 const filterTickets = (status) => {
-    fetchIt(`http://localhost:8000/tickets?status=${status}`)
+    fetchIt(`http://localhost:8000/serviceTickets?status=${status}`)
         .then((tickets) => {
             setOriginal(tickets)
         })
@@ -23,7 +23,7 @@ A quick refresher on the breakdown of the request.
 
 | Method | URL | Query Param |
 | --| --|--|
-| GET | http://localhost:8000/tickets?status=done | status=done |
+| GET | http://localhost:8000/serviceTickets?status=done | status=done |
 
 Now the API code has to be a bit smarter. In Django, the `request` object automatically has a property on it called `query_params`. It is a dictionary with the keys and values of all query params in the URL. In this case, the dictionary will look like this.
 
