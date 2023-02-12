@@ -1,8 +1,8 @@
-# Replacing json-server with Python
+# Replacing Firebase Realtime Database with Python
 
-Oh no! The developer of `json-server` decided he didn't want to share his code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
+Oh no! The developer of `Firebase Realtime Database` decided they didn't want to share their code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
 
-Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 - just like `json-server` did - and responds with data.
+Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 and responds with data.
 
 By the end of this book, you will be able to write a server application that responds to HTTP requests from a react application.
 
