@@ -10,9 +10,10 @@ When you display a single game, provide a mechanism for a user to review a game 
 Plenty of options for you to choose from. Just make sure that the user can only specify a number from 1 to 10.
 
 ## Displaying Rating
+
 Now go to your ratings model and make sure to add a related name to the game foreign key field
 
-``` 
+```
 game = models.ForeignKey("Game", on_delete=models.CASCADE, related_name="ratings")
 ```
 
@@ -35,6 +36,6 @@ def average_rating(self):
 
     # Calculate the averge and return it.
     # If you don't know how to calculate averge, Google it.
-    
+
     #return the result
 ```

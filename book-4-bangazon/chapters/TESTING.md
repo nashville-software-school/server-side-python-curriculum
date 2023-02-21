@@ -53,7 +53,8 @@ Now create the module that contains the first integration test.
 import json
 from rest_framework import status
 from rest_framework.test import APITestCase
-from levelupapi.models import GameType
+from levelupapi.models import GameType, Gamer
+from rest_framework.authtoken.models import Token
 
 
 class GameTests(APITestCase):
