@@ -6,22 +6,22 @@ This book introduces you to the Django application framework, and the Django RES
 
 ## 🍎 Required Core Chapters
 
-| # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
-|--|--|--|--|
-| 1 | [Installations and Setup][41] | [Installations and Setup][42] | [Level Up API Setup][1] |
-| 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models][43]  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |[Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
-| 3 | [ORM not SQL][14] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Setup][44] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
-| 4 | [Views][4] <br/> <sub style="font-size:0.85rem;">\#viewset</sub> | [Testing Authentication][45]  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data \#fixtures</sub> |
-| 5 | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Getting Some Starter Data][46] <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication \#tokens</sub> |  |  |
-| 6 | [URLs][12] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Customer View][47] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset \#serializer \#router</sub> |
-| 7 | [Your First Migration][16] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Tickets and Employees][48] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
-| 8 | [Make an Appointment][40] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Honey Rae Client][49] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
-| 9 |  | [Expanding Customers and Employees][50] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
-| 10 |  | [Creating Tickets][51] <br/> <sub style="font-size:0.85rem;">\#POST</sub> | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |  |  |
-| 11 |  | [Filtering Tickets][52] <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> | [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
-| 12 |  | [Assigning Tickets][53] <br/> <sub style="font-size:0.85rem;">\#PUT</sub> | [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
-| 13 |  | [Deleting Tickets][54] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> | [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
-| 14 |  |  | [Leaving and Joining Events][35]|
+| # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 💇🏽‍♀️ <br/> Elated Mane | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
+|--|--|--|--| -- |
+| 1 | [Installations and Setup][41] | [Installations and Setup][42] | [Styling Appointments][56] | [Level Up API Setup][1] |
+| 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models][43]  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Stylist Clients][57] | [Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
+| 3 | [ORM not SQL][14] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Setup][44] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Equipment Inventory][58] |  [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
+| 4 | [Views][4] <br/> <sub style="font-size:0.85rem;">\#viewset</sub> | [Testing Authentication][45]  <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Popular Hair Styles][59] |  [Carrie Cares][6] <br/> <sub style="font-size:0.85rem;">\#data \#fixtures</sub> |
+| 5 | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Getting Some Starter Data][46] <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Stylist Equipment][56] |  [Level Up Gamers][8] <br/> <sub style="font-size:0.85rem;">\#authentication \#tokens</sub> |
+| 6 | [URLs][12] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Customer View][47] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> |  |  [Exposing GET Requests][11] <br/> <sub style="font-size:0.85rem;">\#orm #viewset \#serializer \#router</sub> |
+| 7 | [Your First Migration][16] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Tickets and Employees][48] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> |  |  [GameList and EventList Components][13] <br/> <sub style="font-size:0.85rem;">\#react \#map</sub> |
+| 8 | [Make an Appointment][40] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Honey Rae Client][49] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> |  |  [Exposing POST Requests][15] <br/> <sub style="font-size:0.85rem;">\#create \#post</sub> |
+| 9 |  | [Expanding Customers and Employees][50] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> |  | [GameForm and EventForm Components][17] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 10 |  | [Creating Tickets][51] <br/> <sub style="font-size:0.85rem;">\#POST</sub> |  | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |
+| 11 |  | [Filtering Tickets][52] <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> |  |  [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
+| 12 |  | [Assigning Tickets][53] <br/> <sub style="font-size:0.85rem;">\#PUT</sub> |  |  [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
+| 13 |  | [Deleting Tickets][54] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> |  |  [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
+| 14 |  |  |  |  [Leaving and Joining Events][35]|
 | 🎓 | [Self-assessment][55] |  | |
 
 
@@ -117,5 +117,11 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [53]: ./chapters/HR_TICKET_ASSIGN.md
 [54]: ./chapters/HR_TICKET_DELETE.md
 [55]: ./chapters/DJANGO_ASSESSMENT.md
+[56]: ./chapters/ELATED_APPOINTMENTS.md
+[57]: ./chapters/ELATED_CLIENTS.md
+[58]: ./chapters/ELATED_EQUIPMENT_TYPES.md
+[59]: ./chapters/ELATED_STYLE_CUSTOMERS.md
+[60]: ./chapters/ELATED_EQUIPMENT_PER_STYLIST.md
+
 
 [image-1]: ./chapters/images/level-up.png
