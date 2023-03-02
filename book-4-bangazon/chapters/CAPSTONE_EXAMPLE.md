@@ -10,9 +10,13 @@ _Wireframes must include each view you intend to have. Each view must include a 
 
 [View an example of good wireframes](./images/capstone-wireframe-example.png)
 
+[View another example of good wireframes](./images/wireframe-example-001.png)
+
 {insert link to your wireframes that are publicly accessible to your coach}
 
 ## ERD
+
+_User-related data. At least one many-to-many relationship._
 
 {insert link to ERD that is publicly accessible to your coach}
 
