@@ -155,17 +155,28 @@ if __name__ == "__main__":
 ```
 
 ## Adjust VS Code Settings
+
+### Interpreter
+
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
-Open the command palette again and search for "Open Workspace Settings (JSON)". Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
+### Workspace Settings
+
+Open the command palette again and search for **Open Workspace Settings (JSON)**, and add the following JSON to file that appears.
 
 ```
-"python.formatting.autopep8Path": "paste in the output from the which command",
-"python.linting.pylintEnabled": true,
-"python.analysis.diagnosticSeverityOverrides": {
-  "reportGeneralTypeIssues": "none"
+{
+   "python.formatting.autopep8Path": "paste in the output from the which command",
+   "python.linting.pylintEnabled": true,
+   "python.analysis.diagnosticSeverityOverrides": {
+     "reportGeneralTypeIssues": "none"
+   }
 }
 ```
+
+In your terminal, run `which autopep8`. Copy/paste the output of that into the JSON to replace the value of `autopep8Path`.
+
+### Pylint Configuration File
 
 With pylint enabled we need to control some of the warnings that VS Code will warn about. We can do this by creating a `.pylintrc` file. Copy this command into the terminal to create the file:
 ```
