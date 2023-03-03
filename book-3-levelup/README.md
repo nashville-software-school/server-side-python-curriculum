@@ -1,12 +1,10 @@
-# Book 3 - Level Up
+# Book 3 - Level Up With Django
 
 This book introduces you to the Django application framework, and the Django REST API plugin for rapid API development.
 
-![Level Up logo][image-1]
-
 ## 🍎 Required Core Chapters
 
-| # | 🐕‍🦺 DeShawn Dog Walking API <br/><sub>(_Introduction_)</sub> | 🍯 Honey Rae's Repairs <br/><sub>(_Exploration_)</sub> | 💇🏽‍♀️ <br/> Elated Mane | 🕹 Level Up <br/><sub>(_Comprehensive Tour_)</sub> |
+| # | 🐕‍🦺 DeShawn Dog Walking API | 🍯 Honey Rae's Repairs | 💇🏽‍♀️ <br/> Elated Mane | 🕹 Level Up |
 |--|--|--|--| -- |
 | 1 | [Installations and Setup][41] | [Installations and Setup][42] | [Styling Appointments][56] | [Level Up API Setup][1] |
 | 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models][43]  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Stylist Clients][57] | [Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |

@@ -1,4 +1,4 @@
-# Book 4 - Bangazon eCommerce
+# Book 4 - Bangazon Professional Preparation
 
 This book introduces you to integration testing, and  Django templates. You will be writing raw SQL in some of your Django views instead of the ORM to produce reports for business analysts.
 
