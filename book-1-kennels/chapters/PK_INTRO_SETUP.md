@@ -1,8 +1,8 @@
 # Replacing Firebase Realtime Database with Python
 
-Oh no! The developer of `json-server` decided he didn't want to share his code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
+Oh no! The developer of `Firebase Realtime Database` decided they didn't want to share their code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
 
-Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 - just like `json-server` did - and responds with data.
+Luckily, you know you have Python installed on your computer and you found a snippet of code on Stack Overflow that lets you start up your own, basic service that listens for HTTP requests on port 8088 and responds with data.
 
 By the end of this book, you will be able to write a server application that responds to HTTP requests from a react application.
 
@@ -55,7 +55,6 @@ pipenv shell
 We need to set up our server to handle different HTTP methods (GET, POST, PUT, DELETE). The following code sets up the beginning of our server to handle the GET, POST, and PUT methods by including methods called `do_GET`, `do_POST`, and `do_PUT`. Copy pasta the following code into the `request_handler.py` file. Read the comments to get a feel for what each method is doing. Make your own comments for any questions you have about what the code is doing.
 
 ```py
-import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
@@ -70,6 +69,28 @@ class HandleRequests(BaseHTTPRequestHandler):
     """
 
     # Here's a class function
+    def _set_headers(self, status):
+        # Notice this Docstring also includes information about the arguments passed to the function
+        """Sets the status code, Content-Type and Access-Control-Allow-Origin
+        headers on the response
+
+        Args:
+            status (number): the status code to return to the front end
+        """
+        self.send_response(status)
+        self.send_header('Content-type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.end_headers()
+
+    # Another method! This supports requests with the OPTIONS verb.
+    def do_OPTIONS(self):
+        """Sets the options headers
+        """
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+        self.send_header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept')
+        self.end_headers()
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any GET request.
@@ -94,49 +115,29 @@ class HandleRequests(BaseHTTPRequestHandler):
         else:
             response = []
 
-        # Send a JSON formatted string as a response
-        self.wfile.write(json.dumps(response).encode())
+        # This weird code sends a response back to the client
+        self.wfile.write(f"{response}".encode())
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any POST request.
     def do_POST(self):
-        """Handles POST requests to the server"""
-
+        """Handles POST requests to the server
+        """
         # Set response code to 'Created'
         self._set_headers(201)
 
         content_len = int(self.headers.get('content-length', 0))
         post_body = self.rfile.read(content_len)
-        response = { "payload": post_body }
-        self.wfile.write(json.dumps(response).encode())
+        response = f"received post request:<br>{post_body}"
+        self.wfile.write(response.encode())
 
-    # A method that handles any PUT request.
+    # Here's a method on the class that overrides the parent's method.
+    # It handles any PUT request.
+
     def do_PUT(self):
-        """Handles PUT requests to the server"""
-        self.do_PUT()
-
-    def _set_headers(self, status):
-        # Notice this Docstring also includes information about the arguments passed to the function
-        """Sets the status code, Content-Type and Access-Control-Allow-Origin
-        headers on the response
-
-        Args:
-            status (number): the status code to return to the front end
+        """Handles PUT requests to the server
         """
-        self.send_response(status)
-        self.send_header('Content-type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.end_headers()
-
-    # Another method! This supports requests with the OPTIONS verb.
-    def do_OPTIONS(self):
-        """Sets the options headers
-        """
-        self.send_response(200)
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-        self.send_header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept')
-        self.end_headers()
+        self.do_POST()
 
 
 # This function is not inside the class. It is the starting
@@ -157,14 +158,12 @@ if __name__ == "__main__":
 ## Adjust VS Code Settings
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
-Open the command palette again and search for "Open User Settings (JSON)". Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
+Open the command palette again and search for "Open Settings (JSON)"
+Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
 
 ```
 "python.formatting.autopep8Path": "paste in the output from the which command",
 "python.linting.pylintEnabled": true,
-"python.analysis.diagnosticSeverityOverrides": {
-  "reportGeneralTypeIssues": "none"
-}
 ```
 
 With pylint enabled we need to control some of the warnings that VS Code will warn about. We can do this by creating a `.pylintrc` file. Copy this command into the terminal to create the file:
