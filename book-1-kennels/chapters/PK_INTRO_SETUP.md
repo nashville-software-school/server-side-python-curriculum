@@ -1,4 +1,4 @@
-# Replacing json-server with Python
+# Replacing Firebase Realtime Database with Python
 
 Oh no! The developer of `json-server` decided he didn't want to share his code any longer. This really stinks because all of your local project development was completely dependent on it to be the storage of your persistent data, and allowed you to request the data via `fetch()` calls.
 
