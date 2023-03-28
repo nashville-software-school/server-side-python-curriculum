@@ -2,9 +2,13 @@
 
 You are going to start this project with a basic React client for gamers to use to create accounts, register games, schedule events, and join/leave events created by other gamers.
 
-Visit the [Level Up React Template](https://github.com/nashville-software-school/level-up-react-18-template) Github repository and click on the "Use this template" button to generate a repository in your own Github account.
+Visit the [Level Up NextJS Template](https://github.com/codetracker-learning/TEMPLATE-nextjs-withauth-django) Github repository and click on the "Use this template" button to generate a repository in your own Github account.
 
-Once the generation process is complete, clone the repository down to a directory of your choosing inside your `~/workspace` directory. Once cloned, start the application and in your browser, you should be able to toggle back and forth between the login and register views, as shown below.
+Once the generation process is complete, clone the repository down to a directory of your choosing inside your `~/workspace` directory.
 
-![](./images/client-initial-views.gif)
+Once cloned, make sure to follow the README to set up the client project with Firebase Auth.
 
+You should see the login screen on load, but when you login you should see this error:
+![Screen Shot 2022-11-15 at 9 28 43 PM](https://user-images.githubusercontent.com/31781724/202076678-5093b2e4-510a-46f0-b56a-4868fd1ecb4a.png)
+
+Don't worry, this should be happening. This will get fixed when you add authentication to your server.
