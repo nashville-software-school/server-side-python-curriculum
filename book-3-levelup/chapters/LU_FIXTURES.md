@@ -13,14 +13,13 @@
 > You click the pen and say, "Ok, I'm ready, Carrie."
 >
 > "I was talking to my granddaughter the other day. She was telling me about role-playing games that aren't board games. I think it was called, Caves and Chimeras? Anyway, I'd like that to be one of the game type options on the website"
-
 > "Sure, no problem, Carrie!" You write down that you need to add more game types to the database.
 >
 > "Then, my other grandchild was talking to their friends about organizing a time to play an online game together. So I wondered if that sort of game would work for this as well?"
 >
 > After a quick pause, you can't think of any reason an online game wouldn't work, "That shouldn't be a problem to implement. So users will be able to create board games, role-playing games, and MMO games?"
 >
-> "That sounds wonderful! I can't wait to show my grandkids what I've been up to."
+> "That sounds wonderful! I can't wait to show my grand kids what I've been up to."
 
 ## Learning Objectives
 
@@ -40,8 +39,7 @@
 
 With Django, you can do that with something called fixtures. A fixture is a file that has JSON formatted data in it. That JSON data is then read by Django, converted into `INSERT INTO` SQL statements, and then executed to get some rows into your database tables.
 
-
-Be in the project directory _`~/workspace/levelup-server`_
+Be in the levelup server directory _`~/[...]/levelup-server`_
 
 ```sh
 mkdir levelupapi/fixtures
@@ -79,7 +77,7 @@ Open that JSON file and put the following seed data in it.
 Then load that data into the database with the following command.
 
 ```sh
-python3 manage.py loaddata game_types
+python manage.py loaddata game_types
 ```
 
 This will generate some `INSERT INTO` SQL statements behind the scenes in Django and create three records in the `levelupapi_gametype` table in your database. Run the following SQL to see them.
@@ -90,54 +88,11 @@ SELECT * FROM levelupapi_gametype;
 
 ## Default Gamer
 
-To create a full Gamer user account in your database, you need a record in three tables.
+To create a full Gamer user account in your database, you need a record in the Gamer table.
 
-1. `auth_user` - *which is the authentication table that Django builds for you out of the box.*
-1. `authtoken_token` - *which also is part of the built-in authentication system of Django.*
 1. `levelupapi_gamer` - *which is the table that gets created by Django from your **`Gamer`** model class that you wrote in the `levelup-server/levelupapi/models/gamer.py` module.*
 
-Create the following three files with the corresponding contents.
-
-> #### `levelup-server/levelupapi/fixtures/users.json`
-
-```json
-[
-    {
-        "model": "auth.user",
-        "pk": 1,
-        "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "last_login": null,
-            "is_superuser": false,
-            "username": "Carrie1945",
-            "first_name": "Carrie",
-            "last_name": "Belk",
-            "email": "me@me.com",
-            "is_staff": false,
-            "is_active": true,
-            "date_joined": "2020-08-28T14:51:39.989Z",
-            "groups": [],
-            "user_permissions": []
-        }
-    }
-]
-```
-
-> #### `levelup-server/levelupapi/fixtures/tokens.json`
-
-```json
-[
-    {
-        "model": "authtoken.token",
-        "pk": "fa2eba9be8282d595c997ee5cd49f2ed31f65bed",
-        "fields": {
-            "user": 1,
-            "created": "2020-08-29T13:24:27.172Z"
-        }
-    }
-]
-```
-
+Create the following file with the corresponding contents.
 
 > #### `levelup-server/levelupapi/fixtures/gamers.json`
 
@@ -147,26 +102,22 @@ Create the following three files with the corresponding contents.
         "model": "levelupapi.gamer",
         "pk": 1,
         "fields": {
-            "user": 1,
+            "uid": 1,
             "bio": "Me"
         }
     }
 ]
 ```
 
-Then execute the following commands.
+Then execute the following command.
 
 ```sh
-python3 manage.py loaddata users
-python3 manage.py loaddata tokens
-python3 manage.py loaddata gamers
+python manage.py loaddata gamers
 ```
 
-Once complete, each of those database tables will have one record in them. You can verify this by connecting to the database and running the following three SQL statements.
+Once complete, your Gamer table will have one record in them. You can verify this by connecting to the database and running the following SQL statement.
 
 ```sql
-SELECT * FROM auth_user;
-SELECT * FROM authtoken_token;
 SELECT * FROM levelupapi_gamer;
 ```
 
