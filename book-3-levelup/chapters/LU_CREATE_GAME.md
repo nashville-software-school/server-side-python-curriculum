@@ -2,119 +2,148 @@
 
 ## Client Request Functions
 
-First add the following two functions to your **`GameManager`** file so that you can get all game types to display in a dropdown in the form, and perform a POST request to save a new game to the database.
+First add the following two functions to your **`gameData.js`** file so that you can get all game types to display in a dropdown in the form, and perform a POST request to save a new game to the database.
 
 The URL for both of these fetch calls will start with `http://localhost:8000/`, but you need to ensure that you specify the correct resource after the `/`. Look in your server's `urls.py` module to ensure you target the correct resource with these functions.
 
-Make sure you add the `Authorization` header to both fetch requests.
-
 ```js
-export const createGame = (game) => {
-    return fetch("", { })
-        .then()
-}
+const createGame = (game) => new Promise((resolve, reject) => {
+  fetch("", {})
+    .then()
+    .catch();
+});
 
-export const getGameTypes = () => {
-    return fetch("", { })
-        .then()
-}
+const getGameTypes = () => new Promise((resolve, reject) => {
+  fetch("", {})
+    .then()
+    .catch();
+});
+
+export { getGames, createGame, getGameTypes };
 ```
 
 ## Game Form
 
 Now create a **`GameForm`** component and add the code below. Notice that the button's click handler invokes the `createGame()` function that is defined in the manager.
 
-> #### `src/components/game/GameForm.js`
+> #### `components/games/GameForm.js`
 
 ```jsx
-import { useState, useEffect } from "react"
-import { useNavigate } from 'react-router-dom'
-import { createGame, getGameTypes } from '../../managers/GameManager.js'
+import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { createGame, getGameTypes } from '../../utils/data/gameData';
 
+const GameForm = ({ user }) => {
+  const [gameTypes, setGameTypes] = useState([]);
+  /*
+  Since the input fields are bound to the values of
+  the properties of this state variable, you need to
+  provide some default values.
+  */
+  const [currentGame, setCurrentGame] = useState({
+    skillLevel: 1,
+    numberOfPlayers: 0,
+    title: '',
+    maker: '',
+    gameTypeId: 0,
+  });
+  const router = useRouter();
 
-export const GameForm = () => {
-    const navigate = useNavigate()
-    const [gameTypes, setGameTypes] = useState([])
+  useEffect(() => {
+    // TODO: Get the game types, then set the state
+  }, []);
 
-    /*
-        Since the input fields are bound to the values of
-        the properties of this state variable, you need to
-        provide some default values.
-    */
-    const [currentGame, setCurrentGame] = useState({
-        skillLevel: 1,
-        numberOfPlayers: 0,
-        title: "",
-        maker: "",
-        gameTypeId: 0
-    })
+  const handleChange = (e) => {
+    // TODO: Complete the onChange function
+  };
 
-    useEffect(() => {
-        // TODO: Get the game types, then set the state
-    }, [])
+  const handleSubmit = (e) => {
+    // Prevent form from being submitted
+    e.preventDefault();
 
-    const changeGameState = (domEvent) => {
-        // TODO: Complete the onChange function
-    }
+    const game = {
+      maker: currentGame.maker,
+      title: currentGame.title,
+      number_of_players: Number(currentGame.numberOfPlayers),
+      skill_level: Number(currentGame.skillLevel),
+      game_type: Number(currentGame.gameTypeId),
+      user_id: user.uid
+    };
 
-    return (
-        <form className="gameForm">
-            <h2 className="gameForm__title">Register New Game</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="title">Title: </label>
-                    <input type="text" name="title" required autoFocus className="form-control"
-                        value={currentGame.title}
-                        onChange={changeGameState}
-                    />
-                </div>
-            </fieldset>
+    // Send POST request to your API
+    createGame(game).then(() => router.push('/games'));
+  };
 
-            {/* TODO: create the rest of the input fields */}
+  return (
+    <>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Title</Form.Label>
+          <Form.Control name="title" required value={currentGame.title} onChange={handleChange} />
+        </Form.Group>
+        {/* TODO: create the rest of the input fields */}
 
-            <button type="submit"
-                onClick={evt => {
-                    // Prevent form from being submitted
-                    evt.preventDefault()
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </>
+  );
+};
 
-                    const game = {
-                        maker: currentGame.maker,
-                        title: currentGame.title,
-                        number_of_players: parseInt(currentGame.numberOfPlayers),
-                        skill_level: parseInt(currentGame.skillLevel),
-                        game_type: parseInt(currentGame.gameTypeId)
-                    }
+GameForm.propTypes = {
+  user: PropTypes.shape({
+    uid: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
-                    // Send POST request to your API
-                    createGame(game)
-                        .then(() => navigate("/games"))
-                }}
-                className="btn btn-primary">Create</button>
-        </form>
-    )
-}
+export default GameForm;
+```
+
+## Create New Game page
+
+Create a Page that will allow for the creation of a new game using the GameForm
+
+> #### `pages/games/new.js`
+
+```jsx
+import GameForm from '../../components/game/GameForm';
+import { useAuth } from '../../utils/context/authContext';
+
+const NewGame = () => {
+  const { user } = useAuth();
+  return (
+    <div>
+      <h2>Register New Game</h2>
+      <GameForm user={user} />
+    </div>
+  );
+};
+
+export default NewGame;
 ```
 
 ## Create Game Button
 
-Add the following button to the header of the game list component JSX. When clicked, it will redirect the browser to a new route.
+Add the following button to the header of the game page component JSX. When clicked, it will redirect the browser to a new route.
 
 ```jsx
-<button className="btn btn-2 btn-sep icon-create"
-    onClick={() => {
-        navigate({ pathname: "/games/new" })
-    }}
->Register New Game</button>
+import { Button } from 'react-bootstrap';
+
+<Button
+onClick={() => {
+    router.push('/games/new');
+}}
+>
+Register New Game
+</Button>
 ```
 
-Then add the following route to the **`ApplicationViews`** component.
+## On Your Own
 
-```jsx
-<Route path="/games/new" element={<GameForm />} />
-```
-
-
-# On your own
-- Create the new event form 
+- Complete the TODO items within the Create Game Form
+- Create the new event form
 - Make a new route for the new component
 - Add a “Register new Event” button to the event list that redirects to the form
