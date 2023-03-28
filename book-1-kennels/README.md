@@ -4,9 +4,6 @@
 
 | # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub> |
 |--|--|---|
-| 💻 | [Installations for Mac][1] | |
-| 💻 | [Installations for WSL and Ubuntu][2] | |
-| 🐞 | [Debugging Python in Visual Studio Code][3] | |
 | 1 | [Request and Response][4] <br/> <sub style="font-size:0.85rem;">\#overview #pipenv</sub> | [Review ERD][12] |
 | 2 | [Animals Module and Data][5] <br/> <sub style="font-size:0.85rem;">\#packages #modules #lists #dictionaries</sub> | [Kneel Diamonds Data ][13] |
 | 3 |  [Animal Response][6] <br/> <sub style="font-size:0.85rem;">\#HTTP\_GET #functions #for\_loop #if</sub> | [Single Resources][14] |
