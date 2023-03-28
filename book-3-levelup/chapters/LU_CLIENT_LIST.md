@@ -1,74 +1,89 @@
 # Listing Games and Events in the Client
+
 Now that we’ve added a way to get all games and events from the server, let’s display those lists in react.
 
 ## Client Code
 
-You can start off with this starter React code to request and display a list of games from the API. Note the `Authorization` header added to the fetch call. This will be in every fetch call to the database to let the server know which user is logged in.
+You can start off with this starter React code to request and display a list of games from the API.
 
-> #### `src/managers/GameManager.js`
+> #### `utils/data/gameData.js`
 
 ```jsx
-export const getGames = () => {
-    return fetch("http://localhost:8000/games", {
-        headers:{
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
-        }
-    })
-        .then(response => response.json())
-}
+import { clientCredentials } from '../client';
+
+const getGames = () => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/games`)
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
+// eslint-disable-next-line import/prefer-default-export
+export { getGames };
 ```
 
-> #### `src/components/game/GameList.js`
+> #### `components/game/GameCard.js`
 
 ```jsx
-import React, { useEffect } from "react"
-import { getGames } from "../../managers/GameManager.js"
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Card } from 'react-bootstrap';
 
-export const GameList = (props) => {
-    const [ games, setGames ] = useState([])
+const GameCard = ({
+  title, //
+  maker,
+  numberOfPlayers,
+  skillLevel,
+}) => (
+  <Card className="text-center">
+    <Card.Header>{title}</Card.Header>
+    <Card.Body>
+      <Card.Title>By: {maker}</Card.Title>
+      <Card.Text>{numberOfPlayers} players needed</Card.Text>
+    </Card.Body>
+    <Card.Footer className="text-muted">Skill Level: {skillLevel}</Card.Footer>
+  </Card>
+);
 
-    useEffect(() => {
-        getGames().then(data => setGames(data))
-    }, [])
+GameCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  maker: PropTypes.string.isRequired,
+  numberOfPlayers: PropTypes.number.isRequired,
+  skillLevel: PropTypes.number.isRequired,
+};
 
-    return (
-        <article className="games">
-            {
-                games.map(game => {
-                    return <section key={`game--${game.id}`} className="game">
-                        <div className="game__title">{game.title} by {game.maker}</div>
-                        <div className="game__players">{game.number_of_players} players needed</div>
-                        <div className="game__skillLevel">Skill level is {game.skill_level}</div>
-                    </section>
-                })
-            }
-        </article>
-    )
-}
+export default GameCard;
 ```
 
-> #### `src/components/ApplicationViews.js`
+> #### `pages/games/index.js`
 
 ```jsx
-import { Route, Routes } from "react-router-dom"
-import { Login } from "../components/auth/Login"
-import { Register } from "../components/auth/Register"
-import { Authorized } from "./Authorized"
-import { GameList } from "../components/game/GameList"
+import React, { useEffect, useState } from 'react';
+import GameCard from '../../components/game/GameCard';
+import { getGames } from '../../utils/data/gameData';
 
+function Home() {
+  const [games, setGames] = useState([]);
 
-export const ApplicationViews = () => {
-    return <>
-        <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route element={<Authorized />}>
-                <Route path="/" element={<GameList />} />
-            </Route>
-        </Routes>
-    </>
+  useEffect(() => {
+    getGames().then((data) => setGames(data));
+  }, []);
+
+  return (
+    <article className="games">
+      <h1>Games</h1>
+      {games.map((game) => (
+        <section key={`game--${game.id}`} className="game">
+          <GameCard title={game.title} maker={game.maker} numberOfPlayers={game.number_of_players} skillLevel={game.skill_level} />
+        </section>
+      ))}
+    </article>
+  );
 }
+
+export default Home;
 ```
 
 ## Practice: Listing Events
-Add an `EventManager` file and `EventList` component in the react code to display a list of events. The route should be `/events` for the event list. 
+
+Add an `eventData` file and `Event` page in the react code to display a list of event cards. The route should be `/events` for the event list.
