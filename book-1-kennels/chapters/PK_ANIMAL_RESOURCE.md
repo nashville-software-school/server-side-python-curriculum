@@ -119,6 +119,7 @@ Then update the `do_GET()` function with the following code.
 
         self.wfile.write(json.dumps(response).encode())
 ```
+In VSCode stop your server, then start it back and test the updates in Postman: http://localhost:8088/animals/1. You should recieve a single object. Now, try this endpoint in postman: http://localhost:8088/animals/20. You should recienve `null`
 
 ## Practice: Locations
 
