@@ -33,6 +33,7 @@ mkdir -p ~/workspace/kennels-server
 cd ~/workspace/kennels-server
 touch request_handler.py
 curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
+code .
 ```
 
 ### Supporting 3rd Party Software
