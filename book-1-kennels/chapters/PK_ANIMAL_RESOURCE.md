@@ -4,6 +4,8 @@ In this chapter, you are going to write another function in your `views/animal_r
 
 ## Learning Objectives
 
+* You should be able to import the `json` package into a module.
+* You should be able to explain what the `json.dumps()` method does.
 * You should be able to demonstrate how to use arguments and function parameters in Python.
 * You should be able to identify different parts of a URL path.
 * You should be able to explain the difference between a list and a tuple.
