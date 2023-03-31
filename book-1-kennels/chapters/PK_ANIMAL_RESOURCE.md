@@ -88,15 +88,25 @@ class HandleRequests(BaseHTTPRequestHandler):
 
         return (resource, id)  # This is a tuple
 ```
+## Using the Built-in JSON package
+
+First, import the `json` package in the Python Standard Libary (_stlib_) at the top of the main module.
+
+```py
+import json
+```
+
+Back in JavaScript, you could use `JSON.stringify(object)` to convert an object to a string, and `.json()` to convert a JSON string into a JavaScript object.
+
+In Python, you convert a JSON string to a dictionary with `json.loads()` and convert python data into a JSON string with `json.dumps()`
 
 ## All Animals, or a Single Animal
 
 Now you can use this function to determine if the client requested all animals or a single animal.
 
-First, import the `get_single_animal()` function from the views package and import the json package
+First, import the `get_single_animal()` function from the views package
 
 ```py
-import json
 from views import get_all_animals, get_single_animal
 ```
 
