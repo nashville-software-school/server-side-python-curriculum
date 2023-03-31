@@ -164,7 +164,7 @@ In your terminal run: `which autopep8`
 Open the command palette again and search for "Open User Settings (JSON)"
 Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
 
-```
+```json
 "python.formatting.autopep8Path": "paste in the output from the which command",
 "python.linting.pylintEnabled": true,
 ```
