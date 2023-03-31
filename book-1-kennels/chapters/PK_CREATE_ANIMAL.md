@@ -16,19 +16,6 @@ In this chapter, you will write code to support the POST method of HTTP. From Po
 
 * [JSON in Python || Python Tutorial || Learn Python Programming](https://www.youtube.com/watch?v=pTT7HMqDnJw)
 
-
-## Using the Built-in JSON package
-
-First, import the `json` package in the Python Standard Libary (_stlib_) at the top of the main module.
-
-```py
-import json
-```
-
-Back in JavaScript, you could use `JSON.stringify(object)` to convert an object to a string, and `JSON.parse(string)` to convert a JSON string into a JavaScript object.
-
-In Python, you convert a string to a dictionary with `json.loads()`.
-
 Replace the existing `do_POST` method in the main module with the following code.
 
 ```py
