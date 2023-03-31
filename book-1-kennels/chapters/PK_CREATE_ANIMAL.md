@@ -4,7 +4,6 @@ In this chapter, you will write code to support the POST method of HTTP. From Po
 
 ## Learning Objectives
 
-* You should be able to import the `json` package into a module.
 * You should be able to explain the purpose of the POST method in HTTP.
 * You should be able to explain what part of the HTTP request contains the stringified JSON data.
 * You should be able to explain what the `json.loads()` method does.
