@@ -1,5 +1,8 @@
 # Getting Animals from the Database
 
+# 🚨 REMEMBER:
+**Every time you make a change to your code, stop and restart your server.**
+
 ## Learning Objectives
 
 * You should be able to explain the benefits of using classes in Python.
