@@ -96,7 +96,7 @@ If you want to explore some black box concepts from the code in this chapter, he
 
 ## Request all Animals
 
-Open your API client and request all animals from http://localhost:8088/animals and verify that all five animals in the database get returned as JSON representations.
+Open your API client and request all animals from http://localhost:8088/animals and verify that all eight animals in the database get returned as JSON representations.
 
 ![](./images/postman-request-all-animals.gif)
 
