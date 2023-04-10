@@ -106,7 +106,9 @@ If we print the type for `animal` we would get this: `<class 'models.animal.Anim
 
 Because this is a class that we created, we see `'models.animal.Animal'` instead of `dict`  and because our request expects a dictionary, we can use a class property `__dict__` to convert the class instance. Go look at the optional assignment "Class Propoerties" from week 2 to practice this AFTER you have completed all requirements for the week.
 
-This is one of the patterns to convert a class instance to a dictionary.
+The `__dict__` in Python represents a dictionary or any mapping object that is used to store the attributes of the object.
+
+This is one of the patterns to grab the attributes of the object.
 
 ### For the Curious
 
