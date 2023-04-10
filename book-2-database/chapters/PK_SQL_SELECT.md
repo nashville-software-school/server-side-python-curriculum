@@ -110,6 +110,8 @@ The `__dict__` in Python represents a dictionary or any mapping object that is u
 
 This is one of the patterns to grab the attributes of the object.
 
+[Here is more info on this concept](https://medium.com/analytics-vidhya/dict-attribute-and-vars-function-in-python-42d82dbaba73)
+
 ### For the Curious
 
 If you want to explore some black box concepts from the code in this chapter, here are some links to the python docs for each.
