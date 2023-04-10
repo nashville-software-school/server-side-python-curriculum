@@ -81,10 +81,29 @@ def get_all_animals():
                             row['status'], row['location_id'],
                             row['customer_id'])
 
-            animals.append(animal.__dict__)
+            animals.append(animal.__dict__) # see the notes below for an explanation on this line of code.
 
     return animals
 ```
+### .__dict__ NOTES
+If you were to update the line of code above to:
+
+```python
+animals.append(animal)
+```
+And then stop your server, then restart it and make a calls from your API interface, the the terminal, you would see the following error:
+
+```bash
+TypeError: Object of type Animal is not JSON serializable
+```
+
+**WHY??**
+
+If we print the type for `animal` we would get this: `<class 'models.animal.Animal'> `
+
+Because this is a class that we created, we see `'models.animal.Animal'` instead of `dict`  and because our request expects a dictionary, we can use a class property `__dict__` to convert the class instance. Go look at the optional assignment "Class Propoerties" from week 2 to practice this AFTER you have completed all requirements for the week.
+
+This is one of the patterns to convert a class instance to a dictionary.
 
 ### For the Curious
 
