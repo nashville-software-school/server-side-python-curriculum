@@ -177,7 +177,7 @@ FROM animal a
 WHERE a.id = 3
 ```
 
-1. Copy pasta that statement into your `kennel.sql` file an execute it. You will get a single animal back.
+1. Copy pasta that statement into your `kennel.sql` file an execute it (CMD+R, CMD+R). You will get a single animal back.
 2. Change the id in the SQL from 3 to some other number to query a different animal.
 
 ![executing sql with where clause to get a single animal back](./images/sql-select-single-animal.gif)
