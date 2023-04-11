@@ -136,7 +136,7 @@ In the method that queries the database for customers that have the specified em
 > ##### `views/customer_requests.py`
 
 ```py
-def get_customers_by_email(email):
+def get_customer_by_email(email):
 
     with sqlite3.connect("./kennel.sqlite3") as conn:
         conn.row_factory = sqlite3.Row
