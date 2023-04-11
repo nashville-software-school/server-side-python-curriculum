@@ -16,6 +16,8 @@ The syntax for this function is far simpler since you are not requesting informa
 
 You just fire and forget.
 
+NOTE: Reference [SQL Bolt](https://sqlbolt.com/lesson/deleting_rows) for an example and refresher
+
 ```py
 def delete_animal(id):
     with sqlite3.connect("./kennel.sqlite3") as conn:
