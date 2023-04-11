@@ -136,6 +136,8 @@ In the method that queries the database for customers that have the specified em
 > ##### `views/customer_requests.py`
 
 ```py
+# TODO: you will get an error about the address on customer. Look through the customer model and requests to see if you can solve the issue.
+        
 def get_customer_by_email(email):
 
     with sqlite3.connect("./kennel.sqlite3") as conn:
