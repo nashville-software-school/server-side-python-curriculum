@@ -82,16 +82,32 @@ Next we'll need to refactor the `do_get` so we can call the correct function:
         if '?' not in self.path:
             ( resource, id ) = parsed
 
+            # It's an if..else statement
             if resource == "animals":
                 if id is not None:
-                    response = f"{get_single_animal(id)}"
+                    response = get_single_animal(id)
+
                 else:
-                    response = f"{get_all_animals()}"
-            elif resource == "customers":
+                    response = get_all_animals()
+
+            if resource == "locations":
                 if id is not None:
-                    response = f"{get_single_customer(id)}"
+                    response = get_single_location(id)
+
                 else:
-                    response = f"{get_all_customers()}"
+                    response = get_all_locations()
+            if resource == "employees":
+                if id is not None:
+                    response = get_single_employee(id)
+
+                else:
+                    response = get_all_employees()
+            if resource == "customers":
+                if id is not None:
+                    response = get_single_customer(id)
+
+                else:
+                    response = get_all_customers()
 
        else: # There is a ? in the path, run the query param functions
             (resource, query) = parsed
