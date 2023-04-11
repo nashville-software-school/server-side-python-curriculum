@@ -105,6 +105,8 @@ Next we'll need to refactor the `do_get` so we can call the correct function:
 
 ## Finding the Customer with a WHERE Clause
 
+NOTE: Reference the [SQL Bolt](https://sqlbolt.com/lesson/filtering_sorting_query_results) lesson on WHERE clauses
+
 ### Optional Parameters
 
 Before you implement the method to query the database by the email address provided by the client, you need to update your **`Customer`** model to implement default parameter values.
