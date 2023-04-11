@@ -48,4 +48,4 @@ Go back to your `kennel.sql` file and run the insert statement for Daps.
 INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
 ```
 
-Then request all animals from Postman, and note that the `id` value for Daps is now 6 instead of 5.
+Then request all animals from Postman, and note that the `id` value for Daps is now 9 instead of 5.
