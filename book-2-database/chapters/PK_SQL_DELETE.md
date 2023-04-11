@@ -49,3 +49,9 @@ INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
 ```
 
 Then request all animals from Postman, and note that the `id` value for Daps is now `9` instead of `5`.
+
+## PRACTICE - Delete Employee
+1. Update the Employee delete function
+2. Delete an employee using Postman
+3. Add the employee back
+4. Then, request all employees
