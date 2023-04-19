@@ -124,5 +124,5 @@ Then perform a POST request from Postman to create a new employee. Make sure tha
 1. Update the `do_POST` method in the main module to handle requests to the `/customers` path.
 1. Write a `create_customer` function in the `views/customer_requests.py` module that appends a new customer dictionary to the list.
 
-Then perform a POST request from Postman to create a new customer. Check the **`Register`** component in your React client to remember what a customer object looks like.
+Then perform a POST request from Postman to create a new customer.
 
