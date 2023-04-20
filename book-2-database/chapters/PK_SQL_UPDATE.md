@@ -16,7 +16,7 @@ In this chapter you will learn how to change the values of columns in an existin
 
 ## More Parameters in SQL
 
-When the client performs a PUT request to change the values of a current row in your database, it will be sending the **ENTIRE** representation. Not just the one field that it wants to change.
+When the client performs a PUT request to change the values of a current row in your database, it will be sending the **ENTIRE** representation. Not just the one field that it wants to change **unlike PATCH, which only requires the updated values**.
 
 Therefore, you must update each field for the resource based on what the client sends you since you can't possibly know what has changed.
 
