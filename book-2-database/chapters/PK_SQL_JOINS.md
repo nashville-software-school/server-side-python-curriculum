@@ -1,4 +1,4 @@
-# Getting Animals With Embedded Locations
+# Getting Animals With Embedded (Merged) Locations
 
 In this chapter you will learn how to utilize SQL joins to provide the client with related data in the JSON response for a resource.
 
