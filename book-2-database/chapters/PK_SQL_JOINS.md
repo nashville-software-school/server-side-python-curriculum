@@ -192,3 +192,7 @@ Add an embedded customer object to the JSON response.
 ## Practice: Employee Locations
 
 Add a `location` property to the response when the user requests http://localhost:8088/employees so that the client immediately knows the details of the employee's workplace.
+
+## Practice: Location - Employees and Animals
+
+Add a `employees` and `animals` property to the response when the user requests http://localhost:8088/locations/1 so that the client immediately knows the details of the locations's employees and animals.
