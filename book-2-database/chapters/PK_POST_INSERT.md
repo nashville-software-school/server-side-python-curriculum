@@ -57,10 +57,10 @@ By ordering the query by `id` in descending order, you can see the last item ent
 
 Once you have implemented this code, use your Kennel React client application to admit a new animal to one of your locations and verify that it was added by looking at the animal list.
 
-## Optional JavaScript Challenge: Hiring Employees
+<!-- ## Optional JavaScript Challenge: Hiring Employees
 
 If you feel like keeping your JavaScript/React skills fresh, feel free to take on this challenge.
 
 1. Add a new **`EmployeeForm`** component to your Kennel client application.
 1. Add a `saveEmployee()` function to your **`EmployeeManager`** component.
-1. Modify your existing `create_employee()` function in Python to the `views/employee_requests.py` module that performs an `INSERT INTO` SQL query to the Employees table.
+1. Modify your existing `create_employee()` function in Python to the `views/employee_requests.py` module that performs an `INSERT INTO` SQL query to the Employees table. -->
