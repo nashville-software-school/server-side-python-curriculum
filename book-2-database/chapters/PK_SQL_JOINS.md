@@ -177,11 +177,14 @@ Request all animals from the Postman client and verify that there is an embedded
 
 Add an embedded customer object to the JSON response.
 
-1. Add a `customer` property to the **`Animal`** table.
+1. Add a new location property to the Animal model, but with an initial value of None.
 1. JOIN in the Customer table in your SQL query.
-1. Select all of the columns that are needed for an instance of a **`Customer`**.
+1. Select all of the columns that are needed for an instance of a **`Customer`** in the `get_all_animals()` function
 1. Create an instance of a **`Customer`** for each row in the results.
-1. Add that instance of a customer
+1. Add that instance of a customer to the Animal response
+1. Test in postman (Should look like example below)
+
+![Screenshot 2023-04-22 at 9 36 09 AM](https://user-images.githubusercontent.com/29741570/233791013-c3abcfbb-92c5-4af7-adce-42737b706a28.png)
 
 ## Practice: Employee Locations
 
