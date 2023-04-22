@@ -126,7 +126,7 @@ The final two columns will be used to create a **`Location`** instance in your P
 
 ![location-columns](https://user-images.githubusercontent.com/29741570/233789937-4d021867-4507-4fc0-aeb9-e22b29950a29.png)
 
-## 3. Update the code
+## 3. Update the SQL Query in `get_all_animals()`
 Take the SQL statement from above and replace the existing SQL in the `get_all_animals()` function.
 
 ```sql
@@ -144,11 +144,11 @@ JOIN Location l
     ON l.id = a.location_id
 ```
 
-## Creating Location Instances
+## 4. Creating Location Instances
 
-Since you have two columns in each row from the locations table in your database, that means that you can create a new instance of the **`Location`** class, in addition to the instance of **`Animal`** class that you are already making, from each row in the results.
+Since you now have two columns in each row from the locations table in your database, this means that you can create a new instance of the **`Location`** class, in addition to the instance of **`Animal`** class that you are already making, from each row in the results.
 
-Now replace your `for` loop with the following code.
+Find your `for` loop in the `get_all_animals()` function and replace it with the following code:
 
 ```py
 for row in dataset:
@@ -167,11 +167,11 @@ for row in dataset:
     animals.append(animal.__dict__)
 ```
 
-## Requesting from Postman Client
+## 5. Requesting from Postman Client
 
 Request all animals from the Postman client and verify that there is an embedded `location` property on each one.
 
-![](./images/postman-animals-with-location.gif)
+![postman-animals-with-location](https://user-images.githubusercontent.com/29741570/233790523-e09690e6-0525-4c10-a925-e8e519d2fa9f.gif)
 
 ## Practice: Animals with Embedded Customer
 
