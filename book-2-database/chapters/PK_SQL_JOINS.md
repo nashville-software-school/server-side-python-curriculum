@@ -193,6 +193,8 @@ Add an embedded customer object to the JSON response.
 
 Add a `location` property to the response when the user requests http://localhost:8088/employees so that the client immediately knows the details of the employee's workplace.
 
-## Practice: Location - Employees and Animals
+## CHALLENGE: Location - Employees and Animals
 
 Add a `employees` and `animals` property to the response when the user requests http://localhost:8088/locations/1 so that the client immediately knows the details of the locations's employees and animals.
+
+_**HINT:**_ You may want to consider making multiple SQL queries in the function to get the data and create the data for each Location details
