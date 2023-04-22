@@ -114,7 +114,7 @@ JOIN Location l
 4|	Doodles|	Kennel|	Poodle|	1|	3|	Nashville North|	64 Washington Heights	|
 6|	Daps|	Kennel|	Boxer|	2|	2|	Nashville South|	101 Penn Ave|
 
-#### Columns Used to Make an Animal
+<!-- #### Columns Used to Make an Animal
 
 ##### Animal Fields
 
@@ -128,7 +128,7 @@ Each row contains 8 fields. The information in the first 6 will be used to creat
 The final two columns will be used to create a **`Location`** instance in your Python code.
 
 ![location-columns](https://user-images.githubusercontent.com/29741570/233789937-4d021867-4507-4fc0-aeb9-e22b29950a29.png)
-
+ -->
 ## 3. Update the SQL Query in `get_all_animals()`
 Take the SQL statement from above and replace the existing SQL in the `get_all_animals()` function.
 
