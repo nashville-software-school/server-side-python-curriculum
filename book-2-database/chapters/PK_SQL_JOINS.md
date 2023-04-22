@@ -129,6 +129,21 @@ The final two columns will be used to create a **`Location`** instance in your P
 ## 3. Update the code
 Take the SQL statement from above and replace the existing SQL in the `get_all_animals()` function.
 
+```sql
+SELECT
+    a.id,
+    a.name,
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id,
+    l.name location_name,
+    l.address location_address
+FROM Animal a
+JOIN Location l
+    ON l.id = a.location_id
+```
+
 ## Creating Location Instances
 
 Since you have two columns in each row from the locations table in your database, that means that you can create a new instance of the **`Location`** class, in addition to the instance of **`Animal`** class that you are already making, from each row in the results.
