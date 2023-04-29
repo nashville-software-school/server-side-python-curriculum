@@ -180,7 +180,7 @@ Request all animals from the Postman client and verify that there is an embedded
 
 Add an embedded customer object to the JSON response.
 
-1. Add a new location property to the Animal model, but with an initial value of None.
+1. Add a new customer property to the Animal model, but with an initial value of None.
 1. JOIN in the Customer table in your SQL query.
 1. Select all of the columns that are needed for an instance of a **`Customer`** in the `get_all_animals()` function
 1. Create an instance of a **`Customer`** for each row in the results.
