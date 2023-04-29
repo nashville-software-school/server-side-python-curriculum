@@ -6,10 +6,6 @@ The finished application will give users the ability to submit, update and comme
 
 The previous dev team was able to complete the client and server side portions of login and register. It is up to you to complete the remaining tickets. It is also up to you to decide how many of those tickets you will complete in the first sprint.
 
-Take a few hours to look over the remaining tickets, erd, and wireframe. Think about what needs to be completed on the server and client side for each ticket to be considered "Done". Write any notes you might have for each ticket as needed in github and ask any clarifying questions you have.
-
-Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
-
 # MVP
 ## Back End (Server) Setup and Instructions
 One person create the repo on Github. Then, everyone will do the following:
@@ -29,11 +25,15 @@ One person create the repo on Github. Then, everyone will do the following:
 
 The database development team has already taken a stab at the [ERD for this project](https://drawsql.app/nss-2/diagrams/rare-v1). You will use this to start building the project.
 
-1. Create a plan, issue tickets, milestones and/or a project board with all the work you plan to complete as a team
-2. Ensure that you have detailed user stories and acceptance criteria on each ticket
-3. Complete the work
+1. Take a few hours to look over erd. Think about what needs to be completed on the server side for each ticket to be considered "Done".
+2. Write any notes you might have for each ticket as needed in github and ask any clarifying questions you have.
+3. Create a plan, issue tickets, milestones and/or a project board with all the work you plan to complete as a team
+4. Ensure that you have detailed user stories and acceptance criteria on each ticket
+5. Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
 
 ---
+
+Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
 
 <details>
   <summary>PART 2</summary>
@@ -45,6 +45,12 @@ The database development team has already taken a stab at the [ERD for this proj
   2. `cd` to that directory.
   3. Clone the client side repo into this folder.
   4. Once cloned, follow the instructions in each readme has instructions to get the starter code set up.
+  
+  ## The work
+  1. Take a few hours to look over tickets and wireframe. Think about what needs to be completed on the client side for each ticket to be considered "Done".
+  2. Write any notes you might have for each ticket as needed in github and ask any clarifying questions you have.
+  3. Create a plan, milestones and/or a project board with all the work you plan to complete as a team
+  4. Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
 
   ## Wireframes
 
