@@ -8,7 +8,7 @@ The previous dev team was able to complete the client and server side portions o
 
 # MVP
 ## Back End (Server) Setup and Instructions
-One person create the repo on Github. Then, everyone will do the following:
+One person create the repo on Github from the link provided in the curriculum. Then, everyone will do the following:
 
 1. Create a directory that will hold the github repo. For example, `~/workspace/python/rare`.
 2. `cd` to that directory.
