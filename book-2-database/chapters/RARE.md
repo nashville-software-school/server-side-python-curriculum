@@ -31,6 +31,8 @@ The database development team has already taken a stab at the [ERD for this proj
 4. Ensure that you have detailed user stories and acceptance criteria on each ticket
 5. Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
 
+Feel free to reference the tickets from the [client side project](https://github.com/nss-evening-web-development/rare-client-nextjs/issues) to help
+
 ---
 
 <details>
