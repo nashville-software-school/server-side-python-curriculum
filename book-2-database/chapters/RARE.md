@@ -33,8 +33,6 @@ The database development team has already taken a stab at the [ERD for this proj
 
 ---
 
-Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
-
 <details>
   <summary>PART 2</summary>
   
