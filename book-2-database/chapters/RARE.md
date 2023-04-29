@@ -14,11 +14,11 @@ Once you have an idea of how many tickets your group can complete this sprint le
 
 ## Project Directories
 
-You'll be working in two separate repos for the project. One for the client and one for the server. One person will create the repos using github classroom. Then, everyone will do the following:
+You'll be working in two separate repos for the project. One for the client and one for the server. One person will create the repos on Github. Then, everyone will do the following:
 
 1. Create a directory that will hold both github repos. For example, `~/workspace/python/rare`.
 2. `cd` to that directory.
-3. Clone the client and server side repos into this folder.
+3. Clone the server side repo into this folder. (Later, when you have completed the server side, you will clone the client into this same directory)
 4. Once cloned, follow the instructions in each readme has instructions to get the starter code set up.
 
 ## Constraints for Vanilla Python Rare
@@ -30,7 +30,6 @@ You'll be working in two separate repos for the project. One for the client and 
 ## ERD
 
 The database development team has already taken a stab at the [ERD for this project](https://drawsql.app/nss-2/diagrams/rare-v1). You will use this to start building the project.
-
 
 ## Wireframes
 
