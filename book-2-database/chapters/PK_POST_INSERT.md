@@ -48,7 +48,7 @@ def create_animal(new_animal):
 Once you have implemented this code, use Postman to initiate a POST request to http://localhost:8088/animals just like you did in chapter 4. Verify that it was added by querying the database.
 
 ```sql
-SELECT * FROM Animals ORDER BY id DESC;
+SELECT * FROM Animal ORDER BY id DESC;
 ```
 
 By ordering the query by `id` in descending order, you can see the last item entered. It should be the one that you submitted in the POST request.
