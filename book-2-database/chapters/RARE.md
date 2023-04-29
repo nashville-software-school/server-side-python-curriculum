@@ -29,6 +29,10 @@ One person create the repo on Github. Then, everyone will do the following:
 
 The database development team has already taken a stab at the [ERD for this project](https://drawsql.app/nss-2/diagrams/rare-v1). You will use this to start building the project.
 
+1. Create a plan, issue tickets, milestones and/or a project board with all the work you plan to complete as a team
+2. Ensure that you have detailed user stories and acceptance criteria on each ticket
+3. Complete the work
+
 ---
 
 <details>
