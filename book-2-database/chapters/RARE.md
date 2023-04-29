@@ -10,11 +10,9 @@ Take a few hours to look over the remaining tickets, erd, and wireframe. Think a
 
 Once you have an idea of how many tickets your group can complete this sprint let your Product Manager know.
 
-# Setup
-
-## Project Directories
-
-You'll be working in two separate repos for the project. One for the client and one for the server. One person will create the repos on Github. Then, everyone will do the following:
+# MVP
+## Back End (Server) Setup and Instructions
+One person create the repo on Github. Then, everyone will do the following:
 
 1. Create a directory that will hold both github repos. For example, `~/workspace/python/rare`.
 2. `cd` to that directory.
@@ -31,23 +29,41 @@ You'll be working in two separate repos for the project. One for the client and 
 
 The database development team has already taken a stab at the [ERD for this project](https://drawsql.app/nss-2/diagrams/rare-v1). You will use this to start building the project.
 
-## Wireframes
+---
 
-Wireframes from Product Team
-https://miro.com/app/board/o9J_kiGCSK4=/
-<!--
-## Wireframes
+<details>
+  <summary>PART 2</summary>
+  
+  ## Front End (Client) Setup and Instructions
+  The same person who created the BE repo on Github, create the FE repo. Then, everyone will do the following:
 
-![](./images/wireframe-login.png)
-![](./images/wireframe-register.png)
-![](./images/wireframe-create-post.png)
-![](./images/wireframe-edit-post.png)
-![](./images/wireframe-all-posts.png)
-![](./images/wireframe-post-view.png)
-![](./images/wireframe-post-detail.png)
-![](./images/wireframe-comments.png)
-![](./images/wireframe-post-by-author.png)
-![](./images/wireframe-profile.png)
-![](./images/wireframe-category-manager.png)
-![](./images/wireframe-tag-manager.png)
--->
+  1. Create a directory that will hold both github repos. For example, `~/workspace/python/rare`.
+  2. `cd` to that directory.
+  3. Clone the client side repo into this folder.
+  4. Once cloned, follow the instructions in each readme has instructions to get the starter code set up.
+
+  ## Wireframes
+
+  Wireframes from Product Team
+  https://miro.com/app/board/o9J_kiGCSK4=/
+  <!--
+  ## Wireframes
+
+  ![](./images/wireframe-login.png)
+  ![](./images/wireframe-register.png)
+  ![](./images/wireframe-create-post.png)
+  ![](./images/wireframe-edit-post.png)
+  ![](./images/wireframe-all-posts.png)
+  ![](./images/wireframe-post-view.png)
+  ![](./images/wireframe-post-detail.png)
+  ![](./images/wireframe-comments.png)
+  ![](./images/wireframe-post-by-author.png)
+  ![](./images/wireframe-profile.png)
+  ![](./images/wireframe-category-manager.png)
+  ![](./images/wireframe-tag-manager.png)
+  -->
+
+</details>
+
+
+
