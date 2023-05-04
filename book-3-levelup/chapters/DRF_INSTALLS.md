@@ -18,6 +18,9 @@ mkdir levelup-server # create a new directory
 cd levelup-server # cd into that directory
 ```
 ```sh
+code . # open VSCode
+```
+```sh
 pipenv shell # initialize a new virtual environment
 ```
 
