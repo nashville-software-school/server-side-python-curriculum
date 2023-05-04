@@ -20,6 +20,16 @@ You'll notice that only the name property is defined in the class. This is becau
 
 It's pretty handy... as long as you remember that it does it for you. Many a beginner defined the `id` field in their model class and ended up with 2 in the table.
 
+### Create an ERD for this Project
+Using dbdiagram or the ERD tool of your choice, create a new ERD called `🐕‍🦺 DeShawn Dog Walking API`
+
+Your first table is for the city
+
+| Field | Type |
+|--|--|
+| id | int |
+| name | string |
+
 ## Appointments Model
 
 That's right. You are going to create your first Django model class!
