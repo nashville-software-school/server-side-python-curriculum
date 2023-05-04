@@ -165,8 +165,14 @@ Open the command palette again and search for "Open User Settings (JSON)"
 Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
 
 ```json
-"python.formatting.autopep8Path": "paste in the output from the which command",
-"python.linting.pylintEnabled": true,
+   "python.formatting.autopep8Path": "paste in the output from the which command",
+   "python.linting.pylintEnabled": true,
+   "python.analysis.diagnosticSeverityOverrides": {
+     "reportGeneralTypeIssues": "none"
+   },
+   "files.exclude": {
+    "**/__pycache__": true
+  },
 ```
 
 With pylint enabled we need to control some of the warnings that VS Code will warn about. We can do this by creating a `.pylintrc` file. Copy this command into the terminal to create the file:
