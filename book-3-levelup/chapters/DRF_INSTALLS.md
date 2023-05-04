@@ -10,8 +10,14 @@ Do not copy all of these at once and paste them into your terminal. Copy and run
 
 ```sh
 cd ~/workspace # go to your workspace
+```
+```sh
 mkdir levelup-server # create a new directory
+```
+```sh
 cd levelup-server # cd into that directory
+```
+```sh
 pipenv shell # initialize a new virtual environment
 ```
 
