@@ -21,7 +21,9 @@ Next, install these third-party packages for use in your project.
 pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
 ```
 
-Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/python/levelup-server` directory. Don't forget the `.` at the end of the command
+Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/levelup-server` directory by running `pwd`. 
+
+**Don't forget the `.` at the end of the command**
 
 ```sh
 # DON'T FORGET THE DOT
