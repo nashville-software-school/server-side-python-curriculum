@@ -1,4 +1,4 @@
-# Model Classes
+# Django Models
 
 Django uses special classes to interact with the database. They are called _Models_. For every table that you have in your database, you are going to create a corresponding moduls and class in your `models` directory.
 
