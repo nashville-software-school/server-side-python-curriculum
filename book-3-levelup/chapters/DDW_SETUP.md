@@ -6,7 +6,11 @@ Create a project directory and initialize a virtual environment for your project
 
 ```sh
 mkdir -p ~/workspace/deshawn
+```
+```sh
 cd ~/workspace/deshawn
+```
+```sh
 pipenv shell
 ```
 
