@@ -32,7 +32,7 @@ Find the option that looks similar to the following example. Yours will not look
 
 ## Start in Debug Mode
 
-Start your Django project in Debug Mode with the keyboard shortcut of <kbd>SHIFT</kbd><kbd>⌥</kbd><kbd>D</kbd> (Mac), or <kbd>SHIFT</kbd><kbd>ALT</kbd><kbd>D</kbd> (Windows). A new terminal panel at the bottom of VS Code will appear and you will see your server running.
+Start your Django project in Debug Mode with the keyboard shortcut of <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>D</kbd> (Mac), or <kbd>SHIFT</kbd><kbd>ALT</kbd><kbd>D</kbd> (Windows). A new terminal panel at the bottom of VS Code will appear and you will see your server running.
 
 ![image of the debug terminal output](./images/debug-terminal.png)
 
