@@ -38,6 +38,8 @@ Then you can create your very first Django project with the following command. M
 django-admin startproject levelup .
 ```
 
+After running this command, you will notice that you now have a directory called `levelup` in your project. It includes several `.py` files.
+
 ## Controlling Lint Errors
 
 ### Add Pylint file
