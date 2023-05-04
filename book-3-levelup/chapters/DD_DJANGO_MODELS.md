@@ -13,6 +13,7 @@ from django.db import models  # Import base class from Django stdlib
 class City(models.Model):  # Must inherit from this base class
     name = models.CharField(max_length=155)  # Define all non-id fields
 ```
+View the "Fields" docs for model fields: https://docs.djangoproject.com/en/4.0/topics/db/models/#fields
 This is a fairly simple model since the database table for cities only has two properties.
 
 * `id`
