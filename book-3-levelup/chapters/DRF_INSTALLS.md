@@ -97,7 +97,8 @@ python3 manage.py startapp levelupapi
 
 ## Add Content To .gitignore File
 
-Create a `.gitignore` file and generate the content for it by running this command
+1. Create a `.gitignore` file at the root of your project
+2. Generate the content for it by running this command:
 
 ```sh
 curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
