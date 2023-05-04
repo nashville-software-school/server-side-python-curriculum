@@ -4,7 +4,7 @@ Views are where the logic, or brains, of your application lives. Up to this poin
 
 In a Django application, you are going to break all of that up into separate views. Each view will define what should happen for a single resource.
 
-For now, open the `city_view.py` module and take a look at the **`CityView`** class. Yours will have comments in it, but those have been stripped away for this chapter overview.
+For now, open the `deshawnapi/views/city_view.py` module and take a look at the **`CityView`** class. Yours will have comments in it, but those have been stripped away for this chapter overview.
 
 This view will handle client requests for cities. The `retrieve` method handles requests for a single city. The `list` method handles requests for all cities.
 
