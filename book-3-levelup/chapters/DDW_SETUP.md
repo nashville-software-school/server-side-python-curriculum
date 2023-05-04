@@ -5,8 +5,8 @@
 Create a project directory and initialize a virtual environment for your project with the following commands.
 
 ```sh
-mkdir -p ~/workspace/python/deshawn
-cd ~/workspace/python/deshawn
+mkdir -p ~/workspace/deshawn
+cd ~/workspace/deshawn
 pipenv shell
 ```
 
