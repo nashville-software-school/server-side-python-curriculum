@@ -43,6 +43,8 @@ After running this command, you will notice that you now have a directory called
 ## Workspace Settings: Ensure your Workspace settings are correct
 Open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows), and search for **Open User Settings (JSON)**, and add the following JSON to file that appears.
 
+NOTE: You may already have a key "files.exclude". If so, just add `"**/__pycache__": true`.
+
 ```json
    "python.formatting.autopep8Path": "paste in the output from the which command",
    "python.linting.pylintEnabled": true,
