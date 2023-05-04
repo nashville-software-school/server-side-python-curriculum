@@ -157,12 +157,15 @@ if __name__ == "__main__":
 ```
 
 ## Adjust VS Code Settings
+
+### Interpreter
+
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
-In your terminal run: `which autopep8`
+### Workspace Settings
 
-Open the command palette again and search for "Open User Settings (JSON)"
-Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
+Open the command palette again and search for **Open User Settings (JSON)**, and add the following JSON to file that appears.
+
 
 ```json
    "python.formatting.autopep8Path": "paste in the output from the which command",
