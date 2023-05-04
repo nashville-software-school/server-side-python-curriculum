@@ -1,5 +1,7 @@
 # Django Models
 
+Docs: https://docs.djangoproject.com/en/4.2/topics/db/models/
+
 Django uses special classes to interact with the database. They are called _Models_. For every table that you have in your database, you are going to create a corresponding moduls and class in your `models` directory.
 
 Open the `deshawnapi/models/city.py` module to see how a database model class is defined. 
