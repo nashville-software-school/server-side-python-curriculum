@@ -179,7 +179,7 @@ python3 manage.py migrate
 
 ---
 
-## Optional - Hide Secret Key
+## Hide Secret Key
 
 ### *Do this step if you know you will be deploying this ap*
 
