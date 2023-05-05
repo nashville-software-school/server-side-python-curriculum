@@ -65,3 +65,10 @@ Create Requests in Postman for the following routes:
 
 # 🎉🎉🎉🎉 YOU DID IT!
 
+## Resources
+* [Django Models](https://docs.djangoproject.com/en/3.2/topics/db/models/) - Overview of Django Models
+* [Extending the User Model](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model) - Explanation for how to add fields to the Django user
+* [Model Field Types](https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types) - All the options for data types in a model
+* [One to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-one-relationships) - How to add a foreign key to a model
+* [Many to Many Relationships](https://docs.djangoproject.com/en/3.2/topics/db/models/#many-to-many-relationships) - How to set up a Many-Many Relationship
+
