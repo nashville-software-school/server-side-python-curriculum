@@ -6,7 +6,12 @@ In a Django application, you are going to break all of that up into separate vie
 
 For now, open the `deshawnapi/views/city_view.py` module and take a look at the **`CityView`** class. Yours will have comments in it, but those have been stripped away for this chapter overview.
 
-This view will handle client requests for cities. The `retrieve` method handles requests for a single city. The `list` method handles requests for all cities.
+This view will handle client requests for cities. 
+
+1. The `retrieve` method handles requests for a single city.
+2. The `list` method handles requests for all cities.
+
+Start your server if it is not already running (F5), open Postman to test these calls
 
 |Request Method|URL|View Method Executed|
 |--|--|--|
