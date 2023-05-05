@@ -90,7 +90,7 @@ SELECT * FROM levelupapi_gametype;
 
 ## Default Gamer
 
-### 1. TODO: Create Gamer
+### 2. TODO: Create Gamer
 To create a full Gamer user account in your database, you need a record in the Gamer table.
 
 1. `levelupapi_gamer` - *which is the table that gets created by Django from your **`Gamer`** model class that you wrote in the `levelup-server/levelupapi/models/gamer.py` module.*
