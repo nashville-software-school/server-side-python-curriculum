@@ -78,7 +78,9 @@
 * To keep track of who is attending events, there is a many to many relationship between gamers and events. There will need to be a join table to connect that many to many relationship.
 After thinking about the requirements, you've come up with an erd.
 
-![level-up-erd](https://user-images.githubusercontent.com/18269696/139501440-14959d94-fdd9-42b0-912e-8adba1fe750e.png)
+[ERD Link](https://dbdiagram.io/d/64554c0ddca9fb07c4969b4c)
+
+![Screenshot 2023-05-05 at 1 49 14 PM](https://user-images.githubusercontent.com/29741570/236543578-990ea545-007a-463a-96d8-3ac25a21d655.png)
 
 
 ## Design Models
