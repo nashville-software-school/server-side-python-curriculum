@@ -11,13 +11,6 @@ This view will handle client requests for cities.
 1. The `retrieve` method handles requests for a single city.
 2. The `list` method handles requests for all cities.
 
-Start your server if it is not already running (F5), open Postman to test these calls
-
-|Request Method|URL|View Method Executed|
-|--|--|--|
-|GET|http://localhost:8000/cities/1|retrieve|
-|GET|http://localhost:8000/cities|list|
-
 ```py
 class CityView(ViewSet):
 
@@ -32,6 +25,13 @@ class CityView(ViewSet):
         return Response(serialized.data, status=status.HTTP_200_OK)
 
 ```
+
+Start your server if it is not already running (F5), open Postman to test these calls
+
+|Request Method|URL|View Method Executed|
+|--|--|--|
+|GET|http://localhost:8000/cities/1|retrieve|
+|GET|http://localhost:8000/cities|list|
 
 Each view method is going to follow the same logical pattern. As you get more experience with Django, the logic will get more sophisticated, but the overall pattern will remain the same.
 
