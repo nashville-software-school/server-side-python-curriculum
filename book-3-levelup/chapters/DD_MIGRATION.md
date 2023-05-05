@@ -2,7 +2,7 @@
 
 Yeah, that was a lot of steps just to be able to change your database structure to store appointments. However, you've arrived at the crucial moment.
 
-## Initialize the Migration
+## 1. Initialize the Migration
 
 The first step is to tell Django that you're ready to change your database. Use the following command to tell Django to begin the process of migration on the `deshawnapi` project.
 
@@ -18,7 +18,7 @@ Migrations for 'deshawnapi':
     - Create model Appointment
 ```
 
-## Begin the Migration
+## 2. Begin the Migration
 
 Now you tell Django to run the instructions that it created to make the change to your database.
 
@@ -36,3 +36,5 @@ Running migrations:
 ```
 
 At this point, you can go look at your database and see that there is a new table added.
+
+# 🎉🎉🎉🎉
