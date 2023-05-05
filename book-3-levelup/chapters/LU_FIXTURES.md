@@ -41,7 +41,7 @@ With Django, you can do that with something called fixtures. A fixture is a file
 
 Be in the levelup server directory _`~/[...]/levelup-server`_
 
-```sh
+```bash
 mkdir levelupapi/fixtures
 touch levelupapi/fixtures/game_types.json
 ```
@@ -112,7 +112,7 @@ Create the following file with the corresponding contents.
 Then execute the following command.
 
 ```sh
-python manage.py loaddata gamers
+python3 manage.py loaddata gamers
 ```
 
 Once complete, your Gamer table will have one record in them. You can verify this by connecting to the database and running the following SQL statement.
