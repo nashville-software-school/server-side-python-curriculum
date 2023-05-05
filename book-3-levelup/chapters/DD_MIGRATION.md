@@ -38,3 +38,25 @@ Running migrations:
 At this point, you can go look at your database and see that there is a new table added.
 
 # 🎉🎉🎉🎉
+
+## 3. Add Data to Your DB using Postman
+In Postman, run a POST to `` with the following payload:
+
+```json
+{
+    "walkerId": 3,
+    "appointmentDate": "2023-05-05",
+    "completed": false
+}
+```
+Now, create several more entries and check your database to see them.
+
+## 4. Test your endpoints in Postman
+Create Requests in Postman for the following routes:
+
+|Request Method|URL|View Method Executed|
+|--|--|--|
+|GET|http://localhost:8000/appointments/1|retrieve|
+|GET|http://localhost:8000/appointments|list|
+|POST|http://localhost:8000/appointments|create|
+
