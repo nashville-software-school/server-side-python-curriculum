@@ -39,6 +39,8 @@
 
 With Django, you can do that with something called fixtures. A fixture is a file that has JSON formatted data in it. That JSON data is then read by Django, converted into `INSERT INTO` SQL statements, and then executed to get some rows into your database tables.
 
+### 1. TODO: Create Game Types
+
 Be in the levelup server directory _`~/[...]/levelup-server`_
 
 ```bash
@@ -88,6 +90,7 @@ SELECT * FROM levelupapi_gametype;
 
 ## Default Gamer
 
+### 1. TODO: Create Gamer
 To create a full Gamer user account in your database, you need a record in the Gamer table.
 
 1. `levelupapi_gamer` - *which is the table that gets created by Django from your **`Gamer`** model class that you wrote in the `levelup-server/levelupapi/models/gamer.py` module.*
