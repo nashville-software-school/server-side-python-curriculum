@@ -79,7 +79,7 @@ Open that JSON file and put the following seed data in it.
 Then load that data into the database with the following command.
 
 ```sh
-python manage.py loaddata game_types
+python3 manage.py loaddata game_types
 ```
 
 This will generate some `INSERT INTO` SQL statements behind the scenes in Django and create three records in the `levelupapi_gametype` table in your database. Run the following SQL to see them.
