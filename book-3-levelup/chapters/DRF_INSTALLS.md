@@ -67,11 +67,10 @@ Start your Django project in Debug Mode with the keyboard shortcut of <kbd>⌘</
 
 ![image of the debug terminal output](./images/debug-terminal.png)
 
-If you don't see this, call your team lead immediately.
 
 #### Pylint Settings for Django
 
-There should now be a .vscode folder in your directory. Open the `settings.json` file and add the following lines:
+If you do not already have one, create a `.vscode` folder in the root of your project. Open/create the `settings.json` file and add the following lines:
 
 > `levelup-server/.vscode/settings.json`
 
