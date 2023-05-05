@@ -1,6 +1,8 @@
 # Carrie's Level Up Requirements
 
-<!-- ## Meeting Carrie
+## Meeting Carrie
+<!-- 
+Carrie wants an application that allows people to gather and play card and board games. She wants a way to schedule events for people to play games and for people to say if they are coming. The application should allow anyone to schedule an event for any game that has been added. 
 
 > Carrie is sitting at the table by the front window of the Cat Café where she wanted to meet and discuss the "program" she wants you to write for her.
 >
