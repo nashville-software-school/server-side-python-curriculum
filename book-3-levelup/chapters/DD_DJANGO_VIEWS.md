@@ -43,6 +43,8 @@ Each view method is going to follow the same logical pattern. As you get more ex
 
 For the time being, the view for appointments will support the operations of getting all, getting single, and creating appointments. Therefore, it will define the following methods.
 
+In this section, we will be adding the beginnings of the code needed to create a new view.
+
 * `retrieve()`
 * `list()`
 * `create()`
