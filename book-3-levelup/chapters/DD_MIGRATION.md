@@ -37,6 +37,11 @@ Running migrations:
 
 At this point, you can go look at your database and see that there is a new table added.
 
+**REMEMBER how to check your DB**
+Make a connection to the database with SQLite Explorer to see the tables in the database.
+
+<img src="./images/honey-rae-db-connection.gif" alt="animation showing the migration for the new models" width="800px" />
+
 ## 3. Add Data to Your DB using Postman
 In Postman, run a POST to `` with the following payload:
 
