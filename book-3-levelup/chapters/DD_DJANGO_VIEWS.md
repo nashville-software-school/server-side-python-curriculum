@@ -55,7 +55,7 @@ In this section, we will be adding the beginnings of the code needed to create a
 |GET|http://localhost:8000/appointments|list|
 |POST|http://localhost:8000/appointments|create|
 
-## **TODO:** Create the Appointments View
+### **TODO:** Create the Appointments View
 The code is below and you can see that it is very similar to the cities view, yet with a new method that has been commented for your pleasure.
 
 > ##### `views/appointment_view.py`
@@ -113,7 +113,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
 ```
 
-## TODO: Update Views Package
+### TODO: Update Views Package
 
 Open the `views/__init__.py` module and add your new class to the package.
 
