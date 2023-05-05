@@ -28,7 +28,9 @@ To activate your new URL, do the following steps.
     router.register(r'appointments', AppointmentView, 'appointment')
     ```
 
-The first argument is what you want your URL path to be. The second argument is the view that will handle client requests to that route. The third argument is needed in order for a route to be registered, but it is unused in our API and will not be covered or discussed.
+- The first argument is what you want your URL path to be. 
+- The second argument is the view that will handle client requests to that route. 
+- The third argument is needed in order for a route to be registered, but it is unused in our API and will not be covered or discussed.
 
 
 ## Next Steps
