@@ -19,6 +19,7 @@ router.register(r'dogs', DogView, 'dog')
 
 Your API only supports requests to `/walkers`, `/cities`, and `/dogs`. Any client requests to `/appointments`, or `/turtles` or any other path will told that the resource doesn't exist and get a 404 status code.
 
+### TODO: Add Your New URL
 To activate your new URL, do the following steps.
 
 1. Add `AppointmentView` to the list of imports from the views package.
