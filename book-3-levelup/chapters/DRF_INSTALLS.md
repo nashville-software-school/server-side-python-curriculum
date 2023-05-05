@@ -51,24 +51,23 @@ Without this configuration, your editor will put orange squiggles under those va
 ```sh
 echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
 ```
+## Select Python Interpreter
 
-### Select Python Interpreter
+Once VS Code starts up:
 
-Open VS Code and press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette, and select "Python: Select Interpreter".
-
-Find the option that has:
+1. Press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette
+2. Select "Python: Select Interpreter".
+3. Find the option that looks similar to the following example.
 
 `<your folder name>-<random string>`
 
-### Configure Pylint
+## Start in Debug Mode
 
-After selecting the python interpreter, you may see a pop-up asking if you'd like to enable Pylint. If so, click yes.
+Start your Django project in Debug Mode with the keyboard shortcut of <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>D</kbd> (Mac), or <kbd>SHIFT</kbd><kbd>ALT</kbd><kbd>D</kbd> (Windows) (Or you can try to use F5). A new terminal panel at the bottom of VS Code will appear and you will see your server running.
 
-Otherwise, open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows), and select "Python: Select Linter".
+![image of the debug terminal output](./images/debug-terminal.png)
 
-Find the option that has:
-
-`pylint`
+If you don't see this, call your team lead immediately.
 
 #### Pylint Settings for Django
 
@@ -77,10 +76,12 @@ There should now be a .vscode folder in your directory. Open the `settings.json`
 > `levelup-server/.vscode/settings.json`
 
 ```json
-"python.linting.pylintArgs": [
-    "--load-plugins=pylint_django",
-    "--django-settings-module=<folder name>.settings",
-],
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=<folder name>.settings",
+    ],
+}
 ```
 
 #### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be `levelup.settings`*
