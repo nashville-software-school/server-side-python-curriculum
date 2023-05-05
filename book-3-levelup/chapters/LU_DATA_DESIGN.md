@@ -172,13 +172,13 @@ __Once you have defined your models, you should review them with an instructor, 
 When your models are approved, you can then create a migration to create the tables in your database.
 
 ```sh
-python manage.py makemigrations levelupapi
+python3 manage.py makemigrations levelupapi
 ```
 
 Now that migrations are created, run the following command to execute your migrations and create the tables in your database.
 
 ```sh
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 You should now have a `db.sqlite3` file in the project folder. Make a connection to the database with SQLite Explorer to see the tables in the database.
