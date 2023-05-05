@@ -10,7 +10,7 @@ Serialization is an important concept to understand as a software developer. Esp
 
 Remember that you can only transmit strings across the WWW. When you create an instance of a City class, it is ephemeral and complex - a large collection of properties, methods, and memory addresses. You need a way to simplify it into a straightforward JSON representation.
 
-That's the job of the serializer.
+**That's the job of the serializer.**
 
 Look in the `city_view.py` module to see an existing serializer. It's amazingly sparse code for what is actually being done by it.
 
@@ -24,6 +24,14 @@ class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = ('id', 'name',)
+```
+The above Serializer will produce the following as a response on this endpoint `http://localhost:8000/cities/2`:
+
+```json
+{
+    "id": 2,
+    "name": "White Plains"
+}
 ```
 
 Then, in your view, you can use the serializer to generate JSON from class instances. You pass it two arguments.
