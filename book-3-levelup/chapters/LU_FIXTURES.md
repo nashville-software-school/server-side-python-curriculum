@@ -1,6 +1,6 @@
-# Carrie Cares About Her Users
+# Data + Fixtures
 
-> You receive a phone call from Carrie, on a Thursday morning.
+<!-- > You receive a phone call from Carrie, on a Thursday morning.
 >
 > "Hello?"
 >
@@ -19,7 +19,7 @@
 >
 > After a quick pause, you can't think of any reason an online game wouldn't work, "That shouldn't be a problem to implement. So users will be able to create board games, role-playing games, and MMO games?"
 >
-> "That sounds wonderful! I can't wait to show my grand kids what I've been up to."
+> "That sounds wonderful! I can't wait to show my grand kids what I've been up to." -->
 
 ## Learning Objectives
 
