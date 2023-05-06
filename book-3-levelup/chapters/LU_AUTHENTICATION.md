@@ -20,7 +20,7 @@ We are going to handle our Authentication on the Client Side using Firebase. Fir
     * A record in the `Gamer` table is created.
     * The Gamer data is sent back to the client so that it can be used on future requests to identify the user. This way, the user doesn't have to keep logging in each time a new action is performed.
 1. If there is an associated Gamer:
-    * Server grams all the gamer data from the database.
+    * Server grabs all the gamer data from the database.
     * The Gamer data is sent back to the client so that it can be used on future requests to identify the user. This way, the user doesn't have to keep logging in each time a new action is performed.
 
 ## Check Gamer and Register Functions
