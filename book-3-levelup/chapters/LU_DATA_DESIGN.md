@@ -1,6 +1,6 @@
-# Carrie's Level Up Requirements
+# Level Up Requirements
 
-## Meeting Carrie
+<!-- ## Meeting Carrie
 
 > Carrie is sitting at the table by the front window of the Cat Café where she wanted to meet and discuss the "program" she wants you to write for her.
 >
@@ -57,7 +57,7 @@
 > She stands with Gentry, and replies, "Lovely to meet you as well. I can't wait to share it with my knitting and book clubs. We've all been trying to branch out a little."
 >
 > You reply, "That's great! I'll let you know when I'm done with the first version and we can schedule a time to meet again."
->
+> -->
 
 ## Learning Objectives
 
