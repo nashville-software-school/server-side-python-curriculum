@@ -19,10 +19,10 @@ def update(self, request, pk):
     game = Game.objects.get(pk=pk)
     game.title = request.data["title"]
     game.maker = request.data["maker"]
-    game.number_of_players = request.data["number_of_players"]
-    game.skill_level = request.data["skill_level"]
+    game.number_of_players = request.data["numberOfPlayers"]
+    game.skill_level = request.data["skillLevel"]
 
-    game_type = GameType.objects.get(pk=request.data["game_type"])
+    game_type = Type.objects.get(pk=request.data["gameType"])
     game.game_type = game_type
     game.save()
 
@@ -38,9 +38,9 @@ The `update` method is called when any `PUT` requests are made to `http://localh
 {
     "title": "Codenames 2 Player",
     "maker": "CGE",
-    "number_of_players": 2,
-    "skill_level": 3,
-    "game_type": 2
+    "numberOfPlayers": 6,
+    "skillLevel": 3,
+    "gameType": 2
 }
 ```
 After making the request, `retrieve` the game to verify the updates
