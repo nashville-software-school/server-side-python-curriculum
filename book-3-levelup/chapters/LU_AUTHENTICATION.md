@@ -106,7 +106,7 @@ Completely replace the contents of the following file with the code below.
 > #### `levelup-server/levelup/urls.py`
 
 ```py
-from django.contrib import admin
+# ADD THESE Imports
 from django.urls import path
 from levelupapi.views import register_user, check_user
 
@@ -114,7 +114,6 @@ from levelupapi.views import register_user, check_user
 urlpatterns = [
     path('register', register_user),
     path('checkuser', check_user),
-    path('admin/', admin.site.urls),
 ]
 ```
 
