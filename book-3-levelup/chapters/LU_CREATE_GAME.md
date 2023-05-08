@@ -35,6 +35,14 @@ import { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { createGame, getGameTypes } from '../../api/gameData';
 
+const initialState = {
+  skillLevel: 1,
+  numberOfPlayers: 0,
+  title: '',
+  maker: '',
+  gameTypeId: 0,
+};
+
 const GameForm = ({ user }) => {
   const [gameTypes, setGameTypes] = useState([]);
   /*
@@ -42,13 +50,7 @@ const GameForm = ({ user }) => {
   the properties of this state variable, you need to
   provide some default values.
   */
-  const [currentGame, setCurrentGame] = useState({
-    skillLevel: 1,
-    numberOfPlayers: 0,
-    title: '',
-    maker: '',
-    gameTypeId: 0,
-  });
+  const [currentGame, setCurrentGame] = useState(initialState);
   const router = useRouter();
 
   useEffect(() => {
