@@ -33,7 +33,7 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { createGame, getGameTypes } from '../../utils/data/gameData';
+import { createGame, getGameTypes } from '../../api/gameData';
 
 const GameForm = ({ user }) => {
   const [gameTypes, setGameTypes] = useState([]);
