@@ -21,10 +21,10 @@ def create(self, request):
     game = Game.objects.create(
         title=request.data["title"],
         maker=request.data["maker"],
-        number_of_players=request.data["number_of_players"],
-        skill_level=request.data["skill_level"],
-        gamer=gamer,
-        game_type=game_type
+        number_of_players=request.data["numberOfPlayers"],
+        skill_level=request.data["skillLevel"],
+        game_type=game_type,
+        creator=gamer,
     )
     serializer = GameSerializer(game)
     return Response(serializer.data)
@@ -55,10 +55,10 @@ Since we’ve added the `create` method to the view class, the `router` inside o
 {
     "title": "CodeNames",
     "maker": "CGE",
-    "number_of_players": 6,
-    "skill_level": 3,
-    "game_type": 2,
-    "user_id": 1
+    "numberOfPlayers": 6,
+    "skillLevel": 3,
+    "gameType": 2,
+    "userId": 1
 }
 ```
 
