@@ -125,7 +125,13 @@ router.register(r'gametypes', GameTypeView, 'gametype')
 
 The `trailing_slash=False` tells the router to accept `/gametypes` instead of `/gametypes/`. It’s a very annoying error to come across, when your server is not responding and the code _looks_ right, the only issue is your fetch url is missing a `/` at the end.
 
-The next line is what sets up the `/gametypes` resource. The first parameter, `r'gametypes`, is setting up the url. The second `GameTypeView` is telling the server which view to use when it sees that url. The third, `gametype`, is called the base name. You’ll only see the base name if you get an error in the server. It acts as a nickname for the resource and is usually the singular version of the url.
+The next line is what sets up the `/gametypes` resource:
+
+![Screenshot 2023-05-08 at 1 48 19 PM](https://user-images.githubusercontent.com/29741570/236907505-0b912402-7d15-4506-8aa3-46c2f74e0d02.png)
+
+1. The first parameter, `r'gametypes`, is setting up the url. 
+2. The second `GameTypeView` is telling the server which view to use when it sees that url. 
+3. The third, `gametype`, is called the base name. You’ll only see the base name if you get an error in the server. It acts as a nickname for the resource and is usually the singular version of the url.
 
 Last step, once the `router` variable is set, we need to add it to the `urlpatterns`. Anywhere inside the `urlpatterns` list add:
 
