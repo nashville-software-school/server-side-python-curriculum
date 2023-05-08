@@ -26,7 +26,7 @@ export { getGames, createGame, getGameTypes };
 
 Now create a **`GameForm`** component and add the code below. Notice that the button's click handler invokes the `createGame()` function that is defined in the manager.
 
-> #### `components/games/GameForm.js`
+> #### `components/game/GameForm.js`
 
 ```jsx
 import { useRouter } from 'next/router';
@@ -66,10 +66,10 @@ const GameForm = ({ user }) => {
     const game = {
       maker: currentGame.maker,
       title: currentGame.title,
-      number_of_players: Number(currentGame.numberOfPlayers),
-      skill_level: Number(currentGame.skillLevel),
-      game_type: Number(currentGame.gameTypeId),
-      user_id: user.uid
+      numberOfPlayers: Number(currentGame.numberOfPlayers),
+      skillLevel: Number(currentGame.skillLevel),
+      gameType: Number(currentGame.gameTypeId),
+      userId: user.uid
     };
 
     // Send POST request to your API
