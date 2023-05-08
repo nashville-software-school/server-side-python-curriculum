@@ -9,7 +9,7 @@ You can start off with this starter React code to request and display a list of 
 > #### `utils/data/gameData.js`
 
 ```jsx
-import { clientCredentials } from '../client';
+import { clientCredentials } from '../utils/client';
 
 const getGames = () => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/games`)
