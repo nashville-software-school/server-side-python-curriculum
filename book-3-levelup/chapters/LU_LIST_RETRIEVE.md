@@ -127,7 +127,7 @@ The `trailing_slash=False` tells the router to accept `/gametypes` instead of `/
 
 The next line is what sets up the `/gametypes` resource:
 
-![Screenshot 2023-05-08 at 1 48 19 PM](https://user-images.githubusercontent.com/29741570/236907505-0b912402-7d15-4506-8aa3-46c2f74e0d02.png)
+![Screenshot 2023-05-08 at 1 54 39 PM](https://user-images.githubusercontent.com/29741570/236908616-c9b8565d-0abf-43d8-b07c-e5da8bf6aa89.png)
 
 1. The first parameter, `r'gametypes`, is setting up the url. 
 2. The second `GameTypeView` is telling the server which view to use when it sees that url. 
