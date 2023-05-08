@@ -51,36 +51,36 @@ Without this configuration, your editor will put orange squiggles under those va
 ```sh
 echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
 ```
-## Select Python Interpreter
 
-Once VS Code starts up:
+### Select Python Interpreter
 
-1. Press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette
-2. Select "Python: Select Interpreter".
-3. Find the option that looks similar to the following example.
+Open VS Code and press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette, and select "Python: Select Interpreter".
 
-`<your folder name>-<random string>`
+Find the option that has:
 
-## Start in Debug Mode
+`<YOUR_FOLDER_NAME>-<RANDOM_STRING>`
 
-Start your Django project in Debug Mode with the keyboard shortcut of <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>D</kbd> (Mac), or <kbd>SHIFT</kbd><kbd>ALT</kbd><kbd>D</kbd> (Windows) (Or you can try to use F5). A new terminal panel at the bottom of VS Code will appear and you will see your server running.
+### Configure Pylint
 
-![image of the debug terminal output](./images/debug-terminal.png)
+After selecting the python interpreter, you may see a pop-up asking if you'd like to enable Pylint. If so, click yes.
 
+Otherwise, open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows), and select "Python: Select Linter".
+
+Find the option that has:
+
+`pylint`
 
 #### Pylint Settings for Django
 
-If you do not already have one, create a `.vscode` folder in the root of your project. Open/create the `settings.json` file and add the following lines:
+There should now be a .vscode folder in your directory. Open the `settings.json` file and add the following lines:
 
 > `levelup-server/.vscode/settings.json`
 
 ```json
-{
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint_django",
-        "--django-settings-module=<folder name>.settings",
-    ],
-}
+"python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+    "--django-settings-module=<folder name>.settings",
+],
 ```
 
 #### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be `levelup.settings`*
@@ -92,17 +92,20 @@ Now that the project is set up and has some initial configuration, it's time to 
 #### *Make sure you are in your `levelup-server` directory when you run this command.*
 
 ```sh
-python3 manage.py startapp levelupapi
+python manage.py startapp levelupapi
 ```
 
 ## Add Content To .gitignore File
 
-1. Create a `.gitignore` file at the root of your project
-2. Generate the content for it by running this command:
+1. Create a `.gitignore` file and generate the content for it by running this command
 
-```sh
-curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
-```
+    ```sh
+    curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore' > .gitignore
+    ```
+
+1. Uncomment out the `Pipfile.lock` line to make sure this gets ignored (line 95 when this was written)
+
+1. Add `.vscode` to the `.gitignore` file.
 
 ## Setting Up Package Directories
 
@@ -135,20 +138,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
     'levelupapi',
 ]
-
-# THIS IS NEW
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-}
 
 # THIS IS NEW
 CORS_ORIGIN_WHITELIST = (
@@ -174,40 +166,14 @@ MIDDLEWARE = [
 Django gives user and role management tables for your application out of the box, and there is a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
 
 ```sh
-python3 manage.py migrate
+python manage.py migrate
 ```
 
 ---
 
-## Hide Secret Key
+## Running the Django Server
 
-### *Do this step if you know you will be deploying this ap*
-
-1. From your `levelup-server` directory, run the following command to create a `.env` file on the same level as your `manage.py` file.
-
-    ```zsh
-    touch .env
-    ```
-
-1. In the terminal run:
-
-    ```zsh
-    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
-    ```
-
-1. Copy the output.
-
-1. Open the `.env` file in VS Code, and add `MY_SECRET_KEY=<paste output>` (without the angle brackets, and without any quotes)
-
-1. Open the `settings.py` file in your `levelup` directory.
-
-1. Locate the the `SECRET_KEY` variable (around line 23), and change it to be `SECRET_KEY = os.environ.get('MY_SECRET_KEY')`
-
-1. Import `os` at the top of your `settings.py` file.
-
-1. Stop your virtual environment <kbd>Ctrl</kbd><kbd>D</kbd>, and then restart it `pipenv shell`.
-
-### Running the Django Server with VS Code Debugger
+### With VS Code Debugger
 
 Inside the `.vscode` create a file called `launch.json`. Paste the following code in that file.
 
@@ -231,3 +197,10 @@ Inside the `.vscode` create a file called `launch.json`. Paste the following cod
     ]
 }
 ```
+
+### With the terminal
+
+```sh
+python manage.py runserver
+```
+
