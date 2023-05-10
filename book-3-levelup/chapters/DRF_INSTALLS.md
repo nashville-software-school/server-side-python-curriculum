@@ -72,7 +72,7 @@ Find the option that has:
 
 #### Pylint Settings for Django
 
-There should now be a .vscode folder in your directory. Open the `settings.json` file and add the following lines:
+There should now be a .vscode folder in your directory. If there is not one, create it. Create/open the `settings.json` file and add the following lines:
 
 > `levelup-server/.vscode/settings.json`
 
