@@ -60,7 +60,7 @@ Find the option that has:
 
 `<YOUR_FOLDER_NAME>-<RANDOM_STRING>`
 
-### Configure Pylint
+<!-- ### Configure Pylint
 
 After selecting the python interpreter, you may see a pop-up asking if you'd like to enable Pylint. If so, click yes.
 
@@ -68,7 +68,7 @@ Otherwise, open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P
 
 Find the option that has:
 
-`pylint`
+`pylint` -->
 
 #### Pylint Settings for Django
 
