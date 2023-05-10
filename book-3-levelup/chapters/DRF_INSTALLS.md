@@ -77,10 +77,12 @@ There should now be a .vscode folder in your directory. If there is not one, cre
 > `levelup-server/.vscode/settings.json`
 
 ```json
-"python.linting.pylintArgs": [
-    "--load-plugins=pylint_django",
-    "--django-settings-module=<folder name>.settings",
-],
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=<folder name>.settings",
+    ],
+}
 ```
 
 #### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be `levelup.settings`*
