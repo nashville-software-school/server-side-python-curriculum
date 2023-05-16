@@ -163,13 +163,13 @@ MIDDLEWARE = [
 ]
 ```
 
-<!-- ## Create Base Django Tables
+## Create Base Django Tables
 
-Django gives user and role management tables for your application out of the box, and there is a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
+Django gives a built-in migration file that makes the tables in a SQLite database for you. Go ahead and run that migration to set up the initial tables.
 
 ```sh
 python manage.py migrate
-``` -->
+```
 
 ---
 
