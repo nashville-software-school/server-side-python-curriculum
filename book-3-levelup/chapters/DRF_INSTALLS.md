@@ -200,7 +200,7 @@ Inside the `.vscode` create a file called `launch.json`. Paste the following cod
 }
 ```
 
-### With the terminal
+### Run your server in the terminal (You can also use F5)
 
 ```sh
 python manage.py runserver
