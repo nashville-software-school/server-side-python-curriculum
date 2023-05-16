@@ -164,12 +164,21 @@ Once you have looked over the ERD and understand relationships for Gamers, Games
 
 There is a many-many relationship between the Gamers and Events to show who is attending an event. Read the [ForeignKey](https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ForeignKey) resource to learn how to set up the Join EventGamer model.
 
+> ### `levelup-server/levelupapi/models/event_gamer.py`
+
 ```py
 from django.db import models
 
 class EventGamer(models.Model):
     gamer = models.ForeignKey("Gamer", on_delete=models.CASCADE)
     event = models.ForeignKey("Event", on_delete=models.CASCADE)
+```
+Then import your Gamer model into the package initialization module.
+
+> ### `levelup-server/levelupapi/models/__init__.py`
+
+```py
+from .event_gamer import EventGamer
 ```
 
 ## Migration of Models
