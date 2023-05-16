@@ -86,7 +86,7 @@ The `Meta` class inside the serializer holds the configuration info to use for t
 
 ## Workflow Visualization
 
-Any time that you want to allow a client to access data in your database, there's a series of steps you have to follow in order to accomplish it with Django REST Framework. So far we’ve only written the models. The next step is writing the views and serializers so the client can access and manipulate the data in the database.
+Any time that you want to allow a client to access data in your database, there's a series of steps you have to follow in order to accomplish it with Django REST Framework. We start with the models. The next step is writing the views and serializers so the client can access and manipulate the data in the database.
 
 ![](./images/django-rest-process.png)
 
