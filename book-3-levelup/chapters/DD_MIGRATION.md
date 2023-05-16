@@ -43,7 +43,7 @@ Make a connection to the database with SQLite Explorer to see the tables in the 
 <img src="./images/honey-rae-db-connection.gif" alt="animation showing the migration for the new models" width="800px" />
 
 ## 3. Add Data to Your DB using Postman
-In Postman, run a POST to `` with the following payload:
+In Postman, run a POST to `http://localhost:8000/appointments` with the following payload:
 
 ```json
 {
