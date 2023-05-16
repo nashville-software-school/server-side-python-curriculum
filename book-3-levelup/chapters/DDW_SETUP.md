@@ -58,4 +58,4 @@ Start your Django project in Debug Mode with the keyboard shortcut of <kbd>⌘</
 
 ![image of the debug terminal output](./images/debug-terminal.png)
 
-If you don't see this, call your team lead immediately.
+If you don't see this, ask an instructor for help.
