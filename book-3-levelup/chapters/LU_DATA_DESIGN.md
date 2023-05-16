@@ -162,7 +162,9 @@ from .gamer import Gamer
 
 Once you have looked over the ERD and understand relationships for Gamers, Games, and Events, create your modules and classes. Then import the classes into the package init module.
 
-There is a many-many relationship between the Gamers and Events to show who is attending an event. Read the [ForeignKey](https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ForeignKey) resource to learn how to set up the Join EventGamer model.
+## Many-to-Many Relationships
+
+There is a many-many relationship between the Gamers and Events to show who is attending an event. For this, we use something called a Join table. This table holds the Foreign Keys from each table it is joining. Read the [ForeignKey](https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ForeignKey) resource to learn how to set up the Join EventGamer model.
 
 > ### `levelup-server/levelupapi/models/event_gamer.py`
 
