@@ -61,7 +61,6 @@
 
 ## Learning Objectives
 
-* You should be able to create an ERD based on verbal requirements from a non-technical customer.
 * You should be able to design a Django database model class based on the table definition in your ERD.
 * You should be able to explain the process of using Django commands to get your models turned into database tables.
 * You should be able to predict how a database table should be structured given a Django model.
