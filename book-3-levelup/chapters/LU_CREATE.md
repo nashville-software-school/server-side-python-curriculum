@@ -15,8 +15,8 @@ def create(self, request):
     Returns
         Response -- JSON serialized game instance
     """
-    gamer = Gamer.objects.get(uid=request.data["user_id"])
-    game_type = GameType.objects.get(pk=request.data["game_type"])
+    gamer = Gamer.objects.get(uid=request.data["userId"])
+    game_type = GameType.objects.get(pk=request.data["gameType"])
 
     game = Game.objects.create(
         title=request.data["title"],
