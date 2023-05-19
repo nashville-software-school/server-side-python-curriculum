@@ -135,4 +135,4 @@ Open your browser and go to the events page.
 
 ## Optional Practice
 
-Apply what you've learned so far to any endpoints you've created that take the user ID from the request body (`request.data['uid']` or `request.data['user_id']`) and pass it through the header. Non-GET endpoints included.
+Apply what you've learned so far to any endpoints you've created that take the user ID from the request body (`request.data['uid']` or `request.data['userId']`) and pass it through the header. Non-GET endpoints included.
