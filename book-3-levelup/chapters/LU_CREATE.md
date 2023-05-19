@@ -24,7 +24,7 @@ def create(self, request):
         number_of_players=request.data["numberOfPlayers"],
         skill_level=request.data["skillLevel"],
         game_type=game_type,
-        creator=gamer,
+        gamer=gamer,
     )
     serializer = GameSerializer(game)
     return Response(serializer.data)
