@@ -24,7 +24,7 @@ Add the following code to the  `EventView`
 def signup(self, request, pk):
     """Post request for a user to sign up for an event"""
 
-    gamer = Gamer.objects.get(user=request.data["user_id"])
+    gamer = Gamer.objects.get(user=request.data["userId"])
     event = Event.objects.get(pk=pk)
     attendee = EventGamer.objects.create(
         gamer=gamer,
