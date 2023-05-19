@@ -22,7 +22,7 @@ def update(self, request, pk):
     game.number_of_players = request.data["numberOfPlayers"]
     game.skill_level = request.data["skillLevel"]
 
-    game_type = Type.objects.get(pk=request.data["gameType"])
+    game_type = GameType.objects.get(pk=request.data["gameType"])
     game.game_type = game_type
     game.save()
 
