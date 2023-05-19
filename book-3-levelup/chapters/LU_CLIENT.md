@@ -11,4 +11,4 @@ Once cloned, make sure to follow the README to set up the client project with Fi
 You should see the login screen on load, but when you login you should see this error:
 ![Screen Shot 2022-11-15 at 9 28 43 PM](https://user-images.githubusercontent.com/31781724/202076678-5093b2e4-510a-46f0-b56a-4868fd1ecb4a.png)
 
-Don't worry, this should be happening. This will get fixed when you add authentication to your server.
+Don't worry, this should be happening. This will get fixed when you add authentication.
