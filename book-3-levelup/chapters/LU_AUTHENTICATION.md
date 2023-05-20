@@ -133,3 +133,19 @@ Run the following command in your `levelup-server` directory to start the Django
 ```sh
 python manage.py runserver
 ```
+
+## Authenticating a User
+
+Now you can test this out as an actual Gamer who would be using the application.
+
+1. Launch your initial React client.
+1. Verify that you can log in using Firebase Auth
+1. The first time you login, you should be shown a form for you to add your bio.
+1. Log out and log back in. (Logout button in navbar)
+1. The bio form should pop back up
+1. Fill in the bio input with a bio. After you submit that form, you should be taken to a page that shows your display name and the bio you've created.
+1. Hard refresh the page and you should still see the same information.
+1. Logout. You should now be on the login page
+1. Log back in and the bio form should not show back up. You should be back at the page that shows you your display name and your bio.
+
+![Screen Shot 2022-11-08 at 10 02 52 PM](https://user-images.githubusercontent.com/31781724/200735631-98560386-a734-4326-a4bd-252b9ef63fc1.png)
