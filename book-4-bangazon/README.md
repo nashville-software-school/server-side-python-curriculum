@@ -19,9 +19,8 @@ Explorer chapters are optional, and give you the opportunity to expand on the Co
 | # | Level Up | ⛅️ Deployment |
 |--|--|--|
 | 1 | [SQL: Database Views](./chapters/DB_VIEWS.md) <br/> <sub style="font-size:0.85rem;">#sql #views</sub> |[Digital Ocean Deploy Walkthrough](./chapters/DEPLOY_DJANGO_01.md) |
-| 2 |  | [Heroku Walkthrough](./chapters/HEROKU_DEPLOYMENT.md) |
-| 3 |  | [Swagger Interface](./chapters/SWAGGER.md) |
-| 4 |  | [Automating Deployment with Github Actions](./chapters/GITHUB_ACTIONS.md) |
+| 2 |  | [Swagger Interface](./chapters/SWAGGER.md) |
+| 3 |  | [Automating Deployment with Github Actions](./chapters/GITHUB_ACTIONS.md) |
 
 ## 🏕 Pioneer Chapters
 
