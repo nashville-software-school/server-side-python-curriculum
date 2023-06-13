@@ -3,11 +3,11 @@
 In this sprint, you are going to be creating a new API for the Rare client side application to consume.
 
 ## Setup
-Accept the assignments as usual. One member follows the assignment links and creates the group name in each. The other members follow the links and join the created teams. 
+You will be building out the client from scratch! So brush up on your React skills because you're gonna need 'em!
 
-The server side repo is a blank slate, ready for your elegant and advanced implementation of the API requirements from V1, but this time written using the Django REST framework.
+The server side will have the same API requirements from V1, but this time they will be written using the Django REST framework.
 
-Next, choose one team member who will create the API project locally. As a team, walk through the creation of the Django application on that team member's computer. Open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps while in your rare-v2 directory. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
+Next, choose one team member who will create the API and Client project locally. As a team, walk through the creation of the Django application on that team member's computer. Open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps while in your rare-v2 directory. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
 
 ### Creating the Project
 
