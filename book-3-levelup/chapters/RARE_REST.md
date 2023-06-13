@@ -1,13 +1,13 @@
 # Build Rare Professionally
 
-In this sprint, you are going to be creating a new API for the Rare client side application to consume.
+During this sprint, your task is to create a new API for the Rare client-side application to consume.
 
 ## Setup
-You will be building out the client from scratch! So brush up on your React skills because you're gonna need 'em!
+You will start building the client application from scratch! So make sure you refresh your React skills because you'll need them!
 
-The server side will have the same API requirements from V1, but this time they will be written using the Django REST framework.
+The server-side will have the same API requirements as in V1, but this time they will be implemented using the Django REST framework.
 
-Next, choose one team member who will create the API and Client project locally. As a team, walk through the creation of the Django application on that team member's computer. Open the [Level Up API Setup](./DRF_INSTALLS.md) chapter and follow those steps while in your rare-v2 directory. Make sure you do not use `levelup` for the project or application name. Use the following names instead.
+Next, designate one team member to create the API and Client projects locally. As a team, go through the process of setting up the Django application on that team member's computer. Open the [Level Up API Setup](./DRF_INSTALLS.md) section and follow the instructions while in your rare-v2 directory. Ensure that you do not use `levelup` as the project or application name. Instead, use the following names.
 
 ### Creating the Project
 
@@ -23,15 +23,15 @@ python3 manage.py startapp rareapi
 
 ### Creating the .gitignore
 
-Once the project is set up, make sure you create a `.gitignore` file and put the content at [this URL](https://www.toptal.com/developers/gitignore/api/django) in there before your first commit. Finally, create a local git repo with `git init` and connect it to your team's server side github repo with `git remote add origin <github ssh url>`. Once you have everything setup, push up the code. The other team members can now clone down the new Django project repo.
+Once the project is set up, be sure to create a `.gitignore` file and paste the contents from [this URL](https://www.toptal.com/developers/gitignore/api/django) into it before making your first commit. Finally, initialize a local git repository with `git init` and connect it to your team's server-side GitHub repository using `git remote add origin <github ssh url>`. Once you have everything set up, push the code. The other team members can now clone the new Django project repository.
 
 ### Issue Tickets
-The requirements for this project are more comprehensive than in V1. You will see many references to admin abilities. An admin is simply a user with more power. How do you give that power to a user? Update a user's `is_staff` property to `True`. Don't say we never gave you anything :)
+The requirements for this project are more extensive compared to V1. You will come across various mentions of administrative capabilities. An admin user simply possesses more privileges. How can you grant such power to a user? Update a user's `is_staff` property to `True`. Remember, we're always here to support you :)
 
-## Rare ERD from Database Team
+## Rare ERD from the Database Team
 
 https://dbdiagram.io/d/5f885a013a78976d7b77cb74
 
-## Wireframes from Product Team
+## Wireframes from the Product Team
 
 https://miro.com/app/board/o9J_kiGCSK4=/
