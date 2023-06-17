@@ -43,7 +43,7 @@ Now you are going to install two tools:
 1. **autopep8** - This is an auto formatter that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide. This will be installed globally, so you won't have to install this again.
     * Run: `python3 -m pip install autopep8`
 3. **pylint** - This is a linter that shows any lint errors in your code. This will be installed locally within the pipenv environment (more on this later). For every new project you'll need to install pylint into each one.
-    * Run: `pipenv install pylint`
+    * Run: `pipenv install pylint=='2.15.5'`
 
 Then, start a virtual environment. Virtual environments ensure that libraries installed for a project don't pollute the entire operating system. It keeps everything contained to the project.
 

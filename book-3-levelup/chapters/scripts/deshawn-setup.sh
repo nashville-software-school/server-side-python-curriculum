@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
+pipenv install django=='4.1.3' autopep8=='2.0.0' pylint=='2.15.5' djangorestframework=='3.14.0' django-cors-headers=='3.13.0' pylint-django=='2.5.3'
 django-admin startproject deshawnproject .
 python3 manage.py startapp deshawnapi
 ./manage.py migrate

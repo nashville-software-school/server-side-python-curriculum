@@ -20,7 +20,7 @@ pipenv shell
 Next, install these third-party packages for use in your project.
 
 ```sh
-pipenv install django autopep8 pylint djangorestframework django-cors-headers pylint-django
+pipenv install django=='4.1.3' autopep8=='2.0.0' pylint=='2.15.5' djangorestframework=='3.14.0' django-cors-headers=='3.13.0' pylint-django=='2.5.3'
 ```
 
 Then you can create your very first Django project with the following command. Make sure you are in the `~/workspace/python/honey-rae-server` directory. Don't forget the `.` at the end of the command
