@@ -12,7 +12,7 @@ Next, designate one team member to create the API and Client projects locally. A
 ### Creating the Project
 
 ```sh
-django-admin startproject rare
+django-admin startproject rare .
 ```
 
 ### Creating the API Application
@@ -26,11 +26,12 @@ python3 manage.py startapp rareapi
 Once the project is set up, be sure to create a `.gitignore` file and paste the contents from [this URL](https://www.toptal.com/developers/gitignore/api/django) into it before making your first commit. Finally, initialize a local git repository with `git init` and connect it to your team's server-side GitHub repository using `git remote add origin <github ssh url>`. Once you have everything set up, push the code. The other team members can now clone the new Django project repository.
 
 ### Issue Tickets
-The requirements for this project are more extensive compared to V1. You will come across various mentions of administrative capabilities. An admin user simply possesses more privileges. How can you grant such power to a user? Update a user's `is_staff` property to `True`. Remember, we're always here to support you :)
+
+The number of tickets in this project exceeds those in V1, indicating a greater scope. Not all tickets are mandatory for completion, as the group will determine the Minimum Viable Product (MVP). You will come across various mentions of administrative capabilities. An admin user simply possesses more privileges. How can you grant such power to a user? Update a user's `is_staff` property to `True`. Remember, we're always here to support you :)
 
 ## Rare ERD from the Database Team
 
-https://dbdiagram.io/d/5f885a013a78976d7b77cb74
+https://dbdiagram.io/d/638e7896bae3ed7c4544e8ab
 
 ## Wireframes from the Product Team
 
