@@ -18,25 +18,9 @@ NOTE: You may already have a key "files.exclude". If so, just add `"**/__pycache
   },
 ```
 
-Create a project directory and initialize a virtual environment for your project with the following commands.
-
-```sh
-mkdir -p ~/workspace/deshawn
-```
-```sh
-cd ~/workspace/deshawn
-```
-```sh
-pipenv shell
-```
-
-Run the following command in your terminal and wait for the entire process to complete.
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nashville-software-school/bangazon-llc/evening-cohorts/book-3-levelup/chapters/scripts/deshawn-setup.sh)"
-```
-
-Once that's done, open up the directory in VS Code.
+Use this link to create a repo for this chapter: https://githubtools.reppedintech.com/u/nss-evening-web-development/deshawn
+- Clone this repo down to your machine
+- Once that's done, open up the directory in VS Code.
 
 ```sh
 code .
