@@ -20,11 +20,9 @@ NOTE: You may already have a key "files.exclude". If so, just add `"**/__pycache
 
 Use this link to create a repo for this chapter: https://githubtools.reppedintech.com/u/nss-evening-web-development/deshawn
 - Clone this repo down to your machine
-- Once that's done, open up the directory in VS Code.
-
-```sh
-code .
-```
+- Once that's done, open up the directory in VS Code: `code .`
+- Once in your repo, start your shell: `pipenv shell`
+- Install your dependencies: `pipenv install`
 
 ## Select Python Interpreter
 
