@@ -2,13 +2,13 @@
 
 ## 🍎 Required Core Chapters
 
-| # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub> | 📔 ✒️ <br/> Daily Journal <br/><sub>(_Optional for those who completed client-side project_)</sub> |
-|--|--|---|---|
-| 1 | [Kennel Database][12] <br/> <sub style="font-size:0.85rem;">\#database #sql #CREATE #INSERT</sub> | [Jewelry Database][1] |[Daily Journal Database][13] |
-| 2 | [Animal Queries][14] <br/> <sub style="font-size:0.85rem;">\#sql #SELECT #WHERE #HTTP\_GET</sub> | [Get All Orders][2] |[Get All Journal Entries][15] |
-| 3 | [Customers by Email][16] <br/> <sub style="font-size:0.85rem;">\#sql #WHERE #query\_string\_parameters</sub> | [Get Single Order][3] | [Get Single Journal Entry][17] |
-| 4 | [Deleting Animal Records][18] <br/> <sub style="font-size:0.85rem;">\#sql #DELETE #HTTP\_DELETE</sub> | [Create New Order][4] | [Deleting Journal Entries][19] |
-| 5 | [Using React Kennels Client Again][20] <br/> <sub style="font-size:0.85rem;">\#react</sub> | [Cancel an Order][5] | [Searching for Journal Entries][21]|
+| # | 🐕 🐩 <br/> Python Kennels<br/><sub>(_Guided Tour_)</sub> | 💎 💍  <br/> Kneel Diamonds<br/><sub>_(Guided Practice)_</sub>
+|--|--|--|
+| 1 | [Kennel Database][12] <br/> <sub style="font-size:0.85rem;">\#database #sql #CREATE #INSERT</sub> | [Jewelry Database][1]
+| 2 | [Animal Queries][14] <br/> <sub style="font-size:0.85rem;">\#sql #SELECT #WHERE #HTTP\_GET</sub> | [Get All Orders][2]
+| 3 | [Customers by Email][16] <br/> <sub style="font-size:0.85rem;">\#sql #WHERE #query\_string\_parameters</sub> | [Get Single Order][3]
+| 4 | [Deleting Animal Records][18] <br/> <sub style="font-size:0.85rem;">\#sql #DELETE #HTTP\_DELETE</sub> | [Create New Order][4] |
+| 5 | [Using React Kennels Client Again][20] <br/> <sub style="font-size:0.85rem;">\#react</sub> | [Cancel an Order][5]
 | 6 | [Updating Animal Records][22] <br/> <sub style="font-size:0.85rem;">\#sql #UPDATE #HTTP\_PUT</sub> | [Update a Metal Price][6] |  |
 | 7 | [Animals with Location Report][24] <br/> <sub style="font-size:0.85rem;">\#sql #JOIN #HTTP\_GET</sub> | [Embedding Metal, Style, and Size][7] | [Including Mood with Entry][25] |
 | 8 | [Admitting Animals][26] <br/> <sub style="font-size:0.85rem;">\#sql #INSERT</sub> |  | [Recording New Entries][27] |
@@ -19,14 +19,14 @@
 
 Explorer chapters are optional, and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
-| # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds | 📔 ✒️ <br/> Daily Journal  |
-|--|--|--|--|
-| 1 | [Sort Animals by Location][33] | [Sort Resources by Price][40] | [Editing Journal Entries][29] |
-| 2 | [Sort Animals by Customer][34] | | [Add Entry Tags][30] |
-| 3 | [Get Animals by Location][35] | | [Add Entry Tags in Client][31] |
-| 4 | [Sort Animals by Status][36] |  |
-| 5 | [Get Animals by Status][37] |  |
-| 6 | [Add Number of Animals for Location][38] |  |
+| # | 🐕 🐩 <br/> Python Kennels | 💎 💍  <br/> Kneel Diamonds
+|--|--|--|
+| 1 | [Sort Animals by Location][33] | [Sort Resources by Price][40]
+| 2 | [Sort Animals by Customer][34] | |
+| 3 | [Get Animals by Location][35] | |
+| 4 | [Sort Animals by Status][36] | |
+| 5 | [Get Animals by Status][37] | |
+| 6 | [Add Number of Animals for Location][38] | |
 
 ## 🏕 Pioneer Chapters
 
