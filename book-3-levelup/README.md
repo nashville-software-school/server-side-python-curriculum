@@ -6,6 +6,7 @@ This book introduces you to the Django application framework, and the Django RES
 
 | # | 🐕‍🦺 DeShawn Dog Walking API | 🍯 Honey Rae's Repairs | 💇🏽‍♀️ <br/> Elated Mane | 🕹 Level Up |
 |--|--|--|--| -- |
+| 0 |  |  |  | [SQL Refresh][61] |
 | 1 | [Installations and Setup][41] | [Installations and Setup][42] | [Styling Appointments][56] | [Level Up API Setup][1] |
 | 2 | [Database Models][2] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models][43]  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Stylist Clients][57] | [Meeting Carrie][3] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> |
 | 3 | [ORM not SQL][14] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Setup][44] <br/> <sub style="font-size:0.85rem;">\#authentication #tokens</sub> | [Equipment Inventory][58] |  [Level Up Client][5] <br/> <sub style="font-size:0.85rem;">\#react #components</sub> |
@@ -120,6 +121,7 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [58]: ./chapters/ELATED_EQUIPMENT_TYPES.md
 [59]: ./chapters/ELATED_STYLE_CUSTOMERS.md
 [60]: ./chapters/ELATED_EQUIPMENT_PER_STYLIST.md
+[61]: ./chapters/SQL_REFRESH.md
 
 
 [image-1]: ./chapters/images/level-up.png
