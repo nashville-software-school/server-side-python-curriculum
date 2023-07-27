@@ -13,6 +13,9 @@ You have been presented with an unique business opportunity. A local startup has
 | 7 | [Game Reviews][7] |
 | 8 | [Edit Games][8] |
 | 9 | [Game Ratings][9] |
+| 10 | [Games in Action Pictures][10] |
+| 11 | [Searching Games][11] |
+| 12 | [Sorting Games][12] |
 
 
 [1]:	./chapters/GR_SETUP.md
@@ -24,3 +27,6 @@ You have been presented with an unique business opportunity. A local startup has
 [7]:	./chapters/GR_REVIEWS.md
 [8]:	./chapters/GR_EDIT_GAME.md
 [9]:	./chapters/GR_GAME_RATINGS.md
+[10]: ./chapters/GR_UPLOADS.md
+[11]: ./chapters/GR_SEARCH.md
+[12]: ./chapters/GR_SORTING.md

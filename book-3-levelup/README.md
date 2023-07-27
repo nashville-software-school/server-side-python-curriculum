@@ -19,8 +19,7 @@ This book introduces you to the Django application framework, and the Django RES
 | 10 |  | [Creating Tickets][51] <br/> <sub style="font-size:0.85rem;">\#POST</sub> |  | [Exposing PUT Requests][19] <br/> <sub style="font-size:0.85rem;">\#PUT \#update</sub> |
 | 11 |  | [Filtering Tickets][52] <br/> <sub style="font-size:0.85rem;">\#GET \#query-params</sub> |  |  [UpdateGame and UpdateEvent Components][20] <br/> <sub style="font-size:0.85rem;">\#react \#forms</sub> |
 | 12 |  | [Assigning Tickets][53] <br/> <sub style="font-size:0.85rem;">\#PUT</sub> |  |  [Exposing DELETE Requests][23] <br/> <sub style="font-size:0.85rem;">\#DELETE \#destroy</sub> |
-| 13 |  | [Deleting Tickets][54] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> |  |  [View Custom Actions][25] <br/> <sub style="font-size:0.85rem;">\#action</sub> |
-| 14 |  |  |  |  [Leaving and Joining Events][35]|
+| 13 |  | [Deleting Tickets][54] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> |  |   |
 | 🎓 | [Self-assessment][55] |  | |
 
 
@@ -34,15 +33,16 @@ This book introduces you to the Django application framework, and the Django RES
 
 Explorer chapters give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
 
-| # | 🍯 <br/> Honey Rae's Repairs | 🕹 🎲 <br/> Level Up | ⭐️ 🎯 <br/> GamerRater <br/> |
-|--|--|--|--|
-| 1 | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) | [Filtering Games][37] | [Games in Action Pictures][30] |
-| 2 | [More Filtering of Tickets](./chapters/HR_EC_TICKET_FILTER.md) | [Catching Errors][38] | [Searching Games][32] |
-| 3 | [Finding Tickets](./chapters/HR_TICKET_FIND.md) | [Shallow Serializers][39] | [Sorting Games][34] |
-| 4 || [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
-| 5 || [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |  |
-| 6 || [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |  |
-| 7 || [POST Validation][36] | | |
+| # | 🍯 <br/> Honey Rae's Repairs | 🕹 🎲 <br/> Level Up |
+|--|--|--|
+| 1 | [Closing Tickets](./chapters/HR_TICKET_CLOSE.md) | [Filtering Games][37] | [View Custom Actions][25] |
+| 2 | [More Filtering of Tickets](./chapters/HR_EC_TICKET_FILTER.md) | [Leaving and Joining Events][35] |
+| 3 | [Finding Tickets](./chapters/HR_TICKET_FIND.md) | [Shallow Serializers][39] |
+| 4 |  | [Catching Errors][38] |
+| 5 | | [Event Attendees][29] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |
+| 6 | | [Event Attendees][31] <br/> <sub style="font-size:0.85rem;">\#orm #annotation #count</sub> |
+| 7 | | [Joined Events][33] <br/> <sub style="font-size:0.85rem;">\#orm #Q</sub> |
+| 8 | | [POST Validation][36] |
 
 ## 🏕 Pioneer Chapters
 
@@ -90,11 +90,8 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [27]: ./chapters/FV_MEAL_RATINGS.md
 [28]: ./chapters/RARE_REST.md
 [29]: ./chapters/EVENTS_PER_GAME.md
-[30]: ./chapters/GR_UPLOADS.md
 [31]: ./chapters/LU_EVENT_ATTENDEES.md
-[32]: ./chapters/GR_SEARCH.md
 [33]: ./chapters/LU_JOINED_Q_FILTER.md
-[34]: ./chapters/GR_SORTING.md
 [35]: ./chapters/LU_MODEL_PROPERTY.md
 [36]: ./chapters/LU_POST_VALIDATION.md
 [37]: ./chapters/LU_FILTER_GAMES.md
@@ -122,6 +119,5 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [59]: ./chapters/ELATED_STYLE_CUSTOMERS.md
 [60]: ./chapters/ELATED_EQUIPMENT_PER_STYLIST.md
 [61]: ./chapters/SQL_REFRESH.md
-
 
 [image-1]: ./chapters/images/level-up.png
