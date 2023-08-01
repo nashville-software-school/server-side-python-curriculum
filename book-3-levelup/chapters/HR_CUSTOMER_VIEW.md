@@ -71,6 +71,7 @@ You will use a built-in class in Django REST called the `DefaultRouter`. The `De
 Add the following import statements at the top of the `urls.py` module.
 
 ```py
+from django.conf.urls import include
 from rest_framework import routers
 from repairsapi.views import CustomerView
 ```
