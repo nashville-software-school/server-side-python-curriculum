@@ -119,5 +119,3 @@ Pioneer chapters are optional and let you develop Deep Learning on the concepts 
 [59]: ./chapters/ELATED_STYLE_CUSTOMERS.md
 [60]: ./chapters/ELATED_EQUIPMENT_PER_STYLIST.md
 [61]: ./chapters/SQL_REFRESH.md
-
-[image-1]: ./chapters/images/level-up.png
