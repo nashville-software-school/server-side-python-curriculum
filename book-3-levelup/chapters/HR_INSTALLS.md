@@ -62,7 +62,10 @@ Find the option that has:
 
 #### Pylint Settings for Django
 
-There should now be a .vscode folder in your directory. Open the `settings.json` file and add the following key to the existing object in there:
+Check if there is a **.vscode** folder in your directory. If there isn't, press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette, and select "Preferences: Open Workspace Settings (JSON)". That will create a **.vscode/settings.json** file.
+
+
+ Open the `settings.json` file and add the following key to the existing object in there:
 
 > `honey-rae-server/.vscode/settings.json`
 

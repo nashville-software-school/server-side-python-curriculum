@@ -48,27 +48,31 @@ Find the option that has:
 
 `<your folder name>-<random string>`
 
-### Configure Pylint
-
-After selecting the python interpreter, you may see a pop-up asking if you'd like to enable Pylint. If so, click yes.
-
-Otherwise, open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows), and select "Python: Select Linter".
-
-Find the option that has:
-
-`pylint`
-
 #### Pylint Settings for Django
 
-There should now be a .vscode folder in your directory. Open the `settings.json` file and add the following lines:
+Check if there is a **.vscode** folder in your directory. If there isn't, press <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows) to open the Command Palette, and select "Preferences: Open Workspace Settings (JSON)". That will create a **.vscode/settings.json** file.
 
-> `levelup-server/.vscode/settings.json`
+
+ Open the `settings.json` file and add the following key to the existing object in there:
+
+> `honey-rae-server/.vscode/settings.json`
 
 ```json
 "python.linting.pylintArgs": [
     "--load-plugins=pylint_django",
-    "--django-settings-module=<folder name>.settings",
+    "--django-settings-module=honeyrae.settings",
 ],
+```
+
+If there is no `settings.json` file, create one and add the following to it.
+
+```json
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=honeyrae.settings",
+    ],
+}
 ```
 
 #### *Notice that `<folder name>` should be the name of the folder that has the `settings.py` file, in this case it will be `levelup.settings`*
