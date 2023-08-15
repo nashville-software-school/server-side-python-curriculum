@@ -143,11 +143,7 @@ path('login', login_user)
 
 ## Starting the Server
 
-Run the following command in your `levelup-server` directory to start the Django application.
-
-```sh
-python3 manage.py runserver
-```
+Start your application in debug mode and you're ready to go.
 
 ## Authenticating a User
 
