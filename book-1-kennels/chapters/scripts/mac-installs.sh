@@ -64,6 +64,7 @@ code --install-extension ms-python.vscode-pylance --force
 code --install-extension njpwerner.autodocstring --force
 code --install-extension alexcvzz.vscode-sqlite --force
 code --install-extension streetsidesoftware.code-spell-checker --force
+code --install-extension qwtel.sqlite-viewer --force
 
 
 
