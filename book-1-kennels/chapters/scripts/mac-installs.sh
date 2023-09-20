@@ -1,62 +1,78 @@
-PYTHON_VERSION=3.9
+PYTHON_VERSION=3.10
 
-if [ $(brew list | grep -c pyenv) != 1 ];
-then
-  echo Installing Pyenv
+if command -v pyenv >/dev/null 2>&1; then
+  echo "Pyenv already installed"
+else
+  echo "Installing Pyenv"
   brew install pyenv
-else
-  echo "Skipping Pyenv install"
+
+  if [ $(cat ~/.zshrc | grep -c 'Configure.#pyenv') != 1 ]; then
+    PYENV_ROOT="$HOME/.pyenv"
+    PIPENV_DIR="$HOME/.local"
+    PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
+
+    if command -v pyenv &>/dev/null; then
+      PATH=$(pyenv root)/shims:$PATH
+      eval "$(pyenv init -)"
+    fi
+
+    echo '# Configure pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PIPENV_DIR="$HOME/.local"
+export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  export PATH=$(pyenv root)/shims:$PATH
+  eval "$(pyenv init -)"
+fi' >> ~/.zshrc
+  else
+    echo "Skipping Pyenv Configuration"
+  fi
+
+
+  # Verify pyenv is installed and configured
+  if ! command -v pyenv >/dev/null 2>&1; then
+    echo "Installation of Pyenv succeeded"
+  else
+    echo "\033[31m🧨 Error: Installation of pyenv failed. Contact an instructor.\033[0m"
+  fi
 fi
 
-if [ $(cat ~/.zshrc | grep -c 'Configure pyenv') != 1 ];
-then
-  echo Adding Pyenv Configuration
-  echo -e '\n\n# Configure pyenv\n
-  export PYENV_ROOT="$HOME/.pyenv"\n
-  export PIPENV_DIR="$HOME/.local"\n
-  export PATH="$PIPENV_DIR/bin:$PYENV_ROOT/bin:$PATH"\n
 
-  if command -v pyenv 1>/dev/null 2>&1; then\n
-    \texport PATH=$(pyenv root)/shims:$PATH\n
-    \teval "$(pyenv init -)"\n
-  fi\n' >> ~/.zshrc
-  source ~/.zshrc
-else
-  echo Skipping Pyenv Configuration
-fi
+# Check if required version of Python is installed
+installed_versions=$(pyenv versions)
 
-if [ $(pyenv versions | grep -c $PYTHON_VERSION) != 1 ];
-then
-  echo Installing Python version $PYTHON_VERSION
+if [ $(pyenv versions | grep -c $PYTHON_VERSION) != 1 ]; then
+  echo "Installing Python version $PYTHON_VERSION"
   pyenv install ${PYTHON_VERSION}:latest
 else
-  echo Skipping $PYTHON_VERSION install
+  echo "Python $PYTHON_VERSION already installed"
 fi
 
-INSTALLED_PYTHON_VERSION=$(pyenv versions | grep -o ${PYTHON_VERSION}'.*[0-9]' | tail -1)
+# Make required version of Python the global version
+INSTALLED_PYTHON_VERSION=$($installed_versions | grep -o ${PYTHON_VERSION}'.#[0-9]' | tail -1)
+echo "Setting Python $INSTALLED_PYTHON_VERSION to be used globally"
 pyenv global $INSTALLED_PYTHON_VERSION
 
-
-if [ $(python3 --version | grep -c $INSTALLED_PYTHON_VERSION) != 1 ];
-then
-    echo "Could not set the global python version let an instructor know"
-    return 0
+# Verify the required version was set as global
+if [[ "$installed_versions" == *"$PYTHON_VERSION"* ]]; then
+    echo "Current Python version is $python_version"
+    echo "\033[31m🧨 Error: Python $INSTALLED_PYTHON_VERSION was not set as the global version. Contact an instructor.\033[0m"
+    exit 1
 fi
 
-if [ $(python3 -m pip list | grep -c pipenv) != 1 ];
-then 
-  echo Install pipenv and autopep8
-  python3 -m pip install pipenv autopep8
+
+if which pipenv >/dev/null 2>&1; then
+  echo "pipenv and autopep8 already installed"
 else
-  echo Skipping pipenv and autopep8 install
-fi
+  python3 -m pip install pipenv autopep8
 
-if [[ $(which pipenv) == "pipenv not found" ]];
-then
-    echo "Could not find pipenv, let an instructor know"
-    return 0
+  # Verify installation
+  if ! which pipenv >/dev/null 2>&1; then
+      echo "\033[31m🧨 Error: Installation of pipenv failed. Contact an instructor.\033[0m"
+      exit 1
+  fi
 fi
-
 
 echo "Installing VS Code Extensions"
 code --install-extension ms-python.python --force
@@ -64,7 +80,10 @@ code --install-extension ms-python.vscode-pylance --force
 code --install-extension njpwerner.autodocstring --force
 code --install-extension alexcvzz.vscode-sqlite --force
 code --install-extension streetsidesoftware.code-spell-checker --force
+code --install-extension qwtel.sqlite-viewer --force
+code --install-extension ms-python.pylint --force
 
 
-
-echo Success! You are ready to start coding with Python
+echo "\n\n"
+echo "\033[31m[\033[36mnotice\033[31m]\033[0m Run the following command to complete installations"
+echo "\033[31m[\033[36mnotice\033[31m]\033[0m source ~/.zshrc"

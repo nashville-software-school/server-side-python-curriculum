@@ -55,6 +55,7 @@ pipenv shell
 We need to set up our server to handle different HTTP methods (GET, POST, PUT, DELETE). The following code sets up the beginning of our server to handle the GET, POST, and PUT methods by including methods called `do_GET`, `do_POST`, and `do_PUT`. Copy pasta the following code into the `request_handler.py` file. Read the comments to get a feel for what each method is doing. Make your own comments for any questions you have about what the code is doing.
 
 ```py
+import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
@@ -69,28 +70,6 @@ class HandleRequests(BaseHTTPRequestHandler):
     """
 
     # Here's a class function
-    def _set_headers(self, status):
-        # Notice this Docstring also includes information about the arguments passed to the function
-        """Sets the status code, Content-Type and Access-Control-Allow-Origin
-        headers on the response
-
-        Args:
-            status (number): the status code to return to the front end
-        """
-        self.send_response(status)
-        self.send_header('Content-type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.end_headers()
-
-    # Another method! This supports requests with the OPTIONS verb.
-    def do_OPTIONS(self):
-        """Sets the options headers
-        """
-        self.send_response(200)
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-        self.send_header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept')
-        self.end_headers()
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any GET request.
@@ -115,29 +94,49 @@ class HandleRequests(BaseHTTPRequestHandler):
         else:
             response = []
 
-        # This weird code sends a response back to the client
-        self.wfile.write(f"{response}".encode())
+        # Send a JSON formatted string as a response
+        self.wfile.write(json.dumps(response).encode())
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any POST request.
     def do_POST(self):
-        """Handles POST requests to the server
-        """
+        """Handles POST requests to the server"""
+
         # Set response code to 'Created'
         self._set_headers(201)
 
         content_len = int(self.headers.get('content-length', 0))
         post_body = self.rfile.read(content_len)
-        response = f"received post request:<br>{post_body}"
-        self.wfile.write(response.encode())
+        response = { "payload": post_body }
+        self.wfile.write(json.dumps(response).encode())
 
-    # Here's a method on the class that overrides the parent's method.
-    # It handles any PUT request.
-
+    # A method that handles any PUT request.
     def do_PUT(self):
-        """Handles PUT requests to the server
+        """Handles PUT requests to the server"""
+        self.do_PUT()
+
+    def _set_headers(self, status):
+        # Notice this Docstring also includes information about the arguments passed to the function
+        """Sets the status code, Content-Type and Access-Control-Allow-Origin
+        headers on the response
+
+        Args:
+            status (number): the status code to return to the front end
         """
-        self.do_POST()
+        self.send_response(status)
+        self.send_header('Content-type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.end_headers()
+
+    # Another method! This supports requests with the OPTIONS verb.
+    def do_OPTIONS(self):
+        """Sets the options headers
+        """
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+        self.send_header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept')
+        self.end_headers()
 
 
 # This function is not inside the class. It is the starting
@@ -156,15 +155,28 @@ if __name__ == "__main__":
 ```
 
 ## Adjust VS Code Settings
+
+### Interpreter
+
 First you'll need to select the correct Python Interpreter. Open the command palette with `cmd+shift+p` and select "Python: Select Interpretor". Find the option that has `<your folder name>-<random string>`
 
-Open the command palette again and search for "Open Settings (JSON)"
-Add these to the bottom of the file, updating the autopep8Path to be the output of `which autopep8`
+### Workspace Settings
+
+Open the command palette again and search for **Open Workspace Settings (JSON)**, and add the following JSON to file that appears.
 
 ```
-"python.formatting.autopep8Path": "paste in the output from the which command",
-"python.linting.pylintEnabled": true,
+{
+   "python.formatting.autopep8Path": "paste in the output from the which command",
+   "python.linting.pylintEnabled": true,
+   "python.analysis.diagnosticSeverityOverrides": {
+     "reportGeneralTypeIssues": "none"
+   }
+}
 ```
+
+In your terminal, run `which autopep8`. Copy/paste the output of that into the JSON to replace the value of `autopep8Path`.
+
+### Pylint Configuration File
 
 With pylint enabled we need to control some of the warnings that VS Code will warn about. We can do this by creating a `.pylintrc` file. Copy this command into the terminal to create the file:
 ```

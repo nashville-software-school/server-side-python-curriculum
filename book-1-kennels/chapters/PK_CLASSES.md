@@ -87,6 +87,3 @@ class Location():
 
 When you are happy with your classes, import them into the package `__init__.py` module.
 
-## What's Next
-
-Now that you have classes to represent each resource for your application, it's time to move on to the next chapter and learn how to set up a database. You will start learning the SQL language to extract data from a relational database, and then use that data to create instances of the classes that you just defined.

@@ -111,12 +111,12 @@ Then update the `do_GET()` function with the following code.
 
         if resource == "animals":
             if id is not None:
-                response = f"{get_single_animal(id)}"
+                response = get_single_animal(id)
 
             else:
-                response = f"{get_all_animals()}"
+                response = get_all_animals()
 
-        self.wfile.write(response.encode())
+        self.wfile.write(json.dumps(response).encode())
 ```
 
 ## Practice: Locations
@@ -125,17 +125,17 @@ Now follow the same pattern for location data. If you haven't already, create a 
 
 ```py
 [
-        {
-            "id": 1,
-            "name": "Nashville North",
-            "address": "8422 Johnson Pike"
-        },
-        {
-            "id": 2,
-            "name": "Nashville South",
-            "address": "209 Emory Drive"
-        }
-    ]
+    {
+        "id": 1,
+        "name": "Nashville North",
+        "address": "8422 Johnson Pike"
+    },
+    {
+        "id": 2,
+        "name": "Nashville South",
+        "address": "209 Emory Drive"
+    }
+]
 ```
 
 Then implement the following two functions in the `views/location_requests.py` module.
@@ -149,6 +149,24 @@ Then add another `if..else` statement to the `do_GET` method in the main module 
 
 Do the same thing for employee data. Employees only need a name (and a unique id, of course)
 
+```json
+EMPLOYEES = [
+    {
+        "id": 1,
+        "name": "Jenna Solis"
+    }
+]
+```
+
 ## Practice: Customers
 
 Do the same thing for customer data. Customers only need a name and id, as well.
+
+```json
+CUSTOMERS = [
+    {
+        "id": 1,
+        "name": "Ryan Tanay"
+    }
+]
+```
