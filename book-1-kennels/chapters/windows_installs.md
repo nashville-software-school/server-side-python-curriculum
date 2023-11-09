@@ -1,10 +1,10 @@
 
 # Installations for WSL and Ubuntu users
 
-Here's the script to run to get you ready to start python: 
+Here's the script to run to get you ready to start python:
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nashville-software-school/bangazon-llc/cohort-56/book-1-kennels/chapters/scripts/wsl-ubuntu-installs.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nashville-software-school/server-side-python-curriculum/main/book-1-kennels/chapters/scripts/wsl-ubuntu-installs.sh)"
 ```
 
 After running this script, if you **do** **not** see a message that says "Success! You are ready to start coding with Python", reach out to an instructor.
