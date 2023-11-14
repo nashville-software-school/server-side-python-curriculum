@@ -18,7 +18,8 @@ NOTE: You may already have a key "files.exclude". If so, just add `"**/__pycache
   },
 ```
 
-In your terminal, run `which autopep8`. Copy/paste the output of that into the JSON to replace the value of `python.formatting.autopep8Path`. __If you don't have `autopep8` installed, run the following command to install it: `python -m pip install autopep8`__
+In your terminal, run `which autopep8`. Copy/paste the output of that into the JSON to replace the value of `python.formatting.autopep8Path`. 
+> If you don't have `autopep8` installed, run the following command to install it: `python -m pip install autopep8`
 
 Use this link to create a repo for this chapter: https://githubtools.reppedintech.com/u/nss-evening-web-development/deshawn
 - Clone this repo down to your machine
