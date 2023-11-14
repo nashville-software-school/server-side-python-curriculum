@@ -3,7 +3,7 @@
 ## Project Setup
 
 ### Workspace Settings: Ensure your Workspace settings are correct
-Open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows), and search for **Open User Settings (JSON)**, and add the following JSON to file that appears.
+Open the VS Code Command Palette <kbd>⌘</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Mac), or <kbd>Ctrl</kbd><kbd>SHIFT</kbd><kbd>P</kbd> (Windows), and search for **Open User Settings (JSON)**, and add the following JSON to the file that appears.
 
 NOTE: You may already have a key "files.exclude". If so, just add `"**/__pycache__": true`.
 
@@ -17,6 +17,9 @@ NOTE: You may already have a key "files.exclude". If so, just add `"**/__pycache
     "**/__pycache__": true
   },
 ```
+
+In your terminal, run `which autopep8`. Copy/paste the output of that into the JSON to replace the value of `python.formatting.autopep8Path`. 
+> If you don't have `autopep8` installed, run the following command to install it: `python -m pip install autopep8`
 
 Use this link to create a repo for this chapter: https://githubtools.reppedintech.com/u/nss-evening-web-development/deshawn
 - Clone this repo down to your machine
