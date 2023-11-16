@@ -3,7 +3,7 @@
 In this sprint, you are going to be creating a new API for the Rare client side application to consume.
 
 ## Setup
-Accept the assignments as usual. One member follows the assignment links and creates the group name in each. The other members follow the links and join the created teams. 
+Accept the assignments as usual. One member follows the assignment links and creates the group name in each. The other members follow the links and join the created teams.
 
 The new client repo will have a React app in it that _some_ of you will recognize. It is pretty much complete, but you will need to spend some time reading the code to familarize yourself with how it. We recommend creating a rare-v2 directory locally to clone this repo into, so you can keep your client and server projects in one place in your file system.
 
@@ -32,7 +32,7 @@ Once the project is set up, make sure you create a `.gitignore` file and put the
 Add the following pattern to the bottom of your gitignore file.
 
 ```txt
-migrations/**
+rareapi/migrations/**
 ```
 
 ### Issue Tickets
