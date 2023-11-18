@@ -101,7 +101,7 @@ from .auth import check_user, register_user
 
 The last step is to establish some URL routes that any client application can use to register and check a gamer to use the API.
 
-Completely replace the contents of the following file with the code below.
+Update the contents of the following file with the code below.
 
 > #### `levelup-server/levelup/urls.py`
 
