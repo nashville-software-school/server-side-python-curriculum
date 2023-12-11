@@ -12,6 +12,12 @@ This book introduces you to integration testing, and  Django templates. You will
 | 4 | [SSR Events by Gamer Report](./chapters/LU_EVENTS_BY_GAMER.md) <br/> <sub style="font-size:0.85rem;">#sql #templates</sub> |
 | | [Job Preparation: Bangazon API](./chapters/BANG_SETUP.md) |
 
+Once you have completed all of the Core Projects, your final preparation for being a professional is to go on a job interview.
+
+| #   | 🎓 Self-Assessment |
+| --- | --- |
+| 1   | [Job Interview Prep](./chapters/INTERVIEW_POINTS.md) |
+
 ## 🧭 Explorer Chapters
 
 Explorer chapters are optional, and give you the opportunity to expand on the Core chapters and the concepts in the book without any guidance or boilerplate code.
