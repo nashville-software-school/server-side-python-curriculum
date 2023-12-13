@@ -71,13 +71,11 @@ from levelupapi.views.game import GameSerializer
 class GameTests(APITestCase):
 
     # Add any fixtures you want to run to build the test database
-    fixtures = ['users', 'tokens', 'gamers', 'game_types', 'games', 'events']
+    fixtures = ['gamers', 'game_types', 'games', 'events']
     
     def setUp(self):
-        # Grab the first Gamer object from the database and add their token to the headers
+        # Grab the first Gamer object from the database
         self.gamer = Gamer.objects.first()
-        token = Token.objects.get(user=self.gamer.user)
-        self.client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
 
     def test_create_game(self):
         """Create game test"""
@@ -89,17 +87,14 @@ class GameTests(APITestCase):
         game = {
             "title": "Clue",
             "maker": "Milton Bradley",
-            "skill_level": 5,
-            "number_of_players": 6,
-            "game_type": 1,
+            "skillLevel": 5,
+            "numberOfPlayers": 6,
+            "gameType": 1,
+            "userId": "{The uid of the first gamer object in your fixtures}"
         }
 
         response = self.client.post(url, game, format='json')
 
-        # The _expected_ output should come first when using an assertion with 2 arguments
-        # The _actual_ output will be the second argument
-        # We _expect_ the status to be status.HTTP_201_CREATED and it _actually_ was response.status_code
-        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
         
         # Get the last game added to the database, it should be the one just created
         new_game = Game.objects.last()
@@ -110,6 +105,8 @@ class GameTests(APITestCase):
         expected = GameSerializer(new_game)
 
         # Now we can test that the expected ouput matches what was actually returned
+        # The _expected_ output should come first when using an assertion with 2 arguments
+        # The _actual_ output will be the second argument
         self.assertEqual(expected.data, response.data)
 ```
 
@@ -204,9 +201,9 @@ Add the function below to your `GameTests` class.
         updated_game = {
             "title": f'{game.title} updated',
             "maker": game.maker,
-            "skill_level": game.skill_level,
-            "number_of_players": game.number_of_players,
-            "game_type": game.game_type.id
+            "skillLevel": game.skill_level,
+            "numberOfPlayers": game.number_of_players,
+            "gameType": game.game_type.id,
         }
 
         response = self.client.put(url, updated_game, format='json')
