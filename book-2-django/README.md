@@ -1,4 +1,4 @@
-# Book 3 - Intro to Django
+# Book 2 - Intro to Django
 
 This book introduces you to the Django application framework, and the Django REST API plugin for rapid API development.
 
@@ -30,14 +30,14 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 
 | #   | 🎓 Django Reflections |
 | --- | --- |
-| 1   | [TODO: Reflections on Django][28] |
+| 1   | [Full Stack Reflections][29] |
 
 
-## 🔐 Group Project Over 4 Sprints
+## 🔐 Group Project
 
 | # | Project&nbsp;Name | Description |
 |--|--|--|
-| 👨‍👩‍👧‍👧 | [???? - The REST API][29] | Lorem ipsum. |
+| 👨‍👩‍👧‍👧 | [Triad of Arcana][29] | Lorem ipsum. |
 
 | #   | 🎓 Full Stack Reflections |
 | --- | --- |
