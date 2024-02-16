@@ -28,9 +28,14 @@ Before moving on to the next book, build up your SQL skills a bit more. SQL is a
 
 Once you have completed all of the Core Projects, your job is to do a self-assessment of your understanding and competencies that you have built so far during your time at NSS. When you are ready to discuss, reach out to an instructor.
 
-| #   | 🎓 Django Reflections |
-| --- | --- |
-| 1   | [Full Stack Reflections][29] |
+| #   | 🎓 Final Reflections | Description |
+| --- | --- | -- |
+| 1   | [Full Stack Reflections][29] |  |
+
+| #   | 🎓 Final Reflections | Description |
+| --- | ------------------ | --- |
+| 1   | [Django Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
+
 
 
 ## 🔐 Group Project
