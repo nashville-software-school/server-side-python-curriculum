@@ -13,9 +13,15 @@
 
 Once you have completed the project, your job is to do a self-assessment. This is truly a self-assessment, as you will need to reflect on what you learned so far.
 
-| #   | 🎓 Reflections |
-| --- | ------------------ |
-| 1   | [Reflect on what you learned about Python and SQL](./chapters/INITIAL_REFLECTIONS.md) |
+| #   | 🎓 Are Your Prepared? | Description |
+| --- | ------------------ | --- |
+| 1   | [Technical Interview](./chapters/INITIAL_REFLECTIONS.md) | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
+
+
+| #   | 🎓 Final Reflections | Description |
+| --- | ------------------ | --- |
+| 1   | [Python and SQL: Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
+
 
 ## 🔐 Group Project
 
@@ -24,6 +30,8 @@ Once everyone has had their reflections interview with a coach, we will start on
 | # | Project&nbsp;Name | Description |
 |--|--|--|
 |1| [Rare Publishing Platform][28] | Your first, large full-stack group project. You will be building an API service with Python, and using SQL to manage the permanent state in your database. |
+
+
 
 
 [1]:	./chapters/CC_PROJECT_SETUP.md
