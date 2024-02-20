@@ -49,7 +49,7 @@ print(my_list)
 
 ```sh
 mkdir -p ~/workspace/python/lists && cd $_
-touch random.py
+touch random_numbers.py
 ```
 
 ### Instructions
