@@ -28,25 +28,19 @@ Before moving on to the next book, build up your SQL skills a bit more. SQL is a
 
 Once you have completed all of the Core Projects, your job is to do a self-assessment of your understanding and competencies that you have built so far during your time at NSS. When you are ready to discuss, reach out to an instructor.
 
-| #   | 🎓 Final Reflections | Description |
+| #   | 🎓 Sprint Preparation | Description |
 | --- | --- | -- |
-| 1   | [Full Stack Reflections][29] |  |
+| 1   | [Full Stack Reflections][29] | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
 
 | #   | 🎓 Final Reflections | Description |
 | --- | ------------------ | --- |
 | 1   | [Django Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
 
-
-
 ## 🔐 Group Project
 
-| # | Project&nbsp;Name | Description |
-|--|--|--|
-| 👨‍👩‍👧‍👧 | [Triad of Arcana][29] | Lorem ipsum. |
-
-| #   | 🎓 Full Stack Reflections |
-| --- | --- |
-| 1   | [TODO: Full Stack Reflections][30] |
+| # | Project&nbsp;Name | Description | Reference Material |
+|--|--|--|--|
+| 👨‍👩‍👧‍👧 | [Triad of Arcana][29] | Create potions from different ingredients, spells from different magical words, and artifacts from different materials. Once the witch/wizard creates one of each of sufficient potency, all three can be used to summon a familiar that has traits that match each item | [Integration Tests](./chapters/TESTING.md) |
 
 
 [1]: https://mystery.knightlab.com/
