@@ -82,5 +82,3 @@ Terminal output:
 `Foghorn Leghorn is a leghorn rooster`
 
 Change your critter classes so that any objects created from them will be rerpesented as strings in the above format.
-
-[Move to next chapter >](./CC_COMPOSITION.md)
