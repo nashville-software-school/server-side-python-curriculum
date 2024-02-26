@@ -12,3 +12,5 @@ def do_POST(self):
 Your job is to follow the same pattern that is being used for GET, PUT, and DELETE operations to allow a client to create a ship, hauler, or dock. You will be using the `INSERT INTO` statement for this operation. Open each of your view files and add a new function for creation operations.
 
 Make sure that this methods accept the POST data as a parameter, just like the update methods do.
+
+[Expand dock chapter >](./SS_API_IMPERATIVE_EXPAND_HAULER_DOCK.md)

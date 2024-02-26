@@ -76,4 +76,4 @@ Once your team has chosen which tools will be used, use your debugging skills to
 
 When your sequence diagram is complete, you must contact one of your coaches for a review. Once that review is done, and any corrections are made, you can move on to the next chapter.
 
-[Expand dock chapter >](./SS_API_IMPERATIVE_EXPAND_HAULER_DOCK.md)
+[Create Resources Chapter >](./SS_API_CREATE_RESOURCES.md)
