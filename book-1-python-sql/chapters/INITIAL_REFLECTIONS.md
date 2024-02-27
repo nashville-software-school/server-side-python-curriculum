@@ -4,42 +4,56 @@ This is truly a self-assessment, as you will need to reflect on what you learned
 
 When you are done reflecting on these topics and feel that you have a solid understanding of each one, reach out to an instructor for a vocabulary review to ensure you are prepared for technical interviews.
 
-## Object-Oriented Programming Reflection Questions
 
-### Classes
+## What You Should Know
 
-- What is the purpose of a class in object-oriented programming (OOP)?
-- How does defining a class differ from instantiating an object of that class?
+We will not be discussing these questions during the interview, because we expect you to have this knowledge. It is your job to ensure that you have the understanding and vocabulary for them.
 
-### Python Packages
-
-- What are the benefits of packages when developing Python projects?
-
-## Python and SQL Reflections
-
-## `if` Statements
+### `if` Statements
 
 2. Do I understand how to use `elif` and `else` in conjunction with `if`?
 3. What is the difference between using `==` and `is` / `is not` with an `if` statement?
 4. How would I check to see if a dictionary had a key with an `if` statement?
 
-## `for` Loops
+### `for` Loops
 
 1. Can I write a `for` loop to iterate over elements in a list or tuple?
 
-## Functions
+### Functions
 
 1. Am I able to define and call a function in Python?
 2. Do I understand the concepts of function arguments and return values?
 3. Can I describe the technical difference between a method and a function?
 4. What do I need to do to invoke a function that is defined in a different module?
 
-## Modules
+## Concepts and Vocabulary We Will Discuss
+
+These questions will be discussed during our interview, but we will not review the actual code.
+
+### Classes
+
+- What is the purpose of a class in object-oriented programming (OOP)?
+- How does defining a class differ from instantiating an object of that class?
+
+### Modules
 
 1. Can I explain what a Python module is and why it is useful?
 2. Do I know how to import and use functions from a module?
+3. What are the benefits of packages when developing Python projects?
 
-## Data Structures
+
+### HTTP Response Codes
+
+1. When a server throws an unexpected exception, which status code should I send to the client in the response?
+2. If the client requested a supported resource that doesn't exist, what status code should be part of the response meta-data?
+3. If the client did not send all of the required data in the payload of the request, what status code should be part of the response meta-data?
+4. If the client tries to perform an action _(GET, POST, PUT, or DELETE)_ that isn't supported by the API, what status code should be part of the response meta-data?
+
+## Code Review
+
+These questions will be part of a code review of Kneel Diamonds, so you will be asked to share your screen.
+
+### Data Structures
 
 1. Can I create, modify, and access elements in a Python list?
 1. If I was asked in an interview to describe a dictionary, what would I say?
@@ -47,18 +61,11 @@ When you are done reflecting on these topics and feel that you have a solid unde
 1. Do I know the difference between an object and a dictionary in Python?
 4. What can an object do that a dictionary can't?
 
-## Try/Except
+### Try/Except
 
 1. Can I explain the purpose of a `try/except` block in Python?
 
-## HTTP Response Codes
-
-1. When a server throws an unexpected exception, which status code should I send to the client in the response?
-2. If the client requested a supported resource that doesn't exist, what status code should be part of the response meta-data?
-3. If the client did not send all of the required data in the payload of the request, what status code should be part of the response meta-data?
-4. If the client tries to perform an action _(GET, POST, PUT, or DELETE)_ that isn't supported by the API, what status code should be part of the response meta-data?
-
-## SQL
+### SQL
 
 1. Can I explain what SQL is and why it is used in software development?
 1. Am I able to write a basic SQL query to select a single record from a database table?
