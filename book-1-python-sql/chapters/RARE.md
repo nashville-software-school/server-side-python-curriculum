@@ -19,7 +19,6 @@ You'll be working in two separate repos for the project. One for the client and 
 1. Create a directory that will hold both github repos. For example, `~/workspace/python/rare`.
 2. `cd` to that directory.
 3. Clone the client and server side repos into this folder.
-4. Once cloned, follow the instructions in each readme has instructions to get the starter code set up.
 
 ## Constraints for Vanilla Python Rare
 
@@ -36,4 +35,3 @@ The database development team has already taken a stab at the [ERD for this proj
 
 Wireframes from Product Team
 https://miro.com/app/board/o9J_kiGCSK4=/
-
