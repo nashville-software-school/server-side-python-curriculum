@@ -24,7 +24,6 @@ You'll be working in two separate repos for the project. One for the client and 
 
 * You are not going to worry about admin users for this first sprint. Assume all users are authors.
 * Since there are no admins, posts should be automatically published and not wait for approval.
-* No image uploads for user profile or post
 
 ## ERD
 
