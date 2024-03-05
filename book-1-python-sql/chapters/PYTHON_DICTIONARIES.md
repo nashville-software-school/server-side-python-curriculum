@@ -143,7 +143,7 @@ touch family_dict.py
         }
     }
     ```
-2. Using a dictionary comprehension, produce output that looks like the following example.
+2. Use the `print()` function and an f-string to access the correct keys to produce output that looks like the following example.
     ```haml
     Krista is my sister and is 42 years old
     ```
