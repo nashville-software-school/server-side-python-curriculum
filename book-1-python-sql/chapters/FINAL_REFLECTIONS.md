@@ -22,7 +22,6 @@ Your instructional team will be scheduling time with each of you to discuss what
 
 ## REST and HTTP
 
-- Did the server code need to retain any information about the React client between HTTP requests?
 - Did any of the resources that were supported by your API _(i.e. articles, comments, etc.)_ handled all operations uniformly, or did each support a different interface?
 - Could you describe the common HTTP status codes that you used in this project, and for which methods they are the most appropriate?
 
