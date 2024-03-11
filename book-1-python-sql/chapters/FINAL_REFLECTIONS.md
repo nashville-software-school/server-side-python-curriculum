@@ -1,6 +1,8 @@
 # Final Reflections on Python and SQL
 
-Your instructional team will be scheduling time with each of you to discuss what you learned during the two sprints for Rare Publishing. Here are some topics that we will be reviewing with you.
+On the last day of the project, you will review the following questions and record, individually, the observations you have and your current understanding of each topic. Once everyone on the team is finished documenting their responses to the questions, you will review them collaboratively.
+
+On the following Monday, an instructor will join your team before you start the next round of individual learning and answer questions, provide expert guidance and context that you may have about any topic.
 
 ## Collaboration
 
@@ -33,6 +35,5 @@ Your instructional team will be scheduling time with each of you to discuss what
 
 ## Patterns and Strategies
 
-- Did you find that you were writing the same code over and over again in this project? Let's discuss.
 - Do you feel that basic operations such as filtering data, joining related data, and ordering data were done by the database, your Python code, or your JavaScript code?
 - Did your team ever have the opportunity to refactor either obsolete, over-engineered, or redundant, code when it was discovered?
