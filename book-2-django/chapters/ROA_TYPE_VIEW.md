@@ -104,6 +104,4 @@ Try it out in your API client!
 4. Add a new header to the request named `Authorization`
 5. Grab a token from your `authtoken_tokens` table.
 6. The value will be the word Token, followed by a space, and then the unique token you copied
-7. Then grab one of the following two URLs and send a request.
-   - `http://localhost:8000/types` should return a list of all the types.
-   - `http://localhost:8000/types/1` should return the type with an id of 1.
+7. Send a GET request to `http://localhost:8000/types` and you should get an empty JSON array in the response.
