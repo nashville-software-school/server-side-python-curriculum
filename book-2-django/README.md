@@ -31,7 +31,7 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 
 | # | Project&nbsp;Name | Description | Reference Material |
 |--|--|--|--|
-| 👨‍👩‍👧‍👧 | [Triad of Arcana][29] | Create potions from different ingredients, spells from different magical words, and artifacts from different materials. Once the witch/wizard creates one of each of sufficient potency, all three can be used to summon a familiar that has traits that match each item | [Integration Tests](./chapters/TESTING.md) |
+| 👨‍👩‍👧‍👧 | [Bangazon Commerce][29] | Welcome to the team! You are being hired by the Bangazon Commerce company to help fix and augment a full stack app that is already in development. | [Integration Tests](./chapters/TESTING.md) |
 
 
 [1]: https://mystery.knightlab.com/
@@ -66,6 +66,6 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 [27]: ./chapters/RD_REVIEWS.md
 [28]: ./chapters/RD_CLIENT.md
 
-[29]: ./chapters/DJANGO_REFLECTIONS.md
+[29]: ./chapters/BANG_SETUP.md
 [30]: ./chapters/RARE_REST.md
 [31]: ./chapters/FULL_STACK_REFLECTIONS.md
