@@ -58,9 +58,9 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 [11]: ./chapters/ROA_INSTALLS.md
 [12]: ./chapters/ROA_MODELS.md
 [13]: ./chapters/ROA_AUTHENTICATION.md
-[14]: ./chapters/ROA_ROCK_VIEW.md
-[15]: ./chapters/ROA_FIXTURES.md
-[16]: ./chapters/ROA_TYPE_VIEW.md
+[14]: ./chapters/ROA_TYPE_VIEW.md
+[15]: ./chapters/ROA_ROCK_VIEW.md
+[16]: ./chapters/ROA_FIXTURES.md
 [17]: ./chapters/ROA_EXPAND_USER_TYPE.md
 [18]: ./chapters/ROA_CREATE_ROCK.md
 [19]: ./chapters/ROA_DELETE.md
