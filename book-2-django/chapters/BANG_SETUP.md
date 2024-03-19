@@ -25,3 +25,31 @@ Throughout this journey, you will have the opportunity to work with industry-sta
 Remember, this experience is designed to challenge you, push you beyond your comfort zone, and ultimately, prepare you for the exciting and rewarding career that awaits you as a junior software developer. Embrace the challenges, seek out opportunities for growth, and never hesitate to ask questions or seek guidance from your instructors and peers.
 
 The path ahead may seem daunting, but rest assured, you have the potential to excel. Approach each task with enthusiasm, determination, and a willingness to learn, and you will emerge from this experience as a confident and capable junior software developer, ready to make your mark in the ever-evolving world of technology.
+
+## Getting Started
+
+### Generate your API repository
+
+One teammate needs to follow these instructions. Everyone else wait until it is complete.
+
+1. Pick a team name. Make it simple like a favorite animal or car or mythical creature.
+2. [Visit the generation page](https://github.com/new?template_name=bangazon-api&template_owner=nss-group-projects) for the API repository.
+3. In the **Owner** dropdown, choose your cohort organization, not your personal account.
+4. In the **Repository name** field enter **Bangazon API {team name}**. Do not put curly braces there, just your team name.
+5. Click the **Create repository** button and wait for the repository to be created.
+6. Follow the steps [to clone an existing repository](https://nashville-software-school.github.io/github-workflow/) and create the `develop` branch.
+
+### Adding your teammates
+
+1. Visit the Github repo and click on **Settings**.
+2. Click on **Collaborators** on the left.
+3.  Add your teammates.
+4.  Share the URL to the repo with your team.
+
+## Joining as a collaborator
+
+Everyone else can now visit the URL and accept the invitation. Then follow the steps in the [clone an existing repository](https://nashville-software-school.github.io/github-workflow/) Github Workflow Guide.
+
+## Generate the client repository
+
+Follow the exact same steps for the client repository. Visit the [generation page](https://github.com/new?template_name=bangazon-client&template_owner=nss-group-projects) to get started.
