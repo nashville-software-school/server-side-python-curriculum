@@ -23,15 +23,15 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 | --- | --- | -- |
 | 1   | [Full Stack Reflections][29] | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
 
-| #   | 🎓 Final Reflections | Description |
-| --- | ------------------ | --- |
-| 1   | [Django Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
-
 ## 🔐 Group Project
 
 | # | Project&nbsp;Name | Description | Reference Material |
 |--|--|--|--|
 | 👨‍👩‍👧‍👧 | [Bangazon Commerce][29] | Welcome to the team! You are being hired by the Bangazon Commerce company to help fix and augment a full stack app that is already in development. | [Integration Tests](./chapters/TESTING.md) |
+
+| #   | 🎓 Final Reflections | Description |
+| --- | ------------------ | --- |
+| 1   | [Django Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
 
 
 [1]: https://mystery.knightlab.com/
