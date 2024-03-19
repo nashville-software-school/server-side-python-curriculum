@@ -27,7 +27,7 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 
 | # | Project&nbsp;Name | Description | Reference Material |
 |--|--|--|--|
-| 👨‍👩‍👧‍👧 | [Bangazon Commerce][29] | Welcome to the team! You are being hired by the Bangazon Commerce company to help fix and augment a full stack app that is already in development. | [Integration Tests](./chapters/TESTING.md) |
+| 👨‍👩‍👧‍👧 | [Bangazon Commerce][29] | Welcome to the team! You are being hired by the Bangazon Commerce company to help fix and augment a full stack app that is already in development. |
 
 | #   | 🎓 Final Reflections | Description |
 | --- | ------------------ | --- |

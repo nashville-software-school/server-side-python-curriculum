@@ -57,3 +57,13 @@ Follow the exact same steps for the client repository. Visit the [generation pag
 ## 4. Get your backlog the project
 
 Visit the [Github Workflow Guides](https://nashville-software-school.github.io/github-workflow/) for directions on setting up your project board. When that step is done, let your instructors know and they will migrate the existing issues tickets so that you can have a backlog.
+
+## Reference content
+
+In this project, you'll be asked to write integration tests. You can read the [integration tests introduction](./chapters/TESTING.md) chapter to get started.
+
+You will also be building a small handful of server-side rendered HTML reports.
+
+* Read the [Django and Server-Side Rendering: Generating Dynamic Web Pages](https://clouddevs.com/django/server-side-rendering/) article for a simple introduction.
+* For more examples and features of Django templates, read the [Django Templates](https://www.pythontutorial.net/django-tutorial/django-templates/) article.
+* A complete reference, with examples, for Django templates can be found in the official [The Django template language](https://docs.djangoproject.com/en/5.0/ref/templates/language/) article
