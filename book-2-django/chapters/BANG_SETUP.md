@@ -28,7 +28,7 @@ The path ahead may seem daunting, but rest assured, you have the potential to ex
 
 ## Getting Started
 
-### Generate your API repository
+### 1. Generate your API repository
 
 One teammate needs to follow these instructions. Everyone else wait until it is complete.
 
@@ -46,10 +46,14 @@ One teammate needs to follow these instructions. Everyone else wait until it is 
 3.  Add your teammates.
 4.  Share the URL to the repo with your team.
 
-## Joining as a collaborator
+## 2. Joining as a collaborator
 
 Everyone else can now visit the URL and accept the invitation. Then follow the steps in the [clone an existing repository](https://nashville-software-school.github.io/github-workflow/) Github Workflow Guide.
 
-## Generate the client repository
+## 3. Generate the client repository
 
 Follow the exact same steps for the client repository. Visit the [generation page](https://github.com/new?template_name=bangazon-client&template_owner=nss-group-projects) to get started.
+
+## 4. Get your backlog the project
+
+Visit the [Github Workflow Guides](https://nashville-software-school.github.io/github-workflow/) for directions on setting up your project board. When that step is done, let your instructors know and they will migrate the existing issues tickets so that you can have a backlog.
