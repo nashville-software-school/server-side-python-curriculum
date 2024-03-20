@@ -60,7 +60,7 @@ Visit the [Github Workflow Guides](https://nashville-software-school.github.io/g
 
 ## Reference content
 
-In this project, you'll be asked to write integration tests. You can read the [integration tests introduction](./chapters/TESTING.md) chapter to get started.
+In this project, you'll be asked to write integration tests. You can read the [integration tests introduction](./TESTING.md) chapter to get started.
 
 You will also be building a small handful of server-side rendered HTML reports.
 
