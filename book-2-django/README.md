@@ -21,7 +21,7 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 
 | #   | 🎓 Sprint Preparation | Description |
 | --- | --- | -- |
-| 1   | [Full Stack Reflections][29] | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
+| 1   | [Full Stack Reflections][31] | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
 
 ## 🔐 Group Project
 
