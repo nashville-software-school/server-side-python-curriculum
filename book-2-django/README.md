@@ -10,9 +10,9 @@ After a brief dive into strengthening your SQL skills, this book introduces you 
 | 2 | [SQL Refresh][2] | [Database Models][4] <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [Defining the Models][12]  <br/> <sub style="font-size:0.85rem;">\#database #models</sub> | [ERD and Models][22] |
 | 3 | | [ORM not SQL][5] <br/> <sub style="font-size:0.85rem;">\#orm</sub> | [Authentication Overview][13] <br/> <sub style="font-size:0.85rem;">\#authentication</sub> | [Authentication with ViewSets][23] |
 | 4 | | [Views][6] <br/> <sub style="font-size:0.85rem;">\#viewset</sub> | [Types View][14] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Database Seeding Automation][24] |
-| 5 | | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Rocks View][15] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Getting Categories][24] |
-| 6 | | [URLs][8] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Database Fixtures][16] <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Handling Book Requests][25] |
-| 7 | | [Your First Migration][9] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Expand Rock Type and User][17] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Reviewing Books][26] |
+| 5 | | [Serializers][7] <br/> <sub style="font-size:0.85rem;">\#serializer</sub> | [Rocks View][15] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Getting Categories][25] |
+| 6 | | [URLs][8] <br/> <sub style="font-size:0.85rem;">\#routes</sub> | [Database Fixtures][16] <br/> <sub style="font-size:0.85rem;">\#fixtures \#database</sub> | [Handling Book Requests][26] |
+| 7 | | [Your First Migration][9] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Expand Rock Type and User][17] <br/> <sub style="font-size:0.85rem;">\#viewset \#serializer</sub> | [Reviewing Books][27] |
 | 8 | | [Make an Appointment][10] <br/> <sub style="font-size:0.85rem;">\#database \#migration</sub> | [Creating Rocks][18] <br/> <sub style="font-size:0.85rem;">\#POST</sub> |  |
 | 9 | | | [Deleting Rocks][19] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> |  |
 | 10 | | | [Only My Rocks][20] <br/> <sub style="font-size:0.85rem;">\#filter \#query-params</sub> |  |
@@ -61,8 +61,8 @@ Once you have completed all of the Core Projects, your job is to do a self-asses
 [22]: ./chapters/RD_MODELS.md
 [23]: ./chapters/RD_AUTH.md
 [24]: ./chapters/RD_SEED.md
-[25]: ./chapters/RD_BOOKS.md
-[26]: ./chapters/RD_CATEGORIES.md
+[25]: ./chapters/RD_CATEGORIES.md
+[26]: ./chapters/RD_BOOKS.md
 [27]: ./chapters/RD_REVIEWS.md
 [28]: ./chapters/RD_CLIENT.md
 
