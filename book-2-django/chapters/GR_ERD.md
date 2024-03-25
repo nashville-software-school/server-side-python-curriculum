@@ -19,7 +19,7 @@ Below are the features and requirements for what resources are needed for this a
 * Players can see the average rating of a game _(by you implementing a custom model property)_.
 * Players can view all reviews for a game.
 
-Use this information to create an ERD for this project. Visit your instruction team for approval once you believe you have a good diagram.
+Use this information to create an ERD for this project. Utilize your favorite generative AI tool to generate some models and fixtures when you start coding.
 
 ## Helpful Resources
 
