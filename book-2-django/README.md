@@ -17,7 +17,13 @@ After a brief dive into strengthening your SQL skills, this book introduces you 
 | 9 | | | [Deleting Rocks][19] <br/> <sub style="font-size:0.85rem;">\#DELETE</sub> |  |
 | 10 | | | [Only My Rocks][20] <br/> <sub style="font-size:0.85rem;">\#filter \#query-params</sub> |  |
 
-Once you have completed all of the Core Projects, your job is to do a self-assessment of your understanding and competencies that you have built so far during your time at NSS. When you are ready to discuss, reach out to an instructor.
+
+
+| #   | 🚴🏽‍♂️ Additional Practice | Description |
+| --- | --- | -- |
+| 1   | [Gamer Rater](./GAMERRATER.md) | You have been presented with an unique business opportunity. A local startup has received a round of seed funding to build a platform that lets people talk about, provide information about, and rate the games that they play. |
+
+
 
 | #   | 🎓 Sprint Preparation | Description |
 | --- | --- | -- |
