@@ -2,18 +2,6 @@
 
 Your first Django ViewSet and React components you should create are for viewing a list of all games in the system, and then a form for creating a game.
 
-## Django Files
-
-1. `raterproject\views\__init__.py`
-1. `raterproject\views\game.py`
-
-## React Files
-
-1. `managers/GameManager.js`
-1. `components/game/GameList.js`
-1. `components/game/GameDetails.js`
-1. `components/game/GameForm.js`
-
 ## Feature Requirements
 
 In the React client, make sure there is a navigation bar link labeled "Games". When the user clicks that hyperlink, the URL in the browser should change to http://localhost:3000/games.

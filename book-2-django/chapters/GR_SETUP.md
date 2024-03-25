@@ -13,18 +13,24 @@ You have been presented with an unique business opportunity. A local startup has
 
 In this project, you are going to create an API, and a React client that will interact with it. This means that you need two new directories in `workspace` and will create two separate Github repositories to track the changes in each.
 
-Start with creating the project for your API. You can use the suggested directory below, or decide on your own.
 
-```sh
-cd ~/workspace/python
-django-admin startproject raterproject
-```
+### Starting your Gamer Rater Project
 
-Then create the Github repository for your API project and do an initial commit.
+1. In your terminal, go to your **workspace** directory.
+2. Create a new directory called **gamerrater**.
+3. `cd` to that directory.
+4. You are going to run a script that prompts you for a word for your project. When it prompts you, enter the word **rater**.
+5. Run the following command in the terminal and enter **rater** when prompted.
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nashville-software-school/course-bash-scripts/main/python/django-setup.sh)"
+   ```
+6. Once the process completes, run `pipenv shell` to activate the virtual environment that was created for your project.
+7. Open the project in Visual Studio Code.
+
 
 ## Step 1: Authentication
 
-You can steal the registration and authentication logic verbatim from Level Up in the `auth.py`.
+You can steal the registration and authentication logic verbatim from a previous project.
 
 ## The Process
 

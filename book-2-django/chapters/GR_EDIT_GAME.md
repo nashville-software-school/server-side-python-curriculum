@@ -10,4 +10,4 @@ Only the user who created the game should be allowed to edit its details. Again,
 * Estimated time to play
 * Age recommendation
 
-In react, create a new form to update the game.
+In React, create a new form to update the game.
