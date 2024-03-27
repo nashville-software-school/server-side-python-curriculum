@@ -2,6 +2,16 @@
 
 We are thrilled to have you on board as a new junior software developer. At Bangazon, we are committed to delivering high-quality e-commerce solutions to our customers, and your role will be crucial in helping us achieve this goal.
 
+Watch the following welcome video to learn more about the company, your role, and your team.
+
+<a href="https://youtu.be/hb9r7uBWM-o" target="_blank">
+    <img src="./images/video-play-icon.gif" height="75rem">
+</a>
+
+## Sprint Work
+
+You will be working on a backlog of tickets that simulate the work you will be doing as a junior developer during your first 6-12 months on the job.
+
 This hands-on approach will not only reinforce the technical concepts you have learned but will also foster the problem-solving abilities, debugging skills, critical thinking, and collaboration skills that are essential in any development team.
 
 ## Bug Fixes
