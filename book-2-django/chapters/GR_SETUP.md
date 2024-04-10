@@ -27,7 +27,6 @@ In this project, you are going to create an API, and a React client that will in
 6. Once the process completes, run `pipenv shell` to activate the virtual environment that was created for your project.
 7. Open the project in Visual Studio Code.
 
-
 ## Step 1: Authentication
 
 You can steal the registration and authentication logic verbatim from a previous project.
