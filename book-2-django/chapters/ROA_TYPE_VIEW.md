@@ -98,6 +98,8 @@ Here is a 5:55 minute walkthrough of implementing the code with explanations.
 
 Try it out in your API client!
 
+> Do not test this functionality in the React client until after the fixtures chapter is done
+
 1. Open the `authtoken_token` table in your database and examine the `pk` key on each object. These are unique tokens assigned to every user in the system.
 2. Copy any one of them to use in your API client.
 3. Start a new GET request.
