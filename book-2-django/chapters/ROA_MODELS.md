@@ -18,8 +18,8 @@ Table Rock {
   id int pk
   name varchar
   weight decimal
-  type_id int [ref: > Type.id]
-  user_id int [ref: > User.id]
+  type int [ref: > Type.id]
+  user int [ref: > User.id]
 }
 
 Table Type {
@@ -46,8 +46,8 @@ erDiagram
         id int pk
         name varchar
         weight decimal
-        user_id int
-        type_id int
+        user int
+        type int
     }
     Rock ||--|{ Type : contains
     Type  {
