@@ -8,10 +8,6 @@ Describe the problem you have identified and want to solve with your project. Al
 
 _Wireframes must include each view you intend to have. Each view must include a layout to show where content will be displayed._
 
-[View an example of good wireframes](./images/capstone-wireframe-example.png)
-
-[View another example of good wireframes](./images/wireframe-example-001.png)
-
 {insert link to your wireframes that are publicly accessible to your coach}
 
 ## ERD
@@ -59,4 +55,6 @@ _Value enhancing stories are what you will work on **after** you and you coach a
 ## Getting Started
 
 1. Open the [Server Side Capstone Proposal Template](https://docs.google.com/document/d/1FGMU-wQqIciig0JhtOBBKOORSPCROUW0Y27w9io4qMg/edit?usp=sharing) and make a copy. Do not ask for edit access on the template.
-2. When you have a complete proposal, ERD, and wireframe, submit your proposal on the [Learning Platform](https://learning.nss.team/).
+2. [View an example of good wireframes](./images/capstone-wireframe-example.png)
+3. [View another example of good wireframes](./images/wireframe-example-001.png)
+4. When you have a complete proposal, ERD, and wireframe, submit your proposal on the [Learning Platform](https://learning.nss.team/).
