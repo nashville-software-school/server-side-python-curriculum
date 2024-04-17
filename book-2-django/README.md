@@ -19,8 +19,6 @@ After a brief dive into strengthening your SQL skills, this book introduces you 
 | 11 | | | | | [Searching Games][51] |
 | 11 | | | | | [Sorting Games][52] |
 
-
-
 ## 🔐 Group Project
 
 | #   | 🎓 Sprint Preparation | Description |
@@ -34,7 +32,6 @@ After a brief dive into strengthening your SQL skills, this book introduces you 
 | #   | 🎓 Final Reflections | Description |
 | --- | ------------------ | --- |
 | 1   | [Django Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
-
 
 [1]: https://mystery.knightlab.com/
 [2]: ./chapters/SQL_REFRESH.md
