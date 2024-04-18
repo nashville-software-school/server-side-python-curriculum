@@ -1,6 +1,6 @@
 # Digital Ocean Static App Deploy
 
-First, if you haven't used Digital Ocean yet, [sign up for $100 credit](https://m.do.co/c/47e5e578d1cd).
+First, if you haven't used Digital Ocean yet, [sign up for 60-day, $200 credit](https://m.do.co/c/47e5e578d1cd).
 
 Deploying your first three static sites is cost free on Digital Ocean. Your React applicatons are considered to be static apps, so you won't be charged for them, unless you go over your 3 free static deployed apps.
 
