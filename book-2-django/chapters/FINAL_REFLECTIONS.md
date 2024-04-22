@@ -1,6 +1,6 @@
 # Final Reflections on Django and DRF
 
-Your instructional team will be scheduling time with each of you to discuss what you learned during the three sprints for Triad of Arcana project. Here are some topics that we will be reviewing with you.
+Your instructional team will be scheduling time with each of you to discuss what you learned during the three sprints for Bangazon project. Here are some topics that we will be reviewing with you.
 
 ## DRF Tools
 
