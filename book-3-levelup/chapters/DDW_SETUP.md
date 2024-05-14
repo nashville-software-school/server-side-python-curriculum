@@ -26,6 +26,10 @@ Use this link to create a repo for this chapter: https://githubtools.reppedintec
 - Once that's done, open up the directory in VS Code: `code .`
 - Once in your repo, start your shell: `pipenv shell`
 - Install your dependencies: `pipenv install`
+- Run this command in your terminal to get your starter database. You'll learn more what these commands do in the next few chapters:
+   ```shell
+   python3 manage.py makemigrations deshawnapi; python3 manage.py migrate; python3 manage.py loaddata cities; python3 manage.py loaddata walkers; python3 manage.py loaddata dogs;
+   ```
 
 ## Select Python Interpreter
 
