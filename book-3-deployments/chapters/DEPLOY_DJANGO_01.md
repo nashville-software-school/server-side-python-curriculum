@@ -26,4 +26,16 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", '').split(",")
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False")
 ```
 
+If you haven't deployed your client, do that now.
+
+Then come back to the `settings.py` file and update the CORS whitelist section to add the public URL of your client
+
+```py
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'add public URL here'
+)
+```
+
 [Go to Step 2 >](./DEPLOY_DJANGO_02.md)

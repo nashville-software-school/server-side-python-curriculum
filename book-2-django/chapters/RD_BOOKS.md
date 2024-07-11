@@ -154,7 +154,7 @@ class BookSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'author', 'isbn_number', 'cover_image', 'is_owner', 'categories']
 ```
 
-In order for that to work, the `request` object needs to be provide as a bit of context for the serializer. Note the new `context` argument provided in the list method.
+In order for that to work, the `request` object needs to be provided as a bit of context for the serializer. Note the new `context` argument provided in the list method.
 
 ```py
 class BookViewSet(viewsets.ViewSet):

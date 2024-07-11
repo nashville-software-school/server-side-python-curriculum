@@ -1,160 +1,125 @@
-# Python Dictionary
+# Dictionaries
 
-## Overview
+## Explanation
+A dictionary in Python is an unordered collection of items where each item is stored as a key-value pair. Dictionaries are mutable, allowing for dynamic updates of their elements. They are defined by enclosing key-value pairs in curly braces `{}`.
 
-Dictionaries are the new Object from JavaScript. They are key/value pairs just like objects, but creating and accessing the key/value pairs can only be done with square-bracket notation.
+## When to Use
+Dictionaries are used when you need to associate unique keys with specific values, allowing for fast lookups, updates, and deletions. Common use cases include:
+- Storing and accessing data by unique identifiers.
+- Maintaining records with named fields (like a simple database).
 
-You can create a dictionary in two ways.
+## Implementation Example
+Let's create a simple phonebook application where you can add, remove, and display contacts.
 
-```py
-# Dictionaries (unordered, mutable, does NOT allow duplicates & indexed w/ key value pairs)
+```python
+# Initialize an empty phonebook
+phonebook = {}
 
-# Create an empty dictionary
-animal = dict()
-# Add k/v pairs
-animal["name"] = "Kevin"
-animal["breed"] = "Bulldog"
-animal["age"] = 5
+# Function to add a contact
+def add_contact(name, number):
+    phonebook[name] = number
+    print(f"Contact '{name}' added with number {number}.")
 
-# Create the dictionary with k/v pairs and assign to variable
-animal = {
-    "name": "Kevin",
-    "breed": "Bulldog",
-    "age": 5
-}
+# Function to remove a contact
+def remove_contact(name):
+    if name in phonebook:
+        del phonebook[name]
+        print(f"Contact '{name}' removed.")
+    else:
+        print(f"Contact '{name}' not found.")
+
+# Function to display all contacts
+def display_contacts():
+    print("Phonebook:")
+    for name, number in phonebook.items():
+        print(f"{name}: {number}")
+
+# Adding contacts
+add_contact("Alice", "123-456-7890")
+add_contact("Bob", "987-654-3210")
+add_contact("Charlie", "555-555-5555")
+
+# Displaying contacts
+display_contacts()
+
+# Removing a contact
+remove_contact("Bob")
+
+# Displaying contacts again
+display_contacts()
+
+# View the entire dictionary
+print(phonebook)
 ```
 
-Dictionaries are iterable.
+## Beginner Task: Student Grades Dictionary
 
-```py
-for (key, value) in animal.items():
-    print(f"{key}: {value}")
-
-# Output
-name: Kevin
-breed: Bulldog
-age: 5
-```
-
-## Setup
-
-```sh
-mkdir -p ~/workspace/python/dictionaries && cd $_
-touch dictionaryOfWords.py
-```
-
-## References
-
-* [Python dictionaries](https://docs.python.org/3.6/tutorial/datastructures.html#dictionaries)
-* [Learn Python - Dictionaries](https://www.learnpython.org/en/Dictionaries)
-* [Introducing Dictionaries](http://www.diveintopython.net/native_data_types/index.html#odbchelper.dict)
-
-## Practice: Dictionary of Words
-
-You are going to build a Python Dictionary to represent an actual dictionary. Each key/value pair within the Dictionary will contain a single word as the key, and a definition as the value. Below is some starter code. You need to add a few more words and definitions to the dictionary.
-
-After you have added them, use square bracket notation to output the definition of two of the words to the console.
-
-Lastly, use the `for in` loop to iterate over the KeyValuePairs and display the entire dictionary to the console.
-
-```py
-"""
-Create a dictionary with key value pairs to
-represent words (key) and its definition (value)
-"""
-word_definitions = dict()
-
-"""
-Add several more words and their definitions
-   Example: word_definitions["Awesome"] = "The feeling of students when they are learning Python"
-"""
-
-"""
-Use square bracket lookup to get the definition of two
-words and output them to the console with `print()`
-"""
-
-
-"""
-Loop over the dictionary to get the following output:
-    The definition of [WORD] is [DEFINITION]
-    The definition of [WORD] is [DEFINITION]
-    The definition of [WORD] is [DEFINITION]
-"""
-```
-
-## Practice: English Idioms
-
-Create a new Python file and paste the following code into it. At the end write a `for in` loop to produce the output below.
-
-```py
-idioms = {
-    "Penny": ["A", "penny", "for", "your", "thoughts"],
-    "Injury": ["Add", "insult", "to", "injury"],
-    "Moon": ["Once", "in", "a", "blue", "moon"],
-    "Grape": ["I", "heard", "it", "through", "the", "grapevine"],
-    "Murder": ["Kill", "two", "birds", "with", "one", "stone"],
-    "Limbs": ["It", "costs", "an", "arm", "and", "a", "leg"],
-    "Grain": ["Take", "what", "someone", "says", "with", "a", "grain", "of", "salt"],
-    "Fences": ["I'm", "on", "the", "fence", "about", "it"],
-    "Sheep": ["Pulled", "the", "wool", "over", "his", "eyes"],
-    "Lucifer": ["Speak", "of", "the", "devil"],
-}
-```
-
-> Make sure you [join](https://www.tutorialspoint.com/python/string_join.htm) the strings
-
-#### Output
-
-```markdown
-Penny: A penny for your thoughts
-Injury: Add insult to injury
-Moon: Once in a blue moon
-Grape: I heard it through the grapevine
-Murder: Kill two birds with one stone
-Limbs: It costs an arm and a leg
-Grain: Take what someone says with a grain of salt
-Fences: I'm on the fence about it
-Sheep: Pulled the wool over his eyes
-Lucifer: Speak of the devil
-```
-
-## Challenge: The Family Dictionary
-
-### Setup
-
-```
-mkdir -p ~/workspace/python/exercises/family_dictionary && cd $_
-touch family_dict.py
-```
+Now that you understand how dictionaries work, let's create a simple application to manage a dictionary of student grades. This task will help you practice adding, removing, displaying, and updating items in a dictionary. Follow the instructions below:
 
 ### Instructions
 
-1. Define a dictionary that contains information about several members of your family. Use the following example as a template.
-    ```py
-    my_family = {
-        "sister": {
-            "name": "Krista",
-            "age": 42
-        },
-        "mother": {
-            "name": "Cathie",
-            "age": 70
-        }
-    }
-    ```
-2. Use the `print()` function and an f-string to access the correct keys to produce output that looks like the following example.
-    ```haml
-    Krista is my sister and is 42 years old
-    ```
+1. **Initialize an Empty Dictionary**
+   - Create an empty dictionary named `student_grades`.
 
-    > **Helpful hint:** To convert an integer into a string in Python, it's `str(integer_value)`
+2. **Add Students and Grades to the Dictionary**
+   - Write a function `add_student(name, grade)` that adds a student and their grade to the dictionary and prints a message indicating the student was added.
 
+3. **Remove Students from the Dictionary**
+   - Write a function `remove_student(name)` that removes a student from the dictionary if they exist, and prints a message indicating the student was removed or a message if the student was not found.
 
+4. **Display All Students and Their Grades**
+   - Write a function `display_students()` that prints all the students and their grades.
 
-## Advanced Challenge: Stock Portfolio
+5. **Update a Student's Grade**
+   - Write a function `update_grade(name, grade)` that updates the grade of a student if they exist, and prints a message indicating the grade was updated or a message if the student was not found.
 
-A block of publicly traded stock has a variety of attributes. Let's look at a few of them. A stock has a ticker symbol and a company name. Create a simple dictionary with ticker symbols and company names.
+### Starter Code
+
+Create a module named `gradebook.py` and start with the code below.
+
+```python
+# Initialize an empty dictionary of student grades
+student_grades = {}
+
+# Function to add a student and grade
+def add_student(name, grade):
+    pass
+
+# Function to remove a student
+def remove_student(name):
+    pass
+
+# Function to display all students and their grades
+def display_students():
+    pass
+
+# Function to update a student's grade
+def update_grade(name, grade):
+    pass
+
+# Add some students
+
+# Display students and their grades
+
+# Update a student's grade
+
+# Remove a student
+
+# Display students and their grades again
+```
+
+## Optional Gradebook Challenges
+
+Want to build more complex functionality? Implement the following features. Otherwise, move on.
+
+- **Find a Student's Grade**: Write a function `find_grade(name)` that checks if a student is in the dictionary and prints their grade if found, or a message if the student was not found.
+- **Calculate Average Grade**: Write a function `average_grade()` that calculates and prints the average grade of all students in the dictionary.
+
+## Optional Advanced Challenge: Stock Portfolio
+
+Want to practice your algorithmic thinking skills with Python syntax? Try the challenge below. Otherwise, move on.
+
+A block of publicly traded stock has a variety of attributes. Let's look at a few of them. A stock has a ticker symbol and a company name. Create a simple dictionary with ticker symbols as keys, and company names as values.
 
 ### Setup
 
@@ -166,16 +131,24 @@ touch stocks.py
 ##### Example
 
 ```py
-stockDict = {
+ticker_symbols = {
     "GM": "General Motors",
     "CAT":"Caterpillar",
     "EK":"Eastman Kodak"
 }
 ```
 
-Create a simple list of blocks of stock. Make them tuples with ticker symbols, number of shares, dates and price.
+Next, you need to make a list of tuples. The list represents the collection of all stock purchases by an important client. Each tuple in the list represents a single purchase.
 
-##### Example
+What to store in the tuple:
+
+```py
+(ticket symbol, shares purchased, date of purchase, share price)
+```
+
+#### Example
+
+Below is a list you can start with. Add about 10 more purchases of stocks. Make sure there are some stocks purchased multiple times.
 
 ```py
 purchases = [
@@ -185,18 +158,39 @@ purchases = [
 ]
 ```
 
-Create a purchase history report that computes the full purchase price (shares times dollars) for each block of stock and uses the `stockDict` to look up the full company name. This is the basic relational database join algorithm between two tables.
+Create a purchase history report that computes the full purchase price (shares times dollars) for each stock purchase and uses the `ticker_symbols` dictionary to look up the full company name.
 
-Example output for one block:
-`I purchased General Electric stock for $4800`
+#### Example output
 
-Create a second purchase summary that which accumulates total investment by ticker symbol. In the above sample data, there are two blocks of GE. These can easily be combined by creating a dict where the key is the ticker and the value is the list of blocks purchased. The program makes one pass through the data to create the dict. A pass through the dict can then create a report showing each ticker symbol and all blocks of stock.
+```
+List of all purchases
+---------------------
+General Electric stock purchased for for $4800
+Caterpillar stock purchased for for $2400
+General Electric stock purchased for for $11200
+```
 
-Example output:
+## Grouping Stock Purchases and Total Value
+
+Create a second purchase summary that accumulates total investment by ticker symbol. In the above sample data, there are two purchases of GE. Create a dictionary where, for each company, the ticker symbol is the key, and the value is a list of all purchases of that company's stock.
+
+#### Example
+
+```py
+{
+    'GE': [('GE', 100, '10-sep-2001', 48), ('GE', 200, '1-jul-1998', 56)]
+}
+```
+
+Once that dictionary is created and stores all purchases, iterate the key/value pairs of the dictionary to generate a report that matches the format of the following output.
+
+#### Example output
+
 ```haml
------- GE ------
-100 shares at 48 dollars each on 01-jul-1998
-200 shares at 56 dollars each on 10-sep-2001
+* GE Holdings: $16000
+* CAT Holdings: $2400
 
-Total value of stock in portfolio: $16000
+Portfolion Total
+----------------
+Total value of stock in portfolio: $18400
 ```

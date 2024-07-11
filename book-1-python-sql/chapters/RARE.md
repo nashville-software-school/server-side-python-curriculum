@@ -20,11 +20,6 @@ You'll be working in two separate repos for the project. One for the client and 
 2. `cd` to that directory.
 3. Clone the client and server side repos into this folder.
 
-## Constraints for Vanilla Python Rare
-
-* You are not going to worry about admin users for this first sprint. Assume all users are authors.
-* Since there are no admins, posts should be automatically published and not wait for approval.
-
 ## ERD
 
 The database development team has already taken a stab at the [ERD for this project](https://drawsql.app/nss-2/diagrams/rare-v1). You will use this to start building the project.

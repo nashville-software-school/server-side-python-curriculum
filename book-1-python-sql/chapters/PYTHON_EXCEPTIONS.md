@@ -1,83 +1,107 @@
-# Basic Exception Handling
+# Exception Handling with `try..except`
 
-Because Python is a dynamically typed language, you need to carefully consider how to get the type of a variable and make no assumptions in your code.
+## Explanation
+In Python, exceptions are errors that occur during the execution of a program. When an exception is raised, it disrupts the normal flow of the program and can cause it to crash. To prevent this, we can use `try..except` blocks to catch and handle exceptions gracefully.
 
-## Setup
+The `try` block contains the code that might raise an exception, and the `except` block contains the code that handles the exception if it occurs. This allows the program to continue running even if an error is encountered.
 
-```sh
-mkdir -p ~/workspace/python/exceptions && cd $_
-touch banking.py
-```
-
-## Exceptions
-
-Let's look at some basic code and see what harmful side-effects can happen. Take this code and put it into **banking.py**.
+## Syntax
+The basic syntax of a `try..except` block is as follows:
 
 ```python
-class BankAccount():
-
-  def __init__(self):
-    self.balance = 0
-
-  def add_money(self, amount):
-    """Add money to a bank account
-
-    Arguments:
-      amount - A numerical value by which the bank account's balance will increase
-    """
-    self.balance += amount
-
-  def withdraw_money(self, amount):
-    """Withdraw money to a bank account
-
-    Arguments:
-      amount - A numerical value by which the bank account's balance will decrease
-    """
-    self.balance -= amount
+try:
+    # Code that might raise an exception
+    pass
+except SomeException as e:
+    # Code to handle the exception
+    pass
 ```
 
-Given this class, a developer could easily write this code.
+## Handling a `TypeError`
+
+Let's look at an example of handling a `TypeError`. A `TypeError` occurs when an operation is performed on an inappropriate type of object. For example, trying to add a number and a string will raise a `TypeError`.
+
+Create a Python module named `exceptions.py` and run the following code. Note the exception that gets raised.
 
 ```python
-my_account = BankAccount()
-my_account.add_money('Gazillion dollars')
-my_account.add_money(-55)
+def add_numbers(a, b):
+    result = a + b
+    print(f"The result is: {result}")
+
+# Example usage
+add_numbers(5, "10")
 ```
 
-This will raise a `TypeError` exception because the logic for the `add_money()` tries to perform a mathematical calculation on the value that is stored in the `amount` argument. We passed in a string, so Python will yell at us.
-There is no type coercion in Python. So, in JavaScript "2" + 2 will work, and give you "22", but not so in Python.
-
-Put those three lines of code at the bottom of the module and run it to see the exception that gets raised.
-
-## Handling Exceptions
-
-So we need to think about these kinds of issues when writing our code instead of assuming that the code that invokes this method will _always_ do the correct thing. We need implement exception handling so that a useful exception is raised to the invoking code.
-
-Let's look at how to do that with `try...except` blocks.
+To handle that exception, and produce more useful output, you wrap it in a **try** block.
 
 ```python
-def add_money(self, amount):
-    """Add money to a bank account
-
-    Arguments:
-      amount - A numerical value by which the bank account's balance will increase
-    """
+def add_numbers(a, b):
     try:
-        if amount >= 1:
-            self.balance += amount
-            print("Your deposit was successful")
-            return self.balance
-        else:
-            raise ArithmeticError("Amount needs to be a positive number")
+        result = a + b
+        print(f"The result is: {result}")
+    except TypeError as e:
+        print(f"Please provide two integers as arguments when invoking this function.")
 
-    except TypeError:
-        print('(Error): The add_money method requires a numeric value')
-        raise
-    except ArithmeticError as err:
-        print(f"Your deposit was not successful. Error: {err}")
-        raise
+# Example usage
+add_numbers(5, "10")
 ```
 
-Now, if an incorrect type of value is passed, a human-friendly message is output to the console and the exception is re-raised up to the calling code.
+In this example, the `add_numbers` function tries to add `a` and `b`. If a `TypeError` occurs (e.g., adding an integer and a string), it is caught in the `except` block, and an error message is printed.
 
-Update your code with the exception handling and see how the output changes when you run it.
+## Exercise: Handling a `KeyError`
+
+### Instructions
+
+A `KeyError` occurs when you try to access a dictionary key that does not exist. In this exercise, you'll write a function that tries to access a key in a dictionary and handle the `KeyError` if the key is not found.
+
+### Starter Code
+
+Run the following code to see that it generates a `KeyError`. Your job is to wrap the offending code in a `try..except` block to handle that exception and print a useful message to the console.
+
+```python
+my_dict = {"name": "Alice", "age": 30, "city": "New York"}
+
+def get_value(dictionary, key):
+     value = dictionary[key]
+     print(f"The value for '{key}' is: {value}")
+
+# Example usage
+get_value(my_dict, "name")
+get_value(my_dict, "occupation")
+```
+
+### Expected Output
+The function should print the value for the key if it exists in the dictionary. If the key does not exist, it should print an error message.
+
+```python
+The value for 'name' is: Alice
+KeyError: The key 'occupation' was not found in the dictionary.
+```
+
+## Exercise: Handling a `ZeroDivisionError`
+
+### Instructions
+
+A `ZeroDivisionError` occurs when you try to divide a number by zero. In this exercise, you'll write a function that attempts to divide two numbers and handle the `ZeroDivisionError` if the denominator is zero.
+
+### Starter Code
+
+Place the following code in a new module named `shopping_cart.py`. The following code generates a `ZeroDivisionError`. Your task is to have the function return 0 if there are no items in the cart by implementing a `try..except` block.
+
+```python
+shopping_cart_items = []
+
+def average_price(cart_items):
+    average = 0
+
+    for item in cart_items:
+      average += item.price
+
+    average = average / len(cart_items)
+
+    return average
+
+average_price_of_cart_items = average_price(shopping_cart_items)
+
+print(f"Your average cart item price is {shopping_cart_items} dollars")
+```

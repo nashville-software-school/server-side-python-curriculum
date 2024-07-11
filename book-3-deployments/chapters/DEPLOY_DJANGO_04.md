@@ -1,5 +1,15 @@
 # Step 4: Creating Digital Ocean App
 
+## Generate requirements file
+
+Only if you are using Poetry to create and manage your virtual environment, you need to run the following command to generate a dependencies file that Digital Ocean supports. If you used `pipenv` then you can skip this step.
+
+```bash
+poetry export --format=requirements.txt > requirements.txt
+```
+
+## Generate App
+
 First, if you haven't used Digital Ocean yet, [sign up for $100 credit](https://m.do.co/c/47e5e578d1cd) which is good for 60 days.
 
 > Reminder: Deploying your Django app is $5.00 per month after your initial credit is used, or after 60 days has passed.
@@ -23,6 +33,7 @@ Then, click **Edit** to the right of the **Run Command** section. Your completed
 Recall that the name of your project is the directory name where `urls.py` and `settings.py` are, not where your models, views, fixtures are. Replace `django_app` in the command below with your project name.
 
 ```sh
+python manage.py makemigrations {name of your api project}
 python manage.py migrate
 gunicorn --worker-tmp-dir /dev/shm django_app.wsgi
 ```

@@ -66,7 +66,7 @@ Follow the exact same steps for the client repository. Visit the [generation pag
 
 ## 4. Get your backlog the project
 
-Visit the [Github Workflow Guides](https://nashville-software-school.github.io/github-workflow/) for directions on setting up your project board. When that step is done, let your instructors know and they will migrate the existing issues tickets so that you can have a backlog.
+Visit the [Github Workflow Guides](https://nashville-software-school.github.io/github-workflow/) for directions on setting up your project board for the API repository. When that step is done, let your instructors know and they will migrate the existing issues tickets so that you can have a backlog.
 
 ## Reference content
 

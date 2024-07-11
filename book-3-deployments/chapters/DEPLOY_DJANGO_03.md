@@ -6,6 +6,12 @@ Make sure the virtual environment for your project is activated in your terminal
 pipenv install gunicorn dj-database-url psycopg2-binary
 ```
 
+If you used Poetry to create your virtual environment, the command is...
+
+```sh
+poetry add gunicorn dj-database-url psycopg2-binary
+```
+
 At this point, make sure you add, commit, and push all changes to your Github repo.
 
 [Go to Step 4 >](./DEPLOY_DJANGO_04.md)

@@ -17,7 +17,7 @@ Now you can go to Postman, or whichever API client you are using, and perform th
 
 Once you have verified that DELETE requests work, the next step is to ensure that only the creator of the rock can delete it. You don't want users to be allowed to delete the rocks in other users' collections.
 
-Remember the `request.auth.user` object that Django automatically provides to allow you to know who is authenticated in the client? Probably not, so you're doing to practice using it again.
+Remember the `request.auth.user` object that Django automatically provides to allow you to know who is authenticated in the client? Probably not, so you're going to practice using it again.
 
 Before you invoke the `.delete()` method on a Rock instance, you want to make sure that the authenticated user owns it. The good news is that the check is pretty easy with Django.
 

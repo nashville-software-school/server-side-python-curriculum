@@ -10,9 +10,14 @@ Deploying your first three static sites is cost free on Digital Ocean. Your Reac
 2. Connect Digital Ocean to your Github account if you haven't yet.
 3. Click the Github icon.
 4. Choose your repository from the search field that appears.
-5. Click next.
-6. It will auto-detect that you're trying to deploy a **Static Site** and all of the defaults should be unchanged.
+5. Click **Next**.
+6. It _should_ auto-detect that you're trying to deploy a **Static Site** and all of the defaults should be unchanged. 
     > Note: If you get a message that it could not find an app in your repo, type `/src` in the "Source directory" field and click "Find directory".
+7. If it did not detect that your React app is static, follow these steps
+    1. Click on the **Edit** button next to the web service.
+    2. Click on the **Edit** link in the **Resource type** section
+    3. Choose **Static Site** from the dropdown.
+    4. Click **Save**.
 7. Click next.
 8. Type in an app name like "sinks-steve" or anything else that works.
 9. Click next.

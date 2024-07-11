@@ -1,6 +1,6 @@
 # Designing Your Database
 
-Time to revisit many-to-many relationships and create your ERD for the Reader's Digest API project. Here are the requirements for the database. Your job is to design the ERD is dbDiagram.
+Time to revisit many-to-many relationships and create your ERD for the Reader's Digest API project. Here are the requirements for the database. Your job is to design the ERD in dbDiagram.
 
 * You will be using the Django **User** to track users and authentication in this application.
 * There will be multiple book categories. Each category will have a _name_ field.

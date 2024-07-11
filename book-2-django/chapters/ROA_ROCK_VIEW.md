@@ -1,6 +1,6 @@
-# Support GET and POST for Rocks
+# Support GET for Rocks
 
-For the **Rock** view, you initially need to support the following request types.
+For the **Rock** view, you will eventually support the following request types.
 
 | Method | URL | Response Data | Status Code |
 |--|--|--|--|
@@ -73,7 +73,7 @@ Try it out in your API client!
 
 > Do not test this functionality in the React client until after the fixtures chapter is done
 
-Make a request to the route you just configured and verify that you get an empty JSON array back in the response. Then move on to the content below and then try a POST request to that URL and verify that you get the JSON of a newly created rock back in the response.
+Make a request to the route you just configured and verify that you get an empty JSON array back in the response.
 
 ## Client Keys and Server Keys
 

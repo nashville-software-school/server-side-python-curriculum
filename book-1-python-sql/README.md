@@ -4,9 +4,9 @@
 |--|--|--|--|--|--|
 | 1 | [Python Lists][24] | [Meeting Bobby Kawlins][1] | [Khan Academy: Intro to SQL][14] | [Debugging Python in Visual Studio Code][7] | [Project Setup][16]|
 | 2 | [Python Dictionaries][25] | [Critter Creation][2] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | [SQL Bolt: Beginner SQL Tutorial][15] | [Get the Code][8] | [Diamonds Database][17] |
-| 3 | [Python Functions][26] |[Condensed Critter Creation][3] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | |[Create the Database][9] | [Get All Orders][18] |
-| 4 | [Python Exceptions][27] |[Packaging Animals for Transport][4] <br/> <sub style="font-size:0.85rem;">\#packages</sub> | |[Exploring the API][10] | [Get Single Order][19] |
-| 5 | |[Piling On Properties][5] <br/> <sub style="font-size:0.85rem;">\#properties</sub> | | [API Sequence Diagram][11] | [Create New Order][20] |
+| 3 | [Python Sets][26] |[Condensed Critter Creation][3] <br/> <sub style="font-size:0.85rem;">\#classes</sub> | |[Create the Database][9] | [Get All Orders][18] |
+| 4 | [Python Tuples][29] |[Packaging Animals for Transport][4] <br/> <sub style="font-size:0.85rem;">\#packages</sub> | |[Exploring the API][10] | [Get Single Order][19] |
+| 5 | [Python Exceptions][27] |[Piling On Properties][5] <br/> <sub style="font-size:0.85rem;">\#properties</sub> | | [API Sequence Diagram][11] | [Create New Order][20] |
 | 6 | |[Food Function Fun][6] <br/> <sub style="font-size:0.85rem;">\#methods</sub> | | [Creating Resources][12] | [Cancel an Order][21] |
 | 7 | | | | [Who Carries the Ship?][13] | [Update a Metal Price][22] |
 | 8 | | | | | [Embedding Metal, Style, and Size][23] |
@@ -17,12 +17,6 @@ Once you have completed the project, your job is to do a self-assessment. This i
 | --- | ------------------ | --- |
 | 1   | [Technical Interview](./chapters/INITIAL_REFLECTIONS.md) | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
 
-
-| #   | 🎓 Final Reflections | Description |
-| --- | ------------------ | --- |
-| 1   | [Python and SQL: Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
-
-
 ## 🔐 Group Project
 
 Once everyone has had their reflections interview with a coach, we will start on a major group project that will span multiple Sprints.
@@ -31,7 +25,9 @@ Once everyone has had their reflections interview with a coach, we will start on
 |--|--|--|
 |1| [Rare Publishing Platform][28] | Your first, large full-stack group project. You will be building an API service with Python, and using SQL to manage the permanent state in your database. |
 
-
+| #   | 🎓 Final Reflections | Description |
+| --- | ------------------ | --- |
+| 1   | [Python and SQL: Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
 
 
 [1]:	./chapters/CC_PROJECT_SETUP.md
@@ -59,6 +55,7 @@ Once everyone has had their reflections interview with a coach, we will start on
 [23]:   ./chapters/KD_JOIN.md
 [24]:   ./chapters/PYTHON_LISTS.md
 [25]:   ./chapters/PYTHON_DICTIONARIES.md
-[26]:   ./chapters/PYTHON_FUNCTIONS.md
+[26]:   ./chapters/PYTHON_SETS.md
 [27]:   ./chapters/PYTHON_EXCEPTIONS.md
 [28]:   ./chapters/RARE.md
+[29]:   ./chapters/TUPLES.md

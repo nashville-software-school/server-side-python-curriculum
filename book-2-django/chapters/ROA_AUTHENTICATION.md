@@ -18,7 +18,7 @@ Tokens are used by a server and its clients. When the user first registers on th
 
 The following module is already set up for you in your API application. You can review the code if you like, but authenticate is not a core learning objective here at NSS, so we just give you the code.
 
-> #### `honey-rae-server/repairsapi/views/auth.py`
+> #### `rockapi/views/auth.py`
 
 ## Enable Login and Register Requests
 

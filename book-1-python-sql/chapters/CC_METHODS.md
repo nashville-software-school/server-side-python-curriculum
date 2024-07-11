@@ -36,7 +36,7 @@ Remember the `self` parameter you have to add to __init__ when you define it? Th
 ```py
 miss_fuzz = Llama("Miss Fuzz", "domestic llama", "morning", "Llama Chow" )
 
-print(miss_fuzz.feed())
+miss_fuzz.feed()
 ```
 When you run that code, it produces this output (your date will vary)
 

@@ -1,115 +1,80 @@
-# Python Lists
+# Lists
 
-A list is the new array from JavaScript. They are collections of similar items. The syntax is identical to JavaScript's array.
+## Explanation
+
+A list in Python is an ordered collection of items that can hold a variety of object types, such as numbers, strings, and even other lists. Lists are mutable, meaning their elements can be changed after they are created. They are defined by enclosing elements in square brackets [].
+
+## When to Use
+
+Lists are used when you need to maintain an ordered collection of items that may need to be changed or updated. Common use cases include:
+
+1. Storing sequences of items in a specific order.
+2. Maintaining a collection where elements are frequently added, removed, or modified.
+3. Implementing simple collections that require iteration or indexing.
+
+## Implementation Example
+
+Let's create a simple to-do list application where you can add, remove, and display tasks. Create a new sub-directory of your choice in the `workspace` directory to work on the exercises in this column.
+
+Create a Python module named `todos.py` and place the following code in it.
 
 ```py
-# Lists (ordered, mutable & allows duplicates)
+# Initialize an empty to-do list
+todo_list = []
 
-animals = ["Jack", "Noonan", "Blue", "Gypsy"]
+# Function to add a task
+def add_task(task):
+    todo_list.append(task)
+    print(f"Task '{task}' added.")
 
-junk = ["Fred", True, [1, 2, 3], 234]
+# Function to remove a task
+def remove_task(task):
+    if task in todo_list:
+        todo_list.remove(task)
+        print(f"Task '{task}' removed.")
+    else:
+        print(f"Task '{task}' not found.")
 
-# Adding items to the list
-junk.append(234)
-junk.insert(0, "oh, I get it")
-print(junk)
+# Function to display all tasks
+def display_tasks():
+    print("To-Do List:")
+    for task in todo_list:
+        print(f"- {task}")
 
-junk.extend(["Mary", "Joseph", "Bob"])
-print(junk)
+# Adding tasks
+add_task("Read a book")
+add_task("Write some code")
+add_task("Go for a walk")
 
-# Negative indexing
-junk[-1] = "The last item"
-print(junk[-4])
+# Displaying tasks
+display_tasks()
 
-# Loop through the items in a list
-for taco in junk:
-    print(taco)
+# Removing a task
+remove_task("Write some code")
 
-# You can declare an empty list:
-stuff = []
-
-# Create a NEW list from a subset of values in another list with slice
-my_list = [1, 2, 4, "hello", "monkey"]
-my_subset = my_list[0:3]
-my_subset = my_list[1:3]
-my_subset = my_list[:3]
-my_subset = my_list[2:]
-print(my_subset)
-print(my_list)
+# Displaying tasks again
+display_tasks()
 ```
 
-## Reference
 
-* [Python Lists](https://docs.python.org/3.6/tutorial/datastructures.html)
-* [Learn Python - Lists](http://www.learnpython.org/en/Lists)
+## Practice: Favorite Movies List
 
-## Practice: Random Numbers
-
-### Setup
-
-```sh
-mkdir -p ~/workspace/python/lists && cd $_
-touch random_numbers.py
-```
+Now that you have seen an example how lists work, your task is to create a simple application to manage a list of your favorite movies. This task will help you practice adding, removing, displaying, and counting items in a list. Follow the instructions below:
 
 ### Instructions
 
-1. Use the following code in **random.py** to create a list of 10 random numbers. Each number will be between 0 and 6.
-    ```py
-    import random
+1. Create a new module named `my_movies.py`.
+2. **Initialize an Empty List**: Create an empty list named `favorite_movies`.
+3. **Add Movies to the List**: Write a function `add_movie(movie)` that adds a movie to the list and prints a message indicating the movie was added.
+4. **Remove Movies from the List**: Write a function `remove_movie(movie)` that removes a movie from the list if it exists, and prints a message indicating the movie was removed or a message if the movie was not found.
+5. **Display the List**: Write a function `display_movies()` that prints all the movies in the list.
+6. **Count Movies in the List**: Write a function `count_movies()` that prints the number of movies in the list.
+7. **Find a Movie**: Write a function `find_movie(movie)` that checks if a movie is in the list and prints a message indicating whether the movie was found or not.
+8. **Clear the List**: Write a function `clear_movies()` that removes all movies from the list and prints a message indicating the list has been cleared.
 
-    my_randoms = list()
-    for i in range(10):
-        my_randoms.append(random.randrange(1, 6))
-    ```
+## Optional Algorithmic Practice: Planet List
 
-    The `my_randoms` list will now contain random numbers
-    ```py
-    [1, 3, 1, 2, 4, 2, 5, 4, 2, 5]
-    ```
-4. Then iterate a different list of numbers that are sequential from 1 to 10. Use the following code as your starting point.
-
-    ```py
-    import random
-    """
-    Print a message to the console indicating whether each value of
-    `number` is in the `my_randoms` list.
-    """
-
-    my_randoms = list()
-    for i in range(10):
-        my_randoms.append(random.randrange(1, 6))
-
-    # Generate a list of numbers 1..10
-    numbers_1_to_10 = range(1, 11)
-
-    # Iterate from 1 to 10
-    for number in numbers_1_to_10:
-        the_numbers_match = False
-
-        # Iterate your random number list here
-
-        # Does my_randoms contain number? Change the boolean.
-
-        print(f'{number} is in the random list')
-    ```
-
-#### Example Output in the Terminal
-
-```sh
-my_randoms list contains 0
-my_randoms list does not contain 1
-my_randoms list does not contain 2
-my_randoms list contains 3
-my_randoms list contains 4
-my_randoms list does not contain 5
-```
-
-> **NOTE:** Each run will produce different output.
-
-
-
-## Practice: Planet List
+Want to practice your algorithmic thinking, but with Python syntax? First, [learn a bit about **tuples**](https://www.pythontutorial.net/python-basics/python-tuples/) which are lists, but have far fewer operations, and are immutable.
 
 ### Setup
 
@@ -120,7 +85,7 @@ echo 'planet_list = ["Mercury", "Mars"]' >> planets.py
 
 ### Instructions
 
-Open the **planets.py** module in Visual Studio Code to geet started.
+Open the **planets.py** module in Visual Studio Code to get started.
 
 1. Use `append()` to add Jupiter and Saturn at the end of the list.
 1. Use the `extend()` method to add another list of the last two planets in our solar system to the end of the list.
@@ -131,6 +96,17 @@ Open the **planets.py** module in Visual Studio Code to geet started.
 
 ## Challenge: Iterating over planets
 
+| Planet   | Spacecraft   |
+|----------|--------------|
+| Mercury  | Mariner 10, MESSENGER |
+| Venus    | Venera 1-16, Mariner 2, Mariner 5, Mariner 10, Pioneer Venus 1 and 2, Vega 1 and 2, Galileo, Magellan, Cassini, MESSENGER, Venus Express, Parker Solar Probe |
+| Mars     | Mariner 4, Mariner 6 and 7, Mariner 9, Viking 1 and 2, Mars Pathfinder, Mars Odyssey, Spirit, Opportunity,  Phoenix, Dawn, Curiosity, InSight, Perseverance
+| Jupiter  | Pioneer 10 and 11, Voyager 1 and 2, Ulysses, Galileo, Cassini, New Horizons, Juno |
+| Saturn   | Pioneer 11, Voyager 1 and 2, Cassini |
+| Uranus   | Voyager 2 |
+| Neptune  | Voyager 2 |
+| Pluto    | New Horizons |
+
 1. Create another list containing tuples. Each tuple will hold the name of a spacecraft that we have launched, and the names of the planet(s) that it has visited, or landed on.
     ```py
     # Example spacecraft list
@@ -139,4 +115,17 @@ Open the **planets.py** module in Visual Studio Code to geet started.
        ("Viking", "Mars"),
     ]
     ```
-1. Iterate over your list of planets, and inside that loop, iterate over the list of tuples. Print, for each planet, which satellites have visited it.
+2. Iterate over your list of planets, and inside that loop, iterate over the list of tuples. Print, for each planet, which satellites have visited it. Your output should match this.
+
+> Hint: Use tuple unpacking _(a.k.a. destructuring)_ to make your code have a good balance between brevity and readability
+
+```txt
+Cassini has visited
+-----------------------
+Saturn
+
+Voyager 1 has visited
+-----------------------
+Jupiter
+Saturn
+```

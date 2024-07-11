@@ -4,7 +4,7 @@ The last step needed before you can run your migration to add the `deshawnapi_ap
 
 ## URLs and DefaultRouter
 
-The `DefaultRouter` class is incredibly powerful. The downside to powerful tools is frameworks is that they are often highly abstract and mysterious to beginners. This is one of those cases.
+The `DefaultRouter` class is incredibly powerful. The downside to powerful tools is that they are often highly abstract and mysterious to beginners. This is one of those cases.
 
 Open your `urls.py` module and you will see the following code, as well as other code. The relevant code is shown below.
 
@@ -17,7 +17,7 @@ router.register(r'cities', CityView, 'city')
 router.register(r'dogs', DogView, 'dog')
 ```
 
-Your API only supports requests to `/walkers`, `/cities`, and `/dogs`. Any client requests to `/appointments`, or `/turtles` or any other path will told that the resource doesn't exist and get a 404 status code.
+Your API only supports requests to `/walkers`, `/cities`, and `/dogs`. Any client requests to `/appointments`, or `/turtles` or any other path will be told that the resource doesn't exist and get a 404 status code.
 
 To activate your new URL, do the following steps.
 

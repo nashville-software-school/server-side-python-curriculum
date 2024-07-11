@@ -2,7 +2,7 @@
 
 The Django framework comes with a built-in tool that allows you to interact with your database without the need for SQL. Most modern application frameworks come with a tool like this. It's called an Object Relational Mapper - or ORM for short.
 
-The Djano ORM has many powerful features, but we're going to start with the fundamentals - basic CRUD.
+The Django ORM has many powerful features, but we're going to start with the fundamentals - basic CRUD.
 
 * Selecting all rows from a table
 * Selecting a single row from a table
@@ -12,7 +12,7 @@ The Djano ORM has many powerful features, but we're going to start with the fund
 
 ## Selecting all Cities
 
-Using the Django ORM, you would write the follow Python code. It will return a collection of objects that represent each row in the table.
+Using the Django ORM, you would write the following Python code. It will return a collection of objects that represent each row in the table.
 
 ```py
 cities = City.objects.all()

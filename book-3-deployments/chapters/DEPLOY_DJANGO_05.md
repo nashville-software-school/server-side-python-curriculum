@@ -14,6 +14,8 @@ Next, you need to define the environment variables you declared in your projectâ
 
     Again, you can use the [Online UUID Generator](https://www.uuidgenerator.net/) to generate a random secret key. Donâ€™t forget to click the Encrypt check box to ensure that your credentials are encrypted for safety.
 
+* `DISABLE_COLLECSTATIC` -> `1`
+
 Click **Save**.
 
 Click **Next** until you reach the **Review** page.

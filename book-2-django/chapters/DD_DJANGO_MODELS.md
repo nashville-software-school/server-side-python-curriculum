@@ -74,7 +74,7 @@ from .appointment import Appointment
 
 ## Next Steps
 
-Now that you have define the database model, you have completed the first step toward performing a task called a database migration. There are a few more steps before you can do it.
+Now that you have defined the database model, you have completed the first step toward performing a task called a database migration. There are a few more steps before you can do it.
 
 | Term | Definition |
 | --| --|

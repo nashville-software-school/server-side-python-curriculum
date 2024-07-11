@@ -80,7 +80,7 @@ Copy the following JSON into the `rocks.json` file.
         "fields": {
             "user": 1,
             "type": 3,
-            "name": "Ernestina",
+            "name": "Tiana",
             "weight": 1.3
         }
     },

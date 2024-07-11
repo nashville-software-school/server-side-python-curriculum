@@ -27,4 +27,4 @@ On the following Monday, an instructor will join your team before you start the 
 
 ## Patterns and Strategies
 
-- When reviewing a teammate's code, identify some reasons why the code, while it may be working, would some of it would need to be removed, changes, moved, etc? Can you think of an example from this project?
+- When reviewing a teammate's code, identify some reasons why the code, while it may be working, would need to be removed, changed, moved, etc? Can you think of an example from this project?

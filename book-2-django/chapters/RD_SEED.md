@@ -1,6 +1,6 @@
 # Helpful Bash Script
 
-In this chapter, you are going to set up your project with a bash script that contains commands you can have a fresh start for your database and fixtures whenever you want.
+In this chapter, you are going to set up your project with a bash script that contains commands so you can have a fresh start for your database and fixtures whenever you want.
 
 ## Setup
 
