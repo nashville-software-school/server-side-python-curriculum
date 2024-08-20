@@ -82,7 +82,7 @@ In the image below, you will notice that there is a breakpoint on line 36 of the
 
 Watch the following **Debug Python - Call Stack** video for a short introduction to its power in helping a developer understand how to navigate declarative code and quickly jump around to each step in the process.
 
-[<img src="./images/video-play-icon.gif" height="75rem" />](https://watch.screencastify.com/v/ofgm2w7rRRIpYaxe15kX)
+[<img src="./images/video-play-icon.gif" height="75rem" />](https://watch.screencastify.com/v/OzRc6Y2BTKbkEXHqtPAP)
 
 
 ## Next Steps
