@@ -87,6 +87,6 @@ Watch the following **Debug Python - Call Stack** video for a short introduction
 
 ## Next Steps
 
-When your sequence diagram is complete, you must contact one of your coaches for a review. Once that review is done, and any corrections are made, you can move on to the next chapter.
+When your sequence diagram is complete, you can either move on to the next chapter, or reach out to one of your coaches to discuss accuracy and understanding.
 
 [Create Resources Chapter >](./SS_API_CREATE_RESOURCES.md)
