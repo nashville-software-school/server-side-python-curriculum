@@ -48,13 +48,8 @@ Follow the link below and click the "Download" button when you get there.
 
 You'll need to create a GitHub repository for your answers.
 
-1. Go to your cohort's GitHub.
-
-1. Click the green <kbd>New</kbd> button to create a new repository.
-
+1. Go to your personal GitHub.
 1. Name your repository `chinook-{your GitHub username]` and make it Public.
-
-<center><img src="./images/create_github_repo.gif" alt="Create GitHub repository" style="width: 80%;"/></center>
 
 ### Step Four: Create an Entity Relationship Diagram
 
