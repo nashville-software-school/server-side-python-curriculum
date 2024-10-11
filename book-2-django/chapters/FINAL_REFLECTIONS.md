@@ -5,7 +5,7 @@ Your instructional team will be scheduling time with each of you to discuss what
 ## DRF Tools
 
 - Could you elaborate on all of the work that Django and DRF do for you that you were required to do in the Rare project?
-- What is the responsibility of a DRF view, model, and serializer? Can you describe how they work together, on towards which goal?
+- What is the responsibility of a DRF view, model, and serializer? Can you describe how they work together to achieve a singular goal?
 
 ## ORM
 
