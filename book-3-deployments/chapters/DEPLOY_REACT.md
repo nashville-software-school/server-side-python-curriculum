@@ -22,8 +22,7 @@ Deploying your first three static sites is cost free on Digital Ocean. Your Reac
     4. Click **Save**.
 7. Click next.
 8. Type in an app name like "sinks-steve" or anything else that works.
-9. Click next.
-10. Make sure **Starter Plan** is chosen.
-11. Click **Launch Starter App**.
+9. Click Next until you get to **Review** page.
+10. Click **Create Resources**.
 
 Now wait for a few minutes while your application is built and deployed. Once successful, you can click on the link they provide and see your site!
