@@ -1,6 +1,9 @@
 # Step 5: Production Environment Variables
 
-Next, you need to define the environment variables you declared in your project’s settings. For your Django app to function, you need to set the following environment variables like so:
+Next, you need to define the environment variables you declared in your project’s settings. For your Django app to function, you need to set the following environment variables.
+
+1. CLick the __Edit__link next to your app name, **not** Global.
+2. Add the following key/values.
 
 * `DJANGO_ALLOWED_HOSTS` -> `${APP_DOMAIN}`
 
@@ -14,10 +17,10 @@ Next, you need to define the environment variables you declared in your project�
 
     Again, you can use the [Online UUID Generator](https://www.uuidgenerator.net/) to generate a random secret key. Don’t forget to click the Encrypt check box to ensure that your credentials are encrypted for safety.
 
-* `DISABLE_COLLECSTATIC` -> `1`
+* `DISABLE_COLLECTSTATIC` -> `1`
 
 Click **Save**.
 
-Click **Next** until you reach the **Review** page.
+Click **Next** until you reach the **Info** page.
 
 [Go to Step 6 >](./DEPLOY_DJANGO_06.md)

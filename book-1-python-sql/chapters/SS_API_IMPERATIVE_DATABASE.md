@@ -12,7 +12,7 @@
 
 The term _seed the database_ simply means to load your database with some initial data. Most teams you join will have some kind of process to give you a local database with some seeded data to work with.
 
-> 🧨 Before you follow these steps, watch the very short [Run Selected Query Shortcut](https://watch.screencastify.com/v/uU2USCyA64opMoTrZXI9) video to set up a keyboard shortcut for running SQL in VS Code.
+> 🧨 Before you follow these steps, watch the very short [Run Selected Query Shortcut](https://watch.screencastify.com/v/GXl5nlnoiRW1UZ6FWFs9) video to set up a keyboard shortcut for running SQL in VS Code.
 
 1. Open the `shipping.sql` file in VS Code.
 2. You will see a comment on line 12.
