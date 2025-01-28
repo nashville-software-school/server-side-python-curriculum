@@ -19,19 +19,23 @@ After a brief dive into strengthening your SQL skills, this book introduces you 
 | 11 | | | | | [Searching Games][51] |
 | 11 | | | | | [Sorting Games][52] |
 
-## 🔐 Group Project
+## 🤔 Learning Reflections
 
-| #   | 🎓 Sprint Preparation | Description |
+| #   |  | Description |
 | --- | --- | -- |
-| 1   | [Full Stack Reflections][31] | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
+| 1   | [Vocabulary Interview][31] | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
+
+## 🔐 Group Project
 
 | # | 💸 Sprint Work | Description |
 |--|--|--|
 | 👨‍👩‍👧‍👧 | [Bangazon Commerce][29] | Welcome to the team! You are being hired by the Bangazon Commerce company to help fix and augment a full stack app that is already in development. |
 
-| #   | 🎓 Final Reflections | Description |
+## 🤔 Final Reflections
+
+| #   |  | Description |
 | --- | ------------------ | --- |
-| 1   | [Django Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
+| 1   | [Proficiency Interview](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing each team after the group project is complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
 
 [1]: https://mystery.knightlab.com/
 [2]: ./chapters/SQL_REFRESH.md

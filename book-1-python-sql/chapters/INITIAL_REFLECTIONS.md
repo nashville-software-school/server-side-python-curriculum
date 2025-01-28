@@ -1,4 +1,4 @@
-# Book 1 Reflections
+# Python and SQL Reflections
 
 This is truly a self-assessment, as you will need to reflect on what you learned in this project and collect your thoughts on the following questions. Part of becoming a high-value software developer is understanding key concepts... not just the ability pattern match and write code.
 
