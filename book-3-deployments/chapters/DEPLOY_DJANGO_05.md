@@ -2,7 +2,7 @@
 
 Next, you need to define the environment variables you declared in your project’s settings. For your Django app to function, you need to set the following environment variables.
 
-1. CLick the __Edit__link next to your app name, **not** Global.
+1. CLick the **Edit** link next to your app name, **not** Global.
 2. Add the following key/values.
 
 * `DJANGO_ALLOWED_HOSTS` -> `${APP_DOMAIN}`
