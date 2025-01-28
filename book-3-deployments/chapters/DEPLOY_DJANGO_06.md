@@ -1,5 +1,7 @@
 # Step 6: Testing Your Deployed API
 
+On the **Review** page, double-check that you are on the $5.00/mo plan, and then click the **Create Resources** button at the bottom.
+
 Wait until the build and deploy process are complete. If eveything is successful, you will see something like this at the top of the screen. Your info will be slightly different.
 
 ![](./images/digital-ocean-success-domain.png)

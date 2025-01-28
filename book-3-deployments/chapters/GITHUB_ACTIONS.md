@@ -1,98 +1,52 @@
-# Automating Build and Deploy of React App
+# Github Actions
 
-You are going to set up your Github repository to serve the static, built version of your React app.
+Github Actions is a powerful automation tool built into GitHub that can help streamline your development workflow. For a bootcamp learner working on simple, static projects, it can be particularly useful for automating the deployment process. Here's a beginner-friendly overview.
 
-> **Special note from your coaches**: Once you make the decision to deploy your client and your API, there are changes that you have to make to ensure that the client will still work. All of your fetch calls must be made to your publicly deployed API, not localhost:8000. Discuss this with one of your coaches when you're ready.
+## What is GitHub Actions?
 
-## Repo Configuration
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate various tasks in your software development workflow. These automated processes are called "workflows" and are defined in YAML files in your repository.
+How can a bootcamp learner use it?
+For deploying simple, static projects, GitHub Actions can be used to automatically build and deploy your site whenever you push changes to your repository. Here's a basic process:
 
-1. Go to your Github repo.
-2. Click on **Settings** tab.
-3. Click on the **Pages** link on the left.
-4. Under the **Build and Deployment** section, choose _Deploy from a branch_ option from the dropdown.
-5. In the **Branch** dropdown that appears, choose `gh_pages`.
-6. Click **Save**.
+## Early, Static Project Deploys
 
-## Project Configuration
+For projects that you did early in the course before you started using `json-server` to perform HTTP requests to a local API, Github makes it very easy to deploy these.
 
-1. Make sure your are on the `main` branch of your project.
-1. In your project directory, create a `.github/workflows` directory.
-2. In the `workflows` directory, create a `deploy.yml` file.
-3. Add the following content to the file.
-   ```yml
-   name: Build & deploy
+Examples include Shipping Ships, Martin's Aquarium, and Brewed Awakenings.
 
-   on:
-     push:
-       branches:
-         - main
-     pull_request:
-       branches:
-         - main
+### Set Up Github Pages
 
-   jobs:
-     build:
-       name: Build
-       runs-on: ubuntu-latest
+1. Go to your Github repository
+2. Click on **Settings**
+3. Click on **Pages**
+4. Click on **Source** and choose _Github Actions_ option
+5. Github will show you two beginner options.
+6. Choose the **Static HTML** option
+7. Github will show you the Github Action YAML file that you need to add to your repository.
+8. You can immediately commit those changes.
 
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
+![](./images/github-actions-simple-site-setup.gif)
 
-         - name: Install Node.js
-           uses: actions/setup-node@v1
-           with:
-             node-version: 13.x
+### Your first automated build and deploy
 
-         - name: Install NPM packages
-           run: npm install
+1. Locally, make a simple change on your `develop` branch for the chosen project.
+2. Add, commit and push the changes.
+3. Go to Github and create a pull request from `develop` to `main`
+4. Merge the pull request
+5. Go to the **Actions** tab of your repository.
+6. You will notice an automated build task running. Click on it.
+7. When the build is done, click on the URL that is displayed in the task.
 
-         - name: Build project
-           run: npm run build
+![](./images/github-actions-simple-site-running.gif)
 
-         - name: Upload production-ready build files
-           uses: actions/upload-artifact@v2
-           with:
-             name: production-files
-             path: ./build
 
-     deploy:
-       name: Deploy
-       needs: build
-       runs-on: ubuntu-latest
-       if: github.ref == 'refs/heads/main'
+This workflow will run whenever you push to the main branch. It uses a pre-made action to deploy your files to GitHub Pages.
+Benefits for a bootcamp learner:
 
-       steps:
-         - name: Download artifact
-           uses: actions/download-artifact@v2
-           with:
-             name: production-files
-             path: ./build
+Automation: You don't need to manually upload files every time you make changes.
+Learning DevOps: It introduces you to important concepts in modern software development.
+Portfolio boost: Having automated deployments looks impressive to potential employers.
+Consistency: It ensures your deployed site is always in sync with your latest code.
 
-         - name: Deploy to gh-pages
-           uses: peaceiris/actions-gh-pages@v3
-           with:
-             github_token: ${{ secrets.GITHUB_TOKEN }}
-             publish_dir: ./build
-   ```
-1. Open your `package.json` file in your project.
-2. Replace the following line
-    ```json
-    "build": "react-scripts build",
-    ```
-    with
-    ```json
-    "build": "CI=false react-scripts build",
-    ```
-1. Add, commit, and push your main branch to your Github repo.
-
-## Watching the Build
-
-1. Go to your Github repo and click the **Actions** tab.
-2. You will see a new process running named the same as your commit message. This process takes a minute or two.
-3. When it's done, you will either see a red x - which means the build failed - or a green checkmark - which means the build succeeded and your project has been deployed.
-4. If it succeeded, go back to the **Settings** > **Pages** screen and you will a link at the top that looks like this
-    ```txt
-    Your site is live at https://username.github.io/projectname/
-    ```
-1. Click on that link and view your deployed project.
+As you progress, you can explore more complex workflows, like running tests before deployment or deploying to other platforms.
+Remember, while GitHub Actions is powerful, start simple and gradually add complexity as you become more comfortable with the concept.

@@ -82,11 +82,11 @@ In the image below, you will notice that there is a breakpoint on line 36 of the
 
 Watch the following **Debug Python - Call Stack** video for a short introduction to its power in helping a developer understand how to navigate declarative code and quickly jump around to each step in the process.
 
-[<img src="./images/video-play-icon.gif" height="75rem" />](https://watch.screencastify.com/v/ofgm2w7rRRIpYaxe15kX)
+[<img src="./images/video-play-icon.gif" height="75rem" />](https://watch.screencastify.com/v/OzRc6Y2BTKbkEXHqtPAP)
 
 
 ## Next Steps
 
-When your sequence diagram is complete, you must contact one of your coaches for a review. Once that review is done, and any corrections are made, you can move on to the next chapter.
+When your sequence diagram is complete, you can either move on to the next chapter, or reach out to one of your coaches to discuss accuracy and understanding.
 
 [Create Resources Chapter >](./SS_API_CREATE_RESOURCES.md)
