@@ -11,11 +11,13 @@
 | 7 | | | | [Who Carries the Ship?][13] | [Update a Metal Price][22] |
 | 8 | | | | | [Embedding Metal, Style, and Size][23] |
 
+## 🤔 Learning Reflections
+
 Once you have completed the project, your job is to do a self-assessment. This is truly a self-assessment, as you will need to reflect on what you learned so far.
 
-| #   | 🎓 Are Your Prepared? | Description |
+| #   |  | Description |
 | --- | ------------------ | --- |
-| 1   | [Technical Interview](./chapters/INITIAL_REFLECTIONS.md) | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
+| 1   | [Vocabulary Interview](./chapters/INITIAL_REFLECTIONS.md) | In this interview, we will be discussing your understanding and vocabulary on the technical concepts covered in this book to ensure you are prepared for the group project. |
 
 ## 🔐 Group Project
 
@@ -25,9 +27,11 @@ Once everyone has had their reflections interview with a coach, we will start on
 |--|--|--|
 |1| [Rare Publishing Platform][28] | Your first, large full-stack group project. You will be building an API service with Python, and using SQL to manage the permanent state in your database. |
 
-| #   | 🎓 Final Reflections | Description |
+## 🤔 Final Reflections
+
+| #   |  | Description |
 | --- | ------------------ | --- |
-| 1   | [Python and SQL: Afterparty](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing you after the Sprints _(see below)_ are complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
+| 1   | [Proficiency Interview](./chapters/FINAL_REFLECTIONS.md) | We will be interviewing each team after the group project is complete to discuss your growth on general problem solving skills and help you devise strategies for growth. |
 
 
 [1]:	./chapters/CC_PROJECT_SETUP.md
