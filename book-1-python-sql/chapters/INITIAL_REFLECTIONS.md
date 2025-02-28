@@ -4,7 +4,6 @@ This is truly a self-assessment, as you will need to reflect on what you learned
 
 When you are done reflecting on these topics and feel that you have a solid understanding of each one, reach out to an instructor for a vocabulary review to ensure you are prepared for technical interviews.
 
-
 ## What You Should Know
 
 We will not be discussing these questions during the interview, because we expect you to have this knowledge. It is your job to ensure that you have the understanding and vocabulary for them.
@@ -17,13 +16,13 @@ We will not be discussing these questions during the interview, because we expec
 
 ### `for` Loops
 
-1. Can I write a `for` loop to iterate over elements in a list or tuple?
+1. Write a `for` loop to iterate over elements in a list or tuple?
 
 ### Functions
 
-1. Am I able to define and call a function in Python?
-2. Do I understand the concepts of function arguments and return values?
-3. Can I describe the technical difference between a method and a function?
+1. Write the code that defines and calls a simple function in Python?
+2. Explain the concepts of function arguments and return values?
+3. Describe the technical difference between a method and a function?
 4. What do I need to do to invoke a function that is defined in a different module?
 
 ## Concepts and Vocabulary We Will Discuss
@@ -51,24 +50,60 @@ These questions will be discussed during our interview, but we will not review t
 
 ## Code Review
 
-These questions will be part of a code review of Kneel Diamonds, so you will be asked to share your screen.
-
 ### Data Structures
 
-1. Can I create, modify, and access elements in a Python list?
-1. If I was asked in an interview to describe a dictionary, what would I say?
-3. Do I understand how to access and modify values based on keys in a dictionary?
-1. Do I know the difference between an object and a dictionary in Python?
-4. What can an object do that a dictionary can't?
+1. Where do I create, modify, and access elements in a Python list?
+2. If I was asked in an interview to describe a dictionary, what would I say?
+3. Explain how to access and modify values based on keys in a dictionary.
+4. Explain the difference between an object and a dictionary in Python.
+5. What can an object do that a dictionary can't?
 
 ### Try/Except
 
-1. Can I explain the purpose of a `try/except` block in Python?
+1. Explain the purpose of a `try/except` block in Python?
 
 ### SQL
 
-1. Can I explain what SQL is and why it is used in software development?
-1. Am I able to write a basic SQL query to select a single record from a database table?
-1. Can I construct a SQL query to join two tables and select multiple records?
-1. Am I capable of using the `WHERE` clause to filter records in a SQL query?
-2. Do I understand how to combine `WHERE` with other SQL clauses like `AND`, `OR`, and `NOT`?
+Review the following database diagram.
+
+```mermaid
+erDiagram
+    Customer {
+        int id PK
+        string name
+        string email
+        string phone
+    }
+
+    Receipt {
+        int id PK
+        int customer_id FK
+        datetime date
+        decimal total_amount
+    }
+
+    Product {
+        int id PK
+        string name
+        decimal price
+        string category
+    }
+
+    ReceiptItem {
+        int id PK
+        int receipt_id FK
+        int product_id FK
+        int quantity
+        decimal line_total
+    }
+
+    Customer ||--o{ Receipt : has
+    Receipt ||--o{ ReceiptItem : contains
+    Product ||--o{ ReceiptItem : "part of"
+```
+
+1. Explain what SQL is and why it is used in software development.
+2. Write a basic SQL query to select a single record from the **ReceiptItem** database table.
+3. Construct a SQL query that returns all receipt items, but includes the product name and the receipt total amount?
+4. Demonstrate using the `WHERE` clause to filter records in a SQL query that returns all receipts with a total that is greater than 100.00.
+5. Update your previous query to exclude receipts that were generated before 2024.
