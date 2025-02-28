@@ -72,6 +72,12 @@ Now that you have seen an example how lists work, your task is to create a simpl
 7. **Find a Movie**: Write a function `find_movie(movie)` that checks if a movie is in the list and prints a message indicating whether the movie was found or not.
 8. **Clear the List**: Write a function `clear_movies()` that removes all movies from the list and prints a message indicating the list has been cleared.
 
+---
+
+> 🧨  You can move to the [next chapter >>](./PYTHON_DICTIONARIES.md) or take on the optional challenges below
+
+---
+
 ## Optional Algorithmic Practice: Planet List
 
 Want to practice your algorithmic thinking, but with Python syntax? First, [learn a bit about **tuples**](https://www.pythontutorial.net/python-basics/python-tuples/) which are lists, but have far fewer operations, and are immutable.
@@ -129,3 +135,5 @@ Voyager 1 has visited
 Jupiter
 Saturn
 ```
+
+[Next chapter: Dictionaries >>](./PYTHON_DICTIONARIES.md)
