@@ -108,6 +108,12 @@ def update_grade(name, grade):
 # Display students and their grades again
 ```
 
+---
+
+> 🧨  You can move to the [next chapter >>](./PYTHON_SETS.md) or take on the optional challenges below
+
+---
+
 ## Optional Gradebook Challenges
 
 Want to build more complex functionality? Implement the following features. Otherwise, move on.
@@ -194,3 +200,5 @@ Portfolion Total
 ----------------
 Total value of stock in portfolio: $18400
 ```
+
+[Next chapter: Sets >>](./PYTHON_SETS.md)

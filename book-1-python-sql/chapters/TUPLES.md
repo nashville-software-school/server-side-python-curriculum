@@ -144,6 +144,12 @@ Now that you've seen how tuples can be used to store and manage book information
 
 Create a Python module named `my_movies.py` and implement the algorithm.
 
+---
+
+> 🧨 You can move to the [next chapter >>](./PYTHON_EXCEPTIONS.md) or take on the optional challenges below
+
+---
+
 ### Optional Challenges
 
 Once you have fulfilled all of the core requirements, you can choose to challenge yourself with the tasks below, or move on to the next chapter.
@@ -157,3 +163,5 @@ Once you have fulfilled all of the core requirements, you can choose to challeng
 3. **Sort Movies by Release Year**
    - Write a function `sort_movies_by_year()` that sorts the movies in the collection by their release year and displays the sorted list.
 
+
+[Next chapter: Exception Handling >>](./PYTHON_EXCEPTIONS.md)
