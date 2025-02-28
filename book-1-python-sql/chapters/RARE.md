@@ -44,6 +44,7 @@ Once you have an idea of how many tickets your group can complete this sprint le
 
 ### Strategies for Completing Tickets
 
+1. Review the [Github Workflow Guides](https://nashville-software-school.github.io/github-workflow/) as a team and define your standards and processes.
 1. You should not have more than 2 tickets in the **In Progress** column at any time that are assigned to a single teammate.
 2. When you move a ticket into the **In Progress** column, you are taking ownership of the entire feature. You can pull in other teammates to share in the responsiblity of building, but you are the owner of it and must ensure quality and completeness.
 3. Once the code has been approved, you can consider the coding of the feature done and you can move the ticket to the **Done** column.
