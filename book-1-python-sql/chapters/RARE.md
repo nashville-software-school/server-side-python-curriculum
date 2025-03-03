@@ -36,6 +36,7 @@ Once you have an idea of how many tickets your group can complete this sprint le
 
 ### Adding Story Points
 
+1. Open [Practical Fibonacci](https://www.scrum.org/resources/blog/practical-fibonacci-beginners-guide-relative-sizing) article and scroll down to the chart that shows numbers 0-21. You will use this scale when weighing your tickets.
 1. Watch the [Planning Poker](https://www.youtube.com/watch?v=TxSzo3lwwWQ) video to learn about the process of weighing your tickets for Sprint Planning
 2. You will be adding story points to the first 15 tickets only.
 3. Use the [planningpokeronline.com](http://planningpokeronline.com/) site to start weighing your tickets.
