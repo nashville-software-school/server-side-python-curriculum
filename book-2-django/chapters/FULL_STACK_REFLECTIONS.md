@@ -21,7 +21,7 @@
 - What is a Web API?
 - Reflect on the importance of status codes in HTTP responses and what they signify.
 - Can you correctly explain the difference between a **client** and a **server**?
-- Can you describe what happens from the moment a user clicks a link on a webpage to when the page is fully loaded?
+- Can you describe what happens from the moment a user clicks a link in a React application to when the new state is rendered?
 - Can you explain the difference between a the URL that is used in the browser and the URL that is used to get data from an API?
 - Why would it be bad if the client connected directly to the database?
 - Why is the JSON data format useful in client/server communication?
