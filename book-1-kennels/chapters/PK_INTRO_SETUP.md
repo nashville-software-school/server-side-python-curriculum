@@ -164,11 +164,13 @@ First you'll need to select the correct Python Interpreter. Open the command pal
 
 ### Workspace Settings
 
+In your terminal, type the command `which autopep8`.
+
 Open the command palette again and search for **Open User Settings (JSON)**, and add the following JSON to file that appears.
 
 
 ```json
-   "python.formatting.autopep8Path": "paste in the output from the which command",
+   "python.formatting.autopep8Path": "paste in the path returned from the which command in your terminal",
    "python.linting.pylintEnabled": true,
    "python.analysis.diagnosticSeverityOverrides": {
      "reportGeneralTypeIssues": "none"
