@@ -24,27 +24,27 @@ Under the **Repository** section, choose your project repository from the dropdo
 
 Then, click **Next**.
 
-DigitalOcean detects that your project is a Python app and automatically populates a partial run command.
+### Custom run command
 
-Click the **Edit** pencil icon next to the app.
+DigitalOcean detects that your project is a Python app and automatically populates a partial run command. You will see a summary page named **Review and configure resource settings**.
 
-Then, click **Edit** to the right of the **Run Command** section. Your completed run command needs to reference your project’s WSGI file. Yours will be the name of your capstone project.
+1. Scroll down to the **Deployment settings** section.
+2. Click the **Edit** link in that section.
+3. Recall that the name of your project is the directory name where `urls.py` and `settings.py` are, not where your models, views, fixtures are. Replace `django_app` in the command below with your project name.
+    ```sh
+    python manage.py makemigrations {name of your api project}
+    python manage.py migrate
+    gunicorn --worker-tmp-dir /dev/shm django_app.wsgi
+    ```
+4. Then click the **Close** link in that section
 
-Recall that the name of your project is the directory name where `urls.py` and `settings.py` are, not where your models, views, fixtures are. Replace `django_app` in the command below with your project name.
+### Changing resource size
 
-```sh
-python manage.py makemigrations {name of your api project}
-python manage.py migrate
-gunicorn --worker-tmp-dir /dev/shm django_app.wsgi
-```
+1. Click **Edit** link in the **Size** section.
+2. Choose the smaller amount in the dropdown _(usually $5.00/mo)_
+3. CLick the **Close** link to save selection.
 
-Click **Save** to confirm the change.
-
-Next, click **Edit** link next to the **Resource Size** section. Choose the $5/month option. Then click **Save**.
-
-Then click **Back** at the bottom of the page to return to the Resources page.
-
-Finally, click **Next** to proceed.
+Go to the next chapter to continue configuring your project.
 
 [Go to Step 5 >](./DEPLOY_DJANGO_05.md)
 

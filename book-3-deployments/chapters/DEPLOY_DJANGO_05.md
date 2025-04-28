@@ -2,25 +2,19 @@
 
 Next, you need to define the environment variables you declared in your project’s settings. For your Django app to function, you need to set the following environment variables.
 
-1. CLick the **Edit** link next to your app name, **not** Global.
-2. Add the following key/values.
+1. Click the **Edit** link in the **Environment Variables** section.
+2. Click the **Add from .env** choice, and a dialog box will appear.
+3. Open your `.env` file that you created in the previous step and copy/pasta the contents into the dialog.
+4. Change **DEBUG** to `False`.
+5. Change **DEVELOPMENT_MODE** to `False`.
+6. Change **ALLOWED_HOSTS** to include the URL for your deployed client _(e.g. `'127.0.0.1,localhost,www.awesomeapi.com')_
+7. Add the following key/values.
+    ```txt
+    DJANGO_ALLOWED_HOSTS=${APP_DOMAIN}
+    DISABLE_COLLECTSTATIC=1
+    ```
 
-* `DJANGO_ALLOWED_HOSTS` -> `${APP_DOMAIN}`
-
-    This allows the platform to know the randomly generated URL that App Platform provides and provide it to your app.
-
-* `DEBUG` -> `True`
-
-    Set this to **True** for now to verify your app is functioning and set to **False** later once everything is working.
-
-* `DJANGO_SECRET_KEY` -> `<A RANDOM SECRET KEY>`
-
-    Again, you can use the [Online UUID Generator](https://www.uuidgenerator.net/) to generate a random secret key. Don’t forget to click the Encrypt check box to ensure that your credentials are encrypted for safety.
-
-* `DISABLE_COLLECTSTATIC` -> `1`
-
-Click **Save**.
-
-Click **Next** until you reach the **Info** page.
+8. Click **Save**.
+9. Click the **Close** link for that section to save changes.
 
 [Go to Step 6 >](./DEPLOY_DJANGO_06.md)

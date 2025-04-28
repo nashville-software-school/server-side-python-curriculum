@@ -15,7 +15,7 @@ Your instructional team will be scheduling time with each of you to discuss what
 ## Full Stack
 
 - What are your React components responsible for?
-- What are your API views responsible for?
+- What are your API endpoints responsible for?
 - What is the database responsible for?
 - You might be asked to describe the difference between authentication and authorization. Can you describe their  responsibilities?
 
