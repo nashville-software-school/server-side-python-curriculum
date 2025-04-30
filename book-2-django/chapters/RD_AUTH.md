@@ -79,7 +79,7 @@ urlpatterns = [
 
 ## Register
 
-With Postman, perform a POST request to `/register` with the following JSON body.
+With Yaak, perform a POST request to `/register` with the following JSON body.
 
 ```json
 {
