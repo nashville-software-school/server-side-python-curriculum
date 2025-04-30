@@ -38,3 +38,36 @@ urlpatterns = [
     path('login', login_user), # Enables http://localhost:8000/login
 ]
 ```
+
+## Register
+
+With Yaak, perform a POST request to `/register` with the following JSON body.
+
+```json
+{
+    "username": "meg@ducharme.com",
+    "password": "ducharme",
+    "first_name": "Meg",
+    "last_name": "Ducharme"
+}
+```
+
+You should received a response with a **201** status code and your token in the response body - which is a series of randomly generated numbers and letters.
+
+```json
+{
+    "token": "91a91a91a91a91a91a91a91a91a91a"
+}
+```
+
+Then try to login with those credentials by performing a POST request to `/login` with the following body.
+
+```json
+{
+    "username": "meg@ducharme.com",
+    "password": "ducharme"
+}
+```
+
+You should receive the exact same token in the response.
+
