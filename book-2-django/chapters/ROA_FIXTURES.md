@@ -124,7 +124,7 @@ Installed 8 object(s) from 2 fixture(s)
 
 ## Get Your New Data
 
-Now open your API client _(Postman, Insomnia, etc.)_ and make two requests and verify that you get those types and rocks from your API.
+Now open your API client and make two requests and verify that you get those types and rocks from your API. Make sure you add the `Authorization` header with the value of `Token xxxxxxxx` where xxxxxx should be replaced with the token you created with the Meg user in the earlier chapter.
 
 - GET http://localhost:8000/types
 - GET http://localhost:8000/rocks
