@@ -94,16 +94,3 @@ Here is a 5:55 minute walkthrough of implementing the code with explanations.
 
 [<img src="./images/video-play-icon.gif" height="75rem" />](https://watch.screencastify.com/v/UkVfmoThqRW3tgxHpVqP)
 
-## Test Your View
-
-Try it out in your API client!
-
-> Do not test this functionality in the React client until after the fixtures chapter is done
-
-1. Open the `authtoken_token` table in your database and examine the `pk` key on each object. These are unique tokens assigned to every user in the system.
-2. Copy any one of them to use in your API client.
-3. Start a new GET request.
-4. Add a new header to the request named `Authorization`
-5. Grab a token from your `authtoken_tokens` table.
-6. The value will be the word Token, followed by a space, and then the unique token you copied
-7. Send a GET request to `http://localhost:8000/types` and you should get an empty JSON array in the response.
