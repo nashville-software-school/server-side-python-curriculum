@@ -22,7 +22,7 @@ The following module is already set up for you in your API application. You can 
 
 ## Enable Login and Register Requests
 
-Lasly, the **register_user** and **login_user** functions are imported into the the `urls.py` module and mapped to a specific route that a client can make a request to. This code is already provided in the starter code you have.
+Lastly, the **register_user** and **login_user** functions are imported into the the `urls.py` module and mapped to a specific route that a client can make a request to. This code is already provided in the starter code you have.
 
 ```py
 from django.contrib import admin
