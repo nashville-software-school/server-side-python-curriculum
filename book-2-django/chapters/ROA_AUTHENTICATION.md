@@ -39,9 +39,10 @@ urlpatterns = [
 ]
 ```
 
-## Register
+## Trying Register
 
-With Yaak, perform a POST request to `/register` with the following JSON body.
+1. Start your Django app in debug mode.
+2. With Yaak, perform a POST request to `/register` with the following JSON body.
 
 ```json
 {
