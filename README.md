@@ -4,7 +4,7 @@ Welcome to the Python and Django course for Nashville Software School.
 
 ## Installations
 
-Run the appropriate script in one of your terminal windows. Location is irrelevant.
+For installations, make sure you run the following commands in Ubuntu terminal if you're on Windows, or Mac Terminal. **DO NOT RUN THEM IN THE VS CODE INTEGRATED TERMINAL**
 
 ### Mac Users
 
