@@ -17,13 +17,14 @@ curl -L -s 'https://raw.githubusercontent.com/github/gitignore/master/Python.git
     - `.pylintrc`
     - `Pipfile`
     - `.vscode/launch.json`
+    - `nss_handler.py`
+    - `json-server.py`
     - `.vscode/settings.json`
-
-Then activate a virtual environment and install packages.
-
-```sh
-pipenv shell
-pipenv install
-```
+2. Remove any logic from `json-server.py` that was specific to the previous project.
+3. Activate a virtual environment and install packages.
+    ```sh
+    pipenv shell
+    pipenv install
+    ```
 
 Once that it complete, open the project directory in Visual Studio Code.
